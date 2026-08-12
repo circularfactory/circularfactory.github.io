@@ -16,6 +16,26 @@ import urllib.parse
 import urllib.request
 from typing import Any, Dict, List, Optional, Tuple
 
+# Committed beside index.html, so the path is relative and works both at the
+# org root and under a repository subpath such as /front-door-preview/.
+LOGO_SRC = "assets/sfb1574-logo.png"
+LOGO_ALT = "CRC 1574 - Circular Factory for the Perpetual Product"
+PROJECT_URL = "https://www.sfb1574.kit.edu/"
+
+ACKNOWLEDGEMENT = (
+    "The tools and ontologies listed here are developed as part of the CRC 1574: "
+    "Circular Factory for the Perpetual Product. This work is therefore supported "
+    "by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) "
+    "[grant-number: SFB-1574-471687386]"
+)
+
+# How a repository gets listed, and where an entry's text comes from, is
+# documented in the repository's README rather than printed on the page.
+COLOPHON = (
+    "This page is managed by the INF subproject of the CRC 1574: Circular Factory "
+    "for the Perpetual Product and generated automatically."
+)
+
 
 def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
@@ -368,6 +388,33 @@ code {{
   color: var(--muted);
   font-style: italic;
 }}
+.logo {{
+  display: inline-block;
+  /* The logo is dark line art on an opaque white ground, so it keeps its own
+     white plate in both themes rather than sitting on the page background. */
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1.25rem;
+}}
+.logo img {{
+  display: block;
+  width: 15rem;
+  max-width: 100%;
+  height: auto;
+}}
+footer h2 {{
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}}
+footer hr {{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}}
 .banner {{
   background: var(--banner-bg);
   border-left: 4px solid var(--banner-border);
@@ -384,12 +431,16 @@ footer {{
 </style>
 </head>
 <body>
-{banner_html}<h1>Circular Factory</h1>
+{banner_html}<a class="logo" href="{PROJECT_URL}"><img src="{LOGO_SRC}" alt="{LOGO_ALT}" width="640" height="292"></a>
+<h1>Circular Factory</h1>
 <p>Circular Factory publishes software tools and ontologies. Each one has its own documentation site, and this page links them. Every entry below is generated from that repository's own description, homepage and topics on GitHub. For the research project itself, see <a href="https://www.sfb1574.kit.edu/">sfb1574.kit.edu</a>.</p>
 {tools_section}
 {ontologies_section}
 <footer>
-<p>This page is generated from repository metadata in the circularfactory organisation on GitHub. A repository is listed here when it carries the topic cf-tool or cf-ontology. To change what an entry says, edit that repository's description and homepage.</p>
+<h2>Acknowledgements</h2>
+<p>{ACKNOWLEDGEMENT}</p>
+<hr>
+<p>{COLOPHON}</p>
 </footer>
 </body>
 </html>
