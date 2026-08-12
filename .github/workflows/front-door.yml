@@ -1,0 +1,40 @@
+name: Front door
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: front-door-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+
+      - name: Build front door
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/build_front_door.py --out index.html
+
+      - name: Commit if changed
+        run: |
+          # Stage first, then compare against the index: git diff alone reports
+          # no change for an index.html that is not tracked yet.
+          git add index.html
+          if git diff --cached --quiet -- index.html; then
+            echo "No change to index.html; nothing to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "Front door: refresh from repository metadata"
+            git push
+          fi
