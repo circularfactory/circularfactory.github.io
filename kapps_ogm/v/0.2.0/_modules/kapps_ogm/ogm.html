@@ -1,0 +1,1007 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_ogm.ogm &#8212; kapps-ogm</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=7782763b" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_ogm/ogm';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_ogm/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-ogm</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_ogm.ogm</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_ogm.ogm</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Optional</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphDB</span><span class="p">,</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphNameLike</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.node.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.node.node_address</span><span class="w"> </span><span class="kn">import</span> <span class="n">reconcile_anonymous_addresses</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.mapping.class_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassHydrationLevel</span><span class="p">,</span> <span class="n">ClassSpec</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.mapping.property_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropertySpec</span><span class="p">,</span> <span class="n">PropertyValueKind</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.blank_instance</span><span class="w"> </span><span class="kn">import</span> <span class="n">_create_blank_instance</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.loader_strategy</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoaderStrategy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.class_scope</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnonymousNodeFetchError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.pretty_print</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_triples_turtle</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.skolem</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_SKOLEM_NAMESPACE</span><span class="p">,</span>
+    <span class="n">is_skolem_iri</span><span class="p">,</span>
+    <span class="n">mint_skolem_iri</span><span class="p">,</span>
+    <span class="n">validate_skolem_namespace</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="OGM">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGM</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    TODO: Docstring for OGM</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">db</span><span class="p">:</span> <span class="n">GraphDB</span><span class="p">,</span>
+        <span class="n">loader</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">LoaderStrategy</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">naming_schema</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[],</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">skolem_namespace</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">DEFAULT_SKOLEM_NAMESPACE</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Args:</span>
+<span class="sd">            db: GraphDB interface</span>
+
+<span class="sd">            loader: LoaderStrategy that takes an IRI and returns property chains for selective instance loading. if not specified, property chains need to be provided at fetch/creation time.</span>
+
+<span class="sd">            skolem_namespace: Namespace under which Skolem IRIs are minted for anonymous nodes.</span>
+<span class="sd">                The minting authority is an ontology-governance decision, so this is configurable;</span>
+<span class="sd">                the default is a placeholder whose path starts with ``/.well-known/genid/``.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loader</span> <span class="o">=</span> <span class="n">loader</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span> <span class="o">=</span> <span class="n">naming_schema</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">skolem_namespace</span> <span class="o">=</span> <span class="n">validate_skolem_namespace</span><span class="p">(</span><span class="n">skolem_namespace</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span> <span class="ow">or</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"kapps_ogm"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+    <span class="c1"># ------------------------------------------------------------------</span>
+    <span class="c1"># Schema orchestration</span>
+    <span class="c1"># ------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="OGM.get_class_spec">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM.get_class_spec">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_class_spec</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">class_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClassScope</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">hydration_level</span><span class="p">:</span> <span class="n">ClassHydrationLevel</span> <span class="o">=</span> <span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">SCOPE</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClassSpec</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Resolve a ClassSpec for a given class IRI and ClassScope.</span>
+
+<span class="sd">        ClassScope defines selective hydration of nested properties.</span>
+<span class="sd">        """</span>
+        <span class="n">class_scope</span> <span class="o">=</span> <span class="n">class_scope</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">class_iri</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s2">"Resolving ClassSpec for </span><span class="si">%s</span><span class="s2"> (chain=</span><span class="si">%s</span><span class="s2">, hydration_level=</span><span class="si">%s</span><span class="s2">)"</span><span class="p">,</span>
+            <span class="n">class_iri</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="p">,</span>
+            <span class="n">hydration_level</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">ClassSpec</span><span class="o">.</span><span class="n">specify</span><span class="p">(</span>
+            <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+            <span class="n">ogm</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+            <span class="n">hydration_level</span><span class="o">=</span><span class="n">hydration_level</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">spec</span></div>
+
+
+    <span class="c1"># ------------------------------------------------------------------</span>
+    <span class="c1"># Creating new instances</span>
+    <span class="c1"># ------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="OGM.create">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM.create">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">class_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClassScope</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">persist</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphNameLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Create a new Node instance with given data.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            class_iri: IRI of the class to instantiate</span>
+<span class="sd">            class_scope: ClassScope defining the class and property structure</span>
+<span class="sd">            data: Data dictionary for the instance (must conform to class_spec)</span>
+<span class="sd">            instance_iri: Optional IRI for the new instance (if not provided, a new one will be generated)</span>
+<span class="sd">            persist: Whether to persist the new instance to the graph database</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Node representing the newly created instance</span>
+
+<span class="sd">        This is the primary entry point for:</span>
+<span class="sd">        - REST POST</span>
+<span class="sd">        - API writes</span>
+<span class="sd">        - JSON import</span>
+<span class="sd">        """</span>
+        <span class="n">class_scope</span> <span class="o">=</span> <span class="n">class_scope</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">class_iri</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="n">class_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_class_spec</span><span class="p">(</span>
+            <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+            <span class="n">class_spec</span><span class="o">=</span><span class="n">class_spec</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">ogm</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">node</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">persist</span><span class="p">:</span>
+            <span class="n">triples</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">to_triples</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">triples_add</span><span class="p">(</span><span class="n">triples</span><span class="p">,</span> <span class="n">named_graph</span><span class="o">=</span><span class="n">named_graph</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Failed to persist instance."</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+        <span class="k">return</span> <span class="n">node</span></div>
+
+
+<div class="viewcode-block" id="OGM.create_blank_instance">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM.create_blank_instance">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create_blank_instance</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">class_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClassScope</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">BaseModel</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Create a blank pydantic instance for a given ClassScope, able to serve as a template for data population.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            class_iri: IRI of the class to instantiate</span>
+<span class="sd">            class_scope: ClassScope defining the class and property structure</span>
+<span class="sd">            instance_iri: Optional IRI for the new instance</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            pydantic BaseModel representing the blank instance</span>
+<span class="sd">        """</span>
+        <span class="n">class_scope</span> <span class="o">=</span> <span class="n">class_scope</span> <span class="ow">or</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">class_iri</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">_create_blank_instance</span><span class="p">(</span>
+            <span class="n">ogm</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+            <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance_iri</span> <span class="ow">or</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"urn:uuid:generated-blank-instance"</span><span class="p">),</span>
+            <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+            <span class="n">hydration_level</span><span class="o">=</span><span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">SCOPE</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_assign_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">class_spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2"> has no ClassSpec, cannot assign id."</span><span class="p">)</span>
+        <span class="n">model_iri</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">class_spec</span><span class="p">,</span> <span class="s2">"iri"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">model_iri</span><span class="p">:</span>
+            <span class="n">instance_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">new_iri</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="n">model_iri</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">naming_schema</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># An anonymous node gets a Skolem IRI rather than a blank node. A blank node has no</span>
+            <span class="c1"># extent and cannot be addressed, so it can only be re-found by matching a pattern</span>
+            <span class="c1"># from a named subject — which is what makes the write path destructive. RDF 1.1</span>
+            <span class="c1"># Concepts §3.5 sanctions the substitution; nothing is asserted about the IRI, so the</span>
+            <span class="c1"># meaning of the graph is unchanged.</span>
+            <span class="n">instance_id</span> <span class="o">=</span> <span class="n">mint_skolem_iri</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">skolem_namespace</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">instance_id</span>
+
+    <span class="c1"># ------------------------------------------------------------------</span>
+    <span class="c1"># Fetching existing instances (Read)</span>
+    <span class="c1"># ------------------------------------------------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch_literal_property</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">property_spec</span><span class="p">:</span> <span class="n">PropertySpec</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+        <span class="n">triples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">property_spec</span><span class="o">.</span><span class="n">iri</span><span class="p">)</span>
+        <span class="n">property_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">property_data</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch_complex_property</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">property_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Helper function to fetch complex property data for a given instance and property spec.</span>
+<span class="sd">        All properties attached to the complex class are fetched.</span>
+
+<span class="sd">        Each returned group carries an ``"id"`` entry holding the node's own identifier — an IRI</span>
+<span class="sd">        once the node has been skolemised, a BNode while it is still in the store's blank-node</span>
+<span class="sd">        form. Discarding it, as this used to, is where identity died: the write path then had no</span>
+<span class="sd">        way to address the node it had just read, so it minted a replacement and orphaned every</span>
+<span class="sd">        triple this query returned but the ClassSpec does not declare.</span>
+
+<span class="sd">        Groups come back ordered by identifier so that two fetches of unchanged data align</span>
+<span class="sd">        positionally, which is what ``reconcile_anonymous_addresses`` relies on.</span>
+<span class="sd">        """</span>
+        <span class="c1"># Re-query anonymous node, this time including properties</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                SELECT ?bnode ?property ?value</span>
+<span class="s2">                FROM &lt;http://www.ontotext.com/explicit&gt;</span>
+<span class="s2">                WHERE </span><span class="se">{{</span>
+<span class="s2">                    &lt;</span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">property_iri</span><span class="si">}</span><span class="s2">&gt; ?bnode .</span>
+<span class="s2">                    ?bnode ?property ?value .</span>
+<span class="s2">                </span><span class="se">}}</span>
+<span class="s2">            """</span>
+        <span class="n">query_result</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"results"</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bindings"</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">query_result</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="n">property_data_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">query_result</span><span class="p">:</span>
+            <span class="n">node_ref</span> <span class="o">=</span> <span class="n">binding</span><span class="p">[</span><span class="s2">"bnode"</span><span class="p">]</span>
+            <span class="n">prop_iri</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="p">[</span><span class="s2">"property"</span><span class="p">]))</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">binding</span><span class="p">[</span><span class="s2">"value"</span><span class="p">]</span>
+
+            <span class="c1"># Key on the string form, but keep the identifier object itself: it is the node's</span>
+            <span class="c1"># address, and an IRI must stay an IRI while a blank node must stay a BNode.</span>
+            <span class="n">group</span> <span class="o">=</span> <span class="n">property_data_dict</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">node_ref</span><span class="p">),</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">node_ref</span><span class="p">})</span>
+            <span class="n">group</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">group</span><span class="p">[</span><span class="n">prop_iri</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="c1"># [{"id": &lt;IRI|BNode&gt;, property_iri: [value1, value2, ...], ...}, ...]</span>
+        <span class="c1"># Keys are heterogeneous: the literal "id" holds the node's address, every other key is</span>
+        <span class="c1"># a property IRI holding a list of values.</span>
+        <span class="n">property_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">property_data_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">property_data_dict</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="k">return</span> <span class="n">property_data</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fetch_object_property</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">property_spec</span><span class="p">:</span> <span class="n">PropertySpec</span><span class="p">,</span>
+        <span class="n">nested_class_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClassScope</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Node</span><span class="p">]:</span>
+        <span class="c1"># Query all instances of the property</span>
+        <span class="n">triples</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">property_spec</span><span class="o">.</span><span class="n">iri</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">triples</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">nested_instance_iris</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">]</span>
+
+        <span class="c1"># Check if this property has a child scope</span>
+        <span class="c1"># If not, fetch as reference only</span>
+        <span class="n">as_reference</span> <span class="o">=</span> <span class="n">nested_class_scope</span> <span class="ow">is</span> <span class="kc">None</span>
+
+        <span class="n">property_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">nested_instance_iri</span> <span class="ow">in</span> <span class="n">nested_instance_iris</span><span class="p">:</span>
+            <span class="n">nested_instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span>
+                <span class="n">instance_iri</span><span class="o">=</span><span class="n">nested_instance_iri</span><span class="p">,</span>
+                <span class="n">class_spec</span><span class="o">=</span><span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="p">,</span>
+                <span class="n">class_scope</span><span class="o">=</span><span class="n">nested_class_scope</span><span class="p">,</span>
+                <span class="n">as_reference</span><span class="o">=</span><span class="n">as_reference</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">property_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nested_instance</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">property_data</span>
+
+<div class="viewcode-block" id="OGM.fetch">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM.fetch">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fetch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">class_spec</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClassSpec</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ClassScope</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">as_reference</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">materialize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Fetch an existing RDF instance from the database and return a Node for that instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            instance_iri: IRI of the instance to fetch</span>
+<span class="sd">            class_spec: Optional ClassSpec to use for fetching. If not provided, it will be resolved automatically</span>
+<span class="sd">            class_scope: Optional ClassScope for selective hydration</span>
+<span class="sd">            as_reference: If True, fetch only the IRI without loading properties</span>
+<span class="sd">            materialize: If True, materialize the Node's data according to the ClassSpec.</span>
+<span class="sd">                Ignored if as_reference is True.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Node representing the fetched instance</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AnonymousNodeFetchError: If instance_iri is a Skolem IRI. Such a node is anonymous:</span>
+<span class="sd">                nothing is asserted about it, so it has no rdf:type to resolve a ClassSpec from,</span>
+<span class="sd">                and it is only meaningful as part of the entity that carries it.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">is_skolem_iri</span><span class="p">(</span><span class="n">instance_iri</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">AnonymousNodeFetchError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2"> is an anonymous node — fetch its parent instead. "</span>
+                <span class="s2">"Anonymous nodes carry no rdf:type and are only reachable through the "</span>
+                <span class="s2">"property that points at them."</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">class_scope</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">class_scope</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">instance_iri</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">class_spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">class_iri_set</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">owl_get_classes_of_individual</span><span class="p">(</span><span class="n">instance_iri</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">class_iri_set</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Could not determine class IRI for instance </span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_iri_set</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">"Instance </span><span class="si">%s</span><span class="s2"> has multiple classes </span><span class="si">%s</span><span class="s2">, using the first one."</span><span class="p">,</span>
+                    <span class="n">instance_iri</span><span class="p">,</span>
+                    <span class="n">class_iri_set</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="n">class_iri</span> <span class="o">=</span> <span class="n">class_iri_set</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">class_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_class_spec</span><span class="p">(</span>
+                <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+                <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+                <span class="n">hydration_level</span><span class="o">=</span><span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">SCOPE</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">as_reference</span><span class="p">:</span>
+            <span class="c1"># Full fetch according to class spec and class scope</span>
+            <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">property_spec</span> <span class="ow">in</span> <span class="n">class_spec</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">match</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">value_kind</span><span class="p">:</span>
+                    <span class="k">case</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span><span class="p">:</span>
+                        <span class="c1"># Fetch literal values directly</span>
+                        <span class="n">property_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_literal_property</span><span class="p">(</span>
+                            <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+                            <span class="n">property_spec</span><span class="o">=</span><span class="n">property_spec</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="k">case</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">COMPLEX</span><span class="p">:</span>
+                        <span class="n">property_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_complex_property</span><span class="p">(</span>
+                            <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+                            <span class="n">property_iri</span><span class="o">=</span><span class="n">property_spec</span><span class="o">.</span><span class="n">iri</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="k">case</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">OBJECT</span><span class="p">:</span>
+                        <span class="n">nested_class_scope</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="n">class_scope</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">class_scope</span> <span class="k">else</span> <span class="kc">None</span>
+                        <span class="p">)</span>
+                        <span class="n">property_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_object_property</span><span class="p">(</span>
+                            <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+                            <span class="n">property_spec</span><span class="o">=</span><span class="n">property_spec</span><span class="p">,</span>
+                            <span class="n">nested_class_scope</span><span class="o">=</span><span class="n">nested_class_scope</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">"Unknown value_kind </span><span class="si">{</span><span class="n">property_spec</span><span class="o">.</span><span class="n">value_kind</span><span class="si">}</span><span class="s2"> for property </span><span class="si">{</span><span class="n">property_spec</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2">"</span>
+                        <span class="p">)</span>
+
+                <span class="c1"># Ignore if none found</span>
+                <span class="k">if</span> <span class="n">property_data</span><span class="p">:</span>
+                    <span class="n">data</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="n">property_data</span>
+
+        <span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span>
+            <span class="nb">id</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+            <span class="n">class_spec</span><span class="o">=</span><span class="n">class_spec</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">instance</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># instance can be materialized later if needed</span>
+            <span class="n">ogm</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">as_reference</span> <span class="ow">and</span> <span class="n">materialize</span><span class="p">:</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">node</span></div>
+
+
+    <span class="c1"># ------------------------------------------------------------------</span>
+    <span class="c1"># updating existing instances</span>
+    <span class="c1"># ------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="OGM.commit">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM.commit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">commit</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+        <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphNameLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Update a Node instance with given data.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            instance_iri: IRI of the instance to update</span>
+<span class="sd">            data: Data dictionary for the instance (must conform to class_spec)</span>
+<span class="sd">            named_graph: Optional named graph to persist the changes to</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Node representing the newly updated instance</span>
+<span class="sd">        """</span>
+        <span class="n">new_node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">ogm</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">class_iri_set</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">owl_get_classes_of_individual</span><span class="p">(</span><span class="n">instance_iri</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">class_iri_set</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Could not determine class IRI for instance </span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_iri_set</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"Instance </span><span class="si">%s</span><span class="s2"> has multiple classes </span><span class="si">%s</span><span class="s2">, using the first one."</span><span class="p">,</span>
+                <span class="n">instance_iri</span><span class="p">,</span>
+                <span class="n">class_iri_set</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="n">class_iri</span> <span class="o">=</span> <span class="n">class_iri_set</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="n">class_scope</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_node_data</span><span class="p">(</span><span class="n">new_node</span><span class="p">)</span>
+        <span class="n">class_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_class_spec</span><span class="p">(</span>
+            <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+            <span class="n">hydration_level</span><span class="o">=</span><span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">SCOPE</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">new_node</span><span class="o">.</span><span class="n">class_spec</span> <span class="o">=</span> <span class="n">class_spec</span>
+
+        <span class="c1"># Fetch before materializing, so the addresses of the anonymous nodes already in the store</span>
+        <span class="c1"># can be transferred onto the node about to be written. The caller's payload cannot carry</span>
+        <span class="c1"># them: the address is deliberately absent from the pydantic projection, so a fetch,</span>
+        <span class="c1"># model_dump(), edit, commit cycle arrives here with none. Without this the commit would</span>
+        <span class="c1"># mint fresh addresses, delete the existing nodes and strand every triple the ClassSpec</span>
+        <span class="c1"># does not declare — connection metadata included — on nodes nothing points at.</span>
+        <span class="n">old_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span>
+            <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+            <span class="n">class_spec</span><span class="o">=</span><span class="n">new_node</span><span class="o">.</span><span class="n">class_spec</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+            <span class="n">materialize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">reconcile_anonymous_addresses</span><span class="p">(</span><span class="n">old</span><span class="o">=</span><span class="n">old_node</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="n">new_node</span><span class="p">)</span>
+
+        <span class="n">new_node</span><span class="o">.</span><span class="n">materialize</span><span class="p">()</span>
+
+        <span class="n">old_triples</span><span class="p">,</span> <span class="n">new_triples</span> <span class="o">=</span> <span class="n">old_node</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">other</span><span class="o">=</span><span class="n">new_node</span><span class="p">)</span>
+
+        <span class="c1"># Merge note: origin/paper logged the full turtle at INFO. Kept the richer</span>
+        <span class="c1"># content but moved to DEBUG and guarded, because a library that dumps every</span>
+        <span class="c1"># triple on every commit is unusable for a consumer that commits per</span>
+        <span class="c1"># operation-status change — and the f-string would render the turtle even</span>
+        <span class="c1"># when the level suppresses it.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Updating instance </span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2">: removing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">old_triples</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples, adding </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">new_triples</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples:</span><span class="se">\n\n</span><span class="s2">--- Old triples to be deleted ---</span><span class="se">\n</span><span class="si">{</span><span class="n">format_triples_turtle</span><span class="p">(</span><span class="n">old_triples</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">--- New triples to be added ---</span><span class="se">\n</span><span class="si">{</span><span class="n">format_triples_turtle</span><span class="p">(</span><span class="n">new_triples</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="c1"># triples_update issues a single atomic DELETE/INSERT SPARQL transaction, so</span>
+        <span class="c1"># the removed and added triples are applied together. This is required for</span>
+        <span class="c1"># SHACL correctness: a replacement of a cardinality-constrained property (e.g.</span>
+        <span class="c1"># a possession handover under a "possessed by exactly one resource" shape)</span>
+        <span class="c1"># must never expose the intermediate state where the property is absent.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">triples_update</span><span class="p">(</span>
+                <span class="n">old_triples</span><span class="o">=</span><span class="n">old_triples</span><span class="p">,</span>
+                <span class="n">new_triples</span><span class="o">=</span><span class="n">new_triples</span><span class="p">,</span>
+                <span class="n">named_graph</span><span class="o">=</span><span class="n">named_graph</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Failed to update instance in database."</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+        <span class="k">return</span> <span class="n">new_node</span></div>
+
+
+    <span class="c1"># ------------------------------------------------------------------</span>
+    <span class="c1"># deletion of instances</span>
+    <span class="c1"># ------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="OGM.delete">
+<a class="viewcode-back" href="../../reference/ogm.html#kapps_ogm.ogm.OGM.delete">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Delete an existing Node instance from the graph database.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            node: Node instance to delete</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if deletion was successful, False otherwise</span>
+<span class="sd">        """</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Delete method is not yet implemented."</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

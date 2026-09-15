@@ -1,0 +1,869 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_ogm.node.core &#8212; kapps-ogm</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7782763b" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_ogm/node/core';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_ogm/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-ogm</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_ogm.node.core</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_ogm.node.core</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Core Node class for managing RDF-backed entity instances."""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">GetCoreSchemaHandler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic_core</span><span class="w"> </span><span class="kn">import</span> <span class="n">CoreSchema</span><span class="p">,</span> <span class="n">core_schema</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib</span><span class="w"> </span><span class="kn">import</span> <span class="n">BNode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">utils</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRILike</span><span class="p">,</span> <span class="n">Triple</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.mapping.property_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropertyValueKind</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">.node_validator</span><span class="w"> </span><span class="kn">import</span> <span class="n">NodeValidator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.node_data_formatter</span><span class="w"> </span><span class="kn">import</span> <span class="n">sanitize_data</span><span class="p">,</span> <span class="n">format_for_instance</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.mapping.class_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassSpec</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"T"</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">BaseModel</span><span class="p">)</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"kapps_node"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Node">
+<a class="viewcode-back" href="../../../reference/node/core.html#kapps_ogm.node.core.Node">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Lightweight runtime handle for an RDF-backed instance.</span>
+
+<span class="sd">    A Node represents an entity identified by an IRI and may carry:</span>
+<span class="sd">    - a ClassSpec describing its schema,</span>
+<span class="sd">    - raw loaded data,</span>
+<span class="sd">    - a materialized Pydantic instance.</span>
+
+<span class="sd">    It coordinates the entity lifecycle, including lazy loading and</span>
+<span class="sd">    materialization, without embedding persistence logic itself.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">BNode</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">class_spec</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"ClassSpec"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">IRILike</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instance</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ogm</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">OGM</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Initialize a node with identity and optional state.</span>
+
+<span class="sd">        Either an explicit IRI/BNode or an instance exposing an ``id`` attribute</span>
+<span class="sd">        must be provided. If both are given, they must match.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">instance</span><span class="o">.</span><span class="n">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">id</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">id</span>
+            <span class="k">elif</span> <span class="nb">id</span> <span class="o">!=</span> <span class="n">instance</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Provided id does not match instance id"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="s2">"id"</span> <span class="ow">in</span> <span class="n">data</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">id</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">id</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Provided id does not match instance id"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="p">(</span><span class="n">IRI</span><span class="p">,</span> <span class="n">BNode</span><span class="p">)):</span>
+            <span class="nb">id</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+        <span class="c1"># Core attributes - use provided id or instance id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ogm</span> <span class="o">=</span> <span class="n">ogm</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">class_spec</span> <span class="o">=</span> <span class="n">class_spec</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">instance</span>
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Lifecycle helpers</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_materialized</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Check if the node has a materialized Pydantic instance."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Check if the node has loaded data."""</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span>
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Data access</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Get the raw instance data for this node.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[Dict[IRI, List[Any]]]: Raw instance data if loaded, else None.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span>
+
+    <span class="nd">@data</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">IRILike</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Set or update the raw data for this node.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            value (Optional[Dict[IRILike, List[Any]]]): Raw instance data to set on the node.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_data_check_cyclic</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Node.from_sanitize_data">
+<a class="viewcode-back" href="../../../reference/node/core.html#kapps_ogm.node.core.Node.from_sanitize_data">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_sanitize_data</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">IRILike</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span>
+        <span class="n">known_nodes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="s2">"Node"</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"Node"</span><span class="p">:</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">)</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">_set_data_check_cyclic</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">known_nodes</span><span class="o">=</span><span class="n">known_nodes</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">node</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set_data_check_cyclic</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">IRILike</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]]],</span>
+        <span class="n">known_nodes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="s2">"Node"</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">known_nodes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">known_nodes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">known_nodes</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="c1"># Sanitize data through the formatter</span>
+        <span class="n">sanitized</span><span class="p">,</span> <span class="n">node_id</span> <span class="o">=</span> <span class="n">sanitize_data</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">known_nodes</span><span class="o">=</span><span class="n">known_nodes</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">sanitized</span>
+
+        <span class="c1"># Update node ID if found in data</span>
+        <span class="k">if</span> <span class="n">node_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">node_id</span>
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Materialization</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">class_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"ClassSpec"</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Get the ClassSpec associated with this node."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_class_spec</span>
+
+    <span class="nd">@class_spec</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">class_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"ClassSpec"</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Set or update the ClassSpec associated with this node."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_recursive_update_nodes_class_spec</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_recursive_update_nodes_class_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">class_spec</span><span class="p">:</span> <span class="s2">"ClassSpec"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Recursively set or update the ClassSpecs for the nodes contained in this nodes data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            class_spec (ClassSpec): The ClassSpec to assign to this node.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_class_spec</span> <span class="o">=</span> <span class="n">class_spec</span>
+
+        <span class="k">if</span> <span class="n">class_spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_data</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">class_spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Node </span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2"> has data but no matching ClassSpec"</span><span class="p">)</span>
+
+        <span class="c1"># Recursively set class_specs for nested nodes</span>
+        <span class="c1"># Find properties present both in data and class_spec that contain nodes, and are OBJECT or COMPLEX respectively</span>
+        <span class="n">data_properties</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">prop_iri</span>
+            <span class="k">for</span> <span class="n">prop_iri</span><span class="p">,</span> <span class="n">domain_list</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">domain_list</span>
+            <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">domain_instance</span><span class="p">,</span> <span class="n">Node</span><span class="p">)</span> <span class="k">for</span> <span class="n">domain_instance</span> <span class="ow">in</span> <span class="n">domain_list</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">spec_properties</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">prop_iri</span>
+            <span class="k">for</span> <span class="n">prop_iri</span><span class="p">,</span> <span class="n">prop_spec</span> <span class="ow">in</span> <span class="n">class_spec</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">prop_spec</span><span class="o">.</span><span class="n">value_kind</span>
+            <span class="ow">in</span> <span class="p">{</span><span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">OBJECT</span><span class="p">,</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">COMPLEX</span><span class="p">}</span>
+        <span class="p">)</span>
+        <span class="n">unknown_properties</span> <span class="o">=</span> <span class="n">data_properties</span> <span class="o">-</span> <span class="n">spec_properties</span>
+        <span class="k">if</span> <span class="n">unknown_properties</span><span class="p">:</span>
+            <span class="c1"># TODO This error is thrown before self.__repr__ is possible, as self.instance is not yet set.</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Node </span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2"> data contains OBJECT or COMPLEX properties not defined in ClassSpec </span><span class="si">{</span><span class="n">class_spec</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">unknown_properties</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+        <span class="n">known_properties</span> <span class="o">=</span> <span class="n">data_properties</span> <span class="o">&amp;</span> <span class="n">spec_properties</span>
+
+        <span class="c1"># Check each property against its specification</span>
+        <span class="k">for</span> <span class="n">property_iri</span> <span class="ow">in</span> <span class="n">known_properties</span><span class="p">:</span>
+            <span class="n">domain_list</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">property_iri</span><span class="p">]</span>
+            <span class="n">prop_spec</span> <span class="o">=</span> <span class="n">class_spec</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">property_iri</span><span class="p">]</span>
+
+            <span class="k">for</span> <span class="n">domain_instance</span> <span class="ow">in</span> <span class="n">domain_list</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">domain_instance</span><span class="p">,</span> <span class="n">Node</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"Node </span><span class="si">{</span><span class="bp">self</span><span class="si">}</span><span class="s2"> property </span><span class="si">{</span><span class="n">property_iri</span><span class="si">}</span><span class="s2"> expected Node instances, got literal </span><span class="si">{</span><span class="n">domain_instance</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="p">)</span>
+
+                <span class="n">domain_instance</span><span class="o">.</span><span class="n">class_spec</span> <span class="o">=</span> <span class="n">prop_spec</span><span class="o">.</span><span class="n">nested</span>
+
+<div class="viewcode-block" id="Node.materialize">
+<a class="viewcode-back" href="../../../reference/node/core.html#kapps_ogm.node.core.Node.materialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">materialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">reload</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseModel</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Return a validated Pydantic model instance for this node.</span>
+
+<span class="sd">        Lazily materializes the nodes loaded data into a Pydantic model on first</span>
+<span class="sd">        access and caches the result. Subsequent calls return the cached instance</span>
+<span class="sd">        without reprocessing.</span>
+
+<span class="sd">        If data has not yet been loaded, it is loaded automatically before</span>
+<span class="sd">        materialization.</span>
+
+<span class="sd">        If ``reload`` is True, any cached instance is discarded. The nodes data</span>
+<span class="sd">        is reloaded from the database and a new instance is materialized.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            BaseModel: A validated Pydantic model corresponding to the nodes</span>
+<span class="sd">            ClassSpec. The instance is cached on the node.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: If no OGM is attached to load data.</span>
+<span class="sd">            ValidationError: If the loaded data violates the ClassSpec constraints.</span>
+
+<span class="sd">        Notes:</span>
+<span class="sd">            - This is the preferred way to access node data in application code.</span>
+<span class="sd">            - Modifications to the returned instance must be persisted explicitly</span>
+<span class="sd">              via the OGM.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">reload</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Node has no data"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Node has no ClassSpec"</span><span class="p">)</span>
+
+        <span class="c1"># Validate data</span>
+        <span class="n">NodeValidator</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="c1"># Format data for Pydantic</span>
+        <span class="n">formatted_data</span> <span class="o">=</span> <span class="n">format_for_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">model_cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_spec</span><span class="o">.</span><span class="n">to_pydantic_model</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">model_cls</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">formatted_data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span></div>
+
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Change handling</span>
+    <span class="c1"># -------------------------</span>
+
+<div class="viewcode-block" id="Node.diff">
+<a class="viewcode-back" href="../../../reference/node/core.html#kapps_ogm.node.core.Node.diff">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">diff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Triple</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Triple</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Compute the triples to update this node to match new_node.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            other (Node): The target node state to commit to.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple[Tuple[Triple], Tuple[Triple]]: A tuple containing two tuples:</span>
+<span class="sd">                - old triples to remove</span>
+<span class="sd">                - new triples to add</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: If other is not a Node instance.</span>
+<span class="sd">        """</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Node</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Can only diff against another Node instance"</span><span class="p">)</span>
+
+        <span class="n">old_node_triples</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">group_triples_by_bnode</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_triples</span><span class="p">()))</span>
+        <span class="n">new_node_triples</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">group_triples_by_bnode</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">to_triples</span><span class="p">()))</span>
+
+        <span class="n">old_triples</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">new_triples</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">triple_set</span> <span class="ow">in</span> <span class="n">old_node_triples</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">triple_set</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">new_node_triples</span><span class="p">:</span>
+                <span class="n">old_triples</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">triple_set</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">triple_set</span> <span class="ow">in</span> <span class="n">new_node_triples</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">triple_set</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">old_node_triples</span><span class="p">:</span>
+                <span class="n">new_triples</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">triple_set</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">old_triples</span><span class="p">,</span> <span class="n">new_triples</span></div>
+
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Serialization (delegated)</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.node_serializer</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_triples</span><span class="p">,</span> <span class="n">to_json_ld</span>
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Property chain extraction (delegated)</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">.node_property_chains</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_property_chains</span>
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Debugging utilities</span>
+    <span class="c1"># -------------------------</span>
+
+<div class="viewcode-block" id="Node.log_data_debug">
+<a class="viewcode-back" href="../../../reference/node/core.html#kapps_ogm.node.core.Node.log_data_debug">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">log_data_debug</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Pretty print data for debugging."""</span>
+        <span class="k">if</span> <span class="n">logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.pretty_print</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_node_data</span>
+
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">format_node_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span></div>
+
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Representation</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Return a concise string representation of the node for debugging.</span>
+
+<span class="sd">        The representation reflects the nodes lifecycle state:</span>
+<span class="sd">        - Materialized nodes include the Pydantic instance representation.</span>
+<span class="sd">        - Unmaterialized nodes include the node IRI and flags indicating whether</span>
+<span class="sd">        data and a ClassSpec are present.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: A human-readable representation of the nodes current state.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"Node&lt;instance </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">instance</span><span class="si">!r}</span><span class="s2">&gt;"</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Node&lt;ref </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">!r}</span><span class="s2">, "</span>
+            <span class="sa">f</span><span class="s2">"data=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">has_data</span><span class="si">}</span><span class="s2">, "</span>
+            <span class="sa">f</span><span class="s2">"class_spec=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">class_spec</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="kc">None</span><span class="si">}</span><span class="s2">&gt;"</span>
+        <span class="p">)</span>
+
+    <span class="c1"># -------------------------</span>
+    <span class="c1"># Pydantic integration</span>
+    <span class="c1"># -------------------------</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">__get_pydantic_core_schema__</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">source_type</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">handler</span><span class="p">:</span> <span class="n">GetCoreSchemaHandler</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CoreSchema</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Provide a permissive Pydantic core schema for IRI fields.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            source_type (Any): The source type passed by Pydantic.</span>
+<span class="sd">            handler (GetCoreSchemaHandler): Pydantic schema handler.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            CoreSchema: A schema accepting any value (validated by IRI itself).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">core_schema</span><span class="o">.</span><span class="n">any_schema</span><span class="p">()</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
