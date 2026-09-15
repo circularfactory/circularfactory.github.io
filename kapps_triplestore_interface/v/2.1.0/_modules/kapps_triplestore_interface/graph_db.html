@@ -1,0 +1,894 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_triplestore_interface.graph_db &#8212; kapps-triplestore-interface</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=84dee9b8" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../_static/documentation_options.js?v=20623aea"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_triplestore_interface/graph_db';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_triplestore_interface/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-triplestore-interface</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_triplestore_interface" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-triplestore-interface/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_triplestore_interface" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-triplestore-interface/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_triplestore_interface.graph_db</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_triplestore_interface.graph_db</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">base64</span><span class="w"> </span><span class="kn">import</span> <span class="n">b64encode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.kafka.kafka_manager</span><span class="w"> </span><span class="kn">import</span> <span class="n">KafkaManager</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">requests</span><span class="w"> </span><span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils.graph_db_credentials</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphDBCredentials</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils.iri</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphNameLike</span><span class="p">,</span> <span class="n">GraphName</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.sparql_query</span><span class="w"> </span><span class="kn">import</span> <span class="n">SPARQLQuery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">InvalidRepositoryError</span><span class="p">,</span>
+    <span class="n">AuthenticationError</span><span class="p">,</span>
+    <span class="n">GraphDbException</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.utils.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">convert_multi_bindings_to_python_type</span>
+
+
+<div class="viewcode-block" id="GraphDB">
+<a class="viewcode-back" href="../../reference/graph_db.html#kapps_triplestore_interface.graph_db.GraphDB">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">GraphDB</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    High-level client for GraphDB repositories.</span>
+
+<span class="sd">    Provides convenience methods for querying and updating data, manages</span>
+<span class="sd">    authentication, repository selection, a default named graph, and a</span>
+<span class="sd">    Kafka connector manager.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">credentials</span><span class="p">:</span> <span class="n">GraphDBCredentials</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>
+        <span class="n">use_gdb_token</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphNameLike</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">logger</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logger</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span> <span class="o">=</span> <span class="n">credentials</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_blank_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="c1"># A persistent session per thread, so the connection pool survives across calls.</span>
+        <span class="c1"># The module-level `requests.get`/`requests.post` helpers build a throwaway session</span>
+        <span class="c1"># per call, which means a new TCP connect and a full TLS handshake for every SPARQL</span>
+        <span class="c1"># query — against a remote HTTPS endpoint that dominates the cost of a query, and a</span>
+        <span class="c1"># client typically issues many.</span>
+        <span class="c1">#</span>
+        <span class="c1"># Per thread rather than one shared session, because a `requests.Session` is not</span>
+        <span class="c1"># thread-safe: its cookie jar is mutated by every response. One client is commonly</span>
+        <span class="c1"># driven from several threads at once — a web framework serving requests while the</span>
+        <span class="c1"># embedding code queries — and urllib3's pools are thread-safe but the session</span>
+        <span class="c1"># around them is not. Each thread pays one handshake and then reuses its own pool.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_thread_local</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">local</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sessions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sessions_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">use_gdb_token</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_authentication_token</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span><span class="o">.</span><span class="n">password</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">token</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span><span class="o">.</span><span class="n">password</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"utf-8"</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Basic </span><span class="si">{</span><span class="n">b64encode</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_repositories</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of_repositories</span><span class="p">(</span><span class="n">only_ids</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">repository</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">repository</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">named_graph</span> <span class="o">=</span> <span class="n">named_graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kafka_manager</span> <span class="o">=</span> <span class="n">KafkaManager</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Using GraphDB repository '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">repository</span><span class="si">}</span><span class="s2">' as user '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span><span class="o">.</span><span class="n">username</span><span class="si">}</span><span class="s2">'."</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GraphDB.from_env">
+<a class="viewcode-back" href="../../reference/graph_db.html#kapps_triplestore_interface.graph_db.GraphDB.from_env">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_env</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GraphDB</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Construct a client using environment-based credentials.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            GraphDB: A configured `GraphDB` instance using `GraphDBCredentials.from_env()`.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">GraphDBCredentials</span><span class="o">.</span><span class="n">from_env</span><span class="p">(),</span> <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">)</span></div>
+
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.queries.named_graph</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">get_list_of_named_graphs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.queries.rdf4j.graph_store</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">fetch_statements</span><span class="p">,</span>
+        <span class="n">import_statements</span><span class="p">,</span>
+        <span class="n">clear_graph</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.queries.triple_single</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">triple_exists</span><span class="p">,</span>
+        <span class="n">triple_add</span><span class="p">,</span>
+        <span class="n">triple_delete</span><span class="p">,</span>
+        <span class="n">triple_update</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.queries.triple_multi</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">triples_get</span><span class="p">,</span>
+        <span class="n">any_triple_exists</span><span class="p">,</span>
+        <span class="n">all_triple_exists</span><span class="p">,</span>
+        <span class="n">triples_add</span><span class="p">,</span>
+        <span class="n">triples_delete</span><span class="p">,</span>
+        <span class="n">triples_update</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.queries.ontology_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">iri_exists</span><span class="p">,</span>
+        <span class="n">new_iri</span><span class="p">,</span>
+        <span class="n">new_blank_id</span><span class="p">,</span>
+        <span class="n">is_subclass</span><span class="p">,</span>
+        <span class="n">owl_is_named_individual</span><span class="p">,</span>
+        <span class="n">owl_get_classes_of_individual</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repository</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The currently selected repository identifier.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The active repository id.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repository</span>
+
+    <span class="nd">@repository</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">repository</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_repository</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_repository</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">named_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphName</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The currently selected default named graph.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[IRI]: The default named graph as an `IRI`, or `None` if unset.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_named_graph</span>
+
+    <span class="nd">@named_graph</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">named_graph</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">GraphNameLike</span><span class="p">],</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_named_graph</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span>
+
+        <span class="n">value</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_list_of_named_graphs</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Passed named graph </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> does not exist in the repository."</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_named_graph</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">named_graph_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        The selected default named graph as a string.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[str]: The IRI string of the default named graph, or `None`.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_named_graph</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_named_graph</span><span class="p">)</span>
+
+<div class="viewcode-block" id="GraphDB.get_list_of_repositories">
+<a class="viewcode-back" href="../../reference/graph_db.html#kapps_triplestore_interface.graph_db.GraphDB.get_list_of_repositories">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_list_of_repositories</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">only_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        List repositories available on the GraphDB instance.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            only_ids (Optional[bool]): When True, return only the repository ids. When False,</span>
+<span class="sd">                return the full repository descriptor objects. Defaults to False.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Union[List[str], List[dict], None]: A list of ids if `only_ids=True`, a list of</span>
+<span class="sd">            repository descriptors otherwise, or `None` when the request fails.</span>
+<span class="sd">        """</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span><span class="s2">"get"</span><span class="p">,</span> <span class="s2">"rest/repositories"</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">repositories</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">only_ids</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">[</span><span class="n">repo</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">repo</span> <span class="ow">in</span> <span class="n">repositories</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">repositories</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Failed to list repositories: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_validate_repository</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Validate that the repository exists on the server.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            repository (str): The repository identifier to validate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The validated repository identifier.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            InvalidRepositoryError: If the repository is not available.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="n">repository</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repositories</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">InvalidRepositoryError</span><span class="p">(</span>
+                <span class="s2">"Invalid repository name. Allowed values are:"</span>
+                <span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_repositories</span><span class="p">))</span><span class="si">}</span><span class="s2">."</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">repository</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_make_request</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Response</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Perform an authenticated HTTP request to the GraphDB REST API.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            method (str): The HTTP method (e.g., "get", "post").</span>
+<span class="sd">            endpoint (str): The REST endpoint path relative to `base_url`.</span>
+<span class="sd">            timeout (Optional[int]): Request timeout in seconds; defaults to the client setting.</span>
+<span class="sd">            **kwargs: Additional arguments forwarded to `requests`.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: The `requests.Response` object.</span>
+<span class="sd">        """</span>
+        <span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span> <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span>
+
+        <span class="n">headers</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"headers"</span><span class="p">,</span> <span class="p">{})</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">headers</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">method</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_credentials</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">endpoint</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_session</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""This thread's persistent session, created on first use."""</span>
+        <span class="n">session</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_thread_local</span><span class="p">,</span> <span class="s2">"session"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">session</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_thread_local</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">session</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sessions_lock</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_sessions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">session</span>
+
+<div class="viewcode-block" id="GraphDB.close">
+<a class="viewcode-back" href="../../reference/graph_db.html#kapps_triplestore_interface.graph_db.GraphDB.close">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Release the HTTP connection pools held for every thread that used this client."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sessions_lock</span><span class="p">:</span>
+            <span class="n">sessions</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sessions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sessions</span><span class="p">,</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">session</span> <span class="ow">in</span> <span class="n">sessions</span><span class="p">:</span>
+            <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_authentication_token</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Obtain a GraphDB authentication token.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            username (str): The GraphDB username.</span>
+<span class="sd">            password (str): The GraphDB password.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The `Authorization` header value (e.g., `Bearer ...`).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AuthenticationError: If a token cannot be obtained with the provided credentials.</span>
+<span class="sd">        """</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"username"</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+            <span class="s2">"password"</span><span class="p">:</span> <span class="n">password</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span><span class="s2">"post"</span><span class="p">,</span> <span class="s2">"rest/login"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"Authorization"</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Failed to obtain gdb token: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+        <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span>
+            <span class="s2">"You were unable to obtain a token given your provided credentials."</span>
+            <span class="s2">" Please make sure, that your provided credentials are valid."</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="GraphDB.query">
+<a class="viewcode-back" href="../../reference/graph_db.html#kapps_triplestore_interface.graph_db.GraphDB.query">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">query</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SPARQLQuery</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+        <span class="n">update</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">convert_bindings</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Execute a SPARQL query or update against the repository.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            query (Union[SPARQLQuery, str]): The SPARQL query/update string to execute.</span>
+<span class="sd">            update (Optional[bool]): If True, perform an update; otherwise perform a read query.</span>
+<span class="sd">                Defaults to False.</span>
+<span class="sd">            convert_bindings (Optional[bool]): Whether to convert query result bindings to Python types.</span>
+<span class="sd">                Defaults to True.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Optional[Union[Dict, bool]]: If `update` is False, the parsed JSON result dict.</span>
+<span class="sd">            If `update` is True, `True` on success. Returns `None` or `False` only when</span>
+<span class="sd">            failures are handled upstream; otherwise an exception is raised.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: If the `query` parameter is neither a `SPARQLQuery` nor a string.</span>
+<span class="sd">            InvalidQueryError: If the SPARQL query is malformed.</span>
+<span class="sd">            GraphDbException: If the HTTP request succeeds but the GraphDB API returns an error status.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">SPARQLQuery</span><span class="p">):</span>
+            <span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"Query must be a SPARQLQuery or a string."</span><span class="p">)</span>
+
+        <span class="n">endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"repositories/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_repository</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"Content-Type"</span><span class="p">:</span> <span class="s2">"application/sparql-query"</span><span class="p">,</span>
+            <span class="s2">"Accept"</span><span class="p">:</span> <span class="s2">"application/sparql-results+json"</span><span class="p">,</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="n">update</span><span class="p">:</span>
+            <span class="n">endpoint</span> <span class="o">+=</span> <span class="s2">"/statements"</span>
+            <span class="n">headers</span><span class="p">[</span><span class="s2">"Content-Type"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"application/sparql-update"</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span><span class="s2">"post"</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="n">status_code</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Error while querying GraphDB (</span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s2">) - </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+            <span class="k">raise</span> <span class="n">GraphDbException</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Error while querying GraphDB (</span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s2">) - </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'Query</span><span class="se">\n</span><span class="s1">"""</span><span class="se">\n</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="se">\n</span><span class="s1">"""</span><span class="se">\n</span><span class="s1">Returned</span><span class="se">\n</span><span class="si">{</span><span class="s2">"Update successful (200)"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="si">}</span><span class="s1">'</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">update</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">convert_bindings</span>
+            <span class="ow">and</span> <span class="s2">"results"</span> <span class="ow">in</span> <span class="n">response</span>
+            <span class="ow">and</span> <span class="s2">"bindings"</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s2">"results"</span><span class="p">]</span>
+        <span class="p">):</span>
+            <span class="n">bindings</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+            <span class="n">converted_bindings</span> <span class="o">=</span> <span class="n">convert_multi_bindings_to_python_type</span><span class="p">(</span><span class="n">bindings</span><span class="p">)</span>
+            <span class="n">response</span><span class="p">[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span> <span class="o">=</span> <span class="n">converted_bindings</span>
+
+        <span class="k">return</span> <span class="n">response</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jan-Felix Klein; 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
