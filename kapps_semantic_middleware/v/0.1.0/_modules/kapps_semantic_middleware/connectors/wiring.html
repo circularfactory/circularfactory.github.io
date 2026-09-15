@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.connectors.wiring &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/connectors/wiring';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.connectors.wiring</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.connectors.wiring</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Recognition and wiring: turn a resource's ClassSpec into connector registrations.</span>
+
+<span class="sd">This is the step that registers from the knowledge graph. It runs at</span>
+<span class="sd">**construction**, not during ``on_start_up``. The reason is sharp. ``lifespan`` calls</span>
+<span class="sd">``connect()`` on everything in the connection registry *before* it runs ``on_start_up``</span>
+<span class="sd">callbacks. ``initiate_sync`` (what ``add_synced_connector`` defers) starts</span>
+<span class="sd">``run_receive()``, but never calls ``connect()``. A connector registered while the</span>
+<span class="sd">datamodel materializes therefore never connects. The client stays ``None``. The listener</span>
+<span class="sd">task never starts. Its queue is never fed. ``receive()`` blocks forever. Outbound would</span>
+<span class="sd">limp along, because ``consume()`` reconnects on failure. The failure is one-directional</span>
+<span class="sd">and silent.</span>
+
+<span class="sd">Register at construction instead. This avoids the failure, with no out-of-band lifecycle</span>
+<span class="sd">call. It is possible because everything a ``ConnectionInfo`` needs comes from the</span>
+<span class="sd">ClassSpec and the graph.</span>
+
+<span class="sd">Two shapes come out of here. Both are required.</span>
+
+<span class="sd">- The **full** spec. The bindings read it to find broker addresses and topics.</span>
+<span class="sd">- The **pruned** spec. The system serves this northbound.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.sync.synced_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">SyncDirection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.connectors.semantic</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ParameterBinding</span><span class="p">,</span>
+    <span class="n">Registration</span><span class="p">,</span>
+    <span class="n">SemanticConnectorRegistry</span><span class="p">,</span>
+    <span class="n">normalize_metadata</span><span class="p">,</span>
+    <span class="n">resolve_direction</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.projection</span><span class="w"> </span><span class="kn">import</span> <span class="n">cross_check</span><span class="p">,</span> <span class="n">prune_southbound</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">META_TYPE_NAMESPACES</span><span class="p">,</span> <span class="n">RDFS</span><span class="p">,</span> <span class="n">SVC</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">EXPLICIT_GRAPH</span> <span class="o">=</span> <span class="s2">"FROM &lt;http://www.ontotext.com/explicit&gt;"</span>
+<span class="sd">"""Restrict a query to asserted triples.</span>
+
+<span class="sd">It is not an ontology term, so it does not belong in ``vocabulary.py``. It names a GraphDB</span>
+<span class="sd">*feature*, the pseudo-graph of explicit statements. It is a constant rather than three inline</span>
+<span class="sd">copies because every recognition query needs it for the same reason. The default graph</span>
+<span class="sd">includes materialized inference, and a parameter node's only types are anonymous restriction</span>
+<span class="sd">nodes that exist by inference alone. Count or read without this. This returns</span>
+<span class="sd">inferred triples and inflates every result.</span>
+<span class="sd">"""</span>
+
+
+<div class="viewcode-block" id="WiringPlan">
+<a class="viewcode-back" href="../../../reference/connectors/wiring.html#kapps_semantic_middleware.connectors.wiring.WiringPlan">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WiringPlan</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""This describes what recognition found, and what the caller should do about it."""</span>
+
+    <span class="n">northbound_spec</span><span class="p">:</span> <span class="n">Any</span>
+<span class="w">    </span><span class="sd">"""The pruned ClassSpec, safe to materialize and serve."""</span>
+
+    <span class="n">class_scope</span><span class="p">:</span> <span class="n">Any</span>
+<span class="w">    </span><span class="sd">"""The scope where the system resolves the specs.</span>
+
+<span class="sd">    Keep this because a fetch needs **both**. ``_fetch_object_property`` decides whether a nested</span>
+<span class="sd">    individual is hydrated or fetched as a bare reference from the *class_scope*</span>
+<span class="sd">    (``as_reference = nested_class_scope is None``), not from whether the spec it was handed</span>
+<span class="sd">    has a ``nested``. Passing only the pruned spec yields belts and barriers with empty</span>
+<span class="sd">    parameters. Use :func:`northbound_fetch_kwargs` rather than restate this."""</span>
+
+    <span class="n">bindings</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""This lists every recognized interface-accessible parameter. Populate for every flavour,</span>
+<span class="sd">    including one that wires nothing. The system never gates recognition."""</span>
+
+    <span class="n">registrations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">,</span> <span class="n">Registration</span><span class="p">]]</span>
+<span class="w">    </span><span class="sd">"""The connector registrations to perform. Empty when the flavour wires nothing."""</span>
+
+    <span class="n">southbound_properties</span><span class="p">:</span> <span class="nb">frozenset</span>
+<span class="w">    </span><span class="sd">"""The prune set that was applied, kept for assertions and diagnostics."""</span>
+
+    <span class="n">southbound_by_property</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">frozenset</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The same prune set, broken out per recognized parameter property rather than</span>
+<span class="sd">    unioned across all of them. ``plan_wiring`` already computes this as a cache</span>
+<span class="sd">    (``southbound_by_property``, one ontology round trip per distinct property rather</span>
+<span class="sd">    than one per binding) and used to discard it once ``southbound_properties`` was</span>
+<span class="sd">    built. Kept here instead: a consumer that shows what pruning stripped *per</span>
+<span class="sd">    parameter* -- the demo's station board -- needs exactly this breakdown, and recomputing it a second time would cost</span>
+<span class="sd">    the same ontology queries this cache exists to avoid paying twice."""</span>
+
+<div class="viewcode-block" id="WiringPlan.northbound_fetch_kwargs">
+<a class="viewcode-back" href="../../../reference/connectors/wiring.html#kapps_semantic_middleware.connectors.wiring.WiringPlan.northbound_fetch_kwargs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">northbound_fetch_kwargs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The arguments that materialize this resource's northbound view."""</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"class_spec"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">northbound_spec</span><span class="p">,</span>
+            <span class="s2">"class_scope"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_scope</span><span class="p">,</span>
+            <span class="s2">"materialize"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="p">}</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="plan_wiring">
+<a class="viewcode-back" href="../../../reference/connectors/wiring.html#kapps_semantic_middleware.connectors.wiring.plan_wiring">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">plan_wiring</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">resource_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">class_scope</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">resource_class</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">registry</span><span class="p">:</span> <span class="n">SemanticConnectorRegistry</span><span class="p">,</span>
+    <span class="n">flavour</span><span class="p">:</span> <span class="n">SyncDirection</span> <span class="o">=</span> <span class="n">SyncDirection</span><span class="o">.</span><span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+    <span class="n">autoregister</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">WiringPlan</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Resolve a resource's parameters and decide what to connect.</span>
+
+<span class="sd">    ``autoregister`` gates only the registrations. Produce the spec, the projection, and</span>
+<span class="sd">    the recognized bindings either way. An inspecting instance that skipped recognition</span>
+<span class="sd">    would treat every parameter node as ordinary data, and serve its broker address. The</span>
+<span class="sd">    least-privileged connector wiring would leak the most.</span>
+
+<span class="sd">    ``ensure_transport`` is the deployment's transport hook. Wrapped once here,</span>
+<span class="sd">    fresh per call, so it fires at most once per distinct ``(host, port)`` across every</span>
+<span class="sd">    binding built below -- a binding descriptor calls it unconditionally and the wrapper</span>
+<span class="sd">    absorbs the dedup, so no descriptor has to track addresses it has already seen across</span>
+<span class="sd">    calls it cannot see each other from.</span>
+<span class="sd">    """</span>
+    <span class="n">resource_class</span> <span class="o">=</span> <span class="n">resource_class</span> <span class="ow">or</span> <span class="n">class_of</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">resource_iri</span><span class="p">)</span>
+    <span class="n">full_spec</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">get_class_spec</span><span class="p">(</span><span class="n">class_iri</span><span class="o">=</span><span class="n">resource_class</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">)</span>
+
+    <span class="c1"># The projection asks the *ontology* what is protocol metadata, not the registry. A</span>
+    <span class="c1"># registry-derived set only knows the protocols this middleware has code for, and a</span>
+    <span class="c1"># parameter reachable over an unregistered protocol would have its endpoint served</span>
+    <span class="c1"># (measured). Recompute here on every construction, because the ontology may</span>
+    <span class="c1"># have grown a protocol since this instance last started.</span>
+    <span class="c1"># `cache` is shared with the loop below so the ontology is asked once per distinct property</span>
+    <span class="c1"># rather than once per use. Every one of these is a live SPARQL round trip, and the store</span>
+    <span class="c1"># this runs against refuses distinct/group-by queries under memory pressure. Redundant</span>
+    <span class="c1"># queries are not merely slow. They raise the chance of a spurious startup failure.</span>
+    <span class="n">southbound_by_property</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">frozenset</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">northbound_spec</span> <span class="o">=</span> <span class="n">prune_southbound</span><span class="p">(</span><span class="n">full_spec</span><span class="p">,</span> <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span> <span class="n">cache</span><span class="o">=</span><span class="n">southbound_by_property</span><span class="p">)</span>
+
+    <span class="n">bindings</span> <span class="o">=</span> <span class="n">_recognise</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+        <span class="n">resource_iri</span><span class="o">=</span><span class="n">resource_iri</span><span class="p">,</span>
+        <span class="n">resource_class</span><span class="o">=</span><span class="n">resource_class</span><span class="p">,</span>
+        <span class="n">spec</span><span class="o">=</span><span class="n">full_spec</span><span class="p">,</span>
+        <span class="n">registry</span><span class="o">=</span><span class="n">registry</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">southbound</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+        <span class="n">prop</span>
+        <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">bindings</span>
+        <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">southbound_by_property</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">),</span> <span class="p">())</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Cross-check the two declarations against each other. The ontology governs what is hidden.</span>
+    <span class="c1"># A descriptor's connection_metadata says what it reads. Disagreement is a real deployment</span>
+    <span class="c1"># state rather than an error, so report it and do not raise.</span>
+    <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">:</span>
+        <span class="n">cross_check</span><span class="p">(</span>
+            <span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">,</span>
+            <span class="n">southbound_by_property</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">),</span> <span class="p">()),</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">descriptor</span><span class="p">,</span> <span class="s2">"connection_metadata"</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="n">deduped_ensure_transport</span> <span class="o">=</span> <span class="n">_dedupe_by_address</span><span class="p">(</span><span class="n">ensure_transport</span><span class="p">)</span>
+
+    <span class="n">registrations</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">,</span> <span class="n">Registration</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">autoregister</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">:</span>
+            <span class="n">direction</span> <span class="o">=</span> <span class="n">resolve_direction</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">access_mode</span><span class="p">,</span> <span class="n">flavour</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">registration</span> <span class="ow">in</span> <span class="n">binding</span><span class="o">.</span><span class="n">descriptor</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
+                <span class="n">binding</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">ensure_transport</span><span class="o">=</span><span class="n">deduped_ensure_transport</span>
+            <span class="p">):</span>
+                <span class="n">registrations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">binding</span><span class="p">,</span> <span class="n">registration</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">"autoregister_connectors=False: recognized </span><span class="si">%d</span><span class="s2"> parameter(s) on </span><span class="si">%s</span><span class="s2"> and connected "</span>
+            <span class="s2">"none. The northbound projection still applies."</span><span class="p">,</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">bindings</span><span class="p">),</span>
+            <span class="n">resource_iri</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">WiringPlan</span><span class="p">(</span>
+        <span class="n">northbound_spec</span><span class="o">=</span><span class="n">northbound_spec</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="o">=</span><span class="n">class_scope</span><span class="p">,</span>
+        <span class="n">bindings</span><span class="o">=</span><span class="n">bindings</span><span class="p">,</span>
+        <span class="n">registrations</span><span class="o">=</span><span class="n">registrations</span><span class="p">,</span>
+        <span class="n">southbound_properties</span><span class="o">=</span><span class="n">southbound</span><span class="p">,</span>
+        <span class="n">southbound_by_property</span><span class="o">=</span><span class="n">southbound_by_property</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_dedupe_by_address</span><span class="p">(</span>
+    <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Wrap a transport hook so it fires at most once per distinct ``(host, port)``.</span>
+
+<span class="sd">    ``None`` in, ``None`` out -- a resource with no hook calls nothing. Otherwise</span>
+<span class="sd">    a fresh ``seen`` set is closed over per call to :func:`plan_wiring`, which is exactly the</span>
+<span class="sd">    scope one middleware construction spans. A resource whose parameters ever name two</span>
+<span class="sd">    addresses gets the hook called twice; four parameters sharing one address get it once,</span>
+<span class="sd">    before the first connector for that address is built.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">ensure_transport</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">seen</span><span class="p">:</span> <span class="nb">set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">wrapped</span><span class="p">(</span><span class="n">host</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">ensure_transport</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">wrapped</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_recognise</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">resource_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">resource_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">registry</span><span class="p">:</span> <span class="n">SemanticConnectorRegistry</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Walk a resource's spec and the graph, and pair each parameter with its descriptor.</span>
+
+<span class="sd">    Match on the **interface property**, not on ``rdf:type``. A parameter node has no</span>
+<span class="sd">    named type of its own. It has only anonymous restriction nodes, which exist by inference and so</span>
+<span class="sd">    never appear in an explicit-graph fetch. The property hierarchy is what survives a</span>
+<span class="sd">    round trip.</span>
+
+<span class="sd">    **The evidence may sit on the parameter or on the resource's Service**. An MQTT connector recognises ``inf:hasMQTTTopic`` on</span>
+<span class="sd">    the parameter itself. A REST connector has no such marker; its evidence is the resource's</span>
+<span class="sd">    own ``svc:address``, one hop out through ``svc:isServiceOf``. Look that address up **once**</span>
+<span class="sd">    per resource here, and fold it into every recognised binding's metadata alongside whatever</span>
+<span class="sd">    the parameter node itself carries — a binding descriptor that does not care (MQTT) simply</span>
+<span class="sd">    never reads the key.</span>
+<span class="sd">    """</span>
+    <span class="n">bindings</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">_service_address</span><span class="p">(</span><span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span> <span class="n">resource_iri</span><span class="o">=</span><span class="n">resource_iri</span><span class="p">)</span>
+    <span class="c1"># This must equal `type(instance).__name__` for the materialized root -- the {Model}</span>
+    <span class="c1"># segment `rest_router.py` actually mounts routes under. `kapps_ogm`'s</span>
+    <span class="c1"># `ClassSpec.to_pydantic_model` names that class `self.iri.lined`, the class IRI</span>
+    <span class="c1"># mangled whole (`class_spec.py`), not its bare fragment: two classes from different</span>
+    <span class="c1"># namespaces that happen to share a fragment (e.g. two ontologies each defining their</span>
+    <span class="c1"># own `TransferUnit`) would otherwise collide on one Python class name. A REST</span>
+    <span class="c1"># binding derives this route independently, with no served route list to read it</span>
+    <span class="c1"># from, so it has to reconstruct the same mangling `to_pydantic_model` used, not the</span>
+    <span class="c1"># shorter fragment a human would write by hand -- using the fragment here 404s every</span>
+    <span class="c1"># request this binding ever builds.</span>
+    <span class="n">root_class_local_name</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resource_class</span><span class="p">))</span><span class="o">.</span><span class="n">lined</span>
+
+    <span class="k">for</span> <span class="n">holder_iri</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">,</span> <span class="n">prop_spec</span><span class="p">,</span> <span class="n">steps</span> <span class="ow">in</span> <span class="n">_parameter_properties</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span> <span class="n">root_iri</span><span class="o">=</span><span class="n">resource_iri</span><span class="p">,</span> <span class="n">spec</span><span class="o">=</span><span class="n">spec</span>
+    <span class="p">):</span>
+        <span class="n">descriptor</span> <span class="o">=</span> <span class="n">_descriptor_for</span><span class="p">(</span><span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span> <span class="n">prop_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span> <span class="n">registry</span><span class="o">=</span><span class="n">registry</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">descriptor</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Unrecognised complex content is plain data: shown, readable, nothing wired.</span>
+            <span class="c1"># Not an error. The graph may well hold structure this middleware</span>
+            <span class="c1"># has no connector for.</span>
+            <span class="k">continue</span>
+
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">_parameter_metadata</span><span class="p">(</span>
+            <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span> <span class="n">holder_iri</span><span class="o">=</span><span class="n">holder_iri</span><span class="p">,</span> <span class="n">prop_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span> <span class="n">prop_spec</span><span class="o">=</span><span class="n">prop_spec</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">normalize_metadata</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">address</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">metadata</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">address</span><span class="p">),</span> <span class="p">[</span><span class="n">address</span><span class="p">])</span>
+
+        <span class="n">bindings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">ParameterBinding</span><span class="p">(</span>
+                <span class="n">resource_iri</span><span class="o">=</span><span class="n">holder_iri</span><span class="p">,</span>
+                <span class="n">parameter_property</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">)),</span>
+                <span class="c1"># ClassSpec keys arrive as rdflib URIRef, not IRI, so the mangling has to go</span>
+                <span class="c1"># through a converted copy. URIRef has no `lined`.</span>
+                <span class="n">field_id</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">))</span><span class="o">.</span><span class="n">lined</span><span class="p">,</span>
+                <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+                <span class="n">descriptor</span><span class="o">=</span><span class="n">descriptor</span><span class="p">,</span>
+                <span class="n">node_model_type</span><span class="o">=</span><span class="n">prop_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">to_pydantic_model</span><span class="p">(),</span>
+                <span class="n">root_iri</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resource_iri</span><span class="p">)),</span>
+                <span class="n">root_class_local_name</span><span class="o">=</span><span class="n">root_class_local_name</span><span class="p">,</span>
+                <span class="n">path_steps</span><span class="o">=</span><span class="n">steps</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">bindings</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_parameter_properties</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">root_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">spec</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">steps</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()):</span>
+<span class="w">    </span><span class="sd">"""Yield ``(holder_iri, property_iri, property_spec, path_steps)`` for every COMPLEX property.</span>
+
+<span class="sd">    A COMPLEX property is the deepest addressable thing. ``ConnectionInfo`` has exactly three</span>
+<span class="sd">    levels and ``field_id`` resolves by plain ``getattr``, so ``inf:hasValue`` — one level</span>
+<span class="sd">    further down — is unreachable. This is the same atomic unit the routing side reached.</span>
+
+<span class="sd">    Descend one level through object properties to reach a resource's components. A</span>
+<span class="sd">    TransferUnit's parameters hang off its belts and barriers, not off the unit itself.</span>
+
+<span class="sd">    ``path_steps`` accumulates the ``(field_name, child_iri)`` hops taken to reach the</span>
+<span class="sd">    current ``root_iri``, mirroring ``rest_router.py``'s own tree walk exactly — that is what</span>
+<span class="sd">    lets ``rest_binding.py`` derive a structural URL with no second walk and no ontology</span>
+<span class="sd">    term. ``field_name`` is mangled here (``IRI(prop_iri).lined``), the</span>
+<span class="sd">    same way ``field_id`` is mangled below, because that is the actual pydantic field name</span>
+<span class="sd">    the served route uses.</span>
+<span class="sd">    """</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.mapping.property_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">PropertyValueKind</span>
+
+    <span class="k">for</span> <span class="n">prop_iri</span><span class="p">,</span> <span class="n">prop_spec</span> <span class="ow">in</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="s2">"properties"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">prop_spec</span><span class="o">.</span><span class="n">value_kind</span> <span class="ow">is</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">COMPLEX</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">root_iri</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">,</span> <span class="n">prop_spec</span><span class="p">,</span> <span class="n">steps</span>
+            <span class="k">continue</span>
+
+        <span class="n">nested</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">prop_spec</span><span class="p">,</span> <span class="s2">"nested"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nested</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">for</span> <span class="n">component_iri</span> <span class="ow">in</span> <span class="n">_linked_individuals</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">root_iri</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">):</span>
+            <span class="k">yield from</span> <span class="n">_parameter_properties</span><span class="p">(</span>
+                <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+                <span class="n">root_iri</span><span class="o">=</span><span class="n">component_iri</span><span class="p">,</span>
+                <span class="n">spec</span><span class="o">=</span><span class="n">nested</span><span class="p">,</span>
+                <span class="n">steps</span><span class="o">=</span><span class="n">steps</span> <span class="o">+</span> <span class="p">((</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">))</span><span class="o">.</span><span class="n">lined</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">component_iri</span><span class="p">)),),</span>
+            <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_service_address</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">resource_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The resource's own ``svc:address``, one hop out through ``svc:isServiceOf``.</span>
+
+<span class="sd">    One query per ``_recognise`` call, not per parameter — a resource has one Service, and</span>
+<span class="sd">    every parameter on it shares the same answer. ``None`` when the resource has no Service,</span>
+<span class="sd">    or the Service has not (yet) published an address. That is the ordinary state of a</span>
+<span class="sd">    freshly-constructing instance recognising its *own* resource: ``plan_wiring`` runs from</span>
+<span class="sd">    ``__init__``, and ``_register_service`` is an ``on_start_up`` callback that has not run</span>
+<span class="sd">    yet, so there is no address to find and REST recognition finds nothing to bind.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?addr </span><span class="si">{</span><span class="n">EXPLICIT_GRAPH</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"WHERE </span><span class="se">{{</span><span class="s2"> ?svc &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">isServiceOf</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">resource_iri</span><span class="si">}</span><span class="s2">&gt; ; &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&gt; ?addr </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"addr"</span><span class="p">])</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_linked_individuals</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">subject</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""This function returns the individuals a resource references through one object property."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?o </span><span class="si">{</span><span class="n">EXPLICIT_GRAPH</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">subject</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2">&gt; ?o . FILTER(isIRI(?o)) </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"o"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_descriptor_for</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">registry</span><span class="p">:</span> <span class="n">SemanticConnectorRegistry</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""This function returns the registered descriptor whose interface property this property specializes.</span>
+
+<span class="sd">    Resolution walks ``rdfs:subPropertyOf*``, so ``tu:hasConveyorSpeed`` matches the binding</span>
+<span class="sd">    registered for ``inf:isInterfaceAccessibleMQTTParameter``. The most specific registered</span>
+<span class="sd">    match wins. A protocol marker is a subproperty of the generic one, and binding to the</span>
+<span class="sd">    generic one would leave the middleware without a protocol to speak.</span>
+<span class="sd">    """</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">descriptor</span>
+        <span class="k">for</span> <span class="n">descriptor</span> <span class="ow">in</span> <span class="n">registry</span>
+        <span class="k">if</span> <span class="n">_is_subproperty_of</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">,</span> <span class="n">descriptor</span><span class="o">.</span><span class="n">interface_property</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">descriptor</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="n">specializes_all</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>
+            <span class="n">descriptor</span> <span class="ow">is</span> <span class="n">other</span>
+            <span class="ow">or</span> <span class="n">_is_subproperty_of</span><span class="p">(</span>
+                <span class="n">ogm</span><span class="p">,</span> <span class="n">descriptor</span><span class="o">.</span><span class="n">interface_property</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">interface_property</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">matches</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">specializes_all</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">descriptor</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+        <span class="s2">"</span><span class="si">%s</span><span class="s2"> matches </span><span class="si">%d</span><span class="s2"> interface properties with no most-specific one (</span><span class="si">%s</span><span class="s2">); do not bind it."</span><span class="p">,</span>
+        <span class="n">prop_iri</span><span class="p">,</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">),</span>
+        <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">interface_property</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_subproperty_of</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">ancestor</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""This function returns whether ``prop_iri`` is ``ancestor`` or specializes it, transitively."""</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"ASK </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2">&gt; "</span>
+            <span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">RDFS</span><span class="o">.</span><span class="n">subPropertyOf</span><span class="si">}</span><span class="s2">&gt;* &lt;</span><span class="si">{</span><span class="n">ancestor</span><span class="si">}</span><span class="s2">&gt; </span><span class="se">}}</span><span class="s2">"</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"boolean"</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_parameter_metadata</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">holder_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">prop_spec</span><span class="p">:</span> <span class="n">Any</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Read one parameter node's properties straight from the ABox.</span>
+
+<span class="sd">    Read from the graph rather than from a materialized model because this runs at</span>
+<span class="sd">    construction, before any datamodel exists. Return only properties the effective shape declares.</span>
+<span class="sd">    A property the restriction does not declare would never survive a write</span>
+<span class="sd">    either, so bind to one would produce a connector whose values silently vanish.</span>
+<span class="sd">    """</span>
+    <span class="n">declared</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">prop_spec</span><span class="o">.</span><span class="n">nested</span><span class="p">,</span> <span class="s2">"properties"</span><span class="p">,</span> <span class="p">{})}</span>
+
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?p ?v </span><span class="si">{</span><span class="n">EXPLICIT_GRAPH</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">holder_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2">&gt; ?node . ?node ?p ?v </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> is interface-accessible but its parameter node is empty; nothing to "</span>
+            <span class="s2">"bind. Has the resource received provision?"</span><span class="p">,</span>
+            <span class="n">prop_iri</span><span class="p">,</span>
+            <span class="n">holder_iri</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">undeclared</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="c1"># `row["p"]` is the property IRI -- always stringified for a plain dict key. `row["v"]`</span>
+        <span class="c1"># is left as `convert_bindings=True` produced it: every metadata property here has been</span>
+        <span class="c1"># `xsd:string` until now, so this was a no-op, but forcing `str()` on it would turn</span>
+        <span class="c1"># `inf:hasMQTTBrokerPort`'s `xsd:integer` back into a string (the round trip must hand</span>
+        <span class="c1"># back 18831, not "18831").</span>
+        <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"p"</span><span class="p">]),</span> <span class="n">row</span><span class="p">[</span><span class="s2">"v"</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">declared</span><span class="p">:</span>
+            <span class="n">undeclared</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">metadata</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">undeclared</span><span class="p">:</span>
+        <span class="c1"># Naming the property and the restriction that failed to declare it is the whole</span>
+        <span class="c1"># point: the value would otherwise never flow and the resource would come up</span>
+        <span class="c1"># silently dead.</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"Parameter node of </span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> carries </span><span class="si">%s</span><span class="s2">, which the range restriction of </span><span class="si">%s</span><span class="s2"> does "</span>
+            <span class="s2">"not declare. </span><span class="si">%s</span><span class="s2"> will not be readable or writable through the middleware."</span><span class="p">,</span>
+            <span class="n">prop_iri</span><span class="p">,</span>
+            <span class="n">holder_iri</span><span class="p">,</span>
+            <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">undeclared</span><span class="p">)),</span>
+            <span class="n">prop_iri</span><span class="p">,</span>
+            <span class="s2">"They"</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">undeclared</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">"It"</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">metadata</span>
+
+
+<div class="viewcode-block" id="class_of">
+<a class="viewcode-back" href="../../../reference/connectors/wiring.html#kapps_semantic_middleware.connectors.wiring.class_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">class_of</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the individual's asserted domain class, so a caller need not restate it.</span>
+
+<span class="sd">    An individual carries several ``rdf:type`` assertions, and their order means nothing.</span>
+<span class="sd">    So this filters out the structural types rather than trusting them to sort last.</span>
+<span class="sd">    ``owl:NamedIndividual`` is the trap: it is asserted on everything the OGM writes, and a</span>
+<span class="sd">    ClassSpec resolved against it cannot resolve at all.</span>
+
+<span class="sd">    Public because a consumer that discovers resources in the graph needs exactly this answer,</span>
+<span class="sd">    and the alternative is the copy that grew in the demo's station board and drifted.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?c </span><span class="si">{</span><span class="n">EXPLICIT_GRAPH</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2">&gt; a ?c . FILTER(isIRI(?c)) </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+
+    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"c"</span><span class="p">])</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">META_TYPE_NAMESPACES</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">instance_iri</span><span class="si">}</span><span class="s2"> has no asserted domain rdf:type, so its ClassSpec cannot be "</span>
+            <span class="sa">f</span><span class="s2">"resolved. Pass resource_class explicitly, or seed the instance first."</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2"> asserts </span><span class="si">%d</span><span class="s2"> domain classes (</span><span class="si">%s</span><span class="s2">); resolve its ClassSpec against </span><span class="si">%s</span><span class="s2">. Pass "</span>
+            <span class="s2">"resource_class explicitly to choose."</span><span class="p">,</span>
+            <span class="n">instance_iri</span><span class="p">,</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">),</span>
+            <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">),</span>
+            <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

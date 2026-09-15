@@ -1,0 +1,985 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.connectors.rest_binding &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/connectors/rest_binding';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.connectors.rest_binding</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.connectors.rest_binding</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The REST semantic connector: the connector seam reaches a peer middleware.</span>
+
+<span class="sd">A parameter binds a REST connector when two things hold, neither of them a marker on the</span>
+<span class="sd">parameter itself. First, the parameter is interface-accessible at all — a subproperty of</span>
+<span class="sd">``inf:isInterfaceAccessibleParameter``, the generic root, with no more specific protocol</span>
+<span class="sd">marker (a parameter that also carries ``inf:hasMQTTTopic`` etc. resolves to that protocol's</span>
+<span class="sd">binding instead; ``wiring.py``'s ``_descriptor_for`` already picks the most specific</span>
+<span class="sd">registered match). Second, the parameter's resource carries a live ``svc:address`` on its</span>
+<span class="sd">Service, one hop out through ``svc:isServiceOf``. That address is not a marker on the</span>
+<span class="sd">parameter — it is looked up once per resource in ``wiring.py``'s ``_recognise`` and folded</span>
+<span class="sd">into every recognised binding's metadata. This binding reads it out exactly like MQTT reads</span>
+<span class="sd">``inf:hasMQTTBrokerIP``, through ``binding.get``.</span>
+
+<span class="sd">**The route is structural, so nothing else is needed.** Address plus the recursive path</span>
+<span class="sd">derived from the datamodel tree is a complete binding — no REST-specific ontology term is</span>
+<span class="sd">minted. ``build_parameter_path`` does that derivation. It moved here from</span>
+<span class="sd">``demo/transferunits/controller.py`` rather than being rewritten: the two</span>
+<span class="sd">callers — this binding, reaching outward at recognition time, and the ``Controller``,</span>
+<span class="sd">reaching outward from a fetched JSON tree — need the identical algorithm, and a domain-level</span>
+<span class="sd">module is the wrong place to own something the middleware itself defines.</span>
+
+<span class="sd">**Payload shape.** The payload is a *list* of parameter dicts, not a bare scalar, and a PUT</span>
+<span class="sd">must send back exactly what a GET returned. Unlike MQTT, which bridges a bare device scalar</span>
+<span class="sd">and the one-element list the framework holds, a peer's own generated parameter route already</span>
+<span class="sd">serves and accepts that exact list — there is no scalar to rewrap. So</span>
+<span class="sd">``RESTParameterFormatter`` is a plain type adapter between the wire JSON and</span>
+<span class="sd">``node_model_type`` instances, nothing more (contrast ``mqtt_binding.MQTTParameterFormatter``,</span>
+<span class="sd">which reassembles static facets a bare scalar would otherwise blank).</span>
+
+<span class="sd">**REST has no push, so northbound sync polls.** That leaves three questions:</span>
+
+<span class="sd">- *Batched or per-parameter?* One GET per parameter, one ``RESTParameterConnector`` per</span>
+<span class="sd">  registration — the same granularity MQTT already uses (one connector per topic). A shared</span>
+<span class="sd">  batch-fetch-and-fan-out would need state shared across bindings that recognition does not</span>
+<span class="sd">  otherwise couple, for a cost (extra GETs on a resource with few parameters) that no</span>
+<span class="sd">  evidence yet justifies.</span>
+<span class="sd">- *What interval?* ``DEFAULT_POLL_INTERVAL_SECONDS`` below, conservative and not measured.</span>
+<span class="sd">  The demo's measured control lap does not include it: that lap is a unit's own MQTT round</span>
+<span class="sd">  trip, and this poll is a controller reading a peer over REST. ``DEFAULT_TICK_SECONDS`` in</span>
+<span class="sd">  the demo's ``control_station.py`` records that measurement.</span>
+<span class="sd">- *Configurable?* Yes, per connector instance (``poll_interval=``), which</span>
+<span class="sd">  ``RESTBinding.build`` could source from a future ``inf:`` term if one ever proves</span>
+<span class="sd">  necessary. None is minted here; the route needs no new term, and a cadence is not</span>
+<span class="sd">  addressing.</span>
+
+<span class="sd">**Lazy import, same rule as MQTT:** importing this module, and recognising and building a</span>
+<span class="sd">``RESTBinding``, must not require a working network stack, so that an inspecting instance</span>
+<span class="sd">keeps receiving the projection on a host that cannot reach anything.</span>
+
+<span class="sd">**That rule does not hold on this module's import path, and the guard below is</span>
+<span class="sd">unreachable.** Importing this module pulls in</span>
+<span class="sd">``transitional_sync_middleware.connect.connectors.aas_client_connector``, which does a bare</span>
+<span class="sd">``import httpx`` at module level. ``httpx`` is a declared dependency of both this library and</span>
+<span class="sd">``transitional_sync_middleware``, so a working install always has it; were it absent, the</span>
+<span class="sd">import would die several frames above the ``try`` below. The ``# pragma: no cover`` on it is</span>
+<span class="sd">accurate rather than lazy. The MQTT half is</span>
+<span class="sd">genuinely different: ``aiomqtt`` really is an optional extra there, and ``mqtt_binding``</span>
+<span class="sd">really does degrade to ``MqttClientConnector = None``.</span>
+
+<span class="sd">The guard stays. It is correct in isolation, it is what makes the rule true again the moment</span>
+<span class="sd">the eager import upstream goes away, and its error message is reachable and asserted</span>
+<span class="sd">(``tests/test_optional_transport_stacks.py``). What is *not* claimed here any more is that</span>
+<span class="sd">absence has ever been survivable on this path.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">AsyncGenerator</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">ClassVar</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">Type</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.sync.synced_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">SyncDirection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.connectors.semantic</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ParameterBinding</span><span class="p">,</span>
+    <span class="n">Registration</span><span class="p">,</span>
+    <span class="n">semantic_connector</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">INF</span><span class="p">,</span> <span class="n">SVC</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">DEFAULT_POLL_INTERVAL_SECONDS</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="sd">"""Default cadence of the northbound read leg's poll loop. See the module docstring's</span>
+<span class="sd">"REST has no push" section for why this value is provisional rather than measured."""</span>
+
+<span class="c1"># Sentinel that tracks whether any value exists yet, same rationale as mqtt_binding's: a</span>
+<span class="c1"># genuine first payload still counts as a change worth logging at INFO. Not shared with</span>
+<span class="c1"># mqtt_binding on purpose -- each protocol binding stands alone (a descriptor</span>
+<span class="c1"># names a connector_cls, it does not inherit from a sibling descriptor).</span>
+<span class="n">_UNSET</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_a_change</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">previous</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether a polled value is news, for change-only INFO logging.</span>
+
+<span class="sd">    Kept as a named function rather than inlined to its two call sites, for one</span>
+<span class="sd">    reason: ``mqtt_binding`` has a function of the same name that is</span>
+<span class="sd">    **not** a bare ``!=`` -- it treats NaN as equal to itself, because IEEE-754 says</span>
+<span class="sd">    ``nan != nan`` and a sensor stuck at NaN would otherwise report every republish as a</span>
+<span class="sd">    change and flood the feed the comparison exists to keep readable.</span>
+
+<span class="sd">    The two are deliberately not shared, and the divergence is the point worth seeing: this</span>
+<span class="sd">    one polls a peer middleware's REST route, which serves JSON, so a NaN cannot survive the</span>
+<span class="sd">    encoding to reach here. Inlining ``value != previous`` would erase the question of</span>
+<span class="sd">    whether that reasoning still holds the next time this file grows a value type.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">previous</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover - depends on httpx being installed</span>
+    <span class="n">httpx</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: ignore[assignment]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_httpx_module</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""The ``httpx`` module, or an actionable error if it is absent.</span>
+
+<span class="sd">    Called from inside the connector's async methods, never at import or recognition time, so</span>
+<span class="sd">    that the failure is deferred to the moment something actually tries to talk to a peer.</span>
+
+<span class="sd">    **The deferral is real; the absence it defers is not reachable here.** See the module</span>
+<span class="sd">    docstring: an eager ``import httpx`` upstream in ``transitional_sync_middleware`` means this</span>
+<span class="sd">    module cannot be imported without httpx in the first place. The message below is</span>
+<span class="sd">    nonetheless asserted, by swapping the module global -- the strongest check available while</span>
+<span class="sd">    that stays true, and weaker than a run with httpx actually uninstalled.</span>
+<span class="sd">    """</span>
+
+    <span class="k">if</span> <span class="n">httpx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># pragma: no cover - depends on the optional install</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">"The REST semantic connector needs httpx. Install it with `uv add httpx`, or "</span>
+            <span class="s2">"construct the middleware with autoregister_connectors=False to run as an "</span>
+            <span class="s2">"inspector."</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">httpx</span>
+
+
+<div class="viewcode-block" id="build_parameter_path">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.build_parameter_path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build_parameter_path</span><span class="p">(</span>
+    <span class="n">root_class_local_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">root_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">steps</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="n">terminal_field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Build the structural REST path for a parameter from known (field, child_id) hops.</span>
+
+<span class="sd">    Mirrors ``rest_router.py``'s ``_accumulate_routes`` path shape exactly:</span>
+<span class="sd">    ``/{Model}/{lined_root}/{field}/{lined_child}/.../{field}``. Field names stay literal —</span>
+<span class="sd">    the caller (recognition, here; a fetched JSON tree, for ``Controller``) already carries</span>
+<span class="sd">    them in the mangled form the served route uses. Only individual IDs are mangled here, via</span>
+<span class="sd">    ``IRI.lined``.</span>
+
+<span class="sd">    Moved from ``demo/transferunits/controller.py``: the algorithm has no</span>
+<span class="sd">    domain term and two callers now need it, one of them in ``src/``.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        root_class_local_name: The root resource's class IRI, mangled (``IRI(...).lined``)</span>
+<span class="sd">            -- what ``kapps_ogm`` names the materialized pydantic class, and so the</span>
+<span class="sd">            ``{Model}`` segment the served route actually mounts under. Not the bare</span>
+<span class="sd">            fragment: see ``ParameterBinding.root_class_local_name``'s docstring.</span>
+<span class="sd">        root_iri: The root resource's own IRI.</span>
+<span class="sd">        steps: Sequence of (field_name, child_id) hops from the root to the parameter's owner.</span>
+<span class="sd">        terminal_field: The final field name (the parameter itself).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The structural URL path.</span>
+<span class="sd">    """</span>
+    <span class="n">path_parts</span> <span class="o">=</span> <span class="p">[</span><span class="s2">""</span><span class="p">,</span> <span class="n">root_class_local_name</span><span class="p">,</span> <span class="n">IRI</span><span class="p">(</span><span class="n">root_iri</span><span class="p">)</span><span class="o">.</span><span class="n">lined</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">field_name</span><span class="p">,</span> <span class="n">child_id</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">:</span>
+        <span class="n">path_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">field_name</span><span class="p">)</span>
+        <span class="n">path_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">child_id</span><span class="p">)</span><span class="o">.</span><span class="n">lined</span><span class="p">)</span>
+    <span class="n">path_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">terminal_field</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_parts</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RESTParameterFormatter">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterFormatter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RESTParameterFormatter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Adapts between a peer's parameter-route JSON body and the persistence value.</span>
+
+<span class="sd">    Unlike a bare MQTT scalar, the REST payload already carries the whole parameter node --</span>
+<span class="sd">    value, unit, access mode, whatever the range declares -- because the peer's own GET/PUT</span>
+<span class="sd">    routes serve and accept exactly that shape. There is no scalar to rewrap, so this is a</span>
+<span class="sd">    type adapter between a JSON list of dicts and ``model_type`` instances, nothing more.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">parameter_label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="n">url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span> <span class="o">=</span> <span class="n">model_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span> <span class="o">=</span> <span class="n">parameter_label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">_UNSET</span>
+
+<div class="viewcode-block" id="RESTParameterFormatter.deserialize">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterFormatter.deserialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""A peer's GET body (or a poll's reading) to the persistence value."""</span>
+        <span class="n">items</span> <span class="o">=</span> <span class="n">data</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">item</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span><span class="p">(</span><span class="o">**</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span>
+        <span class="p">]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span> <span class="ow">or</span> <span class="s2">"parameter"</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="ow">or</span> <span class="s2">"peer"</span>
+        <span class="n">dumped</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">_is_a_change</span><span class="p">(</span><span class="n">dumped</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_value</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> &lt;- GET </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">dumped</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_value</span> <span class="o">=</span> <span class="n">dumped</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> &lt;- GET </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2"> (unchanged)"</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">dumped</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">nodes</span></div>
+
+
+<div class="viewcode-block" id="RESTParameterFormatter.serialize">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterFormatter.serialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""The persistence value to the JSON body of an outbound PUT.</span>
+
+<span class="sd">        Echo semantics: this is the same shape ``deserialize`` accepted, so a read-modify-write</span>
+<span class="sd">        round trips through this pair with no reshaping in between.</span>
+<span class="sd">        """</span>
+
+        <span class="n">items</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span> <span class="k">else</span> <span class="p">[</span><span class="n">data</span><span class="p">]</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">model_dump</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"json"</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="s2">"model_dump"</span><span class="p">)</span> <span class="k">else</span> <span class="n">item</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span>
+        <span class="p">]</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2"> -&gt; PUT </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span> <span class="ow">or</span> <span class="s2">"parameter"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="ow">or</span> <span class="s2">"peer"</span><span class="p">,</span> <span class="n">body</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">body</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RESTParameterConnector">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterConnector">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RESTParameterConnector</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Reaches one generated parameter route on a peer middleware over HTTP.</span>
+
+<span class="sd">    ``connect``/``disconnect`` are no-ops. HTTP is stateless here, one ``httpx.AsyncClient``</span>
+<span class="sd">    per call, the same style ``Controller`` and ``transitional_sync_middleware``'s own</span>
+<span class="sd">    ``HttpRequestConnector`` already use -- there is no persistent connection worth pooling</span>
+<span class="sd">    across the polling interval this runs at.</span>
+
+<span class="sd">    ``poll`` gates whether ``receive()`` actually polls. The write leg of a bidirectional</span>
+<span class="sd">    parameter gets ``poll=False``: its ``sync_direction`` is ``FROM_PERSISTENCE``, so the</span>
+<span class="sd">    framework's ``SyncedConnector.receive()`` would never act on anything it yielded anyway</span>
+<span class="sd">    (see ``synced_connector.py``), and polling the same URL a second time from the write leg</span>
+<span class="sd">    would only double the request rate for no effect.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">poll_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_POLL_INTERVAL_SECONDS</span><span class="p">,</span>
+        <span class="n">poll</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">30.0</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span> <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">poll_interval</span> <span class="o">=</span> <span class="n">poll_interval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">poll</span> <span class="o">=</span> <span class="n">poll</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="RESTParameterConnector.provide">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterConnector.provide">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">provide</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""GET the parameter route. Returns the parsed JSON list of parameter dicts."""</span>
+        <span class="n">httpx_module</span> <span class="o">=</span> <span class="n">_httpx_module</span><span class="p">()</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">httpx_module</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="RESTParameterConnector.consume">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterConnector.consume">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">consume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""PUT ``body`` to the parameter route. ``body`` already has the list shape it wants."""</span>
+        <span class="n">httpx_module</span> <span class="o">=</span> <span class="n">_httpx_module</span><span class="p">()</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">httpx_module</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="RESTParameterConnector.receive">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTParameterConnector.receive">[docs]</a>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">receive</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncGenerator</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Poll the parameter route, yielding a reading each time it changes.</span>
+
+<span class="sd">        REST has no push (see the module docstring). This is the polled substitute for</span>
+<span class="sd">        MQTT's subscription queue, and what the framework's background sync task</span>
+<span class="sd">        (``run_receive`` in ``transitional_sync_middleware``'s ``middleware.py``) actually drives northbound</span>
+<span class="sd">        sync from. A connector with ``poll=False`` never yields, so the framework spawns and</span>
+<span class="sd">        immediately retires its receive task with no network traffic.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">poll</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">last_value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">_UNSET</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">poll_interval</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">provide</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 - a transient peer outage must not kill the loop</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"Poll of </span><span class="si">%s</span><span class="s2"> failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">_is_a_change</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">last_value</span><span class="p">):</span>
+                <span class="n">last_value</span> <span class="o">=</span> <span class="n">value</span>
+                <span class="k">yield</span> <span class="n">value</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RESTBinding">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTBinding">[docs]</a>
+<span class="nd">@semantic_connector</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RESTBinding</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Binds a live, generically interface-accessible parameter to a REST connector.</span>
+
+<span class="sd">    Registers at the interface **root**, not a protocol-specific subproperty -- REST has no</span>
+<span class="sd">    parameter-local marker (see the module docstring). ``wiring.py``'s ``_descriptor_for``</span>
+<span class="sd">    already resolves the *most specific* registered match, and a protocol marker such as</span>
+<span class="sd">    ``inf:isInterfaceAccessibleMQTTParameter`` is itself a subproperty of this root, so a</span>
+<span class="sd">    parameter that also declares a specific protocol keeps resolving to that protocol's</span>
+<span class="sd">    binding. This is the fallback for everything else -- any interface-accessible parameter</span>
+<span class="sd">    whose resource happens to be live.</span>
+<span class="sd">    """</span>
+
+    <span class="n">connector_cls</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">RESTParameterConnector</span>
+    <span class="n">interface_property</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="o">.</span><span class="n">isInterfaceAccessibleParameter</span>
+    <span class="n">connection_metadata</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="p">()</span>
+<span class="w">    </span><span class="sd">"""Empty on purpose. This binding reads nothing declared on the *parameter* -- its</span>
+<span class="sd">    evidence is the resource's Service, one hop out (see the module docstring). The</span>
+<span class="sd">    projection's cross-check compares this against what the ontology declares *between the</span>
+<span class="sd">    parameter property and the interface root*, which is likewise nothing for a parameter with</span>
+<span class="sd">    no protocol-specific marker, so the two agree."""</span>
+
+<div class="viewcode-block" id="RESTBinding.build">
+<a class="viewcode-back" href="../../../reference/connectors/rest_binding.html#kapps_semantic_middleware.connectors.rest_binding.RESTBinding.build">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span>
+        <span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">SyncDirection</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Registration</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""One read registration when the resource is live. One write registration too,</span>
+<span class="sd">        when ``direction`` permits it.</span>
+
+<span class="sd">        ``direction`` has already been reduced to the most restrictive of the parameter's</span>
+<span class="sd">        ``inf:accessMode`` and the instance's connector wiring, so this only honours it.</span>
+
+<span class="sd">        ``ensure_transport`` is unused. REST reaches a peer middleware, not a broker this</span>
+<span class="sd">        deployment needs to bring up -- there is nothing here to ensure.</span>
+<span class="sd">        """</span>
+
+        <span class="n">address</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">address</span><span class="p">:</span>
+            <span class="c1"># A generically interface-accessible parameter whose resource has no live</span>
+            <span class="c1"># Service is not a REST-recognition failure -- it is the ordinary state of a</span>
+            <span class="c1"># resource that has not (yet) registered itself. Name it, the same way MQTT</span>
+            <span class="c1"># names a missing broker, so a parameter does not come up silently dead.</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"Do not bind </span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> over REST. The resource carries no live </span><span class="si">%s</span><span class="s2">. The "</span>
+                <span class="s2">"parameter will be served but no value will flow."</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">,</span>
+                <span class="n">SVC</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="k">if</span> <span class="n">binding</span><span class="o">.</span><span class="n">root_iri</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">binding</span><span class="o">.</span><span class="n">root_class_local_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Recognition always fills these in (wiring.py's _recognise). Absence means a</span>
+            <span class="c1"># ParameterBinding was built by hand outside that path -- nothing to derive a</span>
+            <span class="c1"># route from.</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"Do not bind </span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> over REST. No root resource context to derive a "</span>
+                <span class="s2">"structural route from."</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">path</span> <span class="o">=</span> <span class="n">build_parameter_path</span><span class="p">(</span>
+            <span class="n">binding</span><span class="o">.</span><span class="n">root_class_local_name</span><span class="p">,</span>
+            <span class="n">binding</span><span class="o">.</span><span class="n">root_iri</span><span class="p">,</span>
+            <span class="n">binding</span><span class="o">.</span><span class="n">path_steps</span><span class="p">,</span>
+            <span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">formatter</span> <span class="o">=</span> <span class="n">_formatter_for</span><span class="p">(</span><span class="n">binding</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">address</span><span class="si">}{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">Registration</span><span class="p">(</span>
+            <span class="n">connector</span><span class="o">=</span><span class="n">RESTParameterConnector</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span>
+            <span class="n">sync_direction</span><span class="o">=</span><span class="n">SyncDirection</span><span class="o">.</span><span class="n">TO_PERSISTENCE</span><span class="p">,</span>
+            <span class="n">model_type</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span>
+            <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+            <span class="n">suffix</span><span class="o">=</span><span class="s2">"read"</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">SyncDirection</span><span class="o">.</span><span class="n">BIDIRECTIONAL</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">yield</span> <span class="n">Registration</span><span class="p">(</span>
+            <span class="n">connector</span><span class="o">=</span><span class="n">RESTParameterConnector</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">poll</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="n">sync_direction</span><span class="o">=</span><span class="n">SyncDirection</span><span class="o">.</span><span class="n">FROM_PERSISTENCE</span><span class="p">,</span>
+            <span class="n">model_type</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span>
+            <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+            <span class="n">suffix</span><span class="o">=</span><span class="s2">"write"</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_formatter_for</span><span class="p">(</span><span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RESTParameterFormatter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Build the formatter for one parameter, labelled for its log lines."""</span>
+    <span class="k">return</span> <span class="n">RESTParameterFormatter</span><span class="p">(</span>
+        <span class="n">model_type</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">node_model_type</span><span class="p">,</span>
+        <span class="n">parameter_label</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">label</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

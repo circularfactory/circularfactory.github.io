@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Operation Coordination &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guide/05-operation-coordination';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Views and Projection" href="06-views-and-projection.html" />
+    <link rel="prev" title="Connector Binding" href="04-connector-binding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-instantiation-and-lifecycle.html">Instantiation and Lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-workflow-registration.html">Workflow Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-state-and-parameters.html">State and Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-connector-binding.html">Connector Binding</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Operation Coordination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-views-and-projection.html">Views and Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-writing-to-the-graph-and-to-devices.html">Writing to the Graph and to Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-provisioning-and-seeding.html">Provisioning and Seeding</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Operation Coordination</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="operation-coordination">
+<h1>Operation Coordination<a class="headerlink" href="#operation-coordination" title="Link to this heading">#</a></h1>
+<p>Services coordinate by passing Operations through the knowledge graph and firing an event trigger.
+This page describes how a caller dispatches work, how a receiver pulls and executes it, and how
+the system ensures durability and consistency without synchronous RPC. The graph is the source of
+truth for operation state; the per-resource queue is an in-memory cache reconstructed at startup.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Terms this page assumes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> · <a class="reference internal" href="../concepts.html#term-Capability"><span class="xref std std-term">Capability</span></a> · <a class="reference internal" href="../concepts.html#term-Workflow"><span class="xref std std-term">Workflow</span></a> · <a class="reference internal" href="../concepts.html#term-Service"><span class="xref std std-term">Service</span></a> · <a class="reference internal" href="../concepts.html#term-Resource"><span class="xref std std-term">Resource</span></a> ·
+<a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a></p>
+</div>
+</details><section id="capability-resolution">
+<h2>Capability Resolution<a class="headerlink" href="#capability-resolution" title="Link to this heading">#</a></h2>
+<p>An <a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> never references a Workflow directly. Resolution always follows a two-hop chain through
+a <a class="reference internal" href="../concepts.html#term-Capability"><span class="xref std std-term">Capability</span></a>. The Operation individual links to a Capability via <code class="docutils literal notranslate"><span class="pre">cfc:implementsCapability</span></code>. The
+Capability links to exactly one <a class="reference internal" href="../concepts.html#term-Workflow"><span class="xref std std-term">Workflow</span></a> via <code class="docutils literal notranslate"><span class="pre">svc:realizedByWorkflow</span></code>. This indirection ensures
+that callers address a <em>capability</em> rather than a specific function implementation. Planning services
+discover work against Capabilities; the middleware resolves the concrete Workflow at execution time.</p>
+</section>
+<section id="dispatching-work">
+<h2>Dispatching Work<a class="headerlink" href="#dispatching-work" title="Link to this heading">#</a></h2>
+<p>Caller-side dispatch is a transactional context manager. The caller uses the <code class="docutils literal notranslate"><span class="pre">request</span></code> context
+manager to create the Operation in the graph and notify the receiver atomically. The body of the
+context manager populates the Operation properties. The atomic exit performs the graph write and
+fires the receiver’s event trigger. This guarantees that an Operation is never created without
+notification, and notification is never sent for an uncommitted Operation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">target_resource</span><span class="p">)</span> <span class="k">as</span> <span class="n">op</span><span class="p">:</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="s2">"queued"</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">implementsCapability</span> <span class="o">=</span> <span class="n">capability_iri</span>
+    <span class="c1"># Additional domain properties set here</span>
+<span class="c1"># Exit commits the Operation and triggers the receiver</span>
+</pre></div>
+</div>
+</section>
+<section id="the-event-trigger">
+<h2>The Event Trigger<a class="headerlink" href="#the-event-trigger" title="Link to this heading">#</a></h2>
+<p>Every resource-mode middleware exposes a built-in <code class="docutils literal notranslate"><span class="pre">execute()</span></code> Workflow on its REST API. The dispatch
+process fires this trigger after committing the Operation. The trigger carries only the Operation
+IRI; the payload lives entirely in the graph. The trigger returns immediately and does not block
+on the work. It does not return a business result. Callers must not expect a synchronous response.
+The trigger simply enqueues the Operation for later processing by the receiver’s domain code.</p>
+</section>
+<section id="operation-queue">
+<h2>Operation Queue<a class="headerlink" href="#operation-queue" title="Link to this heading">#</a></h2>
+<p>Each resource maintains an in-memory queue of Operations addressed to it. This queue is durable
+because the Operation and its status are written to the graph before the trigger fires. On startup,
+a middleware reconstructs its queue by querying the graph for its own <code class="docutils literal notranslate"><span class="pre">queued</span></code> Operations. It also
+reclaims any orphaned <code class="docutils literal notranslate"><span class="pre">running</span></code> Operations left from a previous session. A missed trigger loses no
+work; the baseline is self-healing. Resources do not poll the graph continuously for new work.</p>
+</section>
+<section id="status-lifecycle">
+<h2>Status Lifecycle<a class="headerlink" href="#status-lifecycle" title="Link to this heading">#</a></h2>
+<p>An Operation moves through three states: <code class="docutils literal notranslate"><span class="pre">queued</span></code>, <code class="docutils literal notranslate"><span class="pre">running</span></code>, and terminal (<code class="docutils literal notranslate"><span class="pre">done</span></code> or <code class="docutils literal notranslate"><span class="pre">failed</span></code>).
+Execution provenance is written as part of the terminal transition. The provenance records which
+Workflow ran the Operation, when it ran, and the result. The status field itself serves as the
+provenance record; there is no separate success flag. A <code class="docutils literal notranslate"><span class="pre">done</span></code> status implies success; <code class="docutils literal notranslate"><span class="pre">failed</span></code>
+implies an exception or validation error during execution. Transitioning to a terminal state is
+atomic and irreversible without dispatching a fresh Operation.</p>
+</section>
+<section id="pull-and-run">
+<h2>Pull-and-Run<a class="headerlink" href="#pull-and-run" title="Link to this heading">#</a></h2>
+<p>Receiver-side execution uses the <code class="docutils literal notranslate"><span class="pre">claim_next</span></code> transactional context manager. The domain code takes
+the next <code class="docutils literal notranslate"><span class="pre">queued</span></code> Operation, sets it <code class="docutils literal notranslate"><span class="pre">running</span></code>, and runs the work in the body. The middleware
+re-fetches the Operation under a domain-supplied <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> to ensure the correct data view.
+On atomic exit, the context manager records the terminal <code class="docutils literal notranslate"><span class="pre">done</span></code> or <code class="docutils literal notranslate"><span class="pre">failed</span></code> state. If the body
+raises an exception, the transaction reverts and the status updates to <code class="docutils literal notranslate"><span class="pre">failed</span></code> with provenance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">claim_next</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="n">view_scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">claimed</span><span class="p">:</span>
+    <span class="c1"># Read the Operation's domain fields off `claimed.operation`</span>
+    <span class="c1"># (re-fetched under the ClassScope you passed to claim_next).</span>
+    <span class="n">op</span> <span class="o">=</span> <span class="n">claimed</span><span class="o">.</span><span class="n">operation</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">perform_work</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>          <span class="c1"># physical actuation, calculations, etc.</span>
+
+    <span class="c1"># Assign a str to `claimed.result` to attach a result. On clean exit the</span>
+    <span class="c1"># middleware records it as `executionResult`, alongside `executedByWorkflow`</span>
+    <span class="c1"># and `executionTimestamp`.</span>
+    <span class="n">claimed</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span>
+<span class="c1"># Exit records done/failed and dumps state on failure</span>
+</pre></div>
+</div>
+<p>Inside the block, <code class="docutils literal notranslate"><span class="pre">claimed.operation</span></code> is the read side — the Operation materialized under your <code class="docutils literal notranslate"><span class="pre">ClassScope</span></code> — and <code class="docutils literal notranslate"><span class="pre">claimed.result</span></code> is the write side. Setting <code class="docutils literal notranslate"><span class="pre">claimed.result</span></code> is optional; a body that only actuates need not set it.</p>
+</section>
+<section id="handover-primitive">
+<h2>Handover Primitive<a class="headerlink" href="#handover-primitive" title="Link to this heading">#</a></h2>
+<p>Bilateral coordination between participants uses the <code class="docutils literal notranslate"><span class="pre">mw.handover</span></code> primitive rather than a plain
+dispatch. Handover models a timeless administrative possession switch preceded by a timed physical
+preparation phase. The primitive is a context manager that checks preconditions in <code class="docutils literal notranslate"><span class="pre">__enter__</span></code> and
+commits the switch in <code class="docutils literal notranslate"><span class="pre">__exit__</span></code>. It operates on Core’s reified <code class="docutils literal notranslate"><span class="pre">cfc:PossessionState</span></code>. The switch
+is a single atomic transaction that updates the Workpiece’s <code class="docutils literal notranslate"><span class="pre">cfc:hasPossessedWorkpiece</span></code> link.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">handover</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"Put"</span><span class="p">,</span> <span class="n">workpiece</span><span class="o">=</span><span class="n">wp</span><span class="p">,</span> <span class="n">counterpart</span><span class="o">=</span><span class="n">other</span><span class="p">):</span>
+    <span class="c1"># Physical transport and preparation</span>
+    <span class="c1"># Coordinate with counterpart if needed</span>
+<span class="c1"># Exit atomically switches possession state</span>
+</pre></div>
+</div>
+<p>The handover primitive ensures that the “possessed by exactly one” cardinality constraint is never
+transiently violated. The old PossessionState is kept as implicit history. The middleware does not
+model the physical transport itself; that logic belongs in the context manager body.</p>
+</section>
+<section id="failure-recovery">
+<h2>Failure Recovery<a class="headerlink" href="#failure-recovery" title="Link to this heading">#</a></h2>
+<p>If a resource dies mid-Operation, its stranded <code class="docutils literal notranslate"><span class="pre">running</span></code> Operations are handled centrally. A
+watchdog-mode instance sweeps stale resources and transitions their orphaned <code class="docutils literal notranslate"><span class="pre">running</span></code> Operations
+to <code class="docutils literal notranslate"><span class="pre">failed</span></code>. The failed status carries any dumped resource state available at the time of failure.
+Recovery is never a silent physical replay. The planner or domain decides whether to dispatch a
+fresh Operation. Physical operations are frequently not safely repeatable, so automatic re-actuation
+is avoided. The watchdog ensures the graph does not retain stale <code class="docutils literal notranslate"><span class="pre">running</span></code> states indefinitely.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04-connector-binding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Connector Binding</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06-views-and-projection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Views and Projection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capability-resolution">Capability Resolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispatching-work">Dispatching Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-event-trigger">The Event Trigger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-queue">Operation Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-lifecycle">Status Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-and-run">Pull-and-Run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handover-primitive">Handover Primitive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-recovery">Failure Recovery</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/guide/05-operation-coordination.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

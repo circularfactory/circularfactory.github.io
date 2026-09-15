@@ -1,0 +1,911 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.connectors.mqtt_binding &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/connectors/mqtt_binding';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.connectors.mqtt_binding</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.connectors.mqtt_binding</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The MQTT semantic connector: the first instance of the binding seam.</span>
+
+<span class="sd">A parameter is reachable over MQTT when its domain property is a subproperty of</span>
+<span class="sd">``inf:isInterfaceAccessibleMQTTParameter``. The parameter node then carries a broker</span>
+<span class="sd">address and a read topic. A settable parameter node also carries a set topic.</span>
+
+<span class="sd">**Two connectors per settable parameter, one ConnectionInfo.** ``MqttClientConnector`` takes</span>
+<span class="sd">a single topic. Its ``consume()`` publishes to the topic it subscribed to. So it physically</span>
+<span class="sd">cannot serve a read topic plus a distinct set topic. ``ConnectionRegistry.connections`` is</span>
+<span class="sd">``Dict[ConnectionInfo, List[str]]``. So both bind to one ``ConnectionInfo``, and differ only</span>
+<span class="sd">in ``sync_direction`` — precisely what ``SyncDirection`` is for. For the scenario-3</span>
+<span class="sd">TransferUnit that is 4 parameters, 4 bindings, 6 connectors, 6 topics.</span>
+
+<span class="sd">``aiomqtt`` is an optional extra of ``transitional_sync_middleware`` (its ``industrial`` group). So the</span>
+<span class="sd">connector class is imported lazily. Importing this module must not require a working MQTT</span>
+<span class="sd">stack. The registry must exist for every connector wiring, including one that wires nothing.</span>
+<span class="sd">An inspecting instance with no ``aiomqtt`` installed must still receive the projection.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.sync.synced_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">SyncDirection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.connectors.semantic</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ParameterBinding</span><span class="p">,</span>
+    <span class="n">Registration</span><span class="p">,</span>
+    <span class="n">semantic_connector</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">INF</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Sentinel that tracks whether any value exists yet. Distinct from None, so a</span>
+<span class="c1"># genuine first None payload still counts as a change worth logging at INFO.</span>
+<span class="n">_UNSET</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_a_change</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">previous</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether an inbound value is news. Treat NaN as equal to itself.</span>
+
+<span class="sd">    ``float("nan") != float("nan")`` is true by IEEE-754. So a sensor stuck at NaN (a</span>
+<span class="sd">    failed probe, a divide-by-zero in the PLC) would register every republish as a</span>
+<span class="sd">    change, and flood the very feed this comparison exists to keep readable. That is</span>
+<span class="sd">    precisely the case where the operator least needs a scrolling wall of identical</span>
+<span class="sd">    lines.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">previous</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">previous</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">previous</span>
+
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.connect.connectors.mqtt_client_connector</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+        <span class="n">MqttClientConnector</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover - depends on the optional extra being installed</span>
+    <span class="c1"># Importing this module must not require a working MQTT stack. The registry must exist</span>
+    <span class="c1"># for every flavour, including one that wires nothing, so an inspector on a</span>
+    <span class="c1"># host without aiomqtt must still receive recognition and the projection. The failure is</span>
+    <span class="c1"># deferred to the moment something actually tries to build a connector.</span>
+    <span class="n">MqttClientConnector</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: ignore[assignment]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_mqtt_client_connector_cls</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""The framework connector class, or an actionable error if the extra is absent."""</span>
+    <span class="k">if</span> <span class="n">MqttClientConnector</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># pragma: no cover - depends on the optional extra</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+            <span class="s2">"The MQTT semantic connector needs aiomqtt, an optional extra of "</span>
+            <span class="s2">"transitional_sync_middleware. Install it with `uv add aiomqtt`, or construct the middleware "</span>
+            <span class="s2">"with autoregister_connectors=False to run as an inspector."</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">MqttClientConnector</span>
+
+
+<div class="viewcode-block" id="MQTTParameterFormatter">
+<a class="viewcode-back" href="../../../reference/connectors/mqtt_binding.html#kapps_semantic_middleware.connectors.mqtt_binding.MQTTParameterFormatter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">MQTTParameterFormatter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Translates between an MQTT payload and the persistence value of a parameter node.</span>
+
+<span class="sd">    The persistence value of a COMPLEX property is a **list of one** generated model, not a</span>
+<span class="sd">    scalar: ``[AnonymousClass(hasValue=[12.1], hasUnit=['m/s'], accessMode=['readwrite'])]``.</span>
+<span class="sd">    ``ConnectionInfo`` bottoms out at that property. ``field_id`` is a plain ``getattr`` and</span>
+<span class="sd">    the node's ``inf:hasValue`` is one level further down. The formatter bridges</span>
+<span class="sd">    the device scalar and the node the middleware persists.</span>
+
+<span class="sd">    **Payload shape.** Raw scalar by default. If the parameter declares</span>
+<span class="sd">    ``inf:hasMQTTValuePath``, use a JSON envelope with the value at that dotted path. The path is</span>
+<span class="sd">    one property and is honoured symmetrically on both read and write.</span>
+
+<span class="sd">    **Symmetry.** ``MqttClientConnector`` is asymmetric. Its listener runs</span>
+<span class="sd">    ``json.loads(payload)`` on everything it receives. ``consume()`` publishes its argument</span>
+<span class="sd">    raw. So ``deserialize`` receives an already-parsed value. ``serialize`` must produce the</span>
+<span class="sd">    encoded bytes.</span>
+
+<span class="sd">    **Why the node is reassembled rather than replaced by a bare value.**</span>
+<span class="sd">    ``update_persistence_with_value`` does ``setattr(contained_model, field_id, value)``,</span>
+<span class="sd">    replacing the whole list. ``Formatter.deserialize`` sees only the payload. It has no</span>
+<span class="sd">    access to the current persistence value. A bare scalar would therefore blank the unit and</span>
+<span class="sd">    the access mode *in the model served over REST*. The graph layer now diffs per triple, so</span>
+<span class="sd">    unchanged facets are preserved there. The in-memory half remains, and it is what</span>
+<span class="sd">    this reassembly is for. The northbound payload keeps its unit after the first device</span>
+<span class="sd">    message. The facets come from the same metadata the binding already read. So this is a</span>
+<span class="sd">    pure function per message, with no read of current state. ``_last_value`` exists solely</span>
+<span class="sd">    for change-detection in logging, and never affects the returned value.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">model_type</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+        <span class="n">northbound_facets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">value_field</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">value_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">parameter_label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="n">set_topic</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model_type</span> <span class="o">=</span> <span class="n">model_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">northbound_facets</span> <span class="o">=</span> <span class="n">northbound_facets</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value_field</span> <span class="o">=</span> <span class="n">value_field</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value_path</span> <span class="o">=</span> <span class="n">value_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span> <span class="o">=</span> <span class="n">parameter_label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">topic</span> <span class="o">=</span> <span class="n">topic</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_topic</span> <span class="o">=</span> <span class="n">set_topic</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="n">_UNSET</span>
+
+<div class="viewcode-block" id="MQTTParameterFormatter.deserialize">
+<a class="viewcode-back" href="../../../reference/connectors/mqtt_binding.html#kapps_semantic_middleware.connectors.mqtt_binding.MQTTParameterFormatter.deserialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Device payload to the persistence value (a one-element list holding the node)."""</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">northbound_facets</span><span class="p">)</span>
+        <span class="n">fields</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">value_field</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+        <span class="c1"># Log inbound values, but only at INFO when they change. The mock PLC republishes</span>
+        <span class="c1"># every value on a fixed interval (0.2–0.5s per topic), so logging every message at</span>
+        <span class="c1"># INFO makes the feed unreadable within seconds. A periodic republish of an unchanged</span>
+        <span class="c1"># value is noise. A change is news.</span>
+        <span class="c1">#</span>
+        <span class="c1"># The topic never appears at INFO. `enable_activity_feed` serves this package's INFO</span>
+        <span class="c1"># records over HTTP, and a topic is southbound metadata the northbound projection</span>
+        <span class="c1"># deletes from the served datamodel -- so an INFO line carrying it would hand a peer,</span>
+        <span class="c1"># over the same web server, the bypass route the projection exists to withhold. The</span>
+        <span class="c1"># topic stays at DEBUG, which the feed's handler filters out at its own level whatever</span>
+        <span class="c1"># the logger is set to.</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span> <span class="ow">or</span> <span class="s2">"parameter"</span>
+        <span class="n">topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topic</span> <span class="ow">or</span> <span class="s2">"topic"</span>
+        <span class="n">changed</span> <span class="o">=</span> <span class="n">_is_a_change</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_value</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> &lt;- </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="s2">""</span> <span class="k">if</span> <span class="n">changed</span> <span class="k">else</span> <span class="s2">" (unchanged)"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> &lt;- </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">model_type</span><span class="p">(</span><span class="o">**</span><span class="n">fields</span><span class="p">)]</span></div>
+
+
+<div class="viewcode-block" id="MQTTParameterFormatter.serialize">
+<a class="viewcode-back" href="../../../reference/connectors/mqtt_binding.html#kapps_semantic_middleware.connectors.mqtt_binding.MQTTParameterFormatter.serialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Persistence value to the device payload, encoded for ``consume``.</span>
+
+<span class="sd">        Raises if nothing has ever been observed for this parameter. Under the</span>
+<span class="sd">        locator pattern the graph holds no ``inf:hasValue`` until a connector</span>
+<span class="sd">        fills it. A bare ``None`` would encode as the JSON scalar ``null``, not a</span>
+<span class="sd">        valid device value, and a receiver expecting a number or boolean chokes on</span>
+<span class="sd">        it. The caller's best-effort fan-out (``persisted_connector.py``) catches</span>
+<span class="sd">        and logs a per-connector failure, so raising here is the same "nothing safe</span>
+<span class="sd">        to send" outcome that silently accepting ``None`` would have hidden as a</span>
+<span class="sd">        network-level failure at the device.</span>
+
+<span class="sd">        This used to be the ordinary case rather than the guard it reads as. The</span>
+<span class="sd">        fan-out asked *every* write leg on a resource to re-derive its slice</span>
+<span class="sd">        whenever *any* field changed, so a parameter nothing had ever set was</span>
+<span class="sd">        routinely asked to publish. The fan-out is now scoped to the field that</span>
+<span class="sd">        actually moved (``changed``), so a write leg is now only asked when its own</span>
+<span class="sd">        parameter was written -- and a write carries the value with it. The guard</span>
+<span class="sd">        stays because "asked to publish something never observed" is still a real</span>
+<span class="sd">        error state, and one worth naming rather than encoding as ``null``.</span>
+<span class="sd">        """</span>
+
+        <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_value_of</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'parameter'</span><span class="si">}</span><span class="s2"> has no observed value yet; "</span>
+                <span class="sa">f</span><span class="s2">"refusing to publish null to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">set_topic</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'its set topic'</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">envelope</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">envelope</span>
+            <span class="o">*</span><span class="n">branches</span><span class="p">,</span> <span class="n">leaf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
+                <span class="n">cursor</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="n">cursor</span><span class="p">[</span><span class="n">leaf</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">envelope</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+        <span class="c1"># Log outbound setpoints unconditionally at INFO. A setpoint is always news. It is</span>
+        <span class="c1"># an operator or a controller acting, so no change-detection here. The set topic</span>
+        <span class="c1"># stays at DEBUG for the same reason the inbound topic does -- see `deserialize`.</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameter_label</span> <span class="ow">or</span> <span class="s2">"parameter"</span>
+        <span class="n">topic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_topic</span> <span class="ow">or</span> <span class="s2">"set_topic"</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> -&gt; </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2"> -&gt; </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Pull the scalar from an inbound payload. Honor the envelope path."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"."</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="n">part</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                    <span class="s2">"MQTT payload has no </span><span class="si">%r</span><span class="s2"> at value path </span><span class="si">%r</span><span class="s2">; treat it as unobserved"</span><span class="p">,</span>
+                    <span class="n">part</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">value_path</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="n">cursor</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">[</span><span class="n">part</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">cursor</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_value_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Pull the scalar from a persistence value, whatever depth it arrives at.</span>
+
+<span class="sd">        Accept the one-element list the framework holds, a bare node, or an</span>
+<span class="sd">        already-plain scalar. An outbound value can reach here from a PUT route as</span>
+<span class="sd">        easily as from the persistence model.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">node_value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_field</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">node_value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">node_value</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_field</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">node_value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node_value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">node_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">node_value</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">node_value</span></div>
+
+
+
+<div class="viewcode-block" id="MQTTBinding">
+<a class="viewcode-back" href="../../../reference/connectors/mqtt_binding.html#kapps_semantic_middleware.connectors.mqtt_binding.MQTTBinding">[docs]</a>
+<span class="nd">@semantic_connector</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MQTTBinding</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Binds an MQTT-reachable parameter to one or two ``MqttClientConnector`` instances."""</span>
+
+    <span class="n">connector_cls</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">MqttClientConnector</span>
+    <span class="n">interface_property</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="n">INF</span><span class="o">.</span><span class="n">isInterfaceAccessibleMQTTParameter</span>
+    <span class="n">connection_metadata</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTTopic</span><span class="p">,</span>
+        <span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTBrokerIP</span><span class="p">,</span>
+        <span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTBrokerPort</span><span class="p">,</span>
+        <span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTSetTopic</span><span class="p">,</span>
+        <span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTValuePath</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<div class="viewcode-block" id="MQTTBinding.build">
+<a class="viewcode-back" href="../../../reference/connectors/mqtt_binding.html#kapps_semantic_middleware.connectors.mqtt_binding.MQTTBinding.build">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span>
+        <span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">SyncDirection</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Registration</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""One read registration always. One write registration when both sides permit it.</span>
+
+<span class="sd">        ``direction`` has already been reduced to the most restrictive of the parameter's</span>
+<span class="sd">        ``inf:accessMode`` and the instance's flavour, so this only honours</span>
+<span class="sd">        it. It must never re-widen.</span>
+
+<span class="sd">        ``ensure_transport``, when given, is called once with the declared ``(host, port)``,</span>
+<span class="sd">        immediately before the first connector for it is built. Deduping across</span>
+<span class="sd">        several parameters that share one address is the caller's job (``wiring.py``'s</span>
+<span class="sd">        ``plan_wiring``), not this method's -- a single ``build`` call sees only its own</span>
+<span class="sd">        parameter, never its siblings.</span>
+<span class="sd">        """</span>
+
+        <span class="n">connector_cls</span> <span class="o">=</span> <span class="n">_mqtt_client_connector_cls</span><span class="p">()</span>
+
+        <span class="n">broker</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTBrokerIP</span><span class="p">)</span>
+        <span class="n">topic</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTTopic</span><span class="p">)</span>
+        <span class="n">set_topic</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTSetTopic</span><span class="p">)</span>
+        <span class="n">value_path</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTValuePath</span><span class="p">)</span>
+        <span class="n">port</span> <span class="o">=</span> <span class="n">binding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTBrokerPort</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">port</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">port</span> <span class="o">=</span> <span class="mi">1883</span>  <span class="c1"># Absent means 1883, so every existing ABox keeps its meaning.</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">broker</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">topic</span><span class="p">:</span>
+            <span class="c1"># A parameter marked MQTT-accessible whose metadata is incomplete would come up</span>
+            <span class="c1"># silently dead: no listener, no value, and nothing to say why. Name the property,</span>
+            <span class="c1"># and name what is absent.</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"Do not bind </span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> over MQTT. The metadata is missing </span><span class="si">%s</span><span class="s2">. The parameter will be served "</span>
+                <span class="s2">"but no value will flow."</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">,</span>
+                <span class="s2">" and "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="n">name</span>
+                    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">present</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">"a broker"</span><span class="p">,</span> <span class="n">broker</span><span class="p">),</span> <span class="p">(</span><span class="s2">"a topic"</span><span class="p">,</span> <span class="n">topic</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">present</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="n">ensure_transport</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ensure_transport</span><span class="p">(</span><span class="n">broker</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+
+        <span class="n">formatter</span> <span class="o">=</span> <span class="n">_formatter_for</span><span class="p">(</span><span class="n">binding</span><span class="p">,</span> <span class="n">value_path</span><span class="p">,</span> <span class="n">topic</span><span class="o">=</span><span class="n">topic</span><span class="p">,</span> <span class="n">set_topic</span><span class="o">=</span><span class="n">set_topic</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">Registration</span><span class="p">(</span>
+            <span class="n">connector</span><span class="o">=</span><span class="n">connector_cls</span><span class="p">(</span><span class="n">broker</span><span class="p">,</span> <span class="n">topic</span><span class="p">,</span> <span class="n">port</span><span class="p">),</span>
+            <span class="n">sync_direction</span><span class="o">=</span><span class="n">SyncDirection</span><span class="o">.</span><span class="n">TO_PERSISTENCE</span><span class="p">,</span>
+            <span class="n">model_type</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span>
+            <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+            <span class="n">suffix</span><span class="o">=</span><span class="s2">"read"</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">SyncDirection</span><span class="o">.</span><span class="n">BIDIRECTIONAL</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">set_topic</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> is readwrite but declares no </span><span class="si">%s</span><span class="s2">. Serve it read-only."</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">,</span>
+                <span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">,</span>
+                <span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTSetTopic</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">yield</span> <span class="n">Registration</span><span class="p">(</span>
+            <span class="n">connector</span><span class="o">=</span><span class="n">connector_cls</span><span class="p">(</span><span class="n">broker</span><span class="p">,</span> <span class="n">set_topic</span><span class="p">,</span> <span class="n">port</span><span class="p">),</span>
+            <span class="n">sync_direction</span><span class="o">=</span><span class="n">SyncDirection</span><span class="o">.</span><span class="n">FROM_PERSISTENCE</span><span class="p">,</span>
+            <span class="n">model_type</span><span class="o">=</span><span class="nb">list</span><span class="p">,</span>
+            <span class="n">formatter</span><span class="o">=</span><span class="n">formatter</span><span class="p">,</span>
+            <span class="n">suffix</span><span class="o">=</span><span class="s2">"write"</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_formatter_for</span><span class="p">(</span>
+    <span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span><span class="p">,</span>
+    <span class="n">value_path</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="n">set_topic</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MQTTParameterFormatter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Build the formatter for one parameter from its already-resolved northbound facets.</span>
+
+<span class="sd">    The facets are the parameter node's properties minus the connection metadata. These are exactly the</span>
+<span class="sd">    northbound projection of the node, reached here from the binding side rather than</span>
+<span class="sd">    from the spec side.</span>
+<span class="sd">    """</span>
+
+    <span class="n">southbound</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">MQTTBinding</span><span class="o">.</span><span class="n">connection_metadata</span><span class="p">}</span>
+    <span class="n">value_field</span> <span class="o">=</span> <span class="n">INF</span><span class="o">.</span><span class="n">hasValue</span><span class="o">.</span><span class="n">lined</span>
+    <span class="n">facets</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">lined</span><span class="p">:</span> <span class="n">value</span>
+        <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">binding</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">prop</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">southbound</span> <span class="ow">and</span> <span class="n">IRI</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">lined</span> <span class="o">!=</span> <span class="n">value_field</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">MQTTParameterFormatter</span><span class="p">(</span>
+        <span class="n">model_type</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">node_model_type</span><span class="p">,</span>
+        <span class="n">northbound_facets</span><span class="o">=</span><span class="n">facets</span><span class="p">,</span>
+        <span class="n">value_field</span><span class="o">=</span><span class="n">value_field</span><span class="p">,</span>
+        <span class="n">value_path</span><span class="o">=</span><span class="n">value_path</span><span class="p">,</span>
+        <span class="n">parameter_label</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">label</span><span class="p">,</span>
+        <span class="n">topic</span><span class="o">=</span><span class="n">topic</span><span class="p">,</span>
+        <span class="n">set_topic</span><span class="o">=</span><span class="n">set_topic</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

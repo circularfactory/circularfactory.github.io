@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Scenario 2 — A Door and a Mobile Robot &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scenarios/door';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scenario 3 — The TransferUnit Factory" href="factory.html" />
+    <link rel="prev" title="Scenario 1 — Hello-World through the Knowledge Graph" href="hello-world.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hello-world.html">Scenario 1 — Hello-World through the Knowledge Graph</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Scenario 2 — A Door and a Mobile Robot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="factory.html">Scenario 3 — The TransferUnit Factory</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Scenarios</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Scenario 2 — A Door and a Mobile Robot</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="scenario-2-a-door-and-a-mobile-robot">
+<h1>Scenario 2 — A Door and a Mobile Robot<a class="headerlink" href="#scenario-2-a-door-and-a-mobile-robot" title="Link to this heading">#</a></h1>
+<p>The other half of the picture from scenario 1. Here there is <strong>no operation queue at all</strong>. A mobile robot finds a door in the knowledge graph, reads the door’s live state over REST and, finding it closed, calls the door’s open workflow directly at the URL the graph gave it.</p>
+<p>Use this pattern when the caller needs the answer now. Operation coordination (scenario 1) is for work that is dispatched, queued and picked up later; direct invocation is for a request that returns its result to the caller that made it. The same middleware serves both — what differs is whether the caller goes through the graph’s Operation queue or straight to the endpoint.</p>
+<p>The scenario also shows what the graph deliberately does <strong>not</strong> hold. The door’s <code class="docutils literal notranslate"><span class="pre">opened</span></code>/<code class="docutils literal notranslate"><span class="pre">closed</span></code> status is served from memory and is never written to the graph, because it is only true for seconds. What the graph holds is where to ask.</p>
+<blockquote>
+<div><p><strong>Before you run this.</strong> A GraphDB must be reachable, with <code class="docutils literal notranslate"><span class="pre">GRAPHDB_URL</span></code>, <code class="docutils literal notranslate"><span class="pre">GRAPHDB_USERNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">GRAPHDB_PASSWORD</span></code> set to point at it. Every cell below works against the <code class="docutils literal notranslate"><span class="pre">kapps-demo</span></code> repository, which is named in the code rather than read from the environment. <strong>Step 1 erases that repository completely</strong>, so make sure <code class="docutils literal notranslate"><span class="pre">GRAPHDB_URL</span></code> names a server you are allowed to overwrite.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uvicorn</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib.namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">RDF</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">handlers</span><span class="w"> </span><span class="kn">import</span> <span class="n">door_close</span><span class="p">,</span> <span class="n">door_open</span><span class="p">,</span> <span class="n">door_status</span><span class="p">,</span> <span class="n">reset_door</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">SemanticMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.credentials</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEMO_REPOSITORY</span><span class="p">,</span> <span class="n">graphdb_for</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.registration</span><span class="w"> </span><span class="kn">import</span> <span class="n">mint_state_property_iri</span><span class="p">,</span> <span class="n">mint_workflow_iri</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">seed</span>
+
+<span class="c1"># The libraries above log at INFO to stderr. A stderr stream renders as an error block on the</span>
+<span class="c1"># documentation site, and it is grouped ahead of this notebook's own stdout -- so the HTTP</span>
+<span class="c1"># request lines would appear above the step that made them. The narrative here is the print</span>
+<span class="c1"># output; keep third-party logging at WARNING so that is what you read.</span>
+<span class="k">for</span> <span class="n">_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'httpx'</span><span class="p">,</span> <span class="s1">'httpcore'</span><span class="p">,</span> <span class="s1">'GraphDB'</span><span class="p">,</span> <span class="s1">'KafkaManager'</span><span class="p">,</span> <span class="s1">'kapps_ogm'</span><span class="p">):</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">_name</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">serve</span><span class="p">(</span><span class="n">middleware</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Start `middleware` on a background thread and wait until it has registered.</span>
+
+<span class="sd">    The thread is what lets this notebook keep executing cells while a server runs, and it is</span>
+<span class="sd">    also what makes `stop` below mandatory. Uvicorn installs signal handlers only on the main</span>
+<span class="sd">    thread, so off it SIGTERM never reaches the ASGI lifespan and the middleware's on_shutdown</span>
+<span class="sd">    callbacks -- deregistration among them -- never run. `stop` sets should_exit and joins,</span>
+<span class="sd">    which runs that same lifespan shutdown with no signal involved. Copy this helper and you</span>
+<span class="sd">    inherit both halves: a copy that never calls `stop` leaks a Service on every run.</span>
+<span class="sd">    """</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">uvicorn</span><span class="o">.</span><span class="n">Config</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">app</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">'127.0.0.1'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s1">'warning'</span><span class="p">)</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">uvicorn</span><span class="o">.</span><span class="n">Server</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+    <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">server</span><span class="o">.</span><span class="n">run</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">server</span><span class="o">.</span><span class="n">started</span> <span class="ow">and</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">server</span><span class="o">.</span><span class="n">started</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">'server on port </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s1"> did not start in time'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">server</span><span class="p">,</span> <span class="n">thread</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">thread</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Stop a served middleware so its deregistration callbacks run."""</span>
+    <span class="n">server</span><span class="o">.</span><span class="n">should_exit</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+
+<span class="n">db</span> <span class="o">=</span> <span class="n">graphdb_for</span><span class="p">(</span><span class="n">DEMO_REPOSITORY</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Connected to GraphDB repository: </span><span class="si">{</span><span class="n">db</span><span class="o">.</span><span class="n">repository</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Connected to GraphDB repository: kapps-demo
+</pre></div>
+</div>
+</div>
+</div>
+<section id="step-1-seed-a-clean-repository">
+<h2>Step 1 — Seed a Clean Repository<a class="headerlink" href="#step-1-seed-a-clean-repository" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">reset_door()</span></code> puts the in-memory door back to <code class="docutils literal notranslate"><span class="pre">closed</span></code>, so that the notebook behaves the same on a second run as on the first. <code class="docutils literal notranslate"><span class="pre">seed_scenario2</span></code> then clears the repository, loads the ontology this scenario needs, and creates the door and mobile-robot individuals.</p>
+<p>As in scenario 1, the classes the middleware registers against must exist before an instance starts. The middleware looks them up; it never creates them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reset_door</span><span class="p">()</span>
+<span class="n">seed</span><span class="o">.</span><span class="n">seed_scenario2</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Door resource: '</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">triple_exists</span><span class="p">((</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_RESOURCE</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">seed</span><span class="o">.</span><span class="n">DOOR_RESOURCE_CLASS</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Robot resource:'</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">triple_exists</span><span class="p">((</span><span class="n">seed</span><span class="o">.</span><span class="n">MOBILE_ROBOT</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">seed</span><span class="o">.</span><span class="n">MOBILE_ROBOT_RESOURCE_CLASS</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Door resource:  True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Robot resource: True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-start-the-door-middleware">
+<h2>Step 2 — Start the Door Middleware<a class="headerlink" href="#step-2-start-the-door-middleware" title="Link to this heading">#</a></h2>
+<p>The door declares three things, and the difference between them is the point of this scenario.</p>
+<p><code class="docutils literal notranslate"><span class="pre">workflow(...)</span></code> registers <code class="docutils literal notranslate"><span class="pre">door_open</span></code> and <code class="docutils literal notranslate"><span class="pre">door_close</span></code>: actions that change the world and return when they are done. <code class="docutils literal notranslate"><span class="pre">state(...)</span></code> registers <code class="docutils literal notranslate"><span class="pre">door_status</span></code>: a reading that answers a question and changes nothing. Both become callable endpoints and both are advertised in the graph, but they are different kinds of thing and are typed differently in the ontology.</p>
+<p>Nothing here creates a queue. These endpoints execute synchronously when they are called, which is what makes the robot’s logic in step 4 a straight line.</p>
+<p>Starting the server is again what performs registration, and step 6 is again what undoes it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">door</span> <span class="o">=</span> <span class="n">SemanticMiddleware</span><span class="p">(</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">'resource'</span><span class="p">,</span> <span class="n">resource_iri</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_RESOURCE</span><span class="p">,</span>
+    <span class="n">service_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_SERVICE_CLASS</span><span class="p">,</span> <span class="n">ogm</span><span class="o">=</span><span class="n">OGM</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">),</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">'127.0.0.1'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8997</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">door</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_OPEN_CAPABILITY_CLASS</span><span class="p">,</span> <span class="n">workflow_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_OPEN_WORKFLOW_CLASS</span><span class="p">)(</span><span class="n">door_open</span><span class="p">)</span>
+<span class="n">door</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_CLOSE_CAPABILITY_CLASS</span><span class="p">,</span> <span class="n">workflow_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_CLOSE_WORKFLOW_CLASS</span><span class="p">)(</span><span class="n">door_close</span><span class="p">)</span>
+<span class="n">door</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_STATUS_CAPABILITY_CLASS</span><span class="p">,</span> <span class="n">state_property_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_STATUS_STATE_CLASS</span><span class="p">)(</span><span class="n">door_status</span><span class="p">)</span>
+
+<span class="n">server</span><span class="p">,</span> <span class="n">thread</span> <span class="o">=</span> <span class="n">serve</span><span class="p">(</span><span class="n">door</span><span class="p">,</span> <span class="mi">8997</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Door middleware started on port 8997'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Door middleware started on port 8997
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-inspect-what-registration-wrote">
+<h2>Step 3 — Inspect What Registration Wrote<a class="headerlink" href="#step-3-inspect-what-registration-wrote" title="Link to this heading">#</a></h2>
+<p>The same structural triples as scenario 1, plus one more kind: a StateProperty belongs to its Service through <code class="docutils literal notranslate"><span class="pre">isStatePropertyOf</span></code>, exactly as a Workflow does through <code class="docutils literal notranslate"><span class="pre">isWorkflowOf</span></code>.</p>
+<p>The endpoints printed here are the ones the robot discovers in the next step. Nothing hands them to the robot — they are in the graph, and the robot queries for them. This is what discovery through the graph means concretely: a URL written by whoever started the server, read by whoever needs to call it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Per-instance — read off the instance rather than rebuilt from the resource.</span>
+<span class="n">service_iri</span> <span class="o">=</span> <span class="n">door</span><span class="o">.</span><span class="n">service_iri</span>
+<span class="n">open_wf</span> <span class="o">=</span> <span class="n">mint_workflow_iri</span><span class="p">(</span><span class="n">service_iri</span><span class="p">,</span> <span class="s1">'door_open'</span><span class="p">)</span>
+<span class="n">status_sp</span> <span class="o">=</span> <span class="n">mint_state_property_iri</span><span class="p">(</span><span class="n">service_iri</span><span class="p">,</span> <span class="s1">'door_status'</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">db</span><span class="o">.</span><span class="n">triple_exists</span><span class="p">((</span><span class="n">open_wf</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">isWorkflowOf</span><span class="p">,</span> <span class="n">service_iri</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">db</span><span class="o">.</span><span class="n">triple_exists</span><span class="p">((</span><span class="n">status_sp</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">isStatePropertyOf</span><span class="p">,</span> <span class="n">service_iri</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'open workflow endpoint:'</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">open_wf</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">SVC</span><span class="o">.</span><span class="n">endpoint</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'status state endpoint: '</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">status_sp</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">SVC</span><span class="o">.</span><span class="n">endpoint</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>open workflow endpoint: [(IRI('https://example.org/kapps-demo#door_042_service_http_c__s__s_127_d_0_d_0_d_1_c_8997_workflow_door_open'), IRI('https://w3id.org/circularfactory/Service#endpoint'), 'http://127.0.0.1:8997/workflows/door_open/execute')]
+status state endpoint:  [(IRI('https://example.org/kapps-demo#door_042_service_http_c__s__s_127_d_0_d_0_d_1_c_8997_state_door_status'), IRI('https://w3id.org/circularfactory/Service#endpoint'), 'http://127.0.0.1:8997/state/door_status')]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-the-mobile-robot-discovers-and-passes-the-door">
+<h2>Step 4 — The Mobile Robot Discovers and Passes the Door<a class="headerlink" href="#step-4-the-mobile-robot-discovers-and-passes-the-door" title="Link to this heading">#</a></h2>
+<p>The robot is a served middleware instance in its own right, for the same reason the planner was in scenario 1: a resource-mode instance that never runs never registers, and a robot that drives a door is a peer the door could ring back.</p>
+<p>The SPARQL query is the interesting part. Read it as a sentence: <em>find the Service of this door, then the state property on that Service that is a door-status property, and the workflow on that Service that is a door-open workflow, and give me the URLs of both.</em> The robot asks for the door by its identity and by the <strong>types</strong> of the things it needs — never by a hostname or a port. Any door modelled the same way answers the same query, which is what makes the behaviour reusable rather than wired to this one machine.</p>
+<p>What follows is deliberately dull: read the status, and if it is closed, POST to the open URL. Two HTTP calls, to addresses that were unknown when the cell started running.</p>
+<p>The door closes itself again after 30 seconds. The robot’s round trip takes less than that, so on the way back it finds the door still open and does not open it twice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robot</span> <span class="o">=</span> <span class="n">SemanticMiddleware</span><span class="p">(</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">'resource'</span><span class="p">,</span> <span class="n">resource_iri</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">MOBILE_ROBOT</span><span class="p">,</span>
+    <span class="n">service_class</span><span class="o">=</span><span class="n">seed</span><span class="o">.</span><span class="n">MOBILE_ROBOT_SERVICE_CLASS</span><span class="p">,</span> <span class="n">ogm</span><span class="o">=</span><span class="n">OGM</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">graphdb_for</span><span class="p">(</span><span class="n">DEMO_REPOSITORY</span><span class="p">)),</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">'127.0.0.1'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8998</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># The robot is served, not merely constructed. on_start_up is what writes its Service</span>
+<span class="c1"># individual and its svc:address, so an unserved resource-mode instance makes mode='resource' a</span>
+<span class="c1"># label with no runtime consequence -- and this notebook is meant to be copied.</span>
+<span class="n">robot_server</span><span class="p">,</span> <span class="n">robot_thread</span> <span class="o">=</span> <span class="n">serve</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="mi">8998</span><span class="p">)</span>
+<span class="n">robot_service</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">service_iri</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Mobile robot served on port 8998'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'  robot address in graph:'</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">robot_service</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">SVC</span><span class="o">.</span><span class="n">address</span><span class="p">)))</span>
+
+<span class="n">sparql</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'''</span>
+<span class="s1">SELECT ?status_url ?open_url WHERE </span><span class="se">{{</span>
+<span class="s1">    ?svc &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">isServiceOf</span><span class="si">}</span><span class="s1">&gt; &lt;</span><span class="si">{</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_RESOURCE</span><span class="si">}</span><span class="s1">&gt; .</span>
+<span class="s1">    ?sp &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">isStatePropertyOf</span><span class="si">}</span><span class="s1">&gt; ?svc .</span>
+<span class="s1">    ?sp a &lt;</span><span class="si">{</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_STATUS_STATE_CLASS</span><span class="si">}</span><span class="s1">&gt; .</span>
+<span class="s1">    ?sp &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">endpoint</span><span class="si">}</span><span class="s1">&gt; ?status_url .</span>
+<span class="s1">    ?wf &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">isWorkflowOf</span><span class="si">}</span><span class="s1">&gt; ?svc .</span>
+<span class="s1">    ?wf a &lt;</span><span class="si">{</span><span class="n">seed</span><span class="o">.</span><span class="n">DOOR_OPEN_WORKFLOW_CLASS</span><span class="si">}</span><span class="s1">&gt; .</span>
+<span class="s1">    ?wf &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">endpoint</span><span class="si">}</span><span class="s1">&gt; ?open_url .</span>
+<span class="se">}}</span><span class="s1">'''</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">sparql</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">'results'</span><span class="p">][</span><span class="s1">'bindings'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">status_url</span><span class="p">,</span> <span class="n">open_url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'status_url'</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s1">'open_url'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'discovered via SPARQL -&gt;'</span><span class="p">,</span> <span class="n">status_url</span><span class="p">,</span> <span class="s1">'|'</span><span class="p">,</span> <span class="n">open_url</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ensure_open</span><span class="p">(</span><span class="n">phase</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  </span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s1">: door is </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="s1">'closed'</span><span class="p">:</span>
+        <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">open_url</span><span class="p">)</span>  <span class="c1"># invoke the open workflow directly at its execute URL</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">status_url</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'  </span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s1">: opened it -&gt; </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">state</span> <span class="o">==</span> <span class="s1">'opened'</span>
+
+<span class="n">ensure_open</span><span class="p">(</span><span class="s1">'approach'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'  drove through the door'</span><span class="p">)</span>
+<span class="n">ensure_open</span><span class="p">(</span><span class="s1">'return'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'  drove back through the door'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mobile robot served on port 8998
+  robot address in graph: [(IRI('https://example.org/kapps-demo#mobile_robot_007_service_http_c__s__s_127_d_0_d_0_d_1_c_8998'), IRI('https://w3id.org/circularfactory/Service#address'), 'http://127.0.0.1:8998')]
+discovered via SPARQL -&gt; http://127.0.0.1:8997/state/door_status | http://127.0.0.1:8997/workflows/door_open/execute
+  approach: door is closed
+  approach: opened it -&gt; opened
+  drove through the door
+  return: door is opened
+  drove back through the door
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-the-live-status-is-never-persisted">
+<h2>Step 5 — The Live Status is Never Persisted<a class="headerlink" href="#step-5-the-live-status-is-never-persisted" title="Link to this heading">#</a></h2>
+<p>This cell asserts a negative: nowhere on the state property is there a literal <code class="docutils literal notranslate"><span class="pre">opened</span></code> or <code class="docutils literal notranslate"><span class="pre">closed</span></code>.</p>
+<p>The graph holds the state property’s identity, its type, and the URL to read it at. The value itself lives in the door’s own memory and is served over REST on request. Writing it to the graph would create a second copy that is stale the moment the door moves, and a consumer would have no way to tell which copy was true.</p>
+<p>The rule this follows: the graph describes <strong>what exists and where to ask</strong>; the resource answers <strong>what is true right now</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">status_sp</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">'opened'</span><span class="p">,</span> <span class="s1">'closed'</span><span class="p">),</span> <span class="s1">'state value must not be persisted'</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Confirmed: no 'opened'/'closed' literal on the state property."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confirmed: no 'opened'/'closed' literal on the state property.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-6-shutdown-and-deregistration">
+<h2>Step 6 — Shutdown and Deregistration<a class="headerlink" href="#step-6-shutdown-and-deregistration" title="Link to this heading">#</a></h2>
+<p>Stopping the door and the robot removes their reachability triples — including the state property’s endpoint, which is what stops another peer from trying to read a status from a process that has exited.</p>
+<p>The individuals stay. After this cell the door is still fully described in the graph, and the query the robot ran in step 4 returns nothing, because there is no endpoint left to return. That is the intended answer: the door exists, and right now there is nowhere to ask.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stop</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">thread</span><span class="p">)</span>
+<span class="n">stop</span><span class="p">(</span><span class="n">robot_server</span><span class="p">,</span> <span class="n">robot_thread</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">reset_door</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'state endpoint removed: '</span><span class="p">,</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">status_sp</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">SVC</span><span class="o">.</span><span class="n">endpoint</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'robot address removed:  '</span><span class="p">,</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span><span class="n">sub</span><span class="o">=</span><span class="n">robot_service</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="n">SVC</span><span class="o">.</span><span class="n">address</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'state property preserved:'</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">triple_exists</span><span class="p">((</span><span class="n">status_sp</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">seed</span><span class="o">.</span><span class="n">DOOR_STATUS_STATE_CLASS</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'robot Service preserved: '</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">triple_exists</span><span class="p">((</span><span class="n">robot_service</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">isServiceOf</span><span class="p">,</span> <span class="n">seed</span><span class="o">.</span><span class="n">MOBILE_ROBOT</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>state endpoint removed:  True
+robot address removed:   True
+state property preserved: True
+robot Service preserved:  True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hello-world.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scenario 1 — Hello-World through the Knowledge Graph</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="factory.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Scenario 3 — The TransferUnit Factory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-seed-a-clean-repository">Step 1 — Seed a Clean Repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-start-the-door-middleware">Step 2 — Start the Door Middleware</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-inspect-what-registration-wrote">Step 3 — Inspect What Registration Wrote</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-the-mobile-robot-discovers-and-passes-the-door">Step 4 — The Mobile Robot Discovers and Passes the Door</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-the-live-status-is-never-persisted">Step 5 — The Live Status is Never Persisted</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-shutdown-and-deregistration">Step 6 — Shutdown and Deregistration</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/scenarios/door.ipynb.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
