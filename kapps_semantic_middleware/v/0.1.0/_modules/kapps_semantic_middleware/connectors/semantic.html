@@ -1,0 +1,909 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.connectors.semantic &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/connectors/semantic';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.connectors.semantic</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.connectors.semantic</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The semantic-connector seam: binding descriptors and their registry.</span>
+
+<span class="sd">A **semantic connector** is any connector that can register itself from the knowledge graph.</span>
+<span class="sd">The system realizes it not as a connector subclass, but as a **binding descriptor**. This is an</span>
+<span class="sd">object that names the connector class it builds, the interface property it binds to, and</span>
+<span class="sd">the connection metadata its protocol needs. It also states how to turn one parameter's</span>
+<span class="sd">metadata into one or more ``add_synced_connector`` registrations.</span>
+
+<span class="sd">Reference a ``connector_cls`` rather than subclass it. This is the key point. ``transitional_sync_middleware``</span>
+<span class="sd">ships about ten connectors: MQTT, OPC-UA, HTTP request and polling, websocket and webhook</span>
+<span class="sd">client and server, AAS client, model. Self-registration must not be added to any</span>
+<span class="sd">of them in the sibling repo. A descriptor lets a domain expert make a vendor's connector</span>
+<span class="sd">semantic, without owning or subclassing its source. It also lets two registration strategies</span>
+<span class="sd">for one protocol coexist without a shared ancestor.</span>
+
+<span class="sd">MQTT is the first instance of this seam, not its shape. See ``mqtt_binding.py``.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Callable</span><span class="p">,</span>
+    <span class="n">ClassVar</span><span class="p">,</span>
+    <span class="n">Dict</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">Iterator</span><span class="p">,</span>
+    <span class="n">Mapping</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Protocol</span><span class="p">,</span>
+    <span class="n">Sequence</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">Type</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.sync.synced_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">SyncDirection</span><span class="p">,</span> <span class="n">SyncRole</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">INF</span><span class="p">,</span> <span class="n">AccessMode</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="first">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.first">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">first</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The first element of an OGM multi-valued property, or the value itself.</span>
+
+<span class="sd">    Every property on a materialized node is a list, because RDF properties are set-valued.</span>
+<span class="sd">    Connection metadata is single-valued in practice, so unwrap here. This keeps every call</span>
+<span class="sd">    site from restating it. An empty or absent value yields ``None``.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="normalize_metadata">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.normalize_metadata">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_metadata</span><span class="p">(</span><span class="n">metadata</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Key a parameter node's properties by the string form of their IRI.</span>
+
+<span class="sd">    A metadata mapping reaches a binding either from a ``ClassSpec``-derived dict keyed by</span>
+<span class="sd">    ``IRI`` or from a materialized model keyed by ``str``. Normalize once here. No</span>
+<span class="sd">    binding has to be indifferent to which it got, and no binding has to import ``IRI``</span>
+<span class="sd">    just to do a lookup.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">):</span> <span class="n">value</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">metadata</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<div class="viewcode-block" id="Registration">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.Registration">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Registration</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Describe one ``add_synced_connector`` call. Do not perform it.</span>
+
+<span class="sd">    A binding yields these instead of touching the middleware directly. So a test can</span>
+<span class="sd">    check the seam with no running middleware. So the caller decides whether to wire</span>
+<span class="sd">    them at all. This is what an inspecting instance needs.</span>
+<span class="sd">    """</span>
+
+    <span class="n">connector</span><span class="p">:</span> <span class="n">Any</span>
+<span class="w">    </span><span class="sd">"""A constructed framework connector instance (e.g. ``MqttClientConnector``)."""</span>
+
+    <span class="n">sync_direction</span><span class="p">:</span> <span class="n">SyncDirection</span>
+<span class="w">    </span><span class="sd">"""Which way this particular connector moves data."""</span>
+
+    <span class="n">model_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The persistence type of the bound field for framework bookkeeping."""</span>
+
+    <span class="n">formatter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">"""Translates between the device payload and the persistence value."""</span>
+
+    <span class="n">sync_role</span><span class="p">:</span> <span class="n">SyncRole</span> <span class="o">=</span> <span class="n">SyncRole</span><span class="o">.</span><span class="n">READ_WRITE</span>
+<span class="w">    </span><span class="sd">"""Role in the framework's sync bookkeeping. The direction controls the gating."""</span>
+
+    <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="w">    </span><span class="sd">"""Disambiguate the connector id when one binding yields several registrations."""</span></div>
+
+
+
+<div class="viewcode-block" id="ParameterBinding">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.ParameterBinding">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ParameterBinding</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One interface-accessible parameter, resolved and ready to wire.</span>
+
+<span class="sd">    Everything here comes from the ClassSpec and the graph, never from materialized instance</span>
+<span class="sd">    data. This is what makes construction-time registration possible.</span>
+<span class="sd">    """</span>
+
+    <span class="n">resource_iri</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="w">    </span><span class="sd">"""The individual carrying the parameter, for example a belt or barrier."""</span>
+
+    <span class="n">parameter_property</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="w">    </span><span class="sd">"""The domain property whose range is the parameter node (the COMPLEX property)."""</span>
+
+    <span class="n">field_id</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">"""The mangled attribute name the property has on the generated pydantic model."""</span>
+
+    <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The parameter node's own properties, keyed by IRI string, connection metadata</span>
+<span class="sd">    included. Build it with :func:`normalize_metadata`."""</span>
+
+    <span class="n">descriptor</span><span class="p">:</span> <span class="s2">"BindingDescriptor"</span>
+<span class="w">    </span><span class="sd">"""The binding descriptor that recognized this parameter."""</span>
+
+    <span class="n">node_model_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The generated pydantic model for the parameter node itself.</span>
+
+<span class="sd">    A formatter needs it to rebuild the node from an inbound scalar, because the framework</span>
+<span class="sd">    replaces the whole value on ``setattr`` and hands the formatter nothing but the payload.</span>
+<span class="sd">    It comes from the **full** spec, not the pruned northbound one. The node the</span>
+<span class="sd">    binding writes must still be the shape the graph expects."""</span>
+
+    <span class="n">root_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">"""The top-level resource individual recognition started from (e.g. the TransferUnit).</span>
+
+<span class="sd">    ``resource_iri`` above is the *holder* of the parameter, a belt or a barrier. REST</span>
+<span class="sd">    addressing is structural and relative to the **root**, not the holder, so a</span>
+<span class="sd">    binding one level of nesting deep needs both. ``None`` only for a ``ParameterBinding``</span>
+<span class="sd">    built by hand outside recognition (as the MQTT tests do); nothing that reads</span>
+<span class="sd">    ``root_iri`` is reachable from one of those."""</span>
+
+    <span class="n">root_class_local_name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">"""The root resource's class IRI, mangled (``IRI(...).lined``), the ``{Model}``</span>
+<span class="sd">    segment of a recursive REST route. Not the bare fragment: ``kapps_ogm``'s</span>
+<span class="sd">    ``ClassSpec.to_pydantic_model`` names the materialized class after the whole mangled</span>
+<span class="sd">    IRI (``class_spec.py``), so this must match that or a REST connector's own PUT/GET</span>
+<span class="sd">    404s against the real served route. Paired with</span>
+<span class="sd">    ``root_iri``; see its docstring."""</span>
+
+    <span class="n">path_steps</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+<span class="w">    </span><span class="sd">"""``(field_name, child_iri)`` hops from ``root_iri`` down to ``resource_iri``, mirroring</span>
+<span class="sd">    ``rest_router.py``'s ``_accumulate_routes``. Empty when ``resource_iri`` already is the</span>
+<span class="sd">    root. ``field_name`` is the mangled form (``IRI(prop).lined``), matching what the served</span>
+<span class="sd">    route actually uses; ``child_iri`` is the raw individual IRI, mangled by</span>
+<span class="sd">    ``rest_binding.build_parameter_path`` itself."""</span>
+
+<div class="viewcode-block" id="ParameterBinding.get">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.ParameterBinding.get">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prop</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The single value of one metadata property, or ``None``."""</span>
+        <span class="k">return</span> <span class="n">first</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">)))</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">access_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The parameter's declared access mode, default to read-only.</span>
+
+<span class="sd">        An absent or unrecognised value yields ``read``, so a parameter is never writable by</span>
+<span class="sd">        accident of omission.</span>
+<span class="sd">        """</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">accessMode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">raw</span> <span class="k">if</span> <span class="n">raw</span> <span class="ow">in</span> <span class="n">AccessMode</span><span class="o">.</span><span class="n">ALL</span> <span class="k">else</span> <span class="n">AccessMode</span><span class="o">.</span><span class="n">READ</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""A short human-readable label for a log line, e.g. "Belt1 hasConveyorSpeed".</span>
+
+<span class="sd">        Full mangled IRIs are correct in route paths but unreadable in a log line</span>
+<span class="sd">        a human watches scroll past. Display-only: never parse it, never use it to address</span>
+<span class="sd">        anything. Shared here rather than restated per binding descriptor — every binding</span>
+<span class="sd">        builds one of these for its formatter's log lines.</span>
+<span class="sd">        """</span>
+        <span class="n">resource_fragment</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resource_iri</span><span class="o">.</span><span class="n">fragment</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">,</span> <span class="s2">"fragment"</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">resource_iri</span><span class="o">.</span><span class="n">fragment</span>
+            <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">param_fragment</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parameter_property</span><span class="o">.</span><span class="n">fragment</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">,</span> <span class="s2">"fragment"</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameter_property</span><span class="o">.</span><span class="n">fragment</span>
+            <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource_fragment</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">param_fragment</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<div class="viewcode-block" id="BindingDescriptor">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.BindingDescriptor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BindingDescriptor</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a semantic connector must declare.</span>
+
+<span class="sd">    Deliberately a structural protocol over plain class attributes. A descriptor is</span>
+<span class="sd">    configuration, and requiring inheritance from a base class would defeat the purpose of</span>
+<span class="sd">    not owning the connector's source.</span>
+<span class="sd">    """</span>
+
+    <span class="n">connector_cls</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The framework connector class this binding constructs. Never subclass it.</span>
+
+<span class="sd">    Type loosely and declare ``ClassVar`` because a descriptor is configuration on a class,</span>
+<span class="sd">    not state on an instance, and because a connector behind an optional extra may legitimately</span>
+<span class="sd">    resolve to ``None`` until its dependency is installed."""</span>
+
+    <span class="n">interface_property</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The ``inf:`` marker property a domain property must be a subproperty of to match."""</span>
+
+    <span class="n">connection_metadata</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span>
+<span class="w">    </span><span class="sd">"""The properties this binding reads in order to construct a connector.</span>
+
+<span class="sd">    **Not** the projection's source of truth. It once was, and that was wrong. A set built from</span>
+<span class="sd">    the registered bindings only knows the protocols this middleware has code for, so a</span>
+<span class="sd">    parameter reachable over an unregistered protocol had its endpoint served northbound. The</span>
+<span class="sd">    projection asks the *ontology* instead. Cross-check this declaration against</span>
+<span class="sd">    it at construction, and report a disagreement. The two should coincide, and where they</span>
+<span class="sd">    do not, either the contract grew a term this binding ignores or the binding expects one the</span>
+<span class="sd">    ontology never declares."""</span>
+
+<div class="viewcode-block" id="BindingDescriptor.build">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.build">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span>
+        <span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span><span class="p">,</span>
+        <span class="n">direction</span><span class="p">:</span> <span class="n">SyncDirection</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Registration</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Turn one resolved parameter into the registrations that realize it.</span>
+
+<span class="sd">        ``ensure_transport``, when given, is the deployment's transport hook,</span>
+<span class="sd">        already deduped by ``plan_wiring`` to fire once per distinct ``(host, port)`` across</span>
+<span class="sd">        this resource's whole wiring. A binding with nothing to bring up (REST)</span>
+<span class="sd">        simply never calls it."""</span>
+        <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SemanticConnectorRegistry">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SemanticConnectorRegistry</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Maps an interface property to the binding descriptor that serves it.</span>
+
+<span class="sd">    Resolve by the **interface property**, not by ``rdf:type``. A parameter node has no</span>
+<span class="sd">    named type of its own. It has only anonymous restriction nodes, which are inferred and so</span>
+<span class="sd">    absent from an explicit-graph fetch. The property hierarchy is what survives.</span>
+
+<span class="sd">    Build and consult the registry for **every** connector wiring, including one that</span>
+<span class="sd">    wires nothing. Do not implement "no connectors" as "no registry". With no registry,</span>
+<span class="sd">    no property is recognized as a parameter. The parameter node then becomes ordinary</span>
+<span class="sd">    data, and is served northbound. The least-privileged instance would leak the most.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descriptors</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BindingDescriptor</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Type</span><span class="p">[</span><span class="n">BindingDescriptor</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">descriptor</span> <span class="ow">in</span> <span class="n">descriptors</span> <span class="ow">or</span> <span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">descriptor</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SemanticConnectorRegistry.register">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.register">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descriptor</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">BindingDescriptor</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Type</span><span class="p">[</span><span class="n">BindingDescriptor</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Add a descriptor, replace any earlier one for the same interface property.</span>
+
+<span class="sd">        We deliberately replace rather than refuse. A domain expert may override the</span>
+<span class="sd">        built-in MQTT binding with a site-specific one. This is a supported use of the</span>
+<span class="sd">        seam. The expert should not have to unregister first.</span>
+
+<span class="sd">        Takes the descriptor **class**, not an instance of it. Every member of</span>
+<span class="sd">        ``BindingDescriptor`` is a ``ClassVar``, so the class itself is the configuration.</span>
+<span class="sd">        """</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">descriptor</span><span class="o">.</span><span class="n">interface_property</span><span class="p">)</span>
+        <span class="n">existing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">existing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">existing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">descriptor</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">"Replace the binding registered for </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2"> -&gt; </span><span class="si">%s</span><span class="s2">)"</span><span class="p">,</span>
+                <span class="n">key</span><span class="p">,</span>
+                <span class="n">existing</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                <span class="n">descriptor</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">descriptor</span>
+        <span class="k">return</span> <span class="n">descriptor</span></div>
+
+
+<div class="viewcode-block" id="SemanticConnectorRegistry.for_interface_property">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.for_interface_property">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">for_interface_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BindingDescriptor</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""The descriptor that registers for exactly this interface property, if any."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">iri</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="SemanticConnectorRegistry.declared_connection_metadata">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.declared_connection_metadata">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">declared_connection_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">frozenset</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Every property any registered binding reads, keyed by IRI string.</span>
+
+<span class="sd">        **Not the projection's prune set**. See ``BindingDescriptor.connection_metadata``.</span>
+<span class="sd">        This is one side of the construction-time cross-check against what the ontology</span>
+<span class="sd">        declares. The projection itself follows the ontology</span>
+<span class="sd">        (:func:`kapps_semantic_middleware.projection.southbound_properties`).</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="nb">frozenset</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">descriptor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">descriptor</span><span class="o">.</span><span class="n">connection_metadata</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BindingDescriptor</span><span class="p">]]:</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_by_property</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+
+
+
+<span class="c1"># The registry a SemanticMiddleware gets when the system does not hand one. Populate when the</span>
+<span class="c1"># binding modules are imported, so the MQTT binding is available out of the box while</span>
+<span class="c1"># remaining an ordinary registration rather than a special case.</span>
+<span class="n">default_registry</span> <span class="o">=</span> <span class="n">SemanticConnectorRegistry</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="semantic_connector">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.semantic_connector">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">semantic_connector</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Register a binding descriptor class on the default registry.</span>
+
+<span class="sd">    Use as a plain decorator on the descriptor class::</span>
+
+<span class="sd">        @semantic_connector</span>
+<span class="sd">        class MQTTBinding:</span>
+<span class="sd">            connector_cls = MqttClientConnector</span>
+<span class="sd">            interface_property = INF.isInterfaceAccessibleMQTTParameter</span>
+<span class="sd">            ...</span>
+<span class="sd">    """</span>
+    <span class="n">default_registry</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">cls</span></div>
+
+
+
+<div class="viewcode-block" id="resolve_direction">
+<a class="viewcode-back" href="../../../reference/connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.resolve_direction">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resolve_direction</span><span class="p">(</span><span class="n">access_mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">flavour</span><span class="p">:</span> <span class="n">SyncDirection</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SyncDirection</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The most restrictive of the parameter access mode and the instance flavor.</span>
+
+<span class="sd">    Neither may widen the other. A monitor can therefore never drive a writable</span>
+<span class="sd">    belt, and a controller can never write a read-only sensor. This is structural, not by</span>
+<span class="sd">    convention.</span>
+
+<span class="sd">    The read leg is always available. The question is only whether the write leg is. So this</span>
+<span class="sd">    returns ``BIDIRECTIONAL`` when both sides permit writing, and ``TO_PERSISTENCE``</span>
+<span class="sd">    (device to middleware, read-only) otherwise.</span>
+<span class="sd">    """</span>
+    <span class="n">parameter_permits_write</span> <span class="o">=</span> <span class="n">access_mode</span> <span class="o">==</span> <span class="n">AccessMode</span><span class="o">.</span><span class="n">READWRITE</span>
+    <span class="n">flavour_permits_write</span> <span class="o">=</span> <span class="n">flavour</span> <span class="ow">in</span> <span class="p">(</span>
+        <span class="n">SyncDirection</span><span class="o">.</span><span class="n">BIDIRECTIONAL</span><span class="p">,</span>
+        <span class="n">SyncDirection</span><span class="o">.</span><span class="n">FROM_PERSISTENCE</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">parameter_permits_write</span> <span class="ow">and</span> <span class="n">flavour_permits_write</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">SyncDirection</span><span class="o">.</span><span class="n">BIDIRECTIONAL</span>
+    <span class="k">return</span> <span class="n">SyncDirection</span><span class="o">.</span><span class="n">TO_PERSISTENCE</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

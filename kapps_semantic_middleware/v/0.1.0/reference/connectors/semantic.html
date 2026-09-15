@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semantic registry &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/connectors/semantic';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Wiring" href="wiring.html" />
+    <link rel="prev" title="Vocabulary" href="../vocabulary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Core</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../middleware.html">Middleware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modes.html">Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../activity.html">Activity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The knowledge graph</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seeding.html">Seeding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projection.html">Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">Vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectors</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Semantic registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiring.html">Wiring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mqtt_binding.html">MQTT binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rest_binding.html">REST binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="knowledge_graph_connector.html">Knowledge graph connector</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../rest_router.html">REST router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shacl_interop/shape_from_typehints.html">Shapes from type hints</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Semantic registry</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="semantic-registry">
+<h1>Semantic registry<a class="headerlink" href="#semantic-registry" title="Link to this heading">#</a></h1>
+<p>The registry that maps a capability onto the connector able to carry it.</p>
+<p id="module-kapps_semantic_middleware.connectors.semantic">The semantic-connector seam: binding descriptors and their registry.</p>
+<p>A <strong>semantic connector</strong> is any connector that can register itself from the knowledge graph.
+The system realizes it not as a connector subclass, but as a <strong>binding descriptor</strong>. This is an
+object that names the connector class it builds, the interface property it binds to, and
+the connection metadata its protocol needs. It also states how to turn one parameter’s
+metadata into one or more <code class="docutils literal notranslate"><span class="pre">add_synced_connector</span></code> registrations.</p>
+<p>Reference a <code class="docutils literal notranslate"><span class="pre">connector_cls</span></code> rather than subclass it. This is the key point. <code class="docutils literal notranslate"><span class="pre">transitional_sync_middleware</span></code>
+ships about ten connectors: MQTT, OPC-UA, HTTP request and polling, websocket and webhook
+client and server, AAS client, model. Self-registration must not be added to any
+of them in the sibling repo. A descriptor lets a domain expert make a vendor’s connector
+semantic, without owning or subclassing its source. It also lets two registration strategies
+for one protocol coexist without a shared ancestor.</p>
+<p>MQTT is the first instance of this seam, not its shape. See <code class="docutils literal notranslate"><span class="pre">mqtt_binding.py</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.first">
+<span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">first</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#first"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.first" title="Link to this definition">#</a></dt>
+<dd><p>The first element of an OGM multi-valued property, or the value itself.</p>
+<p>Every property on a materialized node is a list, because RDF properties are set-valued.
+Connection metadata is single-valued in practice, so unwrap here. This keeps every call
+site from restating it. An empty or absent value yields <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.normalize_metadata">
+<span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">normalize_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Mapping" title="(in Python v3.14)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#normalize_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.normalize_metadata" title="Link to this definition">#</a></dt>
+<dd><p>Key a parameter node’s properties by the string form of their IRI.</p>
+<p>A metadata mapping reaches a binding either from a <code class="docutils literal notranslate"><span class="pre">ClassSpec</span></code>-derived dict keyed by
+<code class="docutils literal notranslate"><span class="pre">IRI</span></code> or from a materialized model keyed by <code class="docutils literal notranslate"><span class="pre">str</span></code>. Normalize once here. No
+binding has to be indifferent to which it got, and no binding has to import <code class="docutils literal notranslate"><span class="pre">IRI</span></code>
+just to do a lookup.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">Registration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SyncDirection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formatter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sync_role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SyncRole</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">SyncRole.READ_WRITE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#Registration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Describe one <code class="docutils literal notranslate"><span class="pre">add_synced_connector</span></code> call. Do not perform it.</p>
+<p>A binding yields these instead of touching the middleware directly. So a test can
+check the seam with no running middleware. So the caller decides whether to wire
+them at all. This is what an inspecting instance needs.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration.connector">
+<span class="sig-name descname"><span class="pre">connector</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration.connector" title="Link to this definition">#</a></dt>
+<dd><p>A constructed framework connector instance (e.g. <code class="docutils literal notranslate"><span class="pre">MqttClientConnector</span></code>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration.sync_direction">
+<span class="sig-name descname"><span class="pre">sync_direction</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SyncDirection</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration.sync_direction" title="Link to this definition">#</a></dt>
+<dd><p>Which way this particular connector moves data.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration.model_type">
+<span class="sig-name descname"><span class="pre">model_type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration.model_type" title="Link to this definition">#</a></dt>
+<dd><p>The persistence type of the bound field for framework bookkeeping.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration.formatter">
+<span class="sig-name descname"><span class="pre">formatter</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration.formatter" title="Link to this definition">#</a></dt>
+<dd><p>Translates between the device payload and the persistence value.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration.sync_role">
+<span class="sig-name descname"><span class="pre">sync_role</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">SyncRole</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration.sync_role" title="Link to this definition">#</a></dt>
+<dd><p>Role in the framework’s sync bookkeeping. The direction controls the gating.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.Registration.suffix">
+<span class="sig-name descname"><span class="pre">suffix</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.Registration.suffix" title="Link to this definition">#</a></dt>
+<dd><p>Disambiguate the connector id when one binding yields several registrations.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">ParameterBinding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource_iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter_property</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><span class="pre">BindingDescriptor</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">node_model_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_class_local_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#ParameterBinding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>One interface-accessible parameter, resolved and ready to wire.</p>
+<p>Everything here comes from the ClassSpec and the graph, never from materialized instance
+data. This is what makes construction-time registration possible.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.resource_iri">
+<span class="sig-name descname"><span class="pre">resource_iri</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IRI</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.resource_iri" title="Link to this definition">#</a></dt>
+<dd><p>The individual carrying the parameter, for example a belt or barrier.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.parameter_property">
+<span class="sig-name descname"><span class="pre">parameter_property</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IRI</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.parameter_property" title="Link to this definition">#</a></dt>
+<dd><p>The domain property whose range is the parameter node (the COMPLEX property).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.field_id">
+<span class="sig-name descname"><span class="pre">field_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.field_id" title="Link to this definition">#</a></dt>
+<dd><p>The mangled attribute name the property has on the generated pydantic model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.metadata" title="Link to this definition">#</a></dt>
+<dd><p>The parameter node’s own properties, keyed by IRI string, connection metadata
+included. Build it with <a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.normalize_metadata" title="kapps_semantic_middleware.connectors.semantic.normalize_metadata"><code class="xref py py-func docutils literal notranslate"><span class="pre">normalize_metadata()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.descriptor">
+<span class="sig-name descname"><span class="pre">descriptor</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><span class="pre">BindingDescriptor</span></a></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.descriptor" title="Link to this definition">#</a></dt>
+<dd><p>The binding descriptor that recognized this parameter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.node_model_type">
+<span class="sig-name descname"><span class="pre">node_model_type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.node_model_type" title="Link to this definition">#</a></dt>
+<dd><p>The generated pydantic model for the parameter node itself.</p>
+<p>A formatter needs it to rebuild the node from an inbound scalar, because the framework
+replaces the whole value on <code class="docutils literal notranslate"><span class="pre">setattr</span></code> and hands the formatter nothing but the payload.
+It comes from the <strong>full</strong> spec, not the pruned northbound one. The node the
+binding writes must still be the shape the graph expects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.root_iri">
+<span class="sig-name descname"><span class="pre">root_iri</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.root_iri" title="Link to this definition">#</a></dt>
+<dd><p>The top-level resource individual recognition started from (e.g. the TransferUnit).</p>
+<p><code class="docutils literal notranslate"><span class="pre">resource_iri</span></code> above is the <em>holder</em> of the parameter, a belt or a barrier. REST
+addressing is structural and relative to the <strong>root</strong>, not the holder, so a
+binding one level of nesting deep needs both. <code class="docutils literal notranslate"><span class="pre">None</span></code> only for a <code class="docutils literal notranslate"><span class="pre">ParameterBinding</span></code>
+built by hand outside recognition (as the MQTT tests do); nothing that reads
+<code class="docutils literal notranslate"><span class="pre">root_iri</span></code> is reachable from one of those.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.root_class_local_name">
+<span class="sig-name descname"><span class="pre">root_class_local_name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.root_class_local_name" title="Link to this definition">#</a></dt>
+<dd><p>The root resource’s class IRI, mangled (<code class="docutils literal notranslate"><span class="pre">IRI(...).lined</span></code>), the <code class="docutils literal notranslate"><span class="pre">{Model}</span></code>
+segment of a recursive REST route. Not the bare fragment: <code class="docutils literal notranslate"><span class="pre">kapps_ogm</span></code>’s
+<code class="docutils literal notranslate"><span class="pre">ClassSpec.to_pydantic_model</span></code> names the materialized class after the whole mangled
+IRI (<code class="docutils literal notranslate"><span class="pre">class_spec.py</span></code>), so this must match that or a REST connector’s own PUT/GET
+404s against the real served route. Paired with
+<code class="docutils literal notranslate"><span class="pre">root_iri</span></code>; see its docstring.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.path_steps">
+<span class="sig-name descname"><span class="pre">path_steps</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.path_steps" title="Link to this definition">#</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">(field_name,</span> <span class="pre">child_iri)</span></code> hops from <code class="docutils literal notranslate"><span class="pre">root_iri</span></code> down to <code class="docutils literal notranslate"><span class="pre">resource_iri</span></code>, mirroring
+<code class="docutils literal notranslate"><span class="pre">rest_router.py</span></code>’s <code class="docutils literal notranslate"><span class="pre">_accumulate_routes</span></code>. Empty when <code class="docutils literal notranslate"><span class="pre">resource_iri</span></code> already is the
+root. <code class="docutils literal notranslate"><span class="pre">field_name</span></code> is the mangled form (<code class="docutils literal notranslate"><span class="pre">IRI(prop).lined</span></code>), matching what the served
+route actually uses; <code class="docutils literal notranslate"><span class="pre">child_iri</span></code> is the raw individual IRI, mangled by
+<code class="docutils literal notranslate"><span class="pre">rest_binding.build_parameter_path</span></code> itself.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#ParameterBinding.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.get" title="Link to this definition">#</a></dt>
+<dd><p>The single value of one metadata property, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.access_mode">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">access_mode</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.access_mode" title="Link to this definition">#</a></dt>
+<dd><p>The parameter’s declared access mode, default to read-only.</p>
+<p>An absent or unrecognised value yields <code class="docutils literal notranslate"><span class="pre">read</span></code>, so a parameter is never writable by
+accident of omission.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.ParameterBinding.label">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">label</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.label" title="Link to this definition">#</a></dt>
+<dd><p>A short human-readable label for a log line, e.g. “Belt1 hasConveyorSpeed”.</p>
+<p>Full mangled IRIs are correct in route paths but unreadable in a log line
+a human watches scroll past. Display-only: never parse it, never use it to address
+anything. Shared here rather than restated per binding descriptor — every binding
+builds one of these for its formatter’s log lines.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.BindingDescriptor">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">BindingDescriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#BindingDescriptor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a></p>
+<p>What a semantic connector must declare.</p>
+<p>Deliberately a structural protocol over plain class attributes. A descriptor is
+configuration, and requiring inheritance from a base class would defeat the purpose of
+not owning the connector’s source.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.BindingDescriptor.connector_cls">
+<span class="sig-name descname"><span class="pre">connector_cls</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.connector_cls" title="Link to this definition">#</a></dt>
+<dd><p>The framework connector class this binding constructs. Never subclass it.</p>
+<p>Type loosely and declare <code class="docutils literal notranslate"><span class="pre">ClassVar</span></code> because a descriptor is configuration on a class,
+not state on an instance, and because a connector behind an optional extra may legitimately
+resolve to <code class="docutils literal notranslate"><span class="pre">None</span></code> until its dependency is installed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.BindingDescriptor.interface_property">
+<span class="sig-name descname"><span class="pre">interface_property</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.interface_property" title="Link to this definition">#</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">inf:</span></code> marker property a domain property must be a subproperty of to match.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.BindingDescriptor.connection_metadata">
+<span class="sig-name descname"><span class="pre">connection_metadata</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.ClassVar" title="(in Python v3.14)"><span class="pre">ClassVar</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.connection_metadata" title="Link to this definition">#</a></dt>
+<dd><p>The properties this binding reads in order to construct a connector.</p>
+<p><strong>Not</strong> the projection’s source of truth. It once was, and that was wrong. A set built from
+the registered bindings only knows the protocols this middleware has code for, so a
+parameter reachable over an unregistered protocol had its endpoint served northbound. The
+projection asks the <em>ontology</em> instead. Cross-check this declaration against
+it at construction, and report a disagreement. The two should coincide, and where they
+do not, either the contract grew a term this binding ignores or the binding expects one the
+ontology never declares.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.BindingDescriptor.build">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding" title="kapps_semantic_middleware.connectors.semantic.ParameterBinding"><span class="pre">ParameterBinding</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SyncDirection</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.14)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.Registration" title="kapps_semantic_middleware.connectors.semantic.Registration"><span class="pre">Registration</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#BindingDescriptor.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.build" title="Link to this definition">#</a></dt>
+<dd><p>Turn one resolved parameter into the registrations that realize it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ensure_transport</span></code>, when given, is the deployment’s transport hook,
+already deduped by <code class="docutils literal notranslate"><span class="pre">plan_wiring</span></code> to fire once per distinct <code class="docutils literal notranslate"><span class="pre">(host,</span> <span class="pre">port)</span></code> across
+this resource’s whole wiring. A binding with nothing to bring up (REST)
+simply never calls it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">SemanticConnectorRegistry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><span class="pre">BindingDescriptor</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#SemanticConnectorRegistry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Maps an interface property to the binding descriptor that serves it.</p>
+<p>Resolve by the <strong>interface property</strong>, not by <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code>. A parameter node has no
+named type of its own. It has only anonymous restriction nodes, which are inferred and so
+absent from an explicit-graph fetch. The property hierarchy is what survives.</p>
+<p>Build and consult the registry for <strong>every</strong> connector wiring, including one that
+wires nothing. Do not implement “no connectors” as “no registry”. With no registry,
+no property is recognized as a parameter. The parameter node then becomes ordinary
+data, and is served northbound. The least-privileged instance would leak the most.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">descriptor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><span class="pre">BindingDescriptor</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><span class="pre">BindingDescriptor</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#SemanticConnectorRegistry.register"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.register" title="Link to this definition">#</a></dt>
+<dd><p>Add a descriptor, replace any earlier one for the same interface property.</p>
+<p>We deliberately replace rather than refuse. A domain expert may override the
+built-in MQTT binding with a site-specific one. This is a supported use of the
+seam. The expert should not have to unregister first.</p>
+<p>Takes the descriptor <strong>class</strong>, not an instance of it. Every member of
+<code class="docutils literal notranslate"><span class="pre">BindingDescriptor</span></code> is a <code class="docutils literal notranslate"><span class="pre">ClassVar</span></code>, so the class itself is the configuration.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.for_interface_property">
+<span class="sig-name descname"><span class="pre">for_interface_property</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Type" title="(in Python v3.14)"><span class="pre">Type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor" title="kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><span class="pre">BindingDescriptor</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#SemanticConnectorRegistry.for_interface_property"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.for_interface_property" title="Link to this definition">#</a></dt>
+<dd><p>The descriptor that registers for exactly this interface property, if any.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.declared_connection_metadata">
+<span class="sig-name descname"><span class="pre">declared_connection_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#frozenset" title="(in Python v3.14)"><span class="pre">frozenset</span></a></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#SemanticConnectorRegistry.declared_connection_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.declared_connection_metadata" title="Link to this definition">#</a></dt>
+<dd><p>Every property any registered binding reads, keyed by IRI string.</p>
+<p><strong>Not the projection’s prune set</strong>. See <code class="docutils literal notranslate"><span class="pre">BindingDescriptor.connection_metadata</span></code>.
+This is one side of the construction-time cross-check against what the ontology
+declares. The projection itself follows the ontology
+(<a class="reference internal" href="../projection.html#kapps_semantic_middleware.projection.southbound_properties" title="kapps_semantic_middleware.projection.southbound_properties"><code class="xref py py-func docutils literal notranslate"><span class="pre">kapps_semantic_middleware.projection.southbound_properties()</span></code></a>).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.semantic_connector">
+<span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">semantic_connector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#semantic_connector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.semantic_connector" title="Link to this definition">#</a></dt>
+<dd><p>Register a binding descriptor class on the default registry.</p>
+<p>Use as a plain decorator on the descriptor class:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@semantic_connector</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MQTTBinding</span><span class="p">:</span>
+    <span class="n">connector_cls</span> <span class="o">=</span> <span class="n">MqttClientConnector</span>
+    <span class="n">interface_property</span> <span class="o">=</span> <span class="n">INF</span><span class="o">.</span><span class="n">isInterfaceAccessibleMQTTParameter</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.connectors.semantic.resolve_direction">
+<span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.connectors.semantic.</span></span><span class="sig-name descname"><span class="pre">resolve_direction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">access_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">flavour</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SyncDirection</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SyncDirection</span></span></span><a class="reference internal" href="../../_modules/kapps_semantic_middleware/connectors/semantic.html#resolve_direction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.connectors.semantic.resolve_direction" title="Link to this definition">#</a></dt>
+<dd><p>The most restrictive of the parameter access mode and the instance flavor.</p>
+<p>Neither may widen the other. A monitor can therefore never drive a writable
+belt, and a controller can never write a read-only sensor. This is structural, not by
+convention.</p>
+<p>The read leg is always available. The question is only whether the write leg is. So this
+returns <code class="docutils literal notranslate"><span class="pre">BIDIRECTIONAL</span></code> when both sides permit writing, and <code class="docutils literal notranslate"><span class="pre">TO_PERSISTENCE</span></code>
+(device to middleware, read-only) otherwise.</p>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../vocabulary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vocabulary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="wiring.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Wiring</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.first"><code class="docutils literal notranslate"><span class="pre">first()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.normalize_metadata"><code class="docutils literal notranslate"><span class="pre">normalize_metadata()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration"><code class="docutils literal notranslate"><span class="pre">Registration</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration.connector"><code class="docutils literal notranslate"><span class="pre">Registration.connector</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration.sync_direction"><code class="docutils literal notranslate"><span class="pre">Registration.sync_direction</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration.model_type"><code class="docutils literal notranslate"><span class="pre">Registration.model_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration.formatter"><code class="docutils literal notranslate"><span class="pre">Registration.formatter</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration.sync_role"><code class="docutils literal notranslate"><span class="pre">Registration.sync_role</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.Registration.suffix"><code class="docutils literal notranslate"><span class="pre">Registration.suffix</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding"><code class="docutils literal notranslate"><span class="pre">ParameterBinding</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.resource_iri"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.resource_iri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.parameter_property"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.parameter_property</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.field_id"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.field_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.metadata"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.metadata</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.descriptor"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.descriptor</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.node_model_type"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.node_model_type</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.root_iri"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.root_iri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.root_class_local_name"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.root_class_local_name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.path_steps"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.path_steps</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.get"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.get()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.access_mode"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.access_mode</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.ParameterBinding.label"><code class="docutils literal notranslate"><span class="pre">ParameterBinding.label</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor"><code class="docutils literal notranslate"><span class="pre">BindingDescriptor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.connector_cls"><code class="docutils literal notranslate"><span class="pre">BindingDescriptor.connector_cls</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.interface_property"><code class="docutils literal notranslate"><span class="pre">BindingDescriptor.interface_property</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.connection_metadata"><code class="docutils literal notranslate"><span class="pre">BindingDescriptor.connection_metadata</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.BindingDescriptor.build"><code class="docutils literal notranslate"><span class="pre">BindingDescriptor.build()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry"><code class="docutils literal notranslate"><span class="pre">SemanticConnectorRegistry</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.register"><code class="docutils literal notranslate"><span class="pre">SemanticConnectorRegistry.register()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.for_interface_property"><code class="docutils literal notranslate"><span class="pre">SemanticConnectorRegistry.for_interface_property()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry.declared_connection_metadata"><code class="docutils literal notranslate"><span class="pre">SemanticConnectorRegistry.declared_connection_metadata()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.semantic_connector"><code class="docutils literal notranslate"><span class="pre">semantic_connector()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.connectors.semantic.resolve_direction"><code class="docutils literal notranslate"><span class="pre">resolve_direction()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/connectors/semantic.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

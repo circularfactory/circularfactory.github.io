@@ -1,0 +1,799 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Guide &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guide/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Instantiation and Lifecycle" href="01-instantiation-and-lifecycle.html" />
+    <link rel="prev" title="Concepts" href="../concepts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-instantiation-and-lifecycle.html">Instantiation and Lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-workflow-registration.html">Workflow Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-state-and-parameters.html">State and Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-connector-binding.html">Connector Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-operation-coordination.html">Operation Coordination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-views-and-projection.html">Views and Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-writing-to-the-graph-and-to-devices.html">Writing to the Graph and to Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-provisioning-and-seeding.html">Provisioning and Seeding</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Guide</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="guide">
+<h1>Guide<a class="headerlink" href="#guide" title="Link to this heading">#</a></h1>
+<p>Orientation for a developer or agent building against <code class="docutils literal notranslate"><span class="pre">kapps-semantic-middleware</span></code>.</p>
+<p>This library lets a piece of Python code running on or next to a shopfloor resource expose its
+functionality through an RDF knowledge graph, and lets other middleware instances discover and
+invoke that functionality through the graph rather than through hardcoded network references.</p>
+<p>If you are prototyping against this middleware, read the consumption rules below first. They are
+constraints that <strong>do not surface in type signatures</strong> — most of them fail silently, producing
+structurally wrong behavior rather than an exception. Then read the mechanics pages for whichever
+part you are touching.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Terms this page assumes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><a class="reference internal" href="../concepts.html#term-Service"><span class="xref std std-term">Service</span></a> · <a class="reference internal" href="../concepts.html#term-Resource"><span class="xref std std-term">Resource</span></a> · <a class="reference internal" href="../concepts.html#term-Mode"><span class="xref std std-term">Mode</span></a> · <a class="reference internal" href="../concepts.html#term-Workflow"><span class="xref std std-term">Workflow</span></a> · <a class="reference internal" href="../concepts.html#term-Capability"><span class="xref std std-term">Capability</span></a> ·
+<a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> · <a class="reference internal" href="../concepts.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> · <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> · <a class="reference internal" href="../concepts.html#term-Projection"><span class="xref std std-term">Projection</span></a> · <a class="reference internal" href="../concepts.html#term-Heartbeat"><span class="xref std std-term">Heartbeat</span></a> ·
+<a class="reference internal" href="../concepts.html#term-Address-vs.-Endpoint"><span class="xref std std-term">Address vs. Endpoint</span></a></p>
+</div>
+</details><section id="the-mechanics-pages">
+<h2>The mechanics pages<a class="headerlink" href="#the-mechanics-pages" title="Link to this heading">#</a></h2>
+<p>Written in construction order; a reader can go start to finish without forward references.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Page</p></th>
+<th class="head"><p>Covers</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="01-instantiation-and-lifecycle.html"><span class="doc">Instantiation and Lifecycle</span></a></p></td>
+<td><p>Constructing an instance, choosing a mode, what appears in the graph at startup, heartbeat, deregistration</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="02-workflow-registration.html"><span class="doc">Workflow Registration</span></a></p></td>
+<td><p>Declaring what a Service exposes, the ontology prerequisites, signature-derived shapes, address vs. endpoint</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="03-state-and-parameters.html"><span class="doc">State and Parameters</span></a></p></td>
+<td><p>Modelling resource state as Parameters, committed value vs. locator, where a parameter’s shape comes from</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="04-connector-binding.html"><span class="doc">Connector Binding</span></a></p></td>
+<td><p>The recognition chain, adding a protocol the library does not ship, connector wiring, transports</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="05-operation-coordination.html"><span class="doc">Operation Coordination</span></a></p></td>
+<td><p>Dispatch, the event trigger, pull-and-run, the status lifecycle, handover, recovery</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="06-views-and-projection.html"><span class="doc">Views and Projection</span></a></p></td>
+<td><p>Defining a ClassScope, what a view cannot select, what the northbound projection removes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="07-writing-to-the-graph-and-to-devices.html"><span class="doc">Writing to the Graph and to Devices</span></a></p></td>
+<td><p>Every path that causes a write, naming the field that moved, northbound vs. southbound, IRI handling</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="08-provisioning-and-seeding.html"><span class="doc">Provisioning and Seeding</span></a></p></td>
+<td><p><strong>Read first if <code class="docutils literal notranslate"><span class="pre">ogm=</span></code> is a mystery.</strong> The bootstrap order, loading the shared ontologies, authoring the domain TBox, and seeding the instance data a Parameter needs</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="where-the-names-come-from">
+<h2>Where the names come from<a class="headerlink" href="#where-the-names-come-from" title="Link to this heading">#</a></h2>
+<p>This library re-exports much of its surface from its three dependencies, so the import you need is
+often <em>not</em> from <code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware</span></code>. Use this table rather than guessing.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Import from</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware</span></code>, <code class="docutils literal notranslate"><span class="pre">Mode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">IRI</span></code>, <code class="docutils literal notranslate"><span class="pre">GraphDB</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_triplestore_interface</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">OGM</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_ogm</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ClassScope</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_ogm.utils.class_scope</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">SyncDirection</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">transitional_sync_middleware.middleware.sync.synced_connector</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ConnectionInfo</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">transitional_sync_middleware.middleware.registries</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">INF</span></code> (the interface vocabulary)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.vocabulary</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">graphdb_for</span></code>, <code class="docutils literal notranslate"><span class="pre">credentials_for</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.credentials</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">DataModel</span></code>, <code class="docutils literal notranslate"><span class="pre">Reference</span></code>, <code class="docutils literal notranslate"><span class="pre">Identifier</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware</span></code> (re-exported from <code class="docutils literal notranslate"><span class="pre">transitional_sync_middleware</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Binding internals, if you are adding a protocol, live under
+<code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.connectors</span></code> — <code class="docutils literal notranslate"><span class="pre">semantic</span></code>, <code class="docutils literal notranslate"><span class="pre">mqtt_binding</span></code>, <code class="docutils literal notranslate"><span class="pre">rest_binding</span></code>,
+<code class="docutils literal notranslate"><span class="pre">knowledge_graph_connector</span></code>, <code class="docutils literal notranslate"><span class="pre">wiring</span></code>.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware/ontology/</span></code> is <strong>not</strong> a Python module. It is the directory holding the
+three vocabulary files (<code class="docutils literal notranslate"><span class="pre">core.ttl</span></code>, <code class="docutils literal notranslate"><span class="pre">mes.ttl</span></code>, <code class="docutils literal notranslate"><span class="pre">service.ttl</span></code>). Importing from it fails.</p>
+</div></blockquote>
+</section>
+<section id="consumption-rules">
+<h2>Consumption rules<a class="headerlink" href="#consumption-rules" title="Link to this heading">#</a></h2>
+<section id="these-fail-silently">
+<h3>These fail silently<a class="headerlink" href="#these-fail-silently" title="Link to this heading">#</a></h3>
+<p><strong><code class="docutils literal notranslate"><span class="pre">GraphDB.from_env()</span></code> connects to whatever <code class="docutils literal notranslate"><span class="pre">GRAPHDB_REPOSITORY</span></code> names, and seeding destroys what it
+connects to.</strong> <code class="docutils literal notranslate"><span class="pre">seeding.clear_repository</span></code> clears the default graph of the client’s current
+repository, so a value left over in a shell — from another project, another checkout, a <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>
+written months ago — silently redirects a wipe. Nothing validates that the repository was the one you
+meant; it only has to exist. Use <code class="docutils literal notranslate"><span class="pre">credentials.graphdb_for(&quot;name&quot;)</span></code>, which names the repository in
+code and ignores the variable, for anything that seeds, clears, or re-seeds. Note this hazard belongs
+to the <em>variable</em>, not the server: pinning the repository does not stop <code class="docutils literal notranslate"><span class="pre">GRAPHDB_URL</span></code> pointing at a
+shared instance.</p>
+<p><strong>A <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> terminates at a <a class="reference internal" href="../concepts.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> and cannot select within one.</strong> Any chain
+element below a complex property is silently discarded during fetch. A view that tries to reach
+inside a parameter blanknode materializes only as far as the parameter itself, with no error raised.
+A scope chooses <em>which</em> parameters, never <em>which parts</em> of one.</p>
+<p><strong>Connector bindings must be registered at construction, not later.</strong> The framework calls
+<code class="docutils literal notranslate"><span class="pre">connect()</span></code> on everything in the connection registry before it runs <code class="docutils literal notranslate"><span class="pre">on_start_up</span></code> callbacks. A
+connector registered after construction never has <code class="docutils literal notranslate"><span class="pre">connect()</span></code> called, so inbound traffic dies
+silently — the listener task never starts and the queue is never fed — while outbound may limp
+along, making the fault one-directional and quiet.</p>
+<p><strong>A Parameter’s shape comes from the TBox restriction on its property’s range, not from the
+instance data.</strong> Anything the restriction does not declare is dropped at materialization with only
+a warning logged. Metadata a connector needs must be declared in the restriction or it never
+arrives, and the connector fails with nothing raised.</p>
+<p><strong>Under the locator pattern a Parameter’s value is not in the graph at all.</strong> Fast-changing
+parameters keep only metadata in the graph; the live value exists only in the datamodel and over
+REST. An unobserved parameter materializes as an empty list, which means <em>not yet read</em> — not zero,
+and not null. Handle the empty case.</p>
+<p><strong>A persistence write must name the region of the model that changed.</strong> The fan-out notifies only
+the connectors that region covers. A write that does not name its field notifies every synced
+connector, so devices are written that nobody touched — and for a settable parameter that
+fabricates a command rather than merely wasting traffic.</p>
+<p><strong>The northbound REST payload never carries protocol connection metadata.</strong> Broker addresses,
+topics and endpoints are pruned from the served datamodel <em>before</em> any data is fetched. This is
+structural, not a permission check: the northbound model has no field able to carry a broker
+address. It stops a peer <em>learning</em> an address from this surface; it does not stop someone who
+already knows it.</p>
+<p><strong>OWL existential restrictions do not make a field required.</strong> Only SHACL shapes enforce
+requiredness, and only at admission. A parameter with no observed value does not raise a validation
+error on materialization merely because its restriction declares <code class="docutils literal notranslate"><span class="pre">owl:someValuesFrom</span></code>. Absence of a
+triple means <em>unknown</em>, never <em>false</em>.</p>
+<p><strong>Any prettified or shortened IRI is display only.</strong> Production code carries fully back-resolvable
+IRIs in their mangled form — REST path segments, datamodel field names, <code class="docutils literal notranslate"><span class="pre">svc:endpoint</span></code> triples. A
+consumer that parses a displayed IRI, or round-trips one back into a query, gets a wrong answer
+with no exception raised.</p>
+</section>
+<section id="these-fail-loudly">
+<h3>These fail loudly<a class="headerlink" href="#these-fail-loudly" title="Link to this heading">#</a></h3>
+<p><strong>Every class you register against must already exist in the ontology.</strong> The middleware creates
+instances automatically but never mints classes. A domain-specific subclass of <code class="docutils literal notranslate"><span class="pre">svc:Service</span></code>,
+<code class="docutils literal notranslate"><span class="pre">svc:Workflow</span></code> or <code class="docutils literal notranslate"><span class="pre">svc:StateProperty</span></code>, and the <code class="docutils literal notranslate"><span class="pre">cfc:Capability</span></code> subclass a <a class="reference internal" href="../concepts.html#term-Workflow"><span class="xref std std-term">Workflow</span></a>
+realizes, must all pre-exist. Startup fails immediately, naming the missing class.</p>
+<p><strong>All knowledge-graph writes go through the OGM.</strong> Raw SPARQL <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> or direct
+<code class="docutils literal notranslate"><span class="pre">kapps_triplestore_interface</span></code> mutation calls bypass the validated write path, so the written node passes no
+shape check and a property replacement loses its atomicity — the intermediate state fails
+validation. Reads may use the access module directly; only writes are constrained.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">&#64;mw.workflow</span></code> and <code class="docutils literal notranslate"><span class="pre">&#64;mw.state</span></code> are resource-mode only.</strong> Each raises <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> when called
+on an instance in any other mode, and <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when a required class IRI is missing.</p>
+</section>
+<section id="structural-facts">
+<h3>Structural facts<a class="headerlink" href="#structural-facts" title="Link to this heading">#</a></h3>
+<p><strong>Build against <code class="docutils literal notranslate"><span class="pre">src/kapps_semantic_middleware/</span></code>. <code class="docutils literal notranslate"><span class="pre">examples/</span></code> and <code class="docutils literal notranslate"><span class="pre">demo/</span></code> are illustrations, not
+API.</strong> They are teaching vehicles seeded against throwaway repositories, not production patterns to
+copy.</p>
+<p><strong>The demo imports as <code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.demonstrations</span></code>, not <code class="docutils literal notranslate"><span class="pre">demo</span></code>.</strong> The wheel remaps
+the <code class="docutils literal notranslate"><span class="pre">demo/</span></code> directory into the library namespace. <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">demo.transferunits</span></code> works only in a
+development checkout.</p>
+<p><strong>There is one <a class="reference internal" href="../concepts.html#term-Service"><span class="xref std std-term">Service</span></a> per middleware <em>instance</em>, not per <a class="reference internal" href="../concepts.html#term-Resource"><span class="xref std std-term">Resource</span></a>.</strong> Several
+instances may wrap one Resource — a controller and a monitor, say — each owning its own Service
+node, address and <a class="reference internal" href="../concepts.html#term-Heartbeat"><span class="xref std std-term">heartbeat</span></a>, all linked by <code class="docutils literal notranslate"><span class="pre">svc:isServiceOf</span></code>. Discovery may
+therefore return several Services for one Resource; select by address or by advertised capability
+rather than assuming exactly one.</p>
+<p><strong>Only <code class="docutils literal notranslate"><span class="pre">resource</span></code> and <code class="docutils literal notranslate"><span class="pre">watchdog</span></code> modes are implemented.</strong> <code class="docutils literal notranslate"><span class="pre">server</span></code> is reserved and raises
+<code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code>. A graph-<em>consuming</em> participant — a planner, a controller, a mobile robot —
+is a resource-mode instance with its own Resource, not a server-mode one.</p>
+<p><strong>Docker is a prerequisite for running the examples, never for using the library.</strong> The bundled
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code> file provides the GraphDB the scenarios and the factory need.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../concepts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Concepts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01-instantiation-and-lifecycle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Instantiation and Lifecycle</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mechanics-pages">The mechanics pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-the-names-come-from">Where the names come from</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consumption-rules">Consumption rules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#these-fail-silently">These fail silently</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#these-fail-loudly">These fail loudly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-facts">Structural facts</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/guide/index.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

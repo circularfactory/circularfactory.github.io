@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.activity &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/activity';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.activity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.activity</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Live activity feed for the middleware machinery.</span>
+
+<span class="sd">This module turns the middleware internal logging stream into a live feed for browsers.</span>
+<span class="sd">It is library-level and mode-agnostic. A controller and a monitor are the same library with</span>
+<span class="sd">different configuration. They inherit this feed from the same code with no</span>
+<span class="sd">role-specific branching. That is the architectural claim the demo exists to make.</span>
+
+<span class="sd">**What it shows:** wiring decisions, message traffic, registrations, heartbeats.</span>
+
+<span class="sd">**What it does not show:** resource state. That is the monitor job. Keeping the two apart is</span>
+<span class="sd">a decided boundary. Mixing them would conflate the middleware health with the device status. Debugging</span>
+<span class="sd">would become ambiguous.</span>
+
+<span class="sd">**Why the stream is polled rather than pushed:** Log records arrive from two places. The event</span>
+<span class="sd">loop sends records. Worker threads send records (this codebase calls ``anyio.to_thread.run_sync``</span>
+<span class="sd">for every graph write). Pushing from the logging handler into an ``asyncio.Queue`` is not</span>
+<span class="sd">thread-safe. It would require capture of the running loop. This breaks when no loop runs</span>
+<span class="sd">(construction time, tests). Instead, the handler appends to a thread-safe ``collections.deque``.</span>
+<span class="sd">The SSE endpoint polls that deque on a short sleep. This decouples the logging path</span>
+<span class="sd">(synchronous, multi-threaded) from the serving path (asynchronous, single-threaded). No loop</span>
+<span class="sd">introspection or ``call_soon_threadsafe`` is required.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">collections</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">AsyncIterator</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Request</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTMLResponse</span><span class="p">,</span> <span class="n">StreamingResponse</span>
+
+
+<div class="viewcode-block" id="ActivityRecord">
+<a class="viewcode-back" href="../../reference/activity.html#kapps_semantic_middleware.activity.ActivityRecord">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ActivityRecord</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One entry in the activity feed.</span>
+
+<span class="sd">    Immutable so that records handed to the SSE generator cannot receive mutation by later</span>
+<span class="sd">    logging activity. The ``seq`` field allows clients to request only what is new.</span>
+<span class="sd">    """</span>
+
+    <span class="n">seq</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">timestamp</span><span class="p">:</span> <span class="nb">float</span>  <span class="c1"># unix epoch seconds</span>
+    <span class="n">level</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># "INFO", "WARNING", ...</span>
+    <span class="n">logger</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># the record logger name</span>
+    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># already formatted</span></div>
+
+
+
+<div class="viewcode-block" id="ActivityFeed">
+<a class="viewcode-back" href="../../reference/activity.html#kapps_semantic_middleware.activity.ActivityFeed">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ActivityFeed</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Thread-safe buffer for activity records.</span>
+
+<span class="sd">    Holds a rolling window of records. Appends receive protection by a lock because the logging</span>
+<span class="sd">    handler runs in arbitrary threads. Reads receive protection for the same reason. The SSE</span>
+<span class="sd">    generator holds the lock only long enough to copy data out.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_capacity</span> <span class="o">=</span> <span class="n">capacity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="p">:</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">[</span><span class="n">ActivityRecord</span><span class="p">]</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="n">capacity</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_seq</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="ActivityFeed.append">
+<a class="viewcode-back" href="../../reference/activity.html#kapps_semantic_middleware.activity.ActivityFeed.append">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">logger</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ActivityRecord</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Buffer one record. Assign its sequence number. Drop the oldest when full.</span>
+
+<span class="sd">        Numbering and insertion happen under **one** lock, together. That is the whole point of</span>
+<span class="sd">        this method that takes fields rather than a finished record. Split them. Take a number</span>
+<span class="sd">        in one critical section. Insert in another. Two threads interleave. The deque becomes</span>
+<span class="sd">        ordered ``[.., 6, 5]``. ``last_seq`` then reports 5. The stream re-sends record 6 on</span>
+<span class="sd">        every poll, forever. The race is reachable here rather than theoretical. This codebase</span>
+<span class="sd">        logs from worker threads (``anyio.to_thread.run_sync`` wraps every graph write) and from</span>
+<span class="sd">        the event loop.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_seq</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">record</span> <span class="o">=</span> <span class="n">ActivityRecord</span><span class="p">(</span>
+                <span class="n">seq</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_seq</span><span class="p">,</span>
+                <span class="n">timestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span>
+                <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+                <span class="n">logger</span><span class="o">=</span><span class="n">logger</span><span class="p">,</span>
+                <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">record</span></div>
+
+
+<div class="viewcode-block" id="ActivityFeed.since">
+<a class="viewcode-back" href="../../reference/activity.html#kapps_semantic_middleware.activity.ActivityFeed.since">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">since</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seq</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ActivityRecord</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Return records with ``.seq &gt; seq``, oldest first.</span>
+
+<span class="sd">        Called by the SSE generator. The lock is held only for the duration of the slice</span>
+<span class="sd">        operation, not during the yield. The event loop is not blocked.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">seq</span> <span class="o">&gt;</span> <span class="n">seq</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ActivityFeed.snapshot">
+<a class="viewcode-back" href="../../reference/activity.html#kapps_semantic_middleware.activity.ActivityFeed.snapshot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ActivityRecord</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Return everything currently buffered.</span>
+
+<span class="sd">        Used to seed a client that connects mid-run. Same locking discipline as ``since``.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">last_seq</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The highest sequence number **currently buffered**. Zero if empty.</span>
+
+<span class="sd">        Not a resume token. Eviction begins. This is still the newest record. The oldest</span>
+<span class="sd">        moves forward under it. A consumer stores this value. The consumer goes away. The</span>
+<span class="sd">        consumer comes back. It asks for everything after that value. It has no way to learn</span>
+<span class="sd">        what fell out of the window meanwhile. Pair it with :attr:`oldest_seq` to detect that.</span>
+<span class="sd">        The stream does.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">seq</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">oldest_seq</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The lowest sequence number still buffered. Zero if empty.</span>
+
+<span class="sd">        A consumer expected ``n``. It finds this value greater than ``n``. The feed outran it.</span>
+<span class="sd">        The records between are gone. Exposed so that loss is reportable rather than invisible.</span>
+<span class="sd">        A feed that quietly drops lines is worse than one that says it dropped them. The viewer</span>
+<span class="sd">        cannot tell "nothing happened" from "I missed it".</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="p">:</span>
+                <span class="k">return</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deque</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">seq</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_ActivityHandler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Handler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Logging handler that pushes records into an ``ActivityFeed``.</span>
+
+<span class="sd">    Attached to the package-root logger (``kapps_semantic_middleware``) to catch every child</span>
+<span class="sd">    logger with one attach. The level is set on the handler, not the logger. This feature does</span>
+<span class="sd">    not change what every *other* handler in the host application sees.</span>
+
+<span class="sd">    ``emit`` is wrapped in a try/except. On failure it calls ``self.handleError`` as the stdlib</span>
+<span class="sd">    expects. It never raises into the logging system. This would risk deadlock of the caller.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feed</span><span class="p">:</span> <span class="n">ActivityFeed</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_feed</span> <span class="o">=</span> <span class="n">feed</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">LogRecord</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Numbering belongs to the feed, under the same lock as the insertion. See</span>
+            <span class="c1"># `ActivityFeed.append`. A handler that took a number and then handed over a</span>
+            <span class="c1"># finished record would reintroduce exactly the ordering race that method exists</span>
+            <span class="c1"># to close.</span>
+            <span class="c1">#</span>
+            <span class="c1"># `getMessage` applies %-style formatting. It happens here rather than at the</span>
+            <span class="c1"># call site. The cost is paid only when this handler is attached.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_feed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">timestamp</span><span class="o">=</span><span class="n">record</span><span class="o">.</span><span class="n">created</span><span class="p">,</span>
+                <span class="n">level</span><span class="o">=</span><span class="n">record</span><span class="o">.</span><span class="n">levelname</span><span class="p">,</span>
+                <span class="n">logger</span><span class="o">=</span><span class="n">record</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">message</span><span class="o">=</span><span class="n">record</span><span class="o">.</span><span class="n">getMessage</span><span class="p">(),</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">handleError</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="enable_activity_feed">
+<a class="viewcode-back" href="../../reference/activity.html#kapps_semantic_middleware.activity.enable_activity_feed">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">enable_activity_feed</span><span class="p">(</span>
+    <span class="n">middleware</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">capacity</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+    <span class="n">logger_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"kapps_semantic_middleware"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ActivityFeed</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Enable the activity feed on a middleware instance.</span>
+
+<span class="sd">    Builds an ``ActivityFeed``. Attaches a logging handler to capture records. Mounts the HTTP</span>
+<span class="sd">    routes on ``middleware.app``. A second call on the same middleware returns the existing feed</span>
+<span class="sd">    without attach of a second handler.</span>
+
+<span class="sd">    The feed is stored on the middleware as ``middleware.activity_feed``. Other components</span>
+<span class="sd">    (tests, diagnostics) can inspect it directly.</span>
+<span class="sd">    """</span>
+    <span class="c1"># `getattr(..., None) is not None` rather than `hasattr`: a middleware that declares</span>
+    <span class="c1"># `self.activity_feed = None` when the feature is off would otherwise satisfy `hasattr`</span>
+    <span class="c1"># and be handed its own `None` back as a feed.</span>
+    <span class="n">existing</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">middleware</span><span class="p">,</span> <span class="s2">"activity_feed"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">existing</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">existing</span>
+
+    <span class="n">feed</span> <span class="o">=</span> <span class="n">ActivityFeed</span><span class="p">(</span><span class="n">capacity</span><span class="o">=</span><span class="n">capacity</span><span class="p">)</span>
+    <span class="n">handler</span> <span class="o">=</span> <span class="n">_ActivityHandler</span><span class="p">(</span><span class="n">feed</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">)</span>
+
+    <span class="c1"># Attach to the package-root logger. This catches every child logger with one attach.</span>
+    <span class="n">target_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">logger_name</span><span class="p">)</span>
+    <span class="n">target_logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">handler</span><span class="p">)</span>
+
+    <span class="c1"># The package logger is NOTSET by default. Its effective level comes from root. Root is</span>
+    <span class="c1"># WARNING unless the host application configured logging. A handler cannot rescue a record</span>
+    <span class="c1"># that was never emitted. Leave the level alone. This whole feature becomes a no-op in</span>
+    <span class="c1"># exactly the default case. It fails *silently*. The page loads. The stream connects.</span>
+    <span class="c1"># Nothing ever appears.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Opt into the feed. This lowers this package level far enough to produce the records it</span>
+    <span class="c1"># was asked to show. That is a real, documented side effect rather than a free one. Records</span>
+    <span class="c1"># this package emits at INFO now also reach whatever handlers the host has on the root</span>
+    <span class="c1"># logger. Widening only. An application that has deliberately set a *more* verbose level</span>
+    <span class="c1"># keeps it.</span>
+    <span class="k">if</span> <span class="n">target_logger</span><span class="o">.</span><span class="n">level</span> <span class="o">==</span> <span class="n">logging</span><span class="o">.</span><span class="n">NOTSET</span> <span class="ow">or</span> <span class="n">target_logger</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;</span> <span class="n">level</span><span class="p">:</span>
+        <span class="n">target_logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+
+    <span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
+
+    <span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/activity"</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_activity_page</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">HTMLResponse</span><span class="p">:</span>
+        <span class="c1"># Self-contained HTML. No external fetches, no external CSS/JS.</span>
+        <span class="c1"># The JS opens an EventSource to /activity/stream and appends lines to the log view.</span>
+        <span class="c1"># Auto-scrolling is suppressed if the user scrolls up to read history.</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">&lt;!DOCTYPE html&gt;</span>
+<span class="s2">&lt;html lang="en"&gt;</span>
+<span class="s2">&lt;head&gt;</span>
+<span class="s2">    &lt;meta charset="UTF-8"&gt;</span>
+<span class="s2">    &lt;title&gt;Middleware Activity&lt;/title&gt;</span>
+<span class="s2">    &lt;style&gt;</span>
+<span class="s2">        body { font-family: monospace; margin: 0; padding: 0; background: rgb(245, 245, 245); }</span>
+<span class="s2">        header { background: rgb(51, 51, 51); color: white; padding: 10px 20px; }</span>
+<span class="s2">        header h1 { margin: 0; font-size: 1.2rem; }</span>
+<span class="s2">        header p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.8; }</span>
+<span class="s2">        .log { height: calc(100vh - 80px); overflow-y: auto; padding: 10px 20px; }</span>
+<span class="s2">        .entry { padding: 4px 0; border-bottom: 1px solid rgb(221, 221, 221); }</span>
+<span class="s2">        .entry:last-child { border-bottom: none; }</span>
+<span class="s2">        .time { color: rgb(102, 102, 102); width: 90px; display: inline-block; }</span>
+<span class="s2">        .level { font-weight: bold; width: 80px; display: inline-block; }</span>
+<span class="s2">        .logger { color: rgb(0, 102, 204); width: 200px; display: inline-block; }</span>
+<span class="s2">        .message { color: rgb(51, 51, 51); }</span>
+<span class="s2">        .WARNING .level { color: rgb(153, 102, 0); }</span>
+<span class="s2">        .ERROR .level { color: rgb(204, 0, 0); }</span>
+<span class="s2">        .WARNING { background: rgb(255, 248, 225); }</span>
+<span class="s2">        .ERROR { background: rgb(255, 235, 238); }</span>
+<span class="s2">    &lt;/style&gt;</span>
+<span class="s2">&lt;/head&gt;</span>
+<span class="s2">&lt;body&gt;</span>
+<span class="s2">    &lt;header&gt;</span>
+<span class="s2">        &lt;h1&gt;Middleware Activity&lt;/h1&gt;</span>
+<span class="s2">        &lt;p&gt;Shows machinery: wiring, traffic, registrations. Not resource state.&lt;/p&gt;</span>
+<span class="s2">    &lt;/header&gt;</span>
+<span class="s2">    &lt;div id="log" class="log"&gt;&lt;/div&gt;</span>
+<span class="s2">    &lt;script&gt;</span>
+<span class="s2">        const log = document.getElementById('log');</span>
+<span class="s2">        let lastSeq = 0;</span>
+<span class="s2">        let isAtBottom = true;</span>
+
+<span class="s2">        function appendRecord(record) {</span>
+<span class="s2">            const div = document.createElement('div');</span>
+<span class="s2">            div.className = 'entry ' + record.level;</span>
+<span class="s2">            const date = new Date(record.timestamp * 1000);</span>
+<span class="s2">            const timeStr = date.toLocaleTimeString();</span>
+<span class="s2">            const loggerShort = record.logger.split('.').pop();</span>
+<span class="s2">            div.innerHTML = '&lt;span class="time"&gt;' + timeStr + '&lt;/span&gt;' +</span>
+<span class="s2">                            '&lt;span class="level"&gt;' + record.level + '&lt;/span&gt;' +</span>
+<span class="s2">                            '&lt;span class="logger"&gt;' + loggerShort + '&lt;/span&gt;' +</span>
+<span class="s2">                            '&lt;span class="message"&gt;' + escapeHtml(record.message) + '&lt;/span&gt;';</span>
+<span class="s2">            log.appendChild(div);</span>
+<span class="s2">            if (isAtBottom) {</span>
+<span class="s2">                log.scrollTop = log.scrollHeight;</span>
+<span class="s2">            }</span>
+<span class="s2">        }</span>
+
+<span class="s2">        function escapeHtml(text) {</span>
+<span class="s2">            const map = {'&amp;': '&amp;amp;', '&lt;': '&amp;lt;', '&gt;': '&amp;gt;', '"': '&amp;quot;', "'": '&amp;apos;'};</span>
+<span class="s2">            return text.replace(/[&amp;&lt;&gt;"']/g, m =&gt; map[m]);</span>
+<span class="s2">        }</span>
+
+<span class="s2">        log.addEventListener('scroll', () =&gt; {</span>
+<span class="s2">            isAtBottom = (log.scrollTop + log.clientHeight &gt;= log.scrollHeight - 10);</span>
+<span class="s2">        });</span>
+
+<span class="s2">        const source = new EventSource('/activity/stream');</span>
+<span class="s2">        source.onmessage = (event) =&gt; {</span>
+<span class="s2">            const record = JSON.parse(event.data);</span>
+<span class="s2">            appendRecord(record);</span>
+<span class="s2">            lastSeq = record.seq;</span>
+<span class="s2">        };</span>
+<span class="s2">        source.onerror = () =&gt; {</span>
+<span class="s2">            // Silent fail; browser will reconnect.</span>
+<span class="s2">        };</span>
+<span class="s2">    &lt;/script&gt;</span>
+<span class="s2">&lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span>
+<span class="s2">        """</span>
+        <span class="k">return</span> <span class="n">HTMLResponse</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+
+    <span class="nd">@router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/activity/stream"</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_activity_stream</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StreamingResponse</span><span class="p">:</span>
+        <span class="c1"># SSE endpoint. Polls the feed rather than wait on a queue. The logging handler runs in</span>
+        <span class="c1"># worker threads. No asyncio loop is available there. Push from the handler would</span>
+        <span class="c1"># require call_soon_threadsafe and a captured loop. This breaks at construction time.</span>
+        <span class="c1"># Polling is cheap and robust.</span>
+        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">AsyncIterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+            <span class="n">last_yield</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">client_seq</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># Seed with existing records. A viewer that arrives mid-run does not see an empty</span>
+            <span class="c1"># page.</span>
+            <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">feed</span><span class="o">.</span><span class="n">snapshot</span><span class="p">():</span>
+                <span class="k">yield</span> <span class="sa">f</span><span class="s2">"data: </span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">"</span>
+                <span class="n">client_seq</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">seq</span>
+                <span class="n">last_yield</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="c1"># Stop when the viewer goes away. uvicorn does cancel the task on</span>
+                    <span class="c1"># disconnect. Rely on that alone. This leaks a polling loop per disconnect</span>
+                    <span class="c1"># under any server that does not. This makes the endpoint untestable. A</span>
+                    <span class="c1"># client that stops reading otherwise hangs forever. It waits for a</span>
+                    <span class="c1"># generator that never ends.</span>
+                    <span class="k">if</span> <span class="k">await</span> <span class="n">request</span><span class="o">.</span><span class="n">is_disconnected</span><span class="p">():</span>
+                        <span class="k">return</span>
+
+                    <span class="c1"># Report anything the ring buffer dropped before this client could be</span>
+                    <span class="c1"># handed it. Unreachable at demo rates. Measured at ~0.4 records/sec</span>
+                    <span class="c1"># against a 200-record window. A burst outruns the window. It would</span>
+                    <span class="c1"># otherwise take lines out of the feed with nothing to show for it. A</span>
+                    <span class="c1"># viewer cannot tell "nothing happened" from "I missed it".</span>
+                    <span class="n">oldest</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">oldest_seq</span>
+                    <span class="k">if</span> <span class="n">oldest</span> <span class="o">&gt;</span> <span class="n">client_seq</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">dropped</span> <span class="o">=</span> <span class="n">oldest</span> <span class="o">-</span> <span class="n">client_seq</span> <span class="o">-</span> <span class="mi">1</span>
+                        <span class="k">yield</span> <span class="p">(</span>
+                            <span class="s2">"data: "</span>
+                            <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+                                <span class="p">{</span>
+                                    <span class="s2">"seq"</span><span class="p">:</span> <span class="n">oldest</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+                                    <span class="s2">"timestamp"</span><span class="p">:</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">(),</span>
+                                    <span class="s2">"level"</span><span class="p">:</span> <span class="s2">"WARNING"</span><span class="p">,</span>
+                                    <span class="s2">"logger"</span><span class="p">:</span> <span class="vm">__name__</span><span class="p">,</span>
+                                    <span class="s2">"message"</span><span class="p">:</span> <span class="p">(</span>
+                                        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">dropped</span><span class="si">}</span><span class="s2"> record(s) dropped -- the feed produced "</span>
+                                        <span class="sa">f</span><span class="s2">"faster than this view could read it"</span>
+                                    <span class="p">),</span>
+                                <span class="p">}</span>
+                            <span class="p">)</span>
+                            <span class="o">+</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span>
+                        <span class="p">)</span>
+                        <span class="n">client_seq</span> <span class="o">=</span> <span class="n">oldest</span> <span class="o">-</span> <span class="mi">1</span>
+                        <span class="n">last_yield</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+                    <span class="c1"># Poll for new records.</span>
+                    <span class="n">new_records</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">since</span><span class="p">(</span><span class="n">client_seq</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">new_records</span><span class="p">:</span>
+                        <span class="k">yield</span> <span class="sa">f</span><span class="s2">"data: </span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">"</span>
+                        <span class="n">client_seq</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">seq</span>
+                        <span class="n">last_yield</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+                    <span class="c1"># Keepalive every 15s of silence. Proxies do not close the connection.</span>
+                    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_yield</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span>
+                        <span class="k">yield</span> <span class="s2">": keepalive</span><span class="se">\n\n</span><span class="s2">"</span>
+                        <span class="n">last_yield</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+                    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">CancelledError</span><span class="p">:</span>
+                <span class="c1"># Clean termination when the client disconnects or the server shuts down.</span>
+                <span class="k">raise</span>
+
+        <span class="k">return</span> <span class="n">StreamingResponse</span><span class="p">(</span>
+            <span class="n">generate</span><span class="p">(),</span>
+            <span class="n">media_type</span><span class="o">=</span><span class="s2">"text/event-stream"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">"Cache-Control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">,</span>
+                <span class="s2">"X-Accel-Buffering"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+
+    <span class="n">middleware</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">include_router</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
+    <span class="n">middleware</span><span class="o">.</span><span class="n">activity_feed</span> <span class="o">=</span> <span class="n">feed</span>
+    <span class="k">return</span> <span class="n">feed</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

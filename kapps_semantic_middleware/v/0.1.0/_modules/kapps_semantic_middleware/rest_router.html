@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.rest_router &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=d1b420fb" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/rest_router';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.rest_router</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.rest_router</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""REST routes, generated recursively to the complex property.</span>
+
+<span class="sd">The middleware extends the CRUD API of the resource datamodel with recursive routes. These routes descend</span>
+<span class="sd">the datamodel tree. They terminate at each interface-accessible parameter. This parameter is a</span>
+<span class="sd">``PropertyValueKind.COMPLEX`` property. Its blanknode dict is the atomic addressable unit. The</span>
+<span class="sd">framework generator produces only top-level CRUD. This module adds the parameter routes beneath it.</span>
+
+<span class="sd">Recursion terminates at COMPLEX properties. RDF has no properties about properties. Metadata about</span>
+<span class="sd">a conveyor speed is its unit and its MQTT topic. The middleware models this metadata as a blanknode.</span>
+<span class="sd">This blanknode hangs off the parameter property. That blanknode materializes as an ``AnonymousClass``</span>
+<span class="sd">with no ``id``. It is not ``Identifiable``. It is never routable. Treat the blanknode dict as the</span>
+<span class="sd">atomic element. This approach makes the id-less problem disappear. The **property** is the last</span>
+<span class="sd">segment. The dict is the body. Value and unit move together. They must move together. A speed</span>
+<span class="sd">without its unit is not a speed.</span>
+
+<span class="sd">Every value in this tree is a **list**. RDF multiplicity requires this (research doc 0029). This</span>
+<span class="sd">requirement includes scalars. The original example showed a bare dict. That example predates the</span>
+<span class="sd">finding. The payload is a list of parameter dicts. It is not a bare dict.</span>
+
+<span class="sd">Verb gating is per individual. One belt may be ``readwrite``. A barrier on the same unit may be</span>
+<span class="sd">``read``. Path segments are therefore **literal**. They are not FastAPI path parameters. A</span>
+<span class="sd">parameterized route could not express per-individual verb differences. A PUT to a read-only</span>
+<span class="sd">parameter returns 405. The route does not exist. FastAPI handles that automatically.</span>
+
+<span class="sd">The request or response type comes from the **owning node** model field annotation. It does not</span>
+<span class="sd">come from ``binding.node_model_type``. The latter comes from the full spec. It carries southbound</span>
+<span class="sd">connection metadata. The northbound instance owns its annotation. That annotation is the pruned</span>
+<span class="sd">shape. Use the wrong one. This mistake leaks broker addresses northbound.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Annotated</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRouter</span><span class="p">,</span> <span class="n">Body</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.model.data_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.registries</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectionInfo</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.connectors.semantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">AccessMode</span><span class="p">,</span> <span class="n">ParameterBinding</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_lined</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Convert an IRI or plain string into a URL-safe segment.</span>
+
+<span class="sd">    This function tolerates a value already an ``IRI`` (has ``lined``). It also tolerates</span>
+<span class="sd">    one that is a plain ``str``. This function is total and invertible. Raw IRIs contain</span>
+<span class="sd">    ``/``. They would break routing.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"lined"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">lined</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">lined</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_owner_of</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">owner_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">field_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the nested individual a parameter route addresses. Return a 500 naming what is absent.</span>
+
+<span class="sd">    The `DataModel` rebuilds per request. It does not capture when the route was generated. This</span>
+<span class="sd">    design is deliberate. The handler must navigate the model persistence holds *now*. A map built</span>
+<span class="sd">    at generation time would pin objects. Later writes replace those objects. This rebuild is</span>
+<span class="sd">    the same rebuild `update_persistence_with_value` does. It does so for the same reason.</span>
+
+<span class="sd">    `get_model` returns ``None`` when recognition finds a binding. Its owner is not in the</span>
+<span class="sd">    materialized tree. Ontology drift causes this. A scope that pruned the branch out from under it</span>
+<span class="sd">    also causes this. Let that reach ``getattr``. This produces ``AttributeError: 'NoneType'``. It</span>
+<span class="sd">    surfaces as a generic error. It names neither the individual nor the cause. Fail with both.</span>
+<span class="sd">    """</span>
+    <span class="n">owner</span> <span class="o">=</span> <span class="n">DataModel</span><span class="o">.</span><span class="n">from_models</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">owner_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">owner</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+            <span class="n">detail</span><span class="o">=</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">owner_id</span><span class="si">}</span><span class="s2"> carries the recognized parameter </span><span class="si">{</span><span class="n">field_id</span><span class="si">}</span><span class="s2"> but is absent from the "</span>
+                <span class="sa">f</span><span class="s2">"materialized tree, so the route cannot be served"</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">owner</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_make_get_handler</span><span class="p">(</span>
+    <span class="n">data_model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">root_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">owner_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">field_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">response_annotation</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">middleware</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Build a GET handler for one parameter route.</span>
+
+<span class="sd">    This function mirrors ``get_persistence_value`` field-level branch. That branch is from</span>
+<span class="sd">    ``transitional_sync_middleware/middleware/sync/synchronization.py``. That is what makes the read precise.</span>
+<span class="sd">    Only the one field returns. Every sibling stays untouched.</span>
+<span class="sd">    """</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_parameter</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection_info</span> <span class="o">=</span> <span class="n">ConnectionInfo</span><span class="p">(</span>
+                <span class="n">data_model_name</span><span class="o">=</span><span class="n">data_model_name</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="n">root_id</span>
+            <span class="p">)</span>
+            <span class="n">connector</span> <span class="o">=</span> <span class="n">middleware</span><span class="o">.</span><span class="n">persistence_registry</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span><span class="n">connection_info</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="k">await</span> <span class="n">connector</span><span class="o">.</span><span class="n">provide</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">owner_id</span> <span class="o">==</span> <span class="n">root_id</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">field_id</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">_owner_of</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">owner_id</span><span class="p">,</span> <span class="n">field_id</span><span class="p">),</span> <span class="n">field_id</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">value</span>
+        <span class="k">except</span> <span class="n">HTTPException</span><span class="p">:</span>
+            <span class="c1"># Already carries a considered status. Re-raising keeps it. Otherwise every</span>
+            <span class="c1"># failure below would flatten into a 400.</span>
+            <span class="k">raise</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># 500, not 400: the caller asked for a route this middleware generated and</span>
+            <span class="c1"># advertised, so a failure to serve it is ours. A 400 here would send an operator</span>
+            <span class="c1"># looking at their own request for a fault that is on this side.</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"GET </span><span class="si">%s</span><span class="s2"> failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">field_id</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+    <span class="c1"># FastAPI reads `inspect.signature()` before it looks at `__annotations__`. This module</span>
+    <span class="c1"># has `from __future__ import annotations`. A written-out annotation would reach it as an</span>
+    <span class="c1"># unresolvable string. Stamp the signature. This drives request parsing.</span>
+    <span class="n">get_parameter</span><span class="o">.</span><span class="n">__signature__</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">Signature</span><span class="p">(</span>  <span class="c1"># type: ignore[attr-defined]</span>
+        <span class="n">parameters</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">return_annotation</span><span class="o">=</span><span class="n">response_annotation</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">get_parameter</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_make_put_handler</span><span class="p">(</span>
+    <span class="n">data_model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">root_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">owner_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">field_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">body_annotation</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">middleware</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Build a PUT handler for one parameter route.</span>
+
+<span class="sd">    This function mirrors ``update_persistence_with_value`` final ``else:`` branch. That branch is</span>
+<span class="sd">    from ``transitional_sync_middleware/middleware/sync/synchronization.py``. That is what makes the write</span>
+<span class="sd">    precise. Only the one field mutates. Every sibling stays byte-identical. A downstream</span>
+<span class="sd">    diff-based commit writes nothing for the siblings. See that file lines around the field-level</span>
+<span class="sd">    branch.</span>
+
+<span class="sd">    The precision has to survive the ``consume`` call as well, and at first it did not. A</span>
+<span class="sd">    persistence connector is keyed by *(data_model_name, model_id)*, so every connector on</span>
+<span class="sd">    this resource hangs off the one this handler fetches. Handing it the whole model with no</span>
+<span class="sd">    further word meant the fan-out asked *every* write leg on the resource to re-derive its</span>
+<span class="sd">    slice -- including a sibling parameter this PUT never touched, whose write leg then</span>
+<span class="sd">    published its last *observed* value onto its *set* topic as though someone had commanded</span>
+<span class="sd">    it. ``changed`` carries the same field identity the mutation above already used, so the</span>
+<span class="sd">    fan-out reaches this parameter's write leg and no other.</span>
+<span class="sd">    """</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">put_parameter</span><span class="p">(</span><span class="n">body</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">connection_info</span> <span class="o">=</span> <span class="n">ConnectionInfo</span><span class="p">(</span>
+                <span class="n">data_model_name</span><span class="o">=</span><span class="n">data_model_name</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="n">root_id</span>
+            <span class="p">)</span>
+            <span class="n">connector</span> <span class="o">=</span> <span class="n">middleware</span><span class="o">.</span><span class="n">persistence_registry</span><span class="o">.</span><span class="n">get_connection</span><span class="p">(</span><span class="n">connection_info</span><span class="p">)</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="k">await</span> <span class="n">connector</span><span class="o">.</span><span class="n">provide</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">owner_id</span> <span class="o">==</span> <span class="n">root_id</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">field_id</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">setattr</span><span class="p">(</span><span class="n">_owner_of</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">owner_id</span><span class="p">,</span> <span class="n">field_id</span><span class="p">),</span> <span class="n">field_id</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+
+            <span class="c1"># `contained_model_id=owner_id` unconditionally, including when the parameter</span>
+            <span class="c1"># sits on the root: `middleware._wire_semantic_connectors` registers every</span>
+            <span class="c1"># binding with `contained_model_id=str(binding.resource_iri)`, so a root-owned</span>
+            <span class="c1"># parameter's connector carries the root's own id there rather than `None`.</span>
+            <span class="c1"># Leaving it `None` here would widen the scope to every field on the resource</span>
+            <span class="c1"># and quietly restore the defect.</span>
+            <span class="k">await</span> <span class="n">connector</span><span class="o">.</span><span class="n">consume</span><span class="p">(</span>
+                <span class="n">model</span><span class="p">,</span>
+                <span class="n">changed</span><span class="o">=</span><span class="n">ConnectionInfo</span><span class="p">(</span>
+                    <span class="n">data_model_name</span><span class="o">=</span><span class="n">data_model_name</span><span class="p">,</span>
+                    <span class="n">model_id</span><span class="o">=</span><span class="n">root_id</span><span class="p">,</span>
+                    <span class="n">contained_model_id</span><span class="o">=</span><span class="n">owner_id</span><span class="p">,</span>
+                    <span class="n">field_id</span><span class="o">=</span><span class="n">field_id</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">)</span>
+            <span class="c1"># A PUT is always news. Something northbound chose to act. Log after the</span>
+            <span class="c1"># consume. The line means "applied" rather than "attempted".</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"PUT applied: </span><span class="si">%s</span><span class="s2"> on </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">field_id</span><span class="p">,</span> <span class="n">owner_id</span><span class="p">,</span> <span class="n">body</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s2">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"Updated </span><span class="si">{</span><span class="n">field_id</span><span class="si">}</span><span class="s2">"</span><span class="p">}</span>
+        <span class="k">except</span> <span class="n">HTTPException</span><span class="p">:</span>
+            <span class="k">raise</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"PUT </span><span class="si">%s</span><span class="s2"> failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">field_id</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+    <span class="c1"># As above: the body type has to arrive as a real object on the signature. Do not use a string</span>
+    <span class="c1"># annotation. FastAPI would fail to resolve it.</span>
+    <span class="c1">#</span>
+    <span class="c1"># `body_annotation` is the owning model's field annotation. For a COMPLEX property that</span>
+    <span class="c1"># is not required, that annotation is `Optional[Annotated[conlist(Model, ...), BeforeValidator]]`</span>
+    <span class="c1"># -- not the plain `List[Model]` it is for a required one. FastAPI infers body-vs-query from</span>
+    <span class="c1"># whether the annotation looks "scalar", and an `Optional` wrapper defeats that inference: it</span>
+    <span class="c1"># falls back to a query parameter named "body", which every real PUT then 422s against, since</span>
+    <span class="c1"># a list can never arrive on a query string. Mark it explicitly rather than rely on inference.</span>
+    <span class="n">put_parameter</span><span class="o">.</span><span class="n">__signature__</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">Signature</span><span class="p">(</span>  <span class="c1"># type: ignore[attr-defined]</span>
+        <span class="n">parameters</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">inspect</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span>
+                <span class="s2">"body"</span><span class="p">,</span>
+                <span class="n">inspect</span><span class="o">.</span><span class="n">Parameter</span><span class="o">.</span><span class="n">POSITIONAL_OR_KEYWORD</span><span class="p">,</span>
+                <span class="n">annotation</span><span class="o">=</span><span class="n">Annotated</span><span class="p">[</span><span class="n">body_annotation</span><span class="p">,</span> <span class="n">Body</span><span class="p">()],</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+        <span class="n">return_annotation</span><span class="o">=</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">put_parameter</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_accumulate_routes</span><span class="p">(</span>
+    <span class="n">inst</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">bindings_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">]],</span>
+    <span class="n">current_path</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">visited</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ParameterBinding</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Walk the instance. Return (path, binding, owner_id, field_annotation) tuples."""</span>
+    <span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ParameterBinding</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">node_id</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">node_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+    <span class="n">node_id_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">node_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">node_id_str</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">results</span>
+    <span class="c1"># A new set per branch rather than add-then-backtrack. `visited` is scoped to the path</span>
+    <span class="c1"># taken. It is not scoped to the walk as a whole. An individual genuinely reachable by two</span>
+    <span class="c1"># routes should be addressable at both. A walk-wide set would silently drop the second. The</span>
+    <span class="c1"># cost is a set per node over a handful of nodes. This happens once, at startup.</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="n">visited</span> <span class="o">|</span> <span class="p">{</span><span class="n">node_id_str</span><span class="p">}</span>
+
+    <span class="n">owner_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">bindings_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node_id_str</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="n">param_path</span> <span class="o">=</span> <span class="s2">"/"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span> <span class="o">+</span> <span class="p">[</span><span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">])</span>
+        <span class="n">field_info</span> <span class="o">=</span> <span class="n">owner_type</span><span class="o">.</span><span class="n">model_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">)</span>
+        <span class="n">field_annotation</span> <span class="o">=</span> <span class="n">field_info</span><span class="o">.</span><span class="n">annotation</span> <span class="k">if</span> <span class="n">field_info</span> <span class="k">else</span> <span class="n">Any</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">param_path</span><span class="p">,</span> <span class="n">binding</span><span class="p">,</span> <span class="n">node_id_str</span><span class="p">,</span> <span class="n">field_annotation</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="nb">type</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span><span class="o">.</span><span class="n">model_fields</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">continue</span>
+
+        <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+            <span class="c1"># `isinstance` rather than a `model_fields` probe. Pydantic 2.11 deprecates reading</span>
+            <span class="c1"># that attribute off an instance. It is the wrong question anyway. What matters</span>
+            <span class="c1"># is that the element is a model we can descend. It is not that it exposes a field map.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">BaseModel</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">child_id</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">child_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">next_path</span> <span class="o">=</span> <span class="n">current_path</span> <span class="o">+</span> <span class="p">[</span><span class="n">field_name</span><span class="p">,</span> <span class="n">_lined</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">child_id</span><span class="p">))]</span>
+            <span class="n">results</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="n">_accumulate_routes</span><span class="p">(</span>
+                    <span class="n">inst</span><span class="o">=</span><span class="n">element</span><span class="p">,</span>
+                    <span class="n">bindings_map</span><span class="o">=</span><span class="n">bindings_map</span><span class="p">,</span>
+                    <span class="n">current_path</span><span class="o">=</span><span class="n">next_path</span><span class="p">,</span>
+                    <span class="n">visited</span><span class="o">=</span><span class="n">visited</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">results</span>
+
+
+<div class="viewcode-block" id="generate_recursive_rest_api">
+<a class="viewcode-back" href="../../reference/rest_router.html#kapps_semantic_middleware.rest_router.generate_recursive_rest_api">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_recursive_rest_api</span><span class="p">(</span>
+    <span class="n">middleware</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">data_model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">root_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">instance</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">bindings</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Generate the REST surface of the resource middleware. Generate top-level CRUD plus recursive parameter routes.</span>
+
+<span class="sd">    Call ``middleware.generate_rest_api_for_data_model`` first. This produces the unchanged top-level</span>
+<span class="sd">    CRUD. Then walk the instance tree. Mount parameter routes beneath it. Return the list of</span>
+<span class="sd">    generated parameter route paths. Count the path string per route. Count GET and PUT of the same</span>
+<span class="sd">    path once. Ordering is tree order. It is depth-first.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        middleware: The semantic middleware instance. It provides ``app``, ``persistence_registry``,</span>
+<span class="sd">            and ``generate_rest_api_for_data_model``.</span>
+<span class="sd">        data_model_name: The name of the data model for ConnectionInfo.</span>
+<span class="sd">        root_id: The IRI of the root resource instance.</span>
+<span class="sd">        instance: The materialized root instance. Walk its tree.</span>
+<span class="sd">        bindings: The recognized ParameterBindings from WiringPlan.bindings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of generated parameter route paths. Empty if the instance has no id.</span>
+<span class="sd">    """</span>
+    <span class="n">middleware</span><span class="o">.</span><span class="n">generate_rest_api_for_data_model</span><span class="p">(</span><span class="n">data_model_name</span><span class="p">)</span>
+
+    <span class="n">root_node_id</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">root_node_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"Root instance for </span><span class="si">%s</span><span class="s2"> has no id. Generate top-level CRUD only. Generate no parameter routes."</span><span class="p">,</span>
+            <span class="n">data_model_name</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="n">bindings_by_owner</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">ParameterBinding</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">:</span>
+        <span class="n">owner_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">)</span>
+        <span class="n">bindings_by_owner</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">owner_key</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binding</span><span class="p">)</span>
+
+    <span class="c1"># The leading empty segment puts the "/" on the front. Join these segments later.</span>
+    <span class="c1"># Starlette asserts `path.startswith("/")`. A missing one is a construction-time crash.</span>
+    <span class="c1"># It is not a 404. Get this right here. A diagnosis there is hard.</span>
+    <span class="n">initial_path</span> <span class="o">=</span> <span class="p">[</span><span class="s2">""</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">_lined</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">root_node_id</span><span class="p">))]</span>
+    <span class="n">route_specs</span> <span class="o">=</span> <span class="n">_accumulate_routes</span><span class="p">(</span>
+        <span class="n">inst</span><span class="o">=</span><span class="n">instance</span><span class="p">,</span>
+        <span class="n">bindings_map</span><span class="o">=</span><span class="n">bindings_by_owner</span><span class="p">,</span>
+        <span class="n">current_path</span><span class="o">=</span><span class="n">initial_path</span><span class="p">,</span>
+        <span class="n">visited</span><span class="o">=</span><span class="nb">set</span><span class="p">(),</span>
+    <span class="p">)</span>
+
+    <span class="n">router</span> <span class="o">=</span> <span class="n">APIRouter</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">path</span><span class="p">,</span> <span class="n">binding</span><span class="p">,</span> <span class="n">owner_id</span><span class="p">,</span> <span class="n">field_annotation</span> <span class="ow">in</span> <span class="n">route_specs</span><span class="p">:</span>
+        <span class="n">get_handler</span> <span class="o">=</span> <span class="n">_make_get_handler</span><span class="p">(</span>
+            <span class="n">data_model_name</span><span class="o">=</span><span class="n">data_model_name</span><span class="p">,</span>
+            <span class="n">root_id</span><span class="o">=</span><span class="n">root_id</span><span class="p">,</span>
+            <span class="n">owner_id</span><span class="o">=</span><span class="n">owner_id</span><span class="p">,</span>
+            <span class="n">field_id</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">,</span>
+            <span class="n">response_annotation</span><span class="o">=</span><span class="n">field_annotation</span><span class="p">,</span>
+            <span class="n">middleware</span><span class="o">=</span><span class="n">middleware</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">router</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">field_annotation</span><span class="p">)(</span><span class="n">get_handler</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">binding</span><span class="o">.</span><span class="n">access_mode</span> <span class="o">==</span> <span class="n">AccessMode</span><span class="o">.</span><span class="n">READWRITE</span><span class="p">:</span>
+            <span class="n">put_handler</span> <span class="o">=</span> <span class="n">_make_put_handler</span><span class="p">(</span>
+                <span class="n">data_model_name</span><span class="o">=</span><span class="n">data_model_name</span><span class="p">,</span>
+                <span class="n">root_id</span><span class="o">=</span><span class="n">root_id</span><span class="p">,</span>
+                <span class="n">owner_id</span><span class="o">=</span><span class="n">owner_id</span><span class="p">,</span>
+                <span class="n">field_id</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">,</span>
+                <span class="n">body_annotation</span><span class="o">=</span><span class="n">field_annotation</span><span class="p">,</span>
+                <span class="n">middleware</span><span class="o">=</span><span class="n">middleware</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">router</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">path</span><span class="p">)(</span><span class="n">put_handler</span><span class="p">)</span>
+
+    <span class="n">middleware</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">include_router</span><span class="p">(</span><span class="n">router</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">spec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">route_specs</span><span class="p">]</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
