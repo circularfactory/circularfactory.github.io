@@ -1,0 +1,1300 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_ogm.mapping.property_spec &#8212; kapps-ogm</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=7782763b" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
+
+    <script src="../../../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_ogm/mapping/property_spec';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_ogm/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-ogm</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_ogm.mapping.property_spec</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_ogm.mapping.property_spec</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Type</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Annotated</span><span class="p">,</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">XSDToPythonTypes</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeforeValidator</span><span class="p">,</span> <span class="n">Field</span><span class="p">,</span> <span class="n">conlist</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib</span><span class="w"> </span><span class="kn">import</span> <span class="n">BNode</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.constants</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PROPERTY_TYPES</span><span class="p">,</span>
+    <span class="n">PROPERTY_CHARACTERISTICS</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.class_scope</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassScope</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.mapping.class_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassSpec</span><span class="p">,</span> <span class="n">ClassHydrationLevel</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"kapps_pspec"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="PropertyValueKind">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.PropertyValueKind">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PropertyValueKind</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">LITERAL</span> <span class="o">=</span> <span class="s2">"literal"</span>
+    <span class="n">OBJECT</span> <span class="o">=</span> <span class="s2">"object"</span>
+    <span class="n">COMPLEX</span> <span class="o">=</span> <span class="s2">"complex"</span></div>
+
+
+
+<div class="viewcode-block" id="chain_ranges">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.chain_ranges">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">chain_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">range_var</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ancestor_var</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"?ancestor"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The SPARQL prelude binding `range_var` to every rdfs:range along a property's chain.</span>
+
+<span class="sd">    RDFS entails no rdfs:range triple for a subproperty and GraphDB materializes none, so</span>
+<span class="sd">    every query that needs a property's effective shape has to walk the chain itself. The</span>
+<span class="sd">    `*` path is a transitive closure, which is what makes a cyclic rdfs:subPropertyOf</span>
+<span class="sd">    assertion terminate rather than recurse. Shared so the four call sites cannot drift.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Kept to one line so it interpolates cleanly at any indentation.</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2">&gt; &lt;http://www.w3.org/2000/01/rdf-schema#subPropertyOf&gt;* </span><span class="si">{</span><span class="n">ancestor_var</span><span class="si">}</span><span class="s2"> . "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">ancestor_var</span><span class="si">}</span><span class="s2"> &lt;http://www.w3.org/2000/01/rdf-schema#range&gt; </span><span class="si">{</span><span class="n">range_var</span><span class="si">}</span><span class="s2"> ."</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="n">XSD_NAMESPACE</span> <span class="o">=</span> <span class="s2">"http://www.w3.org/2001/XMLSchema#"</span>
+
+<span class="c1"># Datatypes that are not in the XSD namespace. rdfs:Literal is the top datatype, and the</span>
+<span class="c1"># other two are RDF's own.</span>
+<span class="n">NON_XSD_DATATYPES</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"</span><span class="p">),</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"</span><span class="p">),</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="s2">"http://www.w3.org/2000/01/rdf-schema#Literal"</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_names_a_datatype</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether a restriction's target names a datatype rather than a class.</span>
+
+<span class="sd">    Decided by namespace, deliberately not by membership of `XSDToPythonTypes`. That map</span>
+<span class="sd">    covers 33 datatypes, so `xsd:gMonth`, `xsd:gDay` and `xsd:dateTimeStamp` are absent</span>
+<span class="sd">    from it — and reading a miss as "then it must be a class" would silently turn a</span>
+<span class="sd">    literal restriction into an object one.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">XSD_NAMESPACE</span><span class="p">)</span> <span class="ow">or</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">NON_XSD_DATATYPES</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_target_label</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">type</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A restriction target as it should appear in an error message.</span>
+
+<span class="sd">    A resolved python type renders as `str` rather than `&lt;class 'str'&gt;`, which is closer</span>
+<span class="sd">    to the `xsd:string` the ontology author actually wrote.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s2">"__name__"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">target</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_satisfies_constraint</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">constraint</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">type</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether one value meets a some/allValuesFrom constraint.</span>
+
+<span class="sd">    A class-valued constraint arrives as an IRI, and class membership cannot be decided</span>
+<span class="sd">    without the store, so the check is only that the value is a reference. It runs as a</span>
+<span class="sd">    BeforeValidator, ahead of pydantic's coercion, so a plain string that the `IRI` field</span>
+<span class="sd">    type would go on to accept has to pass here too — hence `str` rather than `IRI`.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">constraint</span><span class="p">,</span> <span class="n">IRI</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">constraint</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_tighten_bound</span><span class="p">(</span>
+    <span class="n">mine</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">theirs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">combine</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Combine two cardinality bounds conjunctively; an absent bound constrains nothing."""</span>
+    <span class="k">if</span> <span class="n">mine</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">theirs</span>
+    <span class="k">if</span> <span class="n">theirs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">mine</span>
+    <span class="k">return</span> <span class="n">combine</span><span class="p">(</span><span class="n">mine</span><span class="p">,</span> <span class="n">theirs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="PropertySpec">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.PropertySpec">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PropertySpec</span><span class="p">:</span>
+    <span class="n">iri</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">value_kind</span><span class="p">:</span> <span class="n">PropertyValueKind</span>  <span class="c1"># 'data' or 'object' or 'complex'</span>
+    <span class="n">python_range_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">min_count</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">max_count</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">some_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Type</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">all_from</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Type</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">nested</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"ClassSpec"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">required</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_count</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_count</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">restriction_target</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Type</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""The datatype or class this restriction constrains values to.</span>
+
+<span class="sd">        None for a cardinality-only restriction, which says nothing about the value's type</span>
+<span class="sd">        and so cannot conflict with one that does. `python_range_type` and `all_from` are</span>
+<span class="sd">        mutually exclusive as built by `_specify_complex_property` — one holds a resolved</span>
+<span class="sd">        datatype, the other a class IRI — so the order below only decides which a</span>
+<span class="sd">        hand-built spec reports.</span>
+<span class="sd">        """</span>
+        <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">python_range_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">some_from</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">candidate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">candidate</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="PropertySpec.to_string">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.PropertySpec.to_string">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">..utils.pretty_print</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_property_spec</span>
+
+        <span class="k">return</span> <span class="n">format_property_spec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PropertySpec.to_pydantic_field">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.PropertySpec.to_pydantic_field">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_pydantic_field</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Convert this PropertySpec into a Pydantic field with validators."""</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">.class_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassHydrationLevel</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_kind</span> <span class="ow">in</span> <span class="n">PropertyValueKind</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Unknown value_kind: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value_kind</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"Converting PropertySpec (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value_kind</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">) '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">' to pydantic field"</span>
+        <span class="p">)</span>
+
+        <span class="n">validators</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">match</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_kind</span><span class="p">:</span>
+            <span class="k">case</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span><span class="p">:</span>
+                <span class="c1"># If all_from is set, use it as type restriction</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="p">,</span> <span class="n">IRI</span><span class="p">):</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">"Literal property </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> cannot have allValuesFrom as Object IRI"</span>
+                        <span class="p">)</span>
+                    <span class="n">base_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">base_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">python_range_type</span> <span class="ow">or</span> <span class="n">Any</span>
+            <span class="k">case</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">OBJECT</span><span class="p">:</span>
+                <span class="c1"># Nested hydrated class becomes Pydantic model; else fallback to IRI</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span>
+                    <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">hydration_level</span> <span class="ow">is</span> <span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">REFERENCE</span>
+                <span class="p">):</span>
+                    <span class="n">base_type</span> <span class="o">=</span> <span class="n">IRI</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">nested_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">to_pydantic_model</span><span class="p">()</span>
+                    <span class="n">base_type</span> <span class="o">=</span> <span class="n">nested_model</span>
+
+                    <span class="k">def</span><span class="w"> </span><span class="nf">coerce_object</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                        <span class="n">parse</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                            <span class="n">nested_model</span><span class="p">,</span> <span class="s2">"model_validate"</span><span class="p">,</span> <span class="kc">None</span>
+                        <span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">nested_model</span><span class="p">,</span> <span class="s2">"parse_obj"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">value</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">nested_model</span><span class="p">):</span>
+                            <span class="k">return</span> <span class="n">value</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.node.core</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+                                <span class="n">Node</span><span class="p">,</span>
+                            <span class="p">)</span>  <span class="c1"># Lazy import to avoid cycles</span>
+                        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                            <span class="n">Node</span> <span class="o">=</span> <span class="kc">None</span>
+
+                        <span class="k">if</span> <span class="n">Node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Node</span><span class="p">):</span>
+                            <span class="n">payload</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"instance"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span>
+                                <span class="n">value</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="kc">None</span>
+                            <span class="p">)</span>
+                            <span class="k">if</span> <span class="n">payload</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="k">return</span> <span class="n">parse</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+                            <span class="k">return</span> <span class="n">value</span>
+
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="n">parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">value</span>
+
+                    <span class="n">validators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BeforeValidator</span><span class="p">(</span><span class="n">coerce_object</span><span class="p">))</span>
+            <span class="k">case</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">COMPLEX</span><span class="p">:</span>
+                <span class="c1"># Complex properties have nested ClassSpec that should be converted to Pydantic model</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span>
+                    <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">hydration_level</span> <span class="ow">is</span> <span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">REFERENCE</span>
+                <span class="p">):</span>
+                    <span class="n">base_type</span> <span class="o">=</span> <span class="n">Any</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">nested_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">to_pydantic_model</span><span class="p">()</span>
+                    <span class="n">base_type</span> <span class="o">=</span> <span class="n">nested_model</span>
+
+                    <span class="k">def</span><span class="w"> </span><span class="nf">coerce_complex</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+                        <span class="n">parse</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span>
+                            <span class="n">nested_model</span><span class="p">,</span> <span class="s2">"model_validate"</span><span class="p">,</span> <span class="kc">None</span>
+                        <span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">nested_model</span><span class="p">,</span> <span class="s2">"parse_obj"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">value</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">nested_model</span><span class="p">):</span>
+                            <span class="k">return</span> <span class="n">value</span>
+                        <span class="k">try</span><span class="p">:</span>
+                            <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.node.core</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+                                <span class="n">Node</span><span class="p">,</span>
+                            <span class="p">)</span>  <span class="c1"># Lazy import to avoid cycles</span>
+                        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                            <span class="n">Node</span> <span class="o">=</span> <span class="kc">None</span>
+
+                        <span class="k">if</span> <span class="n">Node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Node</span><span class="p">):</span>
+                            <span class="n">payload</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"instance"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">getattr</span><span class="p">(</span>
+                                <span class="n">value</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="kc">None</span>
+                            <span class="p">)</span>
+                            <span class="k">if</span> <span class="n">payload</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                <span class="k">return</span> <span class="n">parse</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+                            <span class="k">return</span> <span class="n">value</span>
+
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="n">parse</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">parse</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+                        <span class="k">return</span> <span class="n">value</span>
+
+                    <span class="n">validators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BeforeValidator</span><span class="p">(</span><span class="n">coerce_complex</span><span class="p">))</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span>
+
+        <span class="c1"># cardinality</span>
+        <span class="n">min_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_count</span> <span class="ow">or</span> <span class="mi">0</span>
+        <span class="n">max_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_count</span>
+
+        <span class="c1"># Always treat multiple cardinality as list</span>
+        <span class="n">is_multi</span> <span class="o">=</span> <span class="n">max_count</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">max_count</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">min_count</span> <span class="o">&gt;</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">is_multi</span><span class="p">:</span>
+            <span class="n">field_type</span> <span class="o">=</span> <span class="n">conlist</span><span class="p">(</span><span class="n">base_type</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="n">min_count</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_count</span><span class="p">)</span>
+            <span class="n">default</span> <span class="o">=</span> <span class="o">...</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">required</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">field_type</span> <span class="o">=</span> <span class="n">base_type</span>
+            <span class="n">default</span> <span class="o">=</span> <span class="o">...</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">required</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="c1"># Apply some_from / all_from validators using Annotated types</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">some_from</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="p">:</span>
+
+            <span class="k">def</span><span class="w"> </span><span class="nf">validate_some_all</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">v</span>
+                <span class="n">values</span> <span class="o">=</span> <span class="n">v</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">some_from</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span>
+                        <span class="n">_satisfies_constraint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">some_from</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span>
+                    <span class="p">):</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> requires at least one value of type </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">some_from</span><span class="si">}</span><span class="s2">"</span>
+                        <span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">_satisfies_constraint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span><span class="p">):</span>
+                        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> requires all values to be of type </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="si">}</span><span class="s2">"</span>
+                        <span class="p">)</span>
+
+                <span class="k">return</span> <span class="n">v</span>
+
+            <span class="n">validators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BeforeValidator</span><span class="p">(</span><span class="n">validate_some_all</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">validators</span><span class="p">:</span>
+            <span class="n">field_type</span> <span class="o">=</span> <span class="n">Annotated</span><span class="p">[</span><span class="n">field_type</span><span class="p">,</span> <span class="o">*</span><span class="n">validators</span><span class="p">]</span>
+
+        <span class="c1"># Wrap in Optional if not required</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
+            <span class="n">field_type</span> <span class="o">=</span> <span class="n">Optional</span><span class="p">[</span><span class="n">field_type</span><span class="p">]</span>
+
+        <span class="c1"># Create Pydantic Field</span>
+        <span class="n">field</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span>
+            <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s2">"PropertySpec for </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">field_type</span><span class="p">,</span> <span class="n">field</span></div>
+
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_resolve_effective_ranges</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">BNode</span><span class="p">,</span> <span class="nb">type</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""Resolve all effective rdfs:range assertions across the rdfs:subPropertyOf* chain.</span>
+
+<span class="sd">        Returns every rdfs:range asserted on prop_iri or on any of its rdfs:subPropertyOf</span>
+<span class="sd">        ancestors, after the most-specific-named-class filter. The set is deliberately</span>
+<span class="sd">        heterogeneous: a named class arrives as an IRI, an XSD datatype as a python type,</span>
+<span class="sd">        and an anonymous restriction as a BNode, and the caller dispatches on which.</span>
+<span class="sd">        """</span>
+        <span class="n">range_query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">        SELECT DISTINCT ?obj</span>
+<span class="s2">        WHERE </span><span class="se">{{</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">chain_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">,</span><span class="w"> </span><span class="s2">"?obj"</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">            FILTER NOT EXISTS </span><span class="se">{{</span>
+<span class="s2">                </span><span class="si">{</span><span class="n">chain_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">,</span><span class="w"> </span><span class="s2">"?sub"</span><span class="p">,</span><span class="w"> </span><span class="n">ancestor_var</span><span class="o">=</span><span class="s2">"?otherAncestor"</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">                # The subsumption filter picks the most specific *named* class. Without the</span>
+<span class="s2">                # isIRI guard it could also discard an anonymous restriction range, silently</span>
+<span class="s2">                # dropping half a merge.</span>
+<span class="s2">                FILTER (?sub != ?obj &amp;&amp; isIRI(?sub) &amp;&amp; isIRI(?obj))</span>
+<span class="s2">                </span><span class="se">{{</span>
+<span class="s2">                    ?sub &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf&gt;+ ?obj</span>
+<span class="s2">                </span><span class="se">}}</span>
+<span class="s2">                UNION</span>
+<span class="s2">                </span><span class="se">{{</span>
+<span class="s2">                    ?sub &lt;http://www.w3.org/2000/01/rdf-schema#subPropertyOf&gt;+ ?obj</span>
+<span class="s2">                </span><span class="se">}}</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">        </span><span class="se">}}</span>
+<span class="s2">        """</span>
+
+        <span class="n">range_query_result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">range_query</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">range_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span>
+            <span class="n">d</span><span class="p">[</span><span class="s2">"obj"</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">range_query_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"results"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bindings"</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="p">)</span>
+
+        <span class="c1"># owl:Thing constrains nothing, and since the isIRI guard above confines the</span>
+        <span class="c1"># subsumption filter to named ranges it can no longer be filtered out by an</span>
+        <span class="c1"># anonymous sibling. Dropping it here is what stops an ancestor declaring</span>
+        <span class="c1"># `rdfs:range owl:Thing` from being read as a named range mixed with an</span>
+        <span class="c1"># anonymous one. (Merge note: this line is bcb7840.)</span>
+        <span class="n">range_set</span> <span class="o">-=</span> <span class="p">{</span><span class="n">IRI</span><span class="p">(</span><span class="s2">"http://www.w3.org/2002/07/owl#Thing"</span><span class="p">)}</span>
+
+        <span class="k">return</span> <span class="n">range_set</span>
+
+<div class="viewcode-block" id="PropertySpec.merge_conjunctive">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.PropertySpec.merge_conjunctive">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">merge_conjunctive</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">"PropertySpec"</span><span class="p">,</span> <span class="n">owner_iri</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"PropertySpec"</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Conjunctive merge of two restrictions on the same nested property.</span>
+
+<span class="sd">        Returns a new PropertySpec; does not mutate either input. owner_iri appears in error</span>
+<span class="sd">        messages so a failure names the property whose range is malformed.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">iri</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">iri</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Cannot merge PropertySpecs with different IRIs: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">other</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+
+        <span class="c1"># A datatype target and a class target are irreconcilable: the value cannot be both</span>
+        <span class="c1"># a literal and an instance of a class. Caught here rather than in to_pydantic_field</span>
+        <span class="c1"># so the message can name the ontology at fault. Both sides must carry a target, so</span>
+        <span class="c1"># a cardinality-only restriction still merges with a typed one.</span>
+        <span class="n">mine_target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">restriction_target</span>
+        <span class="n">their_target</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">restriction_target</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">mine_target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">their_target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mine_target</span><span class="p">,</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">their_target</span><span class="p">,</span> <span class="n">IRI</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> is constrained to both a datatype and a class by two "</span>
+                <span class="sa">f</span><span class="s2">"rdfs:range restrictions of </span><span class="si">{</span><span class="n">owner_iri</span><span class="si">}</span><span class="s2">: "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_target_label</span><span class="p">(</span><span class="n">mine_target</span><span class="p">)</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">_target_label</span><span class="p">(</span><span class="n">their_target</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">reconcile_type</span><span class="p">(</span><span class="n">owl_term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mine</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">theirs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">"""One side's constraint, or the shared one; two different ones are an ontology error."""</span>
+            <span class="k">if</span> <span class="n">mine</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">theirs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mine</span> <span class="o">!=</span> <span class="n">theirs</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> is constrained to incompatible </span><span class="si">{</span><span class="n">owl_term</span><span class="si">}</span><span class="s2"> by two "</span>
+                    <span class="sa">f</span><span class="s2">"rdfs:range restrictions of </span><span class="si">{</span><span class="n">owner_iri</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">mine</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">theirs</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">mine</span> <span class="k">if</span> <span class="n">mine</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">theirs</span>
+
+        <span class="n">merged_python_range_type</span> <span class="o">=</span> <span class="n">reconcile_type</span><span class="p">(</span>
+            <span class="s2">"allValuesFrom"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">python_range_type</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">python_range_type</span>
+        <span class="p">)</span>
+        <span class="n">merged_some_from</span> <span class="o">=</span> <span class="n">reconcile_type</span><span class="p">(</span>
+            <span class="s2">"someValuesFrom"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">some_from</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">some_from</span>
+        <span class="p">)</span>
+        <span class="n">merged_all_from</span> <span class="o">=</span> <span class="n">reconcile_type</span><span class="p">(</span><span class="s2">"allValuesFrom"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_from</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">all_from</span><span class="p">)</span>
+
+        <span class="c1"># Cardinality — most restrictive wins</span>
+        <span class="n">merged_min_count</span> <span class="o">=</span> <span class="n">_tighten_bound</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_count</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">min_count</span><span class="p">,</span> <span class="nb">max</span><span class="p">)</span>
+        <span class="n">merged_max_count</span> <span class="o">=</span> <span class="n">_tighten_bound</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_count</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">max_count</span><span class="p">,</span> <span class="nb">min</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">merged_min_count</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">merged_max_count</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">merged_min_count</span> <span class="o">&gt;</span> <span class="n">merged_max_count</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="si">}</span><span class="s2"> is unsatisfiable after merging the rdfs:range restrictions "</span>
+                <span class="sa">f</span><span class="s2">"of </span><span class="si">{</span><span class="n">owner_iri</span><span class="si">}</span><span class="s2">: minimum cardinality </span><span class="si">{</span><span class="n">merged_min_count</span><span class="si">}</span><span class="s2"> exceeds maximum cardinality </span><span class="si">{</span><span class="n">merged_max_count</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+
+        <span class="c1"># A cardinality-only restriction carries no type information, so it must not</span>
+        <span class="c1"># downgrade a typed one: LITERAL wins over OBJECT.</span>
+        <span class="k">if</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span> <span class="ow">in</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value_kind</span><span class="p">,</span> <span class="n">other</span><span class="o">.</span><span class="n">value_kind</span><span class="p">):</span>
+            <span class="n">merged_value_kind</span> <span class="o">=</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">merged_value_kind</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_kind</span>
+
+        <span class="c1"># nested — take whichever side is set; if both are set, keep self.nested</span>
+        <span class="n">merged_nested</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nested</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">other</span><span class="o">.</span><span class="n">nested</span>
+
+        <span class="k">return</span> <span class="n">PropertySpec</span><span class="p">(</span>
+            <span class="n">iri</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">iri</span><span class="p">,</span>
+            <span class="n">value_kind</span><span class="o">=</span><span class="n">merged_value_kind</span><span class="p">,</span>
+            <span class="n">python_range_type</span><span class="o">=</span><span class="n">merged_python_range_type</span><span class="p">,</span>
+            <span class="n">min_count</span><span class="o">=</span><span class="n">merged_min_count</span><span class="p">,</span>
+            <span class="n">max_count</span><span class="o">=</span><span class="n">merged_max_count</span><span class="p">,</span>
+            <span class="n">some_from</span><span class="o">=</span><span class="n">merged_some_from</span><span class="p">,</span>
+            <span class="n">all_from</span><span class="o">=</span><span class="n">merged_all_from</span><span class="p">,</span>
+            <span class="n">nested</span><span class="o">=</span><span class="n">merged_nested</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="PropertySpec.specify">
+<a class="viewcode-back" href="../../../reference/mapping/property_spec.html#kapps_ogm.mapping.property_spec.PropertySpec.specify">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">specify</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">nested_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"ClassScope"</span><span class="p">],</span>
+        <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+        <span class="n">hydration_level</span><span class="p">:</span> <span class="s2">"ClassHydrationLevel"</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PropertySpec</span><span class="p">:</span>
+        <span class="c1"># Categorize the property regarding its type and characteristics</span>
+        <span class="n">type_query_result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">triples_get</span><span class="p">(</span>
+            <span class="n">sub</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span> <span class="n">pred</span><span class="o">=</span><span class="s2">"rdf:type"</span><span class="p">,</span> <span class="n">include_implicit</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="n">property_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">triple</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">type_query_result</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">property_types</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2"> has no rdf:type defined."</span><span class="p">)</span>
+
+        <span class="n">base_types</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">characteristics</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">ptype</span> <span class="ow">in</span> <span class="n">property_types</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ptype</span> <span class="ow">in</span> <span class="n">PROPERTY_TYPES</span><span class="p">:</span>
+                <span class="n">base_types</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PROPERTY_TYPES</span><span class="p">[</span><span class="n">ptype</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">ptype</span> <span class="ow">in</span> <span class="n">PROPERTY_CHARACTERISTICS</span><span class="p">:</span>
+                <span class="n">characteristics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PROPERTY_CHARACTERISTICS</span><span class="p">[</span><span class="n">ptype</span><span class="p">])</span>
+
+        <span class="c1"># Determine the property specification based on its range</span>
+        <span class="n">range_set</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_resolve_effective_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span> <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">)</span>
+
+        <span class="n">anonymous_ranges</span> <span class="o">=</span> <span class="p">{</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">range_set</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">BNode</span><span class="p">)}</span>
+        <span class="n">named_ranges</span> <span class="o">=</span> <span class="n">range_set</span> <span class="o">-</span> <span class="n">anonymous_ranges</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">range_set</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2"> has no rdfs:range defined."</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">anonymous_ranges</span> <span class="ow">and</span> <span class="n">named_ranges</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2"> resolves both a named rdfs:range and an anonymous "</span>
+                <span class="sa">f</span><span class="s2">"restriction range, which cannot be merged: named </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">named_ranges</span><span class="p">)</span><span class="si">}</span><span class="s2">, "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">anonymous_ranges</span><span class="p">)</span><span class="si">}</span><span class="s2"> anonymous restriction(s)"</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">anonymous_ranges</span><span class="p">:</span>
+            <span class="c1"># An anonymous range is only usable if it is a class expression we can project</span>
+            <span class="c1"># a shape from; anything else is an ontology we do not understand.</span>
+            <span class="n">query_is_complex_type</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                ASK </span><span class="se">{{</span>
+<span class="s2">                    </span><span class="si">{</span><span class="n">chain_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">,</span><span class="w"> </span><span class="s2">"?range"</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">                    </span><span class="se">{{</span>
+<span class="s2">                        ?range a &lt;http://www.w3.org/2002/07/owl#Restriction&gt;</span>
+<span class="s2">                    </span><span class="se">}}</span>
+<span class="s2">                    UNION</span>
+<span class="s2">                    </span><span class="se">{{</span>
+<span class="s2">                        ?range &lt;http://www.w3.org/2002/07/owl#intersectionOf&gt; ?x</span>
+<span class="s2">                    </span><span class="se">}}</span>
+<span class="s2">                    UNION</span>
+<span class="s2">                    </span><span class="se">{{</span>
+<span class="s2">                        ?range &lt;http://www.w3.org/2002/07/owl#unionOf&gt; ?y</span>
+<span class="s2">                    </span><span class="se">}}</span>
+<span class="s2">                    UNION</span>
+<span class="s2">                    </span><span class="se">{{</span>
+<span class="s2">                        ?range &lt;http://www.w3.org/2002/07/owl#complementOf&gt; ?z</span>
+<span class="s2">                    </span><span class="se">}}</span>
+<span class="s2">                    UNION</span>
+<span class="s2">                    </span><span class="se">{{</span>
+<span class="s2">                        ?range &lt;http://www.w3.org/2002/07/owl#oneOf&gt; ?w</span>
+<span class="s2">                    </span><span class="se">}}</span>
+<span class="s2">                </span><span class="se">}}</span>
+<span class="s2">            """</span>
+            <span class="k">if</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_is_complex_type</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"boolean"</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">property_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_specify_complex_property</span><span class="p">(</span>
+                    <span class="n">prop_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span>
+                    <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Unknown property_type: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">anonymous_ranges</span><span class="p">)</span><span class="si">}</span><span class="s2"> for property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">named_ranges</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2"> has multiple independent rdfs:range defined, this is not supported: </span><span class="si">{</span><span class="n">named_ranges</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">prop_range</span> <span class="o">=</span> <span class="n">named_ranges</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop_range</span><span class="p">,</span> <span class="nb">type</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">nested_scope</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2"> cannot be part of a property chain as it has a literal range </span><span class="si">{</span><span class="n">prop_range</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="p">)</span>
+                <span class="n">property_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_specify_literal_property</span><span class="p">(</span>
+                    <span class="n">prop_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span>
+                    <span class="n">python_type</span><span class="o">=</span><span class="n">prop_range</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prop_range</span><span class="p">,</span> <span class="n">IRI</span><span class="p">):</span>
+                <span class="n">property_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_specify_class_property</span><span class="p">(</span>
+                    <span class="n">prop_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span>
+                    <span class="n">range_iri</span><span class="o">=</span><span class="n">prop_range</span><span class="p">,</span>
+                    <span class="n">nested_scope</span><span class="o">=</span><span class="n">nested_scope</span><span class="p">,</span>
+                    <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+                    <span class="n">hydration_level</span><span class="o">=</span><span class="n">hydration_level</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"Unknown property_type: </span><span class="si">{</span><span class="n">prop_range</span><span class="si">}</span><span class="s2"> for property </span><span class="si">{</span><span class="n">prop_iri</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Apply characteristics to the property_spec</span>
+        <span class="k">if</span> <span class="s2">"functional"</span> <span class="ow">in</span> <span class="n">characteristics</span><span class="p">:</span>
+            <span class="n">property_spec</span><span class="o">.</span><span class="n">max_count</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">property_spec</span></div>
+
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_specify_literal_property</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">python_type</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PropertySpec</span><span class="p">:</span>
+        <span class="n">property_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span>
+            <span class="n">value_kind</span><span class="o">=</span><span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span><span class="p">,</span>
+            <span class="n">python_range_type</span><span class="o">=</span><span class="n">python_type</span><span class="p">,</span>
+            <span class="n">max_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">min_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">nested</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">property_spec</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_specify_class_property</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">range_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">nested_scope</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">"ClassScope"</span><span class="p">],</span>
+        <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+        <span class="n">hydration_level</span><span class="p">:</span> <span class="s2">"ClassHydrationLevel"</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PropertySpec</span><span class="p">:</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">.class_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassSpec</span>
+
+        <span class="n">nested_class_spec</span> <span class="o">=</span> <span class="n">ClassSpec</span><span class="o">.</span><span class="n">specify</span><span class="p">(</span>
+            <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+            <span class="n">class_iri</span><span class="o">=</span><span class="n">range_iri</span><span class="p">,</span>
+            <span class="n">class_scope</span><span class="o">=</span><span class="n">nested_scope</span><span class="p">,</span>
+            <span class="n">hydration_level</span><span class="o">=</span><span class="n">hydration_level</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">property_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span>
+            <span class="n">value_kind</span><span class="o">=</span><span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">OBJECT</span><span class="p">,</span>
+            <span class="n">python_range_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># Will be another ClassSpec</span>
+            <span class="n">max_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">min_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">nested</span><span class="o">=</span><span class="n">nested_class_spec</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">property_spec</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_datatype_of</span><span class="p">(</span>
+        <span class="n">target</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">nested_property</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">owner_iri</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Type</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The python type a restriction target resolves to, or None when it names a class.</span>
+
+<span class="sd">        A datatype we recognise but cannot map raises rather than falling through to the</span>
+<span class="sd">        class branch: silently treating `xsd:gMonth` as a class would give the property an</span>
+<span class="sd">        IRI field type and demand references where the ontology asked for literals.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_names_a_datatype</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">python_type</span> <span class="o">=</span> <span class="n">XSDToPythonTypes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">python_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"Property </span><span class="si">{</span><span class="n">nested_property</span><span class="si">}</span><span class="s2">, restricted by the rdfs:range of </span><span class="si">{</span><span class="n">owner_iri</span><span class="si">}</span><span class="s2">, "</span>
+                <span class="sa">f</span><span class="s2">"has datatype target </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">, which kapps_ogm cannot map to a python type"</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">python_type</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_specify_complex_property</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">prop_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PropertySpec</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""</span>
+<span class="sd">        Processes a complex OWL property and returns a PropertySpec with a nested ClassSpec</span>
+<span class="sd">        that includes intersection, union, complement, and enumerated restrictions.</span>
+<span class="sd">        """</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">.class_spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassSpec</span><span class="p">,</span> <span class="n">ClassHydrationLevel</span>
+
+        <span class="c1"># Initialize top-level PropertySpec</span>
+        <span class="n">property_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">,</span>
+            <span class="n">value_kind</span><span class="o">=</span><span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">COMPLEX</span><span class="p">,</span>
+            <span class="n">python_range_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">min_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">max_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">nested</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Build empty anonymous nested ClassSpec up front</span>
+        <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span> <span class="o">=</span> <span class="n">ClassSpec</span><span class="p">(</span>
+            <span class="n">iri</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">properties</span><span class="o">=</span><span class="p">{},</span>
+            <span class="n">metadata</span><span class="o">=</span><span class="p">{},</span>
+            <span class="n">hydration_level</span><span class="o">=</span><span class="n">ClassHydrationLevel</span><span class="o">.</span><span class="n">FULL</span><span class="p">,</span>  <span class="c1"># Anonymous class</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Query 1 — restrictions and their details</span>
+        <span class="n">query_restrictions</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT DISTINCT</span>
+<span class="s2">            ?restriction ?onProperty ?someValuesFrom ?allValuesFrom</span>
+<span class="s2">            ?effectiveMinCardinality ?effectiveMaxCardinality</span>
+<span class="s2">            ?intersectionList</span>
+<span class="s2">        WHERE </span><span class="se">{{</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">chain_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">,</span><span class="w"> </span><span class="s2">"?range"</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                ?range &lt;http://www.w3.org/2002/07/owl#intersectionOf&gt; ?intersectionList .</span>
+<span class="s2">                ?intersectionList &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest&gt;*/&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first&gt; ?restriction .</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            UNION</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                ?range &lt;http://www.w3.org/2002/07/owl#unionOf&gt; ?unionList .</span>
+<span class="s2">                ?unionList &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#rest&gt;*/&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#first&gt; ?restriction .</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            UNION</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                ?range a &lt;http://www.w3.org/2002/07/owl#Restriction&gt; .</span>
+<span class="s2">                BIND(?range AS ?restriction)</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            # Binds ?restriction before the detail OPTIONALs below. Leave it out and a bare</span>
+<span class="s2">            # owl:Restriction range, which matches neither structural branch, leaves the</span>
+<span class="s2">            # variable unbound — and every OPTIONAL then matches every restriction in the</span>
+<span class="s2">            # repository rather than this property's.</span>
+<span class="s2">            ?restriction a &lt;http://www.w3.org/2002/07/owl#Restriction&gt; .</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?restriction &lt;http://www.w3.org/2002/07/owl#onProperty&gt; ?onProperty </span><span class="se">}}</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?restriction &lt;http://www.w3.org/2002/07/owl#someValuesFrom&gt; ?someValuesFrom </span><span class="se">}}</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?restriction &lt;http://www.w3.org/2002/07/owl#allValuesFrom&gt; ?allValuesFrom </span><span class="se">}}</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?restriction &lt;http://www.w3.org/2002/07/owl#minCardinality&gt; ?minCardinality </span><span class="se">}}</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?restriction &lt;http://www.w3.org/2002/07/owl#maxCardinality&gt; ?maxCardinality </span><span class="se">}}</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?restriction &lt;http://www.w3.org/2002/07/owl#cardinality&gt; ?cardinality </span><span class="se">}}</span>
+<span class="s2">            BIND(IF(BOUND(?cardinality), ?cardinality, ?minCardinality) AS ?effectiveMinCardinality)</span>
+<span class="s2">            BIND(IF(BOUND(?cardinality), ?cardinality, ?maxCardinality) AS ?effectiveMaxCardinality)</span>
+<span class="s2">        </span><span class="se">}}</span><span class="s2">"""</span>
+
+        <span class="c1"># Execute query 1</span>
+        <span class="n">query_result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_restrictions</span><span class="p">)</span>
+        <span class="n">bindings</span> <span class="o">=</span> <span class="n">query_result</span><span class="p">[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+
+        <span class="c1"># Process each restriction</span>
+        <span class="k">for</span> <span class="n">restriction</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">"onProperty"</span> <span class="ow">in</span> <span class="n">restriction</span><span class="p">:</span>
+                <span class="n">nested_property</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">restriction</span><span class="p">[</span><span class="s2">"onProperty"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span>
+                <span class="n">nested_spec</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span>
+                    <span class="n">iri</span><span class="o">=</span><span class="n">nested_property</span><span class="p">,</span>
+                    <span class="c1"># Refined below from the restriction's target. A restriction carrying</span>
+                    <span class="c1"># only a cardinality says nothing about the value's type, so OBJECT is</span>
+                    <span class="c1"># the honest default.</span>
+                    <span class="n">value_kind</span><span class="o">=</span><span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">OBJECT</span><span class="p">,</span>
+                    <span class="n">python_range_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">min_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">max_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">nested</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="p">)</span>
+
+                <span class="c1"># The target decides the kind, not the keyword: owl:allValuesFrom</span>
+                <span class="c1"># xsd:string constrains a literal, owl:allValuesFrom cfc:Unit constrains</span>
+                <span class="c1"># an object. A class target leaves value_kind at its OBJECT default.</span>
+                <span class="k">if</span> <span class="s2">"someValuesFrom"</span> <span class="ow">in</span> <span class="n">restriction</span><span class="p">:</span>
+                    <span class="n">target</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">restriction</span><span class="p">[</span><span class="s2">"someValuesFrom"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span>
+                    <span class="n">python_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_datatype_of</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">nested_property</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">python_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">nested_spec</span><span class="o">.</span><span class="n">some_from</span> <span class="o">=</span> <span class="n">python_type</span>
+                        <span class="n">nested_spec</span><span class="o">.</span><span class="n">value_kind</span> <span class="o">=</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">nested_spec</span><span class="o">.</span><span class="n">some_from</span> <span class="o">=</span> <span class="n">target</span>
+                    <span class="n">nested_spec</span><span class="o">.</span><span class="n">min_count</span> <span class="o">=</span> <span class="mi">1</span>
+
+                <span class="k">elif</span> <span class="s2">"allValuesFrom"</span> <span class="ow">in</span> <span class="n">restriction</span><span class="p">:</span>
+                    <span class="n">target</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">restriction</span><span class="p">[</span><span class="s2">"allValuesFrom"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span>
+                    <span class="n">python_type</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_datatype_of</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">nested_property</span><span class="p">,</span> <span class="n">prop_iri</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">python_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">nested_spec</span><span class="o">.</span><span class="n">python_range_type</span> <span class="o">=</span> <span class="n">python_type</span>
+                        <span class="n">nested_spec</span><span class="o">.</span><span class="n">value_kind</span> <span class="o">=</span> <span class="n">PropertyValueKind</span><span class="o">.</span><span class="n">LITERAL</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">nested_spec</span><span class="o">.</span><span class="n">all_from</span> <span class="o">=</span> <span class="n">target</span>
+
+                <span class="c1"># Cardinality</span>
+                <span class="k">if</span> <span class="s2">"effectiveMinCardinality"</span> <span class="ow">in</span> <span class="n">restriction</span><span class="p">:</span>
+                    <span class="n">nested_spec</span><span class="o">.</span><span class="n">min_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+                        <span class="n">restriction</span><span class="p">[</span><span class="s2">"effectiveMinCardinality"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">]</span>
+                    <span class="p">)</span>
+
+                <span class="k">if</span> <span class="s2">"effectiveMaxCardinality"</span> <span class="ow">in</span> <span class="n">restriction</span><span class="p">:</span>
+                    <span class="n">nested_spec</span><span class="o">.</span><span class="n">max_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+                        <span class="n">restriction</span><span class="p">[</span><span class="s2">"effectiveMaxCardinality"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">]</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># Merge or add nested property to ClassSpec</span>
+                <span class="n">existing</span> <span class="o">=</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">nested_property</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">existing</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">nested_property</span><span class="p">]</span> <span class="o">=</span> <span class="n">nested_spec</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">properties</span><span class="p">[</span><span class="n">nested_property</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">existing</span><span class="o">.</span><span class="n">merge_conjunctive</span><span class="p">(</span><span class="n">nested_spec</span><span class="p">,</span> <span class="n">owner_iri</span><span class="o">=</span><span class="n">prop_iri</span><span class="p">)</span>
+                    <span class="p">)</span>
+
+                <span class="c1"># Update metadata for intersectionOf, guarding against duplicates</span>
+                <span class="k">if</span> <span class="s2">"intersectionList"</span> <span class="ow">in</span> <span class="n">restriction</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">"intersectionOf"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+                        <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"intersectionOf"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="n">nested_prop_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">nested_property</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="p">(</span>
+                        <span class="n">nested_prop_str</span>
+                        <span class="ow">not</span> <span class="ow">in</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"intersectionOf"</span><span class="p">]</span>
+                    <span class="p">):</span>
+                        <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"intersectionOf"</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="n">nested_prop_str</span>
+                        <span class="p">)</span>
+
+        <span class="c1"># Query 2 — structural metadata</span>
+        <span class="n">query_metadata</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""SELECT DISTINCT ?unionList ?complementClass ?oneOfList</span>
+<span class="s2">        WHERE </span><span class="se">{{</span>
+<span class="s2">            </span><span class="si">{</span><span class="n">chain_ranges</span><span class="p">(</span><span class="n">prop_iri</span><span class="p">,</span><span class="w"> </span><span class="s2">"?range"</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                ?range &lt;http://www.w3.org/2002/07/owl#unionOf&gt; ?unionList</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            UNION</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                ?range &lt;http://www.w3.org/2002/07/owl#complementOf&gt; ?complementClass</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">            UNION</span>
+<span class="s2">            </span><span class="se">{{</span>
+<span class="s2">                ?range &lt;http://www.w3.org/2002/07/owl#oneOf&gt; ?oneOfList</span>
+<span class="s2">            </span><span class="se">}}</span>
+<span class="s2">        </span><span class="se">}}</span><span class="s2">"""</span>
+
+        <span class="c1"># Execute query 2</span>
+        <span class="n">metadata_result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query_metadata</span><span class="p">)</span>
+        <span class="n">metadata_bindings</span> <span class="o">=</span> <span class="n">metadata_result</span><span class="p">[</span><span class="s2">"results"</span><span class="p">][</span><span class="s2">"bindings"</span><span class="p">]</span>
+
+        <span class="c1"># Iterate all of query 2's bindings; first one seen wins</span>
+        <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">metadata_bindings</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">"unionList"</span> <span class="ow">in</span> <span class="n">binding</span><span class="p">:</span>
+                <span class="c1"># Note: resolve_rdf_list method would need to be implemented in GraphDB</span>
+                <span class="k">if</span> <span class="s2">"unionOf"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+                    <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"unionOf"</span><span class="p">]</span> <span class="o">=</span> <span class="n">binding</span><span class="p">[</span><span class="s2">"unionList"</span><span class="p">][</span>
+                        <span class="s2">"value"</span>
+                    <span class="p">]</span>
+
+            <span class="k">if</span> <span class="s2">"complementClass"</span> <span class="ow">in</span> <span class="n">binding</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">"complementOf"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+                    <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"complementOf"</span><span class="p">]</span> <span class="o">=</span> <span class="n">binding</span><span class="p">[</span>
+                        <span class="s2">"complementClass"</span>
+                    <span class="p">][</span><span class="s2">"value"</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="s2">"oneOfList"</span> <span class="ow">in</span> <span class="n">binding</span><span class="p">:</span>
+                <span class="c1"># Note: resolve_rdf_list method would need to be implemented in GraphDB</span>
+                <span class="k">if</span> <span class="s2">"oneOf"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">:</span>
+                    <span class="n">property_spec</span><span class="o">.</span><span class="n">nested</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="s2">"oneOf"</span><span class="p">]</span> <span class="o">=</span> <span class="n">binding</span><span class="p">[</span><span class="s2">"oneOfList"</span><span class="p">][</span>
+                        <span class="s2">"value"</span>
+                    <span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">property_spec</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.21.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
