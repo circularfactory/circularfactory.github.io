@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: front-door-${{ github.ref }}
@@ -18,23 +18,19 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          persist-credentials: true
+          persist-credentials: false
 
       - name: Build front door
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/build_front_door.py --out index.html
 
-      - name: Commit if changed
+      - name: Fail if index.html is out of date
         run: |
-          # Stage first, then compare against the index: git diff alone reports
-          # no change for an index.html that is not tracked yet.
-          git add index.html
-          if git diff --cached --quiet -- index.html; then
-            echo "No change to index.html; nothing to commit."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "Front door: refresh from repository metadata"
-            git push
+          if ! git diff --quiet -- index.html; then
+            echo "index.html does not match the generator's output."
+            echo "The release pipeline refreshes it when it publishes documentation."
+            git --no-pager diff -- index.html
+            exit 1
           fi
+          echo "index.html is up to date."
