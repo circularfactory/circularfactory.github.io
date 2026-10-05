@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Operation Coordination &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=eee30dbd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guide/05-operation-coordination';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Views and Projection" href="06-views-and-projection.html" />
+    <link rel="prev" title="Connector Binding" href="04-connector-binding.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-instantiation-and-lifecycle.html">Instantiation and Lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-workflow-registration.html">Workflow Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-state-and-parameters.html">State and Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-connector-binding.html">Connector Binding</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Operation Coordination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-views-and-projection.html">Views and Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-writing-to-the-graph-and-to-devices.html">Writing to the Graph and to Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-provisioning-and-seeding.html">Provisioning and Seeding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-the-state-dashboard.html">The State Dashboard</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Operation Coordination</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="operation-coordination">
+<h1>Operation Coordination<a class="headerlink" href="#operation-coordination" title="Link to this heading">#</a></h1>
+<p>Services coordinate by passing Operations through the knowledge graph and firing an event trigger.
+This page describes how a caller dispatches work, how a receiver takes it in and runs it, and how
+the system ensures durability and consistency without synchronous RPC. The graph is the source of
+truth for operation state; the per-resource queue is an in-memory cache reconstructed at startup.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Terms this page assumes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> · <a class="reference internal" href="../concepts.html#term-Capability"><span class="xref std std-term">Capability</span></a> · <a class="reference internal" href="../concepts.html#term-Workflow"><span class="xref std std-term">Workflow</span></a> · <a class="reference internal" href="../concepts.html#term-Service"><span class="xref std std-term">Service</span></a> · <a class="reference internal" href="../concepts.html#term-Resource"><span class="xref std std-term">Resource</span></a> ·
+<a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a></p>
+</div>
+</details><section id="capability-resolution">
+<h2>Capability Resolution<a class="headerlink" href="#capability-resolution" title="Link to this heading">#</a></h2>
+<p>An <a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> never references a Workflow directly. Resolution always follows a two-hop chain through
+a <a class="reference internal" href="../concepts.html#term-Capability"><span class="xref std std-term">Capability</span></a>. The Operation individual links to a Capability via <code class="docutils literal notranslate"><span class="pre">cfc:implementsCapability</span></code>. The
+Capability links to exactly one <a class="reference internal" href="../concepts.html#term-Workflow"><span class="xref std std-term">Workflow</span></a> via <code class="docutils literal notranslate"><span class="pre">svc:realizedByWorkflow</span></code>. This indirection ensures
+that callers address a <em>capability</em> rather than a specific function implementation. Planning services
+discover work against Capabilities; the middleware resolves the concrete Workflow at execution time.</p>
+</section>
+<section id="dispatching-work">
+<h2>Dispatching Work<a class="headerlink" href="#dispatching-work" title="Link to this heading">#</a></h2>
+<p>Caller-side dispatch is a transactional context manager, <code class="docutils literal notranslate"><span class="pre">request</span></code>. It is built on two other parts
+of the middleware and repeats neither: <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> writes the Operation, and the delivery of
+<code class="docutils literal notranslate"><span class="pre">mw.notify()</span></code> notifies the receiver. Its own part is discovery: before the body runs, it finds a
+live Service that realizes the capability class (with <code class="docutils literal notranslate"><span class="pre">target_resource</span></code>, one of that resource). The
+body populates the Operation properties. The exit then creates the Operation in one commit: its
+type, its Capability link, the status <code class="docutils literal notranslate"><span class="pre">queued</span></code>, its issuer (<code class="docutils literal notranslate"><span class="pre">svc:issuedBy</span></code>, the Resource of the
+calling middleware) and the populated properties. Only after the store has admitted that commit
+does the exit notify the Service that discovery found. If the store refuses the Operation, nothing
+is written and the receiver is not notified. If the notification fails, nothing is undone: the
+Operation stays <code class="docutils literal notranslate"><span class="pre">queued</span></code>, and the caller gets <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code>. The receiver takes up its
+<code class="docutils literal notranslate"><span class="pre">queued</span></code> Operations when it starts, and the issuer is responsible for the Operation while it is
+<code class="docutils literal notranslate"><span class="pre">queued</span></code>. So a notification is never sent for an uncommitted Operation. Use <code class="docutils literal notranslate"><span class="pre">request</span></code> for a new
+Operation; <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> creates a new instance of any other class, and <code class="docutils literal notranslate"><span class="pre">mw.notify()</span></code> tells a
+resource about an Operation that exists.</p>
+<p><code class="docutils literal notranslate"><span class="pre">request</span></code> is a <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> of the Operation under the <code class="docutils literal notranslate"><span class="pre">operation</span></code> scope, which writes the
+Capability link (see <a class="reference internal" href="07-writing-to-the-graph-and-to-devices.html"><span class="doc">Writing to the Graph and to Devices</span></a>). It commits on its own, also
+inside the body of another <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> or <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code>, because the receiver reads the Operation
+after the notification. A <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> in its body joins the Operation’s commit. The body may not
+set <code class="docutils literal notranslate"><span class="pre">svc:issuedBy</span></code>: <code class="docutils literal notranslate"><span class="pre">request</span></code> sets it, and raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> before anything is written when the
+body sets it too.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">cap</span><span class="p">,</span> <span class="n">operation_class</span><span class="o">=</span><span class="n">op_cls</span><span class="p">)</span> <span class="k">as</span> <span class="n">op</span><span class="p">:</span>
+    <span class="c1"># The Operation's domain properties, if any, as {property IRI: [values]}.</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">hasScrew</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">screw</span><span class="p">)}]</span>
+<span class="c1"># The exit creates the Operation in one commit, then notifies the receiver</span>
+</pre></div>
+</div>
+</section>
+<section id="the-issuer-and-the-issued-operation">
+<h2>The Issuer and the Issued Operation<a class="headerlink" href="#the-issuer-and-the-issued-operation" title="Link to this heading">#</a></h2>
+<p>After the block, <code class="docutils literal notranslate"><span class="pre">op</span></code> is an <code class="docutils literal notranslate"><span class="pre">IssuedOperation</span></code> (from <code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.middleware</span></code>): the
+Operation’s IRI is <code class="docutils literal notranslate"><span class="pre">op.iri</span></code>, and its issuer is <code class="docutils literal notranslate"><span class="pre">op.issuer</span></code>. The issuer is responsible for the
+Operation while it is <code class="docutils literal notranslate"><span class="pre">queued</span></code>; the Resource that claims it is responsible from <code class="docutils literal notranslate"><span class="pre">running</span></code> on. The
+handle waits for both changes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="k">await</span> <span class="n">op</span><span class="o">.</span><span class="n">claimed</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>  <span class="c1"># True once claimed; False when the timeout passes first</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">op</span><span class="o">.</span><span class="n">ended</span><span class="p">()</span>  <span class="c1"># "done" or "failed"; TimeoutError when a timeout passes first</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">op.wait_claimed(timeout)</span></code> and <code class="docutils literal notranslate"><span class="pre">op.wait_ended(timeout)</span></code> are the blocking twins, with the same
+results, for code that runs in a worker thread. Never call them on the event loop of the issuer’s
+middleware: its event trigger must take the notification that ends the wait.</p>
+<p>The middleware that claims the Operation notifies the issuer after its claim commit (<code class="docutils literal notranslate"><span class="pre">queued</span></code> to
+<code class="docutils literal notranslate"><span class="pre">running</span></code>), and after its terminal commit (<code class="docutils literal notranslate"><span class="pre">done</span></code> or <code class="docutils literal notranslate"><span class="pre">failed</span></code>). It does so after every commit that
+the store admitted and that moves an Operation with an issuer to one of those statuses, whichever
+function made it: <code class="docutils literal notranslate"><span class="pre">claim_next</span></code>, <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>, <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code>, <code class="docutils literal notranslate"><span class="pre">mw.handover(operation=...)</span></code>, the
+crash recovery at startup, or a watchdog’s sweep. It sees such a move in the commit’s own changes,
+so every status commit notifies, also one that sets the status that the Operation already has; the
+issuer ignores a repeat itself. If the issuer has no live Service, or more than one, or the post
+fails, the claimer logs one line at WARNING and goes on: the status is in the graph. It is one
+notification per such commit, and no extra write: two for an Operation that is claimed and then
+ends, and one more for each repeat.</p>
+<p>The issuer’s middleware wakes the handle when such a notification arrives at its event trigger, and
+the handle reads the status from the graph. A wait reads the status first, so a claim that came
+before the wait is seen, and it reads the status once more when its timeout passes. Nothing else
+wakes it, so a wait ends early only when the issuer’s middleware is served and has exactly one live
+Service. The issuer’s notification handler sees each of these notifications. They are no work for
+the issuer: an instance without a handler does not queue them, and the intake never gives them to a
+workflow, also when an instance issued an Operation to a Capability of its own. To know this, the
+intake reads the status and the issuer of an Operation that matches one of its workflows, in one
+query, before the workflow runs. The read is in the graph, so the rule holds after a restart too.</p>
+<p>The notification runs in the background. After the commit, the middleware hands it to one worker of
+its own and goes on at once, so a slow or hanging issuer never delays the claimer. The worker sends
+the notifications in the order of their commits, so the claim’s notification of an Operation
+leaves before the end’s when one instance commits both. When another instance commits the end, for
+example with <code class="docutils literal notranslate"><span class="pre">mw.handover(operation=...)</span></code>, each instance sends its own, and the two notifications
+have no order. The handle reads the status from the graph, so the order does not change what a
+wait returns. A stop of the instance, and the end of the process, send what still waits for up to
+one second, then drop the rest and log one WARNING line with their number. The status is in the
+graph either way, but a wait of the issuer’s handle then ends only at its timeout.</p>
+</section>
+<section id="the-event-trigger">
+<h2>The Event Trigger<a class="headerlink" href="#the-event-trigger" title="Link to this heading">#</a></h2>
+<p>Every resource-mode middleware exposes a built-in event trigger on its REST API,
+<code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/workflows/event_trigger/execute</span></code>. It is framework plumbing, not a <code class="docutils literal notranslate"><span class="pre">svc:Workflow</span></code> in the
+graph. The dispatch process fires this trigger after committing the Operation. The trigger carries
+only the Operation IRI; the payload lives entirely in the graph. The trigger returns immediately and
+does not block on the work. It does not return a business result. Callers must not expect a
+synchronous response. What the trigger does next depends on the receiving instance, never on the
+Operation. With a notification handler, it puts the Operation into the receiver’s intake (see
+Notifications and the Intake below). Without one, it enqueues the Operation for later processing by
+the receiver’s domain code, unless the Operation is one that the receiver’s Resource issued and
+that is no longer <code class="docutils literal notranslate"><span class="pre">queued</span></code>: that notification is feedback (see The Issuer and the Issued
+Operation above).</p>
+</section>
+<section id="notifications-and-the-intake">
+<h2>Notifications and the Intake<a class="headerlink" href="#notifications-and-the-intake" title="Link to this heading">#</a></h2>
+<p>A notification is a one-way message that names one Operation in the graph and carries nothing
+else: no payload, and no result. It goes in both directions: down, “an Operation for you exists”,
+and up, “this Operation ended or changed”. Nothing is written to the graph for it. It travels over
+the same event trigger. Notifications are plumbing: they stand in for a triple store that cannot
+trigger events itself, so they are not in the graph, and the graph has no kind of notified
+Operation or notified Workflow.</p>
+<p>The sender calls <code class="docutils literal notranslate"><span class="pre">mw.notify(operation=op,</span> <span class="pre">resource=r)</span></code>. The call finds the one live Service of <code class="docutils literal notranslate"><span class="pre">r</span></code>
+(a Service with an <code class="docutils literal notranslate"><span class="pre">svc:address</span></code>), posts the IRI to its event trigger, and returns when the
+receiver confirms receipt. It raises <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code> (from
+<code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.errors</span></code>) when <code class="docutils literal notranslate"><span class="pre">r</span></code> has no live Service, when it has more than one,
+and when the post fails, is refused or times out. It is a blocking call; async code runs it with
+<code class="docutils literal notranslate"><span class="pre">anyio.to_thread.run_sync</span></code>.</p>
+<p>The receiver registers a notification handler with <code class="docutils literal notranslate"><span class="pre">mw.on_notification(handler,</span> <span class="pre">class_scope=...)</span></code>
+before it starts. Then it takes every Operation it is notified of through its <strong>intake</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Read once.</strong> The event trigger reads the Operation under a scope: the Capability that the
+Operation implements and the Workflow that realizes it, united with <code class="docutils literal notranslate"><span class="pre">class_scope</span></code>, the
+receiver’s own <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> of the Operation. A read that fails is answered with an error, so the
+sender’s <code class="docutils literal notranslate"><span class="pre">notify()</span></code> raises. Then the trigger answers at once, with the Operation’s IRI and no
+status.</p></li>
+<li><p><strong>Buffer.</strong> The Operation goes into the instance’s FIFO. The FIFO keeps Operations that arrive
+faster than the resource carries them out, and it tells the resource that more work waits.</p></li>
+<li><p><strong>One at a time.</strong> One worker per instance runs one Operation at a time, in arrival order. When
+the Operation’s Capability is one of this instance’s own, matched in memory by its IRI, the
+worker passes the Operation object to the exposed workflow that realizes it. Otherwise it
+passes the object to the notification handler, the fallback, such as for “this transport
+ended”. The exception is feedback: an Operation that this instance’s Resource issued and that
+is no longer <code class="docutils literal notranslate"><span class="pre">queued</span></code> goes to the notification handler, also when its Capability is one of
+this instance’s own (see The Issuer and the Issued Operation above). An Operation that waited
+behind another one is read again before it runs.</p></li>
+</ol>
+<p>The Operation object is a kapps_ogm <code class="docutils literal notranslate"><span class="pre">Node</span></code>, materialized under the scope (<code class="docutils literal notranslate"><span class="pre">operation.instance</span></code>). A
+workflow takes it as its one argument, typed <code class="docutils literal notranslate"><span class="pre">kapps_ogm.Node</span></code>, and registers as any other does. Its
+REST route is mounted too, but the framework takes a one-parameter workflow’s argument as an
+optional query parameter <code class="docutils literal notranslate"><span class="pre">arg</span></code>, not as a body: a call passes <code class="docutils literal notranslate"><span class="pre">None</span></code>, or a string from the query, and
+the framework’s type check (typeguard) refuses both, so a call over REST is answered with an
+HTTP 500 and such a workflow is run by the intake.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
+
+
+<span class="nd">@mw</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">BOX_TRANSPORT_CAPABILITY</span><span class="p">,</span> <span class="n">workflow_class</span><span class="o">=</span><span class="n">BOX_TRANSPORT_WORKFLOW</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">box_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="o">...</span>  <span class="c1"># move the box; commit the transport's own transitions with mw.commit()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">on_transport_ended</span><span class="p">(</span><span class="n">transport</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="o">...</span>  <span class="c1"># an Operation of no own Capability, such as the WMS's "this transport ended"</span>
+
+
+<span class="n">mw</span><span class="o">.</span><span class="n">on_notification</span><span class="p">(</span><span class="n">on_transport_ended</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">transport_scope</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The intake has no lifecycle. The middleware writes no status and no provenance: the workflow or
+the handler commits its own transitions with <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>. A plain function runs in a worker
+thread and may block; a coroutine function runs on the event loop. An exception is logged,
+nothing is written for it, and the next Operation runs. At startup, the instance’s own <code class="docutils literal notranslate"><span class="pre">queued</span></code>
+Operations go into the FIFO again, each read before it runs, after its orphaned <code class="docutils literal notranslate"><span class="pre">running</span></code> ones
+have become <code class="docutils literal notranslate"><span class="pre">failed</span></code>.</p>
+<p>An instance without a handler keeps the queue below and the dispatch lifecycle (<code class="docutils literal notranslate"><span class="pre">register_callback</span></code>
+or a manual <code class="docutils literal notranslate"><span class="pre">claim_next</span></code>), and startup warns about a resource-mode instance that has neither a
+handler nor a callback. An instance cannot register both a handler and a <code class="docutils literal notranslate"><span class="pre">register_callback</span></code>
+callback.</p>
+</section>
+<section id="operation-queue">
+<h2>Operation Queue<a class="headerlink" href="#operation-queue" title="Link to this heading">#</a></h2>
+<p>Each resource maintains an in-memory queue of Operations addressed to it. This queue is durable
+because the Operation and its status are written to the graph before the trigger fires. On startup,
+a middleware reconstructs its queue by querying the graph for its own <code class="docutils literal notranslate"><span class="pre">queued</span></code> Operations. It also
+reclaims any orphaned <code class="docutils literal notranslate"><span class="pre">running</span></code> Operations left from a previous session. A missed trigger loses no
+work; the baseline is self-healing. Resources do not poll the graph continuously for new work.
+A resource with a notification handler has no queue: its notifications and, at startup, its own
+<code class="docutils literal notranslate"><span class="pre">queued</span></code> Operations go into its intake instead, and it still fails its own orphaned <code class="docutils literal notranslate"><span class="pre">running</span></code>
+Operations.</p>
+</section>
+<section id="status-lifecycle">
+<h2>Status Lifecycle<a class="headerlink" href="#status-lifecycle" title="Link to this heading">#</a></h2>
+<p>An Operation moves through three states: <code class="docutils literal notranslate"><span class="pre">queued</span></code>, <code class="docutils literal notranslate"><span class="pre">running</span></code>, and terminal (<code class="docutils literal notranslate"><span class="pre">done</span></code> or <code class="docutils literal notranslate"><span class="pre">failed</span></code>).
+Execution provenance is written as part of the terminal transition. The provenance records which
+Workflow ran the Operation, when it ran, and the result. The status field itself serves as the
+provenance record; there is no separate success flag. A <code class="docutils literal notranslate"><span class="pre">done</span></code> status implies success; <code class="docutils literal notranslate"><span class="pre">failed</span></code>
+implies an exception or validation error during execution. Transitioning to a terminal state is
+atomic and irreversible without dispatching a fresh Operation.</p>
+</section>
+<section id="pull-and-run">
+<h2>Pull-and-Run<a class="headerlink" href="#pull-and-run" title="Link to this heading">#</a></h2>
+<p>Receiver-side execution uses the <code class="docutils literal notranslate"><span class="pre">claim_next</span></code> transactional context manager. The domain code takes
+the next <code class="docutils literal notranslate"><span class="pre">queued</span></code> Operation, and the entry commits the claim, <code class="docutils literal notranslate"><span class="pre">queued</span></code> to <code class="docutils literal notranslate"><span class="pre">running</span></code>, before the body
+runs. If the store refuses the claim, its error is raised and the body does not run. The middleware
+then re-fetches the Operation under a domain-supplied <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> to ensure the correct data view,
+and the body runs the work. On a clean exit, the context manager records <code class="docutils literal notranslate"><span class="pre">done</span></code> with its provenance
+in one commit. If the body raises an exception, the context manager records <code class="docutils literal notranslate"><span class="pre">failed</span></code> with its
+provenance and a dump of the resource’s datamodel in one commit, and raises the exception again. A
+<code class="docutils literal notranslate"><span class="pre">done</span></code> that the store refuses is recorded as <code class="docutils literal notranslate"><span class="pre">failed</span></code> in the same way.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">claim_next</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="n">view_scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">claimed</span><span class="p">:</span>
+    <span class="c1"># Read the Operation's domain fields off `claimed.operation`</span>
+    <span class="c1"># (re-fetched under the ClassScope you passed to claim_next).</span>
+    <span class="n">op</span> <span class="o">=</span> <span class="n">claimed</span><span class="o">.</span><span class="n">operation</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">perform_work</span><span class="p">(</span><span class="n">op</span><span class="p">)</span>          <span class="c1"># physical actuation, calculations, etc.</span>
+
+    <span class="c1"># Assign a str to `claimed.result` to attach a result. On clean exit the</span>
+    <span class="c1"># middleware records it as `executionResult`, alongside `executedByWorkflow`</span>
+    <span class="c1"># and `executionTimestamp`.</span>
+    <span class="n">claimed</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span>
+<span class="c1"># Exit records done/failed and dumps state on failure</span>
+</pre></div>
+</div>
+<p>Inside the block, <code class="docutils literal notranslate"><span class="pre">claimed.operation</span></code> is the read side — the Operation materialized under your <code class="docutils literal notranslate"><span class="pre">ClassScope</span></code> — and <code class="docutils literal notranslate"><span class="pre">claimed.result</span></code> is the write side. Setting <code class="docutils literal notranslate"><span class="pre">claimed.result</span></code> is optional; a body that only actuates need not set it.</p>
+</section>
+<section id="handover-primitive">
+<h2>Handover Primitive<a class="headerlink" href="#handover-primitive" title="Link to this heading">#</a></h2>
+<p>Bilateral coordination between participants uses the <code class="docutils literal notranslate"><span class="pre">mw.handover</span></code> primitive rather than a plain
+dispatch. A handover has a timeless administrative part, the change of possession, and a timed
+physical part, the move. The primitive is a context manager built on <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>, and the
+possession changes first: the entry checks two preconditions (the caller possesses the Workpiece,
+and the counterpart has the complementary handover ability), then commits the possession change.
+The store admits or refuses it before the move begins. If the store refuses it, the error is
+raised, nothing is written, and the body does not run.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">MES</span>
+
+<span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">handover</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">MES</span><span class="o">.</span><span class="n">Put</span><span class="p">,</span> <span class="n">workpiece</span><span class="o">=</span><span class="n">wp</span><span class="p">,</span> <span class="n">counterpart</span><span class="o">=</span><span class="n">other</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">op</span><span class="p">):</span>
+    <span class="c1"># The store has admitted the possession change.</span>
+    <span class="c1"># Physical transport and preparation</span>
+    <span class="c1"># Coordinate with counterpart if needed</span>
+<span class="c1"># A clean exit writes nothing more</span>
+</pre></div>
+</div>
+<p>Possession is Core’s reified <code class="docutils literal notranslate"><span class="pre">cfc:PossessionState</span></code>, with one state per Resource: a Resource gets
+its state with its first possession and keeps it, and a Workpiece points at the state of its
+Possessor with <code class="docutils literal notranslate"><span class="pre">cfc:hasPossessedWorkpiece</span></code>. So the possession change is one commit that changes
+only the Workpiece’s link, together with <code class="docutils literal notranslate"><span class="pre">workpiece_update</span></code> (more properties of the Workpiece that
+change with its possessor, such as its transport state) and <code class="docutils literal notranslate"><span class="pre">operation</span></code>, the Operation that the
+handover completes, which becomes <code class="docutils literal notranslate"><span class="pre">done</span></code>. When the counterpart has no state yet, the same commit
+creates it and links the counterpart to it. Apart from that first link, a handover writes no
+Resource’s <code class="docutils literal notranslate"><span class="pre">cfc:hasPossessor</span></code>: neither the giver’s nor that of a counterpart that has a state.</p>
+<p>More changes that must be admitted together with the possession change go into <code class="docutils literal notranslate"><span class="pre">entry</span></code>, a list of
+kapps_ogm <code class="docutils literal notranslate"><span class="pre">Create</span></code> and <code class="docutils literal notranslate"><span class="pre">Update</span></code> changes that the caller builds. They are written in the same commit,
+refused together with it, and before the body. A transport that carries a box along a line of
+conveyor modules, for example, is reassigned to the next module at each hop, and that module is
+then notified:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Update</span>
+
+<span class="n">moved_on</span> <span class="o">=</span> <span class="n">Update</span><span class="p">(</span>
+    <span class="n">instance_iri</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">next_module</span><span class="p">)}],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">implementsCapability</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">next_transport_capability</span><span class="p">)}],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">handover</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">MES</span><span class="o">.</span><span class="n">Pass</span><span class="p">,</span> <span class="n">workpiece</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">counterpart</span><span class="o">=</span><span class="n">next_module</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="p">[</span><span class="n">moved_on</span><span class="p">]):</span>
+    <span class="n">conveyor</span><span class="o">.</span><span class="n">pass_box</span><span class="p">()</span>
+<span class="n">mw</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">operation</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">next_module</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The next module’s intake then reads a transport that implements its own transport Capability, and
+runs the workflow that realizes it. A change of the Workpiece belongs in <code class="docutils literal notranslate"><span class="pre">workpiece_update</span></code>, and
+the completed Operation in <code class="docutils literal notranslate"><span class="pre">operation</span></code>: the OGM refuses two changes of one instance in one commit.</p>
+<p>An error in the body is raised and undoes nothing: the possession has already changed, so the caller
+records what really happened. For the same reason, a <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> in the body commits on its own:
+the handover’s commit has already happened. Possession history is not in the graph: a handover
+overwrites the Workpiece’s link, and the store’s history mechanism, such as GraphDB’s history plugin
+when it is turned on, keeps the previous value. The middleware does not model the physical transport
+itself; that logic belongs in the context manager body.</p>
+<p>Core says that a Resource and a Workpiece each have exactly one possession state. That is OWL, which
+refuses no write. What refuses a handover at commit is the domain’s SHACL shape, such as one that
+allows one box on a conveyor module.</p>
+<p>Two handovers of the same Workpiece at the same moment are not always refused. Both pass the
+preconditions before either commits. Inside its commit, the OGM compares the Workpiece with a fresh
+read of it. If the other commit landed before that read, the later commit overwrites it, both
+handovers succeed, and both bodies run. If it landed between that read and the write, the store
+refuses the later commit and writes nothing of it, and the later handover raises
+<code class="docutils literal notranslate"><span class="pre">PossessionSwitchConflict</span></code> before its body runs.</p>
+</section>
+<section id="failure-recovery">
+<h2>Failure Recovery<a class="headerlink" href="#failure-recovery" title="Link to this heading">#</a></h2>
+<p>If a resource dies, its stranded <code class="docutils literal notranslate"><span class="pre">queued</span></code> and <code class="docutils literal notranslate"><span class="pre">running</span></code> Operations are handled centrally. A
+watchdog-mode instance sweeps stale resources, transitions their stranded Operations to <code class="docutils literal notranslate"><span class="pre">failed</span></code>,
+and notifies the issuer of each one that has an issuer. The failed status
+carries any dumped resource state available at the time of failure. Recovery is never a silent
+physical replay. The planner or domain decides whether to dispatch a fresh Operation. Physical
+operations are frequently not safely repeatable, so automatic re-actuation is avoided. The watchdog
+ensures the graph does not retain stale <code class="docutils literal notranslate"><span class="pre">queued</span></code> or <code class="docutils literal notranslate"><span class="pre">running</span></code> states indefinitely.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04-connector-binding.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Connector Binding</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06-views-and-projection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Views and Projection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capability-resolution">Capability Resolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dispatching-work">Dispatching Work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-issuer-and-the-issued-operation">The Issuer and the Issued Operation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-event-trigger">The Event Trigger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notifications-and-the-intake">Notifications and the Intake</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-queue">Operation Queue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status-lifecycle">Status Lifecycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-and-run">Pull-and-Run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handover-primitive">Handover Primitive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-recovery">Failure Recovery</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/guide/05-operation-coordination.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

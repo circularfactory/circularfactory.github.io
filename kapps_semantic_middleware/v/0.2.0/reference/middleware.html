@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Middleware &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=eee30dbd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/middleware';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Modes" href="modes.html" />
+    <link rel="prev" title="API reference" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Core</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Middleware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modes.html">Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="activity.html">Activity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The knowledge graph</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="registration.html">Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seeding.html">Seeding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="projection.html">Projection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">Vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Connectors</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="connectors/semantic.html">Semantic registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectors/wiring.html">Wiring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectors/mqtt_binding.html">MQTT binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectors/rest_binding.html">REST binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectors/knowledge_graph_connector.html">Knowledge graph connector</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rest_router.html">REST router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shacl_interop/shape_from_typehints.html">Shapes from type hints</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Middleware</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="middleware">
+<h1>Middleware<a class="headerlink" href="#middleware" title="Link to this heading">#</a></h1>
+<p>The entry point. Extends <code class="docutils literal notranslate"><span class="pre">transitional_sync_middleware.Middleware</span></code> with graph registration, discovery and execution.</p>
+<p id="module-kapps_semantic_middleware.middleware">KAPPS Semantic Middleware.</p>
+<p>Extends transitional_sync_middleware.Middleware with knowledge-graph registration, discovery,
+and execution capabilities. Supports three modes – see <cite>modes.Mode</cite>
+for what each one means and which are implemented.</p>
+<p>Operation execution: an Operation resolves via its implemented
+Capability to a Workflow endpoint, which the system then invokes over HTTP.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.middleware.</span></span><span class="sig-name descname"><span class="pre">SemanticMiddleware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="modes.html#kapps_semantic_middleware.modes.Mode" title="kapps_semantic_middleware.modes.Mode"><span class="pre">Mode</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Mode.RESOURCE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource_iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">service_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ogm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'127.0.0.1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graph</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">heartbeat_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">staleness_threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">90.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sweep_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autoregister_connectors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connector_sync_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SyncDirection</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">SyncDirection.BIDIRECTIONAL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connector_registry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="connectors/semantic.html#kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry" title="kapps_semantic_middleware.connectors.semantic.SemanticConnectorRegistry"><span class="pre">SemanticConnectorRegistry</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity_feed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activity_capacity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Middleware</span></code></p>
+<p>KAPPS Semantic Middleware extending transitional_sync_middleware.Middleware.</p>
+<p>Adds knowledge-graph registration, discovery, and execution. It supports the
+three modes of <a class="reference internal" href="modes.html#kapps_semantic_middleware.modes.Mode" title="kapps_semantic_middleware.modes.Mode"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mode</span></code></a>. Resource mode
+registers the Service/Workflow/Capability instances on startup, and deregisters
+them on shutdown. It is the only mode with runtime consequence today.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code> accepts a <code class="docutils literal notranslate"><span class="pre">Mode</span></code> constant or the equivalent bare string – <code class="docutils literal notranslate"><span class="pre">Mode</span></code> is a
+<code class="docutils literal notranslate"><span class="pre">str</span></code> subclass, so existing <code class="docutils literal notranslate"><span class="pre">mode=&quot;resource&quot;</span></code> callers are unaffected.</p>
+<p>Operation execution: an Operation resolves via its implemented
+Capability to a Workflow endpoint, which is then invoked over HTTP.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.APP_TITLE">
+<span class="sig-name descname"><span class="pre">APP_TITLE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'semantic-middleware'</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.APP_TITLE" title="Link to this definition">#</a></dt>
+<dd><p>What this product calls itself. The base class names the framework it is built on,
+which is accurate for the framework and wrong for anything hitting <em>our</em> address –
+a visitor landing on a middleware instance should be told what it reached. The
+dependency policy allows only bugfixes in sibling repos, so the name is corrected here rather
+than there: the base class stays as it is, and every override lives on this side.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.app">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">app</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.app" title="Link to this definition">#</a></dt>
+<dd><p>The FastAPI app, with its root route renamed and a quiet favicon route added.</p>
+<p>The base class registers <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span></code> inside its own <code class="docutils literal notranslate"><span class="pre">app</span></code> property, so the route
+exists the moment the app does. Starlette matches routes in order and a second
+registration would never be reached, so the original is removed rather than
+shadowed. Guarded by a flag: the base property caches, but this one is consulted
+on every access, and neither patch below may run twice on the same app object.</p>
+<p>The favicon route answers <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/favicon.ico</span></code> with a bare 204: this
+product ships no icon asset, and every browser that requests one otherwise logs
+a 404 – the only console error a control station or a unit middleware’s page
+would otherwise show on a clean load.</p>
+<p>The nested <code class="docutils literal notranslate"><span class="pre">root</span></code> function handles <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/</span></code> requests. It returns the welcome
+message defined in <code class="docutils literal notranslate"><span class="pre">APP_WELCOME</span></code>.</p>
+<p>The nested <code class="docutils literal notranslate"><span class="pre">favicon</span></code> function handles <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/favicon.ico</span></code> requests. It returns
+an empty 204 response to suppress browser console errors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.emit_heartbeat">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">emit_heartbeat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.emit_heartbeat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.emit_heartbeat" title="Link to this definition">#</a></dt>
+<dd><p>Refresh this service’s heartbeat once (also useful for tests/manual pings).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.sweep">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">sweep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.sweep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.sweep" title="Link to this definition">#</a></dt>
+<dd><p>Deregister every stale service once. Returns the swept service IRIs (as str).</p>
+<p>A watchdog-mode instance calls this on its <code class="docutils literal notranslate"><span class="pre">sweep_interval</span></code>. It is also a
+plain method, so a test or operator triggers a sweep directly. The issuer of each
+Operation that the sweep marks <code class="docutils literal notranslate"><span class="pre">failed</span></code> is notified after that commit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.commit">
+<span class="sig-name descname"><span class="pre">commit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">instances</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Create</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Update</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Create</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Update</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Create</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Update</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Create</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Update</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#BaseException" title="(in Python v3.14)"><span class="pre">BaseException</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Create</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Update</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Commit</span></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.commit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="Link to this definition">#</a></dt>
+<dd><p>A state transition that the store admits before the work it describes begins.</p>
+<p>Usage, inside a coroutine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">running</span> <span class="o">=</span> <span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="p">):</span> <span class="p">[</span><span class="s2">"running"</span><span class="p">]})]</span>
+<span class="n">done</span> <span class="o">=</span> <span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="p">):</span> <span class="p">[</span><span class="s2">"done"</span><span class="p">]})]</span>
+<span class="n">failed</span> <span class="o">=</span> <span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="p">):</span> <span class="p">[</span><span class="s2">"failed"</span><span class="p">]})]</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+    <span class="n">op</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">scope</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="n">running</span><span class="p">,</span> <span class="n">exit</span><span class="o">=</span><span class="n">done</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="n">failed</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">transition</span><span class="p">:</span>
+    <span class="n">torque</span> <span class="o">=</span> <span class="k">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">screw</span><span class="p">(</span><span class="n">transition</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span>  <span class="c1"># the physical work</span>
+    <span class="n">transition</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">executionResult</span><span class="p">):</span> <span class="p">[</span><span class="n">torque</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>and the same with <code class="docutils literal notranslate"><span class="pre">with</span></code> in code that runs in a worker thread, such as a callback, a
+notification handler or a script. <code class="docutils literal notranslate"><span class="pre">entry</span></code>, <code class="docutils literal notranslate"><span class="pre">exit</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code> are lists of
+kapps_ogm <code class="docutils literal notranslate"><span class="pre">Create</span></code> and <code class="docutils literal notranslate"><span class="pre">Update</span></code> changes. Each is written as one <code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code>, so
+each may span several instances. Nothing here is specific to a vocabulary: any
+datamodel and any state transition fit.</p>
+<ul class="simple">
+<li><p><strong>Entry.</strong> The entry transition is committed. If the store refuses it, its error is
+raised, nothing is written, and the body does not run. Then each of <code class="docutils literal notranslate"><span class="pre">instances</span></code> is
+fetched for the body: materialized under <code class="docutils literal notranslate"><span class="pre">class_scope</span></code> when one is given, else as a
+reference. They are <code class="docutils literal notranslate"><span class="pre">transition.nodes</span></code> by IRI, and <code class="docutils literal notranslate"><span class="pre">transition.node</span></code> when there is
+one.</p></li>
+<li><p><strong>Body.</strong> Domain code, such as a robot’s move. It holds no transaction and no
+connection of the triple store, so heartbeats and other writes go on while it awaits.
+A body that blocks its thread (<code class="docutils literal notranslate"><span class="pre">time.sleep</span></code>, a blocking driver call) must run in a
+worker thread, with the synchronous <code class="docutils literal notranslate"><span class="pre">with</span></code> inside that thread, as callbacks and
+notification handlers run. <strong>Only</strong> <code class="docutils literal notranslate"><span class="pre">transition.update(instance,</span> <span class="pre">{property:</span>
+<span class="pre">[values]})</span></code> <strong>changes the graph</strong>, at the clean exit. A change made to
+<code class="docutils literal notranslate"><span class="pre">transition.node</span></code> or to its <code class="docutils literal notranslate"><span class="pre">.instance</span></code> is not committed, and an assignment to an
+attribute that the transition does not have raises <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code>.</p></li>
+<li><p><strong>Clean exit.</strong> The body’s changes and the exit transition are committed as one
+<code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code>. Changes to one instance that a change names merge into one change,
+because kapps_ogm refuses two changes that write one instance. <strong>A body that sets a
+property that the exit transition also sets, on the same instance, wins:</strong> its value
+is committed and the exit transition is skipped as a whole. So a body that sets the
+status itself keeps it. The merge does not reach a named instance that a change only
+nests with properties: when two changes both write one, kapps_ogm raises
+<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> at the exit, which commits the error transition and then raises.</p></li>
+<li><p><strong>Error in the body.</strong> The body’s changes are dropped, the error transition is
+committed, and the error is raised again. An error of the fetch after the entry is
+handled the same way, and the body does not run.</p></li>
+<li><p><strong>Refused exit.</strong> The error transition is committed, and the store’s error is raised.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">exit</span></code> may be a function that returns the changes, called at the clean exit, so the
+exit transition can depend on what the body did. <code class="docutils literal notranslate"><span class="pre">error</span></code> may be a function that takes
+the exception and returns the changes. If the error transition itself fails, the
+original exception is raised, with a note and a log record that say so.</p>
+<p><strong>A cancellation of the body</strong> under <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> (a deadline of <code class="docutils literal notranslate"><span class="pre">anyio.fail_after</span></code>
+or <code class="docutils literal notranslate"><span class="pre">move_on_after</span></code> that runs out, a cancelled task) is an error of the work: the error
+transition is committed in a shielded cancel scope, so the cancellation cannot interrupt
+it, and then the cancellation is raised again. <code class="docutils literal notranslate"><span class="pre">error</span></code> receives the cancellation
+exception. An interrupt or an exit (<code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>, <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>,
+<code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code>) writes no transition, in either form: the entry transition stays, as
+after a crash. The exit of the asynchronous form is shielded too, so a deadline that
+runs out after the body finished does not stop its exit commit.</p>
+<p><strong>Inside a coroutine, use</strong> <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code>. It runs every graph call (the commits, the
+fetch and the transition functions) in a worker thread, so graph I/O never blocks the
+event loop. The synchronous form makes the same calls in the calling thread and blocks
+it. Nothing stops it from being used on the event loop, where it stalls every other
+task, heartbeats included.</p>
+<p><strong>The write goes to the graph only.</strong> All changes go to this instance’s named graph. The
+datamodel that this instance serves over REST does not change, and no synced connector
+hears of the write, so no device is written.</p>
+<p><strong>An Operation’s issuer is notified.</strong> A write can move an Operation that has an issuer
+(<code class="docutils literal notranslate"><span class="pre">svc:issuedBy</span></code>) to <code class="docutils literal notranslate"><span class="pre">running</span></code>, <code class="docutils literal notranslate"><span class="pre">done</span></code> or <code class="docutils literal notranslate"><span class="pre">failed</span></code>. After the store admits such a
+write, the middleware hands the notification to a background worker of this instance and
+goes on at once. The worker reads the issuer and notifies it, as <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.notify" title="kapps_semantic_middleware.middleware.SemanticMiddleware.notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">notify()</span></code></a> does, in
+the order of the writes. If the issuer cannot be notified, a WARNING is logged and
+nothing is raised, because the write has happened.</p>
+<p><strong>kapps_ogm’s rules apply.</strong> A <code class="docutils literal notranslate"><span class="pre">Create</span></code> that carries data must carry its own
+<code class="docutils literal notranslate"><span class="pre">class_scope</span></code>: otherwise <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised before it is written, in the entry
+before any write, and in the exit transition at the exit. The store refuses a commit
+whose precondition is false with <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>, and writes nothing of it:
+a <code class="docutils literal notranslate"><span class="pre">Create</span></code> of an instance that the store already holds, or a change that removes a
+value that is no longer there, because another write changed it after kapps_ogm read
+it. The error is not caught: for a <code class="docutils literal notranslate"><span class="pre">Create</span></code>, it signals a reused IRI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kapps_triplestore_interface.exceptions.TripleStoreInterfaceError</strong> – If the store
+    refuses a transition. A SHACL refusal is <code class="docutils literal notranslate"><span class="pre">ShaclValidationError</span></code>, whose
+    <code class="docutils literal notranslate"><span class="pre">report</span></code> is the store’s validation report, verbatim. A false precondition is
+    <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If a change does not fit its class, two changes of one transition write
+    one instance (these from kapps_ogm), or a <code class="docutils literal notranslate"><span class="pre">Create</span></code> carries data but no
+    <code class="docutils literal notranslate"><span class="pre">class_scope</span></code>.</p></li>
+<li><p><strong>requests.exceptions.RequestException</strong> – If the store cannot be reached.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.resource">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">resource</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.resource" title="Link to this definition">#</a></dt>
+<dd><p>the short form where a Resource is named, as in
+<code class="docutils literal notranslate"><span class="pre">workpiece(scope,</span> <span class="pre">possessor=mw.resource)</span></code>. None in a mode without a Resource.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This middleware’s own Resource</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance_iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">_Creation</span></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create" title="Link to this definition">#</a></dt>
+<dd><p>Create one new instance of the class <code class="docutils literal notranslate"><span class="pre">cls</span></code>, built on <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a>.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">SNAPSHOT</span><span class="p">,</span> <span class="n">snapshot_scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">snapshot</span><span class="p">:</span>
+    <span class="n">snapshot</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">decision</span><span class="p">):</span> <span class="p">[</span><span class="s2">"unscrew"</span><span class="p">]})</span>
+</pre></div>
+</div>
+<p>and <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> in a coroutine, as for <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a>. For new work for a resource that
+realizes a Capability, use <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.request" title="kapps_semantic_middleware.middleware.SemanticMiddleware.request"><code class="xref py py-meth docutils literal notranslate"><span class="pre">request()</span></code></a>: it creates the Operation with this method, and
+then notifies the receiver.</p>
+<ul class="simple">
+<li><p><strong>Entry.</strong> The IRI is minted, <code class="docutils literal notranslate"><span class="pre">&lt;class&gt;_&lt;12</span> <span class="pre">hex&gt;</span></code>, unless <code class="docutils literal notranslate"><span class="pre">instance_iri</span></code> is given,
+and the body reads it as <code class="docutils literal notranslate"><span class="pre">creation.iri</span></code>: a nested creation can be linked before
+anything is written. A predefined scope checks its inputs here; wrong inputs raise
+before the body runs and before any write. Nothing is read or written.</p></li>
+<li><p><strong>Body.</strong> <code class="docutils literal notranslate"><span class="pre">creation.update({property:</span> <span class="pre">[values]})</span></code> sets the new instance’s properties.
+A value that is an IRI, such as the <code class="docutils literal notranslate"><span class="pre">iri</span></code> of a nested creation, is a reference.</p></li>
+<li><p><strong>Clean exit, alone.</strong> One <code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code> writes the <code class="docutils literal notranslate"><span class="pre">Create</span></code> of the instance, the
+changes of its predefined scope, and the changes of every creation nested in it. A
+refusal by the store raises its error, and nothing is written.</p></li>
+<li><p><strong>Clean exit, nested.</strong> Inside the body of a <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> or of another
+<a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create" title="kapps_semantic_middleware.middleware.SemanticMiddleware.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a> of this middleware whose write is still to come, the same changes join
+that write instead: they are admitted or refused together with it, and an error in its
+body drops them. A creation commits on its own inside a body whose commit has already
+happened, such as that of <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.handover" title="kapps_semantic_middleware.middleware.SemanticMiddleware.handover"><code class="xref py py-meth docutils literal notranslate"><span class="pre">handover()</span></code></a>, and inside a write of another middleware
+(another OGM or another named graph), such as a planner’s beside a resource’s in one
+process.</p></li>
+<li><p><strong>Error in the body.</strong> Nothing is written or joined, and the error is raised again.
+Nothing exists yet that could carry an error transition.</p></li>
+</ul>
+<p>After the clean exit, <code class="docutils literal notranslate"><span class="pre">creation.changes</span></code> are the changes that the creation committed or
+joined: its <code class="docutils literal notranslate"><span class="pre">Create</span></code> first, then those of its predefined scope and of its nested
+creations.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scope</span></code> is a ClassScope of the class, or a predefined scope, which brings the rules for
+creating an instance of its class: a domain module gives it, and it may require inputs and
+add changes to the same commit. The <code class="docutils literal notranslate"><span class="pre">Create</span></code> names every property that <code class="docutils literal notranslate"><span class="pre">scope</span></code> names
+and every property that the body sets, so kapps_ogm drops none of them.</p>
+<p><strong>kapps_ogm’s rules apply.</strong> An <code class="docutils literal notranslate"><span class="pre">instance_iri</span></code> that the store already holds is refused
+with <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code> at the commit, and nothing is written.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If a predefined scope’s inputs are wrong (at entry), the body sets a
+    property that its predefined scope sets itself, or the data does not fit the
+    class (from kapps_ogm).</p></li>
+<li><p><strong>kapps_triplestore_interface.exceptions.TripleStoreInterfaceError</strong> – If the store
+    refuses the commit. A SHACL refusal is <code class="docutils literal notranslate"><span class="pre">ShaclValidationError</span></code>, whose
+    <code class="docutils literal notranslate"><span class="pre">report</span></code> is the store’s validation report, verbatim. An instance that the
+    store already holds is <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>.</p></li>
+<li><p><strong>requests.exceptions.RequestException</strong> – If the store cannot be reached.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.fetch">
+<span class="sig-name descname"><span class="pre">fetch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instance_iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">materialize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.fetch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.fetch" title="Link to this definition">#</a></dt>
+<dd><p>Read one instance from the graph through the OGM, as a plain call.</p>
+<p>A read has nothing to guard, so this is no context manager. It is <code class="docutils literal notranslate"><span class="pre">OGM.fetch</span></code> with
+this instance’s OGM: <code class="docutils literal notranslate"><span class="pre">class_scope</span></code> selects the properties to load, <code class="docutils literal notranslate"><span class="pre">as_reference</span></code>
+loads only the IRI, and <code class="docutils literal notranslate"><span class="pre">materialize</span></code> builds the datamodel (<code class="docutils literal notranslate"><span class="pre">node.instance</span></code>). It
+blocks while it reads, so asynchronous code calls it in a worker thread, as the
+asynchronous form of <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> does.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The kapps_ogm <code class="docutils literal notranslate"><span class="pre">Node</span></code> of the instance.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If the store holds no class for the instance.</p></li>
+<li><p><strong>kapps_ogm.utils.errors.AnonymousNodeFetchError</strong> – If the IRI is a Skolem IRI of an
+    anonymous node, which only its parent carries.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.workflow">
+<span class="sig-name descname"><span class="pre">workflow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capability_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.workflow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.workflow" title="Link to this definition">#</a></dt>
+<dd><p>Register a function as a REST-invokable workflow with KG registration.</p>
+<p>In resource mode, requires <code class="docutils literal notranslate"><span class="pre">capability_class</span></code> and <code class="docutils literal notranslate"><span class="pre">workflow_class</span></code> as
+keyword-only IRIs (both classes must pre-exist in the ontology). Registers the
+REST endpoint via the base class, then schedules KG registration of the
+Workflow and Capability instances on startup (after the service is
+registered).</p>
+<p>On an instance with a notification handler (<a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification" title="kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_notification()</span></code></a>), a notified
+Operation that implements the Capability this workflow realizes runs it, with the
+Operation as its one argument: a kapps_ogm <code class="docutils literal notranslate"><span class="pre">Node</span></code>, read and materialized under the
+intake’s scope (<code class="docutils literal notranslate"><span class="pre">operation.instance</span></code>). A parameter typed <code class="docutils literal notranslate"><span class="pre">kapps_ogm.Node</span></code> registers as
+any other does, because pydantic takes a <code class="docutils literal notranslate"><span class="pre">Node</span></code> as it is. Its REST route is mounted too,
+but the framework takes a one-parameter workflow’s argument as an optional query parameter
+<code class="docutils literal notranslate"><span class="pre">arg</span></code>, not as a body: a call passes <code class="docutils literal notranslate"><span class="pre">None</span></code>, or a string from the query, and the
+framework’s type check (typeguard) refuses both, so a call over REST is answered with an
+HTTP 500 and such a workflow is run by the intake:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@mw</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">TRANSPORT_CAPABILITY</span><span class="p">,</span> <span class="n">workflow_class</span><span class="o">=</span><span class="n">TRANSPORT_WORKFLOW</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">box_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="o">...</span>  <span class="c1"># the work; it commits its own transitions with mw.commit()</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.14)"><strong>RuntimeError</strong></a> – If called outside resource mode.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If capability_class or workflow_class is missing.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.state">
+<span class="sig-name descname"><span class="pre">state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">capability_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state_property_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.state" title="Link to this definition">#</a></dt>
+<dd><p>Expose a getter as a GET-readable state property with KG registration.</p>
+<p>Parallel to <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.workflow" title="kapps_semantic_middleware.middleware.SemanticMiddleware.workflow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">workflow()</span></code></a> but GET-only, for a readable, potentially
+high-frequency-changing value (e.g. a door’s status). In resource mode,
+it requires <code class="docutils literal notranslate"><span class="pre">capability_class</span></code> and <code class="docutils literal notranslate"><span class="pre">state_property_class</span></code> as
+keyword-only IRIs (both classes must pre-exist in the ontology). Registers a
+GET endpoint at <code class="docutils literal notranslate"><span class="pre">/state/{name}</span></code> that calls the decorated getter on
+demand. The live value is NEVER written to the graph. Only the stable
+endpoint triple is written, at registration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.14)"><strong>RuntimeError</strong></a> – If called outside resource mode.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If capability_class or state_property_class is missing.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.notify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.notify" title="Link to this definition">#</a></dt>
+<dd><p>Send a notification: tell <cite>resource</cite> to look at <cite>operation</cite> in the graph.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mw</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">operation</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">origin_module</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A notification is one-way. It names one Operation in the graph and carries nothing
+else: no payload, and no result. It works in both directions: down, “an Operation for
+you exists”, and up, “this Operation ended or changed”. The middleware writes nothing
+to the graph for it. The resource’s middleware takes it through its intake when it
+registered an <cite>on_notification</cite> handler: the exposed workflow that realizes the
+Operation’s Capability runs it, or else the handler gets it. It queues it when it
+registered no handler. A notification of an Operation that the resource issued and that
+is no longer <cite>queued</cite> is feedback: it wakes the Operation’s handle, the handler gets it,
+and it is never queued and never runs a workflow.</p>
+<p>The call finds the resource’s live Service in the graph (one that carries an
+<cite>svc:address</cite>), posts the IRI to that Service’s event trigger, and returns when the
+receiver confirms receipt, which it does at once. It raises
+<cite>NotificationUndelivered</cite> when the resource has no live Service, when it has more
+than one (the call does not choose between them), and when the post fails, is
+refused, or takes longer than <cite>timeout</cite> seconds.</p>
+<p>This is a plain blocking call. From a coroutine, run it off the event loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">anyio</span><span class="o">.</span><span class="n">to_thread</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span>
+    <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">mw</span><span class="o">.</span><span class="n">notify</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">wms</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.request">
+<span class="sig-name descname"><span class="pre">request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">capability_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation_iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.request"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.request" title="Link to this definition">#</a></dt>
+<dd><p>Issue an Operation: new work for a resource that realizes a Capability.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">capability_class</span><span class="o">=</span><span class="n">cap</span><span class="p">,</span> <span class="n">operation_class</span><span class="o">=</span><span class="n">op_cls</span><span class="p">)</span> <span class="k">as</span> <span class="n">op</span><span class="p">:</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">hasScrew</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">screw</span><span class="p">)}]</span>  <span class="c1"># its domain fields, if any</span>
+<span class="k">if</span> <span class="k">await</span> <span class="n">op</span><span class="o">.</span><span class="n">claimed</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">op</span><span class="o">.</span><span class="n">ended</span><span class="p">()</span>  <span class="c1"># "done" or "failed"</span>
+</pre></div>
+</div>
+<p>Use it for a new Operation. It is three steps, each the work of another part of the
+middleware: discovery, then <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create" title="kapps_semantic_middleware.middleware.SemanticMiddleware.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a>, then the delivery of <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.notify" title="kapps_semantic_middleware.middleware.SemanticMiddleware.notify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">notify()</span></code></a>.</p>
+<ul class="simple">
+<li><p><strong>Discovery.</strong> Before the block runs, a live Service is found that realizes a
+Capability of <code class="docutils literal notranslate"><span class="pre">capability_class</span></code> (with <code class="docutils literal notranslate"><span class="pre">target_resource</span></code>, one of that resource).
+If there is none, <code class="docutils literal notranslate"><span class="pre">OperationResolutionError</span></code> is raised, and nothing is written.</p></li>
+<li><p><strong>The block.</strong> It sets the Operation’s domain properties in <code class="docutils literal notranslate"><span class="pre">op.data</span></code>, as
+<code class="docutils literal notranslate"><span class="pre">{property</span> <span class="pre">IRI:</span> <span class="pre">[values]}</span></code>, and may read <code class="docutils literal notranslate"><span class="pre">op.iri</span></code>. An error in the block writes
+nothing.</p></li>
+<li><p><strong>Create.</strong> At the end of the block, one <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create" title="kapps_semantic_middleware.middleware.SemanticMiddleware.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a> of the Operation writes it,
+under the operation scope. It writes the type, the <code class="docutils literal notranslate"><span class="pre">cfc:implementsCapability</span></code> link
+to the Capability that discovery found, the status <code class="docutils literal notranslate"><span class="pre">queued</span></code> and <code class="docutils literal notranslate"><span class="pre">op.data</span></code>. It also
+writes <code class="docutils literal notranslate"><span class="pre">svc:issuedBy</span></code>, the issuer: this middleware’s Resource, <code class="docutils literal notranslate"><span class="pre">op.issuer</span></code>. The
+store admits all of it or none of it. A refusal is raised, and nobody is notified. An
+<code class="docutils literal notranslate"><span class="pre">operation_iri</span></code> that the store already holds is refused with
+<code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>, and that Operation is not touched. If <code class="docutils literal notranslate"><span class="pre">op.data</span></code> sets
+<code class="docutils literal notranslate"><span class="pre">svc:issuedBy</span></code>, <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> is raised before anything is written.</p></li>
+<li><p><strong>Notify.</strong> With the Operation in the graph, the Service that discovery found is
+notified, through its event trigger, and takes the Operation through its intake or
+its queue (see <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification" title="kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_notification()</span></code></a>). If the notification fails, the Operation
+stays <code class="docutils literal notranslate"><span class="pre">queued</span></code>, and <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code> is raised. Nothing is undone: the
+receiver takes up its <code class="docutils literal notranslate"><span class="pre">queued</span></code> Operations when it starts, and the issuer is
+responsible for the Operation while it is <code class="docutils literal notranslate"><span class="pre">queued</span></code>.</p></li>
+</ul>
+<p>After the block, <code class="docutils literal notranslate"><span class="pre">op</span></code> is the <a class="reference internal" href="#kapps_semantic_middleware.middleware.IssuedOperation" title="kapps_semantic_middleware.middleware.IssuedOperation"><code class="xref py py-class docutils literal notranslate"><span class="pre">IssuedOperation</span></code></a>: it waits until the Operation is
+claimed and until it ends. The middleware that claims it, and the one that ends it,
+notifies the issuer after its commit, and that notification wakes the waits.</p>
+<p>The Operation commits on its own, also inside the block of another <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> or
+<a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create" title="kapps_semantic_middleware.middleware.SemanticMiddleware.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a>, because the receiver reads it after the notification. A <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create" title="kapps_semantic_middleware.middleware.SemanticMiddleware.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a>
+nested in this block joins the Operation’s commit.</p>
+<p>This is the in-process caller face — not REST-exposed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.claim_next">
+<span class="sig-name descname"><span class="pre">claim_next</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.claim_next"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.claim_next" title="Link to this definition">#</a></dt>
+<dd><p>Pull-and-run the next queued Operation as a transaction context manager.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">claim_next</span><span class="p">(</span><span class="n">scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">claimed</span><span class="p">:</span>
+    <span class="n">claimed</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">do_the_work</span><span class="p">(</span><span class="n">claimed</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is a <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> about the Operation it claims:</p>
+<ul class="simple">
+<li><p><strong>Entry.</strong> <cite>__enter__</cite> takes the next <cite>queued</cite> Operation from this instance’s
+in-memory queue (FIFO order, raises <cite>OperationQueueEmpty</cite> if none), and commits the
+claim, <cite>queued</cite> to <cite>running</cite>, before the body runs. If the store refuses the claim, its
+error is raised and the body does not run; the Operation has left the in-memory queue,
+and the graph keeps it as it was. Then the Operation is re-fetched under the
+domain-supplied <cite>ClassScope</cite>, so the body gets exactly the object shape it needs.</p></li>
+<li><p><strong>Body.</strong> It runs the work, and may set <cite>claimed.result</cite>.</p></li>
+<li><p><strong>Clean exit.</strong> <cite>done</cite> plus provenance (<cite>executedByWorkflow</cite> / <cite>executionTimestamp</cite> /
+<cite>executionResult</cite>) is one commit.</p></li>
+<li><p><strong>Error.</strong> On a body exception, a fetch that fails after the claim, or a refused
+<cite>done</cite>, <cite>failed</cite> plus provenance and the exception message is one commit, and the
+exception is raised. Provenance is folded into the terminal transition. On failure the
+CM also dumps the resource datamodel and stores it as the Operation’s
+<code class="docutils literal notranslate"><span class="pre">svc:failureState</span></code> in the same commit, so the state that produced the failure
+survives the exception.</p></li>
+<li><p><strong>The issuer.</strong> After the claim, and after <cite>done</cite> or <cite>failed</cite>, the Operation’s issuer
+(<cite>svc:issuedBy</cite>) is notified, as after any <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a> that moves an Operation.
+The read before the claim finds the issuer, so the claim reads nothing more for it.</p></li>
+</ul>
+<p>Two claimants of one Operation are not told apart yet: the claim of an Operation that is
+already <cite>running</cite> changes nothing, and the store admits it.</p>
+<p>This is the in-process receiver face — not REST-exposed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.handover">
+<span class="sig-name descname"><span class="pre">handover</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workpiece</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">counterpart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">workpiece_update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entry</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Sequence" title="(in Python v3.14)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Create</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Update</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.handover"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.handover" title="Link to this definition">#</a></dt>
+<dd><p>Hand a workpiece to a counterpart: the possession changes first, then the body moves it.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">handover</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">MES</span><span class="o">.</span><span class="n">Pass</span><span class="p">,</span> <span class="n">workpiece</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">counterpart</span><span class="o">=</span><span class="n">next_module</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="n">op</span><span class="p">):</span>
+    <span class="n">conveyor</span><span class="o">.</span><span class="n">pass_box</span><span class="p">()</span>  <span class="c1"># the physical move, owned by the domain</span>
+</pre></div>
+</div>
+<p>and, with more changes that must be admitted together with the possession change, such as
+a transport that the next module now executes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">moved_on</span> <span class="o">=</span> <span class="n">Update</span><span class="p">(</span>
+    <span class="n">instance_iri</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">next_module</span><span class="p">}],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">implementsCapability</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">next_capability</span><span class="p">}],</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">handover</span><span class="p">(</span>
+    <span class="n">mode</span><span class="o">=</span><span class="n">MES</span><span class="o">.</span><span class="n">Pass</span><span class="p">,</span> <span class="n">workpiece</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">counterpart</span><span class="o">=</span><span class="n">next_module</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="p">[</span><span class="n">moved_on</span><span class="p">]</span>
+<span class="p">):</span>
+    <span class="n">conveyor</span><span class="o">.</span><span class="n">pass_box</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The entry checks two preconditions before anything is written: this resource currently
+possesses the workpiece (the workpiece points at a <cite>cfc:PossessionState</cite> whose possessor
+is this resource), and the counterpart carries the <cite>mes:hasHandoverAbility</cite> complementary
+to <cite>mode</cite>. There is deliberately no check that the counterpart is free: a resource may
+possess any number of workpieces unless a domain rule limits it.</p>
+<p>Then the entry commits the possession change through <a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit" title="kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">commit()</span></code></a>, as one commit. The
+workpiece’s <cite>cfc:hasPossessedWorkpiece</cite> points at the counterpart’s one possession state;
+<cite>workpiece_update</cite> sets more properties of the workpiece that must change together with
+its possessor, such as its transport state; <cite>operation</cite>, the Operation that this
+handover completes, becomes <cite>done</cite>; and <cite>entry</cite>, the caller’s own kapps_ogm changes, is
+written too. When the counterpart has no state yet, the same commit creates
+<cite>&lt;counterpart&gt;_possession</cite> and links the counterpart to it. Nothing writes the
+<cite>cfc:hasPossessor</cite> link of this resource, or of a counterpart that has a state.</p>
+<p>If the store refuses the commit, its error is raised (a SHACL refusal is
+<cite>ShaclValidationError</cite>, with the store’s validation report as its <cite>report</cite>), nothing is
+written, neither the possession change nor a change of <cite>entry</cite>, and the body does not run.
+The body is the move: the physical transport, and any coordination with the counterpart, for
+example through a <cite>request(…)</cite>. A clean exit writes nothing more. An error in the body is
+raised as it is and undoes nothing: the possession has already changed, so the caller
+records what really happened.</p>
+<p>Core says that a resource and a workpiece each have exactly one possession state. That is
+OWL: it licenses inferences and refuses no write. What refuses a handover at commit is the
+domain’s SHACL shape, for example the one that allows one box on a conveyor module.</p>
+<p>A first handover to a counterpart without a state can race another write that creates
+that state. Two commits that truly coincide both write the same state triples, and one
+state results. When the other write lands between this handover’s read and its commit,
+the store refuses the second creation of the state (<cite>PreconditionFailedError</cite>), and
+writes nothing of it. The handover then checks both preconditions again and commits once
+more, with the state that exists now; if a precondition no longer holds, for example
+because the other write handed this same workpiece, it raises
+<cite>HandoverPreconditionError</cite>, and the body does not run.</p>
+<p>A second handover of the same workpiece at the same moment is refused only in part.
+Both pass the preconditions before either commits. Inside its commit, kapps_ogm compares
+the workpiece with a fresh read of it. If the other handover’s commit landed between that
+read and this commit’s write, the store refuses this commit and writes nothing of it, and
+the handover raises <cite>PossessionSwitchConflict</cite> before the body runs. Known limit: if the
+other handover’s commit landed before that read, this commit overwrites its possession
+change, both succeed, and both bodies run.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mode</strong> – This resource’s handover ability, such as <cite>MES.Pass</cite>. The counterpart must
+carry the complementary one.</p></li>
+<li><p><strong>workpiece</strong> – The workpiece that this resource possesses.</p></li>
+<li><p><strong>counterpart</strong> – The resource that takes the workpiece over.</p></li>
+<li><p><strong>workpiece_update</strong> – More properties of the workpiece to set in the same commit, as
+<cite>{property IRI: [values]}</cite>; each listed property is replaced. A value that is an
+IRI (an <cite>IRI</cite> or an rdflib <cite>URIRef</cite>), or <cite>{“id”: iri}</cite>, is a reference to that
+object. Any other value goes to the OGM as it is: a plain <cite>str</cite> is a literal,
+which the OGM refuses for an object property with <cite>ValueError</cite>, before any write.</p></li>
+<li><p><strong>operation</strong> – The Operation that this handover completes. Its <cite>svc:operationStatus</cite>
+becomes <cite>done</cite> in the same commit.</p></li>
+<li><p><strong>entry</strong> – More kapps_ogm <cite>Create</cite> and <cite>Update</cite> changes, built by the caller, that the
+store admits or refuses in the same commit as the possession change, before the
+body. A change of the workpiece or of <cite>operation</cite> belongs in <cite>workpiece_update</cite> or
+is made by <cite>operation</cite>: kapps_ogm refuses two changes of one instance in one
+commit, with <cite>ValueError</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.14)"><strong>RuntimeError</strong></a> – If this instance is not in resource mode.</p></li>
+<li><p><strong>HandoverPreconditionError</strong> – If a precondition fails. Nothing is written.</p></li>
+<li><p><strong>PossessionSwitchConflict</strong> – If the store found the precondition of the entry’s
+    commit false (<cite>PreconditionFailedError</cite>, the cause). Usually another write
+    changed what the entry had read, such as a second handover of the workpiece.
+    The store does not say which part of the commit failed, so the same error
+    covers a change of <cite>entry</cite> that creates an instance that the store holds.
+    Nothing is written, and the body does not run.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If <cite>workpiece_update</cite> names <cite>cfc:hasPossessedWorkpiece</cite>, which the
+    handover sets itself, or a value that does not fit its property, or a change of
+    <cite>entry</cite> does not fit its class or writes an instance that the commit already
+    writes, or the counterpart has more than one possession state. Nothing is
+    written.</p></li>
+<li><p><strong>kapps_triplestore_interface.exceptions.TripleStoreInterfaceError</strong> – If the store
+    refuses the possession change; a SHACL refusal is <cite>ShaclValidationError</cite>.
+    Nothing is written, and the body does not run.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.register_callback">
+<span class="sig-name descname"><span class="pre">register_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.register_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.register_callback" title="Link to this definition">#</a></dt>
+<dd><p>Register a domain work callback fired on enqueue.</p>
+<p><cite>callback</cite> is the work function <cite>callback(operation) -&gt; result</cite>. It runs the
+Operation’s work, and returns the value recorded as <cite>svc:executionResult</cite>. On each
+enqueue, The middleware drives a background pull-and-run around it:
+<cite>with claim_next(scope) as c: c.result = callback(c.operation)</cite>. The middleware
+handles status (<cite>running</cite>-&gt;`done`/<cite>failed</cite>) and provenance. The domain writes only
+the work. Opt-in: with no callback registered, an enqueued Operation stays <cite>queued</cite>
+for a manual <cite>claim_next</cite>. <cite>scope</cite> is the domain ClassScope used to re-fetch the
+Operation. An instance with a notification handler (<cite>on_notification</cite>) takes its
+notifications through the intake, not the queue, so registering both raises
+<cite>RuntimeError</cite>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification">
+<span class="sig-name descname"><span class="pre">on_notification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Callable" title="(in Python v3.14)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_scope</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#SemanticMiddleware.on_notification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification" title="Link to this definition">#</a></dt>
+<dd><p>Take this instance’s notifications through the intake, with <code class="docutils literal notranslate"><span class="pre">handler</span></code> as fallback.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">on_transport_ended</span><span class="p">(</span><span class="n">transport</span><span class="p">):</span>
+    <span class="o">...</span>  <span class="c1"># the Operation object; write through mw.commit()</span>
+
+<span class="n">mw</span><span class="o">.</span><span class="n">on_notification</span><span class="p">(</span><span class="n">on_transport_ended</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">transport_scope</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A notification arrives at this resource’s event trigger: from a peer’s <cite>notify</cite>, from a
+peer’s <cite>request()</cite>, which notifies the resource it dispatched an Operation to, or from
+the middleware that claimed or ended an Operation that this resource issued.
+The trigger reads the Operation once and answers at once. The Operation then enters
+this instance’s FIFO, and one worker runs one Operation at a time, in arrival order:</p>
+<ul class="simple">
+<li><p>An Operation whose Capability is one of this instance’s own (matched in memory, by
+IRI) runs the exposed workflow that realizes it (<a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.workflow" title="kapps_semantic_middleware.middleware.SemanticMiddleware.workflow"><code class="xref py py-meth docutils literal notranslate"><span class="pre">workflow()</span></code></a>), with the
+Operation object as its argument.</p></li>
+<li><p>Any other Operation goes to <cite>handler(operation)</cite>, the fallback, such as the up
+direction: “this Operation ended”. So does an Operation that this instance issued to
+a Capability of its own, once it is no longer <cite>queued</cite>: that notification is the
+feedback of its own claim or end, and the workflow does not run it again.</p></li>
+</ul>
+<p>The Operation object is a kapps_ogm <code class="docutils literal notranslate"><span class="pre">Node</span></code>, read and materialized under the scope:
+the Capability that the Operation implements and the Workflow that realizes it, united
+with <cite>class_scope</cite>, this subproject’s own ClassScope of the Operation. An Operation that
+waited behind another one is read again before it runs, so it is never stale. The
+middleware writes no status and no provenance: the workflow or the handler commits its
+own transitions with <cite>mw.commit()</cite>.</p>
+<p>A function may be a plain function or a coroutine function. A plain one runs in a
+worker thread, so it may block (graph I/O, a physical move) without stalling the
+server. A coroutine function runs on the event loop and must not block. An exception is
+logged, nothing is written for it, and the next Operation runs.</p>
+<p>At startup, this instance’s own <cite>queued</cite> Operations go into the FIFO again, and its own
+orphaned <cite>running</cite> ones become <cite>failed</cite>, as crash recovery.</p>
+<p>An instance takes its notifications either here or through the dispatch lifecycle
+(<cite>register_callback</cite>, <cite>claim_next</cite>), not both: registering one when the other is
+registered raises <cite>RuntimeError</cite>. One handler per instance: a second call replaces the
+first. Register it before the instance starts.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.middleware.</span></span><span class="sig-name descname"><span class="pre">IssuedOperation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">middleware</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#kapps_semantic_middleware.middleware.SemanticMiddleware" title="kapps_semantic_middleware.middleware.SemanticMiddleware"><span class="pre">SemanticMiddleware</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">iri</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issuer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#IssuedOperation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The Operation that <code class="docutils literal notranslate"><span class="pre">request()</span></code> issues: its draft in the block, its handle after it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">request()</span></code> makes it; a caller does not. In the block of <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">mw.request(...)</span> <span class="pre">as</span> <span class="pre">op:</span></code>,
+<code class="docutils literal notranslate"><span class="pre">op.data</span></code> takes the Operation’s domain properties, as <code class="docutils literal notranslate"><span class="pre">{property</span> <span class="pre">IRI:</span> <span class="pre">[values]}</span></code>.
+<code class="docutils literal notranslate"><span class="pre">op.iri</span></code> is the Operation’s IRI. After the block, the Operation is in the graph, <code class="docutils literal notranslate"><span class="pre">queued</span></code>.
+<code class="docutils literal notranslate"><span class="pre">op.issuer</span></code> is its issuer: the Resource of the middleware that issued it. <code class="docutils literal notranslate"><span class="pre">svc:issuedBy</span></code>
+records it. Then <code class="docutils literal notranslate"><span class="pre">op</span></code> waits for the Operation, in a coroutine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="k">await</span> <span class="n">op</span><span class="o">.</span><span class="n">claimed</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+    <span class="o">...</span>  <span class="c1"># nobody claimed it in time: it is still queued, and still the issuer's</span>
+<span class="n">status</span> <span class="o">=</span> <span class="k">await</span> <span class="n">op</span><span class="o">.</span><span class="n">ended</span><span class="p">()</span>  <span class="c1"># "done" or "failed"</span>
+</pre></div>
+</div>
+<p>and with <code class="docutils literal notranslate"><span class="pre">op.wait_claimed(timeout)</span></code> and <code class="docutils literal notranslate"><span class="pre">op.wait_ended(timeout)</span></code> in code that may block,
+with the same results.</p>
+<p>A wait reads the status from the graph first, so a claim that came before the wait is seen.
+Then it waits until a notification of the Operation arrives at the issuer’s event trigger, and
+reads the status again. The middleware that claims the Operation, and the one that ends it,
+sends that notification after its commit. When the timeout passes, the wait reads the status
+once more. Nothing else wakes a wait: it does not poll. So a wait ends before its timeout only
+when the issuer’s middleware is served, and has exactly one live Service.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.iri">
+<span class="sig-name descname"><span class="pre">iri</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.iri" title="Link to this definition">#</a></dt>
+<dd><p>The Operation’s IRI.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.issuer">
+<span class="sig-name descname"><span class="pre">issuer</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.issuer" title="Link to this definition">#</a></dt>
+<dd><p>the Resource of the middleware that issued the Operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The issuer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.data">
+<span class="sig-name descname"><span class="pre">data</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.data" title="Link to this definition">#</a></dt>
+<dd><p>The Operation’s domain properties, set in the block of <code class="docutils literal notranslate"><span class="pre">request()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.claimed">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">claimed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#IssuedOperation.claimed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.claimed" title="Link to this definition">#</a></dt>
+<dd><p>Wait until the Operation is claimed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>it is <code class="docutils literal notranslate"><span class="pre">running</span></code>, or it has already ended.
+False when <code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds pass first. <code class="docutils literal notranslate"><span class="pre">None</span></code> waits without a limit.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>True once the Operation is claimed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.ended">
+<span class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">ended</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#IssuedOperation.ended"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.ended" title="Link to this definition">#</a></dt>
+<dd><p>Wait until the Operation has ended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">&quot;done&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;failed&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#TimeoutError" title="(in Python v3.14)"><strong>TimeoutError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">timeout</span></code> seconds pass first. <code class="docutils literal notranslate"><span class="pre">None</span></code> waits without a limit.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.wait_claimed">
+<span class="sig-name descname"><span class="pre">wait_claimed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#IssuedOperation.wait_claimed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.wait_claimed" title="Link to this definition">#</a></dt>
+<dd><p>The blocking twin of <a class="reference internal" href="#kapps_semantic_middleware.middleware.IssuedOperation.claimed" title="kapps_semantic_middleware.middleware.IssuedOperation.claimed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">claimed()</span></code></a>, with the same results. It blocks its thread:
+never call it on the event loop of the issuer’s middleware, whose event trigger must
+take the notification that ends the wait.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.IssuedOperation.wait_ended">
+<span class="sig-name descname"><span class="pre">wait_ended</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/middleware.html#IssuedOperation.wait_ended"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.IssuedOperation.wait_ended" title="Link to this definition">#</a></dt>
+<dd><p>The blocking twin of <a class="reference internal" href="#kapps_semantic_middleware.middleware.IssuedOperation.ended" title="kapps_semantic_middleware.middleware.IssuedOperation.ended"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ended()</span></code></a>, with the same results and the same error. It
+blocks its thread, as <a class="reference internal" href="#kapps_semantic_middleware.middleware.IssuedOperation.wait_claimed" title="kapps_semantic_middleware.middleware.IssuedOperation.wait_claimed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">wait_claimed()</span></code></a> does.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.OperationResolutionError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.middleware.</span></span><span class="sig-name descname"><span class="pre">OperationResolutionError</span></span><a class="reference internal" href="../_modules/kapps_semantic_middleware/errors.html#OperationResolutionError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.OperationResolutionError" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#Exception" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<p>An Operation cannot resolve to a reachable Workflow endpoint.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.Mode">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">kapps_semantic_middleware.middleware.</span></span><span class="sig-name descname"><span class="pre">Mode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/kapps_semantic_middleware/modes.html#Mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kapps_semantic_middleware.middleware.Mode" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>A middleware instance mode. Each member below says what it means.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.Mode.RESOURCE">
+<span class="sig-name descname"><span class="pre">RESOURCE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'resource'</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.Mode.RESOURCE" title="Link to this definition">#</a></dt>
+<dd><p>Wrap one <code class="docutils literal notranslate"><span class="pre">resource_iri</span></code>. Register a Service. Serve its workflows and parameters.
+Hold a heartbeat. This is the only mode with runtime consequence today.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.Mode.SERVER">
+<span class="sig-name descname"><span class="pre">SERVER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'server'</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.Mode.SERVER" title="Link to this definition">#</a></dt>
+<dd><p>Reserved. Serve data with no physical resource. Not implemented. Construct one
+raises. Out of scope for the scenario-3 controller: a controller consumes a graph, and it
+does not serve one.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="kapps_semantic_middleware.middleware.Mode.WATCHDOG">
+<span class="sig-name descname"><span class="pre">WATCHDOG</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'watchdog'</span></span><a class="headerlink" href="#kapps_semantic_middleware.middleware.Mode.WATCHDOG" title="Link to this definition">#</a></dt>
+<dd><p>Reserved. Sweep liveness from a central point. Sweep stale Services. Register
+nothing of its own.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.APP_TITLE"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.APP_TITLE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.app"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.app</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.emit_heartbeat"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.emit_heartbeat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.sweep"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.sweep()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.commit"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.commit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.resource"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.resource</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.create"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.create()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.fetch"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.fetch()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.workflow"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.workflow()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.state"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.state()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.notify"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.notify()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.request"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.request()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.claim_next"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.claim_next()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.handover"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.handover()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.register_callback"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.register_callback()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.SemanticMiddleware.on_notification"><code class="docutils literal notranslate"><span class="pre">SemanticMiddleware.on_notification()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation"><code class="docutils literal notranslate"><span class="pre">IssuedOperation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.iri"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.iri</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.issuer"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.issuer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.data"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.data</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.claimed"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.claimed()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.ended"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.ended()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.wait_claimed"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.wait_claimed()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.IssuedOperation.wait_ended"><code class="docutils literal notranslate"><span class="pre">IssuedOperation.wait_ended()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.OperationResolutionError"><code class="docutils literal notranslate"><span class="pre">OperationResolutionError</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.Mode.RESOURCE"><code class="docutils literal notranslate"><span class="pre">Mode.RESOURCE</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.Mode.SERVER"><code class="docutils literal notranslate"><span class="pre">Mode.SERVER</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps_semantic_middleware.middleware.Mode.WATCHDOG"><code class="docutils literal notranslate"><span class="pre">Mode.WATCHDOG</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/reference/middleware.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

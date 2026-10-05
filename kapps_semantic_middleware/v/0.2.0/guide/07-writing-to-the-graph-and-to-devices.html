@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Writing to the Graph and to Devices &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=eee30dbd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="../_static/documentation_options.js?v=938c9ccc"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'guide/07-writing-to-the-graph-and-to-devices';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Provisioning and Seeding" href="08-provisioning-and-seeding.html" />
+    <link rel="prev" title="Views and Projection" href="06-views-and-projection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-instantiation-and-lifecycle.html">Instantiation and Lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-workflow-registration.html">Workflow Registration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-state-and-parameters.html">State and Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-connector-binding.html">Connector Binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-operation-coordination.html">Operation Coordination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-views-and-projection.html">Views and Projection</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Writing to the Graph and to Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-provisioning-and-seeding.html">Provisioning and Seeding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-the-state-dashboard.html">The State Dashboard</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Writing to the Graph and to Devices</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="writing-to-the-graph-and-to-devices">
+<h1>Writing to the Graph and to Devices<a class="headerlink" href="#writing-to-the-graph-and-to-devices" title="Link to this heading">#</a></h1>
+<p>This page describes every path by which a consumer causes data to change — what gets written, where it lands, and what else moves as a consequence. The middleware distinguishes two directions: <strong>northbound</strong> writes into the knowledge graph (the served datamodel), and <strong>southbound</strong> writes out to devices through connectors. Understanding which path your code takes determines whether a change persists, whether a device receives a command, and whether unrelated resources get notified.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Terms this page assumes</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><a class="reference internal" href="../concepts.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> · <a class="reference internal" href="../concepts.html#term-Projection"><span class="xref std std-term">Projection</span></a> · <a class="reference internal" href="../concepts.html#term-Resource"><span class="xref std std-term">Resource</span></a> · <a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> · <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> ·
+<a class="reference internal" href="../concepts.html#term-Heartbeat"><span class="xref std std-term">Heartbeat</span></a></p>
+</div>
+</details><section id="all-graph-writes-go-through-the-ogm">
+<h2>All Graph Writes Go Through the OGM<a class="headerlink" href="#all-graph-writes-go-through-the-ogm" title="Link to this heading">#</a></h2>
+<p>Every knowledge-graph write must go through <code class="docutils literal notranslate"><span class="pre">kapps_ogm.OGM</span></code>. Use <code class="docutils literal notranslate"><span class="pre">OGM.create</span></code> for new typed individuals. Use <code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code> for adding, removing, or replacing properties. No write issues raw SPARQL UPDATE. No write calls <code class="docutils literal notranslate"><span class="pre">kapps_triplestore_interface</span></code> mutation methods directly. Reads may use the access module (<code class="docutils literal notranslate"><span class="pre">ogm.db</span></code>) directly; only writes are constrained.</p>
+<p>Writes that bypass the OGM skip validation and break atomicity guarantees. A replacement of a cardinality-constrained property requires the removal and insertion to apply in one transaction. The intermediate state — zero possessors during a handover, for example — fails validation without atomicity.</p>
+</section>
+<section id="state-transitions-mw-commit-and-mw-fetch">
+<h2>State Transitions: <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> and <code class="docutils literal notranslate"><span class="pre">mw.fetch()</span></code><a class="headerlink" href="#state-transitions-mw-commit-and-mw-fetch" title="Link to this heading">#</a></h2>
+<p>A participant writes through <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>, a context manager that wraps <code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code>. It commits a state transition, and the store admits or refuses it, before the work that carries the transition out begins. A read is <code class="docutils literal notranslate"><span class="pre">mw.fetch()</span></code>, a plain call that wraps <code class="docutils literal notranslate"><span class="pre">OGM.fetch</span></code>: a read has nothing to guard.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">status</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">op</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">value</span><span class="p">]})]</span>
+
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+    <span class="n">op</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">scope</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="n">status</span><span class="p">(</span><span class="s2">"running"</span><span class="p">),</span> <span class="n">exit</span><span class="o">=</span><span class="n">status</span><span class="p">(</span><span class="s2">"done"</span><span class="p">),</span> <span class="n">error</span><span class="o">=</span><span class="n">status</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">)</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">transition</span><span class="p">:</span>
+    <span class="n">torque</span> <span class="o">=</span> <span class="k">await</span> <span class="n">robot</span><span class="o">.</span><span class="n">screw</span><span class="p">(</span><span class="n">transition</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">instance</span><span class="p">)</span>  <span class="c1"># the work; no transaction is held</span>
+    <span class="n">transition</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">executionResult</span><span class="p">):</span> <span class="p">[</span><span class="n">torque</span><span class="p">]})</span>  <span class="c1"># written at the clean exit</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">entry</span></code>, <code class="docutils literal notranslate"><span class="pre">exit</span></code> and <code class="docutils literal notranslate"><span class="pre">error</span></code> are lists of kapps_ogm <code class="docutils literal notranslate"><span class="pre">Create</span></code> and <code class="docutils literal notranslate"><span class="pre">Update</span></code> changes. Each is written as one commit, so each may span several instances. <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> knows no vocabulary of its own: any datamodel and any state transition fit. The object it yields is the transition.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>What happens</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Entry</p></td>
+<td><p>The entry transition is committed. If the store refuses it, its error is raised, nothing is written, and the body does not run. Then the instances named first are fetched for the body: materialized under a <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> given as <code class="docutils literal notranslate"><span class="pre">class_scope</span></code>, or as references without one. They are <code class="docutils literal notranslate"><span class="pre">transition.nodes</span></code> by IRI, and <code class="docutils literal notranslate"><span class="pre">transition.node</span></code> when there is one.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Body</p></td>
+<td><p>Domain code, such as a robot’s move. It holds no transaction and no connection of the triple store, so <a class="reference internal" href="../concepts.html#term-Heartbeat"><span class="xref std std-term">heartbeats</span></a> and other writes go on while it awaits. <code class="docutils literal notranslate"><span class="pre">transition.update(instance,</span> <span class="pre">{property:</span> <span class="pre">[values]})</span></code> changes the datamodel; nothing of it is written yet.</p></td>
+</tr>
+<tr class="row-even"><td><p>Clean exit</p></td>
+<td><p>The body’s changes and the exit transition are committed as one commit. Changes to an instance that a change names merge into one change, because kapps_ogm refuses two changes that write one instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Error in the body</p></td>
+<td><p>The body’s changes are dropped, the error transition is committed, and the error is raised again.</p></td>
+</tr>
+<tr class="row-even"><td><p>Refused exit</p></td>
+<td><p>The error transition is committed, and the store’s error is raised.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Only <code class="docutils literal notranslate"><span class="pre">transition.update()</span></code> changes the graph.</strong> A change made to <code class="docutils literal notranslate"><span class="pre">transition.node</span></code> or to its <code class="docutils literal notranslate"><span class="pre">.instance</span></code> is not committed. An assignment to an attribute that the transition does not have, such as <code class="docutils literal notranslate"><span class="pre">transition.hasTimeSeriesReference</span> <span class="pre">=</span> <span class="pre">ref</span></code>, raises <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> instead of being lost.</p>
+<p><strong>A body that sets a property that the exit transition also sets, on the same instance, wins.</strong> Its value is committed, and the exit transition is skipped as a whole. So a body that sets an <a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a>’s status itself keeps it. An error still commits the error transition.</p>
+<p><strong>Inside a coroutine, use <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code>.</strong> It runs every graph call in a worker thread, so graph I/O never blocks the event loop. The synchronous <code class="docutils literal notranslate"><span class="pre">with</span></code> makes the same calls in the calling thread and blocks it. Nothing stops it from being used on the event loop, where it stalls every other task, heartbeats included. <strong>A body that blocks its thread</strong> (<code class="docutils literal notranslate"><span class="pre">time.sleep</span></code>, a blocking driver call) must run in a worker thread, with the synchronous <code class="docutils literal notranslate"><span class="pre">with</span></code> inside that thread, as callbacks and notification handlers run. The heartbeats go on in the event loop meanwhile.</p>
+<p><code class="docutils literal notranslate"><span class="pre">exit</span></code> may be a function that returns the changes, called at the clean exit, so the exit transition can depend on what the body did. <code class="docutils literal notranslate"><span class="pre">error</span></code> may be a function that takes the exception. A cancellation of the body under <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> (a deadline of <code class="docutils literal notranslate"><span class="pre">anyio.fail_after</span></code> or <code class="docutils literal notranslate"><span class="pre">move_on_after</span></code> that runs out, a cancelled task) is an error of the work: the error transition is committed in a shielded cancel scope, then the cancellation is raised again. An interrupt or an exit (<code class="docutils literal notranslate"><span class="pre">KeyboardInterrupt</span></code>, <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>, <code class="docutils literal notranslate"><span class="pre">GeneratorExit</span></code>) writes no transition: the entry transition stays, as after a crash.</p>
+<p><strong>The write goes to the graph only.</strong> Every change goes to the middleware’s named graph. The datamodel that the instance serves over REST does not change, and no synced connector hears of the write, so no device is written. In this library only a PUT on a parameter route notifies the synced connectors (see the next section). One notification may follow a commit: when it moves an Operation that has an issuer to <code class="docutils literal notranslate"><span class="pre">running</span></code>, <code class="docutils literal notranslate"><span class="pre">done</span></code> or <code class="docutils literal notranslate"><span class="pre">failed</span></code>, the middleware notifies the issuer (see <a class="reference internal" href="05-operation-coordination.html"><span class="doc">Operation Coordination</span></a>).</p>
+<p><strong>What a caller catches.</strong> A refusal by the store, a SHACL refusal included, is <code class="docutils literal notranslate"><span class="pre">GraphDbException</span></code>, a <code class="docutils literal notranslate"><span class="pre">TripleStoreInterfaceError</span></code> (both from <code class="docutils literal notranslate"><span class="pre">kapps_triplestore_interface.exceptions</span></code>). kapps_ogm raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when a change does not fit its class, and when two changes of one transition write one instance. The store refuses a write whose precondition is false with <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>, a <code class="docutils literal notranslate"><span class="pre">TripleStoreInterfaceError</span></code> from the same module, and nothing of that commit is written. That is a <code class="docutils literal notranslate"><span class="pre">Create</span></code> of an instance that the store already holds, and a change that removes a value that is no longer there. <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> does not catch it: for a <code class="docutils literal notranslate"><span class="pre">Create</span></code>, it signals a reused IRI. The merge reaches only the instance that a change names: when two changes both write a named instance that they nest with properties, kapps_ogm raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> at the exit, after the error transition is committed. <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> itself for a <code class="docutils literal notranslate"><span class="pre">Create</span></code> that carries data but no <code class="docutils literal notranslate"><span class="pre">class_scope</span></code> (a field of <code class="docutils literal notranslate"><span class="pre">Create</span></code>), before it is written: without one, kapps_ogm would drop a data property that the class does not know, with only a warning. An unreachable store raises <code class="docutils literal notranslate"><span class="pre">requests.exceptions.RequestException</span></code>. The middleware’s own errors live in <code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.errors</span></code>.</p>
+<p><strong>A write whose precondition no longer holds is refused.</strong> The OGM reads each instance that a commit changes, and the store removes only the values that the read found. When a value that a change replaces is already gone when the write arrives, the store writes nothing of that commit, and the call raises <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>. A write of another writer that lands before the read is not refused: the commit replaces its value.</p>
+</section>
+<section id="creating-an-instance-mw-create">
+<h2>Creating an Instance: <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code><a class="headerlink" href="#creating-an-instance-mw-create" title="Link to this heading">#</a></h2>
+<p>Something new is <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code>; something that exists is <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>. A new Operation for another resource is <code class="docutils literal notranslate"><span class="pre">mw.request()</span></code>, which creates it with <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> and then notifies the receiver (see <a class="reference internal" href="05-operation-coordination.html"><span class="doc">Operation Coordination</span></a>). <code class="docutils literal notranslate"><span class="pre">mw.create(cls,</span> <span class="pre">scope,</span> <span class="pre">instance_iri=None)</span></code> is a context manager built on <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>. It creates one new instance of the class <code class="docutils literal notranslate"><span class="pre">cls</span></code>, and <code class="docutils literal notranslate"><span class="pre">scope</span></code> is that class’s <a class="reference internal" href="../concepts.html#term-ClassScope"><span class="xref std std-term">ClassScope</span></a> or a predefined scope (below).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">DecisionSnapshot</span><span class="p">,</span> <span class="n">snapshot_scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">snapshot</span><span class="p">:</span>
+    <span class="n">snapshot</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">decision</span><span class="p">):</span> <span class="p">[</span><span class="s2">"unscrew"</span><span class="p">]})</span>  <span class="c1"># written at the clean exit</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Step</p></th>
+<th class="head"><p>What happens</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Entry</p></td>
+<td><p>The middleware mints the IRI <code class="docutils literal notranslate"><span class="pre">&lt;class&gt;_&lt;12</span> <span class="pre">hex&gt;</span></code>, unless <code class="docutils literal notranslate"><span class="pre">instance_iri</span></code> is given. The body reads it as the creation’s <code class="docutils literal notranslate"><span class="pre">iri</span></code> (<code class="docutils literal notranslate"><span class="pre">snapshot.iri</span></code> above), so a nested creation can be linked to it before anything is written. A predefined scope checks its inputs. Nothing is read or written.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Body</p></td>
+<td><p>The creation’s <code class="docutils literal notranslate"><span class="pre">update({property:</span> <span class="pre">[values]})</span></code> sets the new instance’s properties. A later call for the same property replaces the earlier value. A value that is an IRI, such as the <code class="docutils literal notranslate"><span class="pre">iri</span></code> of a nested creation, is a reference to that instance.</p></td>
+</tr>
+<tr class="row-even"><td><p>Clean exit, alone</p></td>
+<td><p>One commit writes the instance’s <code class="docutils literal notranslate"><span class="pre">Create</span></code>, the changes of its predefined scope, and the changes of every creation nested in it. If the store refuses the commit, its error is raised, and nothing is written.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Clean exit, nested</p></td>
+<td><p>Inside the body of a <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> or of another <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> of the same middleware whose write is still to come, the same changes join that write instead. The store admits or refuses them together with it, and an error in that body drops them.</p></td>
+</tr>
+<tr class="row-even"><td><p>Error in the body</p></td>
+<td><p>Nothing is written or joined, and the error is raised again. Nothing exists yet that could carry an error transition.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>A creation inside a body whose commit has already happened commits on its own.</strong> The body of <code class="docutils literal notranslate"><span class="pre">mw.handover()</span></code> is such a body: its commit is its entry, and its clean exit writes nothing more. A creation inside a <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> inside that body joins that <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>. <strong>A creation joins only a write of its own middleware</strong>: one that goes through the same OGM into the same named graph. Inside a write of another middleware, such as a planner’s creation inside a resource’s commit in one process, it commits on its own. <strong><code class="docutils literal notranslate"><span class="pre">request()</span></code> commits its Operation on its own</strong>, also inside another body, because its receiver reads the Operation after the notification. A creation in the body of <code class="docutils literal notranslate"><span class="pre">request()</span></code> joins the Operation’s commit.</p>
+<p><strong>A failed notification of <code class="docutils literal notranslate"><span class="pre">request()</span></code> undoes nothing.</strong> The Operation, <code class="docutils literal notranslate"><span class="pre">queued</span></code>, and every instance created with it stay as the request’s commit wrote them, and <code class="docutils literal notranslate"><span class="pre">request()</span></code> raises <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code>. The receiver takes up its <code class="docutils literal notranslate"><span class="pre">queued</span></code> Operations when it starts.</p>
+<p>After the clean exit, the creation’s <code class="docutils literal notranslate"><span class="pre">changes</span></code> are the changes that it committed or joined: its own <code class="docutils literal notranslate"><span class="pre">Create</span></code> first, then those of its predefined scope and of the creations nested in it.</p>
+<p><strong>The <code class="docutils literal notranslate"><span class="pre">Create</span></code> names every property that the scope names and every property that the body sets</strong>, so kapps_ogm drops none of them. An assignment to an attribute of the creation, such as <code class="docutils literal notranslate"><span class="pre">transport.hasBox</span> <span class="pre">=</span> <span class="pre">box</span></code>, raises <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> instead of being lost. A <code class="docutils literal notranslate"><span class="pre">Create</span></code> of an IRI that the store already holds raises <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code> at the commit, and nothing is written. <strong>Inside a coroutine, use <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code></strong>, as for <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code>.</p>
+<section id="predefined-scopes">
+<h3>Predefined scopes<a class="headerlink" href="#predefined-scopes" title="Link to this heading">#</a></h3>
+<p>The generic core knows only <code class="docutils literal notranslate"><span class="pre">svc:</span></code> and standard RDF. A rule of the circular factory enters <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> through a predefined scope: a ClassScope, plus a check of its inputs when <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> is entered, plus the changes that it adds to the same commit. Two come with the library, each in the topic module of its rule:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scope</p></th>
+<th class="head"><p>Import from</p></th>
+<th class="head"><p>What it requires, and what it writes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">workpiece(scope,</span> <span class="pre">possessor=...)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.possession</span></code></p></td>
+<td><p>A possessor, any <a class="reference internal" href="../concepts.html#term-Resource"><span class="xref std std-term">Resource</span></a>; <code class="docutils literal notranslate"><span class="pre">mw.resource</span></code> is the middleware’s own. The Workpiece’s <code class="docutils literal notranslate"><span class="pre">cfc:hasPossessedWorkpiece</span></code> points at the possessor’s one possession state. When the possessor has no state yet, the same commit creates <code class="docutils literal notranslate"><span class="pre">&lt;possessor&gt;_possession</span></code> and links the possessor to it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">operation(scope,</span> <span class="pre">capability=...)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.operation</span></code></p></td>
+<td><p>The <a class="reference internal" href="../concepts.html#term-Capability"><span class="xref std std-term">Capability</span></a> that the Operation implements. It writes <code class="docutils literal notranslate"><span class="pre">cfc:implementsCapability</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Without its required input, a predefined scope raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> when <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> is entered, before the body runs and before any write. The body must not set a property that its scope sets: that raises <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> at the exit, and nothing is written. A domain module gives a scope of its own as a <code class="docutils literal notranslate"><span class="pre">PredefinedScope</span></code> (from <code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.commit</span></code>), whose <code class="docutils literal notranslate"><span class="pre">changes()</span></code> returns a <code class="docutils literal notranslate"><span class="pre">ScopeChanges</span></code>: the data that the scope adds to the <code class="docutils literal notranslate"><span class="pre">Create</span></code>, and the further changes. <code class="docutils literal notranslate"><span class="pre">AGENTS.md</span></code> lists which modules are specific to the circular factory.</p>
+</section>
+<section id="the-detector-s-decision-snapshot">
+<h3>The detector’s decision snapshot<a class="headerlink" href="#the-detector-s-decision-snapshot" title="Link to this heading">#</a></h3>
+<p>The detector claims an Operation, decides, and records its decision in a snapshot, an instance with an identity of its own. The snapshot joins the commit that makes the <a class="reference internal" href="../concepts.html#term-Operation"><span class="xref std std-term">Operation</span></a> <code class="docutils literal notranslate"><span class="pre">done</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">claim_next</span><span class="p">(</span><span class="n">operation_scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">claimed</span><span class="p">:</span>
+    <span class="n">decision</span> <span class="o">=</span> <span class="n">detector</span><span class="o">.</span><span class="n">decide</span><span class="p">(</span><span class="n">claimed</span><span class="o">.</span><span class="n">operation</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">DecisionSnapshot</span><span class="p">,</span> <span class="n">snapshot_scope</span><span class="p">)</span> <span class="k">as</span> <span class="n">snapshot</span><span class="p">:</span>
+        <span class="n">snapshot</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">decision</span><span class="p">):</span> <span class="p">[</span><span class="n">decision</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">aboutOperation</span><span class="p">):</span> <span class="p">[</span><span class="n">claimed</span><span class="o">.</span><span class="n">iri</span><span class="p">]})</span>
+    <span class="n">claimed</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">decision</span>
+<span class="c1"># One commit: the Operation done, and the snapshot. If the store refuses it,</span>
+<span class="c1"># the Operation is failed, and no snapshot exists.</span>
+</pre></div>
+</div>
+</section>
+<section id="opening-a-transport">
+<h3>Opening a transport<a class="headerlink" href="#opening-a-transport" title="Link to this heading">#</a></h3>
+<p>The WMS opens a transport in one commit: the transport Operation, the box, and the box’s first possession, by the WMS itself:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.operation</span><span class="w"> </span><span class="kn">import</span> <span class="n">operation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.possession</span><span class="w"> </span><span class="kn">import</span> <span class="n">workpiece</span>
+
+<span class="n">transport_rule</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="n">transport_scope</span><span class="p">,</span> <span class="n">capability</span><span class="o">=</span><span class="n">transport_capability</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">BoxTransport</span><span class="p">,</span> <span class="n">transport_rule</span><span class="p">)</span> <span class="k">as</span> <span class="n">transport</span><span class="p">:</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="p">):</span> <span class="p">[</span><span class="s2">"queued"</span><span class="p">]})</span>
+    <span class="k">with</span> <span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">Box</span><span class="p">,</span> <span class="n">workpiece</span><span class="p">(</span><span class="n">box_scope</span><span class="p">,</span> <span class="n">possessor</span><span class="o">=</span><span class="n">mw</span><span class="o">.</span><span class="n">resource</span><span class="p">))</span> <span class="k">as</span> <span class="n">box</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">transport</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">EX</span><span class="o">.</span><span class="n">hasBox</span><span class="p">):</span> <span class="p">[</span><span class="n">box</span><span class="o">.</span><span class="n">iri</span><span class="p">]})</span>
+<span class="c1"># One commit: the transport, the box, and the WMS's possession state if it had none.</span>
+<span class="c1"># Then the WMS hands the box to the origin with mw.handover().</span>
+</pre></div>
+</div>
+<p><strong>Known limit.</strong> A Workpiece’s first possession can race another write that creates the same possession state. The store then refuses the commit with <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>, and nothing of it is written; unlike <code class="docutils literal notranslate"><span class="pre">mw.handover()</span></code>, <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code> does not try again.</p>
+</section>
+</section>
+<section id="persistence-writes-name-the-changed-field">
+<h2>Persistence Writes Name the Changed Field<a class="headerlink" href="#persistence-writes-name-the-changed-field" title="Link to this heading">#</a></h2>
+<p>A write into persistence carries a second piece of information beside the value: which region of the model actually changed. <code class="docutils literal notranslate"><span class="pre">PersistedConnector.consume</span></code> and <code class="docutils literal notranslate"><span class="pre">_notify_synced_connectors</span></code> take it as <code class="docutils literal notranslate"><span class="pre">changed:</span> <span class="pre">ConnectionInfo</span></code>, and the fan-out notifies only the connectors that region covers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correct: names the specific field that changed</span>
+<span class="n">consume</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">changed</span><span class="o">=</span><span class="n">ConnectionInfo</span><span class="p">(</span><span class="n">model_id</span><span class="p">,</span> <span class="n">contained_model_id</span><span class="p">,</span> <span class="n">field_id</span><span class="p">))</span>
+
+<span class="c1"># Incorrect: None means "the whole model changed"</span>
+<span class="n">consume</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">changed</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># notifies everything</span>
+</pre></div>
+</div>
+<p>Matching is by prefix, not equality. An unspecified level in a <code class="docutils literal notranslate"><span class="pre">ConnectionInfo</span></code> means every value at that level. A whole-model write reaches every connector. A field-level write reaches only that field’s connectors.</p>
+<p><strong>Silent failure:</strong> If a write does not name its field, an unscoped notification fans out to every synced connector. Devices get written that nobody touched. For a settable parameter, an unnecessary notification is a fabricated command — a write leg re-deriving at the wrong moment publishes the last value the device reported onto the topic the device treats as a setpoint. The device then reads its own actual state back as a fresh command.</p>
+</section>
+<section id="northbound-vs-southbound">
+<h2>Northbound vs Southbound<a class="headerlink" href="#northbound-vs-southbound" title="Link to this heading">#</a></h2>
+<p><strong>Northbound</strong> writes go into the knowledge graph — the served datamodel that peers read over REST. These are <code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code> operations on <a class="reference internal" href="../concepts.html#term-Parameter"><span class="xref std std-term">Parameter</span></a> nodes. The <a class="reference internal" href="../concepts.html#term-Projection"><span class="xref std std-term">Projection</span></a> removes connection metadata before materializing the northbound view, so peers cannot learn broker addresses or bypass the middleware.</p>
+<p><strong>Southbound</strong> writes go out to devices through connectors. These happen automatically when a persistence write names a field that has a synced connector. The binding serializes the value and publishes it to the device’s topic or endpoint.</p>
+<p>A consumer action determines which direction fires:</p>
+<ul class="simple">
+<li><p>Calling <code class="docutils literal notranslate"><span class="pre">OGM.commit</span></code> on a Parameter → northbound only</p></li>
+<li><p>Calling <code class="docutils literal notranslate"><span class="pre">consume</span></code> on a synced connector → southbound only</p></li>
+<li><p>A PUT to the REST API → both (writes graph, then notifies connectors)</p></li>
+</ul>
+</section>
+<section id="inbound-messages-replace-whole-parameter-nodes">
+<h2>Inbound Messages Replace Whole Parameter Nodes<a class="headerlink" href="#inbound-messages-replace-whole-parameter-nodes" title="Link to this heading">#</a></h2>
+<p>An inbound message from a device replaces the entire Parameter node. The binding reassembles static facets — unit, access mode — from cached metadata so a bare scalar does not blank the parts that did not change. Without this reassembly, an inbound scalar would wipe <code class="docutils literal notranslate"><span class="pre">hasUnit</span></code> and every other facet, because <code class="docutils literal notranslate"><span class="pre">update_persistence_with_value</span></code> does <code class="docutils literal notranslate"><span class="pre">setattr(contained_model,</span> <span class="pre">field_id,</span> <span class="pre">value)</span></code> — it replaces the whole list.</p>
+<p>The formatter reassembles the blanknode from cached facets plus the live value. That is a pure function per message. It reads no current state and it needs no framework change.</p>
+</section>
+<section id="iris-and-display">
+<h2>IRIs and Display<a class="headerlink" href="#iris-and-display" title="Link to this heading">#</a></h2>
+<p>Any prettified or shortened form of an IRI is display only. Production code carries fully back-resolvable IRIs in their mangled form. The generated API documentation renders a readable form where it can, but nothing parses that form back.</p>
+<p><strong>Silent failure:</strong> A consumer that parses a displayed IRI, or round-trips one back into a query, gets a wrong answer with no exception raised. Use the mangled form (<code class="docutils literal notranslate"><span class="pre">IRI.lined</span></code>) for all production operations — REST path segments, datamodel field names, <code class="docutils literal notranslate"><span class="pre">svc:endpoint</span></code> triples. The mangled form is mechanically reversible to the original IRI. Pretty-printing is a rendering concern with no correctness weight.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06-views-and-projection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Views and Projection</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08-provisioning-and-seeding.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Provisioning and Seeding</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#all-graph-writes-go-through-the-ogm">All Graph Writes Go Through the OGM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-transitions-mw-commit-and-mw-fetch">State Transitions: <code class="docutils literal notranslate"><span class="pre">mw.commit()</span></code> and <code class="docutils literal notranslate"><span class="pre">mw.fetch()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-instance-mw-create">Creating an Instance: <code class="docutils literal notranslate"><span class="pre">mw.create()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predefined-scopes">Predefined scopes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-detector-s-decision-snapshot">The detector’s decision snapshot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-transport">Opening a transport</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persistence-writes-name-the-changed-field">Persistence Writes Name the Changed Field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#northbound-vs-southbound">Northbound vs Southbound</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inbound-messages-replace-whole-parameter-nodes">Inbound Messages Replace Whole Parameter Nodes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iris-and-display">IRIs and Display</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/guide/07-writing-to-the-graph-and-to-devices.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
