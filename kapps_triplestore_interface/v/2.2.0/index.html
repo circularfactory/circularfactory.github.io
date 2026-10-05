@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>kapps-triplestore-interface &#8212; kapps-triplestore-interface</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=0a7743c8" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
+
+    <script src="_static/documentation_options.js?v=b21de401"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.22.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_triplestore_interface/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '2.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API reference" href="reference/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2.2" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-triplestore-interface</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_triplestore_interface" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-triplestore-interface/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_triplestore_interface" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-triplestore-interface/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kapps-triplestore-interface">
+<h1>kapps-triplestore-interface<a class="headerlink" href="#kapps-triplestore-interface" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://pypi.org/project/kapps-triplestore-interface/"><img alt="PyPI version" src="https://img.shields.io/pypi/v/kapps-triplestore-interface" /></a>
+<img alt="Python" src="https://img.shields.io/badge/python-%3E=3.12-blue" />
+<img alt="License" src="https://img.shields.io/badge/license-MIT-blue" /></p>
+<p>This library turns SPARQL queries and updates against a running GraphDB triplestore into
+callable Python methods. Three research projects run it in production.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>kapps-triplestore-interface
+</pre></div>
+</div>
+<p>Or, from a clone of this repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync
+</pre></div>
+</div>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<p>The package uses a single class named <code class="docutils literal notranslate"><span class="pre">GraphDB</span></code>. To use the interface, create an object from
+this class:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphDB</span><span class="p">,</span> <span class="n">GraphDBCredentials</span>
+
+<span class="n">credentials</span> <span class="o">=</span> <span class="n">GraphDBCredentials</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">"&lt;your_graph_db_url&gt;"</span><span class="p">,</span>
+    <span class="n">username</span><span class="o">=</span><span class="s2">"&lt;your_graph_db_user&gt;"</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">"&lt;your_graph_db_password&gt;"</span><span class="p">,</span>
+    <span class="n">repository</span><span class="o">=</span><span class="s2">"&lt;your_selected_repository_id&gt;"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">my_db</span> <span class="o">=</span> <span class="n">GraphDB</span><span class="p">(</span><span class="n">credentials</span><span class="o">=</span><span class="n">credentials</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="what-a-write-promises">
+<h2>What a write promises<a class="headerlink" href="#what-a-write-promises" title="Link to this heading">#</a></h2>
+<p>The store answers a SPARQL update with success also when the update changes nothing. So the
+five write functions that have a precondition send it inside the update itself:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>function</p></th>
+<th class="head"><p>precondition with <code class="docutils literal notranslate"><span class="pre">check_exist=True</span></code> (the default)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triples_add</span></code></p></td>
+<td><p>None of the triples exists yet. Triples that share a blank node are one structure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">triples_delete</span></code>, <code class="docutils literal notranslate"><span class="pre">triple_delete</span></code></p></td>
+<td><p>All of the triples exist.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">triples_update</span></code>, <code class="docutils literal notranslate"><span class="pre">triple_update</span></code></p></td>
+<td><p>All of the old triples exist.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">triples_add</span></code> and <code class="docutils literal notranslate"><span class="pre">triples_update</span></code> also take <code class="docutils literal notranslate"><span class="pre">absent_subjects</span></code>: IRIs that must not yet be the
+subject of a triple in the target graph. A subject that occurs only as an object passes.</p>
+<ul>
+<li><p><strong>A normal return means “applied”.</strong> The store found the precondition true and committed the
+change. The function returns <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>A false precondition raises <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code></strong>, and nothing is written. The error
+carries <code class="docutils literal notranslate"><span class="pre">.triples</span></code>, the triples that the precondition named, and <code class="docutils literal notranslate"><span class="pre">.named_graph</span></code>.</p></li>
+<li><p><strong>The scope is the explicit triples of the target graph.</strong> The target graph is <code class="docutils literal notranslate"><span class="pre">named_graph</span></code>,
+or the default graph without the named graphs. A read (<code class="docutils literal notranslate"><span class="pre">triples_get</span></code>, <code class="docutils literal notranslate"><span class="pre">query</span></code>) sees all graphs
+and the inferred triples, but a delete cannot remove an inferred triple. So the precondition
+refuses an old triple that is only inferred.</p></li>
+<li><p><strong>A triple that is both explicit and inferred stays visible after a delete</strong>, because a delete
+clears only the explicit flag.</p></li>
+<li><p><strong>Concurrent writers.</strong> The store isolates only commits (“read committed”). Another writer can
+commit between the evaluation of the precondition and the commit of the write. Measured with
+two threads that replaced the same triple at the same time:</p>
+<ul class="simple">
+<li><p>GraphDB Free 10.8.1 on a local machine: both writes applied in 50 of 50 rounds. With a
+start offset of 20 ms, both applied in 1 of 30 rounds.</p></li>
+<li><p>GraphDB 10.8.5 Enterprise on a remote server: both writes applied in 0 of 50 rounds, in
+the default graph and in a named graph.</p></li>
+</ul>
+<p>The rate depends on the store and on its load, so a rate of 0 does not mean that the race
+cannot occur. An invariant that must hold under concurrent writers belongs in a SHACL shape:
+the store checks shapes at the commit.</p>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">check_exist=False</span></code></strong> sends the write without a precondition and returns <code class="docutils literal notranslate"><span class="pre">True</span></code>. An
+unchecked update still applies only when its old triples match.</p></li>
+<li><p><strong>The receipt.</strong> A checked write also writes one receipt triple into the graph
+<code class="docutils literal notranslate"><span class="pre">urn:x-kapps:write-receipts</span></code>, in the same update. The function reads the receipt and then
+removes it. If the process stops between the write and the removal, the receipt stays, with
+its time.</p></li>
+<li><p><strong>A transport error</strong> (for example a timeout, or a connection that the store closed) raises
+the <code class="docutils literal notranslate"><span class="pre">requests</span></code> exception unchanged, for example <code class="docutils literal notranslate"><span class="pre">requests.Timeout</span></code> or
+<code class="docutils literal notranslate"><span class="pre">requests.ConnectionError</span></code>. The write is not sent again, and its receipt is not read: the
+store can still commit the write after that.</p></li>
+</ul>
+</section>
+<section id="when-the-store-refuses-a-write">
+<h2>When the store refuses a write<a class="headerlink" href="#when-the-store-refuses-a-write" title="Link to this heading">#</a></h2>
+<p>A repository with SHACL validation checks a write when it commits it. If the data would
+violate a shape, the store commits nothing of the write.
+<code class="docutils literal notranslate"><span class="pre">GraphDB.query</span></code> then raises <code class="docutils literal notranslate"><span class="pre">ShaclValidationError</span></code>, and so do the functions that send their
+update through it, for example <code class="docutils literal notranslate"><span class="pre">triples_add</span></code> and <code class="docutils literal notranslate"><span class="pre">triples_update</span></code>. <code class="docutils literal notranslate"><span class="pre">clear_graph</span></code> raises it too,
+when the store refuses a clear because the remaining data would violate a shape. The error’s
+<code class="docutils literal notranslate"><span class="pre">report</span></code> is the store’s validation report, unchanged:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">ShaclValidationError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">my_db</span><span class="o">.</span><span class="n">triples_add</span><span class="p">([(</span><span class="n">subject</span><span class="p">,</span> <span class="n">predicate</span><span class="p">,</span> <span class="n">obj</span><span class="p">)])</span>
+<span class="k">except</span> <span class="n">ShaclValidationError</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The client logs a refusal only at DEBUG, so your code decides how loud it is. When
+<code class="docutils literal notranslate"><span class="pre">GraphDB.query</span></code> or <code class="docutils literal notranslate"><span class="pre">clear_graph</span></code> gets any other error answer from the store, it logs it at ERROR
+and raises a different type. To catch any error from this package, catch <code class="docutils literal notranslate"><span class="pre">TripleStoreInterfaceError</span></code> from
+<code class="docutils literal notranslate"><span class="pre">kapps_triplestore_interface.exceptions</span></code>.</p>
+</section>
+<section id="running-tests">
+<h2>Running Tests<a class="headerlink" href="#running-tests" title="Link to this heading">#</a></h2>
+<p>The test suite expects a running GraphDB instance and uses a dedicated test repository.</p>
+<p>Required environment variables for tests:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GRAPHDB_URL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRAPHDB_USERNAME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRAPHDB_PASSWORD</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GRAPHDB_TEST_REPOSITORY</span></code></p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">GRAPHDB_URL</span><span class="o">=</span><span class="s2">"http://localhost:7200"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GRAPHDB_USERNAME</span><span class="o">=</span><span class="s2">"admin"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GRAPHDB_PASSWORD</span><span class="o">=</span><span class="s2">"root"</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GRAPHDB_TEST_REPOSITORY</span><span class="o">=</span><span class="s2">"test-repo"</span>
+uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>tests<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>Note: application/runtime credentials loaded via <code class="docutils literal notranslate"><span class="pre">GraphDBCredentials.from_env()</span></code> still use
+<code class="docutils literal notranslate"><span class="pre">GRAPHDB_REPOSITORY</span></code> by default.</p>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
+<p>Development happens in a private repository at KIT. This GitHub repository is a <strong>publish
+target</strong>. A pull request opened here cannot be merged back. Raise an issue instead, or contact the
+maintainers.</p>
+</section>
+<section id="origin">
+<h2>Origin<a class="headerlink" href="#origin" title="Link to this heading">#</a></h2>
+<p>This is a renamed fork of
+<a class="reference external" href="https://github.com/JaFeKl/graph_db_interface"><code class="docutils literal notranslate"><span class="pre">JaFeKl/graph_db_interface</span></code></a> by Jan-Felix Klein,
+last released as <a class="reference external" href="https://pypi.org/project/graph-db-interface/"><code class="docutils literal notranslate"><span class="pre">graph-db-interface</span></code> 2.0.1</a> on
+PyPI under an MIT license. It is maintained here, and changes since then are listed in
+<a class="reference external" href="https://github.com/circularfactory/kapps_triplestore_interface/blob/v2.2.0/CHANGELOG.md">CHANGELOG.md</a>.</p>
+</section>
+<section id="migration-from-graph-db-interface">
+<h2>Migration from graph-db-interface<a class="headerlink" href="#migration-from-graph-db-interface" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Change your dependency from <code class="docutils literal notranslate"><span class="pre">graph-db-interface</span></code> to <code class="docutils literal notranslate"><span class="pre">kapps-triplestore-interface</span></code>.</p></li>
+<li><p>Change imports from <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">graph_db_interface</span> <span class="pre">import</span> <span class="pre">...</span></code> to <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">kapps_triplestore_interface</span> <span class="pre">import</span> <span class="pre">...</span></code>.</p></li>
+<li><p>If you catch it, change <code class="docutils literal notranslate"><span class="pre">GraphDBInterfaceError</span></code> to <code class="docutils literal notranslate"><span class="pre">TripleStoreInterfaceError</span></code>.</p></li>
+</ol>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>The package is licensed under the <a class="reference external" href="https://github.com/circularfactory/kapps_triplestore_interface/blob/v2.2.0/LICENSE">MIT license</a>.</p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>This package is developed as part of the INF subproject of the
+<a class="reference external" href="https://www.sfb1574.kit.edu/english/index.php">CRC 1574: Circular Factory for the Perpetual Product</a>.
+This work is therefore supported by the Deutsche Forschungsgemeinschaft (DFG, German Research
+Foundation) [grant-number: SFB-1574-471687386].</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="reference/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-write-promises">What a write promises</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-the-store-refuses-a-write">When the store refuses a write</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#origin">Origin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-from-graph-db-interface">Migration from graph-db-interface</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Jan-Felix Klein; 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
