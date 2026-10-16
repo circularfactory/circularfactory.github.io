@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.discovery &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/discovery';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.discovery</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.discovery</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What the parties read from the graph: their peers' workflows, the connections, what each holds,</span>
+<span class="sd">which modules a box enters and leaves by, and which resource is the WarehouseManagementSystem.</span>
+
+<span class="sd">Every answer comes from the graph at the moment it is asked. A module routes by no table of its</span>
+<span class="sd">neighbours, because a table filled once at start-up is a race against the neighbour's own start.</span>
+<span class="sd">The connections it read last stay in its memory for its dashboard alone.</span>
+
+<span class="sd">A resource may have several services, one for each middleware instance bound to it, and a</span>
+<span class="sd">process killed before it deregisters leaves its service behind with its address. So every read</span>
+<span class="sd">that finds a service takes only a live one, through the one reader of a service</span>
+<span class="sd">(`common.services`): a service with an address and a heartbeat younger than</span>
+<span class="sd">`MAX_HEARTBEAT_AGE_SECONDS`, judged against this reader's clock. When several are live, the read</span>
+<span class="sd">takes the one whose heartbeat is newest: of a killed instance and its restart, the restart.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">types</span><span class="w"> </span><span class="kn">import</span> <span class="n">MappingProxyType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Protocol</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.class_scope</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.services</span><span class="w"> </span><span class="kn">import</span> <span class="n">services</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">bindings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">DIRECTIONS</span><span class="p">,</span> <span class="n">MODULE_TYPES</span><span class="p">,</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">ModuleType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.transport</span><span class="w"> </span><span class="kn">import</span> <span class="n">BOX_SCOPE</span><span class="p">,</span> <span class="n">Transport</span><span class="p">,</span> <span class="n">transport_of_box</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">FC_NS</span>
+
+
+<div class="viewcode-block" id="workflow_endpoint">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.workflow_endpoint">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">workflow_endpoint</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">workflow_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The endpoint of the workflow of class `workflow_class` on `resource`'s live service."""</span>
+    <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">services</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">resource</span><span class="p">,</span> <span class="n">workflows</span><span class="o">=</span><span class="p">(</span><span class="n">workflow_class</span><span class="p">,)):</span>
+        <span class="k">if</span> <span class="n">workflow_class</span> <span class="ow">in</span> <span class="n">service</span><span class="o">.</span><span class="n">workflows</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">service</span><span class="o">.</span><span class="n">workflows</span><span class="p">[</span><span class="n">workflow_class</span><span class="p">]</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="service_address">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.service_address">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">service_address</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The base address of `resource`'s live service."""</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="n">services</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">resource</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">address</span> <span class="k">if</span> <span class="n">found</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="handover_event_stream">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.handover_event_stream">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">handover_event_stream</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where `resource` serves its handover event stream, as it committed it at its start."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?stream WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">hasHandoverEventStream</span><span class="si">}</span><span class="s2">&gt; ?stream </span><span class="se">}}</span><span class="s2"> "</span>
+        <span class="s2">"LIMIT 1"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"stream"</span><span class="p">])</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="service_addresses">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.service_addresses">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">service_addresses</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The base address of every live service, by the resource it serves."""</span>
+    <span class="n">addresses</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">services</span><span class="p">(</span><span class="n">db</span><span class="p">):</span>
+        <span class="c1"># The services come newest heartbeat first, so the first one of a resource is its choice.</span>
+        <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">address</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">addresses</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">addresses</span></div>
+
+
+
+<div class="viewcode-block" id="wms">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.wms">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wms</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The WarehouseManagementSystem: the resource of its class, which takes every box back.</span>
+
+<span class="sd">    It is found by its class, as a module finds a peer by its workflows, so no module names it.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">        SELECT ?resource WHERE </span><span class="se">{{</span><span class="s2"> ?resource a &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">WarehouseManagementSystem</span><span class="si">}</span><span class="s2">&gt; </span><span class="se">}}</span>
+<span class="s2">        ORDER BY ?resource LIMIT 1</span>
+<span class="s2">        """</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"resource"</span><span class="p">]))</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<span class="c1"># The three module classes, by their IRIs.</span>
+<span class="n">_MODULE_CLASSES</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">ModuleType</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">IRI</span><span class="p">(</span><span class="n">module_type</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FC_NS</span><span class="p">):</span> <span class="n">module_type</span> <span class="k">for</span> <span class="n">module_type</span> <span class="ow">in</span> <span class="n">MODULE_TYPES</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="ModulesAndConnections">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.ModulesAndConnections">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ModulesAndConnections</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Every module of the station with its types, in the order of their IRIs, and every</span>
+<span class="sd">    connection, as (the module that has it, the module it leads to), with the direction of each</span>
+<span class="sd">    that names one the use case knows: what the WarehouseManagementSystem picks the modules of a</span>
+<span class="sd">    spawn from. (Changed on 2026-10-10, jms_kapps 52, decided by Etienne on 2026-10-07: the WMS's</span>
+<span class="sd">    strategy is given the connections as the WMS read them; that each comes with its direction, as</span>
+<span class="sd">    a module's does, is the build's reading. Until then: "and every connection, as (the module</span>
+<span class="sd">    that has it, the module it leads to): what the WarehouseManagementSystem picks the modules of</span>
+<span class="sd">    a spawn from.")"""</span>
+
+    <span class="n">types</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">ModuleType</span><span class="p">]]</span>
+    <span class="n">connections</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]]</span>
+    <span class="n">directions</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="n">MappingProxyType</span><span class="p">({})</span>
+
+<div class="viewcode-block" id="ModulesAndConnections.directed">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.ModulesAndConnections.directed">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">directed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Every connection, with its direction, or None where the read named none."""</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">DirectedConnection</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">directions</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)))</span>
+            <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">connections</span>
+        <span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="modules_and_connections">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.modules_and_connections">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">modules_and_connections</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModulesAndConnections</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Every module of the station with its types, and every connection, in one read: each</span>
+<span class="sd">    resource the graph types as one of the three module classes, with those of its classes, and</span>
+<span class="sd">    where each connection leads. A module's roles are among its types, `fc:EntryModule` and</span>
+<span class="sd">    `fc:ExitModule`, where the topology names them (`topology.choices`); the connections say which</span>
+<span class="sd">    destinations an origin reaches (`routing.reachable`).</span>
+
+<span class="sd">    (Changed on 2026-10-07, jms_kapps 51, decided by Etienne: "the WMS picks only an exit that it</span>
+<span class="sd">    can reach from the origin, for every topology", with the connections "in the same graph read</span>
+<span class="sd">    as the module types". Until then this was `module_types`, "Every module of the station, with</span>
+<span class="sd">    its types, in the order of their IRIs, in one read", added on 2026-10-06, jms_kapps 45, for</span>
+<span class="sd">    Etienne's decision that roles are optional; one read of every module with its types was that</span>
+<span class="sd">    build's reading. It had replaced `modules_of_class`, "Every module of `module_class`, such as</span>
+<span class="sd">    `fc:EntryModule`, in the order of their IRIs", which the WarehouseManagementSystem read once</span>
+<span class="sd">    for each role.)"""</span>
+    <span class="n">classes</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">module_class</span><span class="si">}</span><span class="s2">&gt;"</span> <span class="k">for</span> <span class="n">module_class</span> <span class="ow">in</span> <span class="n">_MODULE_CLASSES</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">        SELECT DISTINCT ?module ?class ?source ?target ?direction WHERE </span><span class="se">{{</span>
+<span class="s2">            </span><span class="se">{{</span><span class="s2"> VALUES ?class </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">classes</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2"> ?module a ?class . </span><span class="se">}}</span>
+<span class="s2">            UNION</span>
+<span class="s2">            </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">_CONNECTIONS_PATTERN</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span>
+<span class="s2">        </span><span class="se">}}</span><span class="s2"> ORDER BY ?module ?class</span>
+<span class="s2">        """</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">types</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">ModuleType</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">found</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">directions</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">"module"</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+            <span class="n">types</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"module"</span><span class="p">])),</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">_MODULE_CLASSES</span><span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"class"</span><span class="p">]))]</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">connection</span> <span class="o">=</span> <span class="n">_connection</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">connection</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">connection</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">directions</span><span class="p">[(</span><span class="n">connection</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">connection</span><span class="o">.</span><span class="n">target</span><span class="p">)]</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">direction</span>
+    <span class="k">return</span> <span class="n">ModulesAndConnections</span><span class="p">(</span><span class="n">types</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">directions</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TransitTimes">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.TransitTimes">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TransitTimes</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a module reads of transit times when it starts: its own, and the longest of any</span>
+<span class="sd">    module in the graph, T of the bounds on a wait for a box (`module.ARRIVAL_BOUND_SECONDS`)."""</span>
+
+    <span class="n">own</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">longest</span><span class="p">:</span> <span class="nb">float</span></div>
+
+
+
+<div class="viewcode-block" id="TransitTimeError">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.TransitTimeError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TransitTimeError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The graph does not hold exactly one transit time for a module."""</span></div>
+
+
+
+<div class="viewcode-block" id="transit_times">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.transit_times">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">transit_times</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TransitTimes</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The transit time of `resource` and the longest one of any module, in one read.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TransitTimeError: If `resource` has no `fc:hasTransitTime`, or more than one, naming the</span>
+<span class="sd">            module.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"SELECT ?module ?time WHERE </span><span class="se">{{</span><span class="s2"> ?module &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">hasTransitTime</span><span class="si">}</span><span class="s2">&gt; ?time </span><span class="se">}}</span><span class="s2">"</span>
+    <span class="p">)</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="p">[(</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"module"</span><span class="p">])),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"time"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+    <span class="n">own</span> <span class="o">=</span> <span class="p">[</span><span class="n">seconds</span> <span class="k">for</span> <span class="n">module</span><span class="p">,</span> <span class="n">seconds</span> <span class="ow">in</span> <span class="n">times</span> <span class="k">if</span> <span class="n">module</span> <span class="o">==</span> <span class="n">resource</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">own</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">held</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">"no transit time"</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">own</span>
+            <span class="k">else</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">own</span><span class="p">)</span><span class="si">}</span><span class="s2"> transit times (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1">'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nb">sorted</span><span class="p">(</span><span class="n">own</span><span class="p">))</span><span class="si">}</span><span class="s2"> s)"</span>
+        <span class="p">)</span>
+        <span class="k">raise</span> <span class="n">TransitTimeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="n">held</span><span class="si">}</span><span class="s2"> in the graph (fc:hasTransitTime), and needs exactly "</span>
+            <span class="s2">"one, which a launch writes, so it does not start"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">TransitTimes</span><span class="p">(</span><span class="n">own</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">max</span><span class="p">(</span><span class="n">seconds</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">seconds</span> <span class="ow">in</span> <span class="n">times</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="capability">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.capability">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">capability</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">capability_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The Capability of class `capability_class` that `resource` provides, or None.</span>
+
+<span class="sd">    The middleware writes it when the resource registers the workflow that realizes it, and</span>
+<span class="sd">    keeps it when the resource stops.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">        SELECT ?capability WHERE </span><span class="se">{{</span>
+<span class="s2">            &lt;</span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasCapability</span><span class="si">}</span><span class="s2">&gt; ?capability .</span>
+<span class="s2">            ?capability a &lt;</span><span class="si">{</span><span class="n">capability_class</span><span class="si">}</span><span class="s2">&gt; .</span>
+<span class="s2">        </span><span class="se">}}</span><span class="s2"> ORDER BY ?capability LIMIT 1</span>
+<span class="s2">        """</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"capability"</span><span class="p">]))</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="Fetch">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.Fetch">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Fetch</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The middleware's `mw.fetch(instance_iri, class_scope=...)`: one instance read, under a</span>
+<span class="sd">    class scope, into a node."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">instance_iri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">class_scope</span><span class="p">:</span> <span class="n">ClassScope</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Node</span><span class="p">:</span> <span class="o">...</span></div>
+
+
+
+<div class="viewcode-block" id="DirectedConnection">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.DirectedConnection">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DirectedConnection</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One connection of the station: the module that has it, the module it leads to, and the</span>
+<span class="sd">    side of `source` it leaves by, or None if the graph names no direction the use case knows."""</span>
+
+    <span class="n">source</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">target</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">direction</span><span class="p">:</span> <span class="n">Direction</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<span class="c1"># The four directions of the use case, by their IRIs.</span>
+<span class="n">_DIRECTIONS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">IRI</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FC_NS</span><span class="p">):</span> <span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">DIRECTIONS</span><span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_direction</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Direction</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The direction a row binds as `?direction`, if it is one of the four."""</span>
+    <span class="k">return</span> <span class="n">_DIRECTIONS</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"direction"</span><span class="p">])))</span> <span class="k">if</span> <span class="s2">"direction"</span> <span class="ow">in</span> <span class="n">row</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="c1"># Every connection of the station, as `?source ?target ?direction`.</span>
+<span class="n">_CONNECTIONS_PATTERN</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    ?source &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">hasConnection</span><span class="si">}</span><span class="s2">&gt; ?connection .</span>
+<span class="s2">    ?connection &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">connectsTo</span><span class="si">}</span><span class="s2">&gt; ?target .</span>
+<span class="s2">    OPTIONAL </span><span class="se">{{</span><span class="s2"> ?connection &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">hasDirection</span><span class="si">}</span><span class="s2">&gt; ?direction </span><span class="se">}}</span>
+<span class="s2">"""</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_possession_pattern</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Each box `resource` possesses, as `?box`, from Core's reified possession."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    ?box &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="si">}</span><span class="s2">&gt; ?possession .</span>
+<span class="s2">    &lt;</span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt; ?possession .</span>
+<span class="s2">"""</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_connection</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DirectedConnection</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">DirectedConnection</span><span class="p">(</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"source"</span><span class="p">])),</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"target"</span><span class="p">])),</span> <span class="n">_direction</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="connections">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.connections">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">connections</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Every connection of the station, with its direction, in one read: what a module finds the</span>
+<span class="sd">    next module of a box on, and what its dashboard draws."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"SELECT DISTINCT ?source ?target ?direction WHERE </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">_CONNECTIONS_PATTERN</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">_connection</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="boxes_held_by">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.boxes_held_by">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">boxes_held_by</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The boxes `resource` possesses now, read from Core's reified possession."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"SELECT DISTINCT ?box WHERE </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">_possession_pattern</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2">"</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="holds_query">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.holds_query">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">holds_query</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The `ASK` whether `resource` possesses `box` now, from Core's reified possession."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"ASK </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">box</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="si">}</span><span class="s2">&gt; ?possession . "</span>
+        <span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt; ?possession . </span><span class="se">}}</span><span class="s2">"</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="holds">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.holds">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">holds</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `resource` possesses `box` now, in one `ASK` about that one box: its answer is the</span>
+<span class="sd">    same size however many boxes `resource` holds.</span>
+
+<span class="sd">    (Added on 2026-10-12, jms_kapps 92, decided by Sören on jms_kapps 85: "when a box returns, the</span>
+<span class="sd">    WMS asks the store about that one box (an `ASK`)", in place of its read of every box it</span>
+<span class="sd">    holds, `boxes_held_by`.)</span>
+<span class="sd">    """</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">holds_query</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">box</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"boolean"</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="StartRead">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.StartRead">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">StartRead</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a module reads when it starts, for its dashboard: the station's connections, and</span>
+<span class="sd">    the boxes it possesses, so that a restarted module shows the box it holds."""</span>
+
+    <span class="n">connections</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]</span>
+    <span class="n">held</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="at_start">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.at_start">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">at_start</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StartRead</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The connections of the station and the boxes `resource` possesses, in one read."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">        SELECT DISTINCT ?source ?target ?direction ?box WHERE </span><span class="se">{{</span>
+<span class="s2">            </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">_CONNECTIONS_PATTERN</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2"> UNION </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">_possession_pattern</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span>
+<span class="s2">        </span><span class="se">}}</span>
+<span class="s2">        """</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">StartRead</span><span class="p">(</span>
+        <span class="n">connections</span><span class="o">=</span><span class="p">[</span><span class="n">_connection</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="s2">"source"</span> <span class="ow">in</span> <span class="n">row</span><span class="p">],</span>
+        <span class="n">held</span><span class="o">=</span><span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="s2">"box"</span> <span class="ow">in</span> <span class="n">row</span><span class="p">],</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GraphView">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">GraphView</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The reads above, bound to one client, and the fetch of a box with its transport, through</span>
+<span class="sd">    the party's middleware. What a running module and the WarehouseManagementSystem are given as</span>
+<span class="sd">    their graph. None of them reads every box in the graph. (Changed on 2026-10-12, jms_kapps 92,</span>
+<span class="sd">    decided by Sören on jms_kapps 85: the WarehouseManagementSystem no longer numbers a box after</span>
+<span class="sd">    the boxes in the graph. Until then: "The reads above and the boxes, bound to one client".)</span>
+
+<span class="sd">    Neither reads a transport it is notified of: the middleware's intake hands it that one. A</span>
+<span class="sd">    module reads a transport when a box arrives on it, from its Receive, and when the bound of its</span>
+<span class="sd">    reservation finds the box its own with no Receive: then it reads the box with its transport</span>
+<span class="sd">    through the box's link to it, with `fetch`, its middleware's `mw.fetch`. (Changed on</span>
+<span class="sd">    2026-10-06, jms_kapps 39, decided by Etienne: a party finds a transport through its box, never</span>
+<span class="sd">    from the box's name. Until then the first sentence went on: "Neither reads a transport: the</span>
+<span class="sd">    middleware's intake hands it the one it is notified of." Changed again on 2026-10-06,</span>
+<span class="sd">    jms_kapps 40, decided by Etienne, when the Receive came to start the receiving module. Until</span>
+<span class="sd">    then: "A module reads a transport only when it holds a box and is told of no transport".)</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">fetch</span><span class="p">:</span> <span class="n">Fetch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fetch</span> <span class="o">=</span> <span class="n">fetch</span>
+
+<div class="viewcode-block" id="GraphView.transport_of">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.transport_of">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transport_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Transport</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The transport of `box`, read with the box in one fetch through `fc:hasTransport`, or</span>
+<span class="sd">        None if the box links to none.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the store holds no class for the box: it is not in the graph.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">transport_of_box</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fetch</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">),</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">BOX_SCOPE</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="GraphView.boxes_held_by">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.boxes_held_by">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boxes_held_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">boxes_held_by</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.holds">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.holds">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">holds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">holds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.connections">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.connections">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">connections</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">connections</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.at_start">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.at_start">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">at_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StartRead</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">at_start</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.workflow_endpoint">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.workflow_endpoint">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">workflow_endpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">workflow_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">workflow_endpoint</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">workflow_class</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.wms">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.wms">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wms</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">wms</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.modules_and_connections">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.modules_and_connections">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">modules_and_connections</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModulesAndConnections</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">modules_and_connections</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GraphView.capability">
+<a class="viewcode-back" href="../../../reference/uc2/discovery.html#jms_kapps.uc2.discovery.GraphView.capability">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">capability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">capability_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">capability</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">capability_class</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

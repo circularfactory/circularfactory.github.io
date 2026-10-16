@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.vertical_slice &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/vertical_slice';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.vertical_slice</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.vertical_slice</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""`jms-uc2 slice`: the smallest use case 2 that proves every seam: two modules, one box, one handover.</span>
+
+<span class="sd">The slice seeds the graph, starts each module as its own process, and waits until both have</span>
+<span class="sd">registered their workflows. It checks that each module registered its own service, with an</span>
+<span class="sd">address and a heartbeat. Then it plays two acts and checks the graph after each.</span>
+
+<span class="sd">The slice plays the part of the WarehouseManagementSystem with a middleware of its own, which it</span>
+<span class="sd">never serves. Through it, it places each box on module 1 with `mw.create()`, together with the box's</span>
+<span class="sd">transport, `queued`, toward module 2 and assigned to module 1, and notifies module 1 of the</span>
+<span class="sd">transport, as the WarehouseManagementSystem notifies a box's origin. The slice runs no</span>
+<span class="sd">WarehouseManagementSystem, and the one in the graph has no handover ability, so the handover that</span>
+<span class="sd">would give a box back is refused before any write: module 2, the destination, keeps the box and</span>
+<span class="sd">records its transport `failed`. That is what keeps module 2 occupied for the fault.</span>
+
+<span class="sd">1. **A clean handover.** Box 1 goes from module 1 to module 2: module 1 asks module 2's Reserve,</span>
+<span class="sd">   commits the handover, conveys the box, its own move, and calls module 2's Receive, from which</span>
+<span class="sd">   module 2 carries the box on. Module 2 logs each step it accepts, and the slice reads those</span>
+<span class="sd">   records: they show that Reserve and Receive ran on module 2, not only that module 1 called</span>
+<span class="sd">   them. (Changed on 2026-10-06, jms_kapps 40, decided by Etienne. Until then: "Box 1 goes from</span>
+<span class="sd">   module 1 to module 2 through Reserve, Convey and Receive.")</span>
+<span class="sd">2. **The fault.** Box 2 is placed on module 1, the fault `skip-reserve` is armed there, and</span>
+<span class="sd">   module 1 hands box 2 to module 2 without asking. Module 2 already holds box 1, so the triple</span>
+<span class="sd">   store refuses the write before anything moves. Module 1 logs the report, and emits the refusal</span>
+<span class="sd">   with it on its handover event stream. Nothing in the graph changes but box 2's transport, which</span>
+<span class="sd">   module 1 set running: the middleware commits the change of possession in one write, before the</span>
+<span class="sd">   box moves, so a refusal leaves nothing behind. Module 1 then adapts: it asks module 2's Reserve</span>
+<span class="sd">   first, which refuses because module 2 is occupied, and asks again after the retry time. Module 2</span>
+<span class="sd">   never gives box 1 back in the slice, so module 1 waits with box 2, its transport running, until</span>
+<span class="sd">   the slice stops.</span>
+
+<span class="sd">The report is checked as RDF, not as text: one of its validation results must name module 2 as</span>
+<span class="sd">the focus node, the possession shape's whole path, and that shape as its source. A search of the</span>
+<span class="sd">text would not do. The store puts the source shape's own description into the report, path</span>
+<span class="sd">included, so every name can appear in the text while no result names it.</span>
+
+<span class="sd">The slice reaches each module the way the parties do: through the graph, which also says where</span>
+<span class="sd">module 1's handover event stream lives. It exits 0 when both acts behave as described, and 1 when</span>
+<span class="sd">one does not.</span>
+
+<span class="sd">Ctrl+C, SIGTERM, which `kill` sends, and SIGHUP, which a closing terminal sends, stop the slice</span>
+<span class="sd">the same way, as they stop the Launcher, through the same helper (`one_stop`): the slice stops</span>
+<span class="sd">both modules, each deregisters its service, and it exits with 128 plus the signal's number, as a</span>
+<span class="sd">shell reports a process that the signal ended. A signal during the seed ends the slice there,</span>
+<span class="sd">before any module starts. A second signal does not cut the stop short. A slice started with SIGHUP</span>
+<span class="sd">ignored, as under `nohup`, keeps ignoring it. (Changed on 2026-10-11, jms_kapps 71, decided by</span>
+<span class="sd">Etienne: until then only Ctrl+C stopped the slice and its modules together, and SIGTERM or SIGHUP</span>
+<span class="sd">to the slice alone ended it at once while its modules ran on. The exit code of a stopped slice is</span>
+<span class="sd">the build's reading of "non-zero, as on Ctrl+C". Until then the paragraph above ended "It exits 0</span>
+<span class="sd">when both acts behave as described, and 1 otherwise.")</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">signal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mode</span><span class="p">,</span> <span class="n">SemanticMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.credentials</span><span class="w"> </span><span class="kn">import</span> <span class="n">endpoint_for</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ValidationResult</span><span class="p">,</span>
+    <span class="n">validation_results</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span><span class="p">,</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">SPARQLQuery</span><span class="p">,</span> <span class="n">TripleStore</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">one_stop</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.services</span><span class="w"> </span><span class="kn">import</span> <span class="n">Service</span><span class="p">,</span> <span class="n">reader</span><span class="p">,</span> <span class="n">services</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.supervision</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LaunchFailed</span><span class="p">,</span>
+    <span class="n">LiveInstanceError</span><span class="p">,</span>
+    <span class="n">NotReady</span><span class="p">,</span>
+    <span class="n">Supervisor</span><span class="p">,</span>
+    <span class="n">refuse_if_live</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">bindings</span><span class="p">,</span> <span class="n">connect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">boxes_held_by</span><span class="p">,</span>
+    <span class="n">capability</span><span class="p">,</span>
+    <span class="n">handover_event_stream</span><span class="p">,</span>
+    <span class="n">service_address</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handover_events</span><span class="w"> </span><span class="kn">import</span> <span class="n">HandoverEvent</span><span class="p">,</span> <span class="n">read_sse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handshake</span><span class="w"> </span><span class="kn">import</span> <span class="n">acceptance_record</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_RETRY_SECONDS</span><span class="p">,</span> <span class="n">Fault</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> <span class="k">as</span> <span class="n">module_logger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">MODULE_WORKFLOWS</span><span class="p">,</span> <span class="n">module_command</span><span class="p">,</span> <span class="n">set_fault_switch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.seed</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span><span class="p">,</span> <span class="n">seed_two_modules</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.transport</span><span class="w"> </span><span class="kn">import</span> <span class="n">TransportRecords</span><span class="p">,</span> <span class="n">operation_status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">WMS</span><span class="p">,</span> <span class="n">box_iri</span>
+
+<span class="n">REGISTRATION_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">60.0</span>
+
+<span class="c1"># How long a module's log may take to pass through the supervisor after the call that wrote it.</span>
+<span class="n">LOG_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+<span class="c1"># How long the modules may take to act on a notification or a Receive, beyond the moves: each act</span>
+<span class="c1"># is one hop at most.</span>
+<span class="n">ACT_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">30.0</span>
+
+<span class="c1"># The path of the shape that allows a module one box at a time: from the module to its one</span>
+<span class="c1"># possession state, then back from the state to each box that points at it. A handover changes</span>
+<span class="c1"># only the box's link, so a second box handed to the module shows up here.</span>
+<span class="n">POSSESSION_PATH</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"(&lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt;/^&lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="si">}</span><span class="s2">&gt;)"</span>
+
+
+<div class="viewcode-block" id="Failure">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.Failure">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Failure</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""An act did not behave as the slice claims."""</span></div>
+
+
+
+<span class="c1"># What the slice prints once its stop has begun, before it asks either module to stop.</span>
+<span class="n">STOPPING_MESSAGE</span> <span class="o">=</span> <span class="s2">"Stopping both modules..."</span>
+
+
+<div class="viewcode-block" id="Stopped">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.Stopped">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Stopped</span><span class="p">(</span><span class="ne">BaseException</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A stop signal reached the slice, and cuts short what its main thread does, as Ctrl+C does.</span>
+
+<span class="sd">    A BaseException, as KeyboardInterrupt is, so that no `except Exception` on the way, such as</span>
+<span class="sd">    the readiness gate's around each read of the graph, takes it for an error and goes on.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signum</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">signum</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">signum</span> <span class="o">=</span> <span class="n">signum</span></div>
+
+
+
+<div class="viewcode-block" id="stopped_code">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.stopped_code">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stopped_code</span><span class="p">(</span><span class="n">signum</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The exit code of a slice that the stop signal `signum` stopped: 128 plus its number, as a</span>
+<span class="sd">    shell reports a process that the signal ended. So a shell shows the code it showed before the</span>
+<span class="sd">    slice took these signals: 130 on Ctrl+C, 143 on SIGTERM, 129 on SIGHUP."""</span>
+    <span class="k">return</span> <span class="mi">128</span> <span class="o">+</span> <span class="n">signum</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_StopSignals</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the first stop signal does to the slice, which takes every stop signal as one stop</span>
+<span class="sd">    (`one_stop`), as the Launcher does.</span>
+
+<span class="sd">    It begins the supervisor's stop first, so that a module that the same signal ended meanwhile,</span>
+<span class="sd">    as a terminal's Ctrl+C ends both, has stopped, not failed. Inside `cut_short` it then raises</span>
+<span class="sd">    `Stopped` on the main thread, as Ctrl+C raises KeyboardInterrupt, and the slice goes on to stop</span>
+<span class="sd">    both modules. Outside it only marks the stop: while a module starts, since a module whose</span>
+<span class="sd">    process has started before the supervisor holds it would escape the stop, and while the modules</span>
+<span class="sd">    stop, which a signal must not cut short.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">supervisor</span><span class="p">:</span> <span class="n">Supervisor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span> <span class="o">=</span> <span class="n">supervisor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cut_short</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signum</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">begin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">signum</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""`one_stop` calls this for the first stop signal alone."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_signum</span> <span class="o">=</span> <span class="n">signum</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span><span class="o">.</span><span class="n">begin_stop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cut_short</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Stopped</span><span class="p">(</span><span class="n">signum</span><span class="p">)</span>
+
+    <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cut_short</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="kc">None</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""While in this block, a stop signal cuts short what the main thread does. One that came</span>
+<span class="sd">        before the block cuts it short at its start."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cut_short</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_signum</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">Stopped</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_signum</span><span class="p">)</span>
+            <span class="k">yield</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cut_short</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="c1"># -- Reading what the modules say ------------------------------------------------------------ #</span>
+
+<span class="c1"># A line that is one N-Quads statement: a line of a logged report.</span>
+<span class="n">_STATEMENT</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(?:_:\S+|&lt;[^&lt;&gt;\s]*&gt;)\s+&lt;[^&lt;&gt;\s]*&gt;\s+.*\.\s*$"</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="lines_of">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.lines_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lines_of</span><span class="p">(</span><span class="n">echoed</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">child</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The lines `child` wrote, out of what a supervisor echoed: it puts the name in front."""</span>
+    <span class="n">prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">child</span><span class="si">}</span><span class="s2">  "</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">echoed</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">prefix</span><span class="p">)]</span></div>
+
+
+
+<div class="viewcode-block" id="logged_report">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.logged_report">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">logged_report</span><span class="p">(</span><span class="n">lines</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The report a module logged, out of its process's output lines.</span>
+
+<span class="sd">    A record of the module's logger starts on the line that names the logger, and its report</span>
+<span class="sd">    follows on the next lines, one statement each. Another logger's record does not count,</span>
+<span class="sd">    although the client logs the store's error, report included, before the module does.</span>
+<span class="sd">    """</span>
+    <span class="n">report</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">inside</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">module_logger</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">inside</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">inside</span> <span class="ow">and</span> <span class="n">_STATEMENT</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="n">report</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">inside</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="logs_acceptance">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.logs_acceptance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">logs_acceptance</span><span class="p">(</span>
+    <span class="n">lines</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">giver</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `module`'s output lines hold its own record that it accepted `step` for `box` from</span>
+<span class="sd">    `giver`.</span>
+
+<span class="sd">    The record is matched whole, as the module builds it, right after the name of the module's</span>
+<span class="sd">    logger: Python's default format, which the module's process keeps, puts the name just before</span>
+<span class="sd">    the message. So a record with another verb, such as a refusal of the same step, does not</span>
+<span class="sd">    count, and neither does one from another giver or another logger.</span>
+<span class="sd">    """</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">module_logger</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">acceptance_record</span><span class="p">(</span><span class="n">module</span><span class="p">,</span><span class="w"> </span><span class="n">step</span><span class="p">,</span><span class="w"> </span><span class="n">box</span><span class="p">,</span><span class="w"> </span><span class="n">giver</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">record</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">)</span></div>
+
+
+
+<span class="n">_OUTPUT</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="say">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.say">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Print `text` on stdout, each line whole.</span>
+
+<span class="sd">    The supervisor's drain threads print while the acts do. `print` writes the text and the line</span>
+<span class="sd">    end in two calls, and on an unbuffered stdout another thread's line can come between them.</span>
+
+<span class="sd">    A terminal that has closed takes no line: the write fails, and the line is dropped, as the</span>
+<span class="sd">    supervisor drops it. So the stop that the terminal's SIGHUP began goes on, and a drain thread</span>
+<span class="sd">    goes on reading its module's output, whose pipe would otherwise fill and block the module.</span>
+<span class="sd">    (Added on 2026-10-11, jms_kapps 71: the slice takes SIGHUP as a stop signal now.)</span>
+<span class="sd">    """</span>
+    <span class="k">with</span> <span class="n">_OUTPUT</span><span class="p">,</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">suppress</span><span class="p">(</span><span class="ne">OSError</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Transcript">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.Transcript">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Transcript</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The supervisor's echo: prints every line as it comes, and keeps it for the checks."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lines</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">say</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Transcript.lines_of">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.Transcript.lines_of">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">lines_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">lines_of</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_lines</span><span class="p">,</span> <span class="n">child</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="logged_in_time">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.logged_in_time">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">logged_in_time</span><span class="p">(</span>
+    <span class="n">condition</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">LOG_TIMEOUT_SECONDS</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `condition`, a check of what a module logged, holds within `timeout` seconds.</span>
+
+<span class="sd">    A module logs before it answers, but its lines reach this process through the supervisor, on</span>
+<span class="sd">    a thread of their own.</span>
+<span class="sd">    """</span>
+    <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="n">timeout</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">condition</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">deadline</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<span class="c1"># -- Registration ---------------------------------------------------------------------------- #</span>
+
+
+<div class="viewcode-block" id="services_of">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.services_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">services_of</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Service</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Every service of `resource`, live or not, each with its address and heartbeat where it has</span>
+<span class="sd">    one: the one reader's answer, which a check reads after the modules have stopped too."""</span>
+    <span class="k">return</span> <span class="n">services</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">resource</span><span class="p">,</span> <span class="n">live_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="set_fault">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.set_fault">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">set_fault</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Fault</span><span class="p">,</span> <span class="n">armed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">service_address</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">address</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="n">set_fault_switch</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">armed</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="refusals_emitted">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.refusals_emitted">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">refusals_emitted</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">HandoverEvent</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The `commit_refused` events on `module`'s handover event stream, found through the graph.</span>
+
+<span class="sd">    One connection reads every event kept, and ends after the stream's wait.</span>
+<span class="sd">    """</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">handover_event_stream</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">url</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">events</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">HandoverEvent</span><span class="o">.</span><span class="n">model_validate_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">read_sse</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">event</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span> <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"commit_refused"</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="asked_again">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.asked_again">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">asked_again</span><span class="p">(</span><span class="n">lines</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">refused</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How often a module logged that it will ask again after the refusal `refused`."""</span>
+    <span class="n">waiting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">refused</span><span class="si">}</span><span class="s2">; asking again in "</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">waiting</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="holdings">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.holdings">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">holdings</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">modules</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">m</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">fragment</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">boxes_held_by</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">modules</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="explicit_statements">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.explicit_statements">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">explicit_statements</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">outcome_of</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Every explicit statement of the default graph, except heartbeats, which move on their own,</span>
+<span class="sd">    and the status and result of the transport `outcome_of`, if given, which records an act's</span>
+<span class="sd">    outcome."""</span>
+    <span class="n">clauses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"?s ?p ?o"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"FILTER (?p != &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">lastHeartbeat</span><span class="si">}</span><span class="s2">&gt;)"</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">outcome_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"""FILTER (?s != &lt;</span><span class="si">{</span><span class="n">outcome_of</span><span class="si">}</span><span class="s2">&gt; ||</span>
+<span class="s2">                    ?p NOT IN (&lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="si">}</span><span class="s2">&gt;, &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">executionResult</span><span class="si">}</span><span class="s2">&gt;))"""</span>
+        <span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="n">SPARQLQuery</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+            <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s2">"?s"</span><span class="p">,</span> <span class="s2">"?p"</span><span class="p">,</span> <span class="s2">"?o"</span><span class="p">],</span>
+            <span class="n">where_clauses</span><span class="o">=</span><span class="n">clauses</span><span class="p">,</span>
+            <span class="n">include_implicit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="c1"># Each term's lexical value, compared as it is written, with no conversion in between.</span>
+        <span class="n">convert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">{(</span><span class="n">row</span><span class="p">[</span><span class="s2">"s"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">"p"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">"o"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="check">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.check">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">condition</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">detail</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">""</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="s1">'ok  '</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'FAIL'</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">condition</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Failure</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">description</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">detail</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="check_services">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.check_services">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_services</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">modules</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">since</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Each module registered its own service, with an address and a heartbeat since `since`."""</span>
+    <span class="n">seen</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">modules</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">services_of</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">module</span><span class="p">)</span>
+        <span class="n">_check_service</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">seen</span><span class="p">,</span> <span class="n">since</span><span class="p">)</span>
+        <span class="c1"># The check held, so `found` holds exactly one service.</span>
+        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">iri</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_service</span><span class="p">(</span>
+    <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Service</span><span class="p">],</span> <span class="n">others</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span> <span class="n">since</span><span class="p">:</span> <span class="n">datetime</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Check that `found` holds one service, not in `others`, and live since `since`."""</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">heartbeat</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">heartbeat</span> <span class="k">if</span> <span class="n">service</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">say</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">service</span><span class="o">.</span><span class="n">iri</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="kc">None</span><span class="si">}</span><span class="s2"> at "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">service</span><span class="o">.</span><span class="n">address</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="kc">None</span><span class="si">}</span><span class="s2">, heartbeat </span><span class="si">{</span><span class="n">heartbeat</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> registered its own service, with an address and a heartbeat"</span><span class="p">,</span>
+        <span class="n">service</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">service</span><span class="o">.</span><span class="n">iri</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">others</span>
+        <span class="ow">and</span> <span class="n">service</span><span class="o">.</span><span class="n">address</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">heartbeat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">heartbeat</span> <span class="o">&gt;=</span> <span class="n">since</span><span class="p">,</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"services: </span><span class="si">{</span><span class="n">found</span><span class="si">}</span><span class="se">\n</span><span class="s2">other modules' services: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">others</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="check_accepted">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.check_accepted">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">check_accepted</span><span class="p">(</span>
+    <span class="n">transcript</span><span class="p">:</span> <span class="n">Transcript</span><span class="p">,</span> <span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">giver</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Check that `peer` ran `step` for `box` itself: its own log says that it accepted it from</span>
+<span class="sd">    `giver`."""</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">peer</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> logs that it accepted </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"from </span><span class="si">{</span><span class="n">giver</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">logged_in_time</span><span class="p">(</span>
+            <span class="k">lambda</span><span class="p">:</span> <span class="n">logs_acceptance</span><span class="p">(</span>
+                <span class="n">transcript</span><span class="o">.</span><span class="n">lines_of</span><span class="p">(</span><span class="n">peer</span><span class="o">.</span><span class="n">fragment</span><span class="p">),</span> <span class="n">peer</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">giver</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">transcript</span><span class="o">.</span><span class="n">lines_of</span><span class="p">(</span><span class="n">peer</span><span class="o">.</span><span class="n">fragment</span><span class="p">)),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="holds_within">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.holds_within">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">holds_within</span><span class="p">(</span><span class="n">condition</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `condition`, a check of the graph, holds within `timeout` seconds.</span>
+
+<span class="sd">    The modules act on a notification or a Receive in the background, so what an act changes</span>
+<span class="sd">    holds a little later.</span>
+<span class="sd">    The slice is no module, so it may ask the graph until then.</span>
+<span class="sd">    """</span>
+    <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="n">timeout</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">condition</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">deadline</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="place">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.place">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">place</span><span class="p">(</span>
+    <span class="n">records</span><span class="p">:</span> <span class="n">TransportRecords</span><span class="p">,</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">modules</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span>
+    <span class="n">transport_capability</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Place `box` on the first module, with its transport `queued` toward the second, in one</span>
+<span class="sd">    `mw.create()`, and return the transport: the slice knows it from the opening, never from the</span>
+<span class="sd">    box's name."""</span>
+    <span class="n">m1</span><span class="p">,</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">modules</span>
+    <span class="k">return</span> <span class="n">records</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">m1</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">m2</span><span class="p">,</span> <span class="n">capability</span><span class="o">=</span><span class="n">transport_capability</span><span class="p">,</span> <span class="n">possessor</span><span class="o">=</span><span class="n">m1</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="notify">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.notify">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">notify</span><span class="p">(</span><span class="n">mw</span><span class="p">:</span> <span class="n">SemanticMiddleware</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  notify </span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">mw</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span> <span class="n">resource</span><span class="o">=</span><span class="n">module</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="play">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.play">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">play</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span>
+    <span class="n">mw</span><span class="p">:</span> <span class="n">SemanticMiddleware</span><span class="p">,</span>
+    <span class="n">modules</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span>
+    <span class="n">transcript</span><span class="p">:</span> <span class="n">Transcript</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The two acts. Each raises `Failure` at the first check that does not hold."""</span>
+    <span class="n">m1</span><span class="p">,</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">modules</span>
+    <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">box_iri</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">box_iri</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">occupied</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> refused to reserve: occupied by </span><span class="si">{</span><span class="n">b1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">records</span> <span class="o">=</span> <span class="n">TransportRecords</span><span class="p">(</span><span class="n">mw</span><span class="p">)</span>
+    <span class="n">transport_capability</span> <span class="o">=</span> <span class="n">capability</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportCapability</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">transport_capability</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Failure</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> registered no BoxTransportCapability"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">failed</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">bool</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">operation</span><span class="p">)</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span>
+
+    <span class="n">say</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">1. A clean handover"</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">place</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">transport_capability</span><span class="p">)</span>
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  before: </span><span class="si">{</span><span class="n">holdings</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">modules</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">notify</span><span class="p">(</span><span class="n">mw</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">m1</span><span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> keeps </span><span class="si">{</span><span class="n">b1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">, and its transport fails: the WMS in the slice's "</span>
+        <span class="s2">"graph has no handover ability, so it takes no box back"</span><span class="p">,</span>
+        <span class="n">holds_within</span><span class="p">(</span><span class="n">failed</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="n">ACT_TIMEOUT_SECONDS</span><span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">t1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">check_accepted</span><span class="p">(</span><span class="n">transcript</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">ReserveWorkflow</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">giver</span><span class="o">=</span><span class="n">m1</span><span class="p">)</span>
+    <span class="n">check_accepted</span><span class="p">(</span><span class="n">transcript</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">ReceiveWorkflow</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">giver</span><span class="o">=</span><span class="n">m1</span><span class="p">)</span>
+    <span class="n">after</span> <span class="o">=</span> <span class="n">holdings</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">modules</span><span class="p">)</span>
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  after:  </span><span class="si">{</span><span class="n">after</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"the graph shows </span><span class="si">{</span><span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> holding </span><span class="si">{</span><span class="n">b1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">after</span> <span class="o">==</span> <span class="p">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span> <span class="p">[],</span> <span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span> <span class="p">[</span><span class="n">b1</span><span class="o">.</span><span class="n">fragment</span><span class="p">]},</span>
+    <span class="p">)</span>
+
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">2. The fault: </span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> hands </span><span class="si">{</span><span class="n">b2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> over without asking"</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">place</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">transport_capability</span><span class="p">)</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">holdings</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">modules</span><span class="p">)</span>
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  before: </span><span class="si">{</span><span class="n">before</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">set_fault</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="s2">"skip-reserve"</span><span class="p">,</span> <span class="n">armed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">graph_before</span> <span class="o">=</span> <span class="n">explicit_statements</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">outcome_of</span><span class="o">=</span><span class="n">t2</span><span class="p">)</span>
+    <span class="n">notify</span><span class="p">(</span><span class="n">mw</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">m1</span><span class="p">)</span>
+    <span class="n">emitted</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HandoverEvent</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">refused_b2</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="n">emitted</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">refusals_emitted</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">m1</span><span class="p">)</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">box</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">b2</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">emitted</span><span class="p">)</span>
+
+    <span class="c1"># An event carries a report only when the store refused: that, not the reason's prose, says so.</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"the triple store refuses it, and </span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> emits the refusal with its report"</span><span class="p">,</span>
+        <span class="n">holds_within</span><span class="p">(</span><span class="n">refused_b2</span><span class="p">,</span> <span class="n">ACT_TIMEOUT_SECONDS</span><span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">t2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">emitted</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span><span class="o">.</span><span class="n">report</span> <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> emitted: </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">reason</span><span class="si">}</span><span class="s2">, peer </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">peer</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"the event names </span><span class="si">{</span><span class="n">b2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">'s transport and </span><span class="si">{</span><span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">transport</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">peer</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">t2</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">m2</span><span class="p">)),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="n">event</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">validation_results</span><span class="p">(</span><span class="n">report</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">found</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+        <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">found</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">refused</span> <span class="o">=</span> <span class="n">ValidationResult</span><span class="p">(</span>
+        <span class="n">focus</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">m2</span><span class="p">),</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">POSSESSION_PATH</span><span class="p">,</span>
+        <span class="n">shape</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">FlexConveyorModulePossessionShape</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">at_focus</span> <span class="o">=</span> <span class="p">{</span><span class="n">found</span> <span class="k">for</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">results</span> <span class="k">if</span> <span class="n">found</span><span class="o">.</span><span class="n">focus</span> <span class="o">==</span> <span class="n">refused</span><span class="o">.</span><span class="n">focus</span><span class="p">}</span>
+    <span class="n">check</span><span class="p">(</span><span class="s2">"the report names the focus node"</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">at_focus</span><span class="p">),</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">report</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="s2">"the report names the whole constraint path"</span><span class="p">,</span>
+        <span class="nb">any</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="n">refused</span><span class="o">.</span><span class="n">path</span> <span class="k">for</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">at_focus</span><span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="n">report</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span><span class="s2">"the report names the source shape"</span><span class="p">,</span> <span class="n">refused</span> <span class="ow">in</span> <span class="n">results</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">report</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> logs the report"</span><span class="p">,</span>
+        <span class="n">logged_in_time</span><span class="p">(</span>
+            <span class="k">lambda</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">refused</span>
+                <span class="ow">in</span> <span class="n">validation_results</span><span class="p">(</span><span class="n">logged_report</span><span class="p">(</span><span class="n">transcript</span><span class="o">.</span><span class="n">lines_of</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="p">)))</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">transcript</span><span class="o">.</span><span class="n">lines_of</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="p">)),</span>
+    <span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="s2">"the event names the rule the report names"</span><span class="p">,</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">refusal</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">focus_node</span><span class="p">,</span> <span class="n">rule</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="o">==</span> <span class="p">(</span><span class="n">refused</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">refused</span><span class="o">.</span><span class="n">focus</span><span class="p">,</span> <span class="n">refused</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span><span class="o">.</span><span class="n">results</span>
+        <span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="n">event</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> adapts: it asks first, and asks again after the retry time while "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is occupied"</span><span class="p">,</span>
+        <span class="n">logged_in_time</span><span class="p">(</span>
+            <span class="k">lambda</span><span class="p">:</span> <span class="n">asked_again</span><span class="p">(</span><span class="n">transcript</span><span class="o">.</span><span class="n">lines_of</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="p">),</span> <span class="n">occupied</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">LOG_TIMEOUT_SECONDS</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">DEFAULT_RETRY_SECONDS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">transcript</span><span class="o">.</span><span class="n">lines_of</span><span class="p">(</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="p">)),</span>
+    <span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">b2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> waits on </span><span class="si">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">, and its transport runs: it has not failed"</span><span class="p">,</span>
+        <span class="n">holdings</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">modules</span><span class="p">)</span>
+        <span class="o">==</span> <span class="p">{</span><span class="n">m1</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span> <span class="p">[</span><span class="n">b2</span><span class="o">.</span><span class="n">fragment</span><span class="p">],</span> <span class="n">m2</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span> <span class="p">[</span><span class="n">b1</span><span class="o">.</span><span class="n">fragment</span><span class="p">]}</span>
+        <span class="ow">and</span> <span class="n">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">holdings</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">modules</span><span class="p">)</span><span class="si">}</span><span class="s2">; </span><span class="si">{</span><span class="n">t2</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">,</span><span class="w"> </span><span class="n">t2</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">graph_after</span> <span class="o">=</span> <span class="n">explicit_statements</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">outcome_of</span><span class="o">=</span><span class="n">t2</span><span class="p">)</span>
+    <span class="n">check</span><span class="p">(</span>
+        <span class="s2">"the graph is unchanged, but for the transport's outcome"</span><span class="p">,</span>
+        <span class="n">graph_after</span> <span class="o">==</span> <span class="n">graph_before</span><span class="p">,</span>
+        <span class="k">lambda</span><span class="p">:</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"added: </span><span class="si">{</span><span class="n">graph_after</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">graph_before</span><span class="si">}</span><span class="se">\n</span><span class="s2">removed: </span><span class="si">{</span><span class="n">graph_before</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">graph_after</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="run">
+<a class="viewcode-back" href="../../../reference/uc2/vertical_slice.html#jms_kapps.uc2.vertical_slice.run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Play the two acts against `dataset`, which it clears, with both modules at the transit</span>
+<span class="sd">    time `transit_seconds`, which its seed writes into the graph, until a stop signal stops it.</span>
+
+<span class="sd">    Returns the exit code: 0 when both acts behave as described, 1 when one does not, and</span>
+<span class="sd">    `stopped_code` of the signal that stopped it.</span>
+<span class="sd">    """</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">refuse_if_live</span><span class="p">(</span><span class="n">reader</span><span class="p">(</span><span class="n">db</span><span class="p">),</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">LiveInstanceError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"jms-uc2 slice: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2"> Or pass --force to clear it anyway."</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">except</span> <span class="n">LaunchFailed</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"jms-uc2 slice: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">started</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span>
+    <span class="n">transcript</span> <span class="o">=</span> <span class="n">Transcript</span><span class="p">()</span>
+    <span class="n">supervisor</span> <span class="o">=</span> <span class="n">Supervisor</span><span class="p">(</span><span class="n">reader</span><span class="p">(</span><span class="n">db</span><span class="p">),</span> <span class="n">echo</span><span class="o">=</span><span class="n">transcript</span><span class="p">)</span>
+    <span class="n">signals</span> <span class="o">=</span> <span class="n">_StopSignals</span><span class="p">(</span><span class="n">supervisor</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">one_stop</span><span class="p">(</span><span class="n">signals</span><span class="o">.</span><span class="n">begin</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">signals</span><span class="o">.</span><span class="n">cut_short</span><span class="p">():</span>
+                <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Seeding </span><span class="si">{</span><span class="n">dataset</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">endpoint_for</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+                <span class="n">modules</span> <span class="o">=</span> <span class="n">seed_two_modules</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">transit_seconds</span><span class="o">=</span><span class="n">transit_seconds</span><span class="p">)</span>
+            <span class="c1"># Not cut short: a signal meanwhile cuts short what follows, at its start.</span>
+            <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">modules</span><span class="p">:</span>
+                <span class="n">supervisor</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span>
+                    <span class="n">module</span><span class="p">,</span>
+                    <span class="n">module</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                    <span class="n">module_command</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">dataset</span><span class="p">),</span>
+                    <span class="n">workflows</span><span class="o">=</span><span class="n">MODULE_WORKFLOWS</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">with</span> <span class="n">signals</span><span class="o">.</span><span class="n">cut_short</span><span class="p">():</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">supervisor</span><span class="o">.</span><span class="n">wait_until_ready</span><span class="p">(</span><span class="n">REGISTRATION_TIMEOUT_SECONDS</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">NotReady</span> <span class="k">as</span> <span class="n">not_ready</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">Failure</span><span class="p">(</span><span class="sa">f</span><span class="s2">"not registered in time: </span><span class="si">{</span><span class="n">not_ready</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">not_ready</span>
+                <span class="n">say</span><span class="p">(</span><span class="s2">"Both modules registered their workflows."</span><span class="p">)</span>
+                <span class="n">check_services</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">since</span><span class="o">=</span><span class="n">started</span><span class="p">)</span>
+                <span class="c1"># The WMS's part, played by the slice: never served, so no notification reaches</span>
+                <span class="c1"># it.</span>
+                <span class="n">wms</span> <span class="o">=</span> <span class="n">SemanticMiddleware</span><span class="p">(</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">RESOURCE</span><span class="p">,</span>
+                    <span class="n">resource_iri</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">WMS</span><span class="p">),</span>
+                    <span class="n">service_class</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">WarehouseManagementSystemService</span><span class="p">),</span>
+                    <span class="n">ogm</span><span class="o">=</span><span class="n">OGM</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">),</span>
+                <span class="p">)</span>
+                <span class="n">play</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">wms</span><span class="p">,</span> <span class="n">modules</span><span class="p">,</span> <span class="n">transcript</span><span class="p">)</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">except</span> <span class="n">Stopped</span> <span class="k">as</span> <span class="n">stopped</span><span class="p">:</span>
+            <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Stopped by </span><span class="si">{</span><span class="n">signal</span><span class="o">.</span><span class="n">Signals</span><span class="p">(</span><span class="n">stopped</span><span class="o">.</span><span class="n">signum</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="n">stopped_code</span><span class="p">(</span><span class="n">stopped</span><span class="o">.</span><span class="n">signum</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">Failure</span> <span class="k">as</span> <span class="n">failure</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">The slice does not hold: </span><span class="si">{</span><span class="n">failure</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">say</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">STOPPING_MESSAGE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">supervisor</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">say</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Both acts behaved as claimed."</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">code</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

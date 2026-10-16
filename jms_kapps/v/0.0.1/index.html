@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jms-kapps &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API reference" href="reference/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="jms-kapps">
+<h1>jms-kapps<a class="headerlink" href="#jms-kapps" title="Link to this heading">#</a></h1>
+<p>The two use cases of the paper <em>KAPPS: A knowledge-based CPPS Architecture for the Circular
+Factory</em> (arXiv 2605.22457), built on
+<a class="reference external" href="https://pypi.org/project/kapps-semantic-middleware/"><code class="docutils literal notranslate"><span class="pre">kapps-semantic-middleware</span></code></a>.</p>
+<p>In KAPPS, the parts of a cyber-physical production system do not call each other by fixed
+addresses. Each part is a <em>participant</em>: a program with its own instance of the semantic
+middleware. Participants find each other in a knowledge graph, and every change they make to the
+factory’s state is a write to that graph, which the triple store checks against SHACL shapes,
+rules it validates at every commit, before it admits the write.</p>
+<ul class="simple">
+<li><p><strong>Use case 2 — the decentral FlexConveyor.</strong> Each conveyor module runs as its own process. A
+module reserves the next module for a box, conveys the box, and hands it over. No central router
+exists: each module chooses the next module from the graph. Two faults that a person arms on a
+module show the store refusing a write the module should not have made.</p></li>
+<li><p><strong>Use case 1 — vertical integration.</strong> Four participants work an unscrewing operation. A
+planner opens one operation per press. A screwing resource records the attempt’s curves. An
+anomaly detector classifies the attempt. A learner refines the detection thresholds of each
+Screw type. They coordinate through the knowledge graph and find each other there. The
+notifications and the call of the detector go over REST, to addresses that the graph names; the
+curves go through InfluxDB.</p></li>
+</ul>
+<p>Both use cases are in one repository, because they share the ontology bootstrap, the triple store
+setup and the measurement harness, and because the paper cites them together.</p>
+<section id="run-use-case-2">
+<h2>Run use case 2<a class="headerlink" href="#run-use-case-2" title="Link to this heading">#</a></h2>
+<p>On Linux or macOS, with <a class="reference external" href="https://docs.docker.com/get-docker/">Docker</a> and
+<a class="reference external" href="https://docs.astral.sh/uv/">uv</a>, the clone first, then in the repository root:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/circularfactory/jms_kapps.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>jms_kapps
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--wait<span class="w">   </span><span class="c1"># a local triple store, with the dataset jms-kapps, and an InfluxDB</span>
+uv<span class="w"> </span>sync<span class="w"> </span>--locked<span class="w">              </span><span class="c1"># the packages, into .venv</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">TRIPLESTORE_URL</span><span class="o">=</span>http://localhost:7200<span class="w"> </span><span class="nv">TRIPLESTORE_USERNAME</span><span class="o">=</span>admin<span class="w"> </span><span class="nv">TRIPLESTORE_PASSWORD</span><span class="o">=</span>root
+./run-uc2
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">./run-uc2</span></code> starts use case 2 and opens the Launcher page on <a class="reference external" href="http://127.0.0.1:8090/">http://127.0.0.1:8090/</a>. It runs on
+the triple store that <code class="docutils literal notranslate"><span class="pre">TRIPLESTORE_URL</span></code> names; without that variable, it starts the local store
+itself first. <strong>It clears the dataset it runs on</strong>: <code class="docutils literal notranslate"><span class="pre">jms-kapps</span></code>, unless <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> names another.
+A <em>dataset</em> is the store’s unit, one set of graphs. Every argument goes on to <code class="docutils literal notranslate"><span class="pre">jms-uc2</span></code>, as in
+<code class="docutils literal notranslate"><span class="pre">./run-uc2</span> <span class="pre">--topology</span> <span class="pre">merge-fault-demo</span></code>. Ctrl+C stops every process of the run.</p>
+<p><code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">sync</span></code> needs no account: <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code> takes the three sibling packages from PyPI. jms_kapps itself
+is not on PyPI; you run it from a clone.</p>
+<p>The <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reviewer-guide.md">reviewer guide</a> is the one path from a clean machine to a running use
+case 2: what to install, the setup, what each page shows, how to use the two faults, how to stop,
+and how to run the tests.</p>
+</section>
+<section id="what-you-see">
+<h2>What you see<a class="headerlink" href="#what-you-see" title="Link to this heading">#</a></h2>
+<p><img alt="The Launcher page of a run of the cross" src="https://raw.githubusercontent.com/circularfactory/jms_kapps/v0.0.1/docs/images/uc2-launcher.png" /></p>
+<p><strong>The Launcher page</strong> starts one process for each module of a <em>topology</em>, the modules of a station
+and their connections, plus the WarehouseManagementSystem (WMS), which spawns boxes and takes them
+back, and a monitor, which only reads the graph. It lists each process with its state, links to
+each one’s dashboard, arms each module’s two faults, and launches another topology.</p>
+<p>Open the WMS and spawn a box. The box travels from module to module to its destination. Each step
+of its journey is a <em>hop</em>: the giving module asks the next module to reserve itself, commits the
+<em>handover</em>, the change of the box’s possessor, and moves the box. The store admits or refuses each
+commit before anything moves. The monitor draws the station from the graph alone, and shows each
+write the store refused, with the shape that refused it.</p>
+</section>
+<section id="the-paper-s-words-and-the-demo-s">
+<h2>The paper’s words and the demo’s<a class="headerlink" href="#the-paper-s-words-and-the-demo-s" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>The paper says</p></th>
+<th class="head"><p>The demo shows</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>service</p></td>
+<td><p>a participant’s process, with its own middleware instance</p></td>
+</tr>
+<tr class="row-odd"><td><p>operation</p></td>
+<td><p>a box’s transport, in use case 2; an unscrewing operation, in use case 1</p></td>
+</tr>
+<tr class="row-even"><td><p>fault injection</p></td>
+<td><p>the two faults a person arms on a module: <code class="docutils literal notranslate"><span class="pre">skip-reserve</span></code> and <code class="docutils literal notranslate"><span class="pre">complete-without-releasing</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>the OGM</p></td>
+<td><p>the object-graph mapper, which turns the middleware’s Python objects into triples and back</p></td>
+</tr>
+<tr class="row-even"><td><p>the knowledge graph</p></td>
+<td><p>the graph: the dataset of the triple store that a run uses</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/glossary.md">glossary</a> defines every other word these pages keep: dataset,
+participant, hop, handover, heartbeat, deregister, stale, IRI, SSE and more.</p>
+</section>
+<section id="run-use-case-1">
+<h2>Run use case 1<a class="headerlink" href="#run-use-case-1" title="Link to this heading">#</a></h2>
+<p>With the same setup as use case 2:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>jms-uc1
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">jms-uc1</span></code> seeds the demo’s two angle grinders, starts the four participants of use case 1, and
+prints the address of each one’s dashboard. <strong>It clears the dataset it runs on</strong>: <code class="docutils literal notranslate"><span class="pre">jms-kapps</span></code>,
+unless <code class="docutils literal notranslate"><span class="pre">--dataset</span></code> names another, and it refuses while another service is live there, unless
+<code class="docutils literal notranslate"><span class="pre">--force</span></code>. Its page, on <a class="reference external" href="http://127.0.0.1:8091/">http://127.0.0.1:8091/</a>, shows each participant and links to its
+dashboard. Press Unscrew on the planner’s dashboard to open one unscrewing operation. Ctrl+C stops
+all four. <code class="docutils literal notranslate"><span class="pre">jms-uc1</span> <span class="pre">seed</span></code> seeds once and prints each participant’s command line instead, to run
+them by hand. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/use-case-1.md">Use case 1</a>.</p>
+</section>
+<section id="on-windows">
+<h2>On Windows<a class="headerlink" href="#on-windows" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">./run-uc2</span></code> is a bash script, so the one command needs Linux, macOS or WSL. On Windows itself,
+take the long way: start the local store with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">--wait</span></code>, set the three
+variables as <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/triple-store.md#the-connection-variables">The triple store</a> shows for
+PowerShell or <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>, and run <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">jms-uc2</span></code>. Every process prints its command line in the
+form of the platform’s shell, so each also runs on its own there.</p>
+</section>
+<section id="where-to-read-what">
+<h2>Where to read what<a class="headerlink" href="#where-to-read-what" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reviewer-guide.md">Reviewer guide</a></p></td>
+<td><p><strong>Start here.</strong> One path from a clean machine to a running use case 2, and what each page shows.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/glossary.md">Glossary</a></p></td>
+<td><p>The words, and the paper’s words beside the demo’s.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/triple-store.md">The triple store</a></p></td>
+<td><p>The connection variables, the dataset, the prefixes, the local fallback.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/launcher.md">The Launcher and the pages of a run</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">jms-uc2</span></code> and its options, the Launcher page, the states of a process, Clear, a module’s dashboard, the monitor.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/topologies.md">Topologies and the editor</a></p></td>
+<td><p>The module list, the load check, the transit time, the editor, topology files, the shipped topologies.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/journey-and-faults.md">A box’s journey, the strategies and the faults</a></p></td>
+<td><p>Spawning, each hop, when a module cannot go on, the strategies, the two faults, the vertical slice.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/stopping.md">Stopping</a></p></td>
+<td><p>How a run stops, and what cannot deregister.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/past-possessions.md">Past possessions</a></p></td>
+<td><p>Reading who held a box at an earlier time, from the store’s history.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/use-case-1.md">Use case 1</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">jms-uc1</span></code>, its page and the demo, the seed and the participants by hand, InfluxDB and the frames, and the learner.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/tests.md">Tests</a></p></td>
+<td><p>The markers, what runs without a store, the live tests.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/assets.md">The assets</a></p></td>
+<td><p>Where the ontology, the shapes, the recordings and the topologies come from.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/CHANGELOG.md">Changelog</a></p></td>
+<td><p>What each version changed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/src/jms_kapps/evaluation/README.md">The measurement harness</a></p></td>
+<td><p>The evaluation of the paper, which the demonstration runs without.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Python 3.12 or later. uv installs it where the machine has none.</p></li>
+<li><p><a class="reference external" href="https://docs.astral.sh/uv/">uv</a>. Do not use Poetry, and do not install into a global Python.</p></li>
+<li><p>A triple store with a dataset that validates SHACL shapes. Where none is configured,
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span> <span class="pre">--wait</span></code> brings a local one up, dataset included: see
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/triple-store.md">The triple store</a>.</p></li>
+<li><p>For use case 1, an InfluxDB 3. The same command brings a local one up: see
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/use-case-1.md">Use case 1</a>.</p></li>
+<li><p>Three sibling packages from PyPI, pinned in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and locked in <code class="docutils literal notranslate"><span class="pre">uv.lock</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">kapps-semantic-middleware</span></code> 0.2.1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kapps-triplestore-interface</span></code> 2.2.1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kapps-ogm</span></code> 0.3.1</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="console-scripts">
+<h2>Console scripts<a class="headerlink" href="#console-scripts" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Script</p></th>
+<th class="head"><p>Runs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jms-uc2</span></code></p></td>
+<td><p>Use case 2 from a topology, behind the Launcher page. <strong>Clears the dataset it runs against</strong>, <code class="docutils literal notranslate"><span class="pre">--dataset</span></code>. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/launcher.md">The Launcher</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">jms-uc2</span> <span class="pre">slice</span></code></p></td>
+<td><p>Use case 2’s vertical slice: two modules, a clean handover and a refused one, then exit. <strong>Clears the dataset it runs against</strong>. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/journey-and-faults.md#the-vertical-slice">The vertical slice</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jms-uc1</span></code></p></td>
+<td><p>Use case 1: seeds the two demo grinders, starts its four participants and prints the dashboard of each; Unscrew is on the planner’s. <strong>Clears the dataset it runs against</strong>, <code class="docutils literal notranslate"><span class="pre">--dataset</span></code>. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/use-case-1.md">Use case 1</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">jms-uc1</span> <span class="pre">seed</span></code></p></td>
+<td><p>Seeds once, starts nothing, prints each participant’s command. <strong>Clears the dataset it runs against</strong>, <code class="docutils literal notranslate"><span class="pre">--dataset</span></code>. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/use-case-1.md#run-use-case-1-by-hand">Run use case 1 by hand</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jms-eval-uc2</span></code></p></td>
+<td><p>One UC2 run of one configuration of the measurement harness, on a dataset it creates and deletes, with its record.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">jms-eval</span></code></p></td>
+<td><p>One command from a spec of the harness to its report and table.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jms-eval-sweep</span></code></p></td>
+<td><p>The runs of a spec, one by one, skipping a run whose record exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">jms-eval-table</span></code></p></td>
+<td><p>The numbers of the runs of a spec, as one table beside their records.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jms-eval-report</span></code></p></td>
+<td><p>The report of the runs of a spec: tables and charts beside their records.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">jms-eval-baseline</span></code></p></td>
+<td><p>The store-only baseline of one recorded UC2 run.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">jms-live-store</span></code></p></td>
+<td><p>Development tooling: the token login, and the create, size and delete of a disposable dataset for a live check.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">jms-eval-*</span></code> scripts are the measurement harness: see its
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/src/jms_kapps/evaluation/README.md">README</a>. <strong>A heavy run needs an approval that covers it: any
+person may approve.</strong></p>
+</section>
+<section id="layout">
+<h2>Layout<a class="headerlink" href="#layout" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>jms_kapps/
+├── compose.yaml    the local fallback: a triple store, with the dataset created, and an InfluxDB
+├── run-uc2         the one command of use case 2
+├── docs/           the reviewer guide, its screenshots, and the reference pages
+├── graphdb/        the dataset's configuration
+├── scripts/        the release's checks of this tree, which its hygiene workflow runs
+├── tests/
+└── src/jms_kapps/
+    ├── common/     what both use cases use: the ontology bootstrap, the store setup, the process supervision
+    ├── uc1/        use case 1, with its ontology and its recordings
+    ├── uc2/        use case 2, with its ontology, its shapes, its topologies and its pages
+    └── evaluation/ the measurement harness, which the use cases import nothing from
+</pre></div>
+</div>
+<p>Each asset is below the package that uses it, so the wheel carries it, and an installed copy reads
+it with <code class="docutils literal notranslate"><span class="pre">importlib.resources</span></code>.</p>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync<span class="w"> </span>--locked
+uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>-m<span class="w"> </span><span class="s2">"not live"</span><span class="w">          </span><span class="c1"># the offline tier: no triple store, no InfluxDB</span>
+uv<span class="w"> </span>run<span class="w"> </span>ruff<span class="w"> </span>check<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>mypy
+uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--dataset<span class="w"> </span>&lt;name&gt;<span class="w">       </span><span class="c1"># with the store's variables set: also the tests that clear &lt;name&gt;</span>
+</pre></div>
+</div>
+<p>A test marked <code class="docutils literal notranslate"><span class="pre">graphdb</span></code> <strong>clears the dataset it runs against</strong>, so name a throwaway one, never the
+demo’s. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/tests.md">Tests</a>.</p>
+</section>
+<section id="licence">
+<h2>Licence<a class="headerlink" href="#licence" title="Link to this heading">#</a></h2>
+<p>MIT. See <a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/LICENSE">LICENSE</a>.</p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>The ontology, the SHACL shapes and the time-series recordings are the ones the paper describes.
+They come from the paper’s own artifact, the first iteration of these use cases:
+<a class="reference external" href="https://github.com/EHoffm/CPPS_Circular_factory_usecases_JMS">CPPS_Circular_factory_usecases_JMS</a>,
+<code class="docutils literal notranslate"><span class="pre">paper</span></code> branch, commit <code class="docutils literal notranslate"><span class="pre">d32011805be9199291eec0731acab241e5bd74f1</span></code>. They were copied byte for byte;
+the ontologies and shapes have since been changed to run on the middleware, and the head of each
+file lists what changed. The two recordings of use case 1 are legacy mock data and still
+byte-identical. The Python of the artifact is not carried forward: it was written against frozen
+libraries, so both use cases are written again from the start. See
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.0.1/docs/reference/assets.md">The assets</a>.</p>
+<p>This package is developed as part of the INF subproject of the CRC 1574: Circular Factory for the
+Perpetual Product. This work is therefore supported by the Deutsche Forschungsgemeinschaft (DFG,
+German Research Foundation) [grant-number: SFB-1574-471687386].</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="reference/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-use-case-2">Run use case 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-see">What you see</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paper-s-words-and-the-demo-s">The paper’s words and the demo’s</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-use-case-1">Run use case 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-windows">On Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-read-what">Where to read what</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#console-scripts">Console scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layout">Layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#licence">Licence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

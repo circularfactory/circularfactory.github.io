@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.seed &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/seed';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.seed</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.seed</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What use case 2 finds in the graph before any module starts.</span>
+
+<span class="sd">Every module can give and take a box actively (`mes:Pass` and `mes:Retrieve`, the both-active</span>
+<span class="sd">pair of the middleware's handover), and so can the WarehouseManagementSystem, which a launch</span>
+<span class="sd">seeds beside every topology: it creates each box on its origin and takes it back, so a box has a</span>
+<span class="sd">possessor all its journey, as Core's exactly-one possession requires. (Changed on 2026-10-06,</span>
+<span class="sd">jms_kapps 41, decided by Etienne: the WarehouseManagementSystem hands no box onto the station with</span>
+<span class="sd">the middleware's handover any more, so its `mes:Pass` goes unused. Until then "it gives each box</span>
+<span class="sd">to the FlexConveyor station and takes it back, so a box has a possessor at both ends of its</span>
+<span class="sd">journey".) The</span>
+<span class="sd">vertical slice seeds module 1, connected to module 2, and the WarehouseManagementSystem as an</span>
+<span class="sd">individual only, with no handover ability: it runs no WarehouseManagementSystem, so no box goes</span>
+<span class="sd">back to it, and its destination module keeps each box.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.class_scope</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.possession</span><span class="w"> </span><span class="kn">import</span> <span class="n">mint_possession_state_iri</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span><span class="p">,</span> <span class="n">MES</span><span class="p">,</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">TripleStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">URIRef</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib.namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">RDF</span><span class="p">,</span> <span class="n">RDFS</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.prefixes</span><span class="w"> </span><span class="kn">import</span> <span class="n">PREFIXES</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">bindings</span><span class="p">,</span> <span class="n">read_asset</span><span class="p">,</span> <span class="n">reset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.history</span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_history</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topology</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">FC</span><span class="p">,</span>
+    <span class="n">WMS</span><span class="p">,</span>
+    <span class="n">connection_iri</span><span class="p">,</span>
+    <span class="n">module_iri</span><span class="p">,</span>
+    <span class="n">transit_time_literal</span><span class="p">,</span>
+    <span class="n">transport_iri</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">MODULES</span> <span class="o">=</span> <span class="p">(</span><span class="n">module_iri</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">module_iri</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># The transit time of a launch's modules unless `--transit-time` or the page's field sets it: a few seconds, so that a person</span>
+<span class="c1"># watching the demo sees each box on each module. The tests give 0. Not 5 s: a party reads the</span>
+<span class="c1"># store right after a move, and a store that closes a connection after 5 s idle can close it just</span>
+<span class="c1"># as that read is sent. The store's client does not send such a read again, so the read fails. The</span>
+<span class="c1"># ticket "A query on a connection that the store closed when idle fails instead of being retried</span>
+<span class="c1"># (14)" in kapps_triplestore_interface fixes the client; after its release the default can go</span>
+<span class="c1"># back to 5 s.</span>
+<span class="n">DEFAULT_TRANSIT_SECONDS</span> <span class="o">=</span> <span class="mf">3.0</span>
+
+<span class="n">Triple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="reset_uc2">
+<a class="viewcode-back" href="../../../reference/uc2/seed.html#jms_kapps.uc2.seed.reset_uc2">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reset_uc2</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">individuals</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="n">collect_history</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">with_shapes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Empty the dataset and load use case 2's ontology and shapes, then `individuals`.</span>
+
+<span class="sd">    The shapes are set through the store's `shapes_set`, so a dataset without SHACL validation</span>
+<span class="sd">    refuses the reset, before it loads anything: shapes stored there would validate nothing.</span>
+<span class="sd">    Only with `with_shapes` False does the reset send no shapes, and seed such a dataset without</span>
+<span class="sd">    them: the measurement harness sets it for its SHACL-off twin, and nothing else does. (Added</span>
+<span class="sd">    on 2026-10-11, jms_kapps 62.)</span>
+
+<span class="sd">    With `collect_history`, the launch option, the reset then turns on the store's history</span>
+<span class="sd">    collection, with no filter, after it loaded the ontology: its last step</span>
+<span class="sd">    (`history.enable_history`). Without it, the reset sends nothing to the history, neither on nor</span>
+<span class="sd">    off, so a dataset whose collection an earlier launch turned on keeps collecting. Nothing</span>
+<span class="sd">    else in the reset changes: with the collection on, the store refuses only a clear of the whole</span>
+<span class="sd">    dataset, and the reset clears the default graph and each graph it loads by name. It never</span>
+<span class="sd">    turns the collection off around a clear, because a clear is then not logged, and the cleared</span>
+<span class="sd">    data disappears from every earlier point in time. (Added on 2026-10-10, jms_kapps 22, decided</span>
+<span class="sd">    by Etienne on 2026-10-01, 2026-10-06 and 2026-10-07.)</span>
+<span class="sd">    """</span>
+    <span class="n">reset</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="n">ontology</span><span class="o">=</span><span class="n">read_asset</span><span class="p">(</span><span class="s2">"jms_kapps.uc2"</span><span class="p">,</span> <span class="s2">"ontology"</span><span class="p">,</span> <span class="s2">"flexconveyor_usecase.ttl"</span><span class="p">),</span>
+        <span class="n">shapes</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">read_asset</span><span class="p">(</span><span class="s2">"jms_kapps.uc2"</span><span class="p">,</span> <span class="s2">"shapes"</span><span class="p">,</span> <span class="s2">"flexconveyor_usecase_shapes.ttl"</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">with_shapes</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">),</span>
+        <span class="n">individuals</span><span class="o">=</span><span class="n">individuals</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">collect_history</span><span class="p">:</span>
+        <span class="n">enable_history</span><span class="p">(</span><span class="n">db</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="seed_topology">
+<a class="viewcode-back" href="../../../reference/uc2/seed.html#jms_kapps.uc2.seed.seed_topology">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">seed_topology</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span>
+    <span class="n">topology</span><span class="p">:</span> <span class="n">Topology</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">resources</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">collect_history</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">with_shapes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Empty the dataset, then seed every module of `topology`, the WarehouseManagementSystem,</span>
+<span class="sd">    and each of `resources`. With `collect_history`, the launch option, the reset then turns on the</span>
+<span class="sd">    store's history collection (`reset_uc2`; added on 2026-10-10, jms_kapps 22). With</span>
+<span class="sd">    `with_shapes` False, the reset sends no shapes, for a dataset without SHACL validation; by</span>
+<span class="sd">    default a dataset without it refuses the seed (`reset_uc2`; added on 2026-10-11, jms_kapps 62).</span>
+
+<span class="sd">    Every module gets exactly one `fc:hasTransitTime`: its own from the topology, else</span>
+<span class="sd">    `transit_seconds`, the launch's. Each of `resources` is a plain `cfc:Resource` with the label</span>
+<span class="sd">    it maps to: a participant that the caller starts beside every run, as the demo Launcher starts</span>
+<span class="sd">    the monitor. (Changed on 2026-10-10, jms_kapps 31, decided by Etienne: the run core starts no</span>
+<span class="sd">    monitor, so the seed names none. Until then the first line also named the monitor among</span>
+<span class="sd">    what the seed writes.)</span>
+
+<span class="sd">    One import, so the triple store checks the modules and their connections together: a</span>
+<span class="sd">    connection's shape needs the module it leads to. It is the launch's last import, and the reset</span>
+<span class="sd">    registers the dataset's prefixes after it. Its Turtle declares those prefixes, because</span>
+<span class="sd">    the store keeps a prefix an import declares: left to itself, rdflib would declare names of its</span>
+<span class="sd">    own invention, such as `ns1:`, for the registration to delete again.</span>
+<span class="sd">    """</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">topology</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">transit_seconds</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">namespace</span> <span class="ow">in</span> <span class="n">PREFIXES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">URIRef</span><span class="p">(</span><span class="n">WMS</span><span class="p">),</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">WarehouseManagementSystem</span><span class="p">)))</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">URIRef</span><span class="p">(</span><span class="n">WMS</span><span class="p">),</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="s2">"Warehouse Management System"</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">resource</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">topology</span><span class="o">.</span><span class="n">modules</span><span class="p">),</span> <span class="n">WMS</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">ability</span> <span class="ow">in</span> <span class="p">(</span><span class="n">MES</span><span class="o">.</span><span class="n">Pass</span><span class="p">,</span> <span class="n">MES</span><span class="o">.</span><span class="n">Retrieve</span><span class="p">):</span>
+            <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">URIRef</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span>
+                    <span class="n">URIRef</span><span class="p">(</span><span class="n">MES</span><span class="o">.</span><span class="n">hasHandoverAbility</span><span class="p">),</span>
+                    <span class="n">URIRef</span><span class="p">(</span><span class="n">ability</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+    <span class="k">for</span> <span class="n">resource</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">(</span><span class="n">resources</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">URIRef</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">Resource</span><span class="p">)))</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">URIRef</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="n">label</span><span class="p">)))</span>
+    <span class="n">reset_uc2</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="n">individuals</span><span class="o">=</span><span class="n">graph</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"turtle"</span><span class="p">),</span>
+        <span class="n">collect_history</span><span class="o">=</span><span class="n">collect_history</span><span class="p">,</span>
+        <span class="n">with_shapes</span><span class="o">=</span><span class="n">with_shapes</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="seed_two_modules">
+<a class="viewcode-back" href="../../../reference/uc2/seed.html#jms_kapps.uc2.seed.seed_two_modules">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">seed_two_modules</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Seed module 1, connected east to module 2, and the WarehouseManagementSystem, with both</span>
+<span class="sd">    modules at `transit_seconds`.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The two module IRIs, upstream first.</span>
+<span class="sd">    """</span>
+    <span class="n">reset_uc2</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="n">upstream</span><span class="p">,</span> <span class="n">downstream</span> <span class="o">=</span> <span class="n">MODULES</span>
+    <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">MODULES</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">module</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">FlexConveyorModule</span><span class="p">))</span>
+        <span class="c1"># A name for whatever shows the module later, as the middleware's demo seeds its units.</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">module</span><span class="p">,</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Module </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">"</span><span class="p">)))</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">hasTransitTime</span><span class="p">,</span> <span class="n">transit_time_literal</span><span class="p">(</span><span class="n">transit_seconds</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">module</span><span class="p">,</span> <span class="n">MES</span><span class="o">.</span><span class="n">hasHandoverAbility</span><span class="p">,</span> <span class="n">MES</span><span class="o">.</span><span class="n">Pass</span><span class="p">))</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">module</span><span class="p">,</span> <span class="n">MES</span><span class="o">.</span><span class="n">hasHandoverAbility</span><span class="p">,</span> <span class="n">MES</span><span class="o">.</span><span class="n">Retrieve</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">WMS</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">WarehouseManagementSystem</span><span class="p">))</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">WMS</span><span class="p">,</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="s2">"Warehouse Management System"</span><span class="p">)))</span>
+
+    <span class="c1"># One write, because the store refuses a connection that lacks any of the three</span>
+    <span class="c1"># (`:ConnectionShape`).</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">connection_iri</span><span class="p">(</span><span class="s2">"Module1"</span><span class="p">,</span> <span class="s2">"East"</span><span class="p">)</span>
+    <span class="n">_create</span><span class="p">(</span>
+        <span class="n">OGM</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">),</span>
+        <span class="n">FC</span><span class="o">.</span><span class="n">Connection</span><span class="p">,</span>
+        <span class="n">connection</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">connectsTo</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">downstream</span><span class="p">)}],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasDirection</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">East</span><span class="p">)}],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">onPort</span><span class="p">):</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">triple_add</span><span class="p">((</span><span class="n">upstream</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">hasConnection</span><span class="p">,</span> <span class="n">connection</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">upstream</span><span class="p">,</span> <span class="n">downstream</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">class_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Create `instance` with all of `data` in one validated write."""</span>
+    <span class="n">ogm</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="o">=</span><span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">([[</span><span class="n">IRI</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]),</span>
+        <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="possession_triples">
+<a class="viewcode-back" href="../../../reference/uc2/seed.html#jms_kapps.uc2.seed.possession_triples">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">possession_triples</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">possessor</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Triple</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The triples that make `possessor` the possessor of `box`, for the write that needs them.</span>
+
+<span class="sd">    The box points at the possessor's one possession state, as the middleware's handover points</span>
+<span class="sd">    it. The state is found by a query, as the middleware finds it, never from its IRI. A possessor</span>
+<span class="sd">    that has a state keeps it, and its link is not written again. A possessor without one gets</span>
+<span class="sd">    `&lt;possessor&gt;_possession`, the IRI the middleware gives a state it creates, typed</span>
+<span class="sd">    `cfc:PossessionState` and linked from the possessor, so the state comes into being with its</span>
+<span class="sd">    first box.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If `possessor` has more than one possession state, as the middleware raises:</span>
+<span class="sd">            a resource has one.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"SELECT DISTINCT ?state WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">possessor</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt; ?state </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"state"</span><span class="p">])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">possessor</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="si">}</span><span class="s2"> possession states (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="si">}</span><span class="s2">); "</span>
+            <span class="s2">"a Resource has one"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">states</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[(</span><span class="n">box</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="p">,</span> <span class="n">IRI</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="mi">0</span><span class="p">]))]</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">mint_possession_state_iri</span><span class="p">(</span><span class="n">possessor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">possessor</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="p">,</span> <span class="n">state</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">IRI</span><span class="p">(</span><span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">),</span> <span class="n">CFC</span><span class="o">.</span><span class="n">PossessionState</span><span class="p">),</span>
+        <span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="p">,</span> <span class="n">state</span><span class="p">),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="place_box">
+<a class="viewcode-back" href="../../../reference/uc2/seed.html#jms_kapps.uc2.seed.place_box">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">place_box</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">on</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Create `box` in the possession of module `on`, with its transport running from `origin` to</span>
+<span class="sd">    `destination` and assigned to `on`, and return the transport.</span>
+
+<span class="sd">    The seed chooses the transport's IRI: `transport` if given, and otherwise the one the</span>
+<span class="sd">    WarehouseManagementSystem's opening gives a transport. The box links to its transport</span>
+<span class="sd">    (`fc:hasTransport`) and the transport to its box (`fc:hasBox`), both written, as the opening</span>
+<span class="sd">    writes them. The box points at the module's one possession state (see</span>
+<span class="sd">    `possession_triples`). The transport names no capability: a module's BoxTransportCapability</span>
+<span class="sd">    comes into the graph when the module registers its BoxTransportWorkflow, after the seed.</span>
+
+<span class="sd">    The box, its possession and its transport arrive in one write, because each needs the others:</span>
+<span class="sd">    a box on a module must have a transport, and the box of a running transport must be on exactly</span>
+<span class="sd">    one module. A seed is demonstration setup, made before any participant starts, so it writes</span>
+<span class="sd">    directly and not through a context manager of the middleware.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the box or its transport is in the graph already, or the module has more</span>
+<span class="sd">            than one possession state.</span>
+<span class="sd">    """</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">transport</span> <span class="k">if</span> <span class="n">transport</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">transport_iri</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+    <span class="n">placed</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">triples_add</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="o">*</span><span class="n">possession_triples</span><span class="p">(</span><span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">on</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">Box</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">hasTransport</span><span class="p">,</span> <span class="n">transport</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportOperation</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">hasBox</span><span class="p">,</span> <span class="n">box</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">hasOrigin</span><span class="p">,</span> <span class="n">origin</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">hasDestination</span><span class="p">,</span> <span class="n">destination</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">)),</span>
+            <span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">,</span> <span class="n">on</span><span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">placed</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> or its transport is in the graph already"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">transport</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc1.learner &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc1/learner';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc1.learner</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc1.learner</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The learner of use case 1: it refines a threshold of each Screw type from the graph's history.</span>
+
+<span class="sd">The learner is a participant of its own, with its own resource and its own middleware instance</span>
+<span class="sd">(`learner_process`). No notification starts it: it runs every so often, as the KAPPS paper's</span>
+<span class="sd">learner "periodically queries" the graph. Each run:</span>
+
+<span class="sd">1. finds, in one query, the unscrewing operations that are `done` with the outcome ScrewIntact and</span>
+<span class="sd">   that it has not learned from yet, each with its Screw type and its time-series reference;</span>
+<span class="sd">2. reads the curves of each through that operation's own reference, one attempt per read, so no</span>
+<span class="sd">   read spans more than one attempt;</span>
+<span class="sd">3. derives the maximum dynamic torque of each Screw type with the placeholder rule below;</span>
+<span class="sd">4. commits each value that changed to its Screw type, all of them in one `mw.commit()`. It never</span>
+<span class="sd">   writes to a Screw, and never a placement value: a Screw's own value overrides its type's for</span>
+<span class="sd">   that Screw alone, and a placement value depends on where the screw is, not on its type.</span>
+
+<span class="sd">The anomaly detector reads the effective values of a Screw afresh at each attempt, through</span>
+<span class="sd">`effective_values.read_effective_values`, which keeps nothing between two calls. So its next</span>
+<span class="sd">decision, and the decision snapshot that it records, hold the new value.</span>
+
+<span class="sd">**The rule is a placeholder, not a regression.** The new maximum dynamic torque of a Screw type is</span>
+<span class="sd">`PLACEHOLDER_MARGIN` (20 %) above the highest dynamic torque that the type's ScrewIntact attempts</span>
+<span class="sd">recorded in their Disassembly phase. It shows the loop: a threshold changes from the graph's own</span>
+<span class="sd">history, and the next decision uses it. A real regression, and the other thresholds, are left for</span>
+<span class="sd">the use case's second milestone. The first value that the learner derives for a Screw type replaces</span>
+<span class="sd">whatever the type held, a seeded mock value too, higher or lower. After that the value only rises.</span>
+
+<span class="sd">**It learns from the decision tree's own outcomes.** An outcome is what the detector observed, not</span>
+<span class="sd">a confirmed Screw condition. So the rule takes a ScrewIntact attempt for an intact screw, and a</span>
+<span class="sd">wrong threshold can reinforce itself. Where a confirmed Screw condition comes from is left for the</span>
+<span class="sd">second milestone too.</span>
+
+<span class="sd">**What it remembers** is in memory: the operations it has learned from, and the value it derived</span>
+<span class="sd">last for each Screw type. A learner that starts again learns from every completed operation once</span>
+<span class="sd">more, and arrives at the same values, because the rule takes the highest torque of all of them.</span>
+<span class="sd">Each run also tells the learner's memory (`learner_memory`) how it ended, each value it changed</span>
+<span class="sd">with the value the Screw type held before, and what went wrong, for its dashboard box. The value</span>
+<span class="sd">held before comes from the run's one query, so the box reads no store.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">SemanticMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">bindings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.frame</span><span class="w"> </span><span class="kn">import</span> <span class="n">UNSCREWING_TORQUE</span><span class="p">,</span> <span class="n">Frame</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.learner_memory</span><span class="w"> </span><span class="kn">import</span> <span class="n">Change</span><span class="p">,</span> <span class="n">LearnerMemory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.timeseries</span><span class="w"> </span><span class="kn">import</span> <span class="n">FrameNotFound</span><span class="p">,</span> <span class="n">FrameReader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">JMS</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># PLACEHOLDER: how far above the highest dynamic torque of a ScrewIntact attempt the rule sets the</span>
+<span class="c1"># maximum. An arbitrary number, not a measured or fitted one.</span>
+<span class="n">PLACEHOLDER_MARGIN</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+<span class="c1"># The one threshold that the placeholder rule derives.</span>
+<span class="n">LEARNED_THRESHOLD</span> <span class="o">=</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxDynamicTorque</span>
+
+
+<div class="viewcode-block" id="placeholder_max_dynamic_torque">
+<a class="viewcode-back" href="../../../reference/uc1/learner.html#jms_kapps.uc1.learner.placeholder_max_dynamic_torque">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">placeholder_max_dynamic_torque</span><span class="p">(</span><span class="n">intact</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Frame</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""PLACEHOLDER RULE: a maximum dynamic torque `PLACEHOLDER_MARGIN` above the highest dynamic</span>
+<span class="sd">    torque of `intact`, the frames of ScrewIntact attempts.</span>
+
+<span class="sd">    The dynamic torque is the unscrewing torque of a Disassembly sample, counted by its magnitude,</span>
+<span class="sd">    as the decision tree counts it. None when no frame holds a Disassembly sample with a torque.</span>
+<span class="sd">    """</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">torque</span> <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">intact</span> <span class="k">for</span> <span class="n">torque</span> <span class="ow">in</span> <span class="n">_dynamic_torques</span><span class="p">(</span><span class="n">frame</span><span class="p">)),</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">highest</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">highest</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">PLACEHOLDER_MARGIN</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_dynamic_torques</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The magnitude of the unscrewing torque at each Disassembly sample of `frame`, and none for a</span>
+<span class="sd">    frame that recorded no unscrewing torque."""</span>
+    <span class="n">torques</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">signals</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">UNSCREWING_TORQUE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">torques</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="nb">abs</span><span class="p">(</span><span class="n">torque</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">torque</span><span class="p">,</span> <span class="n">phase</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">torques</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">phases</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">phase</span> <span class="o">==</span> <span class="s2">"Disassembly"</span>
+    <span class="p">]</span>
+
+
+<div class="viewcode-block" id="IntactAttempt">
+<a class="viewcode-back" href="../../../reference/uc1/learner.html#jms_kapps.uc1.learner.IntactAttempt">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntactAttempt</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A completed unscrewing operation with the outcome ScrewIntact, as the learner reads it.</span>
+
+<span class="sd">    `held` is the value of the learned threshold that its Screw type holds, or None when it holds</span>
+<span class="sd">    none. The learner keeps it only to show what a commit replaced. `screw` is the Screw the</span>
+<span class="sd">    operation unscrewed; the learner names it in its log line.</span>
+<span class="sd">    """</span>
+
+    <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">reference</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">held</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="intact_attempts">
+<a class="viewcode-back" href="../../../reference/uc1/learner.html#jms_kapps.uc1.learner.intact_attempts">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">intact_attempts</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IntactAttempt</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Every unscrewing operation that is `done` with the outcome ScrewIntact, in one query.</span>
+
+<span class="sd">    An operation counts once it is `done`, which the detector commits together with the outcome.</span>
+<span class="sd">    One whose Screw names no Screw type, or that holds no reference, is not found. The same query</span>
+<span class="sd">    reads the value of the learned threshold that each Screw type holds, one value of it, so that</span>
+<span class="sd">    a Screw type with two values gives no second row.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">        SELECT ?operation ?screw ?type ?reference (SAMPLE(?value) AS ?held) WHERE </span><span class="se">{{</span>
+<span class="s2">            ?operation a &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">UnscrewingOperation</span><span class="si">}</span><span class="s2">&gt; ;</span>
+<span class="s2">                &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">operationStatus</span><span class="si">}</span><span class="s2">&gt; "</span><span class="si">{</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="si">}</span><span class="s2">" ;</span>
+<span class="s2">                &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasOutcome</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">ScrewIntact</span><span class="si">}</span><span class="s2">&gt; ;</span>
+<span class="s2">                &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasScrew</span><span class="si">}</span><span class="s2">&gt; ?screw ;</span>
+<span class="s2">                &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasTimeSeriesReference</span><span class="si">}</span><span class="s2">&gt; ?reference .</span>
+<span class="s2">            ?screw &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewType</span><span class="si">}</span><span class="s2">&gt; ?type .</span>
+<span class="s2">            OPTIONAL </span><span class="se">{{</span><span class="s2"> ?type &lt;</span><span class="si">{</span><span class="n">LEARNED_THRESHOLD</span><span class="si">}</span><span class="s2">&gt; ?value </span><span class="se">}}</span>
+<span class="s2">        </span><span class="se">}}</span>
+<span class="s2">        GROUP BY ?operation ?screw ?type ?reference</span>
+<span class="s2">        """</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">IntactAttempt</span><span class="p">(</span>
+            <span class="n">operation</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">])),</span>
+            <span class="n">screw_type</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"type"</span><span class="p">])),</span>
+            <span class="n">reference</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"reference"</span><span class="p">]),</span>
+            <span class="n">held</span><span class="o">=</span><span class="n">_number</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"held"</span><span class="p">)),</span>
+            <span class="n">screw</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"screw"</span><span class="p">]))</span> <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"screw"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+    <span class="p">]</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`value` as a number, or None when there is none or it is no number. The learner only shows</span>
+<span class="sd">    the value that a Screw type held, so a value that is no number must not stop it."""</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="Learner">
+<a class="viewcode-back" href="../../../reference/uc1/learner.html#jms_kapps.uc1.learner.Learner">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Learner</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Derives the maximum dynamic torque of each Screw type, one run at a time.</span>
+
+<span class="sd">    Runs do not overlap: the process makes one after another.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        middleware: The learner's own middleware instance. A run reads the graph through it, and</span>
+<span class="sd">            commits through it.</span>
+<span class="sd">        frames: Reads an attempt's frame from the time-series store.</span>
+<span class="sd">        memory: Where it keeps what it knows of its own runs, which its dashboard box shows.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">middleware</span><span class="p">:</span> <span class="n">SemanticMiddleware</span><span class="p">,</span>
+        <span class="n">frames</span><span class="p">:</span> <span class="n">FrameReader</span><span class="p">,</span>
+        <span class="n">memory</span><span class="p">:</span> <span class="n">LearnerMemory</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_middleware</span> <span class="o">=</span> <span class="n">middleware</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_frames</span> <span class="o">=</span> <span class="n">frames</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="n">LearnerMemory</span><span class="p">()</span> <span class="k">if</span> <span class="n">memory</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">memory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_learned_from</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_derived</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="Learner.learn">
+<a class="viewcode-back" href="../../../reference/uc1/learner.html#jms_kapps.uc1.learner.Learner.learn">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""One run: learn from the attempts completed since the last run, and commit what changed.</span>
+
+<span class="sd">        An attempt whose curves cannot be read is logged and passed over for good: its reference</span>
+<span class="sd">        names no frame that the time-series store holds, or its rows do not make one frame. Any</span>
+<span class="sd">        other failure ends the run before its commit, remembers nothing of it, and the next run</span>
+<span class="sd">        tries the same attempts again.</span>
+
+<span class="sd">        The run tells the learner's memory that it starts, and how it ended: with how many new</span>
+<span class="sd">        attempts it learned from and each value it changed, old and new, or why it failed, at</span>
+<span class="sd">        which Operation's attempt if at one. It tells it each attempt it passes over too.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            The value committed to each Screw type whose value changed. Empty when none changed,</span>
+<span class="sd">            and then nothing is committed.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            InfluxDBError: If the time-series store refuses a read.</span>
+<span class="sd">            httpx.HTTPError: If the time-series store cannot be reached.</span>
+<span class="sd">            kapps_triplestore_interface.exceptions.TripleStoreInterfaceError: If the triple store</span>
+<span class="sd">                refuses the commit.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">started</span><span class="p">()</span>
+        <span class="c1"># What fails should the run fail now, and at which Operation's attempt, for the memory.</span>
+        <span class="n">what_fails</span><span class="p">,</span> <span class="n">operation</span> <span class="o">=</span> <span class="s2">"The query for the completed attempts failed"</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="n">intact_attempts</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_middleware</span><span class="o">.</span><span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="p">)</span>
+            <span class="n">new</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">attempt</span>
+                <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="n">found</span>
+                <span class="k">if</span> <span class="n">attempt</span><span class="o">.</span><span class="n">operation</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_learned_from</span>
+            <span class="p">]</span>
+            <span class="n">intact</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Frame</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="c1"># The new attempts of each Screw type, for the log line of a change.</span>
+            <span class="n">learned_from</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">IntactAttempt</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">passed_over</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="n">new</span><span class="p">:</span>
+                <span class="n">what_fails</span> <span class="o">=</span> <span class="s2">"Reading its curves from the time-series store failed"</span>
+                <span class="n">operation</span> <span class="o">=</span> <span class="n">attempt</span><span class="o">.</span><span class="n">operation</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frames</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">attempt</span><span class="o">.</span><span class="n">reference</span><span class="p">)</span>
+                <span class="k">except</span> <span class="p">(</span><span class="n">FrameNotFound</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">unreadable</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="s2">"The learner passes over </span><span class="si">%s</span><span class="s2">, whose curves it cannot read: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                        <span class="n">attempt</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                        <span class="n">unreadable</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">cannot_read</span><span class="p">(</span>
+                        <span class="n">attempt</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span>
+                        <span class="s2">"Its curves cannot be read, so the learner passes over it: "</span>
+                        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_reason</span><span class="p">(</span><span class="n">unreadable</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">passed_over</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="k">continue</span>
+                <span class="n">intact</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">attempt</span><span class="o">.</span><span class="n">screw_type</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+                <span class="n">learned_from</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">attempt</span><span class="o">.</span><span class="n">screw_type</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">attempt</span><span class="p">)</span>
+
+            <span class="n">what_fails</span> <span class="o">=</span> <span class="s2">"Deriving the values with the placeholder rule failed"</span>
+            <span class="n">operation</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">changed</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">frames</span> <span class="ow">in</span> <span class="n">intact</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">derived</span> <span class="o">=</span> <span class="n">placeholder_max_dynamic_torque</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">derived</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="c1"># The rule takes the highest torque, so its value over every attempt so far is the</span>
+                <span class="c1"># higher of the value derived last and the value over the new attempts.</span>
+                <span class="n">last</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_derived</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">screw_type</span><span class="p">)</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">derived</span> <span class="k">if</span> <span class="n">last</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">derived</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="n">last</span><span class="p">:</span>
+                    <span class="n">changed</span><span class="p">[</span><span class="n">screw_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+            <span class="k">if</span> <span class="n">changed</span><span class="p">:</span>
+                <span class="n">what_fails</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"The commit of </span><span class="si">{</span><span class="n">LEARNED_THRESHOLD</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> to the Screw type "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">screw_type</span><span class="o">.</span><span class="n">fragment</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">screw_type</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">changed</span><span class="p">)</span><span class="si">}</span><span class="s2"> failed"</span>
+                <span class="p">)</span>
+                <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_middleware</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+                    <span class="n">entry</span><span class="o">=</span><span class="p">[</span>
+                        <span class="n">Update</span><span class="p">(</span>
+                            <span class="n">instance_iri</span><span class="o">=</span><span class="n">screw_type</span><span class="p">,</span>
+                            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">LEARNED_THRESHOLD</span><span class="p">):</span> <span class="p">[</span><span class="n">value</span><span class="p">]},</span>
+                        <span class="p">)</span>
+                        <span class="k">for</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">changed</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                    <span class="p">]</span>
+                <span class="p">):</span>
+                    <span class="k">pass</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">failed</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">what_fails</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">_reason</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">raise</span>
+
+        <span class="n">committed_at</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">held</span> <span class="o">=</span> <span class="p">{</span><span class="n">attempt</span><span class="o">.</span><span class="n">screw_type</span><span class="p">:</span> <span class="n">attempt</span><span class="o">.</span><span class="n">held</span> <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="n">found</span><span class="p">}</span>
+        <span class="k">for</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">changed</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">attempts</span> <span class="o">=</span> <span class="n">learned_from</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">screw_type</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">"Learner: </span><span class="si">%d</span><span class="s2"> new ScrewIntact attempt(s) of the Screw type </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">. Their highest "</span>
+                <span class="s2">"dynamic torque, </span><span class="si">%d</span><span class="s2"> </span><span class="si">%%</span><span class="s2"> above it (placeholder rule), gives </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%g</span><span class="s2">; </span><span class="si">%s</span><span class="s2"> held </span><span class="si">%s</span><span class="s2"> "</span>
+                <span class="s2">"before. The learner committed the new value, so the next attempt's decision "</span>
+                <span class="s2">"uses it."</span><span class="p">,</span>
+                <span class="nb">len</span><span class="p">(</span><span class="n">attempts</span><span class="p">),</span>
+                <span class="n">screw_type</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">_attempts_text</span><span class="p">(</span><span class="n">attempts</span><span class="p">),</span>
+                <span class="nb">round</span><span class="p">(</span><span class="n">PLACEHOLDER_MARGIN</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span>
+                <span class="n">LEARNED_THRESHOLD</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">value</span><span class="p">,</span>
+                <span class="n">screw_type</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="s2">"no value"</span> <span class="k">if</span> <span class="n">held</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">screw_type</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">held</span><span class="p">[</span><span class="n">screw_type</span><span class="p">]</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">attempts</span> <span class="ow">in</span> <span class="n">learned_from</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">screw_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">changed</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                    <span class="s2">"Learner: </span><span class="si">%d</span><span class="s2"> new ScrewIntact attempt(s) of the Screw type </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">. They give "</span>
+                    <span class="s2">"no higher </span><span class="si">%s</span><span class="s2">, so the learner commits nothing"</span><span class="p">,</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">attempts</span><span class="p">),</span>
+                    <span class="n">screw_type</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                    <span class="n">_attempts_text</span><span class="p">(</span><span class="n">attempts</span><span class="p">),</span>
+                    <span class="n">LEARNED_THRESHOLD</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="p">)</span>
+        <span class="c1"># A learner that starts again commits the value a Screw type holds once more. That is</span>
+        <span class="c1"># no change, and the memory keeps none.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">ran</span><span class="p">(</span>
+            <span class="n">learned</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">frames</span><span class="p">)</span> <span class="k">for</span> <span class="n">frames</span> <span class="ow">in</span> <span class="n">intact</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+            <span class="n">passed_over</span><span class="o">=</span><span class="n">passed_over</span><span class="p">,</span>
+            <span class="n">changes</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">Change</span><span class="p">(</span>
+                    <span class="n">committed_at</span><span class="p">,</span>
+                    <span class="n">screw_type</span><span class="p">,</span>
+                    <span class="n">LEARNED_THRESHOLD</span><span class="p">,</span>
+                    <span class="n">held</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">screw_type</span><span class="p">),</span>
+                    <span class="n">value</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">changed</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">_same</span><span class="p">(</span><span class="n">held</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">screw_type</span><span class="p">),</span> <span class="n">value</span><span class="p">)</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_derived</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">changed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_learned_from</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">attempt</span><span class="o">.</span><span class="n">operation</span> <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="n">new</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">changed</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_same</span><span class="p">(</span><span class="n">old</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">new</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether a commit of `new` over `old` leaves the value as it was."""</span>
+    <span class="k">return</span> <span class="n">old</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">new</span><span class="p">)</span>
+
+
+<span class="c1"># How much of an error's message the memory keeps. A store that answers with a page of HTML would</span>
+<span class="c1"># otherwise fill the dashboard box; the log keeps the whole message.</span>
+<span class="n">_KEPT_REASON</span> <span class="o">=</span> <span class="mi">500</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_reason</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why `error` was raised, in a line a reader of the dashboard can take in."""</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">reason</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">_KEPT_REASON</span><span class="p">:</span>
+        <span class="n">reason</span> <span class="o">=</span> <span class="n">reason</span><span class="p">[:</span><span class="n">_KEPT_REASON</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" … (the log holds the whole message)"</span>
+    <span class="k">return</span> <span class="n">reason</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_attempts_text</span><span class="p">(</span><span class="n">attempts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">IntactAttempt</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The Screws of `attempts`, each with its operation: `Screw1 (UnscrewingOperation_1a2b)`."""</span>
+    <span class="k">return</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">attempt</span><span class="o">.</span><span class="n">screw</span><span class="o">.</span><span class="n">fragment</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">attempt</span><span class="o">.</span><span class="n">screw</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'a Screw'</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="n">attempt</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="k">for</span> <span class="n">attempt</span> <span class="ow">in</span> <span class="n">attempts</span>
+    <span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

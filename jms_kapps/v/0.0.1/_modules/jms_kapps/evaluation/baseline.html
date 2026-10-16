@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.baseline &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/baseline';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.baseline</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.baseline</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""`jms-eval-baseline`: the store-only baseline of one recorded UC2 run, on a repository of its own</span>
+<span class="sd">of the configured GraphDB, with its record. Iteration one of the measurement harness.</span>
+
+<span class="sd">    jms-eval-baseline &lt;recorded run&gt; [--runs &lt;folder&gt;] [--factor N]</span>
+<span class="sd">                      [--heavy-run-approval &lt;approval file&gt; --spec &lt;spec.toml&gt;]</span>
+
+<span class="sd">The baseline sends the store requests of a recorded run, whose record keeps their text (the</span>
+<span class="sd">observation, part 2 of the harness), straight to the store: the same mix of writes and queries,</span>
+<span class="sd">without KSM, the object-graph mapper or the triple-store interface on the way, at the same store</span>
+<span class="sd">size, beside the network's round trip from the client host. It is a measurement store client, as</span>
+<span class="sd">the seed is, and no participant: it starts none. Its numbers stand beside the UC2 run's (part 3).</span>
+
+<span class="sd">A baseline run goes through these steps, in order, and records each action it takes with its time:</span>
+
+<span class="sd">1. **Before anything** (`read_recorded_run`, `run_baseline`). It reads the recorded run's record,</span>
+<span class="sd">   and refuses a run of the run kind `uc2-unwrapped`, which has no request text, any run kind but</span>
+<span class="sd">   `uc2`, and a run that did not complete, which has no measures. It resolves the recorded run's</span>
+<span class="sd">   configuration, refuses a prefill file whose digest is not the recorded one, and, if the</span>
+<span class="sd">   recorded run was heavy, or the factor is above 1, refuses to start unless an approval covers it</span>
+<span class="sd">   (`approval`, jms_kapps 96): the option `--heavy-run-approval` gives the approval file and</span>
+<span class="sd">   `--spec` the spec, and the baseline runs only if the record of the replayed run holds a</span>
+<span class="sd">   configuration key (a run made from a spec records it) that the approved spec lists, in the</span>
+<span class="sd">   approval's period. A</span>
+<span class="sd">   replayed run whose record holds no key is refused. A baseline sends the recorded load at its</span>
+<span class="sd">   recorded rate, so it is as heavy as the run it replays, and at a factor above 1 heavier. The</span>
+<span class="sd">   record keeps the whole approval.</span>
+<span class="sd">2. **The facts before the run**, as part 1 keeps them: the client's facts with the network's round</span>
+<span class="sd">   trip, the software's versions and commits, and the server's version, repositories and</span>
+<span class="sd">   resource view (`record`, `store`).</span>
+<span class="sd">3. **The store**, through part 1's store of a run: a repository of its own, `eval-` plus the run</span>
+<span class="sd">   id, with the recorded run's SHACL setting (`store.create_run_repository`); then the reset and</span>
+<span class="sd">   the seed of the recorded run's topology, its prefill file and its history collection, through</span>
+<span class="sd">   the bench graph (`bench.GraphDBBenchGraph`, `seed`). This preparation uses the triple-store</span>
+<span class="sd">   interface, and none of its requests is measured.</span>
+<span class="sd">4. **The replay** (`replay`), which logs in with its own credentials and replays no recorded</span>
+<span class="sd">   login: first the requests recorded before the window, in their order, each after the answer</span>
+<span class="sd">   to the one before, not measured; then the server's views, and the window's requests, each at</span>
+<span class="sd">   its recorded offset from the window's start, without waiting for an answer, until the</span>
+<span class="sd">   window's end. The requests recorded after the window's end are not sent. Then it waits until</span>
+<span class="sd">   each request of the window has its answer, or its error (the drain), and reads the server's</span>
+<span class="sd">   views again. The measured window lasts as long as the recorded one.</span>
+
+<span class="sd">   **Compressed in time** (`--factor`, jms_kapps 98, interim names, jms_kapps 83). With a factor</span>
+<span class="sd">   above 1 the window's requests keep their order, and the offset of each, so each gap between</span>
+<span class="sd">   two of them and the window itself, is divided by the factor: the same requests in a shorter</span>
+<span class="sd">   time (`replay_levels`). A factor of 1, the default, is the replay as described above. Every</span>
+<span class="sd">   factor above 1 is a heavy run and starts only under an approval that covers the replayed</span>
+<span class="sd">   run's configuration (below). The record of a baseline holds `replay_level`: the factor, the</span>
+<span class="sd">   offered and the achieved rate per minute, the refusals and the timeouts, and whether the level</span>
+<span class="sd">   is broken, with the signals.</span>
+<span class="sd">5. **The end, also after a failure or a stop signal.** It deletes its repository and no other</span>
+<span class="sd">   (`bench.delete_run_repository`), and writes the record (`record.write_record`): the run kind</span>
+<span class="sd">   `baseline`, the run it replays, and, for a completed run, its measures in the form of part</span>
+<span class="sd">   2's (`observation`): every request it sent, those before the window too, as part 2 keeps</span>
+<span class="sd">   them, so that a refusal among them shows; the window's alone count, each with its offset and</span>
+<span class="sd">   how late it left. As for a UC2 run, by Sören's decision of 2026-10-14 as the product owner of</span>
+<span class="sd">   the tests, the deletion is a fact of its own in the record (`repository_deletion`), and the</span>
+<span class="sd">   outcome says nothing of it: a baseline or a replay level whose replay completed is</span>
+<span class="sd">   `completed`, with its measures and its level, also where the store did not delete its</span>
+<span class="sd">   repository; the last line names such a repository (changed on 2026-10-14, jms_kapps 116:</span>
+<span class="sd">   until then "; the repository was not deleted" was added to the outcome, and such a baseline</span>
+<span class="sd">   did not count).</span>
+
+<span class="sd">**The run limit** (added on 2026-10-13, jms_kapps 106; interim names, jms_kapps 83). A baseline</span>
+<span class="sd">run, at every factor, has the run limit of a UC2 run (`run_limit`): 30 minutes by default, a run</span>
+<span class="sd">setting that the record keeps as `run_settings.run_limit_seconds`. The time counts from the facts</span>
+<span class="sd">of step 2 to the start of step 5. A baseline older than its limit ends through step 5, as a stop</span>
+<span class="sd">signal ends it, and its outcome is `failed (over time)`, with the limit and the step at which the</span>
+<span class="sd">limit came: the facts before the run, the store or the replay.</span>
+
+<span class="sd">**Where KSM, the object-graph mapper and the interface are.** The replay's own module (`replay`)</span>
+<span class="sd">sends every replayed request with its own HTTP client, and imports none of them. This module</span>
+<span class="sd">prepares the store through the bench graph, which uses the interface, as the ticket allows, and</span>
+<span class="sd">reads the store's answers with part 2's readers (`store_requests`), so that a baseline's request</span>
+<span class="sd">reads as a UC2 run's does; they read text only, and send nothing.</span>
+
+<span class="sd">Every request a replay sends goes to the baseline's own repository, whatever repository the</span>
+<span class="sd">recording names, through part 1's name guard. A recorded request's media type is not in its</span>
+<span class="sd">record, so the baseline sends each as the triple-store interface sends it: a POST to a</span>
+<span class="sd">repository as a SPARQL query, and a POST to its statements as a SPARQL update, each accepting</span>
+<span class="sd">SPARQL's JSON results; any other request goes with its method and its text alone. A UC2 run's</span>
+<span class="sd">participants reach the store with these two and their login only.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">store_requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.approval</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">APPROVAL_FORM</span><span class="p">,</span>
+    <span class="n">Covered</span><span class="p">,</span>
+    <span class="n">HeavyRunRefused</span><span class="p">,</span>
+    <span class="n">cover</span><span class="p">,</span>
+    <span class="n">covered_run</span><span class="p">,</span>
+    <span class="n">load_approval</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.bench</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">INTERRUPTED</span><span class="p">,</span>
+    <span class="n">RETRY_SECONDS</span><span class="p">,</span>
+    <span class="n">STATEMENTS_AFTER_THE_PARTICIPANTS</span><span class="p">,</span>
+    <span class="n">STATEMENTS_BEFORE_THE_PARTICIPANTS</span><span class="p">,</span>
+    <span class="n">TRANSIT_SECONDS</span><span class="p">,</span>
+    <span class="n">Actions</span><span class="p">,</span>
+    <span class="n">Clock</span><span class="p">,</span>
+    <span class="n">SystemClock</span><span class="p">,</span>
+    <span class="n">delete_run_repository</span><span class="p">,</span>
+    <span class="n">new_run_id</span><span class="p">,</span>
+    <span class="n">outcome_line</span><span class="p">,</span>
+    <span class="n">read_statement_counts</span><span class="p">,</span>
+    <span class="n">server_facts_before_the_run</span><span class="p">,</span>
+    <span class="n">server_views</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.client_load</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CLIENT_LOAD_INTERVAL_SECONDS</span><span class="p">,</span>
+    <span class="n">ClientLoadSampler</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Configuration</span><span class="p">,</span>
+    <span class="n">ConfigurationRefused</span><span class="p">,</span>
+    <span class="n">resolve</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.observation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Window</span><span class="p">,</span> <span class="n">request_measures</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.record</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ITERATION</span><span class="p">,</span>
+    <span class="n">RUN_KIND</span><span class="p">,</span>
+    <span class="n">UNWRAPPED_RUN_KIND</span><span class="p">,</span>
+    <span class="n">client_facts</span><span class="p">,</span>
+    <span class="n">prefill_facts</span><span class="p">,</span>
+    <span class="n">software_facts</span><span class="p">,</span>
+    <span class="n">write_record</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.replay</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">REQUEST_TIMEOUT_SECONDS</span><span class="p">,</span>
+    <span class="n">Replay</span><span class="p">,</span>
+    <span class="n">Request</span><span class="p">,</span>
+    <span class="n">Sent</span><span class="p">,</span>
+    <span class="n">missing_store_variables</span><span class="p">,</span>
+    <span class="n">store_login</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.replay_levels</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RECORD_KEY</span><span class="p">,</span>
+    <span class="n">compressed</span><span class="p">,</span>
+    <span class="n">is_heavy</span><span class="p">,</span>
+    <span class="n">level_record</span><span class="p">,</span>
+    <span class="n">why_heavy</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.run_limit</span><span class="w"> </span><span class="kn">import</span> <span class="n">RUN_LIMIT_SECONDS</span><span class="p">,</span> <span class="n">RunLimit</span><span class="p">,</span> <span class="n">run_and_end</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.run_uc2</span><span class="w"> </span><span class="kn">import</span> <span class="n">graph_for</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.seed</span><span class="w"> </span><span class="kn">import</span> <span class="n">PREFILL_TRANSACTION_STATEMENTS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">valid_factor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.store</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">GraphDBServer</span><span class="p">,</span>
+    <span class="n">create_run_repository</span><span class="p">,</span>
+    <span class="n">public_url</span><span class="p">,</span>
+    <span class="n">repository_name</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.watch</span><span class="w"> </span><span class="kn">import</span> <span class="n">WATCH_INTERVAL_SECONDS</span><span class="p">,</span> <span class="n">ServerWatch</span><span class="p">,</span> <span class="n">WatchedClock</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.run_core</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunGraph</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.strategies</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModuleStrategy</span><span class="p">,</span> <span class="n">WmsStrategy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_topology</span>
+
+<span class="n">PROGRAM</span> <span class="o">=</span> <span class="s2">"jms-eval-baseline"</span>
+
+<span class="c1"># The run kind of a baseline's record.</span>
+<span class="n">BASELINE_RUN_KIND</span> <span class="o">=</span> <span class="s2">"baseline"</span>
+
+<span class="c1"># What a replayed query or update accepts as its answer, as the triple-store interface asks.</span>
+<span class="n">SPARQL_RESULTS</span> <span class="o">=</span> <span class="s2">"application/sparql-results+json"</span>
+
+
+<div class="viewcode-block" id="BaselineRefused">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.BaselineRefused">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BaselineRefused</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A recorded run that a baseline cannot replay: why, for a person to read. Nothing reached a</span>
+<span class="sd">    store."""</span></div>
+
+
+
+<div class="viewcode-block" id="RecordedRequest">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.RecordedRequest">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RecordedRequest</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One recorded store request that a baseline sends again: as the record holds it, and as the</span>
+<span class="sd">    replay sends it."""</span>
+
+    <span class="n">recorded</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="n">request</span><span class="p">:</span> <span class="n">Request</span></div>
+
+
+
+<div class="viewcode-block" id="RecordedRun">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.RecordedRun">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RecordedRun</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A recorded UC2 run, read and checked, ready to replay.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        path: Its record.</span>
+<span class="sd">        record: The record, as written.</span>
+<span class="sd">        configuration: Its configuration, resolved.</span>
+<span class="sd">        prefill: The facts of its prefill file, as a record holds them, or None for a run</span>
+<span class="sd">            without one (`record.prefill_facts`).</span>
+<span class="sd">        before: Its requests recorded before the window, logins left out, in their order.</span>
+<span class="sd">        window: Its requests recorded in the window, logins left out, each with its offset.</span>
+<span class="sd">        logins: How many recorded logins are left out.</span>
+<span class="sd">        after: How many requests recorded after the window's end are left out.</span>
+<span class="sd">    """</span>
+
+    <span class="n">path</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span>
+    <span class="n">prefill</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">before</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">RecordedRequest</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">window</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">RecordedRequest</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">logins</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">after</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">window_seconds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""How long the recorded window lasted, in seconds."""</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">_recorded_window</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="read_recorded_run">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.read_recorded_run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_recorded_run</span><span class="p">(</span>
+    <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">module_strategies</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModuleStrategy</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">wms_strategies</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">WmsStrategy</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RecordedRun</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The recorded run at `path`, its folder or its `record.json`, read and checked.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        BaselineRefused: If the record cannot be read; if its run kind is `uc2-unwrapped`, which</span>
+<span class="sd">            has no request text, or anything but `uc2`; if the run did not complete, so that its</span>
+<span class="sd">            record has no store requests; or if its prefill file is not the one the run loaded.</span>
+<span class="sd">        ConfigurationRefused: If its configuration does not resolve, as where a file it names is</span>
+<span class="sd">            gone (`configuration.resolve`).</span>
+<span class="sd">    """</span>
+    <span class="n">record_path</span> <span class="o">=</span> <span class="n">path</span> <span class="o">/</span> <span class="s2">"record.json"</span> <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="k">else</span> <span class="n">path</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">record_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the record </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">record_path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> cannot be read: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">record_path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> holds no record of a run"</span><span class="p">)</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_kind"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">UNWRAPPED_RUN_KIND</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the run </span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'run_id'</span><span class="p">)</span><span class="si">}</span><span class="s2"> has the run kind </span><span class="si">{</span><span class="n">UNWRAPPED_RUN_KIND</span><span class="si">}</span><span class="s2">: it ran "</span>
+            <span class="s2">"without the wrapper, so its record holds no text of its store requests to send "</span>
+            <span class="s2">"again. A baseline replays a run made with wrapper = true"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">!=</span> <span class="n">RUN_KIND</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"a baseline replays a run of the run kind </span><span class="si">{</span><span class="n">RUN_KIND</span><span class="si">}</span><span class="s2">, and "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">record_path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> has the run kind </span><span class="si">{</span><span class="n">kind</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">measures</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"measures"</span><span class="p">)</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests"</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">measures</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"completed"</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">requests</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the run </span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'run_id'</span><span class="p">)</span><span class="si">}</span><span class="s2"> did not complete (</span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'outcome'</span><span class="p">)</span><span class="si">}</span><span class="s2">), so "</span>
+            <span class="s2">"its record has no store requests to send again"</span>
+        <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">]))</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="n">_recorded_window</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the record </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">record_path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> has no configuration or no window to replay: "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="n">configuration</span> <span class="o">=</span> <span class="n">resolve</span><span class="p">(</span>
+        <span class="n">_with_the_run_settings_of_the_before_series</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">record</span><span class="p">),</span>
+        <span class="n">base</span><span class="o">=</span><span class="n">record_path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span>
+        <span class="n">module_strategies</span><span class="o">=</span><span class="n">module_strategies</span><span class="p">,</span>
+        <span class="n">wms_strategies</span><span class="o">=</span><span class="n">wms_strategies</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">prefill</span> <span class="o">=</span> <span class="n">_checked_prefill</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
+    <span class="n">before</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">RecordedRequest</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">window</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">RecordedRequest</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">logins</span> <span class="o">=</span> <span class="n">after</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">recorded</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">requests</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">request</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"at"</span><span class="p">))):</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">)</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">LOGIN</span>
+            <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"path"</span><span class="p">))</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"rest/login"</span>
+        <span class="p">):</span>
+            <span class="n">logins</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">at</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">recorded</span><span class="p">[</span><span class="s2">"at"</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">at</span> <span class="o">&gt;=</span> <span class="n">end</span><span class="p">:</span>
+            <span class="n">after</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">at</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">:</span>
+            <span class="n">before</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_recorded_request</span><span class="p">(</span><span class="n">recorded</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="n">at</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+            <span class="n">window</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_recorded_request</span><span class="p">(</span><span class="n">recorded</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">RecordedRun</span><span class="p">(</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">record_path</span><span class="p">,</span>
+        <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span>
+        <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">,</span>
+        <span class="n">prefill</span><span class="o">=</span><span class="n">prefill</span><span class="p">,</span>
+        <span class="n">before</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">before</span><span class="p">),</span>
+        <span class="n">window</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">window</span><span class="p">),</span>
+        <span class="n">logins</span><span class="o">=</span><span class="n">logins</span><span class="p">,</span>
+        <span class="n">after</span><span class="o">=</span><span class="n">after</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_with_the_run_settings_of_the_before_series</span><span class="p">(</span>
+    <span class="n">values</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The configuration `values` of a record, with the transit time and the retry wait it lacks.</span>
+<span class="sd">    A record of the "before" series holds them under `run_settings` and not in its configuration</span>
+<span class="sd">    (jms_kapps 93), so they are read from there, and, where a record says neither, from the values</span>
+<span class="sd">    every run of that series took (`bench.TRANSIT_SECONDS`, `bench.RETRY_SECONDS`). A record of the</span>
+<span class="sd">    "after" series holds them in its configuration, which is left as it is."""</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_settings"</span><span class="p">)</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"transit_seconds"</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"transit_seconds"</span><span class="p">,</span> <span class="n">TRANSIT_SECONDS</span><span class="p">),</span>
+        <span class="s2">"retry_seconds"</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"retry_seconds"</span><span class="p">,</span> <span class="n">RETRY_SECONDS</span><span class="p">),</span>
+        <span class="o">**</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_recorded_window</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">datetime</span><span class="p">,</span> <span class="n">datetime</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The start and the end of the measured window of the recorded run `record`."""</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">"window"</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="s2">"start"</span><span class="p">]),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span>
+        <span class="n">window</span><span class="p">[</span><span class="s2">"end"</span><span class="p">]</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_checked_prefill</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The facts of the recorded run's prefill file, once it is the one the run loaded, by its</span>
+<span class="sd">    digest: a baseline meets the store at the recorded run's size.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        BaselineRefused: If the file's digest is not the one in the record.</span>
+<span class="sd">    """</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="n">prefill_facts</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">prefill</span><span class="p">)</span>
+    <span class="n">recorded</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"prefill"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">found</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">recorded</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">found</span><span class="p">[</span><span class="s2">"sha256"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"sha256"</span><span class="p">)</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the prefill file </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">prefill</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> is not the one the run "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'run_id'</span><span class="p">)</span><span class="si">}</span><span class="s2"> loaded: its digest is </span><span class="si">{</span><span class="n">found</span><span class="p">[</span><span class="s1">'sha256'</span><span class="p">]</span><span class="si">}</span><span class="s2">, the record's "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_recorded_request</span><span class="p">(</span>
+    <span class="n">recorded</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">offset</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RecordedRequest</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`recorded`, a store request as part 2's record holds it, as the replay sends it again."""</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"method"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">method</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">path</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the store request recorded at </span><span class="si">{</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'at'</span><span class="p">)</span><span class="si">}</span><span class="s2"> has no method or no path"</span>
+        <span class="p">)</span>
+    <span class="n">media_type</span><span class="p">,</span> <span class="n">accept</span> <span class="o">=</span> <span class="n">as_the_interface_sends</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">RecordedRequest</span><span class="p">(</span>
+        <span class="n">recorded</span><span class="o">=</span><span class="n">recorded</span><span class="p">,</span>
+        <span class="n">request</span><span class="o">=</span><span class="n">Request</span><span class="p">(</span>
+            <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+            <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+            <span class="n">body</span><span class="o">=</span><span class="n">text</span><span class="p">,</span>
+            <span class="n">media_type</span><span class="o">=</span><span class="n">media_type</span><span class="p">,</span>
+            <span class="n">accept</span><span class="o">=</span><span class="n">accept</span><span class="p">,</span>
+            <span class="n">offset_seconds</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
+            <span class="n">keep_answer</span><span class="o">=</span><span class="n">store_requests</span><span class="o">.</span><span class="n">receipt_asked</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="as_the_interface_sends">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.as_the_interface_sends">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">as_the_interface_sends</span><span class="p">(</span><span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The media type and the accepted answer of the request `method` `path`, as the</span>
+<span class="sd">    triple-store interface sends it: a POST to a repository is a SPARQL query, and a POST to its</span>
+<span class="sd">    statements a SPARQL update, each accepting SPARQL's JSON results. None for anything else."""</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">method</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">"POST"</span> <span class="ow">or</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"repositories"</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">SPARQL_QUERY</span><span class="p">,</span> <span class="n">SPARQL_RESULTS</span>
+    <span class="k">if</span> <span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"statements"</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">SPARQL_UPDATE</span><span class="p">,</span> <span class="n">SPARQL_RESULTS</span>
+    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span></div>
+
+
+
+<span class="c1"># What prepares the baseline's repository: its graph by the repository's name, with the prefill</span>
+<span class="c1"># file it loads and whether its reset sets the shapes (`run_uc2.graph_for`).</span>
+<span class="n">GraphFor</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">RunGraph</span><span class="p">]</span>
+
+<span class="c1"># What sends the requests to the baseline's repository: the replay, by the repository's name and</span>
+<span class="c1"># the clock.</span>
+<span class="n">ReplayFor</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Clock</span><span class="p">],</span> <span class="n">Replay</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="run_baseline">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.run_baseline">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_baseline</span><span class="p">(</span>
+    <span class="n">recorded</span><span class="p">:</span> <span class="n">RecordedRun</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">server</span><span class="p">:</span> <span class="n">GraphDBServer</span><span class="p">,</span>
+    <span class="n">graph_for</span><span class="p">:</span> <span class="n">GraphFor</span><span class="p">,</span>
+    <span class="n">replay_for</span><span class="p">:</span> <span class="n">ReplayFor</span><span class="p">,</span>
+    <span class="n">clock</span><span class="p">:</span> <span class="n">Clock</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">approval</span><span class="p">:</span> <span class="n">Covered</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">sweep</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="nb">print</span><span class="p">,</span>
+    <span class="n">watch_interval_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">WATCH_INTERVAL_SECONDS</span><span class="p">,</span>
+    <span class="n">run_limit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">RUN_LIMIT_SECONDS</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Make one baseline run of `recorded`, on a repository of its own, and write its record.</span>
+<span class="sd">    Returns the record, which is in `record.json` in the run's folder too.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        runs: The folder in which the run makes its own, named by its run id.</span>
+<span class="sd">        server: The configured GraphDB's REST API.</span>
+<span class="sd">        graph_for: Prepares the run's repository: part 1's bench graph.</span>
+<span class="sd">        replay_for: The replay of the run's repository.</span>
+<span class="sd">        clock: The run's time: this machine's if None.</span>
+<span class="sd">        approval: The covered record (`approval.cover`) of a heavy replay, or None where it is</span>
+<span class="sd">            off. A heavy replay takes nothing else: the run checks that it names the recorded</span>
+<span class="sd">            run's configuration, and its period at the run's start. A replay is heavy where the</span>
+<span class="sd">            recorded run was, and at every factor above 1.</span>
+<span class="sd">        factor: The replay's factor (`replay_levels`): the window's offsets and length are</span>
+<span class="sd">            divided by it. 1 is the recorded timeline.</span>
+<span class="sd">        sweep: What the record says of the sweep that made the run (the spec, the level's key, the</span>
+<span class="sd">            factor), or None for a run of the command.</span>
+<span class="sd">        echo: Where the run's actions are printed.</span>
+<span class="sd">        watch_interval_seconds: The seconds from one sample of the server watch to the next: a</span>
+<span class="sd">            run setting (`watch`). The watch runs from the window's start to the drain's end, as</span>
+<span class="sd">            a UC2 run's runs from the load's start to the drain's end.</span>
+<span class="sd">        run_limit_seconds: The limit of the whole run, in seconds of `clock`, as a UC2 run's: a</span>
+<span class="sd">            run setting (`run_limit`). A run older than it ends as failed (over time), at every</span>
+<span class="sd">            factor.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        BaselineRefused: If `factor` is not a number from 1.</span>
+<span class="sd">        HeavyRunRefused: If the recorded run was heavy or the factor is above 1, and `approval` is</span>
+<span class="sd">            not the covered record of its configuration, or its period is not the run's start.</span>
+<span class="sd">            Nothing is created, and no record is written.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_factor</span><span class="p">(</span><span class="n">factor</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">BaselineRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"a replay factor is a number from 1, not </span><span class="si">{</span><span class="n">factor</span><span class="si">!r}</span><span class="s2">: below 1 the replay would be "</span>
+            <span class="s2">"slower than the recorded run"</span>
+        <span class="p">)</span>
+    <span class="n">configuration</span> <span class="o">=</span> <span class="n">recorded</span><span class="o">.</span><span class="n">configuration</span>
+    <span class="n">clock</span> <span class="o">=</span> <span class="n">clock</span> <span class="k">if</span> <span class="n">clock</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">SystemClock</span><span class="p">()</span>
+    <span class="n">approval_record</span> <span class="o">=</span> <span class="n">covered_run</span><span class="p">(</span>
+        <span class="n">configuration</span><span class="o">.</span><span class="n">heavy</span> <span class="ow">or</span> <span class="n">is_heavy</span><span class="p">(</span><span class="n">factor</span><span class="p">),</span>
+        <span class="n">approval</span><span class="p">,</span>
+        <span class="n">configuration</span><span class="p">,</span>
+        <span class="n">now</span><span class="o">=</span><span class="n">clock</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+        <span class="n">why</span><span class="o">=</span><span class="n">why_heavy</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">heavy</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="c1"># The replay's waits take the server watch's samples (`watch`).</span>
+    <span class="n">waiting</span> <span class="o">=</span> <span class="n">WatchedClock</span><span class="p">(</span><span class="n">clock</span><span class="p">)</span>
+    <span class="n">watch</span> <span class="o">=</span> <span class="n">ServerWatch</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">watch_interval_seconds</span><span class="p">,</span> <span class="n">clock</span><span class="o">=</span><span class="n">clock</span><span class="p">)</span>
+    <span class="n">waiting</span><span class="o">.</span><span class="n">watch</span> <span class="o">=</span> <span class="n">watch</span>
+    <span class="n">run_id</span> <span class="o">=</span> <span class="n">new_run_id</span><span class="p">(</span><span class="n">clock</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+    <span class="n">repository</span> <span class="o">=</span> <span class="n">repository_name</span><span class="p">(</span><span class="n">run_id</span><span class="p">)</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">runs</span> <span class="o">/</span> <span class="n">run_id</span>
+    <span class="n">folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">Actions</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span> <span class="n">echo</span><span class="p">)</span>
+    <span class="n">replayed</span> <span class="o">=</span> <span class="n">recorded</span><span class="o">.</span><span class="n">record</span>
+    <span class="n">transit_seconds</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">transit_seconds</span>
+    <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"run_kind"</span><span class="p">:</span> <span class="n">BASELINE_RUN_KIND</span><span class="p">,</span>
+        <span class="s2">"iteration"</span><span class="p">:</span> <span class="n">ITERATION</span><span class="p">,</span>
+        <span class="s2">"run_id"</span><span class="p">:</span> <span class="n">run_id</span><span class="p">,</span>
+        <span class="s2">"repository"</span><span class="p">:</span> <span class="n">repository</span><span class="p">,</span>
+        <span class="s2">"replayed_run"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"run_id"</span><span class="p">:</span> <span class="n">replayed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_id"</span><span class="p">),</span>
+            <span class="s2">"record"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
+            <span class="s2">"repository"</span><span class="p">:</span> <span class="n">replayed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"repository"</span><span class="p">),</span>
+            <span class="s2">"window"</span><span class="p">:</span> <span class="n">replayed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">),</span>
+            <span class="s2">"valid"</span><span class="p">:</span> <span class="n">replayed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"valid"</span><span class="p">),</span>
+        <span class="p">},</span>
+        <span class="s2">"outcome"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"configuration"</span><span class="p">:</span> <span class="n">replayed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"configuration"</span><span class="p">),</span>
+        <span class="s2">"heavy_run_approval"</span><span class="p">:</span> <span class="n">approval_record</span><span class="p">,</span>
+        <span class="s2">"sweep"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">sweep</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">sweep</span><span class="p">),</span>
+        <span class="s2">"actions"</span><span class="p">:</span> <span class="n">actions</span><span class="o">.</span><span class="n">taken</span><span class="p">,</span>
+        <span class="s2">"window"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"run_settings"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"server_watch_interval_seconds"</span><span class="p">:</span> <span class="n">watch_interval_seconds</span><span class="p">,</span>
+            <span class="s2">"transit_seconds"</span><span class="p">:</span> <span class="n">transit_seconds</span><span class="p">,</span>
+            <span class="s2">"prefill_transaction_statements"</span><span class="p">:</span> <span class="n">PREFILL_TRANSACTION_STATEMENTS</span><span class="p">,</span>
+            <span class="s2">"request_timeout_seconds"</span><span class="p">:</span> <span class="n">REQUEST_TIMEOUT_SECONDS</span><span class="p">,</span>
+            <span class="s2">"client_load_interval_seconds"</span><span class="p">:</span> <span class="n">CLIENT_LOAD_INTERVAL_SECONDS</span><span class="p">,</span>
+            <span class="c1"># The limit of the whole run (`run_limit`; jms_kapps 106, interim).</span>
+            <span class="s2">"run_limit_seconds"</span><span class="p">:</span> <span class="n">run_limit_seconds</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">"prefill"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"client"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"client_load"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"software"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"server"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"url"</span><span class="p">:</span> <span class="n">public_url</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">url</span><span class="p">)},</span>
+        <span class="s2">"replay"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">RECORD_KEY</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"measures"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"repository_deletion"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"run began"</span><span class="p">,</span> <span class="n">run_id</span><span class="o">=</span><span class="n">run_id</span><span class="p">,</span> <span class="n">repository</span><span class="o">=</span><span class="n">repository</span><span class="p">)</span>
+    <span class="n">replay</span><span class="p">:</span> <span class="n">Replay</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">client_load</span> <span class="o">=</span> <span class="n">ClientLoadSampler</span><span class="p">(</span><span class="n">clock</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">CLIENT_LOAD_INTERVAL_SECONDS</span><span class="p">)</span>
+    <span class="n">limit</span> <span class="o">=</span> <span class="n">RunLimit</span><span class="p">(</span><span class="n">run_limit_seconds</span><span class="p">,</span> <span class="n">clock</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">steps</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Steps 2 to 4, each marked on the run limit."""</span>
+        <span class="k">nonlocal</span> <span class="n">replay</span>
+        <span class="n">topology</span> <span class="o">=</span> <span class="n">load_topology</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">topology</span><span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">]</span> <span class="o">=</span> <span class="n">recorded</span><span class="o">.</span><span class="n">prefill</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"client"</span><span class="p">]</span> <span class="o">=</span> <span class="n">client_facts</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">round_trip_ms</span><span class="p">())</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"software"</span><span class="p">]</span> <span class="o">=</span> <span class="n">software_facts</span><span class="p">()</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"server"</span><span class="p">]</span> <span class="o">|=</span> <span class="n">server_facts_before_the_run</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+
+        <span class="n">limit</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="s2">"the store"</span><span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"server"</span><span class="p">][</span><span class="s2">"repository_config"</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_run_repository</span><span class="p">(</span>
+            <span class="n">server</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="n">shacl</span><span class="o">=</span><span class="n">configuration</span><span class="o">.</span><span class="n">shacl</span>
+        <span class="p">)</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"repository created"</span><span class="p">,</span> <span class="n">shacl</span><span class="o">=</span><span class="n">configuration</span><span class="o">.</span><span class="n">shacl</span><span class="p">)</span>
+        <span class="n">graph</span> <span class="o">=</span> <span class="n">graph_for</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">prefill</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">shacl</span><span class="p">)</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span>
+            <span class="n">topology</span><span class="p">,</span>
+            <span class="n">transit_seconds</span><span class="p">,</span>
+            <span class="n">collect_history</span><span class="o">=</span><span class="n">configuration</span><span class="o">.</span><span class="n">collect_history</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"store prepared"</span><span class="p">)</span>
+        <span class="n">read_statement_counts</span><span class="p">(</span>
+            <span class="n">record</span><span class="p">,</span> <span class="n">STATEMENTS_BEFORE_THE_PARTICIPANTS</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">actions</span>
+        <span class="p">)</span>
+
+        <span class="n">limit</span><span class="o">.</span><span class="n">at</span><span class="p">(</span><span class="s2">"the replay"</span><span class="p">)</span>
+        <span class="n">replay</span> <span class="o">=</span> <span class="n">replay_for</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">waiting</span><span class="p">)</span>
+        <span class="n">replay</span><span class="o">.</span><span class="n">log_in</span><span class="p">()</span>
+        <span class="n">client_load</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">before</span> <span class="o">=</span> <span class="n">replay</span><span class="o">.</span><span class="n">send_in_order</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">request</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">recorded</span><span class="o">.</span><span class="n">before</span><span class="p">])</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"requests before the window sent"</span><span class="p">,</span> <span class="n">requests</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"server"</span><span class="p">]</span> <span class="o">|=</span> <span class="n">server_views</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="s2">"window_start"</span><span class="p">)</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"window began"</span><span class="p">,</span> <span class="n">requests</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">window</span><span class="p">))</span>
+        <span class="n">watch</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">window_seconds</span> <span class="o">=</span> <span class="n">recorded</span><span class="o">.</span><span class="n">window_seconds</span> <span class="o">/</span> <span class="n">factor</span>
+        <span class="n">window</span> <span class="o">=</span> <span class="n">replay</span><span class="o">.</span><span class="n">send_at_offsets</span><span class="p">(</span>
+            <span class="n">compressed</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">request</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">recorded</span><span class="o">.</span><span class="n">window</span><span class="p">],</span> <span class="n">factor</span><span class="p">),</span>
+            <span class="n">window_seconds</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># The measured window lasts as long as the recorded one, shortened by the factor,</span>
+        <span class="c1"># also where the replay sent its last request later: its lateness says so.</span>
+        <span class="n">measured</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span>
+            <span class="n">window</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+            <span class="n">window</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="n">window_seconds</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"window"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"start"</span><span class="p">:</span> <span class="n">measured</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+            <span class="s2">"end"</span><span class="p">:</span> <span class="n">measured</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="n">client_load</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"window ended"</span><span class="p">)</span>
+        <span class="n">answered</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">answers</span><span class="p">()</span>
+        <span class="n">watch</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"drain ended"</span><span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"server"</span><span class="p">]</span> <span class="o">|=</span> <span class="n">server_views</span><span class="p">(</span>
+            <span class="n">server</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="s2">"drain_end"</span><span class="p">,</span> <span class="n">every_repository</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        <span class="c1"># The replay has stopped writing: no transaction of its own is open (GDB-12163).</span>
+        <span class="n">read_statement_counts</span><span class="p">(</span>
+            <span class="n">record</span><span class="p">,</span> <span class="n">STATEMENTS_AFTER_THE_PARTICIPANTS</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">actions</span>
+        <span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"replay"</span><span class="p">],</span> <span class="n">record</span><span class="p">[</span><span class="s2">"measures"</span><span class="p">]</span> <span class="o">=</span> <span class="n">_measures</span><span class="p">(</span>
+            <span class="n">recorded</span><span class="p">,</span> <span class="n">before</span><span class="p">,</span> <span class="n">answered</span><span class="p">,</span> <span class="n">measured</span>
+        <span class="p">)</span>
+        <span class="n">record</span><span class="p">[</span><span class="n">RECORD_KEY</span><span class="p">]</span> <span class="o">=</span> <span class="n">level_record</span><span class="p">(</span>
+            <span class="n">factor</span><span class="o">=</span><span class="n">factor</span><span class="p">,</span>
+            <span class="n">recorded_window_seconds</span><span class="o">=</span><span class="n">recorded</span><span class="o">.</span><span class="n">window_seconds</span><span class="p">,</span>
+            <span class="n">window_start</span><span class="o">=</span><span class="n">measured</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+            <span class="n">window</span><span class="o">=</span><span class="n">answered</span><span class="p">,</span>
+            <span class="n">refused</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">"measures"</span><span class="p">][</span><span class="s2">"refused_in_window"</span><span class="p">],</span>
+            <span class="n">timed_out</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">"measures"</span><span class="p">][</span><span class="s2">"timed_out_in_window"</span><span class="p">],</span>
+            <span class="n">connection_dropped</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">"measures"</span><span class="p">][</span><span class="s2">"connection_dropped_in_window"</span><span class="p">],</span>
+            <span class="n">heap_refusals</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">"measures"</span><span class="p">][</span><span class="s2">"heap_refusals_in_window"</span><span class="p">],</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">end</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Step 5, also after a failure, a stop signal or the limit."""</span>
+        <span class="n">watch</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="n">record</span><span class="p">[</span><span class="s2">"server"</span><span class="p">][</span><span class="s2">"watch"</span><span class="p">]</span> <span class="o">=</span> <span class="n">watch</span><span class="o">.</span><span class="n">record</span><span class="p">()</span>
+        <span class="n">client_load</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">client_load</span><span class="o">.</span><span class="n">started</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="s2">"client_load"</span><span class="p">]</span> <span class="o">=</span> <span class="n">client_load</span><span class="o">.</span><span class="n">record</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">replay</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">replay</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">delete_run_repository</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">repository</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">actions</span><span class="p">)</span>
+            <span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">"run ended"</span><span class="p">,</span> <span class="n">outcome</span><span class="o">=</span><span class="n">record</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">])</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">write_record</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
+
+    <span class="c1"># The first stop signal ends the run as interrupted, and the run limit as over time, unless</span>
+    <span class="c1"># the run is ending already; no later one cuts the end short (`run_limit.run_and_end`).</span>
+    <span class="n">run_and_end</span><span class="p">(</span>
+        <span class="n">record</span><span class="p">,</span>
+        <span class="n">limit</span><span class="p">,</span>
+        <span class="n">steps</span><span class="p">,</span>
+        <span class="n">end</span><span class="p">,</span>
+        <span class="n">first_step</span><span class="o">=</span><span class="s2">"the facts before the run"</span><span class="p">,</span>
+        <span class="n">interrupted</span><span class="o">=</span><span class="n">INTERRUPTED</span><span class="p">,</span>
+        <span class="n">add_action</span><span class="o">=</span><span class="n">actions</span><span class="o">.</span><span class="n">add</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">record</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_measures</span><span class="p">(</span>
+    <span class="n">recorded</span><span class="p">:</span> <span class="n">RecordedRun</span><span class="p">,</span>
+    <span class="n">before</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sent</span><span class="p">],</span>
+    <span class="n">answered</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sent</span><span class="p">],</span>
+    <span class="n">window</span><span class="p">:</span> <span class="n">Window</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""What the replay sent, and its measures in the form of part 2's: every request it sent,</span>
+<span class="sd">    in the order it sent them, with when it left, its latency, its outcome and the store's reason</span>
+<span class="sd">    of a refusal, the statuses it writes and whether the store applied them, its text, whether</span>
+<span class="sd">    it is one of the window's, and for these its offset and how late it left; and over the</span>
+<span class="sd">    window alone, the counts, the share, the rates and the refusals for want of heap</span>
+<span class="sd">    (`request_measures`). The requests before the window are kept, as part 2 keeps those of the</span>
+<span class="sd">    participants' start and of the warm-up, so that a refusal among them shows; none of them</span>
+<span class="sd">    counts."""</span>
+    <span class="n">sent</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">*</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">request</span><span class="p">,</span> <span class="n">answer</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">before</span><span class="p">,</span> <span class="n">before</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="o">*</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">request</span><span class="p">,</span> <span class="n">answer</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">window</span><span class="p">,</span> <span class="n">answered</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">found</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">request</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">sent</span><span class="p">:</span>
+        <span class="n">asked</span> <span class="o">=</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">receipt_asked</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">asked</span> <span class="ow">and</span> <span class="n">_outcome</span><span class="p">(</span><span class="n">answer</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">ACCEPTED</span><span class="p">:</span>
+            <span class="n">found</span><span class="p">[(</span><span class="nb">str</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"participant"</span><span class="p">)),</span> <span class="n">asked</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">store_requests</span><span class="o">.</span><span class="n">receipt_found</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">answer</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+            <span class="p">)</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">_request_record</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">in_window</span><span class="o">=</span><span class="n">in_window</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">request</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="n">in_window</span> <span class="ow">in</span> <span class="n">sent</span>
+    <span class="p">]</span>
+    <span class="n">replay</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"recorded_requests"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">before</span><span class="p">)</span>
+        <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">window</span><span class="p">)</span>
+        <span class="o">+</span> <span class="n">recorded</span><span class="o">.</span><span class="n">logins</span>
+        <span class="o">+</span> <span class="n">recorded</span><span class="o">.</span><span class="n">after</span><span class="p">,</span>
+        <span class="s2">"logins_left_out"</span><span class="p">:</span> <span class="n">recorded</span><span class="o">.</span><span class="n">logins</span><span class="p">,</span>
+        <span class="s2">"before_the_window"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">before</span><span class="p">),</span>
+        <span class="s2">"in_the_window"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">answered</span><span class="p">),</span>
+        <span class="s2">"after_the_window_left_out"</span><span class="p">:</span> <span class="n">recorded</span><span class="o">.</span><span class="n">after</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">measures</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">{</span><span class="s2">"window"</span><span class="p">:</span> <span class="n">window</span><span class="o">.</span><span class="n">record</span><span class="p">()}</span>
+        <span class="o">|</span> <span class="n">request_measures</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">requests</span><span class="p">)</span>
+        <span class="o">|</span> <span class="p">{</span><span class="s2">"store_requests"</span><span class="p">:</span> <span class="n">requests</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">replay</span><span class="p">,</span> <span class="n">measures</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_outcome</span><span class="p">(</span><span class="n">sent</span><span class="p">:</span> <span class="n">Sent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The outcome of a replayed request, as part 2 reads one (`store_requests.answer_of`):</span>
+<span class="sd">    accepted, or refused with the kind of the refusal and the store's reason; where it got no</span>
+<span class="sd">    answer, timed out or connection dropped by its error (`store_requests.unanswered_outcome`,</span>
+<span class="sd">    jms_kapps 109), with the error."""</span>
+    <span class="k">if</span> <span class="n">sent</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">unanswered_outcome</span><span class="p">(</span><span class="n">sent</span><span class="o">.</span><span class="n">error</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sent</span><span class="o">.</span><span class="n">error</span>
+    <span class="k">return</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">answer_of</span><span class="p">(</span>
+        <span class="n">sent</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">sent</span><span class="o">.</span><span class="n">content_type</span><span class="p">,</span> <span class="n">sent</span><span class="o">.</span><span class="n">answer</span> <span class="ow">or</span> <span class="s2">""</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_request_record</span><span class="p">(</span>
+    <span class="n">request</span><span class="p">:</span> <span class="n">RecordedRequest</span><span class="p">,</span>
+    <span class="n">sent</span><span class="p">:</span> <span class="n">Sent</span><span class="p">,</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">in_window</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""One request the replay sent, as part 2's measures hold a store request, with its offset</span>
+<span class="sd">    and how late it left; both None for one before the window."""</span>
+    <span class="n">recorded</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">recorded</span>
+    <span class="n">participant</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"participant"</span><span class="p">))</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">,</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">OTHER</span><span class="p">))</span>
+    <span class="n">outcome</span><span class="p">,</span> <span class="n">refusal</span><span class="p">,</span> <span class="n">reason</span> <span class="o">=</span> <span class="n">_outcome</span><span class="p">(</span><span class="n">sent</span><span class="p">)</span>
+    <span class="n">receipt</span> <span class="o">=</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">receipt_written</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">body</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"participant"</span><span class="p">:</span> <span class="n">participant</span><span class="p">,</span>
+        <span class="s2">"at"</span><span class="p">:</span> <span class="n">sent</span><span class="o">.</span><span class="n">at</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+        <span class="s2">"seconds"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">sent</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+        <span class="s2">"method"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
+        <span class="s2">"path"</span><span class="p">:</span> <span class="n">sent</span><span class="o">.</span><span class="n">path</span><span class="p">,</span>
+        <span class="s2">"kind"</span><span class="p">:</span> <span class="n">kind</span><span class="p">,</span>
+        <span class="s2">"request_bytes"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">body</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span> <span class="k">if</span> <span class="n">body</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"response_bytes"</span><span class="p">:</span> <span class="n">sent</span><span class="o">.</span><span class="n">response_bytes</span><span class="p">,</span>
+        <span class="s2">"outcome"</span><span class="p">:</span> <span class="n">outcome</span><span class="p">,</span>
+        <span class="s2">"refusal"</span><span class="p">:</span> <span class="n">refusal</span><span class="p">,</span>
+        <span class="s2">"reason"</span><span class="p">:</span> <span class="n">reason</span><span class="p">,</span>
+        <span class="s2">"writes"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"writes"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]),</span>
+        <span class="s2">"applied"</span><span class="p">:</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">applied</span><span class="p">(</span>
+            <span class="n">kind</span><span class="p">,</span>
+            <span class="n">outcome</span><span class="p">,</span>
+            <span class="n">receipt</span><span class="p">,</span>
+            <span class="n">found</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">participant</span><span class="p">,</span> <span class="n">receipt</span><span class="p">))</span> <span class="k">if</span> <span class="n">receipt</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="s2">"text"</span><span class="p">:</span> <span class="n">body</span><span class="p">,</span>
+        <span class="s2">"window"</span><span class="p">:</span> <span class="n">in_window</span><span class="p">,</span>
+        <span class="s2">"offset_seconds"</span><span class="p">:</span> <span class="n">sent</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">offset_seconds</span><span class="p">,</span>
+        <span class="s2">"late_seconds"</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">sent</span><span class="o">.</span><span class="n">late_seconds</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="nb">round</span><span class="p">(</span><span class="n">sent</span><span class="o">.</span><span class="n">late_seconds</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="p">}</span>
+
+
+<div class="viewcode-block" id="run_on_the_configured_store">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.run_on_the_configured_store">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_on_the_configured_store</span><span class="p">(</span>
+    <span class="n">recorded</span><span class="p">:</span> <span class="n">RecordedRun</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">approval</span><span class="p">:</span> <span class="n">Covered</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">factor</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">sweep</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""One baseline run of `recorded` (`run_baseline`) on the configured GraphDB, with clients of</span>
+<span class="sd">    its own and the login of the environment, and its record, in a folder of its own below</span>
+<span class="sd">    `runs`."""</span>
+    <span class="c1"># One line for each HTTP request would bury the run's own lines; the record keeps every</span>
+    <span class="c1"># request.</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"httpx"</span><span class="p">)</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+    <span class="n">login</span> <span class="o">=</span> <span class="n">store_login</span><span class="p">()</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">GraphDBServer</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">login</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">login</span><span class="o">.</span><span class="n">password</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">run_baseline</span><span class="p">(</span>
+            <span class="n">recorded</span><span class="p">,</span>
+            <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">,</span>
+            <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
+            <span class="n">graph_for</span><span class="o">=</span><span class="n">graph_for</span><span class="p">,</span>
+            <span class="n">replay_for</span><span class="o">=</span><span class="k">lambda</span> <span class="n">repository</span><span class="p">,</span> <span class="n">clock</span><span class="p">:</span> <span class="n">Replay</span><span class="p">(</span>
+                <span class="n">login</span><span class="p">,</span> <span class="n">repository</span><span class="o">=</span><span class="n">repository</span><span class="p">,</span> <span class="n">clock</span><span class="o">=</span><span class="n">clock</span>
+            <span class="p">),</span>
+            <span class="n">approval</span><span class="o">=</span><span class="n">approval</span><span class="p">,</span>
+            <span class="n">factor</span><span class="o">=</span><span class="n">factor</span><span class="p">,</span>
+            <span class="n">sweep</span><span class="o">=</span><span class="n">sweep</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">server</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../reference/evaluation/baseline.html#jms_kapps.evaluation.baseline.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">prog</span><span class="o">=</span><span class="n">PROGRAM</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">"The store-only baseline of one recorded UC2 run: its store requests sent "</span>
+        <span class="s2">"again straight to the store, on a repository of its own of the configured GraphDB, "</span>
+        <span class="s2">"with its record (the measurement harness, iteration one)."</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"recorded"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The recorded UC2 run: its folder, or its record.json. It ran with the wrapper"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--runs"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"runs"</span><span class="p">),</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The folder in which the baseline makes its own folder (default: runs)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--factor"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Replay the run compressed in time by this factor: the same requests in the same "</span>
+        <span class="s2">"order, each offset from the window's start divided by it (default: 1, the recorded "</span>
+        <span class="s2">"timeline). A factor above 1 is a heavy run, and starts only under the approval of the "</span>
+        <span class="s2">"replayed run's configuration"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--heavy-run-approval"</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">"TEXT"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The approval of the baseline of a heavy run (heavy = true) or of a factor above 1, "</span>
+        <span class="s2">"which any person may give, in agreement with the server's admins, for one spec and one period: "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">APPROVAL_FORM</span><span class="si">}</span><span class="s2">. It covers the run only if the run's record holds a configuration key "</span>
+        <span class="s2">"of the spec given with --spec. Off by default; the record keeps it"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--spec"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The approved spec, for the baseline of a heavy run: the approval covers the "</span>
+        <span class="s2">"configuration keys of this spec as written"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">valid_factor</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">factor</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: --factor is a number from 1, not </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">factor</span><span class="si">!r}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">recorded</span> <span class="o">=</span> <span class="n">read_recorded_run</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">recorded</span><span class="p">)</span>
+        <span class="n">approval</span> <span class="o">=</span> <span class="n">load_approval</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">heavy_run_approval</span><span class="p">)</span>
+        <span class="n">covered</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">recorded</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">heavy</span> <span class="ow">or</span> <span class="n">is_heavy</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">factor</span><span class="p">):</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"sweep"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"key"</span><span class="p">)</span>
+            <span class="c1"># The configuration is the one in the record's text: it must be the one its stored</span>
+            <span class="c1"># key names in the approved spec.</span>
+            <span class="n">covered</span> <span class="o">=</span> <span class="n">cover</span><span class="p">(</span>
+                <span class="n">approval</span><span class="p">,</span>
+                <span class="n">spec</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">spec</span><span class="p">,</span>
+                <span class="n">key</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span>
+                <span class="n">configuration</span><span class="o">=</span><span class="n">recorded</span><span class="o">.</span><span class="n">configuration</span><span class="p">,</span>
+                <span class="n">why</span><span class="o">=</span><span class="n">why_heavy</span><span class="p">(</span><span class="n">recorded</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">heavy</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">factor</span><span class="p">),</span>
+            <span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">BaselineRefused</span><span class="p">,</span> <span class="n">ConfigurationRefused</span><span class="p">,</span> <span class="n">HeavyRunRefused</span><span class="p">)</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">refused</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="n">missing_store_variables</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: no GraphDB is configured: set </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">run_on_the_configured_store</span><span class="p">(</span>
+        <span class="n">recorded</span><span class="p">,</span> <span class="n">runs</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">runs</span><span class="p">,</span> <span class="n">approval</span><span class="o">=</span><span class="n">covered</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">factor</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">outcome_line</span><span class="p">(</span><span class="n">PROGRAM</span><span class="p">,</span> <span class="n">record</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">runs</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">record</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"completed"</span> <span class="k">else</span> <span class="mi">1</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
