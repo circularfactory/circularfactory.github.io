@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>When a call fails: the error map &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=eee30dbd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=37f418d5"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = "pre.mermaid {\n    /* Same as .mermaid-container > pre */\n    display: block;\n    width: 100%;\n}\n\npre.mermaid > svg {\n    /* Same as .mermaid-container > pre > svg */\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}";
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = ".mermaid-container {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n}\n\n.mermaid-container > pre {\n    display: block;\n    width: 100%;\n}\n\n.mermaid-container > pre > svg {\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}\n\n.mermaid-fullscreen-btn {\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.3);\n    border-radius: 4px;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: all 0.2s;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n    font-size: 14px;\n    line-height: 1;\n    padding: 0;\n    color: #333;\n}\n\n.mermaid-fullscreen-btn:hover {\n    opacity: 100% !important;\n    background: rgba(255, 255, 255, 1);\n    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-btn.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.3);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-btn.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal {\n    display: none;\n    position: fixed !important;\n    top: 0 !important;\n    left: 0 !important;\n    width: 95vw;\n    height: 100vh;\n    background: rgba(255, 255, 255, 0.98);\n    z-index: 9999;\n    padding: 20px;\n    overflow: auto;\n}\n\n.mermaid-fullscreen-modal.dark-theme {\n    background: rgba(0, 0, 0, 0.98);\n}\n\n.mermaid-fullscreen-modal.active {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen {\n    position: relative;\n    width: 95vw;\n    height: 90vh;\n    max-width: 95vw;\n    max-height: 90vh;\n    background: white;\n    border-radius: 8px;\n    padding: 20px;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);\n    overflow: auto;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen.dark-theme {\n    background: #1a1a1a;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);\n}\n\n.mermaid-container-fullscreen pre.mermaid {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen .mermaid svg {\n    height: 100% !important;\n    width: 100% !important;\n    cursor: grab;\n}\n\n.mermaid-fullscreen-close {\n    position: fixed !important;\n    top: 20px !important;\n    right: 20px !important;\n    width: 40px;\n    height: 40px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    border-radius: 50%;\n    cursor: pointer;\n    z-index: 10000;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\n    transition: all 0.2s;\n    font-size: 24px;\n    line-height: 1;\n    color: #333;\n}\n\n.mermaid-fullscreen-close:hover {\n    background: white;\n    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-close.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.2);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-close.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal .mermaid-fullscreen-btn {\n    display: none !important;\n}";
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+let _lazyObserver = null;
+let _renderQueue = Promise.resolve();
+let closeModal = () => {};
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Apply d3 zoom to each SVG. Idempotent: an SVG already wrapped is skipped,
+// so this is safe to call both for the initial batch and for diagrams that
+// render lazily once they become visible.
+const addZoomToSvgs = (svgs) => {
+    svgs.each(function() {
+        if (this.getAttribute('data-zoom-applied') === 'true') return;
+        var svg = d3.select(this);
+        svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+        var inner = svg.select("g");
+        var zoom = d3.zoom().on("zoom", function(event) {
+            inner.attr("transform", event.transform);
+        });
+        svg.call(zoom);
+        this.setAttribute('data-zoom-applied', 'true');
+    });
+};
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        // Disconnect any previous lazy rendering observer
+        if (_lazyObserver) {
+            _lazyObserver.disconnect();
+            _lazyObserver = null;
+        }
+
+        all_mermaids.forEach((el) => {
+            el.removeAttribute('data-mermaid-deferred');
+            el.removeAttribute('data-mermaid-render-failed');
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+
+        // Separate visible and hidden elements. Mermaid's layout engine measures
+        // text dimensions via the DOM, which fails for elements hidden by a parent
+        // (e.g., Reveal.js non-active slides, sphinx-design unopened tabs),
+        // producing broken SVGs. Render visible elements now, defer hidden ones.
+        const visible = [];
+        const hidden = [];
+        all_mermaids.forEach((el) => {
+            // offsetParent is null for display:none ancestors.
+            // getClientRects().length > 0 catches position:fixed elements
+            // (which also have null offsetParent but are still visible).
+            if (el.offsetParent !== null || el.getClientRects().length > 0) {
+                visible.push(el);
+            } else {
+                hidden.push(el);
+                el.setAttribute('data-mermaid-deferred', 'true');
+            }
+        });
+
+        if (visible.length > 0) {
+            try {
+                await mermaid.run({ nodes: visible });
+            } catch (e) {
+                console.error("Mermaid rendering failed:", e);
+            }
+        }
+
+        // Lazily render hidden elements when they become visible.
+        // Uses a promise chain (_renderQueue) to serialize rendering,
+        // since IntersectionObserver may report multiple entries at once
+        // and mermaid.run() is not safe to call concurrently.
+        if (hidden.length > 0) {
+            if (typeof IntersectionObserver === 'undefined') {
+                console.warn("IntersectionObserver not available; hidden mermaid diagrams will not render.");
+            } else {
+                _renderQueue = Promise.resolve();
+                _lazyObserver = new IntersectionObserver((entries) => {
+                    for (const entry of entries) {
+                        if (entry.isIntersecting && entry.target.getAttribute("data-processed") !== "true") {
+                            _lazyObserver.unobserve(entry.target);
+                            const el = entry.target;
+                            _renderQueue = _renderQueue.then(async () => {
+                                try {
+                                    await mermaid.run({ nodes: [el] });
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    // Apply zoom to the now-rendered diagram, matching
+                                    // the decoration visible diagrams receive.
+                                    if (false) {
+                                        addZoomToSvgs(d3.selectAll("").select(function() {
+                                            return this.querySelector("svg");
+                                        }));
+                                    }
+                                } catch (e) {
+                                    console.error("Mermaid deferred rendering failed:", e);
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    el.setAttribute('data-mermaid-render-failed', 'true');
+                                }
+                            });
+                        }
+                    }
+                });
+                hidden.forEach((el) => _lazyObserver.observe(el));
+            }
+        }
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    // Exclude deferred (hidden) and render-failed elements from completion checks
+    const mermaids_active = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])");
+    const mermaids_processed = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])[data-processed='true']");
+
+    if (false) {
+        const mermaids_to_add_zoom = 0 === -1 ? mermaids_active.length : 0;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("").select(function() {
+                return this.querySelector("svg");
+            });
+            // Wait until every active (visible) diagram has rendered. Deferred
+            // diagrams are excluded, so a fixed d3_node_count that counts a
+            // hidden diagram no longer loops forever waiting for its SVG.
+            if(mermaids_active.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            }
+            addZoomToSvgs(svgs);
+        }
+    } else if(mermaids_active.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if (!true) return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = "\u26f6";
+        fullscreenBtn.style.opacity = "50%";
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scrollX, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.display = 'block';
+
+                if (false) {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+
+
+const load = async () => {
+    initStyles();
+
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...{"startOnLoad": false},
+                ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...{"startOnLoad": false},
+    ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'errors';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.1';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API reference" href="reference/index.html" />
+    <link rel="prev" title="Scenario 3 — The TransferUnit Factory" href="scenarios/factory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    When a call fails: the error map
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    When a call fails: the error map
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">When a call fails: the error map</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="when-a-call-fails-the-error-map">
+<h1>When a call fails: the error map<a class="headerlink" href="#when-a-call-fails-the-error-map" title="Link to this heading">#</a></h1>
+<p>This page tells a consumer of the KAPPS stack what to do when it catches an error. It covers the
+three layers: <code class="docutils literal notranslate"><span class="pre">kapps-triplestore-interface</span></code> (the interface), <code class="docutils literal notranslate"><span class="pre">kapps-ogm</span></code> (the OGM) and
+<code class="docutils literal notranslate"><span class="pre">kapps-semantic-middleware</span></code> (the middleware). It describes the error types of interface 2.3, OGM
+0.4 and middleware 0.3, and the changes that the next releases plan.</p>
+<section id="the-rule">
+<h2>The rule<a class="headerlink" href="#the-rule" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Currently the user/consumer interprets errors, not KAPPS. Therefore KAPPS passes all errors along
+transparently. Interpretation, and therefore modification, of errors is fog in the far future.</p>
+</div></blockquote>
+<p>The map does not change an error. It tells a consumer what it can do with one. Two rules follow
+from the first:</p>
+<ul class="simple">
+<li><p>No layer raises a lower layer’s error again as its own type. A library raises its own type only
+where it detects the condition.</p></li>
+<li><p>A message stays as the layer that detected the condition wrote it, and a store report stays raw.</p></li>
+</ul>
+</section>
+<section id="five-actions">
+<h2>Five actions<a class="headerlink" href="#five-actions" title="Link to this heading">#</a></h2>
+<p>Each error asks for one of five actions.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>What happened</p></th>
+<th class="head"><p>Who acts</p></th>
+<th class="head"><p>Send the same request again?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Repair</strong></p></td>
+<td><p>The tool or its deployment is broken: configuration, credentials, rights, an ontology that the OGM cannot map, a missing optional extra, an internal fault.</p></td>
+<td><p>The operator. The KAPPS maintainers, for a bug.</p></td>
+<td><p>No, not before the repair.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Retry</strong></p></td>
+<td><p>This attempt failed for a temporary reason: the store is unreachable or slow, or a peer is not live.</p></td>
+<td><p>Nobody.</p></td>
+<td><p>Yes, later.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Refresh</strong></p></td>
+<td><p>The caller’s information is old: another writer changed a value, the instance is gone, or another worker took the Operation.</p></td>
+<td><p>The consumer, at run time.</p></td>
+<td><p>After it reads the state again.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Refused</strong></p></td>
+<td><p>The tool and the request are correct, but a rule of the domain does not permit it: a SHACL shape, the OGM’s check against the ontology, a handover precondition.</p></td>
+<td><p>The consumer, with another plan. A domain expert, if the rule is wrong.</p></td>
+<td><p>No, not before the state changes.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Fix the call</strong></p></td>
+<td><p>The caller used the API incorrectly: an argument type, the IRI syntax, a mode, a malformed query.</p></td>
+<td><p>The consumer’s developer.</p></td>
+<td><p>No.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="the-map">
+<h2>The map<a class="headerlink" href="#the-map" title="Link to this heading">#</a></h2>
+<p>A solid arrow means that the type tells the action. A dashed arrow means that the type alone does not
+tell it: the consumer must read the message, and that is interpretation. Each dashed arrow is a gap,
+and <a class="reference internal" href="#error-map-gaps"><span class="std std-ref">Gaps: where the type does not tell the action</span></a> lists them. A type with a dashed border has at least one gap.</p>
+<section id="kapps-triplestore-interface">
+<h3>kapps-triplestore-interface<a class="headerlink" href="#kapps-triplestore-interface" title="Link to this heading">#</a></h3>
+<pre  class="mermaid">
+        flowchart LR
+  T1[&quot;ShaclValidationError&quot;]
+  T2[&quot;PreconditionFailedError&quot;]
+  T3[&quot;TripleStoreResponseError&lt;br/&gt;(any other error answer)&quot;]
+  T4[&quot;AuthenticationError (401)&lt;br/&gt;TripleStoreAccessError (403)&lt;br/&gt;InvalidDatasetError&lt;br/&gt;ValueError: variable not set&quot;]
+  T5[&quot;InvalidIRIError · InvalidInputError&lt;br/&gt;InvalidQueryError · TypeError&quot;]
+  T6[&quot;TripleStoreUnavailableError&lt;br/&gt;(unreachable, timeout,&lt;br/&gt;dropped connection)&quot;]
+  T7[&quot;TripleStoreNotSupportedError&quot;]
+  RE([&quot;Repair&lt;br/&gt;operator&quot;])
+  RT([&quot;Retry&lt;br/&gt;nobody&quot;])
+  RF([&quot;Refresh&lt;br/&gt;consumer at run time&quot;])
+  NO([&quot;Refused&lt;br/&gt;consumer · domain expert&quot;])
+  FX([&quot;Fix the call&lt;br/&gt;consumer's developer&quot;])
+
+  T1 --&gt; NO
+  T2 --&gt; RF
+  T3 --&gt; RE
+  T4 --&gt; RE
+  T5 --&gt; FX
+  T6 --&gt; RT
+  T7 --&gt; FX
+    </pre></section>
+<section id="kapps-ogm">
+<h3>kapps-ogm<a class="headerlink" href="#kapps-ogm" title="Link to this heading">#</a></h3>
+<pre  class="mermaid">
+        flowchart LR
+  O1[&quot;OGMDataError&quot;]
+  O2[&quot;OGMOntologyError&quot;]
+  O3[&quot;OGMNotFoundError&lt;br/&gt;AnonymousNodeFetchError&lt;br/&gt;UnresolvableNodeAddressError&lt;br/&gt;AmbiguousNodeAlignmentError&quot;]
+  O4[&quot;OGMUsageError&lt;br/&gt;OGMUsageTypeError&quot;]
+  O5[&quot;pydantic.ValidationError&lt;br/&gt;(raw)&quot;]
+  O6[&quot;RuntimeError&lt;br/&gt;ValueError: an unknown value kind,&lt;br/&gt;an invalid Skolem namespace&quot;]
+  RE([&quot;Repair&lt;br/&gt;operator&quot;])
+  RF([&quot;Refresh&lt;br/&gt;consumer at run time&quot;])
+  NO([&quot;Refused&lt;br/&gt;consumer · domain expert&quot;])
+  FX([&quot;Fix the call&lt;br/&gt;consumer's developer&quot;])
+
+  O1 --&gt; NO
+  O2 --&gt; RE
+  O3 --&gt; RF
+  O4 --&gt; FX
+  O5 --&gt; NO
+  O6 --&gt; RE
+    </pre><p><code class="docutils literal notranslate"><span class="pre">OGMError</span></code> is the base of the four categories, and the OGM raises only the categories. Each
+category also subclasses the built-in that it replaces: the four are each a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">OGMUsageTypeError</span></code> is also a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+</section>
+<section id="kapps-semantic-middleware">
+<h3>kapps-semantic-middleware<a class="headerlink" href="#kapps-semantic-middleware" title="Link to this heading">#</a></h3>
+<pre  class="mermaid">
+        flowchart LR
+  K1[&quot;HandoverPreconditionError&quot;]
+  K2[&quot;PossessionSwitchConflict&quot;]
+  K3[&quot;OperationQueueEmpty&quot;]
+  K4[&quot;OperationReceiverUnavailableError&lt;br/&gt;(an OperationResolutionError)&lt;br/&gt;NotificationReceiverUnavailableError&lt;br/&gt;(a NotificationUndelivered)&quot;]
+  K5[&quot;DeploymentError:&lt;br/&gt;DeploymentValueError · DeploymentRuntimeError&lt;br/&gt;CapabilityNotRealizedError&lt;br/&gt;NotificationReceiverAmbiguousError&quot;]
+  K6[&quot;TimeoutError&quot;]
+  K7[&quot;OntologyGroundTruthError · ProjectionError&lt;br/&gt;ImportError · NotImplementedError&quot;]
+  K8[&quot;ValueError · RuntimeError&lt;br/&gt;AttributeError&quot;]
+  K9[&quot;REST routes:&lt;br/&gt;HTTP 500 for every error&quot;]
+  RE([&quot;Repair&lt;br/&gt;operator&quot;])
+  RT([&quot;Retry&lt;br/&gt;nobody&quot;])
+  RF([&quot;Refresh&lt;br/&gt;consumer at run time&quot;])
+  NO([&quot;Refused&lt;br/&gt;consumer · domain expert&quot;])
+  FX([&quot;Fix the call&lt;br/&gt;consumer's developer&quot;])
+
+  K1 --&gt; NO
+  K2 --&gt; RF
+  K3 --&gt; RF
+  K4 --&gt; RT
+  K5 --&gt; RE
+  K6 --&gt; RT
+  K7 --&gt; RE
+  K8 -.-&gt; FX &amp; RF &amp; RT
+  K9 -.-&gt; RE &amp; RT &amp; RF &amp; NO &amp; FX
+
+  classDef gap stroke-dasharray: 5 5
+  class K8,K9 gap
+    </pre><p>The same map as a table:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Error type</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ShaclValidationError</span></code>, a subtype of <code class="docutils literal notranslate"><span class="pre">TripleStoreResponseError</span></code>: the store’s shapes refused the write. <code class="docutils literal notranslate"><span class="pre">.report</span></code> is the store’s report, verbatim.</p></td>
+<td><p>Refused</p></td>
+</tr>
+<tr class="row-odd"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>: the precondition of a checked write was false, and nothing was written. It is a sibling of <code class="docutils literal notranslate"><span class="pre">TripleStoreResponseError</span></code>, not a subtype: the store answered the request successfully.</p></td>
+<td><p>Refresh</p></td>
+</tr>
+<tr class="row-even"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TripleStoreResponseError</span></code>: the store answered with an error status that no subtype covers. <code class="docutils literal notranslate"><span class="pre">.status</span></code> is the HTTP status, and the message holds the store’s answer unchanged.</p></td>
+<td><p>Repair</p></td>
+</tr>
+<tr class="row-odd"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AuthenticationError</span></code> (401) and <code class="docutils literal notranslate"><span class="pre">TripleStoreAccessError</span></code> (403), both subtypes of <code class="docutils literal notranslate"><span class="pre">TripleStoreResponseError</span></code>; <code class="docutils literal notranslate"><span class="pre">InvalidDatasetError</span></code>; a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> for a store variable that is not set</p></td>
+<td><p>Repair</p></td>
+</tr>
+<tr class="row-even"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TripleStoreUnavailableError</span></code>: the store is unreachable, did not answer in time, or dropped the connection. It is chained to the transport error.</p></td>
+<td><p>Retry</p></td>
+</tr>
+<tr class="row-odd"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">InvalidIRIError</span></code>, <code class="docutils literal notranslate"><span class="pre">InvalidInputError</span></code>, <code class="docutils literal notranslate"><span class="pre">InvalidQueryError</span></code>, <code class="docutils literal notranslate"><span class="pre">TypeError</span></code></p></td>
+<td><p>Fix the call</p></td>
+</tr>
+<tr class="row-even"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TripleStoreNotSupportedError</span></code>: the store, or the dataset, cannot do the operation.</p></td>
+<td><p>Fix the call</p></td>
+</tr>
+<tr class="row-odd"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OGMError</span></code>: the base of the four categories below. The OGM raises only the categories.</p></td>
+<td><p>the action of the category</p></td>
+</tr>
+<tr class="row-even"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OGMDataError</span></code>, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: the data breaks the class. A required property is missing, a property is unknown, a count is wrong, or a value has the wrong type. So does a class scope that names a property the class does not have, or that continues a property chain past a literal. <code class="docutils literal notranslate"><span class="pre">instance_iri</span></code>, <code class="docutils literal notranslate"><span class="pre">property_iri</span></code>, <code class="docutils literal notranslate"><span class="pre">class_iri</span></code> and <code class="docutils literal notranslate"><span class="pre">value</span></code> give the context.</p></td>
+<td><p>Refused</p></td>
+</tr>
+<tr class="row-odd"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OGMOntologyError</span></code>, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: the ontology has a shape that the OGM cannot map. A class or a property has no type, a property has no range, its ranges do not merge, or the OGM does not support its range. <code class="docutils literal notranslate"><span class="pre">class_iri</span></code> and <code class="docutils literal notranslate"><span class="pre">property_iri</span></code> give the context.</p></td>
+<td><p>Repair</p></td>
+</tr>
+<tr class="row-even"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OGMNotFoundError</span></code>, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: the instance or the node does not exist, or the OGM cannot resolve it. <code class="docutils literal notranslate"><span class="pre">iri</span></code> names it. <code class="docutils literal notranslate"><span class="pre">AnonymousNodeFetchError</span></code>, <code class="docutils literal notranslate"><span class="pre">UnresolvableNodeAddressError</span></code> and <code class="docutils literal notranslate"><span class="pre">AmbiguousNodeAlignmentError</span></code> are its subclasses.</p></td>
+<td><p>Refresh</p></td>
+</tr>
+<tr class="row-odd"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OGMUsageError</span></code>, a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, and its subclass <code class="docutils literal notranslate"><span class="pre">OGMUsageTypeError</span></code>, also a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>: the API was called incorrectly.</p></td>
+<td><p>Fix the call</p></td>
+</tr>
+<tr class="row-even"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>: an internal invariant failed. A bare <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>: a <code class="docutils literal notranslate"><span class="pre">PropertySpec</span></code> has an unknown value kind, or the Skolem namespace given to the OGM is invalid.</p></td>
+<td><p>Repair</p></td>
+</tr>
+<tr class="row-odd"><td><p>OGM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pydantic.ValidationError</span></code>, raw: the data does not fit the generated model.</p></td>
+<td><p>Refused</p></td>
+</tr>
+<tr class="row-even"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">HandoverPreconditionError</span></code></p></td>
+<td><p>Refused</p></td>
+</tr>
+<tr class="row-odd"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PossessionSwitchConflict</span></code>, <code class="docutils literal notranslate"><span class="pre">OperationQueueEmpty</span></code></p></td>
+<td><p>Refresh</p></td>
+</tr>
+<tr class="row-even"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OperationReceiverUnavailableError</span></code>, a subtype of <code class="docutils literal notranslate"><span class="pre">OperationResolutionError</span></code>: a Workflow realizes the Capability, but no Service of it is live now. <code class="docutils literal notranslate"><span class="pre">NotificationReceiverUnavailableError</span></code>, a subtype of <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code>: the resource has no live Service, or it did not take the notification.</p></td>
+<td><p>Retry</p></td>
+</tr>
+<tr class="row-odd"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DeploymentError</span></code>, the base of the middleware’s own Repair types: <code class="docutils literal notranslate"><span class="pre">DeploymentValueError</span></code>, also a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> (a store variable that is not set, an unknown mode or a mode without the arguments that it requires, a Resource with more than one possession state, an instance with no asserted domain type); <code class="docutils literal notranslate"><span class="pre">DeploymentRuntimeError</span></code>, also a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code> (the bundled examples cannot be found, an Operation reached the intake of an instance without a notification handler); <code class="docutils literal notranslate"><span class="pre">CapabilityNotRealizedError</span></code>, also an <code class="docutils literal notranslate"><span class="pre">OperationResolutionError</span></code> (no Workflow realizes the Capability); <code class="docutils literal notranslate"><span class="pre">NotificationReceiverAmbiguousError</span></code>, also a <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code> (the resource has more than one live Service)</p></td>
+<td><p>Repair</p></td>
+</tr>
+<tr class="row-even"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> of a wait for an Operation</p></td>
+<td><p>Retry</p></td>
+</tr>
+<tr class="row-odd"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OntologyGroundTruthError</span></code>, <code class="docutils literal notranslate"><span class="pre">ProjectionError</span></code>, <code class="docutils literal notranslate"><span class="pre">ImportError</span></code> of an optional extra, <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> of a mode</p></td>
+<td><p>Repair</p></td>
+</tr>
+<tr class="row-even"><td><p>middleware</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>, <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code></p></td>
+<td><p>mostly Fix the call (gap 4)</p></td>
+</tr>
+<tr class="row-odd"><td><p>middleware</p></td>
+<td><p>an error answer of its REST routes</p></td>
+<td><p>always 500 (gap 7)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="gaps-where-the-type-does-not-tell-the-action">
+<span id="error-map-gaps"></span><h2>Gaps: where the type does not tell the action<a class="headerlink" href="#gaps-where-the-type-does-not-tell-the-action" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>The interface’s error answers</strong> (closed in interface 2.3). Every error answer of the store is
+a <code class="docutils literal notranslate"><span class="pre">TripleStoreResponseError</span></code> with the store’s HTTP status in <code class="docutils literal notranslate"><span class="pre">status</span></code>, and a 401 and a 403 have
+a type of their own. A caller does not read the message to tell them. Fetching a graph and
+listing the datasets raise these types too, and no longer return <code class="docutils literal notranslate"><span class="pre">None</span></code>. The type’s action is
+Repair, also for a 400 or a 5xx, and a 401 can also come from a token that expired during a long run, because the
+interface does not log in again.</p></li>
+<li><p><strong>Transport errors</strong> (closed in interface 2.3). An unreachable store, a timeout and a dropped
+connection raise <code class="docutils literal notranslate"><span class="pre">TripleStoreUnavailableError</span></code>, chained to the HTTP client’s error. A consumer
+no longer imports the HTTP client to catch them. An error of a request that the client could
+not build, such as an invalid URL, still crosses the border raw.</p></li>
+<li><p><strong>The OGM’s <code class="docutils literal notranslate"><span class="pre">ValueError</span></code></strong> (closed in OGM 0.4). The OGM’s own errors have the base <code class="docutils literal notranslate"><span class="pre">OGMError</span></code>
+and one category per action: <code class="docutils literal notranslate"><span class="pre">OGMDataError</span></code> (Refused, for example a required property is
+missing), <code class="docutils literal notranslate"><span class="pre">OGMOntologyError</span></code> (Repair, a property has no <code class="docutils literal notranslate"><span class="pre">rdfs:range</span></code>), <code class="docutils literal notranslate"><span class="pre">OGMUsageError</span></code> (Fix the
+call, two changes name the same instance) and <code class="docutils literal notranslate"><span class="pre">OGMNotFoundError</span></code> (Refresh, the class of an
+instance cannot be found). Each category is also a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, so a handler of the built-in
+keeps working. A <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> that is none of the categories is Repair.</p></li>
+<li><p><strong>The middleware’s <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> and <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code></strong> (Repair closed in middleware 0.3) cover Fix
+the call, mostly, and also Refresh and Retry. The middleware’s Repair conditions, such as a
+missing store variable or an unknown mode, raise <code class="docutils literal notranslate"><span class="pre">DeploymentValueError</span></code> or
+<code class="docutils literal notranslate"><span class="pre">DeploymentRuntimeError</span></code>. Each is a subtype of <code class="docutils literal notranslate"><span class="pre">DeploymentError</span></code> and of the built-in that the
+condition raised before, so an <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">ValueError</span></code> or <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">RuntimeError</span></code> still catches it.</p></li>
+<li><p><strong>The middleware’s <code class="docutils literal notranslate"><span class="pre">OperationResolutionError</span></code></strong> (closed in middleware 0.3). It raises
+<code class="docutils literal notranslate"><span class="pre">OperationReceiverUnavailableError</span></code> (Retry) when a Workflow realizes the Capability but no
+Service of it is live now, and <code class="docutils literal notranslate"><span class="pre">CapabilityNotRealizedError</span></code> (Repair) when no Workflow realizes
+the Capability. Both are subtypes of <code class="docutils literal notranslate"><span class="pre">OperationResolutionError</span></code>.</p></li>
+<li><p><strong>The middleware’s <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code></strong> (closed in middleware 0.3). It raises
+<code class="docutils literal notranslate"><span class="pre">NotificationReceiverUnavailableError</span></code> (Retry) when the resource is not live or did not take
+the notification, and <code class="docutils literal notranslate"><span class="pre">NotificationReceiverAmbiguousError</span></code> (Repair) when the resource has more
+than one live Service. Both are subtypes of <code class="docutils literal notranslate"><span class="pre">NotificationUndelivered</span></code>.</p></li>
+<li><p><strong>The middleware’s REST routes</strong> answer 500 for every error, with the message as the detail. A
+remote consumer cannot tell the action.</p></li>
+<li><p><strong>The middleware’s <code class="docutils literal notranslate"><span class="pre">PossessionSwitchConflict</span></code></strong> replaces the interface’s
+<code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>, which is its cause, and it is not a subclass of it. A consumer that
+catches <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code> misses a handover conflict.</p></li>
+</ol>
+<section id="paths-that-give-no-error">
+<h3>Paths that give no error<a class="headerlink" href="#paths-that-give-no-error" title="Link to this heading">#</a></h3>
+<p>These calls report a failure with no error. A consumer that does not check the return value does
+not see the failure.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Call</p></th>
+<th class="head"><p>What it returns on a failure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>interface</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">triple_add</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code>, when the insert gives no result</p></td>
+</tr>
+<tr class="row-odd"><td><p>middleware</p></td>
+<td><p>a read of a parameter route</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>middleware</p></td>
+<td><p>a value read of the MQTT binding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="errors-that-are-logged-not-raised">
+<h3>Errors that are logged, not raised<a class="headerlink" href="#errors-that-are-logged-not-raised" title="Link to this heading">#</a></h3>
+<p>Some handlers log an error and do not raise it. They are not paths to a consumer:</p>
+<ul class="simple">
+<li><p><strong>Background tasks with no caller</strong>, such as a domain callback or a notification handler. The
+graph records the outcome, for example the status <code class="docutils literal notranslate"><span class="pre">failed</span></code>, and the log holds the trace.</p></li>
+<li><p><strong>Observer hooks of a commit.</strong> A hook that raises does not change the result of the write. A
+refusal of the write itself is raised again.</p></li>
+<li><p><strong>An error transition that fails.</strong> The original error is raised, and the failure is added to it
+as a note.</p></li>
+<li><p><strong>Rendering and diagnostics:</strong> dashboard boxes, the log handler, pretty printing, the cancel of a
+background loop, and optional imports.</p></li>
+</ul>
+</section>
+</section>
+<section id="what-the-next-releases-change">
+<h2>What the next releases change<a class="headerlink" href="#what-the-next-releases-change" title="Link to this heading">#</a></h2>
+<p>The next releases close the open gaps. Interface 2.3 already closes gaps 1 and 2 and the import
+path of “Paths that give no error”, OGM 0.4 closes gap 3, and middleware 0.3 closes gaps 5 and 6
+and the Repair part of gap 4. Each change below is planned for the release that the table names.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Gap</p></th>
+<th class="head"><p>The change</p></th>
+<th class="head"><p>Planned for</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>The auth provider logs in again before the token expires, so a 401 after an expiry becomes rare.</p></td>
+<td><p>interface 2.4.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>The built-ins that are Refresh or Retry: not decided.</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>One HTTP status per action, and a raw error body (see below).</p></td>
+<td><p>middleware 0.3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Not decided.</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>no error: <code class="docutils literal notranslate"><span class="pre">triple_add</span></code>, the middleware’s two reads</p></td>
+<td><p>Not decided.</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A write whose connection drops after it was sent, or that times out, raises
+<code class="docutils literal notranslate"><span class="pre">TripleStoreUnavailableError</span></code>. The interface never sends a write again. A retry by the caller is
+safe for two reasons:</p>
+<ul class="simple">
+<li><p>A checked write refuses a second application with <code class="docutils literal notranslate"><span class="pre">PreconditionFailedError</span></code>.</p></li>
+<li><p>An insert or an import repeats as a no-op, because a graph is a set. The exceptions are blank
+nodes, which a second insert creates again, and a raw update that the caller writes itself.</p></li>
+</ul>
+<section id="the-middleware-s-http-statuses">
+<h3>The middleware’s HTTP statuses<a class="headerlink" href="#the-middleware-s-http-statuses" title="Link to this heading">#</a></h3>
+<p>The middleware’s own routes, the parameter routes and the dashboard routes, will answer a typed error
+with the status of its action:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Action</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Repair</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>Retry</p></td>
+<td><p>503</p></td>
+</tr>
+<tr class="row-even"><td><p>Refresh</p></td>
+<td><p>409, or 404 when the addressed instance does not exist</p></td>
+</tr>
+<tr class="row-odd"><td><p>Refused</p></td>
+<td><p>422</p></td>
+</tr>
+<tr class="row-even"><td><p>Fix the call</p></td>
+<td><p>400, also for a request that fails validation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The body of every error answer will have three fields: <code class="docutils literal notranslate"><span class="pre">error</span></code>, the type name; <code class="docutils literal notranslate"><span class="pre">detail</span></code>, the
+original message; and <code class="docutils literal notranslate"><span class="pre">report</span></code>, the raw store report or <code class="docutils literal notranslate"><span class="pre">null</span></code>. A bare built-in, such as a
+<code class="docutils literal notranslate"><span class="pre">ValueError</span></code>, will answer 500, because its type does not tell the action. No answer will carry a
+<code class="docutils literal notranslate"><span class="pre">Retry-After</span></code> header.</p>
+<p>The routes that the framework generates do not follow this map. Its CRUD routes answer 400 with a
+message of their own, and its workflow routes answer 409 for any <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scenarios/factory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scenario 3 — The TransferUnit Factory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="reference/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-rule">The rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#five-actions">Five actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-map">The map</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps-triplestore-interface">kapps-triplestore-interface</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps-ogm">kapps-ogm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapps-semantic-middleware">kapps-semantic-middleware</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaps-where-the-type-does-not-tell-the-action">Gaps: where the type does not tell the action</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paths-that-give-no-error">Paths that give no error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-that-are-logged-not-raised">Errors that are logged, not raised</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-next-releases-change">What the next releases change</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-middleware-s-http-statuses">The middleware’s HTTP statuses</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/errors.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
