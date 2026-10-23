@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_semantic_middleware.possession &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=eee30dbd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=6ffd866b"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.12.1/dist/mermaid.esm.min.mjs";
+
+
+
+
+
+const initStyles = () => {
+    const defaultStyle = document.createElement('style');
+    defaultStyle.textContent = "pre.mermaid {\n    /* Same as .mermaid-container > pre */\n    display: block;\n    width: 100%;\n}\n\npre.mermaid > svg {\n    /* Same as .mermaid-container > pre > svg */\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}";
+    document.head.appendChild(defaultStyle);
+
+    const fullscreenStyle = document.createElement('style');
+    fullscreenStyle.textContent = ".mermaid-container {\n    position: relative;\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n}\n\n.mermaid-container > pre {\n    display: block;\n    width: 100%;\n}\n\n.mermaid-container > pre > svg {\n    height: 500px;\n    width: 100%;\n    max-width: 100% !important;\n}\n\n.mermaid-fullscreen-btn {\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.3);\n    border-radius: 4px;\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: all 0.2s;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n    font-size: 14px;\n    line-height: 1;\n    padding: 0;\n    color: #333;\n}\n\n.mermaid-fullscreen-btn:hover {\n    opacity: 100% !important;\n    background: rgba(255, 255, 255, 1);\n    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-btn.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.3);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-btn.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal {\n    display: none;\n    position: fixed !important;\n    top: 0 !important;\n    left: 0 !important;\n    width: 95vw;\n    height: 100vh;\n    background: rgba(255, 255, 255, 0.98);\n    z-index: 9999;\n    padding: 20px;\n    overflow: auto;\n}\n\n.mermaid-fullscreen-modal.dark-theme {\n    background: rgba(0, 0, 0, 0.98);\n}\n\n.mermaid-fullscreen-modal.active {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen {\n    position: relative;\n    width: 95vw;\n    height: 90vh;\n    max-width: 95vw;\n    max-height: 90vh;\n    background: white;\n    border-radius: 8px;\n    padding: 20px;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);\n    overflow: auto;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen.dark-theme {\n    background: #1a1a1a;\n    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);\n}\n\n.mermaid-container-fullscreen pre.mermaid {\n    width: 100%;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n\n.mermaid-container-fullscreen .mermaid svg {\n    height: 100% !important;\n    width: 100% !important;\n    cursor: grab;\n}\n\n.mermaid-fullscreen-close {\n    position: fixed !important;\n    top: 20px !important;\n    right: 20px !important;\n    width: 40px;\n    height: 40px;\n    background: rgba(255, 255, 255, 0.95);\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    border-radius: 50%;\n    cursor: pointer;\n    z-index: 10000;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\n    transition: all 0.2s;\n    font-size: 24px;\n    line-height: 1;\n    color: #333;\n}\n\n.mermaid-fullscreen-close:hover {\n    background: white;\n    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);\n    transform: scale(1.1);\n}\n\n.mermaid-fullscreen-close.dark-theme {\n    background: rgba(50, 50, 50, 0.95);\n    border: 1px solid rgba(255, 255, 255, 0.2);\n    color: #e0e0e0;\n}\n\n.mermaid-fullscreen-close.dark-theme:hover {\n    background: rgba(60, 60, 60, 1);\n    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);\n}\n\n.mermaid-fullscreen-modal .mermaid-fullscreen-btn {\n    display: none !important;\n}";
+    document.head.appendChild(fullscreenStyle);
+}
+
+// Detect if page has dark background
+const isDarkTheme = () => {
+    // We use a set of heuristics:
+    // 1. Check for common dark mode classes or attributes
+    // 2. Check computed background color brightness
+    if (document.documentElement.classList.contains('dark') ||
+        document.documentElement.getAttribute('data-theme') === 'dark' ||
+        document.body.classList.contains('dark') ||
+        document.body.getAttribute('data-theme') === 'dark') {
+        // console.log("Dark theme detected via class/attribute");
+        return true;
+    }
+    if (document.documentElement.classList.contains('light') ||
+        document.documentElement.getAttribute('data-theme') === 'light' ||
+        document.body.classList.contains('light') ||
+        document.body.getAttribute('data-theme') === 'light') {
+        // console.log("Light theme detected via class/attribute");
+        return false;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // console.log("Dark theme detected via prefers-color-scheme");
+        return true;
+    }
+    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+    const match = bgColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
+    if (match) {
+        const r = parseInt(match[1]);
+        const g = parseInt(match[2]);
+        const b = parseInt(match[3]);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        // console.log("Background color brightness:", brightness);
+        return brightness < 128;
+    }
+    // console.log("No dark or light theme detected, defaulting to light theme");
+    return false;
+};
+
+let darkTheme = isDarkTheme();
+let modal = null;
+let modalContent = null;
+let previousScrollOffset = [window.scrollX, window.scrollY];
+let _lazyObserver = null;
+let _renderQueue = Promise.resolve();
+let closeModal = () => {};
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        closeModal();
+    }
+});
+
+// Apply d3 zoom to each SVG. Idempotent: an SVG already wrapped is skipped,
+// so this is safe to call both for the initial batch and for diagrams that
+// render lazily once they become visible.
+const addZoomToSvgs = (svgs) => {
+    svgs.each(function() {
+        if (this.getAttribute('data-zoom-applied') === 'true') return;
+        var svg = d3.select(this);
+        svg.html("<g class='wrapper'>" + svg.html() + "</g>");
+        var inner = svg.select("g");
+        var zoom = d3.zoom().on("zoom", function(event) {
+            inner.attr("transform", event.transform);
+        });
+        svg.call(zoom);
+        this.setAttribute('data-zoom-applied', 'true');
+    });
+};
+
+const runMermaid = async (rerun) => {
+    console.log("Running mermaid diagrams, rerun =", rerun);
+    // clear all existing mermaid charts
+    let all_mermaids = document.querySelectorAll(".mermaid");
+
+    if (rerun) {
+        // Disconnect any previous lazy rendering observer
+        if (_lazyObserver) {
+            _lazyObserver.disconnect();
+            _lazyObserver = null;
+        }
+
+        all_mermaids.forEach((el) => {
+            el.removeAttribute('data-mermaid-deferred');
+            el.removeAttribute('data-mermaid-render-failed');
+            if(!el.hasAttribute("data-original-code")) {
+                // store original code
+                // console.log(`Storing original code for first run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+            if(el.getAttribute("data-processed") === "true") {
+                // remove and restore original
+                el.removeAttribute("data-processed");
+                // console.log(`Restoring original code for re-run: `, el.getAttribute('data-original-code'));
+                el.innerHTML = el.getAttribute('data-original-code');
+            } else {
+                // store original code
+                // console.log(`Storing original code for re-run: `, el.innerHTML);
+                el.setAttribute('data-original-code', el.innerHTML);
+            }
+        });
+
+        // Separate visible and hidden elements. Mermaid's layout engine measures
+        // text dimensions via the DOM, which fails for elements hidden by a parent
+        // (e.g., Reveal.js non-active slides, sphinx-design unopened tabs),
+        // producing broken SVGs. Render visible elements now, defer hidden ones.
+        const visible = [];
+        const hidden = [];
+        all_mermaids.forEach((el) => {
+            // offsetParent is null for display:none ancestors.
+            // getClientRects().length > 0 catches position:fixed elements
+            // (which also have null offsetParent but are still visible).
+            if (el.offsetParent !== null || el.getClientRects().length > 0) {
+                visible.push(el);
+            } else {
+                hidden.push(el);
+                el.setAttribute('data-mermaid-deferred', 'true');
+            }
+        });
+
+        if (visible.length > 0) {
+            try {
+                await mermaid.run({ nodes: visible });
+            } catch (e) {
+                console.error("Mermaid rendering failed:", e);
+            }
+        }
+
+        // Lazily render hidden elements when they become visible.
+        // Uses a promise chain (_renderQueue) to serialize rendering,
+        // since IntersectionObserver may report multiple entries at once
+        // and mermaid.run() is not safe to call concurrently.
+        if (hidden.length > 0) {
+            if (typeof IntersectionObserver === 'undefined') {
+                console.warn("IntersectionObserver not available; hidden mermaid diagrams will not render.");
+            } else {
+                _renderQueue = Promise.resolve();
+                _lazyObserver = new IntersectionObserver((entries) => {
+                    for (const entry of entries) {
+                        if (entry.isIntersecting && entry.target.getAttribute("data-processed") !== "true") {
+                            _lazyObserver.unobserve(entry.target);
+                            const el = entry.target;
+                            _renderQueue = _renderQueue.then(async () => {
+                                try {
+                                    await mermaid.run({ nodes: [el] });
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    // Apply zoom to the now-rendered diagram, matching
+                                    // the decoration visible diagrams receive.
+                                    if (false) {
+                                        addZoomToSvgs(d3.selectAll("").select(function() {
+                                            return this.querySelector("svg");
+                                        }));
+                                    }
+                                } catch (e) {
+                                    console.error("Mermaid deferred rendering failed:", e);
+                                    el.removeAttribute('data-mermaid-deferred');
+                                    el.setAttribute('data-mermaid-render-failed', 'true');
+                                }
+                            });
+                        }
+                    }
+                });
+                hidden.forEach((el) => _lazyObserver.observe(el));
+            }
+        }
+    }
+
+    all_mermaids = document.querySelectorAll(".mermaid");
+    // Exclude deferred (hidden) and render-failed elements from completion checks
+    const mermaids_active = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])");
+    const mermaids_processed = document.querySelectorAll(".mermaid:not([data-mermaid-deferred]):not([data-mermaid-render-failed])[data-processed='true']");
+
+    if (false) {
+        const mermaids_to_add_zoom = 0 === -1 ? mermaids_active.length : 0;
+        if(mermaids_to_add_zoom > 0) {
+            var svgs = d3.selectAll("").select(function() {
+                return this.querySelector("svg");
+            });
+            // Wait until every active (visible) diagram has rendered. Deferred
+            // diagrams are excluded, so a fixed d3_node_count that counts a
+            // hidden diagram no longer loops forever waiting for its SVG.
+            if(mermaids_active.length !== mermaids_processed.length) {
+                setTimeout(() => runMermaid(false), 200);
+                return;
+            }
+            addZoomToSvgs(svgs);
+        }
+    } else if(mermaids_active.length !== mermaids_processed.length) {
+        // Wait for mermaid to process all diagrams
+        setTimeout(() => runMermaid(false), 200);
+        return;
+    }
+
+    // Stop here if not adding fullscreen capability
+    if (!true) return;
+
+    if (modal !== null ) {
+        // Destroy existing modal
+        modal.remove();
+        modal = null;
+        modalContent = null;
+    }
+
+    modal = document.createElement('div');
+    modal.className = 'mermaid-fullscreen-modal' + (darkTheme ? ' dark-theme' : '');
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Fullscreen diagram viewer');
+    modal.innerHTML = `
+        <button class="mermaid-fullscreen-close${darkTheme ? ' dark-theme' : ''}" aria-label="Close fullscreen">✕</button>
+        <div class="mermaid-container-fullscreen${darkTheme ? ' dark-theme' : ''}"></div>
+    `;
+    document.body.appendChild(modal);
+
+    modalContent = modal.querySelector('.mermaid-container-fullscreen');
+    const closeBtn = modal.querySelector('.mermaid-fullscreen-close');
+
+    closeModal = () => {
+        modal.classList.remove('active');
+        modalContent.innerHTML = '';
+        document.body.style.overflow = ''
+        window.scrollTo({left: previousScrollOffset[0], top: previousScrollOffset[1], behavior: 'instant'});
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+    document.querySelectorAll('.mermaid').forEach((mermaidDiv) => {
+        if (mermaidDiv.parentNode.classList.contains('mermaid-container') ||
+            mermaidDiv.closest('.mermaid-fullscreen-modal')) {
+            // Already processed, adjust button class if needed
+            const existingBtn = mermaidDiv.parentNode.querySelector('.mermaid-fullscreen-btn');
+            if (existingBtn) {
+                existingBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+            }
+            return;
+        }
+
+        const container = document.createElement('div');
+        container.className = 'mermaid-container';
+        mermaidDiv.parentNode.insertBefore(container, mermaidDiv);
+        container.appendChild(mermaidDiv);
+
+        const fullscreenBtn = document.createElement('button');
+        fullscreenBtn.className = 'mermaid-fullscreen-btn' + (darkTheme ? ' dark-theme' : '');
+        fullscreenBtn.setAttribute('aria-label', 'View diagram in fullscreen');
+        fullscreenBtn.textContent = "\u26f6";
+        fullscreenBtn.style.opacity = "50%";
+
+        // Calculate dynamic position based on diagram's margin and padding
+        const diagramStyle = window.getComputedStyle(mermaidDiv);
+        const marginTop = parseFloat(diagramStyle.marginTop) || 0;
+        const marginRight = parseFloat(diagramStyle.marginRight) || 0;
+        const paddingTop = parseFloat(diagramStyle.paddingTop) || 0;
+        const paddingRight = parseFloat(diagramStyle.paddingRight) || 0;
+        fullscreenBtn.style.top = `${marginTop + paddingTop + 4}px`;
+        fullscreenBtn.style.right = `${marginRight + paddingRight + 4}px`;
+
+        fullscreenBtn.addEventListener('click', () => {
+            previousScrollOffset = [window.scrollX, window.scrollY];
+            const clone = mermaidDiv.cloneNode(true);
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clone);
+
+            const svg = clone.querySelector('svg');
+            if (svg) {
+                svg.removeAttribute('width');
+                svg.removeAttribute('height');
+                svg.style.width = '100%';
+                svg.style.height = 'auto';
+                svg.style.maxWidth = '100%';
+                svg.style.display = 'block';
+
+                if (false) {
+                    setTimeout(() => {
+                        const g = svg.querySelector('g');
+                        if (g) {
+                            var svgD3 = d3.select(svg);
+                            svgD3.html("<g class='wrapper'>" + svgD3.html() + "</g>");
+                            var inner = svgD3.select("g");
+                            var zoom = d3.zoom().on("zoom", function(event) {
+                                inner.attr("transform", event.transform);
+                            });
+                            svgD3.call(zoom);
+                        }
+                    }, 100);
+                }
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        container.appendChild(fullscreenBtn);
+    });
+};
+
+
+
+const load = async () => {
+    initStyles();
+
+
+    await runMermaid(true);
+
+    const reRunIfThemeChanges = async () => {
+        const newDarkTheme = isDarkTheme();
+        if (newDarkTheme !== darkTheme) {
+            darkTheme = newDarkTheme;
+            console.log("Theme change detected, re-running mermaid with", darkTheme ? "dark" : "default", "theme");
+            await mermaid.initialize(
+                {...{"startOnLoad": false},
+                ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+                }
+            );
+            await runMermaid(true);
+        }
+    };
+
+    // Update theme classes when theme changes
+    const themeObserver = new MutationObserver(reRunIfThemeChanges);
+    themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+    themeObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class', 'style', 'data-theme']
+    });
+};
+
+
+
+
+
+console.log("Initializing mermaid with", darkTheme ? "dark" : "default", "theme");
+mermaid.initialize(
+    {...{"startOnLoad": false},
+    ...{ darkMode: darkTheme, theme: darkTheme ? "dark" : "default" },
+    }
+);
+
+window.addEventListener("load", load);
+window.runMermaid = runMermaid;</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_semantic_middleware/possession';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../errors.html">
+    When a call fails: the error map
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../errors.html">
+    When a call fails: the error map
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_semantic_middleware.possession</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_semantic_middleware.possession</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Possession: one possession state per Resource, which the Workpieces it possesses point at,</span>
+<span class="sd">and the handover, which changes it.</span>
+
+<span class="sd">A Resource gets one ``cfc:PossessionState`` with its first possession and keeps it for life. A</span>
+<span class="sd">Workpiece points at the state of its one Possessor with ``cfc:hasPossessedWorkpiece``, so a</span>
+<span class="sd">handover changes only that link of the Workpiece, and no Resource's ``cfc:hasPossessor`` link</span>
+<span class="sd">changes. One state holds every Workpiece that its Resource possesses.</span>
+
+<span class="sd">Possession is an extension that ships with the middleware, and specific to the circular factory:</span>
+<span class="sd">this module speaks Core's ``cfc:`` vocabulary and the ``mes:`` handover abilities. It is built on</span>
+<span class="sd">the generic middleware, not inside it. It reads through the OGM's access module and gives</span>
+<span class="sd">kapps_ogm ``Create`` and ``Update`` changes, which the caller commits through ``mw.commit()``, or</span>
+<span class="sd">``OGM.commit``, together with the write that needs them. :func:`handover` commits its change of</span>
+<span class="sd">possession through ``mw.commit()`` and reads through the OGM that the middleware exposes</span>
+<span class="sd">(``mw.ogm``), and its :func:`workpiece` scope brings the same rule to ``mw.create()``. The generic</span>
+<span class="sd">core knows Core's Capability, Resource and Operation (registration writes ``cfc:hasCapability``),</span>
+<span class="sd">but it knows no possession term, so it stays portable to a domain that models possession another</span>
+<span class="sd">way.</span>
+<span class="sd">"""</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Sequence</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Create</span><span class="p">,</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">PreconditionFailedError</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.commit</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Change</span><span class="p">,</span>
+    <span class="n">PredefinedScope</span><span class="p">,</span>
+    <span class="n">ScopeChanges</span><span class="p">,</span>
+    <span class="n">_as_reference</span><span class="p">,</span>
+    <span class="n">_nothing_to_join</span><span class="p">,</span>
+    <span class="n">_require_iri</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.errors</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DeploymentValueError</span><span class="p">,</span>
+    <span class="n">HandoverPreconditionError</span><span class="p">,</span>
+    <span class="n">PossessionSwitchConflict</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.modes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mode</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span><span class="p">,</span> <span class="n">MES</span><span class="p">,</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span>
+
+    <span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">SemanticMiddleware</span>
+
+
+<div class="viewcode-block" id="PossessionChange">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.PossessionChange">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PossessionChange</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The changes that make a Resource the Possessor of a Workpiece, for one commit."""</span>
+
+    <span class="c1">#: The Possessor's one possession state, which the Workpiece points at.</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="c1">#: The Workpiece's ``Update``, and the state's creation when the Possessor has none yet.</span>
+    <span class="n">changes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Change</span><span class="p">]</span>
+    <span class="c1">#: Whether ``changes`` create the state. Another write may create it first; kapps_ogm then</span>
+    <span class="c1">#: refuses the commit of these changes, and a second read finds the state.</span>
+    <span class="n">creates_state</span><span class="p">:</span> <span class="nb">bool</span></div>
+
+
+
+<div class="viewcode-block" id="mint_possession_state_iri">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.mint_possession_state_iri">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mint_possession_state_iri</span><span class="p">(</span><span class="n">resource_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The IRI ``{resource}_possession``, which a Resource's possession state gets when created.</span>
+
+<span class="sd">    Only the commit that creates the state uses it. Every later write finds the state by query,</span>
+<span class="sd">    because a seed may have given it another IRI. The fixed IRI keeps two first writes at the same</span>
+<span class="sd">    moment from making two states: both name the same one.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource_iri</span><span class="si">}</span><span class="s2">_possession"</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="possession_state">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.possession_state">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">possession_state</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span> <span class="n">resource_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Change</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""A Resource's one possession state, and the changes that create it when it has none.</span>
+
+<span class="sd">    The state is found by a query (``&lt;resource&gt; cfc:hasPossessor ?state``), never derived from an</span>
+<span class="sd">    IRI. When the Resource has a state, there are no changes, and nothing writes its link. When it</span>
+<span class="sd">    has none, the state is ``&lt;resource&gt;_possession``, and the changes are its ``Create`` (which</span>
+<span class="sd">    writes its type ``cfc:PossessionState``) and an ``Update`` that links the Resource to it. Put</span>
+<span class="sd">    them in the commit that points a Workpiece at the state, so the state comes into being with</span>
+<span class="sd">    its first Workpiece.</span>
+
+<span class="sd">    The query is a read of its own, before that commit. Two first writes for one Resource that</span>
+<span class="sd">    truly coincide both write the same state triples, and one state results. When one lands</span>
+<span class="sd">    between the other's read and its commit, the store refuses the later ``Create`` with</span>
+<span class="sd">    ``PreconditionFailedError`` and writes nothing of its commit. After such a refusal, a second</span>
+<span class="sd">    read finds the state, with no changes.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The state's IRI, and the changes that create it (none when it exists).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        DeploymentValueError: If the Resource has more than one possession state (Repair). A</span>
+<span class="sd">            Resource has one. It is a ``ValueError``.</span>
+<span class="sd">    """</span>
+    <span class="n">sparql</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"SELECT DISTINCT ?state WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">resource_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt; ?state . </span><span class="se">}}</span><span class="s2">"</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">sparql</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bindings</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"results"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bindings"</span><span class="p">,</span> <span class="p">[])</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="p">)</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="s2">"state"</span><span class="p">])</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">DeploymentValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource_iri</span><span class="si">}</span><span class="s2"> has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="si">}</span><span class="s2"> possession states (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">states</span><span class="p">)</span><span class="si">}</span><span class="s2">); "</span>
+            <span class="s2">"a Resource has one"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">states</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="n">states</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">[]</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">mint_possession_state_iri</span><span class="p">(</span><span class="n">resource_iri</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">state</span><span class="p">,</span> <span class="p">[</span>
+        <span class="n">Create</span><span class="p">(</span><span class="n">class_iri</span><span class="o">=</span><span class="n">CFC</span><span class="o">.</span><span class="n">PossessionState</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="n">instance_iri</span><span class="o">=</span><span class="n">state</span><span class="p">),</span>
+        <span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">resource_iri</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">)}]}),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="possession_change">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.possession_change">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">possession_change</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">workpiece_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">possessor_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">workpiece_update</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PossessionChange</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The changes that make ``possessor_iri`` the Possessor of ``workpiece_iri``: a handover's</span>
+<span class="sd">    change of possession, for one commit.</span>
+
+<span class="sd">    The Workpiece's ``cfc:hasPossessedWorkpiece`` points at the Possessor's one state, found with</span>
+<span class="sd">    :func:`possession_state`, and ``workpiece_update`` changes more properties of the Workpiece in</span>
+<span class="sd">    the same ``Update``. When the Possessor has no state yet, the changes also create it and link</span>
+<span class="sd">    the Possessor to it; that new link is the only ``cfc:hasPossessor`` they write.</span>
+
+<span class="sd">    ``workpiece_update`` is ``{property IRI: [values]}``; each listed property is replaced. A value</span>
+<span class="sd">    that is an IRI (an ``IRI`` or an rdflib ``URIRef``), or ``{"id": iri}``, is a reference to that</span>
+<span class="sd">    object. Any other value goes to the OGM as it is: a plain ``str`` is a literal, which the OGM</span>
+<span class="sd">    refuses for an object property with ``ValueError``, before any write.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If ``workpiece_update`` names ``cfc:hasPossessedWorkpiece``, which this change</span>
+<span class="sd">            sets itself.</span>
+<span class="sd">        DeploymentValueError: If the Possessor has more than one possession state (Repair). It</span>
+<span class="sd">            is a ``ValueError``.</span>
+<span class="sd">    """</span>
+    <span class="n">update</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">prop</span><span class="p">:</span> <span class="p">[</span><span class="n">_as_reference</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">values</span> <span class="ow">in</span> <span class="p">(</span><span class="n">workpiece_update</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span> <span class="ow">in</span> <span class="p">{</span><span class="n">IRI</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">update</span><span class="p">}:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"workpiece_update must not set </span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="si">}</span><span class="s2">: the handover sets it"</span>
+        <span class="p">)</span>
+    <span class="n">state</span><span class="p">,</span> <span class="n">create_state</span> <span class="o">=</span> <span class="n">possession_state</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">possessor_iri</span><span class="p">)</span>
+    <span class="n">moved</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">)}],</span> <span class="o">**</span><span class="n">update</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">PossessionChange</span><span class="p">(</span>
+        <span class="n">state</span><span class="o">=</span><span class="n">state</span><span class="p">,</span>
+        <span class="n">changes</span><span class="o">=</span><span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">workpiece_iri</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">moved</span><span class="p">),</span> <span class="o">*</span><span class="n">create_state</span><span class="p">],</span>
+        <span class="n">creates_state</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">create_state</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_switch_conflict</span><span class="p">(</span><span class="n">workpiece_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PossessionSwitchConflict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The error for a change of possession of ``workpiece_iri`` whose commit the store refused</span>
+<span class="sd">    because its precondition was false. Raise it ``from`` the store's refusal."""</span>
+    <span class="k">return</span> <span class="n">PossessionSwitchConflict</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"the store refused the change of possession of </span><span class="si">{</span><span class="n">workpiece_iri</span><span class="si">}</span><span class="s2">: the precondition of "</span>
+        <span class="s2">"its commit was false, so nothing was written"</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="workpiece">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.workpiece">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">workpiece</span><span class="p">(</span><span class="n">scope</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">possessor</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">PredefinedScope</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The scope of a new Workpiece for ``mw.create()``: it starts in its possessor's possession.</span>
+
+<span class="sd">    Usage::</span>
+
+<span class="sd">        with mw.create(BOX, workpiece(box_scope, possessor=mw.resource)) as box:</span>
+<span class="sd">            ...</span>
+
+<span class="sd">    ``possessor`` is any Resource, the middleware's own (``mw.resource``) or another one, such as</span>
+<span class="sd">    the station that scanned the Workpiece. It is required: without one, ``mw.create()`` raises</span>
+<span class="sd">    when it is entered, before the body runs and before any write. The Workpiece's</span>
+<span class="sd">    ``cfc:hasPossessedWorkpiece`` points at the possessor's one possession state, found as</span>
+<span class="sd">    :func:`possession_state` finds it, when the creation's changes are built at its clean exit.</span>
+<span class="sd">    When the possessor has no state yet, the same commit creates ``&lt;possessor&gt;_possession`` and</span>
+<span class="sd">    links the possessor to it. ``scope`` is the Workpiece class's own ClassScope; the body must not</span>
+<span class="sd">    set ``cfc:hasPossessedWorkpiece`` itself.</span>
+
+<span class="sd">    A first possession can race another write that creates the same state. The store then</span>
+<span class="sd">    refuses this commit with ``PreconditionFailedError``, and nothing of it is written. Unlike</span>
+<span class="sd">    :func:`handover`, the creation does not try again.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: At entry, if ``possessor`` is missing or no IRI.</span>
+<span class="sd">        DeploymentValueError: At the clean exit, if the possessor has more than one possession</span>
+<span class="sd">            state (Repair). It is a ``ValueError``.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">check</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_require_iri</span><span class="p">(</span><span class="n">possessor</span><span class="p">,</span> <span class="n">scope</span><span class="o">=</span><span class="n">workpiece</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">"possessor"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">changes</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span> <span class="n">instance_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ScopeChanges</span><span class="p">:</span>
+        <span class="n">state</span><span class="p">,</span> <span class="n">create_state</span> <span class="o">=</span> <span class="n">possession_state</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">possessor</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="n">ScopeChanges</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">state</span><span class="p">)}]},</span> <span class="n">create_state</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">PredefinedScope</span><span class="p">(</span><span class="n">scope</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="n">check</span><span class="p">,</span> <span class="n">changes</span><span class="o">=</span><span class="n">changes</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># --------------------------------------------------------------------------- #</span>
+<span class="c1"># The reads of a handover's preconditions, and the possession helpers that a seed uses.</span>
+<span class="c1"># --------------------------------------------------------------------------- #</span>
+
+
+<div class="viewcode-block" id="find_possession_state">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.find_possession_state">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_possession_state</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="n">workpiece_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">possessor_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The current PossessionState in which ``possessor_iri`` holds ``workpiece_iri``, or None.</span>
+
+<span class="sd">    An ontology-backed read (``workpiece cfc:hasPossessedWorkpiece ?ps . possessor</span>
+<span class="sd">    cfc:hasPossessor ?ps``). Never match on IRI names.</span>
+<span class="sd">    """</span>
+    <span class="n">sparql</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    SELECT ?ps WHERE </span><span class="se">{{</span>
+<span class="s2">        &lt;</span><span class="si">{</span><span class="n">workpiece_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="si">}</span><span class="s2">&gt; ?ps .</span>
+<span class="s2">        &lt;</span><span class="si">{</span><span class="n">possessor_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt; ?ps .</span>
+<span class="s2">    </span><span class="se">}}</span>
+<span class="s2">    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">sparql</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bindings</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"results"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bindings"</span><span class="p">,</span> <span class="p">[])</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">bindings</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"ps"</span><span class="p">]))</span> <span class="k">if</span> <span class="n">bindings</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="counterpart_has_complementary_ability">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.counterpart_has_complementary_ability">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">counterpart_has_complementary_ability</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="n">counterpart_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">mode_ability_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""True iff the counterpart carries the handover ability COMPLEMENTARY to ``mode_ability_iri``.</span>
+
+<span class="sd">    ``mes:complements`` is symmetric. This is a read (``mode_ability mes:complements ?a .</span>
+<span class="sd">    counterpart mes:hasHandoverAbility ?a``).</span>
+<span class="sd">    """</span>
+    <span class="n">sparql</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    SELECT ?a WHERE </span><span class="se">{{</span>
+<span class="s2">        &lt;</span><span class="si">{</span><span class="n">mode_ability_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">MES</span><span class="o">.</span><span class="n">complements</span><span class="si">}</span><span class="s2">&gt; ?a .</span>
+<span class="s2">        &lt;</span><span class="si">{</span><span class="n">counterpart_iri</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">MES</span><span class="o">.</span><span class="n">hasHandoverAbility</span><span class="si">}</span><span class="s2">&gt; ?a .</span>
+<span class="s2">    </span><span class="se">}}</span>
+<span class="s2">    """</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">sparql</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bindings</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"results"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bindings"</span><span class="p">,</span> <span class="p">[])</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">bindings</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="create_possession">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.create_possession">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_possession</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">workpiece_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">possessor_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Give a workpiece its first Possessor, in one OGM commit.</span>
+
+<span class="sd">    The same write as :func:`switch_possession`, under the name that callers of a first</span>
+<span class="sd">    possession use: the workpiece points at the possessor's one ``cfc:PossessionState``, and</span>
+<span class="sd">    when the possessor has none yet, the same commit creates it as ``&lt;possessor&gt;_possession``</span>
+<span class="sd">    (its ``Create`` writes its type) and links the possessor to it. A possessor that has a state</span>
+<span class="sd">    keeps its link unchanged, however many workpieces it possesses.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The possessor's PossessionState IRI.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">switch_possession</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span> <span class="n">workpiece_iri</span><span class="o">=</span><span class="n">workpiece_iri</span><span class="p">,</span> <span class="n">new_possessor_iri</span><span class="o">=</span><span class="n">possessor_iri</span><span class="p">,</span> <span class="n">named_graph</span><span class="o">=</span><span class="n">named_graph</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="switch_possession">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.switch_possession">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">switch_possession</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">workpiece_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">new_possessor_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">workpiece_update</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">named_graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Hand a workpiece to a new possessor in one OGM commit, with no move around it.</span>
+
+<span class="sd">    This is the possession change of :func:`handover` on its own. The workpiece's</span>
+<span class="sd">    ``cfc:hasPossessedWorkpiece`` points at the new possessor's one state, and</span>
+<span class="sd">    ``workpiece_update`` changes more of its properties in the same commit. When the new</span>
+<span class="sd">    possessor has no state yet, the same commit creates it and links the possessor to it. The</span>
+<span class="sd">    previous possessor keeps its state and its link, and so does a new possessor that has a</span>
+<span class="sd">    state. The store validates the whole commit once; if it refuses, nothing of it stays.</span>
+
+<span class="sd">    Another write that moves the workpiece at the same moment is refused only in part. Inside the</span>
+<span class="sd">    commit, kapps_ogm compares the workpiece with a fresh read of it: a write that landed before</span>
+<span class="sd">    that read is overwritten. One that lands between that read and the write makes the store</span>
+<span class="sd">    refuse this commit and write nothing of it, and the switch raises</span>
+<span class="sd">    ``PossessionSwitchConflict``.</span>
+
+<span class="sd">    A participant hands over with :func:`handover`. This helper, and :func:`create_possession`,</span>
+<span class="sd">    serve callers that hold no middleware; they write through ``OGM.commit``, the validated</span>
+<span class="sd">    write, not through ``mw.commit()``.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        workpiece_update: More properties of the workpiece to set in the same commit, as</span>
+<span class="sd">            ``{property IRI: [values]}``; each listed property is replaced. An IRI value (an</span>
+<span class="sd">            ``IRI`` or an rdflib ``URIRef``), or ``{"id": iri}``, is a reference to that object;</span>
+<span class="sd">            any other value goes to the OGM as it is.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The new possessor's PossessionState IRI.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If ``workpiece_update`` names ``cfc:hasPossessedWorkpiece``, which the</span>
+<span class="sd">            change sets itself.</span>
+<span class="sd">        DeploymentValueError: If the new possessor has more than one possession state</span>
+<span class="sd">            (Repair). It is a ``ValueError``.</span>
+<span class="sd">        PossessionSwitchConflict: If another write changed what the commit had read, so the</span>
+<span class="sd">            store found its precondition false (``PreconditionFailedError``, the cause).</span>
+<span class="sd">            Nothing is written.</span>
+<span class="sd">    """</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="n">possession_change</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span>
+        <span class="n">workpiece_iri</span><span class="o">=</span><span class="n">workpiece_iri</span><span class="p">,</span>
+        <span class="n">possessor_iri</span><span class="o">=</span><span class="n">new_possessor_iri</span><span class="p">,</span>
+        <span class="n">workpiece_update</span><span class="o">=</span><span class="n">workpiece_update</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ogm</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">changes</span><span class="o">=</span><span class="n">change</span><span class="o">.</span><span class="n">changes</span><span class="p">,</span> <span class="n">named_graph</span><span class="o">=</span><span class="n">named_graph</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">PreconditionFailedError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">_switch_conflict</span><span class="p">(</span><span class="n">workpiece_iri</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+    <span class="k">return</span> <span class="n">change</span><span class="o">.</span><span class="n">state</span></div>
+
+
+
+<span class="c1"># --------------------------------------------------------------------------- #</span>
+<span class="c1"># The handover.</span>
+<span class="c1"># --------------------------------------------------------------------------- #</span>
+
+
+<div class="viewcode-block" id="handover">
+<a class="viewcode-back" href="../../reference/possession.html#kapps_semantic_middleware.possession.handover">[docs]</a>
+<span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">handover</span><span class="p">(</span>
+    <span class="n">mw</span><span class="p">:</span> <span class="s2">"SemanticMiddleware"</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">workpiece</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">counterpart</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="n">workpiece_update</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">operation</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">entry</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Change</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Hand a workpiece from ``mw``'s Resource to a counterpart: the possession changes first,</span>
+<span class="sd">    then the body moves it.</span>
+
+<span class="sd">    Usage::</span>
+
+<span class="sd">        from kapps_semantic_middleware.possession import handover</span>
+
+<span class="sd">        with handover(mw, mode=MES.Pass, workpiece=workpiece, counterpart=peer, operation=op):</span>
+<span class="sd">            machine.move_workpiece()  # the physical move, owned by the domain</span>
+
+<span class="sd">    and, with more changes that must be admitted together with the possession change, such as</span>
+<span class="sd">    a transport that the peer now executes::</span>
+
+<span class="sd">        moved_on = Update(</span>
+<span class="sd">            instance_iri=transport,</span>
+<span class="sd">            data={</span>
+<span class="sd">                str(CFC.executedOn): [{"id": peer}],</span>
+<span class="sd">                str(CFC.implementsCapability): [{"id": peer_capability}],</span>
+<span class="sd">            },</span>
+<span class="sd">        )</span>
+<span class="sd">        with handover(</span>
+<span class="sd">            mw, mode=MES.Pass, workpiece=workpiece, counterpart=peer, entry=[moved_on]</span>
+<span class="sd">        ):</span>
+<span class="sd">            machine.move_workpiece()</span>
+
+<span class="sd">    It is built on the middleware's public surface only: it reads through the OGM that the</span>
+<span class="sd">    middleware exposes (``mw.ogm``), names the giver by ``mw.resource``, and writes with</span>
+<span class="sd">    ``mw.commit()``.</span>
+
+<span class="sd">    The entry checks two preconditions before anything is written: ``mw``'s Resource currently</span>
+<span class="sd">    possesses the workpiece (the workpiece points at a `cfc:PossessionState` whose possessor</span>
+<span class="sd">    is that Resource), and the counterpart carries the `mes:hasHandoverAbility` complementary</span>
+<span class="sd">    to `mode`. There is deliberately no check that the counterpart is free: a resource may</span>
+<span class="sd">    possess any number of workpieces unless a domain rule limits it.</span>
+
+<span class="sd">    Then the entry commits the possession change through ``mw.commit()``, as one commit. The</span>
+<span class="sd">    workpiece's `cfc:hasPossessedWorkpiece` points at the counterpart's one possession state;</span>
+<span class="sd">    `workpiece_update` sets more properties of the workpiece that must change together with</span>
+<span class="sd">    its possessor, such as its transport state; `operation`, the Operation that this</span>
+<span class="sd">    handover completes, becomes `done`; and `entry`, the caller's own kapps_ogm changes, is</span>
+<span class="sd">    written too. When the counterpart has no state yet, the same commit creates</span>
+<span class="sd">    `&lt;counterpart&gt;_possession` and links the counterpart to it. Nothing writes the</span>
+<span class="sd">    `cfc:hasPossessor` link of the giver, or of a counterpart that has a state.</span>
+
+<span class="sd">    If the store refuses the commit, its error is raised (a SHACL refusal is</span>
+<span class="sd">    `ShaclValidationError`, with the store's validation report as its `report`, and</span>
+<span class="sd">    ``mw.refused_writes`` records it with the verb ``handover``), nothing is written, neither the</span>
+<span class="sd">    possession change nor a change of `entry`, and the body does not run. The body is the move:</span>
+<span class="sd">    the physical transport, and any coordination with the counterpart, for example through an</span>
+<span class="sd">    ``mw.issue_operation(...)``. A clean exit writes nothing more, so a ``mw.create()`` in the</span>
+<span class="sd">    body commits on its own. An error in the body is raised as it is and undoes nothing: the</span>
+<span class="sd">    possession has already changed, so the caller records what really happened.</span>
+
+<span class="sd">    Core says that a resource and a workpiece each have exactly one possession state. That is</span>
+<span class="sd">    OWL: it licenses inferences and refuses no write. What refuses a handover at commit is the</span>
+<span class="sd">    domain's SHACL shape, for example the one that allows one workpiece at a station.</span>
+
+<span class="sd">    A first handover to a counterpart without a state can race another write that creates</span>
+<span class="sd">    that state. Two commits that truly coincide both write the same state triples, and one</span>
+<span class="sd">    state results. When the other write lands between this handover's read and its commit,</span>
+<span class="sd">    the store refuses the second creation of the state (`PreconditionFailedError`), and</span>
+<span class="sd">    writes nothing of it. The handover then checks both preconditions again and commits once</span>
+<span class="sd">    more, with the state that exists now; if a precondition no longer holds, for example</span>
+<span class="sd">    because the other write handed this same workpiece, it raises</span>
+<span class="sd">    `HandoverPreconditionError`, and the body does not run.</span>
+
+<span class="sd">    A second handover of the same workpiece at the same moment is refused only in part.</span>
+<span class="sd">    Both pass the preconditions before either commits. Inside its commit, kapps_ogm compares</span>
+<span class="sd">    the workpiece with a fresh read of it. If the other handover's commit landed between that</span>
+<span class="sd">    read and this commit's write, the store refuses this commit and writes nothing of it, and</span>
+<span class="sd">    the handover raises `PossessionSwitchConflict` before the body runs. Known limit: if the</span>
+<span class="sd">    other handover's commit landed before that read, this commit overwrites its possession</span>
+<span class="sd">    change, both succeed, and both bodies run.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        mw: The resource-mode middleware whose Resource gives the workpiece away.</span>
+<span class="sd">        mode: The giver's handover ability, such as `MES.Pass`. The counterpart must carry the</span>
+<span class="sd">            complementary one.</span>
+<span class="sd">        workpiece: The workpiece that ``mw``'s Resource possesses.</span>
+<span class="sd">        counterpart: The resource that takes the workpiece over.</span>
+<span class="sd">        workpiece_update: More properties of the workpiece to set in the same commit, as</span>
+<span class="sd">            `{property IRI: [values]}`; each listed property is replaced. A value that is an</span>
+<span class="sd">            IRI (an `IRI` or an rdflib `URIRef`), or `{"id": iri}`, is a reference to that</span>
+<span class="sd">            object. Any other value goes to the OGM as it is: a plain `str` is a literal,</span>
+<span class="sd">            which the OGM refuses for an object property with `ValueError`, before any write.</span>
+<span class="sd">        operation: The Operation that this handover completes. Its `svc:hasOperationStatus`</span>
+<span class="sd">            becomes `done` in the same commit.</span>
+<span class="sd">        entry: More kapps_ogm `Create` and `Update` changes, built by the caller, that the</span>
+<span class="sd">            store admits or refuses in the same commit as the possession change, before the</span>
+<span class="sd">            body. A change of the workpiece or of `operation` belongs in `workpiece_update` or</span>
+<span class="sd">            is made by `operation`: kapps_ogm refuses two changes of one instance in one</span>
+<span class="sd">            commit, with `ValueError`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        RuntimeError: If ``mw`` is not in resource mode.</span>
+<span class="sd">        HandoverPreconditionError: If a precondition fails. Nothing is written.</span>
+<span class="sd">        PossessionSwitchConflict: If the store found the precondition of the entry's</span>
+<span class="sd">            commit false (`PreconditionFailedError`, the cause). Usually another write</span>
+<span class="sd">            changed what the entry had read, such as a second handover of the workpiece.</span>
+<span class="sd">            The store does not say which part of the commit failed, so the same error</span>
+<span class="sd">            covers a change of `entry` that creates an instance that the store holds.</span>
+<span class="sd">            Nothing is written, and the body does not run.</span>
+<span class="sd">        ValueError: If `workpiece_update` names `cfc:hasPossessedWorkpiece`, which the</span>
+<span class="sd">            handover sets itself, or a value that does not fit its property, or a change of</span>
+<span class="sd">            `entry` does not fit its class or writes an instance that the commit already</span>
+<span class="sd">            writes. Nothing is written.</span>
+<span class="sd">        DeploymentValueError: If the counterpart has more than one possession state</span>
+<span class="sd">            (Repair). It is a ``ValueError``. Nothing is written.</span>
+<span class="sd">        kapps_triplestore_interface.exceptions.TripleStoreInterfaceError: If the store</span>
+<span class="sd">            refuses the possession change; a SHACL refusal is `ShaclValidationError`.</span>
+<span class="sd">            Nothing is written, and the body does not run.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">mw</span><span class="o">.</span><span class="n">mode</span> <span class="o">!=</span> <span class="n">Mode</span><span class="o">.</span><span class="n">RESOURCE</span> <span class="ow">or</span> <span class="n">mw</span><span class="o">.</span><span class="n">resource</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"handover() is only valid in resource mode; current mode is </span><span class="si">{</span><span class="n">mw</span><span class="o">.</span><span class="n">mode</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">ogm</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">ogm</span>
+    <span class="n">giver_iri</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">mw</span><span class="o">.</span><span class="n">resource</span><span class="p">)</span>
+    <span class="n">workpiece_iri</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">workpiece</span><span class="p">)</span>
+    <span class="n">counterpart_iri</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">counterpart</span><span class="p">)</span>
+    <span class="n">mode_ability_iri</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+
+    <span class="n">_check_handover_preconditions</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">giver_iri</span><span class="p">,</span> <span class="n">workpiece_iri</span><span class="p">,</span> <span class="n">counterpart_iri</span><span class="p">,</span> <span class="n">mode_ability_iri</span><span class="p">)</span>
+
+    <span class="c1"># What the commit carries beside the possession change: the Operation that the handover</span>
+    <span class="c1"># completes, and the caller's own changes.</span>
+    <span class="n">alongside</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Change</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">operation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="p">]}</span>
+        <span class="n">alongside</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="n">operation</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">done</span><span class="p">))</span>
+    <span class="n">alongside</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">entry</span> <span class="ow">or</span> <span class="p">())</span>
+
+    <span class="c1"># The entry commits the possession change; the body is the move; the exit writes nothing.</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="n">possession_change</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span>
+        <span class="n">workpiece_iri</span><span class="o">=</span><span class="n">workpiece_iri</span><span class="p">,</span>
+        <span class="n">possessor_iri</span><span class="o">=</span><span class="n">counterpart_iri</span><span class="p">,</span>
+        <span class="n">workpiece_update</span><span class="o">=</span><span class="n">workpiece_update</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">ExitStack</span><span class="p">()</span> <span class="k">as</span> <span class="n">admitted</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">admitted</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span>
+                <span class="n">mw</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">entry</span><span class="o">=</span><span class="p">[</span><span class="o">*</span><span class="n">change</span><span class="o">.</span><span class="n">changes</span><span class="p">,</span> <span class="o">*</span><span class="n">alongside</span><span class="p">],</span> <span class="n">verb</span><span class="o">=</span><span class="s2">"handover"</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">PreconditionFailedError</span> <span class="k">as</span> <span class="n">refusal</span><span class="p">:</span>
+            <span class="c1"># The store wrote nothing of the entry. When the entry creates the counterpart's</span>
+            <span class="c1"># state, another write may have created that state after it was read: then the</span>
+            <span class="c1"># preconditions are checked again, and the entry is committed once more with</span>
+            <span class="c1"># that state. Any other refusal is a conflict.</span>
+            <span class="n">again</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">change</span><span class="o">.</span><span class="n">creates_state</span><span class="p">:</span>
+                <span class="n">again</span> <span class="o">=</span> <span class="n">possession_change</span><span class="p">(</span>
+                    <span class="n">ogm</span><span class="p">,</span>
+                    <span class="n">workpiece_iri</span><span class="o">=</span><span class="n">workpiece_iri</span><span class="p">,</span>
+                    <span class="n">possessor_iri</span><span class="o">=</span><span class="n">counterpart_iri</span><span class="p">,</span>
+                    <span class="n">workpiece_update</span><span class="o">=</span><span class="n">workpiece_update</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">again</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">again</span><span class="o">.</span><span class="n">creates_state</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_switch_conflict</span><span class="p">(</span><span class="n">workpiece_iri</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">refusal</span>
+            <span class="n">_check_handover_preconditions</span><span class="p">(</span>
+                <span class="n">ogm</span><span class="p">,</span> <span class="n">giver_iri</span><span class="p">,</span> <span class="n">workpiece_iri</span><span class="p">,</span> <span class="n">counterpart_iri</span><span class="p">,</span> <span class="n">mode_ability_iri</span>
+            <span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">admitted</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span>
+                    <span class="n">mw</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">entry</span><span class="o">=</span><span class="p">[</span><span class="o">*</span><span class="n">again</span><span class="o">.</span><span class="n">changes</span><span class="p">,</span> <span class="o">*</span><span class="n">alongside</span><span class="p">],</span> <span class="n">verb</span><span class="o">=</span><span class="s2">"handover"</span><span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="n">PreconditionFailedError</span> <span class="k">as</span> <span class="n">second_refusal</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_switch_conflict</span><span class="p">(</span><span class="n">workpiece_iri</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">second_refusal</span>
+        <span class="c1"># The commit has happened, so a creation in the body commits on its own.</span>
+        <span class="n">admitted</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span><span class="n">_nothing_to_join</span><span class="p">())</span>
+        <span class="k">yield</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_check_handover_preconditions</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="s2">"OGM"</span><span class="p">,</span>
+    <span class="n">giver_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">workpiece_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">counterpart_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">mode_ability_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The two preconditions of a handover, read before anything is written.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HandoverPreconditionError: If the giver does not possess the workpiece, or the</span>
+<span class="sd">            counterpart lacks the handover ability complementary to the mode.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">find_possession_state</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">workpiece_iri</span><span class="p">,</span> <span class="n">giver_iri</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HandoverPreconditionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">giver_iri</span><span class="si">}</span><span class="s2"> does not currently possess </span><span class="si">{</span><span class="n">workpiece_iri</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">counterpart_has_complementary_ability</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">counterpart_iri</span><span class="p">,</span> <span class="n">mode_ability_iri</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">HandoverPreconditionError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"counterpart </span><span class="si">{</span><span class="n">counterpart_iri</span><span class="si">}</span><span class="s2"> lacks the handover ability complementary "</span>
+            <span class="sa">f</span><span class="s2">"to </span><span class="si">{</span><span class="n">mode_ability_iri</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
