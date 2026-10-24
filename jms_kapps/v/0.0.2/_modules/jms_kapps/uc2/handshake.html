@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.handshake &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/handshake';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.handshake</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.handshake</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What passes between two parties in a handover, and the handover itself.</span>
+
+<span class="sd">Inside the FlexConveyor station, one hop is matched to the real conveyor, whose receiving module's</span>
+<span class="sd">light barrier the Receive abstracts. The giving module asks the receiving module to **reserve**</span>
+<span class="sd">itself for the box, and the receiving module consents in its memory and answers at once. Once it has</span>
+<span class="sd">accepted, the giving module opens the middleware's handover: its entry commits the change of</span>
+<span class="sd">possession, so the store admits or refuses it before anything moves, and the same commit assigns the</span>
+<span class="sd">box's transport to the receiving module. Only then does the giving module **convey** the box, its</span>
+<span class="sd">own move and no workflow, and call the receiving module's **receive**, the receiving module's light</span>
+<span class="sd">barrier, which never refuses: the possession has already changed. The receiving module answers, then</span>
+<span class="sd">reads the box with its transport and carries the box on. Reserve and Receive are each one blocking</span>
+<span class="sd">call to the peer's workflow, and each answers with a step result. A peer that the graph names no</span>
+<span class="sd">live workflow of, or whose call is refused, fails or times out, gives no answer: `ask` raises</span>
+<span class="sd">`PeerUnreachable`, whose message says why. A module leaves such a peer out for the box, with that</span>
+<span class="sd">message in its warning, and chooses again; the reason a failed transport records then names the</span>
+<span class="sd">destination and each module left out (`no_live_route`). The WarehouseManagementSystem's reasons keep</span>
+<span class="sd">the message.</span>
+
+<span class="sd">The WarehouseManagementSystem's handover onto the station is its spawn, without the middleware's</span>
+<span class="sd">handover: it asks the origin's Reserve, creates the box directly on the origin, and notifies the</span>
+<span class="sd">origin, whose intake carries the box on as after a Receive. At the end, the destination hands the box back without the questions:</span>
+<span class="sd">the WarehouseManagementSystem answers no Reserve, and the store's admission is the only check</span>
+<span class="sd">there. `Giver.hand_over` is the handover without the questions: every hop opens it, and the last</span>
+<span class="sd">handover, back to the WarehouseManagementSystem, is nothing more.</span>
+
+<span class="sd">The step result is this use case's own, not the middleware's: the middleware's workflow contract</span>
+<span class="sd">is arguments in, return value out, with no envelope. Status, time and progress are not in it,</span>
+<span class="sd">because the graph carries them.</span>
+
+<span class="sd">The store's refusal of a write is a type: the triplestore interface raises `ShaclValidationError`,</span>
+<span class="sd">which carries the store's validation report verbatim, and the middleware and the object-graph</span>
+<span class="sd">mapper pass it on unchanged. Every write a party makes catches that type, and only that type. Any</span>
+<span class="sd">other error of the store, such as a dataset that does not exist, is raised.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbstractContextManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">HandoverPreconditionError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">MES</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">ShaclValidationError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handover_events</span><span class="w"> </span><span class="kn">import</span> <span class="n">HandoverEvents</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="n">rules_clause</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">FCI_NS</span>
+
+
+<div class="viewcode-block" id="StepResult">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.StepResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">StepResult</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A party's answer to one handshake step, or what became of one handover.</span>
+
+<span class="sd">    `report` is set only when the triple store refused a write, and is then its validation report,</span>
+<span class="sd">    verbatim. So a caller tells the store's refusal from every other refusal by</span>
+<span class="sd">    `result.report is not None`, never by `reason`, which is prose for a person to read.</span>
+<span class="sd">    """</span>
+
+    <span class="n">accepted</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="ReserveRequest">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.ReserveRequest">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ReserveRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A party's ask that a module reserve itself for `box`, which `source_module` asks.</span>
+
+<span class="sd">    `destination` is the box's destination, which the module looks ahead by: it accepts only if it</span>
+<span class="sd">    is free and either it is the destination, or its own next module accepts a plain Reserve for</span>
+<span class="sd">    the box at once. `plain` marks that inner ask, which looks no further ahead and is answered</span>
+<span class="sd">    at once. `box_at` names where the box is when the asker does not hold it: the giving module of</span>
+<span class="sd">    the look-ahead that asks, or the WarehouseManagementSystem for the box of a spawn. A Reserve</span>
+<span class="sd">    that names no destination is plain.</span>
+<span class="sd">    """</span>
+
+    <span class="n">box</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">source_module</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">plain</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">box_at</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="ReceiveRequest">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.ReceiveRequest">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ReceiveRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">box</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">source_module</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<span class="n">Refusal</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">"occupied"</span><span class="p">,</span> <span class="s2">"reserved"</span><span class="p">,</span> <span class="s2">"behind"</span><span class="p">,</span> <span class="s2">"blocked"</span><span class="p">]</span>
+<span class="sd">"""Why a module refused to reserve itself, when the refusal passes: it holds a box (`occupied`), it</span>
+<span class="sd">has reserved itself for another box (`reserved`), a box that has waited longer comes first</span>
+<span class="sd">(`behind`), or its own next module refused the box (`blocked`). A giver tries its detour, and then</span>
+<span class="sd">asks such a module again."""</span>
+
+<span class="n">NoLiveRouteOn</span> <span class="o">=</span> <span class="n">typing</span><span class="o">.</span><span class="n">Literal</span><span class="p">[</span><span class="s2">"no live route on"</span><span class="p">]</span>
+<span class="sd">"""The one named refusal of Reserve that does not pass: the module's look-ahead left out every next</span>
+<span class="sd">module its strategy named, since none could be reached. A giver treats the module like one that</span>
+<span class="sd">is not reachable: it leaves it out for the box and chooses again."""</span>
+
+<span class="n">NO_LIVE_ROUTE_ON</span><span class="p">:</span> <span class="n">NoLiveRouteOn</span> <span class="o">=</span> <span class="s2">"no live route on"</span>
+
+
+<div class="viewcode-block" id="passes">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.passes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">passes</span><span class="p">(</span><span class="n">refusal</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">typing</span><span class="o">.</span><span class="n">TypeGuard</span><span class="p">[</span><span class="n">Refusal</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Whether `refusal` is one that passes, after which a giver asks again: `occupied`,</span>
+<span class="sd">    `reserved`, `behind` or `blocked`. "no live route on" does not pass, and neither does a</span>
+<span class="sd">    refusal that names none."""</span>
+    <span class="k">return</span> <span class="n">refusal</span> <span class="ow">in</span> <span class="n">typing</span><span class="o">.</span><span class="n">get_args</span><span class="p">(</span><span class="n">Refusal</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ReserveResult">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.ReserveResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ReserveResult</span><span class="p">(</span><span class="n">StepResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A module's answer to Reserve. `refusal` says why it refused, when the refusal passes or is</span>
+<span class="sd">    "no live route on", and is None for an acceptance and for any other refusal."""</span>
+
+    <span class="n">refusal</span><span class="p">:</span> <span class="n">Refusal</span> <span class="o">|</span> <span class="n">NoLiveRouteOn</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="ReceiveResult">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.ReceiveResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ReceiveResult</span><span class="p">(</span><span class="n">StepResult</span><span class="p">):</span>
+    <span class="k">pass</span></div>
+
+
+
+<div class="viewcode-block" id="acceptance_record">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.acceptance_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">acceptance_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What `resource` logs when it accepts `step` for `box` from `source`.</span>
+
+<span class="sd">    The record is the party's own evidence that the step ran on it. The tests match it whole, so every party builds it here: a record with another verb or</span>
+<span class="sd">    from another giver is no evidence of this step.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">step</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> accepted </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> from </span><span class="si">{</span><span class="n">source</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<div class="viewcode-block" id="reserved_record">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.reserved_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reserved_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the giver `resource` logs when `receiver` has accepted its Reserve for `box`: the</span>
+<span class="sd">    giving side of the step, as `acceptance_record` is the receiving side."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">receiver</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">'s </span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">ReserveWorkflow</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> accepted "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="conveyed_record">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.conveyed_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">conveyed_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">receiver</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the giver `resource` logs once it has conveyed `box` to `receiver`, which had reserved</span>
+<span class="sd">    itself for it: the store admitted the handover, the box has moved, and the giver has called</span>
+<span class="sd">    `receiver`'s Receive. A module's Convey is its own move, no workflow."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: conveyed </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">receiver</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<span class="n">CONVEYED</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">"(?:^|[\s:])(?P&lt;resource&gt;[^\s:]+): conveyed (?P&lt;box&gt;\S+) to (?P&lt;receiver&gt;\S+)$"</span>
+<span class="p">)</span>
+<span class="sd">"""A line of a log that holds a `conveyed_record`, whatever the log's format puts in front of it:</span>
+<span class="sd">the giver, the box and the receiver by their fragments."""</span>
+
+
+<span class="c1"># Prose for a person: a caller tells the store's refusal by the step result's report.</span>
+<span class="n">_STORE_REFUSAL</span> <span class="o">=</span> <span class="s2">"the triple store refused the handover"</span>
+
+<span class="c1"># Why a party refuses a step, a spawn among them, or ends a transport, once the stop of its process</span>
+<span class="c1"># has begun.</span>
+<span class="n">STOPPING</span> <span class="o">=</span> <span class="s2">"the system is stopping"</span>
+
+<span class="n">MiddlewareHandover</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">AbstractContextManager</span><span class="p">]</span>
+<span class="sd">"""The possession extension's `handover(mode=, workpiece=, counterpart=, operation=, entry=)`: the part of a</span>
+<span class="sd">handover from the commit on. Its entry commits the change of possession; its body, which</span>
+<span class="sd">`Giver.hand_over` runs in it, is the move and the arrival. A consent, a Reserve, comes before it.</span>
+<span class="sd">(`Handover` names the whole handover here.)"""</span>
+
+<span class="n">Call</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="n">BaseModel</span><span class="p">],</span> <span class="nb">dict</span><span class="p">]</span>
+<span class="sd">"""A blocking call to a peer's workflow endpoint, returning the decoded answer.</span>
+
+<span class="sd">It raises an `httpx.HTTPError` when the call fails: the peer refuses the connection, does not</span>
+<span class="sd">answer in time, or answers with an error status."""</span>
+
+<span class="n">Move</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span>
+<span class="sd">"""The move of a box onto a receiver: `move(box, receiver)` returns once the box is there.</span>
+
+<span class="sd">The simulated one waits the transit time. A real FlexConveyor passes one that drives its motor.</span>
+<span class="sd">"""</span>
+
+<span class="n">Notify</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span>
+<span class="sd">"""The middleware's notification: `notify(operation, resource)` tells `resource` to look at</span>
+<span class="sd">`operation` in the graph. Raises `NotificationUndelivered` when it does not arrive."""</span>
+
+
+<div class="viewcode-block" id="Endpoints">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.Endpoints">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Endpoints</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Where a party finds a peer's workflow. `discovery.GraphView` is the real one."""</span>
+
+<div class="viewcode-block" id="Endpoints.workflow_endpoint">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.Endpoints.workflow_endpoint">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">workflow_endpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">workflow_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="not_reachable">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.not_reachable">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">not_reachable</span><span class="p">(</span><span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The reason a failed transport records when a party could not reach `peer`, because of</span>
+<span class="sd">    `error`: "Module3 is not reachable: ..." and why, on one line, as `readable_reason` says it."""</span>
+    <span class="k">return</span> <span class="n">_not_reachable</span><span class="p">(</span><span class="n">peer</span><span class="p">,</span> <span class="n">readable_reason</span><span class="p">(</span><span class="n">error</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="lost_giver">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.lost_giver">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lost_giver</span><span class="p">(</span><span class="n">giver</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">bound</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The reason a receiving module records when `giver` passed it `box` and did not call its</span>
+<span class="sd">    Receive within `bound` seconds of its answer to Reserve: one line that names the giver."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">giver</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is lost: it did not call </span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">ReceiveWorkflow</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> for "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> within </span><span class="si">{</span><span class="n">bound</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s"</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_not_reachable</span><span class="p">(</span><span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">peer</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is not reachable: </span><span class="si">{</span><span class="n">why</span><span class="si">}</span><span class="s2">"</span>
+
+
+<div class="viewcode-block" id="listed">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.listed">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">listed</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`names` as a person lists them: "Module3", "Module3 and Module1", "Module3, Module1 and</span>
+<span class="sd">    Module5"."""</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<div class="viewcode-block" id="no_live_route">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.no_live_route">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">no_live_route</span><span class="p">(</span><span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">left_out</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why a module cannot carry a box on toward `destination`, nor look ahead for it, once it has</span>
+<span class="sd">    left out each module of `left_out`, in the order it left them out, and no neighbour is left to</span>
+<span class="sd">    ask: "no live route to Module9: Module3 and Module1 are not reachable". A module that answered</span>
+<span class="sd">    "no live route on" is named as one that is not reachable, since the module treats it so.</span>
+<span class="sd">    """</span>
+    <span class="n">verb</span> <span class="o">=</span> <span class="s2">"is"</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">left_out</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="s2">"are"</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">listed</span><span class="p">([</span><span class="n">module</span><span class="o">.</span><span class="n">fragment</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">left_out</span><span class="p">])</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"no live route to </span><span class="si">{</span><span class="n">destination</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">names</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">verb</span><span class="si">}</span><span class="s2"> not reachable"</span></div>
+
+
+
+<div class="viewcode-block" id="PeerUnreachable">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.PeerUnreachable">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PeerUnreachable</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A party could not reach `peer`. The message says why, on one line: "Module3 is not</span>
+<span class="sd">    reachable: ..." and why. A module puts it in the warning that leaves the peer out; the</span>
+<span class="sd">    WarehouseManagementSystem's reasons keep it."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">_not_reachable</span><span class="p">(</span><span class="n">peer</span><span class="p">,</span> <span class="n">why</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">peer</span> <span class="o">=</span> <span class="n">peer</span></div>
+
+
+
+<div class="viewcode-block" id="readable_reason">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.readable_reason">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">readable_reason</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why `error` happened, as a person reads it, on one line.</span>
+
+<span class="sd">    It is the error's cause when it has one, as the middleware's failed notification has the</span>
+<span class="sd">    failed post, and the first line of its message: a failed transport's result keeps the</span>
+<span class="sd">    store's report on the lines after its reason, and an error status's message has a second</span>
+<span class="sd">    line with a link. The use case's own IRIs read as their names.</span>
+<span class="sd">    """</span>
+    <span class="n">cause</span> <span class="o">=</span> <span class="n">error</span><span class="o">.</span><span class="n">__cause__</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">__cause__</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">)</span> <span class="k">else</span> <span class="n">error</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">cause</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">FCI_NS</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">lines</span> <span class="k">else</span> <span class="nb">type</span><span class="p">(</span><span class="n">cause</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span></div>
+
+
+
+<div class="viewcode-block" id="ask">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.ask">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ask</span><span class="p">[</span><span class="n">Answer</span><span class="p">:</span> <span class="n">StepResult</span><span class="p">](</span>
+    <span class="n">endpoints</span><span class="p">:</span> <span class="n">Endpoints</span><span class="p">,</span>
+    <span class="n">call</span><span class="p">:</span> <span class="n">Call</span><span class="p">,</span>
+    <span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">workflow_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">request</span><span class="p">:</span> <span class="n">BaseModel</span><span class="p">,</span>
+    <span class="n">result_type</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">Answer</span><span class="p">],</span>  <span class="c1"># noqa: UP006 - the docs resolve `type` to two attributes</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Answer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Call `peer`'s workflow of `workflow_class`, found in the graph, and wait for its answer.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        PeerUnreachable: If the graph names no live workflow of that class of `peer`, or the</span>
+<span class="sd">            call failed.</span>
+<span class="sd">    """</span>
+    <span class="n">endpoint</span> <span class="o">=</span> <span class="n">endpoints</span><span class="o">.</span><span class="n">workflow_endpoint</span><span class="p">(</span><span class="n">peer</span><span class="p">,</span> <span class="n">workflow_class</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">endpoint</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PeerUnreachable</span><span class="p">(</span>
+            <span class="n">peer</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"the knowledge graph names no live </span><span class="si">{</span><span class="n">workflow_class</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> of it"</span>
+        <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">call</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">httpx</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PeerUnreachable</span><span class="p">(</span><span class="n">peer</span><span class="p">,</span> <span class="n">readable_reason</span><span class="p">(</span><span class="n">error</span><span class="p">))</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+    <span class="k">return</span> <span class="n">result_type</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="CapabilityReads">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.CapabilityReads">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CapabilityReads</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Where a party finds a module's capability. `discovery.GraphView` is the real one."""</span>
+
+<div class="viewcode-block" id="CapabilityReads.capability">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.CapabilityReads.capability">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">capability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">capability_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BoxTransportCapabilities">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.BoxTransportCapabilities">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BoxTransportCapabilities</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Each module's BoxTransportCapability, read from the graph once: it does not change.</span>
+
+<span class="sd">    The middleware writes it when the module registers its BoxTransportWorkflow, and keeps it</span>
+<span class="sd">    when the module stops. A module that has none yet is asked again next time.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">CapabilityReads</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span> <span class="o">=</span> <span class="n">graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_known</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="BoxTransportCapabilities.of">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.BoxTransportCapabilities.of">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The BoxTransportCapability of `module`, or None if it has never registered one."""</span>
+        <span class="k">if</span> <span class="n">module</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_known</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">capability</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportCapability</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_known</span><span class="p">[</span><span class="n">module</span><span class="p">]</span> <span class="o">=</span> <span class="n">found</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_known</span><span class="p">[</span><span class="n">module</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="no_box_transport_capability">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.no_box_transport_capability">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">no_box_transport_capability</span><span class="p">(</span><span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why nothing can be carried on by `module`: it offers no BoxTransportCapability."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> offers no BoxTransportCapability: it has never registered its "</span>
+        <span class="s2">"BoxTransportWorkflow"</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Giver">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.Giver">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Giver</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The giving side of every handover that the party `resource` makes: its middleware's</span>
+<span class="sd">    handover, its move, the logger its refusals go to, and its handover event stream, if it has</span>
+<span class="sd">    one."""</span>
+
+    <span class="n">handover</span><span class="p">:</span> <span class="n">MiddlewareHandover</span>
+    <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">move</span><span class="p">:</span> <span class="n">Move</span>
+    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span>
+    <span class="n">events</span><span class="p">:</span> <span class="n">HandoverEvents</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Giver.hand_over">
+<a class="viewcode-back" href="../../../reference/uc2/handshake.html#jms_kapps.uc2.handshake.Giver.hand_over">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hand_over</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">receiver</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">on_refusal</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">entry</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="n">arrived</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">object</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StepResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Hand `box` to `receiver`: the possession changes first, then the box moves.</span>
+
+<span class="sd">        The possession extension's handover commits the change of possession in its entry, together with</span>
+<span class="sd">        the changes of `entry`, and `operation` becomes `done` in the same commit when it is</span>
+<span class="sd">        given. If the store refuses the commit, nothing is written and nothing moves: the refusal</span>
+<span class="sd">        is logged with its report, emitted as `commit_refused` on the party's handover event</span>
+<span class="sd">        stream, and the answer carries both. A failed precondition of the handover is refused the</span>
+<span class="sd">        same way, before any write, and emits nothing: the store refused nothing. Otherwise the</span>
+<span class="sd">        body runs: the move, then `arrived`, which calls the receiver's Receive.</span>
+
+<span class="sd">        An error of the move, or of `arrived`, is raised as it is: the possession has changed by</span>
+<span class="sd">        then, so the caller says what happened. A module writes nothing when `arrived` cannot</span>
+<span class="sd">        reach the receiver, since the transport is the receiver's by then; what the station</span>
+<span class="sd">        records after the move itself failed is not decided yet.</span>
+
+<span class="sd">        Only a `ShaclValidationError` is the store's refusal. Any other error of the store, such as</span>
+<span class="sd">        a dataset that does not exist, is raised.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            on_refusal: What the giver does next if the store refuses. The log line of the</span>
+<span class="sd">                refusal says it.</span>
+<span class="sd">            transport: The transport of `box`, which an event of the refusal names.</span>
+<span class="sd">        """</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">handover</span><span class="p">(</span>
+                <span class="n">mode</span><span class="o">=</span><span class="n">MES</span><span class="o">.</span><span class="n">Pass</span><span class="p">,</span>
+                <span class="n">workpiece</span><span class="o">=</span><span class="n">box</span><span class="p">,</span>
+                <span class="n">counterpart</span><span class="o">=</span><span class="n">receiver</span><span class="p">,</span>
+                <span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">entry</span><span class="p">),</span>
+            <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">receiver</span><span class="p">)</span>
+                <span class="n">arrived</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">HandoverPreconditionError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">StepResult</span><span class="p">(</span><span class="n">accepted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">ShaclValidationError</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">: the triple store refused handing </span><span class="si">%s</span><span class="s2"> to </span><span class="si">%s%s</span><span class="s2">; </span><span class="si">%s</span><span class="s2">:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">receiver</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">rules_clause</span><span class="p">(</span><span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">),</span>
+                <span class="n">on_refusal</span><span class="p">,</span>
+                <span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">commit_refused</span><span class="p">(</span>
+                    <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span>
+                    <span class="n">peer</span><span class="o">=</span><span class="n">receiver</span><span class="p">,</span>
+                    <span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span>
+                    <span class="n">reason</span><span class="o">=</span><span class="n">_STORE_REFUSAL</span><span class="p">,</span>
+                    <span class="n">report</span><span class="o">=</span><span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">StepResult</span><span class="p">(</span>
+                <span class="n">accepted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="n">_STORE_REFUSAL</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="n">refused</span><span class="o">.</span><span class="n">report</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">StepResult</span><span class="p">(</span><span class="n">accepted</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

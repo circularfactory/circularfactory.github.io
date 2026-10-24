@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.common.supervision &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/common/supervision';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.common.supervision</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.common.supervision</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Starting, watching and stopping the processes of a use case, one per resource.</span>
+
+<span class="sd">A launcher spawns each child through a `Supervisor`, which keeps one handle per child, keyed by</span>
+<span class="sd">the child's resource IRI. A child is a middleware process with a service in the graph, or a device</span>
+<span class="sd">process without one (use case 1's robot controller stand-in), whose state rests on its process</span>
+<span class="sd">alone. The supervisor prints each child's command line, in the form of the</span>
+<span class="sd">platform's shell, so the child can be run on its own, and echoes every line the child writes with</span>
+<span class="sd">the child's name in front. It reads each child's state from the child's service in the graph,</span>
+<span class="sd">through the one reader of a service (`common.services`): a child is live once its service is live</span>
+<span class="sd">and has registered every workflow the child registers, so that a caller can call any of them at</span>
+<span class="sd">once. It finds a child that exited without reading the graph, so that a read that hangs does not</span>
+<span class="sd">hide the exit. Its readiness gate, `wait_until_ready`, waits until every child is live. When a</span>
+<span class="sd">child turns `failed`, it prints one line with the child's name and why, because a launcher without</span>
+<span class="sd">a page, as the bench launcher, shows nothing else: the exit code if its process exited, and, if</span>
+<span class="sd">its service stopped being ready while it runs, which part of ready the service misses</span>
+<span class="sd">(`why_not_ready`), from one more read of that service, live or not, outside the lock. The pattern</span>
+<span class="sd">is the Launcher of the middleware's transferunits demo.</span>
+
+<span class="sd">A stop asks each child to stop, and the child deregisters its service in its own shutdown. A</span>
+<span class="sd">child that the stop kills at the stop timeout, or that exited without a stop, as a crash does,</span>
+<span class="sd">skipped that shutdown, and its service stays registered until its heartbeat is stale: see</span>
+<span class="sd">`may_not_have_deregistered`. A stop signal that fails is recorded, and the stop goes on to every</span>
+<span class="sd">later child. The reference page on stopping, `docs/reference/stopping.md`, lists every case that</span>
+<span class="sd">cannot deregister, with why. How a child is asked to stop, its process group and the form of its</span>
+<span class="sd">printed command line are the platform's (`jms_kapps.common.platforms`). The process states, and the sets</span>
+<span class="sd">of them that a launcher asks about, are defined here and nowhere else.</span>
+
+<span class="sd">A launcher clears the dataset it seeds, so it first checks that no other process's service is</span>
+<span class="sd">live there: `refuse_if_live`, the one live-instance guard, which leaves out the resources of the</span>
+<span class="sd">launcher's own processes that a stop killed or that exited on their own.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Collection</span><span class="p">,</span> <span class="n">Iterable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.platforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">PLATFORM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.services</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MAX_HEARTBEAT_AGE_SECONDS</span><span class="p">,</span>
+    <span class="n">OneServiceReader</span><span class="p">,</span>
+    <span class="n">Service</span><span class="p">,</span>
+    <span class="n">ServiceReader</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">OUTPUT_LINES</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">WATCH_INTERVAL_SECONDS</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># A middleware registers its service and its workflows as it starts, so a child that has not</span>
+<span class="c1"># turned live this long has failed.</span>
+<span class="n">START_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">60.0</span>
+
+<span class="c1"># How long a stop waits for a child to exit before it kills the child. Every launcher's default.</span>
+<span class="c1"># A child's own graceful shutdown must be bounded below it, or a kill cuts its deregistration.</span>
+<span class="n">STOP_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># The process states, here and nowhere else. A child is `starting` until its service is ready: live,</span>
+<span class="c1"># with an address and a fresh heartbeat, and with every workflow the child registers. It is `live`</span>
+<span class="c1"># while it stays so. It is `failed` when it exits without being asked, when its service stops</span>
+<span class="c1"># being ready, or when it has not turned live within the start timeout; one that still runs turns</span>
+<span class="c1"># live again once its service is ready. `stopped` is a child that exited when a stop asked it to,</span>
+<span class="c1"># so it deregistered its service first. `killed` is a stop that ended in a kill at the stop</span>
+<span class="c1"># timeout. It is not `stopped`, because a kill skips the deregistration: the service keeps its</span>
+<span class="c1"># address, and it counts as live until its last heartbeat is `MAX_HEARTBEAT_AGE_SECONDS` old. A</span>
+<span class="c1"># child that exits with code 0 once the stop has begun (`Supervisor.begin_stop`), before the stop</span>
+<span class="c1"># asks it, is `stopped` too: a stop signal that reached every process of the launcher's process</span>
+<span class="c1"># group ended it, as a terminal's Ctrl+C does; otherwise a Ctrl+C to the process group would print</span>
+<span class="c1"># a "failed" line for each process. Any other child that had exited before a stop asked it stays</span>
+<span class="c1"># `failed` when the stop reaches it: its exit skipped the deregistration too. A child without a</span>
+<span class="c1"># service (`Supervisor.spawn`, `has_service=False`) is never `starting`: it is `live` from its</span>
+<span class="c1"># start while its process runs, and `failed` once it exits unasked; no read of the graph touches</span>
+<span class="c1"># it, and it never counts as one that may not have deregistered.</span>
+<span class="n">State</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"starting"</span><span class="p">,</span> <span class="s2">"live"</span><span class="p">,</span> <span class="s2">"failed"</span><span class="p">,</span> <span class="s2">"stopped"</span><span class="p">,</span> <span class="s2">"killed"</span><span class="p">]</span>
+
+<span class="c1"># The states at which the readiness gate stops waiting: the child will not turn live by waiting,</span>
+<span class="c1"># or a stop has reached it. The other sets that a launcher asks about rest on the process as well</span>
+<span class="c1"># as on its state, and are `_Child`'s: whether it runs, whether a stop would still ask it, and</span>
+<span class="c1"># whether it may have left its service live.</span>
+<span class="n">WILL_NOT_TURN_LIVE</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="n">State</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">({</span><span class="s2">"failed"</span><span class="p">,</span> <span class="s2">"stopped"</span><span class="p">,</span> <span class="s2">"killed"</span><span class="p">})</span>
+
+<span class="c1"># A state that rests on the reads of the graph is unconfirmed once the latest read of them failed,</span>
+<span class="c1"># or once no read has succeeded for this long: a read can hang until the client's own timeout</span>
+<span class="c1"># gives up.</span>
+<span class="n">UNCONFIRMED_AFTER_SECONDS</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">WATCH_INTERVAL_SECONDS</span>
+
+<span class="c1"># How often the readiness gate reads the graph while it waits.</span>
+<span class="n">READY_INTERVAL_SECONDS</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># Why a live child failed while it still runs, where the supervisor cannot say more: it has no</span>
+<span class="c1"># reader of one service, the read failed, or the service read ready again.</span>
+<span class="n">NOT_READY_ANY_MORE</span> <span class="o">=</span> <span class="s2">"its service is not ready any more"</span>
+
+
+<div class="viewcode-block" id="LiveInstanceError">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.LiveInstanceError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LiveInstanceError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A service is live in the dataset a launch would clear, and no process of this launcher</span>
+<span class="sd">    left it there."""</span></div>
+
+
+
+<div class="viewcode-block" id="LaunchFailed">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.LaunchFailed">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LaunchFailed</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A launch stopped part-way, or could not read which services are live. Whatever it had</span>
+<span class="sd">    started is stopped again."""</span></div>
+
+
+
+<div class="viewcode-block" id="NotReady">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.NotReady">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NotReady</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A child did not turn live: it failed, a stop reached it, or the readiness gate's wait ran</span>
+<span class="sd">    out."""</span></div>
+
+
+
+<div class="viewcode-block" id="display_names">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.display_names">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">display_names</span><span class="p">(</span><span class="n">resources</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">IRI</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`resources` as a person reads them, each by its fragment, sorted and joined by commas.</span>
+
+<span class="sd">    For display only. The resource of another process need not have a fragment, because this</span>
+<span class="sd">    package does not choose its IRI, so such a one is named whole: a refusal never names nobody.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">fragment</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">resources</span><span class="p">))</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_live_refusal</span><span class="p">(</span><span class="n">live</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span> <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why a launch did not clear `dataset`, for a person to read."""</span>
+    <span class="n">names</span><span class="p">,</span> <span class="n">one</span> <span class="o">=</span> <span class="n">display_names</span><span class="p">(</span><span class="n">live</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">live</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">names</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">'carries'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'carry'</span><span class="si">}</span><span class="s2"> a fresh heartbeat in </span><span class="si">{</span><span class="n">dataset</span><span class="si">}</span><span class="s2">, so nothing "</span>
+        <span class="sa">f</span><span class="s2">"was cleared. No process of this launcher serves </span><span class="si">{</span><span class="s1">'it'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'them'</span><span class="si">}</span><span class="s2">: another "</span>
+        <span class="s2">"launcher runs there, or a process runs on its own from its command line. Stop that "</span>
+        <span class="s2">"first. A process that was killed counts until its last heartbeat is "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">MAX_HEARTBEAT_AGE_SECONDS</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s old."</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="refuse_if_live">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.refuse_if_live">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">refuse_if_live</span><span class="p">(</span>
+    <span class="n">services</span><span class="p">:</span> <span class="n">ServiceReader</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">leave_out</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+    <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The live-instance guard: refuse to clear `dataset` while a service there is live.</span>
+
+<span class="sd">    A clear cannot be undone, so a launch clears only while no other process's service is live in</span>
+<span class="sd">    the dataset: another launcher's, or that of a process run on its own from its printed</span>
+<span class="sd">    command line, even on a resource this launcher stopped cleanly.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        services: Reads the dataset's live services.</span>
+<span class="sd">        dataset: The dataset's name, for the refusal.</span>
+<span class="sd">        leave_out: The resources of this launcher's own processes that may not have deregistered,</span>
+<span class="sd">            because a stop killed them or they had exited on their own. Their services are this</span>
+<span class="sd">            launcher's own, and the seed clears what they left.</span>
+<span class="sd">        force: Go on whatever is live. Nothing is read then.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        LiveInstanceError: If another service is live, naming each live resource.</span>
+<span class="sd">        LaunchFailed: If the graph cannot say which services are live.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">force</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">live</span> <span class="o">=</span> <span class="p">{</span><span class="n">service</span><span class="o">.</span><span class="n">resource</span> <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">services</span><span class="p">(())}</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">leave_out</span><span class="p">)</span>
+    <span class="c1"># Whatever the reader raises: the launch must not clear what it could not check.</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">LaunchFailed</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"could not read which services are live: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+    <span class="k">if</span> <span class="n">live</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">LiveInstanceError</span><span class="p">(</span><span class="n">_live_refusal</span><span class="p">(</span><span class="n">live</span><span class="p">,</span> <span class="n">dataset</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="why_not_ready">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.why_not_ready">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">why_not_ready</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Service</span><span class="p">],</span> <span class="n">workflows</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span> <span class="n">now</span><span class="p">:</span> <span class="n">datetime</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why the newest service in `found`, every service of one resource, newest heartbeat first,</span>
+<span class="sd">    live or not, is not ready at `now` for a child that registers `workflows`: the part of ready</span>
+<span class="sd">    it misses. None if it misses none, as when it turned ready again since the read that missed it.</span>
+
+<span class="sd">    A deregistration removes the address and every endpoint and keeps a fresh heartbeat, so the</span>
+<span class="sd">    address is asked before the heartbeat, and the workflows after both.</span>
+<span class="sd">    """</span>
+    <span class="n">service</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">found</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">service</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"its service is not in the knowledge graph"</span>
+    <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">address</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"its service has no address"</span>
+    <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">heartbeat</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">beat</span> <span class="o">=</span> <span class="n">service</span><span class="o">.</span><span class="n">heartbeat</span>
+        <span class="k">if</span> <span class="n">beat</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">beat</span> <span class="o">=</span> <span class="n">beat</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC</span><span class="p">)</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">beat</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="n">MAX_HEARTBEAT_AGE_SECONDS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"its last heartbeat is </span><span class="si">{</span><span class="n">age</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2"> s old"</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">workflows</span><span class="p">)</span> <span class="o">-</span> <span class="n">service</span><span class="o">.</span><span class="n">workflows</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"its service has no </span><span class="si">{</span><span class="n">display_names</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> any more"</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_print</span><span class="p">(</span><span class="n">line</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Print `line` on stdout. A terminal that has closed takes no line: the write fails, and the</span>
+<span class="sd">    line is dropped. The child's output is still read, so that its pipe never fills and blocks</span>
+<span class="sd">    it, and the stop that the terminal's SIGHUP began reaches every child."""</span>
+    <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">suppress</span><span class="p">(</span><span class="ne">OSError</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_Child</span><span class="p">:</span>
+    <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="c1"># The command line as the supervisor printed it.</span>
+    <span class="n">command</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">process</span><span class="p">:</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span>
+    <span class="c1"># The classes of the workflows the child registers: it is live only once its service has them.</span>
+    <span class="n">workflows</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">()</span>
+    <span class="c1"># Whether the child registers a service in the graph. A device process, such as use case 1's</span>
+    <span class="c1"># robot controller stand-in, registers none: its state rests on its process alone.</span>
+    <span class="n">has_service</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">State</span> <span class="o">=</span> <span class="s2">"starting"</span>
+    <span class="n">started_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">)</span>
+    <span class="n">stopping</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Whether a stop asked the child to stop while it ran. One that had exited was not asked.</span>
+    <span class="n">asked_to_stop</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">deque</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="n">OUTPUT_LINES</span><span class="p">))</span>
+    <span class="c1"># The address of the live service, kept from the read that found the child live.</span>
+    <span class="n">address</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># When the state was last confirmed: at the spawn, or by a read of the graph.</span>
+    <span class="n">confirmed_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">)</span>
+    <span class="c1"># Whether its process was found to have exited unasked: its state was set then, once.</span>
+    <span class="n">exit_found</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="c1"># Why it is `failed`, as the line printed of its turn says, and how often it was failed: a why</span>
+    <span class="c1"># read after the turn is kept only while no later failing replaced it.</span>
+    <span class="n">why_failed</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">fail_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">runs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether its process has not exited."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">stoppable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether a stop would still ask it to stop: it runs, and no stop has reached it. Its</span>
+<span class="sd">        state is then the last one read from the graph, which can go unconfirmed. The state of one</span>
+<span class="sd">        that is not is this process's own knowledge: an exit, a stop or a kill."""</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stopping</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">runs</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">may_not_have_deregistered</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether it may have left its service live: a stop killed it, or it exited with no stop</span>
+<span class="sd">        asking it to. Either skipped the deregistration that a stop asks for. One that still runs</span>
+<span class="sd">        has not, whatever its state says: a stop asks it, and it deregisters as it goes. Nor has</span>
+<span class="sd">        one that exited when it was asked, nor one that is `stopped` because it exited with code 0</span>
+<span class="sd">        once the stop had begun (`Supervisor.begin_stop`). A child without a service never has:</span>
+<span class="sd">        it registered none."""</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">has_service</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"killed"</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">runs</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">asked_to_stop</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"stopped"</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">ready_in</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Service</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Service</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Its live service among `found` that has registered every workflow it registers: the</span>
+<span class="sd">        newest one, as `found` comes newest heartbeat first, or None while there is none."""</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">service</span>
+                <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">found</span>
+                <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">resource</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">resource</span>
+                <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflows</span> <span class="o">&lt;=</span> <span class="n">service</span><span class="o">.</span><span class="n">workflows</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+            <span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Turn it `failed` for `why`, and forget its address. Returns the one line a supervisor</span>
+<span class="sd">        prints of the turn, with its name and why, or None if it was `failed` already. The why is</span>
+<span class="sd">        the latest, so a crash of one that failed already says the exit code."""</span>
+        <span class="n">turned</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="s2">"failed"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="s2">"failed"</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">why_failed</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail_count</span> <span class="o">=</span> <span class="n">why</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fail_count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">failed_line</span><span class="p">()</span> <span class="k">if</span> <span class="n">turned</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">failed_line</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The line a supervisor prints of its turn to `failed`: its name and why."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> failed: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">why_failed</span><span class="si">}</span><span class="s2">."</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">exit_reason</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Why it failed, once its process exited with no stop asking it to: its exit code."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"its process exited with code </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">returncode</span><span class="si">}</span><span class="s2">"</span>
+
+
+<div class="viewcode-block" id="ChildSnapshot">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.ChildSnapshot">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ChildSnapshot</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One child as the supervisor holds it at one moment. What `Supervisor.snapshot` returns.</span>
+
+<span class="sd">    `command` is the child's command line as one string, as the supervisor printed it. `address`</span>
+<span class="sd">    is its live service's address, kept from the read that found it live. `unconfirmed_for` is</span>
+<span class="sd">    how many seconds ago a state that rests on the reads of the graph was last confirmed, once it</span>
+<span class="sd">    counts as unconfirmed. It is None while the reads succeed, and for a state this process knows</span>
+<span class="sd">    by itself: an exit, a stop or a kill. `stoppable` is whether a stop would still ask the process</span>
+<span class="sd">    to stop: it runs, and no stop has reached it yet. A child that has exited is not, whatever</span>
+<span class="sd">    its state says. `why_failed` is why it is `failed`, as the line printed of the turn says, and</span>
+<span class="sd">    None in any other state. `has_service` is whether the child registers a service in the graph;</span>
+<span class="sd">    a device does not, so it never has an address, and a page shows it without links.</span>
+<span class="sd">    """</span>
+
+    <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">State</span>
+    <span class="n">pid</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">command</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">output</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">address</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">unconfirmed_for</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">stoppable</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">why_failed</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">has_service</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="Supervisor">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Supervisor</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The children of one launcher, and what the launcher knows about each.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        services: Reads the live services, each with its workflows of the classes it is given:</span>
+<span class="sd">            `common.services.reader` over the dataset the children run against.</span>
+<span class="sd">        service_of: Reads every service of one resource, live or not: `common.services.</span>
+<span class="sd">            reader_of_one` over the same dataset. A child that turns `failed` because its service</span>
+<span class="sd">            stopped being ready is read with it once, to say which part of ready its service</span>
+<span class="sd">            misses. None reads nothing, and the line says only that it is not ready any more.</span>
+<span class="sd">        echo: Where the command lines and the children's output go. The launcher's stdout if</span>
+<span class="sd">            None.</span>
+<span class="sd">        stop_timeout: How long a stop waits for a child to exit before it kills the child.</span>
+<span class="sd">        start_timeout: How long a child may start before it counts as failed.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">services</span><span class="p">:</span> <span class="n">ServiceReader</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">service_of</span><span class="p">:</span> <span class="n">OneServiceReader</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">STOP_TIMEOUT_SECONDS</span><span class="p">,</span>
+        <span class="n">start_timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">START_TIMEOUT_SECONDS</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_services</span> <span class="o">=</span> <span class="n">services</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_service_of</span> <span class="o">=</span> <span class="n">service_of</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_heartbeat_error</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span> <span class="o">=</span> <span class="n">echo</span> <span class="k">if</span> <span class="n">echo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">_print</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_timeout</span> <span class="o">=</span> <span class="n">stop_timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_start_timeout</span> <span class="o">=</span> <span class="n">start_timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">_Child</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_all_stopped</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+        <span class="c1"># Set by `begin_stop`, from a signal handler: one assignment, read without the lock.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_begun</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="Supervisor.spawn">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.spawn">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spawn</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">command</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">workflows</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+        <span class="n">has_service</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Start `command` as the process of `resource`, shown as `name`, which is live once its</span>
+<span class="sd">        service has registered a workflow of each class in `workflows`.</span>
+
+<span class="sd">        A resource has one child for the life of the supervisor. A second handle under the same</span>
+<span class="sd">        IRI would replace the first, and nothing could stop the first process any more.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            has_service: Whether the child registers a service in the graph. A device process</span>
+<span class="sd">                registers none, and `workflows` is then empty: it is live from its start, as long</span>
+<span class="sd">                as its process runs, with no address, and it has failed once its process exits</span>
+<span class="sd">                without being asked. No read of the graph decides its state.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If a child was spawned for `resource` already. Nothing is started then.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">earlier</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">earlier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"A process for </span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2"> was spawned already, as </span><span class="si">{</span><span class="n">earlier</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">."</span>
+            <span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">PLATFORM</span><span class="o">.</span><span class="n">command_line</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span>
+            <span class="n">command</span><span class="p">,</span>
+            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
+            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">,</span>
+            <span class="c1"># A Python child writes to a pipe in blocks unless told otherwise.</span>
+            <span class="n">env</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span> <span class="o">|</span> <span class="p">{</span><span class="s2">"PYTHONUNBUFFERED"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">},</span>
+            <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">bufsize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">creationflags</span><span class="o">=</span><span class="n">PLATFORM</span><span class="o">.</span><span class="n">NEW_PROCESS_GROUP</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">child</span> <span class="o">=</span> <span class="n">_Child</span><span class="p">(</span>
+            <span class="n">resource</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span>
+            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="n">line</span><span class="p">,</span>
+            <span class="n">process</span><span class="o">=</span><span class="n">process</span><span class="p">,</span>
+            <span class="n">workflows</span><span class="o">=</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">workflows</span><span class="p">),</span>
+            <span class="n">has_service</span><span class="o">=</span><span class="n">has_service</span><span class="p">,</span>
+            <span class="n">state</span><span class="o">=</span><span class="s2">"starting"</span> <span class="k">if</span> <span class="n">has_service</span> <span class="k">else</span> <span class="s2">"live"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="p">[</span><span class="n">child</span><span class="o">.</span><span class="n">resource</span><span class="p">]</span> <span class="o">=</span> <span class="n">child</span>
+        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_drain</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">child</span><span class="p">,),</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_drain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">:</span> <span class="n">_Child</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Read the child's output until it exits, so that the pipe never fills and blocks it."""</span>
+        <span class="k">assert</span> <span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">stdout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">raw</span> <span class="ow">in</span> <span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">stdout</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Supervisor.refresh">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.refresh">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Check every child's process, then read the services once and set each state.</span>
+
+<span class="sd">        A child is live while its service is live and has registered every workflow the child</span>
+<span class="sd">        registers, and it keeps its service's address while it stays live. It has failed when its</span>
+<span class="sd">        process exits without being told to, when its service stops being so, or when it has not</span>
+<span class="sd">        turned live within the start timeout. A child that failed while it still runs turns live</span>
+<span class="sd">        again once its service is.</span>
+
+<span class="sd">        An exit is this process's own knowledge, so it is set before the graph is read, and it</span>
+<span class="sd">        shows while the graph is away. A read that fails leaves every other state as it was, now</span>
+<span class="sd">        unconfirmed, and raises its error again. Each turn to `failed` is printed, one line each.</span>
+<span class="sd">        A child whose service stopped being ready is `failed` at once; why is read after, outside</span>
+<span class="sd">        the lock, by `_why_not_ready`.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_find_exits</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_services</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_workflows</span><span class="p">()))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_heartbeat_error</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="k">raise</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+        <span class="n">turned</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">unready</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">_Child</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_heartbeat_error</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">stopping</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">confirmed_at</span> <span class="o">=</span> <span class="n">now</span>
+                <span class="n">ready</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">ready_in</span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">runs</span><span class="p">():</span>
+                    <span class="n">turned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_exited_unasked</span><span class="p">(</span><span class="n">child</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">has_service</span><span class="p">:</span>
+                    <span class="c1"># A device: live while it runs, whatever the graph holds.</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"live"</span>
+                <span class="k">elif</span> <span class="n">ready</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"live"</span>
+                <span class="k">elif</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"live"</span><span class="p">:</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">NOT_READY_ANY_MORE</span><span class="p">)</span>
+                    <span class="n">unready</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">child</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">fail_count</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">now</span> <span class="o">-</span> <span class="n">child</span><span class="o">.</span><span class="n">started_at</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_timeout</span><span class="p">:</span>
+                    <span class="n">turned</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="n">child</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">"it did not turn live within </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_start_timeout</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s"</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="s2">"live"</span><span class="p">:</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">elif</span> <span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ready</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">ready</span><span class="o">.</span><span class="n">address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_print_failed</span><span class="p">(</span><span class="n">turned</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_print_failed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_why_not_ready</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">at</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span><span class="p">,</span> <span class="n">at</span> <span class="ow">in</span> <span class="n">unready</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_why_not_ready</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">:</span> <span class="n">_Child</span><span class="p">,</span> <span class="n">fail_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Read why `child` failed, which turned `failed` at its `fail_count` because its service</span>
+<span class="sd">        stopped being ready: one read of its service, live or not, outside the lock. Keeps the why</span>
+<span class="sd">        unless a later failing replaced it, and returns the line to print. A read that fails, or</span>
+<span class="sd">        finds the service ready again, keeps `NOT_READY_ANY_MORE`."""</span>
+        <span class="n">why</span> <span class="o">=</span> <span class="n">NOT_READY_ANY_MORE</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_service_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_service_of</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">workflows</span><span class="p">))</span>
+            <span class="c1"># Whatever the reader raises: the child has failed all the same.</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>  <span class="c1"># noqa: BLE001</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">why</span> <span class="o">=</span> <span class="n">why_not_ready</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">workflows</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">))</span> <span class="ow">or</span> <span class="n">why</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">fail_count</span> <span class="o">==</span> <span class="n">fail_count</span><span class="p">:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">why_failed</span> <span class="o">=</span> <span class="n">why</span>
+            <span class="c1"># Not `failed_line`: a later failing may have replaced the why, and this turn's</span>
+            <span class="c1"># line still says this turn's.</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> failed: </span><span class="si">{</span><span class="n">why</span><span class="si">}</span><span class="s2">."</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_print_failed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">turned</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Print the line of each child that turned `failed`: a bench launcher has no page, so</span>
+<span class="sd">        its terminal is where a failed child shows. Printed outside the lock, so that a terminal</span>
+<span class="sd">        that is slow to take a line holds up no read of a state."""</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">turned</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_workflows</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">frozenset</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The classes of the workflows that any child registers: what a read of the services</span>
+<span class="sd">        reads with each."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">frozenset</span><span class="p">()</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">workflows</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_find_exits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Set each child whose process exited without a stop asking it to `failed`. It reads</span>
+<span class="sd">        no graph, so nothing it waits for can hang."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">turned</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_exited_unasked</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">stopping</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">runs</span><span class="p">()</span>
+            <span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_print_failed</span><span class="p">(</span><span class="n">turned</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Supervisor.heartbeat_error">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.heartbeat_error">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">heartbeat_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Why the latest read of the services failed, or None if it succeeded."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heartbeat_error</span></div>
+
+
+<div class="viewcode-block" id="Supervisor.watch">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.watch">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">watch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">WATCH_INTERVAL_SECONDS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Watch the children every `interval` seconds, until `stop_all`, on two daemon threads:</span>
+<span class="sd">        one finds the processes that exited, the other refreshes the states from the services.</span>
+
+<span class="sd">        A read of the graph can hang until the client's own timeout gives up, 60 s. The first</span>
+<span class="sd">        thread reads no graph, so it finds an exit within one interval however long a read</span>
+<span class="sd">        hangs. The second keeps at most one read under way.</span>
+<span class="sd">        """</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">exits</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_stopped</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">interval</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_find_exits</span><span class="p">()</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">heartbeats</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_all_stopped</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">interval</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+                <span class="c1"># Whatever the service reader raises: a watch that died would freeze every</span>
+                <span class="c1"># state on the page, and the graph can be away for a moment.</span>
+                <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># noqa: BLE001</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Could not read the heartbeats: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">loop</span> <span class="ow">in</span> <span class="p">(</span><span class="n">exits</span><span class="p">,</span> <span class="n">heartbeats</span><span class="p">):</span>
+            <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">loop</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Supervisor.wait_until_ready">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.wait_until_ready">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wait_until_ready</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">READY_INTERVAL_SECONDS</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The readiness gate: wait until every child is live, so that its service has an</span>
+<span class="sd">        address, a fresh heartbeat and every workflow the child registers, and a caller can call</span>
+<span class="sd">        any of them at once.</span>
+
+<span class="sd">        It reads the graph itself, every `interval` seconds, whether the watch runs or not. A read</span>
+<span class="sd">        that fails is tried again until the wait runs out.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            timeout: How long to wait at most, in seconds: the start timeout and one interval</span>
+<span class="sd">                more if None, by when a child that has not turned live has failed.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotReady: If a child failed, or a stop reached it, before every child was live, naming</span>
+<span class="sd">                it with its last output; or if not every child is live within `timeout`, naming</span>
+<span class="sd">                each that is not, and why the last read of the graph failed if it did.</span>
+<span class="sd">        """</span>
+        <span class="n">wait</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start_timeout</span> <span class="o">+</span> <span class="n">interval</span> <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">timeout</span>
+        <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="n">wait</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">read_error</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+            <span class="c1"># Whatever the service reader raises: the graph can be away for a moment.</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># noqa: BLE001</span>
+                <span class="n">read_error</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>
+            <span class="n">children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="n">WILL_NOT_TURN_LIVE</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">NotReady</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">state</span><span class="si">}</span><span class="s2">, so it will not turn live. Its last "</span>
+                        <span class="s2">"output:</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="n">waiting</span> <span class="o">=</span> <span class="p">[</span><span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span> <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="s2">"live"</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">waiting</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">deadline</span><span class="p">:</span>
+                <span class="n">why</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"; the last read of the graph failed: </span><span class="si">{</span><span class="n">read_error</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="k">if</span> <span class="n">read_error</span>
+                    <span class="k">else</span> <span class="s2">""</span>
+                <span class="p">)</span>
+                <span class="k">raise</span> <span class="n">NotReady</span><span class="p">(</span><span class="sa">f</span><span class="s2">"not live within </span><span class="si">{</span><span class="n">wait</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">waiting</span><span class="p">)</span><span class="si">}{</span><span class="n">why</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Supervisor.begin_stop">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.begin_stop">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">begin_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Mark the stop as begun, before `stop_all` asks any child: from now on, a child whose</span>
+<span class="sd">        process exits with code 0 before a stop asks it has `stopped`, not `failed`.</span>
+
+<span class="sd">        A stop signal can reach a child before the launcher asks it: a terminal's Ctrl+C, or a</span>
+<span class="sd">        SIGINT to the process group of `./run-uc2`, reaches every process of the launcher's</span>
+<span class="sd">        process group at once, while the launcher still waits for the open connections of its</span>
+<span class="sd">        own page. A child ends on Ctrl+C with code 0, once it has deregistered its service. An exit</span>
+<span class="sd">        with any other code still turns it `failed`.</span>
+
+<span class="sd">        One assignment and no lock, so it is safe in a signal handler.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_begun</span> <span class="o">=</span> <span class="kc">True</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_exited_unasked</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">:</span> <span class="n">_Child</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Set the state of `child`, whose process exited with no stop of this supervisor asking</span>
+<span class="sd">        it to, when the exit is first found: `stopped` if the stop had begun (`begin_stop`) and it</span>
+<span class="sd">        exited with code 0, else `failed`. A later finding keeps that state, so an exit found</span>
+<span class="sd">        before the stop began stays `failed`. Returns the line to print of a turn to `failed`, or</span>
+<span class="sd">        None. Called with the lock held."""</span>
+        <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">exit_found</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_begun</span> <span class="ow">and</span> <span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">returncode</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="s2">"stopped"</span><span class="p">,</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">exit_reason</span><span class="p">())</span>
+        <span class="c1"># Only once the state is set: the main thread can be interrupted between the two.</span>
+        <span class="n">child</span><span class="o">.</span><span class="n">exit_found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">line</span>
+
+<div class="viewcode-block" id="Supervisor.stop">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.stop">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop the child of `resource`, and wait until it has exited.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            KeyError: If no child was spawned for `resource`.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">child</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop</span><span class="p">([</span><span class="n">child</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Supervisor.stop_all">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.stop_all">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop every child, and wait until all of them have exited.</span>
+
+<span class="sd">        This is the ordered teardown: each child is asked to stop, in the order they were</span>
+<span class="sd">        spawned, so that it deregisters its service in its own shutdown; they stop in parallel,</span>
+<span class="sd">        within one stop timeout, and a child still running then is killed and reported. Every</span>
+<span class="sd">        child of a use case is a middleware instance with no device process behind it, so there</span>
+<span class="sd">        is no second tier to stop after them.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">children</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop</span><span class="p">(</span><span class="n">children</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_all_stopped</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">_Child</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Ask every child to stop, so each deregisters its service, then kill stragglers.</span>
+
+<span class="sd">        The children stop in parallel, within one shared timeout. A child that had exited before</span>
+<span class="sd">        it was asked keeps its state: it did not deregister when it exited. A stop signal that</span>
+<span class="sd">        fails is recorded, and every later child still gets its own. The child it failed for was</span>
+<span class="sd">        not asked: it runs on until the kill at the timeout, unless it has exited meanwhile.</span>
+<span class="sd">        """</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">stopping</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">runs</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_ask_to_stop</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_timeout</span>
+        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+            <span class="n">notice</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">deadline</span> <span class="o">-</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()))</span>
+            <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">TimeoutExpired</span><span class="p">:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+                <span class="n">notice</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> did not stop within </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_stop_timeout</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s, and was killed."</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">(</span><span class="n">notice</span><span class="p">)</span>
+            <span class="n">turned</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">notice</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># In the child's output too, where the page shows it next to the state.</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">notice</span><span class="p">)</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"killed"</span>
+                <span class="k">elif</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">asked_to_stop</span><span class="p">:</span>
+                    <span class="c1"># It exited before it was asked, perhaps before any read of the graph saw it.</span>
+                    <span class="n">turned</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exited_unasked</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="c1"># A second stop does not make a kill clean.</span>
+                <span class="k">elif</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">!=</span> <span class="s2">"killed"</span><span class="p">:</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s2">"stopped"</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_print_failed</span><span class="p">([</span><span class="n">turned</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ask_to_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">:</span> <span class="n">_Child</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Send the platform's stop signal to `child`. One that fails is recorded where a kill is,</span>
+<span class="sd">        in the echo and in the child's output, and raises nothing: the child was not asked."""</span>
+        <span class="c1"># Set before the signal, so that a child that exits on it at once never reads as one that</span>
+        <span class="c1"># exited unasked; taken back if the signal fails.</span>
+        <span class="n">child</span><span class="o">.</span><span class="n">asked_to_stop</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">PLATFORM</span><span class="o">.</span><span class="n">request_stop</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">asked_to_stop</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">notice</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Could not ask </span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> to stop: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">(</span><span class="n">notice</span><span class="p">)</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">notice</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Supervisor.may_not_have_deregistered">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.may_not_have_deregistered">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">may_not_have_deregistered</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The resources whose child may have left its service live: the killed children, and</span>
+<span class="sd">        those that exited without a stop asking them to (see `_Child.may_not_have_deregistered`).</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="n">child</span><span class="o">.</span><span class="n">resource</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">may_not_have_deregistered</span><span class="p">()</span>
+            <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="Supervisor.snapshot">
+<a class="viewcode-back" href="../../../reference/common/supervision.html#jms_kapps.common.supervision.Supervisor.snapshot">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">snapshot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">ChildSnapshot</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Every child as it is now, in the order they were spawned."""</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span>
+                <span class="n">ChildSnapshot</span><span class="p">(</span>
+                    <span class="n">resource</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">state</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">state</span><span class="p">,</span>
+                    <span class="n">pid</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span>
+                    <span class="n">command</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">command</span><span class="p">,</span>
+                    <span class="n">output</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">output</span><span class="p">),</span>
+                    <span class="n">address</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">address</span><span class="p">,</span>
+                    <span class="n">unconfirmed_for</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_unconfirmed_for</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">now</span><span class="p">),</span>
+                    <span class="n">stoppable</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">stoppable</span><span class="p">(),</span>
+                    <span class="n">why_failed</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">why_failed</span> <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"failed"</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">has_service</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">has_service</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_children</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+            <span class="p">]</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_unconfirmed_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">:</span> <span class="n">_Child</span><span class="p">,</span> <span class="n">now</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># A device's state rests on its process, which this process knows by itself.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">stoppable</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">has_service</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">now</span> <span class="o">-</span> <span class="n">child</span><span class="o">.</span><span class="n">confirmed_at</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_heartbeat_error</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="n">UNCONFIRMED_AFTER_SECONDS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jms_kapps.evaluation.store &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/evaluation/store';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="jms_kapps.evaluation.store_requests" href="store_requests.html" />
+    <link rel="prev" title="jms_kapps.evaluation.stats" href="stats.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">The package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jms_kapps.html">jms_kapps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shared by both use cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/index.html">jms_kapps.common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/api_docs.html">jms_kapps.common.api_docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/passthrough.html">jms_kapps.common.passthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/prefixes.html">jms_kapps.common.prefixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/process.html">jms_kapps.common.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/services.html">jms_kapps.common.services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/supervision.html">jms_kapps.common.supervision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/triplestore.html">jms_kapps.common.triplestore</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/index.html">jms_kapps.common.platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/posix.html">jms_kapps.common.platforms.posix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/windows.html">jms_kapps.common.platforms.windows</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc1/index.html">jms_kapps.uc1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/__main__.html">jms_kapps.uc1.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector.html">jms_kapps.uc1.anomaly_detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_dashboard.html">jms_kapps.uc1.anomaly_detector_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_memory.html">jms_kapps.uc1.anomaly_detector_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/classify_call.html">jms_kapps.uc1.classify_call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/decision_tree.html">jms_kapps.uc1.decision_tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/effective_values.html">jms_kapps.uc1.effective_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/frame.html">jms_kapps.uc1.frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/infeasible_operation.html">jms_kapps.uc1.infeasible_operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner.html">jms_kapps.uc1.learner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_dashboard.html">jms_kapps.uc1.learner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_memory.html">jms_kapps.uc1.learner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_process.html">jms_kapps.uc1.learner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/mqtt_broker.html">jms_kapps.uc1.mqtt_broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page.html">jms_kapps.uc1.page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page_lists.html">jms_kapps.uc1.page_lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner.html">jms_kapps.uc1.planner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_dashboard.html">jms_kapps.uc1.planner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_memory.html">jms_kapps.uc1.planner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_process.html">jms_kapps.uc1.planner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_reads.html">jms_kapps.uc1.planner_reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/replay.html">jms_kapps.uc1.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_attempt.html">jms_kapps.uc1.robot_attempt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_binding.html">jms_kapps.uc1.robot_binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_controller.html">jms_kapps.uc1.robot_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/run_core.html">jms_kapps.uc1.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/scope_log.html">jms_kapps.uc1.scope_log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource.html">jms_kapps.uc1.screwing_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_dashboard.html">jms_kapps.uc1.screwing_resource_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_memory.html">jms_kapps.uc1.screwing_resource_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/seed.html">jms_kapps.uc1.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/sequence.html">jms_kapps.uc1.sequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/timeseries.html">jms_kapps.uc1.timeseries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/vocabulary.html">jms_kapps.uc1.vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/index.html">jms_kapps.uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/__main__.html">jms_kapps.uc2.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/capability_resource.html">jms_kapps.uc2.capability_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/discovery.html">jms_kapps.uc2.discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/handover_events.html">jms_kapps.uc2.handover_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/handshake.html">jms_kapps.uc2.handshake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/history.html">jms_kapps.uc2.history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module.html">jms_kapps.uc2.module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_dashboard.html">jms_kapps.uc2.module_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_drawing.html">jms_kapps.uc2.module_drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_memory.html">jms_kapps.uc2.module_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/process.html">jms_kapps.uc2.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/routing.html">jms_kapps.uc2.routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/run_core.html">jms_kapps.uc2.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/seed.html">jms_kapps.uc2.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/reachable_destination.html">jms_kapps.uc2.reachable_destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/spawn_rate.html">jms_kapps.uc2.spawn_rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/strategies.html">jms_kapps.uc2.strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/topology.html">jms_kapps.uc2.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/trace_box.html">jms_kapps.uc2.trace_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/transport.html">jms_kapps.uc2.transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/validation_report.html">jms_kapps.uc2.validation_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/vocabulary.html">jms_kapps.uc2.vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/waiting_order.html">jms_kapps.uc2.waiting_order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms.html">jms_kapps.uc2.wms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_dashboard.html">jms_kapps.uc2.wms_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_memory.html">jms_kapps.uc2.wms_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_process.html">jms_kapps.uc2.wms_process</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the Launcher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/index.html">jms_kapps.uc2.launcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/api.html">jms_kapps.uc2.launcher.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/backend.html">jms_kapps.uc2.launcher.backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/boxes.html">jms_kapps.uc2.launcher.boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/runner.html">jms_kapps.uc2.launcher.runner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the monitor</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/index.html">jms_kapps.uc2.monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/api.html">jms_kapps.uc2.monitor.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/handovers.html">jms_kapps.uc2.monitor.handovers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/memory.html">jms_kapps.uc2.monitor.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/process.html">jms_kapps.uc2.monitor.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/reads.html">jms_kapps.uc2.monitor.reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/wires.html">jms_kapps.uc2.monitor.wires</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The measurement harness</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">jms_kapps.evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approval.html">jms_kapps.evaluation.approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline.html">jms_kapps.evaluation.baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bench.html">jms_kapps.evaluation.bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_load.html">jms_kapps.evaluation.client_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">jms_kapps.evaluation.configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid.html">jms_kapps.evaluation.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="harness.html">jms_kapps.evaluation.harness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heavy_parts.html">jms_kapps.evaluation.heavy_parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instrumentation.html">jms_kapps.evaluation.instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live_store.html">jms_kapps.evaluation.live_store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matcher.html">jms_kapps.evaluation.matcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observation.html">jms_kapps.evaluation.observation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="own_transports.html">jms_kapps.evaluation.own_transports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="precision.html">jms_kapps.evaluation.precision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prefill.html">jms_kapps.evaluation.prefill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramp.html">jms_kapps.evaluation.ramp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramp_comparison.html">jms_kapps.evaluation.ramp_comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record.html">jms_kapps.evaluation.record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record_match.html">jms_kapps.evaluation.record_match</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replay.html">jms_kapps.evaluation.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replay_levels.html">jms_kapps.evaluation.replay_levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">jms_kapps.evaluation.report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_charts.html">jms_kapps.evaluation.report_charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_points.html">jms_kapps.evaluation.report_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_steps.html">jms_kapps.evaluation.report_steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_summary.html">jms_kapps.evaluation.report_summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rounds.html">jms_kapps.evaluation.rounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_limit.html">jms_kapps.evaluation.run_limit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_uc2.html">jms_kapps.evaluation.run_uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seed.html">jms_kapps.evaluation.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="southward.html">jms_kapps.evaluation.southward</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">jms_kapps.evaluation.spec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">jms_kapps.evaluation.stats</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">jms_kapps.evaluation.store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_requests.html">jms_kapps.evaluation.store_requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">jms_kapps.evaluation.summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sweep.html">jms_kapps.evaluation.sweep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table.html">jms_kapps.evaluation.table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watch.html">jms_kapps.evaluation.watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper.html">jms_kapps.evaluation.wrapper</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.store</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-jms_kapps.evaluation.store">
+<span id="jms-kapps-evaluation-store"></span><h1>jms_kapps.evaluation.store<a class="headerlink" href="#module-jms_kapps.evaluation.store" title="Link to this heading">#</a></h1>
+<p>The store of one run: a repository of its own on the configured GraphDB, and the guard around it.</p>
+<p><strong>One repository for each run.</strong> A run creates a repository named <cite>eval-</cite> plus its run id, through
+GraphDB’s REST API, from jms_kapps’ repository config, <cite>graphdb/jms-kapps-repo-config.ttl</cite>: with
+SHACL on, the config with only its id changed; with SHACL off, the twin, which also drops the SHACL
+layer around the store, so that it differs from jms_kapps’ config only in that layer and the id.
+Both run the ruleset <cite>rdfsplus-optimized</cite>: a config with another ruleset is refused before it is
+sent, and so is a repository for which the store answers another ruleset. The run deletes its
+repository at its end, also after a failure, and never any other.</p>
+<p><strong>The guard.</strong> Every request the server sends goes through <cite>permit</cite>, which holds an explicit list
+of the requests a run may send, each by its method and its path. A request that names a repository
+is one of two kinds. The monitoring view of a repository (<cite>GET rest/monitor/repository/&lt;id&gt;</cite>) may
+name any repository of the server, the protected ones included (<cite>monitorable</cite>); it only reads the
+counters of queries, transactions and connections. Everything else that names a repository,
+reads of its config and of its size and the creation and deletion, takes only <cite>guarded</cite>: <cite>eval-</cite>
+plus a run id of letters, digits, <cite>-</cite> and <cite>_</cite>. <cite>guarded</cite> refuses <cite>jms-kapps</cite>, the repository of
+the demonstration, <cite>kapps-demo</cite>, the middleware’s, and <cite>Tests</cite>, the live suites’ of every library,
+in any spelling, and every name without <cite>eval-</cite>. So every write, and every read of data (a
+query, the statements, an export, the size of a repository), is refused for any repository but the
+run’s own. A refused request is not sent. The server deletes only a repository that it created
+itself in this run.</p>
+<p><strong>What the Workbench shows.</strong> The facts a record holds of the server are the answers of the REST
+views that the GraphDB Workbench reads, each kept whole as the server answered it, with its status
+(<cite>View</cite>): the version and the edition, the repositories, the resource view and the structures view
+(Monitor, System), the license, the run’s own repository, its config, its size and its query and
+transaction view, and the query and transaction view of every other repository. A view that the
+server refuses is kept with its status and why, and the run goes on: the harness invents no fact.</p>
+<p>The login is the triple-store interface’s, <cite>POST rest/login</cite>, with the connection variables
+<cite>GRAPHDB_URL</cite>, <cite>GRAPHDB_USERNAME</cite> and <cite>GRAPHDB_PASSWORD</cite>, which the command reads. Neither the user
+nor the password is kept anywhere a record reads.</p>
+<p>The store helper (interim names)
+<cite>jms-live-store</cite> reuses the login, the guard and the config rewrite for the store chores of a
+/land live check. The guard’s prefix is a parameter (<cite>guarded</cite>, <cite>permit</cite>, <cite>repository_config</cite>,
+<cite>GraphDBServer(prefix=…)</cite>), <cite>eval-</cite> by default, so the harness is unchanged; the helper passes
+<cite>ogm-disposable-</cite>. Two exceptions serve the helper alone and are off by default: <cite>size_of_any</cite>
+lets the size of any repository be read (the tripwire reads <cite>jms-kapps</cite> and <cite>Tests</cite>), and <cite>adopt</cite>
+holds a repository that another process created as one to delete. <cite>login</cite> and <cite>token</cite> are public
+for the helper.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.StoreRefused">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">StoreRefused</span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#StoreRefused"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.StoreRefused" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></p>
+<p>The guard refused a repository, or the store refused or answered what a run cannot run on.
+The message says which and why, for a person to read.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.AnswerLost">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">AnswerLost</span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#AnswerLost"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.AnswerLost" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/exceptions.html#RuntimeError" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></a></p>
+<p>The store’s answer to a request was lost: a gateway in front of it answered in its place
+(<cite>GATEWAY_STATUSES</cite>), so whether the store did what was asked is not known. The message says
+the status, for a person to read (interim name).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.guarded">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">guarded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'eval-'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#guarded"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.guarded" title="Link to this definition">#</a></dt>
+<dd><p><cite>repository</cite>, if a caller may name it: <cite>prefix</cite> and an id (<cite>eval-</cite> and a run id for the
+harness; the store helper <cite>jms-live-store</cite> passes its own, <cite>ogm-disposable-</cite>; interim name).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If it is <cite>jms-kapps</cite>, <cite>kapps-demo</cite> or <cite>Tests</cite> in any spelling, or is not
+    <cite>prefix</cite> and an id of letters, digits, <cite>-</cite> and <cite>_</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.monitorable">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">monitorable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#monitorable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.monitorable" title="Link to this definition">#</a></dt>
+<dd><p><cite>repository</cite>, if the monitoring view may name it: any id of letters, digits, <cite>.</cite>, <cite>-</cite> and
+<cite>_</cite> that begins with a letter or a digit, so that it is one segment of a path and no more. It
+is the one place where a run names a repository other than its own, and only to read the
+counters of its queries and transactions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If it is no such id.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.permit">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">permit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">own</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Collection" title="(in Python v3.15)"><span class="pre">Collection</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'eval-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_of_any</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#permit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.permit" title="Link to this definition">#</a></dt>
+<dd><p>Let a request through: only the requests of the list below, and nothing that a pattern
+could also match a write with.</p>
+<ul class="simple">
+<li><p><cite>GET</cite> of a view in <cite>SERVER_VIEWS</cite>;</p></li>
+<li><p><cite>GET rest/monitor/repository/&lt;id&gt;</cite> of any repository (<cite>monitorable</cite>);</p></li>
+<li><p><cite>POST rest/repositories</cite>, the creation of a repository (the caller checks its config names
+the run’s own);</p></li>
+<li><p><cite>GET rest/repositories/&lt;id&gt;</cite> and <cite>GET rest/repositories/&lt;id&gt;/size</cite> of the run’s own
+repository, and <cite>DELETE rest/repositories/&lt;id&gt;</cite> of the run’s own (<cite>guarded</cite>).</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>own</strong> – The repositories that are the run’s own, where the caller knows them: a repository
+of the <cite>eval-</cite> form that is not among them, another run’s, is refused too.</p></li>
+<li><p><strong>prefix</strong> – The prefix of the repositories the caller may create and delete (<cite>guarded</cite>).</p></li>
+<li><p><strong>size_of_any</strong> – Whether <cite>GET rest/repositories/&lt;id&gt;/size</cite> may name any repository
+(<cite>monitorable</cite>), as the store helper’s tripwire reads the shared ones.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the request is none of these, or names a repository the list does not
+    allow it to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.repository_name">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">repository_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#repository_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.repository_name" title="Link to this definition">#</a></dt>
+<dd><p>The repository of the run <cite>run_id</cite>: <cite>eval-</cite> and the run id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the run id makes no name the guard takes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.jms_kapps_repository_config">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">jms_kapps_repository_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#jms_kapps_repository_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.jms_kapps_repository_config" title="Link to this definition">#</a></dt>
+<dd><p>jms_kapps’ repository config, as Turtle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If it is not there, as in an installed copy without the checkout.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.repository_config">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">repository_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">shacl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'eval-'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#repository_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.repository_config" title="Link to this definition">#</a></dt>
+<dd><p>The config of the run’s repository <cite>repository</cite>, as Turtle: jms_kapps’ config with its id
+changed, and without its SHACL layer unless <cite>shacl</cite>.</p>
+<p>The SHACL layer is the <cite>rdf4j:ShaclSail</cite> that jms_kapps’ config puts around the store’s own
+sail, with every setting of its own. The twin points the repository at the store’s sail
+directly; nothing else changes, not even the label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – The config to start from, jms_kapps’ if None.</p></li>
+<li><p><strong>prefix</strong> – The prefix <cite>repository</cite> must have (<cite>guarded</cite>).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the guard refuses <cite>repository</cite>, if the config does not name one
+    repository with a store’s sail in it, or if its ruleset is not <cite>rdfsplus-optimized</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.public_url">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">public_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#public_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.public_url" title="Link to this definition">#</a></dt>
+<dd><p><cite>url</cite> without a user or a password in it.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">GraphDBServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Client</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'eval-'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size_of_any</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>GraphDB’s REST API, as a run uses it: create, read and delete the run’s own repository, and
+read the views the Workbench shows.</p>
+<p>Every request it sends is kept in <cite>requests</cite>, by its method and its path, so that a record
+shows that no request named a repository other than the run’s own.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url</strong> – The server, <cite>GRAPHDB_URL</cite>.</p></li>
+<li><p><strong>username</strong> – The login’s user, <cite>GRAPHDB_USERNAME</cite>.</p></li>
+<li><p><strong>password</strong> – The login’s password, <cite>GRAPHDB_PASSWORD</cite>.</p></li>
+<li><p><strong>client</strong> – The HTTP client, one of its own if None: a test’s stand-in of the store.</p></li>
+<li><p><strong>timeout</strong> – How long a request may take, in seconds.</p></li>
+<li><p><strong>prefix</strong> – The prefix of the repositories it creates and deletes (<cite>guarded</cite>).</p></li>
+<li><p><strong>size_of_any</strong> – Whether it reads the size of any repository, not only its own.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.created">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">created</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#frozenset" title="(in Python v3.15)"><span class="pre">frozenset</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.created" title="Link to this definition">#</a></dt>
+<dd><p>The repositories this server created and has not deleted yet.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.token">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">token</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.token" title="Link to this definition">#</a></dt>
+<dd><p>for a caller that keeps it out of its
+output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The token the login gave, empty before it</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.login">
+<span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.login" title="Link to this definition">#</a></dt>
+<dd><p>Log in with the token login (a plain username and password on a request gets 401 from
+the KIT GraphDB), once: later calls do nothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the store refuses the login.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.adopt">
+<span class="sig-name descname"><span class="pre">adopt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.adopt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.adopt" title="Link to this definition">#</a></dt>
+<dd><p>Hold <cite>repository</cite>, which this server did not create, as its own to delete: the store
+helper deletes in a process of its own, apart from the one that created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the guard refuses <cite>repository</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.version">
+<span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.version" title="Link to this definition">#</a></dt>
+<dd><p>The server’s version and edition (the Workbench’s About).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.repositories">
+<span class="sig-name descname"><span class="pre">repositories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.repositories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.repositories" title="Link to this definition">#</a></dt>
+<dd><p>Every repository of the server, with its state (the Workbench’s repositories).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.resources">
+<span class="sig-name descname"><span class="pre">resources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.resources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.resources" title="Link to this definition">#</a></dt>
+<dd><p>The server’s CPU load, memory, threads and disks (Monitor, System, Resources).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.repository">
+<span class="sig-name descname"><span class="pre">repository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.repository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.repository" title="Link to this definition">#</a></dt>
+<dd><p>The config of the run’s repository, as the server holds it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the guard refuses <cite>repository</cite>. Nothing is sent then.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.structures">
+<span class="sig-name descname"><span class="pre">structures</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.structures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.structures" title="Link to this definition">#</a></dt>
+<dd><p>The hits and misses of the global page cache, and the entity pool (Monitor, System,
+Structures): <cite>rest/monitor/structures</cite>, documented in GraphDB 10.8’s system monitoring.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.license">
+<span class="sig-name descname"><span class="pre">license</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.license"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.license" title="Link to this definition">#</a></dt>
+<dd><p>The license: its edition and the CPU cores it licenses (Setup, License):
+<cite>rest/graphdb-settings/license</cite>, the path the Workbench reads. A login that may not read
+it is refused, and the refusal is kept.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.statement_counts">
+<span class="sig-name descname"><span class="pre">statement_counts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.statement_counts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.statement_counts" title="Link to this definition">#</a></dt>
+<dd><p>The statements of the run’s repository, explicit, inferred and in all (the
+Workbench’s repository size): <cite>rest/repositories/&lt;id&gt;/size</cite>. 10.8.5 answers a wrong size
+inside an open transaction (GDB-12163), so the caller reads it where no participant
+writes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the guard refuses <cite>repository</cite>. Nothing is sent then.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.repository_monitor">
+<span class="sig-name descname"><span class="pre">repository_monitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.repository_monitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.repository_monitor" title="Link to this definition">#</a></dt>
+<dd><p>The queries, transactions and connections of a repository (Monitor, System,
+Performance): the one view that may name any repository of the server (<cite>monitorable</cite>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If <cite>repository</cite> is no id a path takes. Nothing is sent then.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.repository_monitors">
+<span class="sig-name descname"><span class="pre">repository_monitors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repositories</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.repository_monitors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.repository_monitors" title="Link to this definition">#</a></dt>
+<dd><p>The monitoring view of every repository that the view <cite>repositories</cite> (the server’s
+list) names as <cite>RUNNING</cite>, by its id, the protected ones included. A repository in any
+other state, or in none, is kept with its state and marked as not read, and no request
+names it: the view of an inactive repository might initialise it, which would load
+another user’s repository into the shared server, and an inactive repository has no
+queries, transactions or connections to count. Empty where the list was refused: the
+refusal is in the list’s own view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.round_trip">
+<span class="sig-name descname"><span class="pre">round_trip</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.round_trip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.round_trip" title="Link to this definition">#</a></dt>
+<dd><p>One round trip: how long the server takes to answer its version, in milliseconds, with
+the status it answered. It never raises: a refused or lost read is kept as such.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.round_trip_ms">
+<span class="sig-name descname"><span class="pre">round_trip_ms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">times</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.round_trip_ms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.round_trip_ms" title="Link to this definition">#</a></dt>
+<dd><p>How long the server takes to answer its version, <cite>times</cite> times one after the other,
+in milliseconds: the network’s round trip and the server’s least work. The login comes
+before the first, so that no time counts it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.create_repository">
+<span class="sig-name descname"><span class="pre">create_repository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.create_repository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.create_repository" title="Link to this definition">#</a></dt>
+<dd><p>Create the run’s repository <cite>repository</cite> from <cite>config</cite>, a repository config in
+Turtle.</p>
+<p>A repository of that name that exists already is not this run’s, and is refused. Where the
+store’s answer is lost, the repository is this run’s if the store lists it then, so that
+the run deletes it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the guard refuses <cite>repository</cite>, or <cite>config</cite> names another
+    repository, and nothing is sent; if a repository of that name exists already; or
+    if the store did not create it.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.delete_repository">
+<span class="sig-name descname"><span class="pre">delete_repository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.delete_repository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.delete_repository" title="Link to this definition">#</a></dt>
+<dd><p>Delete the run’s repository <cite>repository</cite>, which this server created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the guard refuses <cite>repository</cite>, or this server did not create it,
+    and nothing is sent; or if the store did not delete it.</p></li>
+<li><p><a class="reference internal" href="#jms_kapps.evaluation.store.AnswerLost" title="jms_kapps.evaluation.store.AnswerLost"><strong>AnswerLost</strong></a> – If a gateway in front of the store answered 502, 503 or 504 in its place</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.deleted_after_a_lost_answer">
+<span class="sig-name descname"><span class="pre">deleted_after_a_lost_answer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.deleted_after_a_lost_answer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.deleted_after_a_lost_answer" title="Link to this definition">#</a></dt>
+<dd><p>Whether the store deleted the run’s repository <cite>repository</cite> although the deletion got
+no answer (the request did not reach the store, no answer came in the request’s time, the
+connection dropped, or a gateway answered in the store’s place, <cite>AnswerLost</cite>): one list
+of the server’s repositories, by a request that names none, as the creation does after a
+lost answer. A repository that the store lists no more is deleted, and this server holds
+it as created no more; one that it still lists is not (interim name).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the list gets no answer or is refused, so that whether the store
+    holds the repository is not known; the message says why.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.GraphDBServer.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#GraphDBServer.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.GraphDBServer.close" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.store.create_run_repository">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.store.</span></span><span class="sig-name descname"><span class="pre">create_run_repository</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.evaluation.store.GraphDBServer" title="jms_kapps.evaluation.store.GraphDBServer"><span class="pre">GraphDBServer</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">shacl</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/store.html#create_run_repository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.store.create_run_repository" title="Link to this definition">#</a></dt>
+<dd><p>Create the run’s repository from jms_kapps’ config, with SHACL on or as the twin, and check
+the ruleset the store answers for it. Returns what a record keeps: the config <cite>sent</cite>, the view
+of the repository the store <cite>answered</cite>, and the <cite>ruleset</cite> in it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#jms_kapps.evaluation.store.StoreRefused" title="jms_kapps.evaluation.store.StoreRefused"><strong>StoreRefused</strong></a> – If the config is refused, if the store did not create the repository, or if
+    it answers a ruleset other than <cite>rdfsplus-optimized</cite> for it. The repository stays
+    then, created by this server, which deletes it on request.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="stats.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jms_kapps.evaluation.stats</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="store_requests.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jms_kapps.evaluation.store_requests</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.StoreRefused"><code class="docutils literal notranslate"><span class="pre">StoreRefused</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.AnswerLost"><code class="docutils literal notranslate"><span class="pre">AnswerLost</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.guarded"><code class="docutils literal notranslate"><span class="pre">guarded()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.monitorable"><code class="docutils literal notranslate"><span class="pre">monitorable()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.permit"><code class="docutils literal notranslate"><span class="pre">permit()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.repository_name"><code class="docutils literal notranslate"><span class="pre">repository_name()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.jms_kapps_repository_config"><code class="docutils literal notranslate"><span class="pre">jms_kapps_repository_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.repository_config"><code class="docutils literal notranslate"><span class="pre">repository_config()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.public_url"><code class="docutils literal notranslate"><span class="pre">public_url()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer"><code class="docutils literal notranslate"><span class="pre">GraphDBServer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.created"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.created</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.token"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.token</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.login"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.login()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.adopt"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.adopt()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.version"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.version()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.repositories"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.repositories()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.resources"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.resources()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.repository"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.repository()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.structures"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.structures()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.license"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.license()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.statement_counts"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.statement_counts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.repository_monitor"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.repository_monitor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.repository_monitors"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.repository_monitors()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.round_trip"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.round_trip()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.round_trip_ms"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.round_trip_ms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.create_repository"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.create_repository()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.delete_repository"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.delete_repository()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.deleted_after_a_lost_answer"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.deleted_after_a_lost_answer()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.GraphDBServer.close"><code class="docutils literal notranslate"><span class="pre">GraphDBServer.close()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.store.create_run_repository"><code class="docutils literal notranslate"><span class="pre">create_run_repository()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/evaluation/store.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

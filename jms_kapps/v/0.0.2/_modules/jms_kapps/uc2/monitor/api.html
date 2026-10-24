@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.monitor.api &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/monitor/api';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../../_static/searchtools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.monitor.api</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.monitor.api</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The monitor's HTTP surface, grafted onto its middleware's app: JSON routes and a static page.</span>
+
+<span class="sd">Every GET reads only the monitor's memory: what its background task read last (`memory.py`). The</span>
+<span class="sd">two PUTs set how the monitor reads, its mode and the interval of its graph read, and change</span>
+<span class="sd">nothing else: the monitor writes nothing to the graph. The backend renders no HTML: `/api/state`</span>
+<span class="sd">is JSON, and the page in `static/` draws it. The middleware's own welcome at `/` gives way to the</span>
+<span class="sd">page, as the transferunits demo's station board replaces it.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_args</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.staticfiles</span><span class="w"> </span><span class="kn">import</span> <span class="n">StaticFiles</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReadableResult</span><span class="p">,</span> <span class="n">Term</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handover_events</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeadlockAlarm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.monitor.handovers</span><span class="w"> </span><span class="kn">import</span> <span class="n">SeenHandover</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.monitor.memory</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LONGEST_GRAPH_SECONDS</span><span class="p">,</span>
+    <span class="n">SHORTEST_GRAPH_SECONDS</span><span class="p">,</span>
+    <span class="n">KeptRefusal</span><span class="p">,</span>
+    <span class="n">Mode</span><span class="p">,</span>
+    <span class="n">MonitorMemory</span><span class="p">,</span>
+    <span class="n">Snapshot</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.monitor.reads</span><span class="w"> </span><span class="kn">import</span> <span class="n">SentQuery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.monitor.wires</span><span class="w"> </span><span class="kn">import</span> <span class="n">wires</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">layout</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">local_name</span>
+
+<span class="n">STATIC</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"static"</span>
+
+<span class="c1"># Why the page shows a refusal's report only as the store sent it, or no report at all.</span>
+<span class="n">NO_REPORT_NOTE</span> <span class="o">=</span> <span class="s2">"The service sent no report with this refusal."</span>
+<span class="n">UNREADABLE_NOTE</span> <span class="o">=</span> <span class="s2">"The monitor could not read this report as RDF, so it shows it as the triple store sent it."</span>
+<span class="n">NO_RESULT_NOTE</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"The report names no result, so the monitor shows it as the triple store sent it."</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_local</span><span class="p">(</span><span class="n">iri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">iri</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">local_name</span><span class="p">(</span><span class="n">iri</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_result_json</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">ReadableResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`result` for the page: its message as text, empty when it gives none, and each other term</span>
+<span class="sd">    as `{short, full}`, or None."""</span>
+    <span class="n">shown</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">value</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Term</span><span class="p">)</span> <span class="k">else</span> <span class="n">value</span>
+        <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="n">shown</span><span class="p">[</span><span class="s2">"message"</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">short</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">message</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="n">shown</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_refusal</span><span class="p">(</span><span class="n">kept</span><span class="p">:</span> <span class="n">KeptRefusal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">kept</span><span class="o">.</span><span class="n">event</span>
+    <span class="n">report</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span><span class="o">.</span><span class="n">report</span> <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">report</span><span class="p">:</span>
+        <span class="n">note</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">NO_REPORT_NOTE</span>
+    <span class="k">elif</span> <span class="n">kept</span><span class="o">.</span><span class="n">results</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">note</span> <span class="o">=</span> <span class="n">UNREADABLE_NOTE</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">kept</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
+        <span class="n">note</span> <span class="o">=</span> <span class="n">NO_RESULT_NOTE</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">note</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="n">event</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="s2">"time"</span><span class="p">:</span> <span class="n">event</span><span class="o">.</span><span class="n">time</span><span class="p">,</span>
+        <span class="s2">"giver"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">resource</span><span class="p">),</span>
+        <span class="s2">"receiver"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">peer</span><span class="p">),</span>
+        <span class="s2">"box"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">box</span><span class="p">),</span>
+        <span class="s2">"reason"</span><span class="p">:</span> <span class="n">event</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span>
+        <span class="s2">"rules"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">kept</span><span class="o">.</span><span class="n">rules</span><span class="p">),</span>
+        <span class="c1"># As the participant emitted them, every IRI whole: what a program compares.</span>
+        <span class="s2">"results"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="p">[</span><span class="n">rule</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span> <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span><span class="o">.</span><span class="n">results</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">refusal</span>
+            <span class="k">else</span> <span class="p">[]</span>
+        <span class="p">),</span>
+        <span class="c1"># For a person to read: each result of the report in full, every term short with its</span>
+        <span class="c1"># whole IRI beside it. Empty, with a note that says why, when the report names none.</span>
+        <span class="s2">"readable_results"</span><span class="p">:</span> <span class="p">[</span><span class="n">_result_json</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">kept</span><span class="o">.</span><span class="n">results</span> <span class="ow">or</span> <span class="p">()],</span>
+        <span class="s2">"report_note"</span><span class="p">:</span> <span class="n">note</span><span class="p">,</span>
+        <span class="s2">"report"</span><span class="p">:</span> <span class="n">report</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_by_name</span><span class="p">(</span><span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Where `box` stands in the Boxes table: by its name, as text sorts it, and by its whole IRI</span>
+<span class="sd">    where two names are the same.</span>
+
+<span class="sd">    A box is named by a UUID, which has no order a person counts in. Interim name."""</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_local</span><span class="p">(</span><span class="n">box</span><span class="p">)),</span> <span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="possible_deadlock">
+<a class="viewcode-back" href="../../../../reference/uc2/monitor/api.html#jms_kapps.uc2.monitor.api.possible_deadlock">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">possible_deadlock</span><span class="p">(</span><span class="n">snapshot</span><span class="p">:</span> <span class="n">Snapshot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The one "possible deadlock" notice of `snapshot`'s deadlock alarms, or None where it holds</span>
+<span class="sd">    none: every module involved, each module with an alarm and the modules it asks, in the order</span>
+<span class="sd">    of the graph's modules, by its local name; and each alarm, oldest first, with its module, its</span>
+<span class="sd">    box, the modules it asks and its reason."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">alarms</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">involved</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">alarm</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">alarms</span>
+        <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="p">(</span><span class="n">alarm</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="o">*</span><span class="n">alarm</span><span class="o">.</span><span class="n">asked</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="p">{</span><span class="n">module</span><span class="o">.</span><span class="n">resource</span><span class="p">:</span> <span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">modules</span><span class="p">)}</span>
+    <span class="n">modules</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="n">involved</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">module</span><span class="p">:</span> <span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)),</span> <span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"modules"</span><span class="p">:</span> <span class="p">[</span><span class="n">_local</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">modules</span><span class="p">],</span>
+        <span class="s2">"alarms"</span><span class="p">:</span> <span class="p">[</span><span class="n">_alarm</span><span class="p">(</span><span class="n">alarm</span><span class="p">)</span> <span class="k">for</span> <span class="n">alarm</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">alarms</span><span class="p">],</span>
+    <span class="p">}</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_alarm</span><span class="p">(</span><span class="n">alarm</span><span class="p">:</span> <span class="n">DeadlockAlarm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"id"</span><span class="p">:</span> <span class="n">alarm</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="s2">"time"</span><span class="p">:</span> <span class="n">alarm</span><span class="o">.</span><span class="n">time</span><span class="p">,</span>
+        <span class="s2">"module"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">alarm</span><span class="o">.</span><span class="n">resource</span><span class="p">),</span>
+        <span class="s2">"box"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">alarm</span><span class="o">.</span><span class="n">box</span><span class="p">),</span>
+        <span class="s2">"asked"</span><span class="p">:</span> <span class="p">[</span><span class="n">_local</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">alarm</span><span class="o">.</span><span class="n">asked</span><span class="p">],</span>
+        <span class="s2">"reason"</span><span class="p">:</span> <span class="n">alarm</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_handover</span><span class="p">(</span><span class="n">handover</span><span class="p">:</span> <span class="n">SeenHandover</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"seen"</span><span class="p">:</span> <span class="n">handover</span><span class="o">.</span><span class="n">seen</span><span class="p">,</span>
+        <span class="s2">"box"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">handover</span><span class="o">.</span><span class="n">box</span><span class="p">),</span>
+        <span class="s2">"from"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">handover</span><span class="o">.</span><span class="n">giver</span><span class="p">),</span>
+        <span class="s2">"to"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">handover</span><span class="o">.</span><span class="n">receiver</span><span class="p">),</span>
+    <span class="p">}</span>
+
+
+<div class="viewcode-block" id="ModeChange">
+<a class="viewcode-back" href="../../../../reference/uc2/monitor/api.html#jms_kapps.uc2.monitor.api.ModeChange">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ModeChange</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a page sends to switch the monitor's mode."""</span>
+
+    <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span></div>
+
+
+
+<div class="viewcode-block" id="IntervalChange">
+<a class="viewcode-back" href="../../../../reference/uc2/monitor/api.html#jms_kapps.uc2.monitor.api.IntervalChange">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntervalChange</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a page sends to set the interval of the monitor's graph read, in seconds."""</span>
+
+    <span class="n">seconds</span><span class="p">:</span> <span class="nb">float</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_reading</span><span class="p">(</span><span class="n">snapshot</span><span class="p">:</span> <span class="n">Snapshot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How the monitor reads: its mode, of the modes it has, and the interval of its graph read,</span>
+<span class="sd">    of those a page may set."""</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"mode"</span><span class="p">:</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+        <span class="s2">"modes"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">get_args</span><span class="p">(</span><span class="n">Mode</span><span class="p">)),</span>
+        <span class="s2">"graph_seconds"</span><span class="p">:</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">graph_seconds</span><span class="p">,</span>
+        <span class="s2">"shortest_graph_seconds"</span><span class="p">:</span> <span class="n">SHORTEST_GRAPH_SECONDS</span><span class="p">,</span>
+        <span class="s2">"longest_graph_seconds"</span><span class="p">:</span> <span class="n">LONGEST_GRAPH_SECONDS</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_query</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="n">SentQuery</span><span class="p">,</span> <span class="n">snapshot</span><span class="p">:</span> <span class="n">Snapshot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"read"</span><span class="p">:</span> <span class="n">query</span><span class="o">.</span><span class="n">read</span><span class="p">,</span>
+        <span class="s2">"text"</span><span class="p">:</span> <span class="n">query</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+        <span class="s2">"every_seconds"</span><span class="p">:</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">every</span><span class="p">(</span><span class="n">query</span><span class="p">),</span>
+        <span class="s2">"sent"</span><span class="p">:</span> <span class="n">query</span><span class="o">.</span><span class="n">sent</span><span class="p">,</span>
+        <span class="s2">"duration_seconds"</span><span class="p">:</span> <span class="n">query</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span>
+        <span class="s2">"rows"</span><span class="p">:</span> <span class="n">query</span><span class="o">.</span><span class="n">rows</span><span class="p">,</span>
+        <span class="s2">"error"</span><span class="p">:</span> <span class="n">query</span><span class="o">.</span><span class="n">error</span><span class="p">,</span>
+    <span class="p">}</span>
+
+
+<div class="viewcode-block" id="monitor_state">
+<a class="viewcode-back" href="../../../../reference/uc2/monitor/api.html#jms_kapps.uc2.monitor.api.monitor_state">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">monitor_state</span><span class="p">(</span><span class="n">snapshot</span><span class="p">:</span> <span class="n">Snapshot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The modules where they stand, live or offline, with the boxes they hold; the wires between</span>
+<span class="sd">    them, each with the way its connections lead; every box, by its name (`_by_name`), with its</span>
+<span class="sd">    transport's destination; the newest handovers and the newest refusals, each newest first; the</span>
+<span class="sd">    one "possible deadlock" notice, or None (`possible_deadlock`); how the monitor reads, and the</span>
+<span class="sd">    query each of its reads sent last. The monitor maps destinations, not routes."""</span>
+    <span class="n">held</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">boxes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">boxes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">_by_name</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">box</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">boxes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">holder</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">held</span><span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">holder</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">_local</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">box</span><span class="p">)))</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="o">.</span><span class="n">resource</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">label</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">_local</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">resource</span><span class="p">))</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">modules</span><span class="p">}</span>
+    <span class="n">places</span> <span class="o">=</span> <span class="n">layout</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">resource</span><span class="p">:</span> <span class="p">[(</span><span class="n">c</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">to</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">connections</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">modules</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"error"</span><span class="p">:</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">error</span><span class="p">,</span>
+        <span class="s2">"modules"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">resource</span><span class="p">),</span>
+                <span class="s2">"label"</span><span class="p">:</span> <span class="n">labels</span><span class="p">[</span><span class="n">module</span><span class="o">.</span><span class="n">resource</span><span class="p">],</span>
+                <span class="s2">"type"</span><span class="p">:</span> <span class="n">module</span><span class="o">.</span><span class="n">type</span><span class="p">,</span>
+                <span class="s2">"place"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">places</span><span class="p">[</span><span class="n">module</span><span class="o">.</span><span class="n">resource</span><span class="p">]),</span>
+                <span class="s2">"live"</span><span class="p">:</span> <span class="n">module</span><span class="o">.</span><span class="n">resource</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">live</span><span class="p">,</span>
+                <span class="s2">"boxes"</span><span class="p">:</span> <span class="n">held</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="p">[]),</span>
+                <span class="s2">"holds_box"</span><span class="p">:</span> <span class="n">module</span><span class="o">.</span><span class="n">resource</span> <span class="ow">in</span> <span class="n">held</span><span class="p">,</span>
+                <span class="s2">"connections"</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">"direction"</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span>
+                        <span class="s2">"to"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">to</span><span class="p">),</span>
+                        <span class="s2">"to_label"</span><span class="p">:</span> <span class="n">labels</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">to</span><span class="p">,</span> <span class="n">_local</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">to</span><span class="p">)),</span>
+                        <span class="s2">"port"</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">port</span><span class="p">,</span>
+                    <span class="p">}</span>
+                    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">module</span><span class="o">.</span><span class="n">connections</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">modules</span>
+        <span class="p">],</span>
+        <span class="c1"># Each module by its whole IRI, as the modules' "id" gives it.</span>
+        <span class="s2">"wires"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"between"</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="k">for</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">wire</span><span class="o">.</span><span class="n">between</span><span class="p">],</span>
+                <span class="s2">"leads_to"</span><span class="p">:</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="k">for</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">wire</span><span class="o">.</span><span class="n">leads_to</span><span class="p">],</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">wire</span> <span class="ow">in</span> <span class="n">wires</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">modules</span><span class="p">)</span>
+        <span class="p">],</span>
+        <span class="s2">"boxes"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"id"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">box</span><span class="p">),</span>
+                <span class="s2">"status"</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+                <span class="s2">"origin"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">origin</span><span class="p">),</span>
+                <span class="s2">"destination"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">destination</span><span class="p">),</span>
+                <span class="s2">"holder"</span><span class="p">:</span> <span class="n">_local</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">holder</span><span class="p">),</span>
+                <span class="c1"># The destination by its whole IRI, as the modules' "id" gives it, so that the</span>
+                <span class="c1"># drawing marks it on its module; None when the box has no transport. The monitor</span>
+                <span class="c1"># computes no path to it: only the module that holds the box knows its next one.</span>
+                <span class="s2">"destination_id"</span><span class="p">:</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">destination</span> <span class="ow">is</span> <span class="kc">None</span>
+                <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">destination</span><span class="p">),</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">boxes</span>
+        <span class="p">],</span>
+        <span class="s2">"handovers"</span><span class="p">:</span> <span class="p">[</span><span class="n">_handover</span><span class="p">(</span><span class="n">handover</span><span class="p">)</span> <span class="k">for</span> <span class="n">handover</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">handovers</span><span class="p">],</span>
+        <span class="s2">"refusals"</span><span class="p">:</span> <span class="p">[</span><span class="n">_refusal</span><span class="p">(</span><span class="n">kept</span><span class="p">)</span> <span class="k">for</span> <span class="n">kept</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">refusals</span><span class="p">],</span>
+        <span class="s2">"possible_deadlock"</span><span class="p">:</span> <span class="n">possible_deadlock</span><span class="p">(</span><span class="n">snapshot</span><span class="p">),</span>
+        <span class="s2">"reading"</span><span class="p">:</span> <span class="n">_reading</span><span class="p">(</span><span class="n">snapshot</span><span class="p">),</span>
+        <span class="s2">"queries"</span><span class="p">:</span> <span class="p">[</span><span class="n">_query</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">snapshot</span><span class="p">)</span> <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="o">.</span><span class="n">queries</span><span class="p">],</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="mount_onto">
+<a class="viewcode-back" href="../../../../reference/uc2/monitor/api.html#jms_kapps.uc2.monitor.api.mount_onto">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mount_onto</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">memory</span><span class="p">:</span> <span class="n">MonitorMemory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Add the monitor's routes and page to `app`, in place of its root route."""</span>
+    <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">routes</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">route</span><span class="p">,</span> <span class="s2">"path"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"/"</span> <span class="ow">and</span> <span class="s2">"GET"</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="nb">getattr</span><span class="p">(</span><span class="n">route</span><span class="p">,</span> <span class="s2">"methods"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="p">):</span>
+            <span class="n">app</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">route</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="n">include_in_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">page</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">FileResponse</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">FileResponse</span><span class="p">(</span><span class="n">STATIC</span> <span class="o">/</span> <span class="s2">"index.html"</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/api/state"</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">state</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">monitor_state</span><span class="p">(</span><span class="n">memory</span><span class="o">.</span><span class="n">snapshot</span><span class="p">())</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">"/api/mode"</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">switch</span><span class="p">(</span><span class="n">change</span><span class="p">:</span> <span class="n">ModeChange</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Switch between "graph + streams" and "graph only"."""</span>
+        <span class="n">memory</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_reading</span><span class="p">(</span><span class="n">memory</span><span class="o">.</span><span class="n">snapshot</span><span class="p">())</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">"/api/graph-read-interval"</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_interval</span><span class="p">(</span><span class="n">change</span><span class="p">:</span> <span class="n">IntervalChange</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Read the graph every `seconds`, from 0.5 s to 10 s."""</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">memory</span><span class="o">.</span><span class="n">set_graph_seconds</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span><span class="n">status_code</span><span class="o">=</span><span class="mi">422</span><span class="p">,</span> <span class="n">detail</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+        <span class="k">return</span> <span class="n">_reading</span><span class="p">(</span><span class="n">memory</span><span class="o">.</span><span class="n">snapshot</span><span class="p">())</span>
+
+    <span class="n">app</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s2">"/static"</span><span class="p">,</span> <span class="n">StaticFiles</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">STATIC</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">"monitor-static"</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">openapi_schema</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

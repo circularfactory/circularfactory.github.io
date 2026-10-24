@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.spec &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/spec';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.spec</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.spec</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The spec of a sweep of the measurement harness, iteration one: which configurations a sweep</span>
+<span class="sd">runs, and how often each.</span>
+
+<span class="sd">A spec is a plain TOML file of **sweep blocks**, with defaults of its own:</span>
+
+<span class="sd">::</span>
+
+<span class="sd">    [defaults]                      # the spec's own defaults, for each of its configurations</span>
+<span class="sd">    boxes_per_minute = 30</span>
+<span class="sd">    warm_up_seconds = 60</span>
+<span class="sd">    window_seconds = 300</span>
+<span class="sd">    drain_bound_seconds = 300</span>
+<span class="sd">    matcher_interval_seconds = 2</span>
+<span class="sd">    transit_seconds = 3.0</span>
+<span class="sd">    retry_seconds = 1.0</span>
+<span class="sd">    heavy = false</span>
+<span class="sd">    repetitions = 5</span>
+<span class="sd">    pick_base_seed = 20261012       # optional: the base of each repetition's pick seed</span>
+
+<span class="sd">    [[sweep]]                       # one sweep block: the cross product of its axis values</span>
+<span class="sd">    topology = ["cross", "grid"]</span>
+<span class="sd">    prefill = ["{topology}-1k.ttl", "{topology}-1M.ttl"]</span>
+
+<span class="sd">A block's keys are those of a configuration (`configuration.KEYS`) and `repetitions`, each with</span>
+<span class="sd">one value or a list of values: the block is the cross product of its lists, the first key varying</span>
+<span class="sd">slowest. A block with no key at all is one configuration, of the defaults alone.</span>
+
+<span class="sd">**Precedence.** A value comes from the command's defaults (`COMMAND_DEFAULTS`: the strategies</span>
+<span class="sd">`real`, SHACL on, history collection off, no prefill, the wrapper on, the transit time 3.0 s, the</span>
+<span class="sd">retry wait 1.0 s, 1 repetition), then the spec's defaults,</span>
+<span class="sd">then its block, then a flag of the command (`setting`), each over the one before.</span>
+
+<span class="sd">**The pick seed** (interim names). Repetition k of every configuration gets the seed `pick_seed(base, k)` for</span>
+<span class="sd">the WarehouseManagementSystem's picks, so that the repetitions of two configurations stay paired.</span>
+<span class="sd">The base is `pick_base_seed` of the spec's `[defaults]`, a whole number, or else the command's fixed</span>
+<span class="sd">`DEFAULT_BASE_SEED`. The seed is no key of a configuration and no part of its key: all repetitions</span>
+<span class="sd">of a configuration keep one key. The sweep writes it into each run's saved configuration.</span>
+
+<span class="sd">**The prefill seed** (interim name). `jms-eval`</span>
+<span class="sd">makes each prefill file that a spec names and that is missing (`harness`), with the seed 1 unless</span>
+<span class="sd">the spec's `[defaults]` give `prefill_seed`, a whole number from 0. Like the pick base seed it is</span>
+<span class="sd">no key of a configuration and no part of its key.</span>
+
+<span class="sd">**The series** (interim name). The configuration</span>
+<span class="sd">numbers of two specs point to different configurations: configuration 7 of the iteration-one spec</span>
+<span class="sd">is not configuration 7 of the "after" spec. So a spec names its series in its defaults, `series =</span>
+<span class="sd">"before"`, a text, and the readers and the sweep show each number with it, "before 7"</span>
+<span class="sd">(`SpecConfiguration.name`). A spec without the name takes its file name without the extension.</span>
+<span class="sd">Like the seeds, the series is no key of a configuration and no part of its key; the records match</span>
+<span class="sd">by their key as before, and a run's folder, a record file and `--configurations` keep the number.</span>
+
+<span class="sd">**The configurations of a spec** are the union of its blocks, in the listed order, with no</span>
+<span class="sd">duplicates: a configuration that a block lists again keeps its place and its number. Each has its</span>
+<span class="sd">number of repetitions, and one listed again with another number of them is refused. So a spec</span>
+<span class="sd">lists the configurations it runs first in blocks of their own, and its design in blocks after</span>
+<span class="sd">them, which repeat them without running them twice.</span>
+
+<span class="sd">**A missing value** is refused before any run starts: every value that is not a default of the</span>
+<span class="sd">command comes from the spec or a flag, and the refusal names the block and the value.</span>
+
+<span class="sd">**A prefill file is for one topology**, so a prefill may name its topology's name with</span>
+<span class="sd">`{topology}`: a shipped topology's name, or a topology file's name without its suffix</span>
+<span class="sd">(`../topologies/grid-60.json` gives `grid-60`).</span>
+
+<span class="sd">**Paths.** A topology file is read from the spec's folder, as a configuration reads its own; a</span>
+<span class="sd">prefill file from the prefills folder of the command, since a prefill file of 10M statements is</span>
+<span class="sd">no file to keep beside a spec. Neither needs to exist until its configuration resolves</span>
+<span class="sd">(`resolved`), just before the sweep's first run.</span>
+
+<span class="sd">**The key of a configuration** is a digest of its values as the spec gives them, the prefill's</span>
+<span class="sd">topology filled in, with every number as a float: so a run is found again when the spec lists its</span>
+<span class="sd">configuration elsewhere or writes 60 as 60.0, and where the spec, the checkout or the prefills</span>
+<span class="sd">folder moved.</span>
+
+<span class="sd">**A ramp** is a block marked as a ramp, `ramp = true`, whose only axis is its box rates, rising:</span>
+
+<span class="sd">::</span>
+
+<span class="sd">    [[sweep]]</span>
+<span class="sd">    ramp = true</span>
+<span class="sd">    topology = "grid"</span>
+<span class="sd">    prefill = "{topology}-1M.ttl"</span>
+<span class="sd">    boxes_per_minute = [10, 20, 40, 80, 160, 320]</span>
+<span class="sd">    repetitions = 1</span>
+
+<span class="sd">Each rate is one load level, made by one run, so a ramp has 1 repetition. Its runs are heavy: its</span>
+<span class="sd">configurations take `heavy = true` whatever the spec's defaults say, and a ramp whose block or a</span>
+<span class="sd">flag says `heavy = false` is refused. They run with the wrapper, since the broken rule reads the</span>
+<span class="sd">measures that need it (`ramp`). A ramp's configurations are its own: one that another block lists</span>
+<span class="sd">too is refused.</span>
+
+<span class="sd">**The precision rule** (interim names). A spec</span>
+<span class="sd">with a `[precision]` table does not give a fixed number of repetitions to its configurations at</span>
+<span class="sd">normal load: each runs until the rule holds (`precision`), in rounds (`rounds`), at most</span>
+<span class="sd">`maximum_runs` times.</span>
+
+<span class="sd">::</span>
+
+<span class="sd">    [precision]                     # every key is optional; these are the values</span>
+<span class="sd">    latency_tolerance = 0.10        # the bootstrap interval of the pooled commit p95 within +-10 %</span>
+<span class="sd">    throughput_spread = 0.10        # the IQR of the transports ended per minute at most 10 % of the median</span>
+<span class="sd">    minimum_runs = 10               # valid runs needed, from 2: from at least two rounds</span>
+<span class="sd">    maximum_runs = 20               # runs made at most</span>
+
+<span class="sd">These are settings of the spec outside a configuration's key. A table that gives `pass_sizes` is</span>
+<span class="sd">refused: the rounds replaced the passes. A configuration under the rule is</span>
+<span class="sd">one that is neither a ramp's level nor heavy; its `repetitions` is `maximum_runs`, and the spec,</span>
+<span class="sd">a block or a flag that gives it `repetitions` is refused. A ramp's level and a heavy configuration</span>
+<span class="sd">are heavy parts (`heavy_parts`): each runs one time, in round 1, and again on request, so one with</span>
+<span class="sd">`repetitions` other than 1 is refused.</span>
+
+<span class="sd">**Replay factors** (interim names). A sweep block</span>
+<span class="sd">may list the factors by which the store-only baseline replays a recorded run compressed in time:</span>
+
+<span class="sd">::</span>
+
+<span class="sd">    [[sweep]]</span>
+<span class="sd">    topology = "grid"</span>
+<span class="sd">    prefill = "{topology}-1M.ttl"</span>
+<span class="sd">    boxes_per_minute = 30</span>
+<span class="sd">    replay_factors = [1, 2, 4, 8, 16]</span>
+
+<span class="sd">After the UC2 runs of each configuration of the block, the sweep replays the first valid run of that</span>
+<span class="sd">configuration once per factor, in rising order (`replay_levels`). The factors are a setting of the</span>
+<span class="sd">block, outside the configuration's key and no axis of its cross product: a configuration that a</span>
+<span class="sd">later block lists again gets the factors of both. Each is a number from 1; a replay needs the</span>
+<span class="sd">store requests of a run with the wrapper, so a configuration with factors has `wrapper = true`.</span>
+<span class="sd">Every factor above 1 is a heavy run (`approval`). Each level has a key of its own, the</span>
+<span class="sd">configuration's key and the factor (`replay_levels.level_key`).</span>
+
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">replace</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">DEFAULT_BASE_SEED</span><span class="p">,</span>
+    <span class="n">KEYS</span><span class="p">,</span>
+    <span class="n">NO_PREFILL</span><span class="p">,</span>
+    <span class="n">Configuration</span><span class="p">,</span>
+    <span class="n">ConfigurationRefused</span><span class="p">,</span>
+    <span class="n">pick_seed</span><span class="p">,</span>
+    <span class="n">resolve</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_RETRY_SECONDS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.seed</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.strategies</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModuleStrategy</span><span class="p">,</span> <span class="n">WmsStrategy</span>
+
+<span class="c1"># The keys of a spec's defaults and of each of its blocks: those of a configuration, and how many</span>
+<span class="c1"># times each configuration runs.</span>
+<span class="n">REPETITIONS</span> <span class="o">=</span> <span class="s2">"repetitions"</span>
+<span class="n">SPEC_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">KEYS</span><span class="p">,</span> <span class="n">REPETITIONS</span><span class="p">)</span>
+
+<span class="c1"># The command's defaults: the strategies `real`, SHACL on, history collection off, no prefill, the</span>
+<span class="c1"># wrapper on, the transit time 3.0 s and the retry wait 1.0 s (the values the use case takes by</span>
+<span class="c1"># default), and 1 repetition.</span>
+<span class="c1"># Every other value comes from the spec, or from a flag.</span>
+<span class="n">COMMAND_DEFAULTS</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"prefill"</span><span class="p">:</span> <span class="n">NO_PREFILL</span><span class="p">,</span>
+    <span class="s2">"module_strategy"</span><span class="p">:</span> <span class="s2">"real"</span><span class="p">,</span>
+    <span class="s2">"wms_strategy"</span><span class="p">:</span> <span class="s2">"real"</span><span class="p">,</span>
+    <span class="s2">"shacl"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">"collect_history"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">"wrapper"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">"transit_seconds"</span><span class="p">:</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span><span class="p">,</span>
+    <span class="s2">"retry_seconds"</span><span class="p">:</span> <span class="n">DEFAULT_RETRY_SECONDS</span><span class="p">,</span>
+    <span class="n">REPETITIONS</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># What a prefill names to name its topology's name.</span>
+<span class="n">TOPOLOGY_PLACEHOLDER</span> <span class="o">=</span> <span class="s2">"</span><span class="si">{topology}</span><span class="s2">"</span>
+
+<span class="c1"># The key that marks a block as a ramp. A block may say it;</span>
+<span class="c1"># the spec's defaults and the flags may not.</span>
+<span class="n">RAMP</span> <span class="o">=</span> <span class="s2">"ramp"</span>
+
+<span class="c1"># The key of the spec's defaults that gives the seed of the prefill files that `jms-eval` makes</span>
+<span class="c1"># (interim name): no key of a configuration either.</span>
+<span class="n">PREFILL_SEED</span> <span class="o">=</span> <span class="s2">"prefill_seed"</span>
+
+<span class="c1"># The key of the spec's defaults that names the spec's series (interim name): no key of a configuration either.</span>
+<span class="n">SERIES</span> <span class="o">=</span> <span class="s2">"series"</span>
+
+<span class="c1"># The key of the spec's defaults that gives the base seed of the pick seeds (interim name): no key of a configuration, so no block and no flag may give it.</span>
+<span class="n">BASE_SEED</span> <span class="o">=</span> <span class="s2">"pick_base_seed"</span>
+
+<span class="c1"># The key of a block that lists the replay factors of its configurations (interim name): no key of a configuration, so no default and no flag may give it.</span>
+<span class="n">REPLAY_FACTORS</span> <span class="o">=</span> <span class="s2">"replay_factors"</span>
+
+<span class="c1"># The tables of a spec.</span>
+<span class="n">_DEFAULTS</span> <span class="o">=</span> <span class="s2">"defaults"</span>
+<span class="n">_SWEEP</span> <span class="o">=</span> <span class="s2">"sweep"</span>
+<span class="n">_PRECISION</span> <span class="o">=</span> <span class="s2">"precision"</span>
+
+<span class="c1"># The key of a `[precision]` table that gave the sizes of the first passes, until the rounds</span>
+<span class="c1"># replaced them: a table that gives it is refused, naming the rounds.</span>
+<span class="n">PASS_SIZES</span> <span class="o">=</span> <span class="s2">"pass_sizes"</span>
+
+
+<div class="viewcode-block" id="PrecisionRule">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.PrecisionRule">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PrecisionRule</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The settings of the precision rule that a spec's `[precision]` table gives (interim names).</span>
+
+<span class="sd">    A configuration meets the rule when it has `minimum_runs` valid runs, the bootstrap 95 %</span>
+<span class="sd">    interval of its pooled commit p95 lies within `latency_tolerance` of the p95 on both sides,</span>
+<span class="sd">    and the IQR of its transports ended per minute is at most `throughput_spread` of their median.</span>
+<span class="sd">    At most `maximum_runs` runs are made of it. The sweep works in rounds (`rounds`): round k</span>
+<span class="sd">    makes repetition k of each configuration that is still open, so the last round is</span>
+<span class="sd">    `maximum_runs`.</span>
+<span class="sd">    """</span>
+
+    <span class="n">latency_tolerance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.10</span>
+    <span class="n">throughput_spread</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.10</span>
+    <span class="n">minimum_runs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">maximum_runs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span></div>
+
+
+
+<div class="viewcode-block" id="SpecRefused">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.SpecRefused">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SpecRefused</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A spec cannot be swept: it is no TOML, misses a value, names a key a spec does not know, or</span>
+<span class="sd">    a configuration of it cannot be run. The message names the value, for a person to read."""</span></div>
+
+
+
+<div class="viewcode-block" id="Spec">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.Spec">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Spec</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A spec as its file holds it: its defaults and its blocks, each a key with its values."""</span>
+
+    <span class="n">path</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="n">defaults</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="n">blocks</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span> <span class="o">...</span><span class="p">]</span>
+    <span class="c1"># The numbers of the blocks marked as a ramp, from 1.</span>
+    <span class="n">ramps</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">()</span>
+    <span class="c1"># The replay factors of each block that lists them, by the block's number, each in rising order</span>
+    <span class="c1"># (interim name).</span>
+    <span class="n">replays</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="c1"># The base seed the spec gives for the pick seeds, or None where the command's default applies.</span>
+    <span class="n">base_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The precision rule of the spec's `[precision]` table, or None for a spec of fixed</span>
+    <span class="c1"># repetitions (interim name).</span>
+    <span class="n">precision</span><span class="p">:</span> <span class="n">PrecisionRule</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The seed of the prefill files that `jms-eval` makes, or None for the seed 1 (interim name).</span>
+    <span class="n">prefill_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The series that the spec's defaults name, or None (interim name).</span>
+    <span class="n">series_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">series</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The spec's series: the name its defaults give, else its file name without the</span>
+<span class="sd">        extension (interim name)."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">series_name</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">series_name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">stem</span></div>
+
+
+
+<div class="viewcode-block" id="SpecConfiguration">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.SpecConfiguration">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SpecConfiguration</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One configuration of a spec.</span>
+
+<span class="sd">    `number` is its place among the spec's configurations, from 1, and `block` the block that</span>
+<span class="sd">    lists it first, from 1. `values` holds every key of a configuration as the spec and the flags</span>
+<span class="sd">    give it, the prefill's topology filled in; `key` is their digest. `ramp` is the number of the</span>
+<span class="sd">    block of the ramp it is a level of, or None. `ruled` is whether it runs under the spec's</span>
+<span class="sd">    precision rule (interim name): then `repetitions` is the rule's maximum.</span>
+<span class="sd">    `replay_factors` are the factors its blocks list for the store-only baseline's replay of it,</span>
+<span class="sd">    in rising order, or none (interim name); they are no part of its key.</span>
+<span class="sd">    `spec_file` is the file name of the spec that lists it (interim name): a record</span>
+<span class="sd">    of the "before" series is matched to it only when its sweep names that file. `series` is the</span>
+<span class="sd">    spec's series (interim name), no part of the key, and `name` the number with</span>
+<span class="sd">    it, as the readers and the sweep show a configuration.</span>
+<span class="sd">    """</span>
+
+    <span class="n">number</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">block</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">values</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="n">repetitions</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">ramp</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">ruled</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">replay_factors</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">spec_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">series</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The configuration's number with its series, such as `before 7`: the number alone</span>
+<span class="sd">        where it has no series (interim name)."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">series</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">series</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_spec">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.read_spec">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_spec</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Spec</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The spec in the TOML file at `path`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If the file cannot be read or is no TOML, has a table a spec does not know,</span>
+<span class="sd">            or a key in its defaults or a block that a spec does not know, or an axis with no</span>
+<span class="sd">            value.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the spec </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> cannot be read: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="k">except</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">TOMLDecodeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the spec </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> is no TOML: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="n">unknown</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="n">_DEFAULTS</span><span class="p">,</span> <span class="n">_SWEEP</span><span class="p">,</span> <span class="n">_PRECISION</span><span class="p">})</span>
+    <span class="k">if</span> <span class="n">unknown</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the spec has tables a spec does not know: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span><span class="si">}</span><span class="s2">. A spec has "</span>
+            <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">] and its blocks, each [[</span><span class="si">{</span><span class="n">_SWEEP</span><span class="si">}</span><span class="s2">]], and may have [</span><span class="si">{</span><span class="n">_PRECISION</span><span class="si">}</span><span class="s2">]"</span>
+        <span class="p">)</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="n">_precision</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_PRECISION</span><span class="p">))</span>
+    <span class="n">defaults</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_DEFAULTS</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">defaults</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2"> is a table, [</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
+    <span class="n">defaults</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">defaults</span><span class="p">)</span>
+    <span class="n">base_seed</span> <span class="o">=</span> <span class="n">_base_seed</span><span class="p">(</span><span class="n">defaults</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">BASE_SEED</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="n">prefill_seed</span> <span class="o">=</span> <span class="n">_seed_of</span><span class="p">(</span><span class="n">defaults</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">PREFILL_SEED</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">PREFILL_SEED</span><span class="p">)</span>
+    <span class="n">series_name</span> <span class="o">=</span> <span class="n">_series_of</span><span class="p">(</span><span class="n">defaults</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">SERIES</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+    <span class="n">_known</span><span class="p">(</span><span class="n">defaults</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
+    <span class="n">blocks</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">_SWEEP</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the spec lists no sweep block: each block is a table [[</span><span class="si">{</span><span class="n">_SWEEP</span><span class="si">}</span><span class="s2">]]"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">blocks</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the spec lists no sweep block, [[</span><span class="si">{</span><span class="n">_SWEEP</span><span class="si">}</span><span class="s2">]]"</span><span class="p">)</span>
+    <span class="n">ramps</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+        <span class="n">number</span> <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">_is_ramp</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">replays</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">number</span><span class="p">:</span> <span class="n">factors</span>
+        <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">factors</span> <span class="o">:=</span> <span class="n">_replay_factors</span><span class="p">(</span><span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">REPLAY_FACTORS</span><span class="p">),</span> <span class="n">number</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">Spec</span><span class="p">(</span>
+        <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span>
+        <span class="n">defaults</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">defaults</span><span class="p">),</span>
+        <span class="n">blocks</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span>
+            <span class="n">_axes</span><span class="p">(</span>
+                <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">block</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">RAMP</span><span class="p">,</span> <span class="n">REPLAY_FACTORS</span><span class="p">)},</span>
+                <span class="n">number</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">ramps</span><span class="o">=</span><span class="n">ramps</span><span class="p">,</span>
+        <span class="n">replays</span><span class="o">=</span><span class="n">replays</span><span class="p">,</span>
+        <span class="n">base_seed</span><span class="o">=</span><span class="n">base_seed</span><span class="p">,</span>
+        <span class="n">precision</span><span class="o">=</span><span class="n">precision</span><span class="p">,</span>
+        <span class="n">prefill_seed</span><span class="o">=</span><span class="n">prefill_seed</span><span class="p">,</span>
+        <span class="n">series_name</span><span class="o">=</span><span class="n">series_name</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="setting">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.setting">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">setting</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The key and the value of a flag `KEY=VALUE`: the value as TOML reads it, a number, a</span>
+<span class="sd">    boolean or a quoted text, or else the text as it is.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If `text` has no `=`.</span>
+<span class="sd">    """</span>
+    <span class="n">key</span><span class="p">,</span> <span class="n">equals</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">"="</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">equals</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"a setting is KEY=VALUE, not </span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="sa">f</span><span class="s2">"value = </span><span class="si">{</span><span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)[</span><span class="s2">"value"</span><span class="p">]</span>
+    <span class="k">except</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">TOMLDecodeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="configurations">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.configurations">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">configurations</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">overrides</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The configurations of `spec`, in its order, each with its number of repetitions.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        overrides: The flags of the command, each a key with its value, over every value of the</span>
+<span class="sd">            spec.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If a flag names a key a spec does not know; if a block, with the defaults</span>
+<span class="sd">            and the flags, misses a value, naming the block and the value; if a configuration</span>
+<span class="sd">            listed again has another number of repetitions; or if a ramp is not one: its rates</span>
+<span class="sd">            do not rise, it has more than 1 repetition, it is not heavy or has no wrapper, or</span>
+<span class="sd">            another block lists one of its configurations too.</span>
+<span class="sd">    """</span>
+    <span class="n">overrides</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">overrides</span> <span class="ow">or</span> <span class="p">{})</span>
+    <span class="n">_known</span><span class="p">(</span><span class="n">overrides</span><span class="p">,</span> <span class="s2">"the flags"</span><span class="p">)</span>
+    <span class="n">found</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SpecConfiguration</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">blocks</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">ramp</span> <span class="o">=</span> <span class="n">number</span> <span class="k">if</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">spec</span><span class="o">.</span><span class="n">ramps</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_refuse_a_light_ramp</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">overrides</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+        <span class="n">given</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">COMMAND_DEFAULTS</span><span class="p">,</span> <span class="o">**</span><span class="n">spec</span><span class="o">.</span><span class="n">defaults</span><span class="p">,</span> <span class="o">**</span><span class="n">block</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">}</span>
+        <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">SPEC_KEYS</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">given</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec has no value for </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2">, and "</span>
+                <span class="sa">f</span><span class="s2">"neither have the spec's [</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">] nor the flags. Every value but the "</span>
+                <span class="sa">f</span><span class="s2">"command's defaults (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">COMMAND_DEFAULTS</span><span class="p">)</span><span class="si">}</span><span class="s2">) comes from the spec"</span>
+            <span class="p">)</span>
+        <span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
+            <span class="n">layered</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">COMMAND_DEFAULTS</span><span class="p">,</span> <span class="o">**</span><span class="n">spec</span><span class="o">.</span><span class="n">defaults</span><span class="p">,</span> <span class="o">**</span><span class="n">values</span><span class="p">,</span> <span class="o">**</span><span class="n">overrides</span><span class="p">}</span>
+            <span class="k">if</span> <span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">layered</span><span class="p">[</span><span class="s2">"heavy"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">repetitions</span> <span class="o">=</span> <span class="n">_repetitions</span><span class="p">(</span><span class="n">layered</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">REPETITIONS</span><span class="p">),</span> <span class="n">number</span><span class="p">)</span>
+            <span class="n">ruled</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">precision</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ramp</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">layered</span><span class="p">[</span><span class="s2">"heavy"</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">spec</span><span class="o">.</span><span class="n">precision</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ruled</span> <span class="ow">and</span> <span class="n">repetitions</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec has a [</span><span class="si">{</span><span class="n">_PRECISION</span><span class="si">}</span><span class="s2">] table, and its heavy "</span>
+                    <span class="sa">f</span><span class="s2">"configuration has </span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">repetitions</span><span class="si">}</span><span class="s2"> (from the block, the "</span>
+                    <span class="sa">f</span><span class="s2">"spec's [</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">] or a flag): in the rounds a heavy configuration runs "</span>
+                    <span class="s2">"one time, in round 1, and a person asks for each more repetition with "</span>
+                    <span class="s2">"--repeat. Give it "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2"> = 1, or none"</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">ruled</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="n">spec</span><span class="o">.</span><span class="n">precision</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
+                    <span class="n">REPETITIONS</span> <span class="ow">in</span> <span class="n">given_in</span>
+                    <span class="k">for</span> <span class="n">given_in</span> <span class="ow">in</span> <span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">defaults</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">overrides</span><span class="p">)</span>
+                <span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec has a [</span><span class="si">{</span><span class="n">_PRECISION</span><span class="si">}</span><span class="s2">] table and a fixed "</span>
+                        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2">: a configuration at normal load runs under the rule or "</span>
+                        <span class="sa">f</span><span class="s2">"a fixed number of times, and only a ramp or a heavy configuration "</span>
+                        <span class="sa">f</span><span class="s2">"keeps </span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="p">)</span>
+                <span class="n">repetitions</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">precision</span><span class="o">.</span><span class="n">maximum_runs</span>
+            <span class="n">configuration_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">layered</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">KEYS</span><span class="p">}</span>
+            <span class="n">configuration_values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">]</span> <span class="o">=</span> <span class="n">_filled</span><span class="p">(</span>
+                <span class="n">configuration_values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">],</span> <span class="n">configuration_values</span><span class="p">[</span><span class="s2">"topology"</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">_key</span><span class="p">(</span><span class="n">configuration_values</span><span class="p">)</span>
+            <span class="n">factors</span> <span class="o">=</span> <span class="n">spec</span><span class="o">.</span><span class="n">replays</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="p">())</span>
+            <span class="k">if</span> <span class="n">factors</span> <span class="ow">and</span> <span class="n">configuration_values</span><span class="p">[</span><span class="s2">"wrapper"</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec lists </span><span class="si">{</span><span class="n">REPLAY_FACTORS</span><span class="si">}</span><span class="s2">, and a replay sends the "</span>
+                    <span class="s2">"store requests that a run's record keeps with the wrapper: the "</span>
+                    <span class="s2">"configuration needs wrapper = true"</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+                <span class="n">first</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">first</span><span class="o">.</span><span class="n">block</span> <span class="o">==</span> <span class="n">number</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, whose box rates rise: it "</span>
+                        <span class="sa">f</span><span class="s2">"lists </span><span class="si">{</span><span class="n">layered</span><span class="p">[</span><span class="s1">'boxes_per_minute'</span><span class="p">]</span><span class="si">}</span><span class="s2"> twice"</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">first</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec lists configuration </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> "</span>
+                        <span class="sa">f</span><span class="s2">"again, of block </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">block</span><span class="si">}</span><span class="s2">: a ramp's configurations are its own"</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">first</span><span class="o">.</span><span class="n">repetitions</span> <span class="o">!=</span> <span class="n">repetitions</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec lists configuration </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> "</span>
+                        <span class="sa">f</span><span class="s2">"again with </span><span class="si">{</span><span class="n">repetitions</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2">, where block </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">block</span><span class="si">}</span><span class="s2"> "</span>
+                        <span class="sa">f</span><span class="s2">"gave it </span><span class="si">{</span><span class="n">first</span><span class="o">.</span><span class="n">repetitions</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">factors</span><span class="p">:</span>
+                    <span class="n">found</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">replace</span><span class="p">(</span>
+                        <span class="n">first</span><span class="p">,</span>
+                        <span class="n">replay_factors</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">({</span><span class="o">*</span><span class="n">first</span><span class="o">.</span><span class="n">replay_factors</span><span class="p">,</span> <span class="o">*</span><span class="n">factors</span><span class="p">})),</span>
+                    <span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">found</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">SpecConfiguration</span><span class="p">(</span>
+                <span class="n">number</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="n">block</span><span class="o">=</span><span class="n">number</span><span class="p">,</span>
+                <span class="n">values</span><span class="o">=</span><span class="n">configuration_values</span><span class="p">,</span>
+                <span class="n">repetitions</span><span class="o">=</span><span class="n">repetitions</span><span class="p">,</span>
+                <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+                <span class="n">ramp</span><span class="o">=</span><span class="n">ramp</span><span class="p">,</span>
+                <span class="n">ruled</span><span class="o">=</span><span class="n">ruled</span><span class="p">,</span>
+                <span class="n">replay_factors</span><span class="o">=</span><span class="n">factors</span><span class="p">,</span>
+                <span class="n">spec_file</span><span class="o">=</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">series</span><span class="o">=</span><span class="n">spec</span><span class="o">.</span><span class="n">series</span><span class="p">,</span>
+            <span class="p">)</span>
+    <span class="n">configured</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">ramps</span><span class="p">):</span>
+        <span class="n">_refuse_a_malformed_ramp</span><span class="p">([</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configured</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">ramp</span> <span class="o">==</span> <span class="n">number</span><span class="p">],</span> <span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">configured</span></div>
+
+
+
+<div class="viewcode-block" id="ramps_of">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.ramps_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ramps_of</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The ramps among `found`, each by the number of its block, with its levels in rising</span>
+<span class="sd">    order of their box rates."""</span>
+    <span class="n">ramps</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ramps</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">number</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"boxes_per_minute"</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">ramps</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="resolved">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.resolved">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resolved</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">prefills</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">module_strategies</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModuleStrategy</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">wms_strategies</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">WmsStrategy</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Configuration</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The configuration of one run of `configuration`, resolved as a configuration file is</span>
+<span class="sd">    (`configuration.resolve`): a topology file read from the spec's folder, and a prefill file</span>
+<span class="sd">    from `prefills`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If the configuration cannot be run, naming its number and the value.</span>
+<span class="sd">    """</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">NO_PREFILL</span><span class="p">:</span>
+        <span class="c1"># The prefills folder as the command was given it, from its working directory.</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">prefills</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span>
+        <span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">])</span><span class="o">.</span><span class="n">expanduser</span><span class="p">())</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">resolve</span><span class="p">(</span>
+            <span class="n">values</span><span class="p">,</span>
+            <span class="n">base</span><span class="o">=</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span>
+            <span class="n">module_strategies</span><span class="o">=</span><span class="n">module_strategies</span><span class="p">,</span>
+            <span class="n">wms_strategies</span><span class="o">=</span><span class="n">wms_strategies</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">ConfigurationRefused</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"configuration </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec: </span><span class="si">{</span><span class="n">refused</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="for_repetition">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.for_repetition">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">for_repetition</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Configuration</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`configuration`, resolved, as repetition `repetition` of it runs: with that repetition's</span>
+<span class="sd">    pick seed, from the spec's base seed or the default. A sweep and `jms-eval-uc2` run from a</span>
+<span class="sd">    spec both make it, so that one run is the same run from either (interim)."""</span>
+    <span class="n">base_seed</span> <span class="o">=</span> <span class="n">DEFAULT_BASE_SEED</span> <span class="k">if</span> <span class="n">spec</span><span class="o">.</span><span class="n">base_seed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">spec</span><span class="o">.</span><span class="n">base_seed</span>
+    <span class="k">return</span> <span class="n">replace</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">wms_pick_seed</span><span class="o">=</span><span class="n">pick_seed</span><span class="p">(</span><span class="n">base_seed</span><span class="p">,</span> <span class="n">repetition</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="sweep_fields">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.sweep_fields">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">sweep_fields</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span> <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""What the record of a run made from a spec says of it: the spec, the configuration's number</span>
+<span class="sd">    and key, and the repetition of how many. A sweep's run and a run of `jms-eval-uc2` made from a</span>
+<span class="sd">    spec and the configuration's number record the same fields (interim)."""</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"spec"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="p">),</span>
+        <span class="s2">"configuration"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+        <span class="s2">"key"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">key</span><span class="p">,</span>
+        <span class="s2">"repetition"</span><span class="p">:</span> <span class="n">repetition</span><span class="p">,</span>
+        <span class="s2">"repetitions"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">repetitions</span><span class="p">,</span>
+    <span class="p">}</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_comparable</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The values of a configuration as a spec lists them and as a resolved configuration holds</span>
+<span class="sd">    them, made comparable: a topology or prefill path by its file name (a resolved one is</span>
+<span class="sd">    absolute), each number as a float."""</span>
+    <span class="n">comparable</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">KEYS</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"topology"</span><span class="p">,</span> <span class="s2">"prefill"</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="n">comparable</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="n">comparable</span>
+
+
+<div class="viewcode-block" id="fingerprint">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.fingerprint">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">fingerprint</span><span class="p">(</span><span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The key of a resolved configuration, computed as the spec computes keys (`_key`) over its</span>
+<span class="sd">    values made comparable, the pick seed left out: the same for the spec's configuration and the</span>
+<span class="sd">    resolved one it gives, and for the configuration text a record keeps (interim)."""</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">replace</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">wms_pick_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">to_toml</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">_key</span><span class="p">(</span><span class="n">_comparable</span><span class="p">(</span><span class="n">values</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="lists">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.lists">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">lists</span><span class="p">(</span><span class="n">listed</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span> <span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `configuration`, resolved, is the configuration `listed` (interim)."""</span>
+    <span class="k">return</span> <span class="n">_key</span><span class="p">(</span><span class="n">_comparable</span><span class="p">(</span><span class="n">listed</span><span class="o">.</span><span class="n">values</span><span class="p">))</span> <span class="o">==</span> <span class="n">fingerprint</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="numbers">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.numbers">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">numbers</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The numbers that a selection names, such as `1-9,12`: numbers from 1 and ranges of them,</span>
+<span class="sd">    separated by commas, in order and each once.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If a part is neither a number from 1 nor a range from a lower to a higher.</span>
+<span class="sd">    """</span>
+    <span class="n">selected</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">):</span>
+        <span class="n">first</span><span class="p">,</span> <span class="n">dash</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">"-"</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">low</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
+            <span class="n">high</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">last</span><span class="p">)</span> <span class="k">if</span> <span class="n">dash</span> <span class="k">else</span> <span class="n">low</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"a selection is numbers from 1 and ranges of them, such as 1-9,12, not "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">"</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+        <span class="k">if</span> <span class="n">low</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">high</span> <span class="o">&lt;</span> <span class="n">low</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"a selection is numbers from 1 and ranges from a lower to a higher, not "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">"</span>
+            <span class="p">)</span>
+        <span class="n">selected</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">selected</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_base_seed</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The base seed that the spec's defaults give: None where they give none.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If it is no whole number from 0.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">_seed_of</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">BASE_SEED</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_series_of</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The series that the spec's defaults name: None where they name none.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If it is no text, or an empty one.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">SERIES</span><span class="si">}</span><span class="s2"> names the spec's series, a text that is not empty, such as "</span>
+            <span class="sa">f</span><span class="s1">'"before", not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s1">'</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_seed_of</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The seed that the spec's defaults give under `key`: None where they give none.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If it is no whole number from 0.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">_DEFAULTS</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is a whole number from 0, not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_precision</span><span class="p">(</span><span class="n">table</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PrecisionRule</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The rule that the `[precision]` table gives: None where the spec has no such table.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If it is no table, names a key the rule does not know, gives `pass_sizes`,</span>
+<span class="sd">            which the rounds replaced, or has a value out of range: the</span>
+<span class="sd">            tolerances are numbers above 0, the minimum is at least 2, so that the valid runs</span>
+<span class="sd">            come from at least two rounds, and at most the maximum.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">table</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">_PRECISION</span><span class="si">}</span><span class="s2">]"</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_PRECISION</span><span class="si">}</span><span class="s2"> is a table, </span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">PASS_SIZES</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> gives </span><span class="si">{</span><span class="n">PASS_SIZES</span><span class="si">}</span><span class="s2">, and the passes are no more: the rounds replaced them. "</span>
+            <span class="s2">"A call makes round after round, "</span>
+            <span class="s2">"and round k makes repetition k of each configuration that does not meet the rule "</span>
+            <span class="sa">f</span><span class="s2">"and has fewer than maximum_runs runs. Remove </span><span class="si">{</span><span class="n">PASS_SIZES</span><span class="si">}</span><span class="s2"> from the spec"</span>
+        <span class="p">)</span>
+    <span class="n">known</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"latency_tolerance"</span><span class="p">,</span>
+        <span class="s2">"throughput_spread"</span><span class="p">,</span>
+        <span class="s2">"minimum_runs"</span><span class="p">,</span>
+        <span class="s2">"maximum_runs"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">unknown</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">known</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">unknown</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> names keys the rule does not know: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span><span class="si">}</span><span class="s2">. It knows "</span>
+            <span class="sa">f</span><span class="s2">"these: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">known</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">defaults</span> <span class="o">=</span> <span class="n">PrecisionRule</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"latency_tolerance"</span><span class="p">,</span> <span class="s2">"throughput_spread"</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">defaults</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_rate</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">value</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is a number above 0, at most 1, not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+            <span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"minimum_runs"</span><span class="p">,</span> <span class="s2">"maximum_runs"</span><span class="p">):</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">defaults</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is a whole number from 1, not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">rule</span> <span class="o">=</span> <span class="n">PrecisionRule</span><span class="p">(</span>
+        <span class="n">latency_tolerance</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"latency_tolerance"</span><span class="p">,</span> <span class="n">defaults</span><span class="o">.</span><span class="n">latency_tolerance</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">throughput_spread</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"throughput_spread"</span><span class="p">,</span> <span class="n">defaults</span><span class="o">.</span><span class="n">throughput_spread</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">minimum_runs</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"minimum_runs"</span><span class="p">,</span> <span class="n">defaults</span><span class="o">.</span><span class="n">minimum_runs</span><span class="p">),</span>
+        <span class="n">maximum_runs</span><span class="o">=</span><span class="n">table</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"maximum_runs"</span><span class="p">,</span> <span class="n">defaults</span><span class="o">.</span><span class="n">maximum_runs</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">minimum_runs</span> <span class="o">&gt;</span> <span class="n">rule</span><span class="o">.</span><span class="n">maximum_runs</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> minimum_runs (</span><span class="si">{</span><span class="n">rule</span><span class="o">.</span><span class="n">minimum_runs</span><span class="si">}</span><span class="s2">) is above maximum_runs "</span>
+            <span class="sa">f</span><span class="s2">"(</span><span class="si">{</span><span class="n">rule</span><span class="o">.</span><span class="n">maximum_runs</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">rule</span><span class="o">.</span><span class="n">minimum_runs</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> minimum_runs (</span><span class="si">{</span><span class="n">rule</span><span class="o">.</span><span class="n">minimum_runs</span><span class="si">}</span><span class="s2">) must be at least 2, so that the valid "</span>
+            <span class="s2">"runs come from at least two time windows: a round makes one run of each "</span>
+            <span class="s2">"configuration"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">rule</span>
+
+
+<div class="viewcode-block" id="valid_factor">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.valid_factor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">valid_factor</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `value` is a replay factor: a finite number from 1. Below 1 a replay would be slower</span>
+<span class="sd">    than the recorded run, which is no load to find a limit with (interim)."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_replay_factors</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The replay factors that block `number` lists, in rising order: none where it lists none.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If they are no list of numbers from 1, an empty list, or list one twice.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">()</span>
+    <span class="n">listed</span> <span class="o">=</span> <span class="n">value</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">listed</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">valid_factor</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span> <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">listed</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec: </span><span class="si">{</span><span class="n">REPLAY_FACTORS</span><span class="si">}</span><span class="s2"> is a list of numbers from 1, such as "</span>
+            <span class="sa">f</span><span class="s2">"[1, 2, 4], not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span> <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">listed</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">factors</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec lists a replay factor twice: </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">factors</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_ramp</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `block`, the block `number`, is marked as a ramp; a ramp's only axis is its box</span>
+<span class="sd">    rates.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If its marker is no boolean, or it is a ramp with another axis, or with no</span>
+<span class="sd">            list of box rates.</span>
+<span class="sd">    """</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">RAMP</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec: </span><span class="si">{</span><span class="n">RAMP</span><span class="si">}</span><span class="s2"> is true or false, not </span><span class="si">{</span><span class="n">marker</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">marker</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">rates</span> <span class="o">=</span> <span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"boxes_per_minute"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rates</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, which lists its rising box rates: "</span>
+            <span class="s2">"boxes_per_minute = [10, 20, 40, ...]"</span>
+        <span class="p">)</span>
+    <span class="n">other_axes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="n">key</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">block</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s2">"boxes_per_minute"</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">other_axes</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, whose only axis is boxes_per_minute; it "</span>
+            <span class="sa">f</span><span class="s2">"lists several values of </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">other_axes</span><span class="p">)</span><span class="si">}</span><span class="s2">. Write one ramp for each"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_refuse_a_light_ramp</span><span class="p">(</span>
+    <span class="n">block</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span> <span class="n">overrides</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Refuse the ramp `block`, the block `number`, where it or a flag says that it is not heavy:</span>
+<span class="sd">    a ramp's runs are heavy."""</span>
+    <span class="n">said</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">*</span><span class="n">block</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"heavy"</span><span class="p">,</span> <span class="p">[]),</span>
+        <span class="o">*</span><span class="p">([</span><span class="n">overrides</span><span class="p">[</span><span class="s2">"heavy"</span><span class="p">]]</span> <span class="k">if</span> <span class="s2">"heavy"</span> <span class="ow">in</span> <span class="n">overrides</span> <span class="k">else</span> <span class="p">[]),</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">said</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, whose runs are heavy: it, or a flag, says "</span>
+            <span class="s2">"heavy = false"</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_refuse_a_malformed_ramp</span><span class="p">(</span><span class="n">levels</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Refuse the ramp of block `number`, with its `levels` in the block's order, unless its box</span>
+<span class="sd">    rates rise, it has 1 repetition and it runs with the wrapper."""</span>
+    <span class="n">rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">level</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"boxes_per_minute"</span><span class="p">]</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">]</span>
+    <span class="n">rising</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span>
+        <span class="n">_is_rate</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">before</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">float</span><span class="p">(</span><span class="n">rate</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="n">before</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">before</span><span class="p">,</span> <span class="n">rate</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">rates</span><span class="p">],</span> <span class="n">rates</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">rising</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, whose box rates rise, at least two of "</span>
+            <span class="sa">f</span><span class="s2">"them; it lists </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="n">rates</span><span class="p">))</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">repetitions</span> <span class="o">=</span> <span class="p">{</span><span class="n">level</span><span class="o">.</span><span class="n">repetitions</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">repetitions</span> <span class="o">!=</span> <span class="p">{</span><span class="mi">1</span><span class="p">}:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, which runs each rate once, "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2"> = 1; it has </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="w"> </span><span class="nb">sorted</span><span class="p">(</span><span class="n">repetitions</span><span class="p">)))</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"wrapper"</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is a ramp, which runs with the wrapper "</span>
+            <span class="s2">"(wrapper = true): the broken rule reads the measures that need it"</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_rate</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_known</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">where</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">unknown</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">SPEC_KEYS</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">unknown</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> names keys a spec does not know: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span><span class="si">}</span><span class="s2">. A spec knows "</span>
+            <span class="sa">f</span><span class="s2">"these: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">SPEC_KEYS</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_axes</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The axes of a block, each key with its values: one value is a list of one. The block's</span>
+<span class="sd">    ramp marker is not among them."""</span>
+    <span class="n">_known</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec"</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">block</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">value</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">values</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec has no value for </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: []"</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+    <span class="k">return</span> <span class="n">axes</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_product</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The cross product of a block's axes, the first key varying slowest."""</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">block</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_repetitions</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">block</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"block </span><span class="si">{</span><span class="n">block</span><span class="si">}</span><span class="s2"> of the spec: </span><span class="si">{</span><span class="n">REPETITIONS</span><span class="si">}</span><span class="s2"> is a whole number from 1, not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_filled</span><span class="p">(</span><span class="n">prefill</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">topology</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The prefill with its topology's name where it names `{topology}`."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prefill</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="n">TOPOLOGY_PLACEHOLDER</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prefill</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">prefill</span>
+    <span class="k">return</span> <span class="n">prefill</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">TOPOLOGY_PLACEHOLDER</span><span class="p">,</span> <span class="n">Path</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">topology</span><span class="p">))</span><span class="o">.</span><span class="n">stem</span><span class="p">)</span>
+
+
+<span class="c1"># The keys that joined a configuration's key with the run settings of the spec:</span>
+<span class="c1"># the records of the "before" series were keyed without them.</span>
+<span class="n">LATER_KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"transit_seconds"</span><span class="p">,</span> <span class="s2">"retry_seconds"</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="legacy_key">
+<a class="viewcode-back" href="../../../reference/evaluation/spec.html#jms_kapps.evaluation.spec.legacy_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">legacy_key</span><span class="p">(</span><span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The key that a record of the "before" series holds for `configuration` (interim name): the digest of its values without the transit time and the retry wait."""</span>
+    <span class="k">return</span> <span class="n">_key</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">LATER_KEYS</span><span class="p">})</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_key</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The digest of a configuration's values, each number as a float."""</span>
+    <span class="n">canonical</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">key</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">value</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">canonical</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">16</span><span class="p">]</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

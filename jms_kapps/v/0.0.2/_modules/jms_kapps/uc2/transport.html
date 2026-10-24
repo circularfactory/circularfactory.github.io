@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.transport &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/transport';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.transport</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.transport</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The job of carrying one box, as the graph records it: one BoxTransportOperation for each box.</span>
+
+<span class="sd">The transport names the box, its origin and its destination, and the box links back to its</span>
+<span class="sd">transport (`fc:hasTransport`): the opening writes both, so a party that holds a box finds the</span>
+<span class="sd">transport through the box, never from the box's name. Its status is the middleware's</span>
+<span class="sd">`svc:hasOperationStatus`, and it says where the journey is:</span>
+
+<span class="sd">- `queued` from the moment it is opened, in the commit that creates the box on its origin, until</span>
+<span class="sd">  the origin is notified;</span>
+<span class="sd">- `running` once the origin was notified and carries the box on;</span>
+<span class="sd">- `done` once the box is back in the WarehouseManagementSystem's possession, written in the same</span>
+<span class="sd">  commit that makes it the possessor;</span>
+<span class="sd">- `failed` when the party that cannot go on ends it: on the station the module it is assigned</span>
+<span class="sd">  to, or the WarehouseManagementSystem when it cannot notify the origin. Its</span>
+<span class="sd">  `svc:hasExecutionResult` says why.</span>
+
+
+<span class="sd">**A transport is assigned to one module at a time**: the one that carries the box on now. Core's</span>
+<span class="sd">`cfc:executedOn` names it, and `cfc:implementsCapability` names that module's</span>
+<span class="sd">`:BoxTransportCapability`. The WarehouseManagementSystem opens the transport assigned to the</span>
+<span class="sd">origin, on which it creates the box. At each hop both move to the next module in the entry commit</span>
+<span class="sd">of the handover that passes the box, so the assigned module is also the box's possessor, and only</span>
+<span class="sd">it writes the transport on the station: a module that has just passed both on and then cannot</span>
+<span class="sd">reach the receiving module writes nothing, and the receiving module ends the transport. The</span>
+<span class="sd">WarehouseManagementSystem writes it only in the create that opens it and when it cannot notify</span>
+<span class="sd">the origin. The box has no state of its own.</span>
+
+<span class="sd">Every write of a transport is a commit of the middleware: one `mw.create()` opens it together with</span>
+<span class="sd">the box and the box's first possession, by the origin, each change of status is a `mw.commit()`,</span>
+<span class="sd">and each reassignment and the last status, `done`, join the entry commit of a handover.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm.utils.class_scope</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.operation</span><span class="w"> </span><span class="kn">import</span> <span class="n">operation</span> <span class="k">as</span> <span class="n">operation_scope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.possession</span><span class="w"> </span><span class="kn">import</span> <span class="n">workpiece</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span><span class="p">,</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">bindings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">transport_iri</span>
+
+<span class="c1"># Typed as the OGM's scope takes them: a list is invariant, so a list of IRIs alone is refused.</span>
+<span class="n">_TRANSPORT_CHAINS</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">IRI</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">FC</span><span class="o">.</span><span class="n">hasBox</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">FC</span><span class="o">.</span><span class="n">hasOrigin</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">FC</span><span class="o">.</span><span class="n">hasDestination</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">CFC</span><span class="o">.</span><span class="n">implementsCapability</span><span class="p">],</span>
+<span class="p">]</span>
+
+<span class="c1"># What a module reads of a transport it is notified of: the scope it gives the middleware's</span>
+<span class="c1"># intake, which reads the transport once with it.</span>
+<span class="n">TRANSPORT_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span><span class="n">_TRANSPORT_CHAINS</span><span class="p">)</span>
+
+<span class="c1"># What the WarehouseManagementSystem reads of a transport that ended: the same, and why it failed.</span>
+<span class="n">ENDED_TRANSPORT_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[</span><span class="o">*</span><span class="n">_TRANSPORT_CHAINS</span><span class="p">,</span> <span class="p">[</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">]]</span>
+<span class="p">)</span>
+
+<span class="c1"># What a module reads of a box it holds: the box with its transport, in one fetch through the</span>
+<span class="c1"># box's link to it, and of the transport what the transport scope reads.</span>
+<span class="n">BOX_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[[</span><span class="n">FC</span><span class="o">.</span><span class="n">hasTransport</span><span class="p">,</span> <span class="o">*</span><span class="n">chain</span><span class="p">]</span> <span class="k">for</span> <span class="n">chain</span> <span class="ow">in</span> <span class="n">_TRANSPORT_CHAINS</span><span class="p">]</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="Transport">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.Transport">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Transport</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One transport as the graph holds it.</span>
+
+<span class="sd">    `assigned` is the module it is assigned to (`cfc:executedOn`), and `result` why it failed.</span>
+<span class="sd">    """</span>
+
+    <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">assigned</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">result</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="transport_from">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.transport_from">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">transport_from</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Transport</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The transport that the middleware's intake hands a party, as the domain code takes it.</span>
+
+<span class="sd">    The intake reads the transport once, under the party's class scope, into a node: a linked</span>
+<span class="sd">    value is a node with an `id`, and a literal is the value itself.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">first</span><span class="p">(</span><span class="n">prop</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">getattr</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">[])]</span>
+        <span class="k">return</span> <span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">values</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="n">assigned</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">first</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">),</span> <span class="n">first</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Transport</span><span class="p">(</span>
+        <span class="n">operation</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">)),</span>
+        <span class="n">box</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasBox</span><span class="p">))),</span>
+        <span class="n">origin</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasOrigin</span><span class="p">))),</span>
+        <span class="n">destination</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasDestination</span><span class="p">))),</span>
+        <span class="n">status</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">)),</span>
+        <span class="n">assigned</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">assigned</span><span class="p">))</span> <span class="k">if</span> <span class="n">assigned</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">result</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="transport_of_box">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.transport_of_box">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">transport_of_box</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Transport</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The transport of the box that `node` is, read under `BOX_SCOPE`, or None if the box links</span>
+<span class="sd">    to none.</span>
+
+<span class="sd">    A box has one transport. The dataset's reasoner infers the box's link from the</span>
+<span class="sd">    transport's `fc:hasBox` as well as reading the written one, and the two are one value.</span>
+<span class="sd">    """</span>
+    <span class="n">linked</span> <span class="o">=</span> <span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasTransport</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">return</span> <span class="n">transport_from</span><span class="p">(</span><span class="n">linked</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">linked</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="operation_status">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.operation_status">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The `svc:hasOperationStatus` of `operation`, or None if it has none."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?status WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">operation</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="si">}</span><span class="s2">&gt; ?status </span><span class="se">}}</span><span class="s2"> LIMIT 1"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"status"</span><span class="p">])</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="execution_result">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.execution_result">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">execution_result</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The `svc:hasExecutionResult` of `operation`: why it failed. None if it has none."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?result WHERE </span><span class="se">{{</span><span class="s2"> &lt;</span><span class="si">{</span><span class="n">operation</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="si">}</span><span class="s2">&gt; ?result </span><span class="se">}}</span><span class="s2"> LIMIT 1"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"result"</span><span class="p">])</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="boxes">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.boxes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">boxes</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Every box in the graph: a read whose answer grows with the store, which no participant</span>
+<span class="sd">    makes; a test checks the graph with it."""</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"SELECT ?box WHERE </span><span class="se">{{</span><span class="s2"> ?box a &lt;</span><span class="si">{</span><span class="n">FC</span><span class="o">.</span><span class="n">Box</span><span class="si">}</span><span class="s2">&gt; </span><span class="se">}}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="failure">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.failure">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">failure</span><span class="p">(</span><span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What a failed transport records as its result: the reason, then the store's validation</span>
+<span class="sd">    report on the lines after it, verbatim, when a refusal by the store is the reason."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">reason</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">report</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">report</span> <span class="k">else</span> <span class="n">reason</span></div>
+
+
+
+<div class="viewcode-block" id="reason_and_report">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.reason_and_report">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reason_and_report</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The reason and the report of a failed transport's result, as `failure` wrote them."""</span>
+    <span class="n">reason</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">report</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reason</span><span class="p">,</span> <span class="n">report</span> <span class="ow">or</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="status_record">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.status_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">status_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What `resource` logs once its commit of `status` for `operation` was admitted.</span>
+
+<span class="sd">    Each party that changes a transport's status logs it, so the log shows the journey's</span>
+<span class="sd">    transitions in the order the store admitted them, and who made each. The tests match the</span>
+<span class="sd">    record whole, so every party builds it here.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<div class="viewcode-block" id="reassignment">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.reassignment">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reassignment</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">capability</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Update</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The change that assigns the transport `operation` to `module`, whose BoxTransportCapability</span>
+<span class="sd">    is `capability`: for the entry commit of the handover that passes the box to `module`."""</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">Update</span><span class="p">(</span>
+            <span class="n">instance_iri</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="p">)}],</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">implementsCapability</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">capability</span><span class="p">)}],</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="Commits">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.Commits">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Commits</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The middleware's writes that the records use: `SemanticMiddleware` is the real one."""</span>
+
+<div class="viewcode-block" id="Commits.create">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.Commits.create">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">scope</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">instance_iri</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span> <span class="o">...</span></div>
+
+
+<div class="viewcode-block" id="Commits.commit">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.Commits.commit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">commit</span><span class="p">(</span></div>
+
+        <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">instances</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">entry</span><span class="o">=</span><span class="p">(),</span> <span class="n">exit</span><span class="o">=</span><span class="p">(),</span> <span class="n">error</span><span class="o">=</span><span class="p">()</span>
+    <span class="p">):</span> <span class="o">...</span></div>
+
+
+
+<div class="viewcode-block" id="TransportRecords">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.TransportRecords">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TransportRecords</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The writes of a box's transport, each a commit of the middleware `mw`.</span>
+
+<span class="sd">    A write the store refuses raises the triplestore interface's `ShaclValidationError`, which the</span>
+<span class="sd">    middleware passes on unchanged; the caller catches that type.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mw</span><span class="p">:</span> <span class="n">Commits</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mw</span> <span class="o">=</span> <span class="n">mw</span>
+
+<div class="viewcode-block" id="TransportRecords.open">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.TransportRecords.open">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">open</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">capability</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">possessor</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Open the transport of a new `box`, `queued`, in one commit with the box itself and its</span>
+<span class="sd">        first possession by `possessor`, and return the transport's IRI.</span>
+
+<span class="sd">        The opening chooses the transport's IRI, and writes the link both ways: the transport</span>
+<span class="sd">        names its box (`fc:hasBox`), and the box its transport (`fc:hasTransport`). So a party</span>
+<span class="sd">        that holds the box finds the transport through the box, and needs no rule that names a</span>
+<span class="sd">        transport after its box.</span>
+
+<span class="sd">        The transport is assigned to `origin`, and implements `capability`, the origin's</span>
+<span class="sd">        BoxTransportCapability. The box points at the possessor's one possession state, which</span>
+<span class="sd">        the same commit creates when the possessor has none yet.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            kapps_triplestore_interface.PreconditionFailedError: If the box or its transport</span>
+<span class="sd">                is in the graph already (from the object-graph mapper's checked write), and</span>
+<span class="sd">                nothing is written.</span>
+<span class="sd">            kapps_triplestore_interface.ShaclValidationError: If the store refuses the commit,</span>
+<span class="sd">                with its validation report, and nothing is written.</span>
+<span class="sd">        """</span>
+        <span class="n">operation</span> <span class="o">=</span> <span class="n">transport_iri</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportOperation</span><span class="p">),</span>
+            <span class="n">operation_scope</span><span class="p">(</span><span class="n">ClassScope</span><span class="p">(),</span> <span class="n">capability</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">capability</span><span class="p">)),</span>
+            <span class="n">instance_iri</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">operation</span><span class="p">),</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">opened</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">mw</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">Box</span><span class="p">),</span>
+                <span class="n">workpiece</span><span class="p">(</span><span class="n">ClassScope</span><span class="p">(),</span> <span class="n">possessor</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">possessor</span><span class="p">)),</span>
+                <span class="n">instance_iri</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">),</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">created</span><span class="p">:</span>
+                <span class="n">created</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasTransport</span><span class="p">):</span> <span class="p">[</span><span class="n">opened</span><span class="o">.</span><span class="n">iri</span><span class="p">]})</span>
+            <span class="n">opened</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasBox</span><span class="p">):</span> <span class="p">[</span><span class="n">created</span><span class="o">.</span><span class="n">iri</span><span class="p">],</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasOrigin</span><span class="p">):</span> <span class="p">[</span><span class="n">origin</span><span class="p">],</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasDestination</span><span class="p">):</span> <span class="p">[</span><span class="n">destination</span><span class="p">],</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">QUEUED</span><span class="p">],</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">):</span> <span class="p">[</span><span class="n">origin</span><span class="p">],</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">operation</span></div>
+
+
+<div class="viewcode-block" id="TransportRecords.start">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.TransportRecords.start">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Set the transport `operation` `running`: its origin carries the box on.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            kapps_triplestore_interface.ShaclValidationError: If the store refuses the commit, as</span>
+<span class="sd">                it does while no module holds the box, and nothing is written.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">]})</span></div>
+
+
+<div class="viewcode-block" id="TransportRecords.complete">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.TransportRecords.complete">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Set the transport `operation` `done` by itself, without the handover that gives its box</span>
+<span class="sd">        back: the write of the fault `complete-without-releasing`. The proper end is the last</span>
+<span class="sd">        handover, whose entry sets the transport `done` together with the box's return.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            kapps_triplestore_interface.ShaclValidationError: If the store refuses the commit, as</span>
+<span class="sd">                it does while a module holds the box, and nothing is written.</span>
+<span class="sd">        """</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="p">]})</span></div>
+
+
+<div class="viewcode-block" id="TransportRecords.fail">
+<a class="viewcode-back" href="../../../reference/uc2/transport.html#jms_kapps.uc2.transport.TransportRecords.fail">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""End the transport `operation` as `failed`, with why as its result."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set</span><span class="p">(</span>
+            <span class="n">operation</span><span class="p">,</span>
+            <span class="p">{</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">],</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">):</span> <span class="p">[</span><span class="n">failure</span><span class="p">(</span><span class="n">reason</span><span class="p">,</span> <span class="n">report</span><span class="p">)],</span>
+            <span class="p">},</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">mw</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">entry</span><span class="o">=</span><span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)]):</span>
+            <span class="k">pass</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

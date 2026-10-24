@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.heavy_parts &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/heavy_parts';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.heavy_parts</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.heavy_parts</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The heavy parts of a spec with the precision rule, in its rounds (interim names): which repetition of each the rounds make, and the repetitions a person asks</span>
+<span class="sd">for. Pure functions over the run summaries, with no store and no clock.</span>
+
+<span class="sd">**A heavy part** is one of three:</span>
+
+<span class="sd">- **a ramp** (`spec`, `ramp`), named by its block: its levels, one run each, in rising order of</span>
+<span class="sd">  their box rates, until the ramp ends by its rule;</span>
+<span class="sd">- **a replay** (`replay_levels`), named by the number of its configuration: the levels of the</span>
+<span class="sd">  store-only baseline that replay the configuration's first valid UC2 run, one for each factor in</span>
+<span class="sd">  rising order, until the first broken level. A replay at the factor 1 runs at normal load, but it</span>
+<span class="sd">  follows the same rules;</span>
+<span class="sd">- **a sustained load**, named by the number of its configuration: a heavy configuration</span>
+<span class="sd">  (`heavy = true`) that is no ramp's level, one run. A heavy configuration with replay factors is</span>
+<span class="sd">  a sustained load and a replay.</span>
+
+<span class="sd">**Each runs one time, in round 1.** The rounds (`rounds`) make the first repetition of each heavy</span>
+<span class="sd">part in round 1, at its place in the spec's order: a ramp at its block's place, a sustained load</span>
+<span class="sd">at its configuration's place, and a replay right after its configuration's first valid run. A</span>
+<span class="sd">configuration with no valid run keeps its replay for the round that makes one. Then a person reads</span>
+<span class="sd">the result and decides if a repetition is necessary. A later round makes no level of a heavy part</span>
+<span class="sd">whose repetition **ended** (`Standing.ended`): a ramp that ended by its rule or reached its top</span>
+<span class="sd">level, a replay that broke, failed or reached its highest factor, a sustained load with a record.</span>
+<span class="sd">One that a round left **unfinished** (a stop, a run that did not complete, a level skipped for want</span>
+<span class="sd">of an approval) goes on in the next round, from its lowest level without a record.</span>
+
+<span class="sd">**A repetition on request** (`requested_repetitions`, the option `REPEAT_OPTION`): a call names each heavy part with a target</span>
+<span class="sd">repetition, a ramp by its block (`block3:2`), a replay or a sustained load by its configuration's</span>
+<span class="sd">number (`7:2`); for a heavy configuration with replay factors the number names both. The target</span>
+<span class="sd">asks the rounds to make sure that repetition exists: while the part's last repetition ended below</span>
+<span class="sd">the target, the next round makes one more (`Standing.after`), a ramp again from its lowest rate, a</span>
+<span class="sd">replay again from its lowest factor, each until it ends by its rule. A target at or below a</span>
+<span class="sd">repetition that exists or is under way makes nothing, so a restart with the same command line is</span>
+<span class="sd">safe. A repetition has its own number in its records (`sweep.repetition` 2, then 3), and its runs</span>
+<span class="sd">take the pick seed of that repetition. A repeated replay replays the same run as its first</span>
+<span class="sd">repetition did (`first_replayed`), so the repetitions show the store and the time of day, with</span>
+<span class="sd">the same input.</span>
+
+
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.baseline</span><span class="w"> </span><span class="kn">import</span> <span class="n">BASELINE_RUN_KIND</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.bench</span><span class="w"> </span><span class="kn">import</span> <span class="n">INTERRUPTED</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.precision</span><span class="w"> </span><span class="kn">import</span> <span class="n">made_repetitions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.ramp</span><span class="w"> </span><span class="kn">import</span> <span class="n">judge</span><span class="p">,</span> <span class="n">steps_of</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.record</span><span class="w"> </span><span class="kn">import</span> <span class="n">RUN_KIND</span><span class="p">,</span> <span class="n">UNWRAPPED_RUN_KIND</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.replay_levels</span><span class="w"> </span><span class="kn">import</span> <span class="n">level_key</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpecConfiguration</span><span class="p">,</span> <span class="n">SpecRefused</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">ramps_of</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.summary</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">COMPLETED</span><span class="p">,</span>
+    <span class="n">RunSummary</span><span class="p">,</span>
+    <span class="n">repetition_of</span><span class="p">,</span>
+    <span class="n">repetitions_made</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># The three kinds of heavy part.</span>
+<span class="n">RAMP</span> <span class="o">=</span> <span class="s2">"ramp"</span>
+<span class="n">REPLAY</span> <span class="o">=</span> <span class="s2">"replay"</span>
+<span class="n">SUSTAINED_LOAD</span> <span class="o">=</span> <span class="s2">"sustained load"</span>
+
+<span class="c1"># The option that asks for one more repetition of heavy parts, and the prefix that names a ramp by</span>
+<span class="c1"># its block in it (`block3`).</span>
+<span class="n">REPEAT_OPTION</span> <span class="o">=</span> <span class="s2">"--repeat"</span>
+<span class="n">BLOCK</span> <span class="o">=</span> <span class="s2">"block"</span>
+
+<span class="c1"># A heavy part by its kind and its number: the block of a ramp, else the configuration's number.</span>
+<span class="n">PartId</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="HeavyPart">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.HeavyPart">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">HeavyPart</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One heavy part of a spec: its kind, its number (the block of a ramp, else the number of its</span>
+<span class="sd">    configuration) and its configurations, a ramp's levels in rising order of their box rates, or</span>
+<span class="sd">    the one configuration of a replay or a sustained load."""</span>
+
+    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">number</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">configurations</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PartId</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">configuration</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpecConfiguration</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The configuration of a replay or a sustained load; a ramp's lowest level."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The part, for a person to read."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">RAMP</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"the ramp of block </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">REPLAY</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"the replay of configuration </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"configuration </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">, a sustained load"</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""How `REPEAT_OPTION` names the part: `block3` for a ramp, else the number."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BLOCK</span><span class="si">}{</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">RAMP</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">number</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="heavy_parts">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.heavy_parts">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">heavy_parts</span><span class="p">(</span><span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">HeavyPart</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The heavy parts among the configurations `found`, in the spec's order: a ramp at its lowest</span>
+<span class="sd">    level's place, and a heavy configuration's sustained load before its replay."""</span>
+    <span class="n">parts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HeavyPart</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ramps</span> <span class="o">=</span> <span class="n">ramps_of</span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">levels</span> <span class="o">=</span> <span class="n">ramps</span><span class="p">[</span><span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">levels</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">configuration</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">HeavyPart</span><span class="p">(</span><span class="n">RAMP</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">levels</span><span class="p">)))</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"heavy"</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">HeavyPart</span><span class="p">(</span><span class="n">SUSTAINED_LOAD</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="p">(</span><span class="n">configuration</span><span class="p">,))</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">replay_factors</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">HeavyPart</span><span class="p">(</span><span class="n">REPLAY</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="p">(</span><span class="n">configuration</span><span class="p">,)))</span>
+    <span class="k">return</span> <span class="n">parts</span></div>
+
+
+
+<div class="viewcode-block" id="part_of">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.part_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">part_of</span><span class="p">(</span><span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PartId</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The ramp or the sustained load whose run `configuration` makes, or None for a configuration</span>
+<span class="sd">    at normal load (its replay, if any, is a part of its own)."""</span>
+    <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">RAMP</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"heavy"</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">SUSTAINED_LOAD</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="Standing">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.Standing">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Standing</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where a heavy part stands, from its records: `last`, its highest repetition with a record</span>
+<span class="sd">    (0 for none), whether that repetition `ended`, and why, for a person to read. `waiting` is a</span>
+<span class="sd">    replay with no record and no valid run to replay yet."""</span>
+
+    <span class="n">part</span><span class="p">:</span> <span class="n">HeavyPart</span>
+    <span class="n">last</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ended</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">waiting</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">due</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The repetition that the rounds make of the part without a request: the first one where</span>
+<span class="sd">        it has none, the last one where it did not end, and None where it ended."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ended</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span>
+
+<div class="viewcode-block" id="Standing.after">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.Standing.after">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The repetition that the rounds make of the part, with the target repetition `target`</span>
+<span class="sd">        that a request gives it (`requested_repetitions`), or None for none: one more than the</span>
+<span class="sd">        last where the last ended below the target, else `due`. So the rounds make one more</span>
+<span class="sd">        repetition in each round until the target exists, and nothing more once it exists or is</span>
+<span class="sd">        under way."""</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">ended</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">due</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="standing_of">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.standing_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">standing_of</span><span class="p">(</span><span class="n">part</span><span class="p">:</span> <span class="n">HeavyPart</span><span class="p">,</span> <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Standing</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where `part` stands, from its runs among `summaries`. A run that a stop signal ended is no</span>
+<span class="sd">    record: its level has not run yet."""</span>
+    <span class="k">if</span> <span class="n">part</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">RAMP</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_ramp_standing</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">summaries</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">part</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">REPLAY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_replay_standing</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">summaries</span><span class="p">)</span>
+    <span class="n">configuration</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">configuration</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="n">RUN_KIND</span> <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"wrapper"</span><span class="p">]</span> <span class="k">else</span> <span class="n">UNWRAPPED_RUN_KIND</span>
+    <span class="n">made</span> <span class="o">=</span> <span class="n">made_repetitions</span><span class="p">(</span>
+        <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">summaries</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">configuration</span><span class="o">.</span><span class="n">key</span> <span class="ow">and</span> <span class="n">s</span><span class="o">.</span><span class="n">run_kind</span> <span class="o">==</span> <span class="n">kind</span>
+    <span class="p">)</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">made</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span>
+        <span class="n">part</span><span class="p">,</span>
+        <span class="n">last</span><span class="p">,</span>
+        <span class="n">ended</span><span class="o">=</span><span class="n">last</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">why</span><span class="o">=</span><span class="s2">"its run has a record"</span> <span class="k">if</span> <span class="n">last</span> <span class="k">else</span> <span class="s2">"no record yet"</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ramp_standing</span><span class="p">(</span><span class="n">part</span><span class="p">:</span> <span class="n">HeavyPart</span><span class="p">,</span> <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Standing</span><span class="p">:</span>
+    <span class="n">made</span> <span class="o">=</span> <span class="n">repetitions_made</span><span class="p">(</span>
+        <span class="n">summaries</span><span class="p">,</span>
+        <span class="n">run_kind</span><span class="o">=</span><span class="n">RUN_KIND</span><span class="p">,</span>
+        <span class="n">keys</span><span class="o">=</span><span class="p">{</span><span class="n">level</span><span class="o">.</span><span class="n">key</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">part</span><span class="o">.</span><span class="n">configurations</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">made</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">last</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="s2">"no record yet"</span><span class="p">)</span>
+    <span class="n">judged</span> <span class="o">=</span> <span class="n">judge</span><span class="p">(</span><span class="n">steps_of</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">configurations</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="n">repetition</span><span class="o">=</span><span class="n">last</span><span class="p">))</span>
+    <span class="n">ended</span> <span class="o">=</span> <span class="n">judged</span><span class="o">.</span><span class="n">ended</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">judged</span><span class="o">.</span><span class="n">levels</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">configurations</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">ended</span><span class="o">=</span><span class="n">ended</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="n">judged</span><span class="o">.</span><span class="n">why</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="replay_ended_at">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.replay_ended_at">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">replay_ended_at</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span>
+    <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The factor at which repetition `repetition` of the replay of `configuration` ended: the</span>
+<span class="sd">    lowest factor whose level has a record that is broken or failed, or None where none has. A</span>
+<span class="sd">    failed level cannot be judged, so no higher factor is sent after it, as a ramp sends no higher</span>
+<span class="sd">    rate after a level that cannot be judged. A level that a stop signal ended has not run yet."""</span>
+    <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">replay_factors</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span>
+            <span class="n">run</span><span class="o">.</span><span class="n">outcome</span> <span class="o">!=</span> <span class="n">COMPLETED</span> <span class="ow">or</span> <span class="nb">bool</span><span class="p">((</span><span class="n">run</span><span class="o">.</span><span class="n">replay_level</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"broken"</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">_levels</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="n">repetition</span><span class="p">)</span>
+        <span class="p">):</span>
+            <span class="k">return</span> <span class="n">factor</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_levels</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span>
+    <span class="n">factor</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span>
+    <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The records of the level of `configuration`'s replay at `factor`, of `repetition` (None for</span>
+<span class="sd">    every repetition), that are not interrupted."""</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">level_key</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">factor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">run</span>
+        <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">summaries</span>
+        <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span>
+        <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">run_kind</span> <span class="o">==</span> <span class="n">BASELINE_RUN_KIND</span>
+        <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">outcome</span> <span class="o">!=</span> <span class="n">INTERRUPTED</span>
+        <span class="ow">and</span> <span class="p">(</span><span class="n">repetition</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">repetition_of</span><span class="p">(</span><span class="n">run</span><span class="p">)</span> <span class="o">==</span> <span class="n">repetition</span><span class="p">)</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_replay_standing</span><span class="p">(</span><span class="n">part</span><span class="p">:</span> <span class="n">HeavyPart</span><span class="p">,</span> <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Standing</span><span class="p">:</span>
+    <span class="n">configuration</span> <span class="o">=</span> <span class="n">part</span><span class="o">.</span><span class="n">configuration</span>
+    <span class="n">made</span> <span class="o">=</span> <span class="n">repetitions_made</span><span class="p">(</span>
+        <span class="n">summaries</span><span class="p">,</span>
+        <span class="n">run_kind</span><span class="o">=</span><span class="n">BASELINE_RUN_KIND</span><span class="p">,</span>
+        <span class="n">keys</span><span class="o">=</span><span class="p">{</span><span class="n">level_key</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">replay_factors</span><span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">made</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">last</span><span class="p">:</span>
+        <span class="n">waiting</span> <span class="o">=</span> <span class="n">first_valid_run</span><span class="p">(</span><span class="n">summaries</span><span class="p">,</span> <span class="n">configuration</span><span class="o">.</span><span class="n">key</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span>
+            <span class="n">part</span><span class="p">,</span>
+            <span class="n">why</span><span class="o">=</span><span class="s2">"waits for the first valid run of its configuration"</span>
+            <span class="k">if</span> <span class="n">waiting</span>
+            <span class="k">else</span> <span class="s2">"no record yet"</span><span class="p">,</span>
+            <span class="n">waiting</span><span class="o">=</span><span class="n">waiting</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">ended_at</span> <span class="o">=</span> <span class="n">replay_ended_at</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ended_at</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span>
+            <span class="n">part</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">ended</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="sa">f</span><span class="s2">"it ended at the factor </span><span class="si">{</span><span class="n">ended_at</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">highest</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">replay_factors</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span>
+        <span class="n">_levels</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">replay_factors</span>
+    <span class="p">):</span>
+        <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span>
+            <span class="n">part</span><span class="p">,</span>
+            <span class="n">last</span><span class="p">,</span>
+            <span class="n">ended</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">why</span><span class="o">=</span><span class="sa">f</span><span class="s2">"it was not broken up to the factor </span><span class="si">{</span><span class="n">highest</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">, its highest"</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">Standing</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="s2">"not every factor has a record"</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="first_valid_run">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.first_valid_run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">first_valid_run</span><span class="p">(</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span> <span class="n">configuration_key</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RunSummary</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The first valid run of use case 2 of the configuration of `configuration_key` among</span>
+<span class="sd">    `summaries`, which the sweep replays: of the run kind `uc2` (with the wrapper, so its record</span>
+<span class="sd">    holds its store requests), completed and not found invalid; the lowest repetition, and the</span>
+<span class="sd">    earliest of two with one. None where there is none."""</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">run</span>
+        <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">summaries</span>
+        <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">run_kind</span> <span class="o">==</span> <span class="n">RUN_KIND</span> <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">configuration_key</span> <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">counts</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">run</span><span class="p">:</span> <span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">repetition</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">,</span> <span class="n">run</span><span class="o">.</span><span class="n">run_id</span><span class="p">),</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="first_replayed">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.first_replayed">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">first_replayed</span><span class="p">(</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span> <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The run id of the run that the first repetition of the replay of `configuration` replayed,</span>
+<span class="sd">    as its levels' records name it, or None where no level of it names one. Every repetition of</span>
+<span class="sd">    the replay replays that run."""</span>
+    <span class="n">named</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">run</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span> <span class="n">run</span><span class="o">.</span><span class="n">replays</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">replay_factors</span>
+        <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">_levels</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">factor</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">replays</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">named</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">named</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="due_repetitions">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.due_repetitions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">due_repetitions</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span>
+    <span class="n">requested</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">PartId</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">PartId</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The repetition that the next round makes of each heavy part among `found`, by its id, with</span>
+<span class="sd">    the target repetitions `requested` for some (`requested_repetitions`): the first one of a part</span>
+<span class="sd">    without a record, the one a round left unfinished, or the next one below its target; no entry</span>
+<span class="sd">    for a part whose last repetition ended and reached its target or has none."""</span>
+    <span class="n">due</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">PartId</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">heavy_parts</span><span class="p">(</span><span class="n">found</span><span class="p">):</span>
+        <span class="n">repetition</span> <span class="o">=</span> <span class="n">standing_of</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="n">summaries</span><span class="p">)</span><span class="o">.</span><span class="n">after</span><span class="p">((</span><span class="n">requested</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">repetition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">due</span><span class="p">[</span><span class="n">part</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">repetition</span>
+    <span class="k">return</span> <span class="n">due</span></div>
+
+
+
+<div class="viewcode-block" id="requested_repetitions">
+<a class="viewcode-back" href="../../../reference/evaluation/heavy_parts.html#jms_kapps.evaluation.heavy_parts.requested_repetitions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">requested_repetitions</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">removed</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="n">PartId</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">HeavyPart</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The target repetition that `text`, the value of `REPEAT_OPTION`, gives each heavy part it</span>
+<span class="sd">    names, by the part's id, and the parts it names that are removed, which it leaves out. A</span>
+<span class="sd">    target asks the rounds to make sure that repetition exists (`Standing.after`); a number of a</span>
+<span class="sd">    heavy configuration with replay factors names both its parts.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        removed: The keys of the removed configurations.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If `text` is no list of parts with their target repetitions, or names a block</span>
+<span class="sd">            that is no ramp, a configuration the spec does not have, a level of a ramp, or a</span>
+<span class="sd">            configuration at normal load without replay factors.</span>
+<span class="sd">    """</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">heavy_parts</span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+    <span class="n">by_number</span> <span class="o">=</span> <span class="p">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">:</span> <span class="n">configuration</span> <span class="k">for</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">found</span><span class="p">}</span>
+    <span class="n">targets</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">PartId</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">left_out</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">HeavyPart</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">kind</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">_named</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">BLOCK</span><span class="p">:</span>
+            <span class="n">named</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parts</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">RAMP</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">number</span> <span class="o">==</span> <span class="n">number</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">named</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPEAT_OPTION</span><span class="si">}</span><span class="s2"> names </span><span class="si">{</span><span class="n">BLOCK</span><span class="si">}{</span><span class="n">number</span><span class="si">}</span><span class="s2">, and block </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> of the spec is "</span>
+                    <span class="s2">"no ramp: name a ramp by its block, a replay or a sustained load by its "</span>
+                    <span class="s2">"configuration's number"</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">configuration</span> <span class="o">=</span> <span class="n">by_number</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPEAT_OPTION</span><span class="si">}</span><span class="s2">: the spec has </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="si">}</span><span class="s2"> configurations: there is no "</span>
+                    <span class="sa">f</span><span class="s2">"configuration </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPEAT_OPTION</span><span class="si">}</span><span class="s2">: configuration </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is a level of the ramp of block "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="si">}</span><span class="s2">: name the ramp by its block, "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BLOCK</span><span class="si">}{</span><span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+            <span class="n">named</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">p</span>
+                <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parts</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">kind</span> <span class="ow">in</span> <span class="p">(</span><span class="n">SUSTAINED_LOAD</span><span class="p">,</span> <span class="n">REPLAY</span><span class="p">)</span> <span class="ow">and</span> <span class="n">p</span><span class="o">.</span><span class="n">number</span> <span class="o">==</span> <span class="n">number</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">named</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPEAT_OPTION</span><span class="si">}</span><span class="s2">: configuration </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> is no heavy part: it runs at "</span>
+                    <span class="s2">"normal load and has no replay factors. A repetition on request is made of "</span>
+                    <span class="s2">"a ramp, a replay or a sustained load"</span>
+                <span class="p">)</span>
+        <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">named</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">key</span> <span class="ow">in</span> <span class="n">removed</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">part</span><span class="o">.</span><span class="n">configurations</span><span class="p">):</span>
+                <span class="n">left_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">part</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">targets</span><span class="p">[</span><span class="n">part</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">targets</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">part</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">targets</span><span class="p">,</span> <span class="n">left_out</span></div>
+
+
+
+<span class="c1"># How `REPEAT_OPTION` names the parts, for a refusal to say.</span>
+<span class="n">_REPEAT_FORM</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REPEAT_OPTION</span><span class="si">}</span><span class="s2"> names each heavy part with its target repetition: a ramp by its block, "</span>
+    <span class="sa">f</span><span class="s2">"such as </span><span class="si">{</span><span class="n">BLOCK</span><span class="si">}</span><span class="s2">3:2, a replay or a sustained load by its configuration's number, such as "</span>
+    <span class="s2">"7:2 (a range such as 7-9:2 names each)"</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_named</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The parts that `text` names, each with its target repetition: `(BLOCK, block, target)` for</span>
+<span class="sd">    a ramp, `("configuration", number, target)` for a configuration, from items such as</span>
+<span class="sd">    `block3:2`, `7:2` and `9-11:3`, separated by commas.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        SpecRefused: If an item is none of them, or its target is no whole number from 1.</span>
+<span class="sd">    """</span>
+    <span class="n">named</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">","</span><span class="p">):</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">colon</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s2">":"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">colon</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">target</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_REPEAT_FORM</span><span class="si">}</span><span class="s2">: not </span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">BLOCK</span><span class="p">):</span>
+            <span class="n">block</span> <span class="o">=</span> <span class="n">name</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">BLOCK</span><span class="p">)</span> <span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_REPEAT_FORM</span><span class="si">}</span><span class="s2">: not </span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">named</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">BLOCK</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">block</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">target</span><span class="p">)))</span>
+            <span class="k">continue</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">named</span> <span class="o">+=</span> <span class="p">[(</span><span class="s2">"configuration"</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">target</span><span class="p">))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">(</span><span class="n">name</span><span class="p">)]</span>
+        <span class="k">except</span> <span class="n">SpecRefused</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">SpecRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_REPEAT_FORM</span><span class="si">}</span><span class="s2">: not </span><span class="si">{</span><span class="n">text</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="k">return</span> <span class="n">named</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

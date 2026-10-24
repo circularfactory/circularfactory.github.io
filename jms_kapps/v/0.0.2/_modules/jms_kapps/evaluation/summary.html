@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.summary &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/summary';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.summary</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.summary</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What the table of a spec (`table`) and the ramp's broken rule (`ramp`) read of one record: its</span>
+<span class="sd">run, whether it counts, and its measures, without the text of its store requests. A record holds</span>
+<span class="sd">every store request with its text, so a folder of records is read one record at a time, and only</span>
+<span class="sd">its summary is kept.</span>
+
+<span class="sd">**Which runs count.** A run counts in the statistics when it completed and its record does not say</span>
+<span class="sd">it is invalid. A run that a check found invalid, a run that failed, and a run that a stop signal</span>
+<span class="sd">ended are left out, and the table lists each with why.</span>
+
+<span class="sd">**The run kinds.** A run of use case 2 is of the run kind `uc2`, with the wrapper, or</span>
+<span class="sd">`uc2-unwrapped`, without it. A store-only baseline is of the run kind `baseline`:</span>
+<span class="sd">it replays the store requests of one recorded run of use case 2, so it belongs to that run's</span>
+<span class="sd">configuration. Its record names the run it replays in its field `replayed_run`, by that run's</span>
+<span class="sd">`run_id`.</span>
+
+<span class="sd">**The measures read.** Each latency, rate and share comes from the measured window alone, as the</span>
+<span class="sd">record's measures hold it: the latencies of the commits the store admitted; the latencies of the</span>
+<span class="sd">store requests that the store accepted, logins left out, since a baseline replays none; the</span>
+<span class="sd">completed writes per minute and the transports ended per minute; and the store requests, those</span>
+<span class="sd">refused, those that timed out and those whose connection dropped, and the three together (refused</span>
+<span class="sd">or unanswered). A request that a record written before the rename says "timed out" is</span>
+<span class="sd">classified by its error (`store_requests.outcome_of`), so a dropped connection of such a record</span>
+<span class="sd">counts as connection dropped; no record file is changed. The refusals for want of heap count under</span>
+<span class="sd">the load: in the warm-up, the</span>
+<span class="sd">window and the drain. Such a refusal is a signal of the store at that load, wherever in the load</span>
+<span class="sd">it comes; one before the load's start, as at the participants' start, is a signal of the store's</span>
+<span class="sd">size, not of the load. A baseline has neither a warm-up nor a drain, and the requests it sends</span>
+<span class="sd">before its window are no load, so its window alone counts. A measure the record does not hold is</span>
+<span class="sd">None: a run without the wrapper has no commit and no store request, and a baseline has no</span>
+<span class="sd">transport. Then each box still waiting after the drain (stuck), each failed box, each with its</span>
+<span class="sd">place and reason, each spawn the WarehouseManagementSystem refused, with its reason and where it</span>
+<span class="sd">was known, and the completion matcher's reads.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Collection</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">store_requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.bench</span><span class="w"> </span><span class="kn">import</span> <span class="n">INTERRUPTED</span>
+
+<span class="c1"># The outcome of a run that completed.</span>
+<span class="n">COMPLETED</span> <span class="o">=</span> <span class="s2">"completed"</span>
+
+
+<div class="viewcode-block" id="RunSummary">
+<a class="viewcode-back" href="../../../reference/evaluation/summary.html#jms_kapps.evaluation.summary.RunSummary">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RunSummary</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the table reads of one record."""</span>
+
+    <span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">run_kind</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">outcome</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">valid</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">failed_checks</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The pass of the precision rule that made the run, as a record made before the rounds says</span>
+    <span class="c1"># (interim name), or None.</span>
+    <span class="n">pass_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The round of the precision rule that made the run, as its record says (interim name), or None for a run of fixed repetitions and a record made before the rounds.</span>
+    <span class="n">round_number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">replays</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The file name of the spec the sweep named, and the transit time and the retry wait that the</span>
+    <span class="c1"># record's `run_settings` hold, or None where it says none: a record of the "before" series</span>
+    <span class="c1"># holds them there and not in its key (interim names).</span>
+    <span class="n">spec_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">retry_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The numbers of a baseline's replay level (`replay_levels.level_record`), or None for a run</span>
+    <span class="c1"># of use case 2 and for a baseline of an earlier record (interim name).</span>
+    <span class="n">replay_level</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">commit_latencies</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">store_request_latencies</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">completed_writes_per_minute</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">transports_ended_per_minute</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">store_requests_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The store requests of the window that the store refused, that timed out and whose</span>
+    <span class="c1"># connection dropped, and the three together (interim names; a record written before holds one</span>
+    <span class="c1"># count, `refused_or_timed_out_in_window`, for the same sum).</span>
+    <span class="n">refused_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">timed_out_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">connection_dropped_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">refused_or_unanswered_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The spawns offered and accepted in the window, from the WarehouseManagementSystem's time-</span>
+    <span class="c1"># stamped lines (interim names), and the window's length, or None in a record</span>
+    <span class="c1"># made before.</span>
+    <span class="n">spawns_offered_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">spawns_accepted_in_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">window_minutes</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">heap_refusals_under_load</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The CPU cores that the server's license view gives (`maxCpuCores`), as the record keeps the</span>
+    <span class="c1"># view, or None where it has none, the read failed or the answer names no maximum (interim</span>
+    <span class="c1"># name).</span>
+    <span class="n">licensed_cores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">stuck</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">failed</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">refused_spawns</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">matcher</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">replay_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The factor of the replay that a baseline's record says, or None where it says none:</span>
+<span class="sd">        a run of use case 2, and a baseline made before the factor (a replay at 1)."""</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">replay_level</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">replay_level</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"factor"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">factor</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">counts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether the run counts in the statistics: it completed, and is not invalid."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcome</span> <span class="o">==</span> <span class="n">COMPLETED</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="RunSummary.why_left_out">
+<a class="viewcode-back" href="../../../reference/evaluation/summary.html#jms_kapps.evaluation.summary.RunSummary.why_left_out">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">why_left_out</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Why the run is left out of the statistics, or None where it counts."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcome</span> <span class="o">==</span> <span class="n">INTERRUPTED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="s2">"interrupted: a stop signal ended it, and a later call makes it again"</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcome</span> <span class="o">!=</span> <span class="n">COMPLETED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcome</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="n">checks</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="nb">str</span><span class="p">(</span><span class="n">check</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"check"</span><span class="p">))</span> <span class="k">for</span> <span class="n">check</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">failed_checks</span><span class="p">})</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"invalid: it failed the checks </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">checks</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="summary_of">
+<a class="viewcode-back" href="../../../reference/evaluation/summary.html#jms_kapps.evaluation.summary.summary_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">summary_of</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">RunSummary</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The summary of `record`, a record as a run of the harness writes it."""</span>
+    <span class="n">sweep</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"sweep"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_settings"</span><span class="p">)</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">settings</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">settings</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="n">spec_named</span> <span class="o">=</span> <span class="n">sweep</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"spec"</span><span class="p">)</span>
+    <span class="n">measures</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"measures"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">transports</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"transports"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">spawns</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"spawns"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">matcher</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"matcher"</span><span class="p">)</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests"</span><span class="p">)</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">_window_counts</span><span class="p">(</span><span class="n">measures</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">RunSummary</span><span class="p">(</span>
+        <span class="n">run_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s2">"run_id"</span><span class="p">]),</span>
+        <span class="n">run_kind</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s2">"run_kind"</span><span class="p">]),</span>
+        <span class="n">outcome</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">)),</span>
+        <span class="n">valid</span><span class="o">=</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"valid"</span><span class="p">),</span>
+        <span class="n">failed_checks</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"failed_checks"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]),</span>
+        <span class="n">key</span><span class="o">=</span><span class="n">sweep</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"key"</span><span class="p">),</span>
+        <span class="n">configuration</span><span class="o">=</span><span class="n">sweep</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"configuration"</span><span class="p">),</span>
+        <span class="n">repetition</span><span class="o">=</span><span class="n">sweep</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"repetition"</span><span class="p">),</span>
+        <span class="n">pass_number</span><span class="o">=</span><span class="n">sweep</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"pass"</span><span class="p">),</span>
+        <span class="n">round_number</span><span class="o">=</span><span class="n">sweep</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"round"</span><span class="p">),</span>
+        <span class="n">replays</span><span class="o">=</span><span class="n">_replayed_run</span><span class="p">(</span><span class="n">record</span><span class="p">),</span>
+        <span class="n">spec_file</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">spec_named</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">spec_named</span><span class="p">))</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">transit_seconds</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"transit_seconds"</span><span class="p">),</span>
+        <span class="n">retry_seconds</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"retry_seconds"</span><span class="p">),</span>
+        <span class="n">replay_level</span><span class="o">=</span><span class="n">_replay_level</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">counts</span><span class="p">),</span>
+        <span class="n">commit_latencies</span><span class="o">=</span><span class="n">_floats</span><span class="p">(</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"commit_latencies_seconds"</span><span class="p">)),</span>
+        <span class="n">store_request_latencies</span><span class="o">=</span><span class="kc">None</span>
+        <span class="k">if</span> <span class="n">requests</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="p">[</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">request</span><span class="p">[</span><span class="s2">"seconds"</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">requests</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">)</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">ACCEPTED</span>
+            <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">)</span> <span class="o">!=</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">LOGIN</span>
+        <span class="p">],</span>
+        <span class="n">completed_writes_per_minute</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"completed_writes_per_minute"</span><span class="p">),</span>
+        <span class="n">transports_ended_per_minute</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"transports_ended_per_minute"</span><span class="p">),</span>
+        <span class="n">store_requests_in_window</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests_in_window"</span><span class="p">),</span>
+        <span class="n">refused_in_window</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">counts</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">counts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">timed_out_in_window</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">counts</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">counts</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">connection_dropped_in_window</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">counts</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+        <span class="n">refused_or_unanswered_in_window</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">counts</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">sum</span><span class="p">(</span><span class="n">counts</span><span class="p">),</span>
+        <span class="n">spawns_offered_in_window</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"spawns_offered_in_window"</span><span class="p">),</span>
+        <span class="n">spawns_accepted_in_window</span><span class="o">=</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"spawns_accepted_in_window"</span><span class="p">),</span>
+        <span class="n">window_minutes</span><span class="o">=</span><span class="p">(</span><span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"minutes"</span><span class="p">),</span>
+        <span class="n">heap_refusals_under_load</span><span class="o">=</span><span class="n">_heap_refusals_under_load</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">measures</span><span class="p">),</span>
+        <span class="n">licensed_cores</span><span class="o">=</span><span class="n">_licensed_cores</span><span class="p">(</span><span class="n">record</span><span class="p">),</span>
+        <span class="n">stuck</span><span class="o">=</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"stuck"</span><span class="p">),</span>
+        <span class="n">failed</span><span class="o">=</span><span class="n">transports</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"failed"</span><span class="p">),</span>
+        <span class="n">refused_spawns</span><span class="o">=</span><span class="n">spawns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"refused"</span><span class="p">),</span>
+        <span class="n">matcher</span><span class="o">=</span><span class="kc">None</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">matcher</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">key</span><span class="p">:</span> <span class="n">matcher</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"interval_seconds"</span><span class="p">,</span> <span class="s2">"read_count"</span><span class="p">,</span> <span class="s2">"read_seconds"</span><span class="p">)</span>
+        <span class="p">},</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="repetition_of">
+<a class="viewcode-back" href="../../../reference/evaluation/summary.html#jms_kapps.evaluation.summary.repetition_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">repetition_of</span><span class="p">(</span><span class="n">summary</span><span class="p">:</span> <span class="n">RunSummary</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The repetition that the record of `summary` names, the first where it names none: a record</span>
+<span class="sd">    made before the repetitions of a ramp or a replay (interim name)."""</span>
+    <span class="k">return</span> <span class="n">summary</span><span class="o">.</span><span class="n">repetition</span> <span class="ow">or</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="repetitions_made">
+<a class="viewcode-back" href="../../../reference/evaluation/summary.html#jms_kapps.evaluation.summary.repetitions_made">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">repetitions_made</span><span class="p">(</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">run_kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">keys</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The repetitions (`repetition_of`) that the records among `summaries` of `run_kind`, and of a</span>
+<span class="sd">    key among `keys` where it is given, show made: a record that a stop signal ended is none</span>
+<span class="sd">    (interim name)."""</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">repetition_of</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">summary</span> <span class="ow">in</span> <span class="n">summaries</span>
+        <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span> <span class="o">==</span> <span class="n">run_kind</span>
+        <span class="ow">and</span> <span class="p">(</span><span class="n">keys</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">summary</span><span class="o">.</span><span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">summary</span><span class="o">.</span><span class="n">outcome</span> <span class="o">!=</span> <span class="n">INTERRUPTED</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="read_summaries">
+<a class="viewcode-back" href="../../../reference/evaluation/summary.html#jms_kapps.evaluation.summary.read_summaries">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_summaries</span><span class="p">(</span><span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The summary of each record below `runs`, one folder each, in the order of their folders.</span>
+<span class="sd">    A record that is no JSON, or holds no run id or run kind, is none of them."""</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">runs</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*/record.json"</span><span class="p">)):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+            <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">summary_of</span><span class="p">(</span><span class="n">record</span><span class="p">))</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+            <span class="k">continue</span>
+    <span class="k">return</span> <span class="n">found</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_heap_refusals_under_load</span><span class="p">(</span>
+    <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">measures</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The refusals for want of heap under the load: in the warm-up, in the window and in the</span>
+<span class="sd">    drain, from the window's end on. None where the measures hold none. A baseline has neither a</span>
+<span class="sd">    warm-up nor a drain, and the requests it sends before its window are no load: its window</span>
+<span class="sd">    alone counts."""</span>
+    <span class="n">refusals</span> <span class="o">=</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"heap_refusals"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">refusals</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span> <span class="ow">or</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">warm_up</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"warm_up"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">window_end</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)</span>
+    <span class="n">warm_up_start</span> <span class="o">=</span> <span class="n">warm_up</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"start"</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">under_load</span><span class="p">(</span><span class="n">refusal</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">refusal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">at</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">refusal</span><span class="p">[</span><span class="s2">"at"</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">window_end</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">at</span> <span class="o">&gt;=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">window_end</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="n">warm_up_start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">at</span> <span class="o">&gt;=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">warm_up_start</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">refusal</span> <span class="ow">in</span> <span class="n">refusals</span> <span class="k">if</span> <span class="n">under_load</span><span class="p">(</span><span class="n">refusal</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_window_counts</span><span class="p">(</span><span class="n">measures</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The store requests of the window that the store refused, that timed out and whose</span>
+<span class="sd">    connection dropped, as the measures count them; None where they hold no</span>
+<span class="sd">    count. A record written before counts a dropped connection as timed out and holds no</span>
+<span class="sd">    `connection_dropped_in_window`: of its timeouts, those that its store requests show to be a</span>
+<span class="sd">    dropped connection by their error (`store_requests.outcome_of`) count as connection dropped,</span>
+<span class="sd">    so that the sum stays the one the record holds."""</span>
+    <span class="n">refused</span> <span class="o">=</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"refused_in_window"</span><span class="p">)</span>
+    <span class="n">timed_out</span> <span class="o">=</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"timed_out_in_window"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">refused</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">timed_out</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">dropped</span> <span class="o">=</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"connection_dropped_in_window"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dropped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">refused</span><span class="p">,</span> <span class="n">timed_out</span><span class="p">,</span> <span class="n">dropped</span>
+    <span class="n">dropped</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+        <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">measures</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">()</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">)</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">TIMED_OUT</span>
+        <span class="ow">and</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">outcome_of</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">CONNECTION_DROPPED</span>
+    <span class="p">)</span>
+    <span class="n">dropped</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dropped</span><span class="p">,</span> <span class="n">timed_out</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">refused</span><span class="p">,</span> <span class="n">timed_out</span> <span class="o">-</span> <span class="n">dropped</span><span class="p">,</span> <span class="n">dropped</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_replay_level</span><span class="p">(</span>
+    <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">counts</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The replay level that a baseline's record holds, or None. A reader takes it as the record</span>
+<span class="sd">    would say it now: the timeouts and the dropped connections of its window</span>
+<span class="sd">    apart, from `counts`, and each signal by its name now (`ramp.signal_name`); the record file</span>
+<span class="sd">    keeps what it holds."""</span>
+    <span class="c1"># Imported here: `ramp` reads the summaries of this module.</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.ramp</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal_name</span>
+
+    <span class="n">level</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"replay_level"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">shown</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">counts</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">shown</span><span class="p">[</span><span class="s2">"timed_out_in_window"</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">shown</span><span class="p">[</span><span class="s2">"connection_dropped_in_window"</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"signals"</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">shown</span><span class="p">[</span><span class="s2">"signals"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span><span class="o">**</span><span class="n">signal</span><span class="p">,</span> <span class="s2">"signal"</span><span class="p">:</span> <span class="n">signal_name</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"signal"</span><span class="p">)))}</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span>
+            <span class="k">else</span> <span class="n">signal</span>
+            <span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="n">level</span><span class="p">[</span><span class="s2">"signals"</span><span class="p">]</span>
+        <span class="p">]</span>
+    <span class="k">return</span> <span class="n">shown</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_licensed_cores</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The licensed CPU cores of the server's license view that `record` keeps whole</span>
+<span class="sd">    (`server.license`, read once per run by the server watch): the answer's `maxCpuCores`. None</span>
+<span class="sd">    where the record has no view, the read failed, or the answer names no maximum."""</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"server"</span><span class="p">)</span>
+    <span class="n">view</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"license"</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="ow">or</span> <span class="n">view</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"answer"</span><span class="p">)</span>
+    <span class="n">cores</span> <span class="o">=</span> <span class="n">answer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"maxCpuCores"</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">cores</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cores</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cores</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_replayed_run</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The run id of the run that a baseline replays, or None."""</span>
+    <span class="n">replayed</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"replayed_run"</span><span class="p">)</span>
+    <span class="n">run_id</span> <span class="o">=</span> <span class="n">replayed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_id"</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">replayed</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">run_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">run_id</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_floats</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">]</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

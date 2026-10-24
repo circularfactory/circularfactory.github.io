@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.wms &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/wms';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.wms</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.wms</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The WarehouseManagementSystem: where a box's journey starts, and where it ends.</span>
+
+<span class="sd">It stands for the production system level around the FlexConveyor station. It is an active</span>
+<span class="sd">party, with control logic and no conveyor of its own: its own middleware instance with two</span>
+<span class="sd">workflows, `:SpawnBoxWorkflow` and `:SetSpawnRateWorkflow`, a handler for the notifications it</span>
+<span class="sd">gets, and a dashboard of its own. It owns the station's entry.</span>
+
+<span class="sd">**Spawn.** **Roles are optional:** entry and exit are roles of a module, which a topology may</span>
+<span class="sd">name, and one module may have both. Unless the request names them, the WarehouseManagementSystem</span>
+<span class="sd">picks a random free entry module, read from the graph, as the box's origin, or a random free module</span>
+<span class="sd">where the topology names no entry module; and a random exit module as its destination, or a random</span>
+<span class="sd">module where it names no exit module. It never picks the origin as the destination. A named</span>
+<span class="sd">origin must be an entry module, and a named destination an exit module, only where the topology</span>
+<span class="sd">names that role; any two different modules otherwise. A spawn that names a module that may not</span>
+<span class="sd">take its place is refused with why, such as "Module4 is not an entry module" or, where the</span>
+<span class="sd">topology names no such role, "Module9 is not a module". If no such module is free, it spawns</span>
+<span class="sd">nothing and answers why: "no entry module is free", or "no module is free". A box is named by a</span>
+<span class="sd">new UUID (`vocabulary.new_box_iri`), so that more than one middleware can create boxes without a</span>
+<span class="sd">shared number, and the spawn reads no box in the graph to name it.</span>
+
+<span class="sd">**Only a reachable destination.** A destination is reachable from an origin where the connections</span>
+<span class="sd">in the graph lead from the origin to it, each one way, as listed; the WarehouseManagementSystem</span>
+<span class="sd">reads them with the modules, in the same read. Where it picks the destination, it picks only among</span>
+<span class="sd">the destinations the origin reaches, and refuses the spawn with "no exit module can be reached from</span>
+<span class="sd">Module1" where none is. Where it picks the origin, it picks only among the free origins that reach</span>
+<span class="sd">the named destination, or else some destination, and refuses with "no free entry module can reach</span>
+<span class="sd">Module4", or "... can reach an exit module", where free origins exist but none does. A named</span>
+<span class="sd">destination that the named origin cannot reach is refused with "Module4 cannot be reached from</span>
+<span class="sd">Module1". The reasons name the roles as the others do: "module" where the topology names no such</span>
+<span class="sd">role. Where the origin has no other destination at all, the reason stays "the graph has no exit</span>
+<span class="sd">module other than Module1".</span>
+
+<span class="sd">**A strategy picks.** The picks above are those of `real`, the default WMS strategy</span>
+<span class="sd">(`strategies`): where the request leaves an end to pick, the WarehouseManagementSystem's strategy</span>
+<span class="sd">picks one pair among the candidates, the free origins with the destinations each reaches, and a</span>
+<span class="sd">pair that is not a candidate refuses the spawn. The strategy is chosen at start in the Launcher,</span>
+<span class="sd">for the WMS and for the modules, and `real` is the default.</span>
+
+<span class="sd">**Spawns at once.** Spawns run at once, each on the thread of its request or of the spawn timer,</span>
+<span class="sd">and the timer has no wait of its own (`spawn_rate`). At most as many spawns are under way at once,</span>
+<span class="sd">of the spawn workflow and of the timer alike, as the topology has modules that may be an origin,</span>
+<span class="sd">by the latest read of the modules that a spawn made; before the first read there is no cap. A</span>
+<span class="sd">spawn asked for at the cap does not start, and is refused with "every origin has a spawn under</span>
+<span class="sd">way". Concurrent spawns pick apart: the origin of a spawn under way is not free for another</span>
+<span class="sd">spawn's pick, as a module that holds a box is not. The WMS spawns as fast as the hardware allows,</span>
+<span class="sd">with no wait of its own.</span>
+
+<span class="sd">**The picking lock covers only the slot bookkeeping.** A spawn reads the graph outside it: the</span>
+<span class="sd">modules with the connections, and what each origin it may pick holds. Under it, it chooses its</span>
+<span class="sd">origin and its destination in memory, from what it read and from the spawns in flight, and enters</span>
+<span class="sd">itself in flight; it takes the lock again only to leave the flight. So a spawn that has ended frees</span>
+<span class="sd">its slot without waiting for another spawn's reads, and concurrent spawns still pick apart. A read</span>
+<span class="sd">can be stale: when another spawn left the flight after this spawn's reads began, its origin may</span>
+<span class="sd">hold that spawn's box by now, so this spawn reads once more before it chooses. A Reserve that the</span>
+<span class="sd">origin refuses still refuses the spawn with the origin's reason.</span>
+
+<span class="sd">**Every spawn accounted for.** Each spawn asked for ends in exactly one record at INFO: the record</span>
+<span class="sd">of the box spawned, or "spawn refused: &lt;reason&gt;", with its origin and destination where they are</span>
+<span class="sd">known (`spawn_record`). A spawn counts at its answer, created once the store admitted its create:</span>
+<span class="sd">one whose origin then cannot be notified is recorded as spawned, beside its warning. A spawn that</span>
+<span class="sd">raises is recorded as refused with "the spawn failed: &lt;error&gt;", and its traceback is logged where</span>
+<span class="sd">it was asked: by the spawn timer, or by the middleware for the workflow. Every answer, a refusal</span>
+<span class="sd">at the cap included, goes into its memory. No box is lost silently: each spawn asked for is</span>
+<span class="sd">either created or logged with its reason.</span>
+
+<span class="sd">**The box is spawned directly on the origin.** The WarehouseManagementSystem asks the origin's</span>
+<span class="sd">Reserve for the box, and writes nothing before the origin accepts. The Reserve names the box's</span>
+<span class="sd">destination, and the origin accepts only once its own next module has accepted a plain Reserve for</span>
+<span class="sd">the box at once, so no origin fills with a box that cannot move on; a box that waits for the</span>
+<span class="sd">origin comes before the spawn. An origin</span>
+<span class="sd">that holds a box, or has reserved itself for another, refuses, and the spawn is refused with the</span>
+<span class="sd">origin's reason, whether the request named the origin or the WarehouseManagementSystem picked it:</span>
+<span class="sd">no other module is tried, and the origin is not asked again. An origin that cannot be reached refuses the spawn</span>
+<span class="sd">too, with why ("Module1 is not reachable: ..."). So a module that passes a box onto the origin at</span>
+<span class="sd">the same moment, and asks the origin's Reserve too, is refused as reserved when the</span>
+<span class="sd">WarehouseManagementSystem asked first, and waits its turn. Once the origin has accepted, one</span>
+<span class="sd">`mw.create()` writes the box, its `:BoxTransportOperation` as `queued` and assigned to the origin,</span>
+<span class="sd">the links between the two, and the box's first possession, by the origin. The store admits or</span>
+<span class="sd">refuses it as one: if it refuses, as it does when a neighbour with `skip-reserve` armed has filled</span>
+<span class="sd">the origin since its answer, nothing is written, the refusal is logged with its report and emitted</span>
+<span class="sd">on the WarehouseManagementSystem's handover event stream, and the answer carries the report. Then</span>
+<span class="sd">it notifies the origin of the transport: the origin's intake reads the transport and carries the</span>
+<span class="sd">box on, and the notification uses the origin's reservation up. It logs its side, at INFO: the</span>
+<span class="sd">origin's acceptance of its Reserve, the transport `queued`, and the spawn's one record: every</span>
+<span class="sd">spawn ends in one record.</span>
+
+<span class="sd">**An origin that cannot be notified.** The box is on the origin and the transport is assigned to</span>
+<span class="sd">it, but nothing would start its BoxTransportWorkflow: the WarehouseManagementSystem ends the</span>
+<span class="sd">transport `failed` with why ("Module1 is not reachable: ..."), as a module does that cannot reach</span>
+<span class="sd">its next module, logs one warning, and the answer of the spawn says so. The origin leaves that</span>
+<span class="sd">transport alone. So the WarehouseManagementSystem writes a transport only in the create that opens</span>
+<span class="sd">it and when it cannot notify the origin.</span>
+
+<span class="sd">**A stop.** Once the stop of its process has begun, it refuses every spawn, with the reason "the</span>
+<span class="sd">system is stopping", and creates no box, neither for the spawn workflow nor for the spawn rate's</span>
+<span class="sd">timer: it asks once more just before the create. A spawn already under way ends. If it cannot</span>
+<span class="sd">notify the origin then, since every process of the run stops at once and the origin's server</span>
+<span class="sd">takes no new connection, it ends the transport `failed` with the stop as its reason, "the system</span>
+<span class="sd">is stopping", and its warning says why the origin was not told; the origin, which waits for the</span>
+<span class="sd">notification at its own stop, writes nothing.</span>
+
+<span class="sd">**The notification back.** The destination module notifies the WarehouseManagementSystem once it</span>
+<span class="sd">has given the box back, and a module that cannot go on notifies it once it has recorded the</span>
+<span class="sd">transport `failed`: the transport has ended. The WarehouseManagementSystem checks the transport it</span>
+<span class="sd">is handed: it accepts a box it holds whose transport is done, and logs the acceptance as its</span>
+<span class="sd">evidence. Whether it holds the box it asks the store in one `ASK` about that one box.</span>
+
+<span class="sd">**What it knows.** It keeps in memory the answers to its newest spawns, the transports it opened</span>
+<span class="sd">with their last known status, and the boxes it holds, from the notifications back (`wms_memory`).</span>
+<span class="sd">Its dashboard renders that memory.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">NotificationUndelivered</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">ShaclValidationError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">field_validator</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModulesAndConnections</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handover_events</span><span class="w"> </span><span class="kn">import</span> <span class="n">HandoverEvents</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handshake</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STOPPING</span><span class="p">,</span>
+    <span class="n">BoxTransportCapabilities</span><span class="p">,</span>
+    <span class="n">Call</span><span class="p">,</span>
+    <span class="n">Notify</span><span class="p">,</span>
+    <span class="n">PeerUnreachable</span><span class="p">,</span>
+    <span class="n">ReserveRequest</span><span class="p">,</span>
+    <span class="n">ReserveResult</span><span class="p">,</span>
+    <span class="n">StepResult</span><span class="p">,</span>
+    <span class="n">ask</span><span class="p">,</span>
+    <span class="n">no_box_transport_capability</span><span class="p">,</span>
+    <span class="n">not_reachable</span><span class="p">,</span>
+    <span class="n">reserved_record</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.routing</span><span class="w"> </span><span class="kn">import</span> <span class="n">reachable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.strategies</span><span class="w"> </span><span class="kn">import</span> <span class="n">REAL</span><span class="p">,</span> <span class="n">REAL_WMS_STRATEGY</span><span class="p">,</span> <span class="n">Choose</span><span class="p">,</span> <span class="n">WmsStrategy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">choices</span><span class="p">,</span> <span class="n">entries_and_exits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.transport</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transport</span><span class="p">,</span> <span class="n">status_record</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="n">rules_clause</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">local_name</span><span class="p">,</span> <span class="n">new_box_iri</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms_memory</span><span class="w"> </span><span class="kn">import</span> <span class="n">WmsMemory</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SpawnBoxRequest">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.SpawnBoxRequest">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SpawnBoxRequest</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Where a new box enters the FlexConveyor station, and the module it is carried to. A module</span>
+<span class="sd">    left out, or left empty, is picked: a free entry module as the origin, an exit module as the</span>
+<span class="sd">    destination, and, for a role the topology does not name, any free module as the origin and</span>
+<span class="sd">    any module but the origin as the destination. Empty is how a form says it: a select whose</span>
+<span class="sd">    choice is the WarehouseManagementSystem's posts an empty value."""</span>
+
+    <span class="n">origin</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@field_validator</span><span class="p">(</span><span class="s2">"origin"</span><span class="p">,</span> <span class="s2">"destination"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"before"</span><span class="p">)</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_empty_names_none</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">""</span> <span class="k">else</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="SpawnBoxResult">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.SpawnBoxResult">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SpawnBoxResult</span><span class="p">(</span><span class="n">StepResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The answer to a spawn. `origin` and `destination` name the modules it was given or picked,</span>
+<span class="sd">    once there are both, and the ones the request named before that. `box` and `operation` name</span>
+<span class="sd">    the box and its transport, once made."""</span>
+
+    <span class="n">origin</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">box</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">operation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="WmsReads">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsReads">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">WmsReads</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What the WarehouseManagementSystem reads. `discovery.GraphView` is the real one. None of it</span>
+<span class="sd">    reads every box in the graph."""</span>
+
+<div class="viewcode-block" id="WmsReads.boxes_held_by">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsReads.boxes_held_by">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">boxes_held_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span> <span class="o">...</span></div>
+
+
+<div class="viewcode-block" id="WmsReads.holds">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsReads.holds">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">holds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span></div>
+
+
+<div class="viewcode-block" id="WmsReads.modules_and_connections">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsReads.modules_and_connections">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">modules_and_connections</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModulesAndConnections</span><span class="p">:</span> <span class="o">...</span></div>
+
+
+<div class="viewcode-block" id="WmsReads.capability">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsReads.capability">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">capability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">capability_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span></div>
+
+
+<div class="viewcode-block" id="WmsReads.workflow_endpoint">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsReads.workflow_endpoint">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">workflow_endpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">workflow_class</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="WmsWrites">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsWrites">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">WmsWrites</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What it writes. `transport.TransportRecords` is the real one."""</span>
+
+<div class="viewcode-block" id="WmsWrites.open">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsWrites.open">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">open</span><span class="p">(</span></div>
+
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">capability</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">possessor</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span> <span class="o">...</span>
+
+<div class="viewcode-block" id="WmsWrites.fail">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WmsWrites.fail">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="seeded_choice">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.seeded_choice">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">seeded_choice</span><span class="p">(</span><span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Choose</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The chooser a WarehouseManagementSystem picks its modules with: `random.choice`'s shared</span>
+<span class="sd">    generator where `seed` is None, else the choice of a generator of its own that `seed` seeds, so</span>
+<span class="sd">    that the same seed and the same candidates give the same sequence of picks. The seed is set per</span>
+<span class="sd">    repetition. Interim name. Every pick is made under the picking lock, one</span>
+<span class="sd">    at a time; concurrent spawns that reach it in another order draw the same numbers in that</span>
+<span class="sd">    other order."""</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span> <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span><span class="o">.</span><span class="n">choice</span></div>
+
+
+
+<div class="viewcode-block" id="create_refused">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.create_refused">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_refused</span><span class="p">(</span><span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why a spawn is refused when the store refused the create of `box` on `origin`: prose for a</span>
+<span class="sd">    person, since a caller tells the store's refusal by the step result's report."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"the triple store refused creating </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">origin</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_NothingToSpawn</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""No origin or no destination for a spawn, or one the request names that may not take the</span>
+<span class="sd">    place it is named for: a module without the role, where the topology names that role, or no</span>
+<span class="sd">    module. The message says why. Roles are optional."""</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_PlannedSpawn</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A spawn of `box` onto `origin`, for `destination`, whose BoxTransportCapability is</span>
+<span class="sd">    `capability`: what the spawn picked before it asks the origin's Reserve."""</span>
+
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">capability</span><span class="p">:</span> <span class="n">IRI</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">refused</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">made</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The answer that the spawn is refused for `reason`, naming its modules and what it</span>
+<span class="sd">        `made` (its box and its transport)."""</span>
+        <span class="k">return</span> <span class="n">SpawnBoxResult</span><span class="p">(</span>
+            <span class="n">accepted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+            <span class="n">report</span><span class="o">=</span><span class="n">report</span><span class="p">,</span>
+            <span class="n">origin</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">origin</span><span class="p">),</span>
+            <span class="n">destination</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">destination</span><span class="p">),</span>
+            <span class="o">**</span><span class="n">made</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_StationRead</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What a spawn read of the graph, outside the picking lock, before it chooses: the modules</span>
+<span class="sd">    with their types and the connections (`station`), the modules that may be its origin and its</span>
+<span class="sd">    destination, and `empty`, each origin that it read as holding no box. It reads what an origin</span>
+<span class="sd">    holds only where it picks the origin, and not for an origin that was in flight when the read</span>
+<span class="sd">    began."""</span>
+
+    <span class="n">station</span><span class="p">:</span> <span class="n">ModulesAndConnections</span>
+    <span class="n">origins</span><span class="p">:</span> <span class="n">Choice</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span>
+    <span class="n">destinations</span><span class="p">:</span> <span class="n">Choice</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span>
+    <span class="n">empty</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_refused</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The answer that a spawn of `request` is refused for `reason`, before it has picked its</span>
+<span class="sd">    modules: it names the modules the request names."""</span>
+    <span class="k">return</span> <span class="n">SpawnBoxResult</span><span class="p">(</span>
+        <span class="n">accepted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+        <span class="n">origin</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span>
+        <span class="n">destination</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="spawn_candidates">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.spawn_candidates">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spawn_candidates</span><span class="p">(</span>
+    <span class="n">connections</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]],</span>
+    <span class="n">origins</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span>
+    <span class="n">destinations</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The candidates of a spawn: each of `origins` from which a path over `connections` leads to</span>
+<span class="sd">    one of `destinations` other than itself, with those destinations, both in their order. An</span>
+<span class="sd">    origin that reaches none is no candidate.</span>
+
+<span class="sd">    The WarehouseManagementSystem picks its origin among these, and its destination among those of</span>
+<span class="sd">    the origin, so that it picks only an exit it can reach from the origin, for every topology.</span>
+<span class="sd">    Its WMS strategy picks the pair, and `real` picks so.</span>
+<span class="sd">    """</span>
+    <span class="n">connections</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">connections</span><span class="p">)</span>
+    <span class="n">candidates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">origin</span> <span class="ow">in</span> <span class="n">origins</span><span class="p">:</span>
+        <span class="n">reached</span> <span class="o">=</span> <span class="n">reachable</span><span class="p">(</span><span class="n">connections</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span>
+        <span class="n">ends</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">destinations</span> <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="n">origin</span> <span class="ow">and</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">reached</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">ends</span><span class="p">:</span>
+            <span class="n">candidates</span><span class="p">[</span><span class="n">origin</span><span class="p">]</span> <span class="o">=</span> <span class="n">ends</span>
+    <span class="k">return</span> <span class="n">candidates</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_unreachable</span><span class="p">(</span>
+    <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">,</span> <span class="n">origins</span><span class="p">:</span> <span class="n">Choice</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span> <span class="n">destinations</span><span class="p">:</span> <span class="n">Choice</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why a spawn has no candidate (`spawn_candidates`), in the terms of the roles: the named</span>
+<span class="sd">    origin reaches no destination, or no free origin reaches the named destination, or any.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">destination</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">)</span><span class="si">}</span><span class="s2"> cannot be reached from "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"no </span><span class="si">{</span><span class="n">destinations</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> can be reached from </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">destination</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"no free </span><span class="si">{</span><span class="n">origins</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> can reach </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"no free </span><span class="si">{</span><span class="n">origins</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> can reach </span><span class="si">{</span><span class="n">destinations</span><span class="o">.</span><span class="n">with_article</span><span class="si">}</span><span class="s2">"</span>
+
+
+<div class="viewcode-block" id="taken_back_record">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.taken_back_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">taken_back_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the WarehouseManagementSystem `resource` logs when it takes `box` back: its evidence</span>
+<span class="sd">    that the box is back in its possession and its transport `operation` is done."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: accepted </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> back, and </span><span class="si">{</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> "</span>
+        <span class="s2">"is done"</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="n">TAKEN_BACK</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">"(?:^|[\s:])(?P&lt;resource&gt;[^\s:]+): accepted (?P&lt;box&gt;\S+) back, and "</span>
+    <span class="sa">r</span><span class="s2">"(?P&lt;operation&gt;\S+) is done$"</span>
+<span class="p">)</span>
+<span class="sd">"""A line of a log that holds a `taken_back_record`, whatever the log's format puts in front of it:</span>
+<span class="sd">the WarehouseManagementSystem, the box and its transport by their fragments."""</span>
+
+
+<div class="viewcode-block" id="spawned_record">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.spawned_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spawned_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the WarehouseManagementSystem `resource` logs once the store has admitted its create</span>
+<span class="sd">    of `box` on `origin`, for `destination`: the record of the box spawned (`spawn_record`).</span>
+<span class="sd">    A spawn counts at its answer: created when the store admitted its create, so the record does</span>
+<span class="sd">    not wait for the notification."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: spawned </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> onto </span><span class="si">{</span><span class="n">origin</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">, "</span>
+        <span class="sa">f</span><span class="s2">"for </span><span class="si">{</span><span class="n">destination</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="n">SPAWNED</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+    <span class="sa">r</span><span class="s2">"(?:^|[\s:])(?P&lt;resource&gt;[^\s:]+): spawned (?P&lt;box&gt;\S+) onto (?P&lt;origin&gt;\S+), "</span>
+    <span class="sa">r</span><span class="s2">"for (?P&lt;destination&gt;\S+)$"</span>
+<span class="p">)</span>
+<span class="sd">"""A line of a log that holds a `spawned_record`, whatever the log's format puts in front of it:</span>
+<span class="sd">the WarehouseManagementSystem, the box, its origin and its destination by their fragments."""</span>
+
+
+<div class="viewcode-block" id="refused_record">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.refused_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">refused_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">refused</span><span class="p">:</span> <span class="n">SpawnBoxResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the WarehouseManagementSystem `resource` logs when it answers a spawn with the refusal</span>
+<span class="sd">    `refused`: why, and the spawn's origin and destination where they are known.</span>
+<span class="sd">    """</span>
+    <span class="n">known</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">end</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">module</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">for</span> <span class="n">end</span><span class="p">,</span> <span class="n">module</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="p">(</span><span class="s2">"origin"</span><span class="p">,</span> <span class="n">refused</span><span class="o">.</span><span class="n">origin</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"destination"</span><span class="p">,</span> <span class="n">refused</span><span class="o">.</span><span class="n">destination</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">module</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">]</span>
+    <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">" (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">known</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span> <span class="k">if</span> <span class="n">known</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: spawn refused: </span><span class="si">{</span><span class="n">refused</span><span class="o">.</span><span class="n">reason</span><span class="si">}{</span><span class="n">where</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<div class="viewcode-block" id="spawn_record">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.spawn_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spawn_record</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">answer</span><span class="p">:</span> <span class="n">SpawnBoxResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The one record the WarehouseManagementSystem `resource` logs for each spawn, at its</span>
+<span class="sd">    `answer`: the box spawned, or the spawn refused with why.</span>
+
+<span class="sd">    A spawn counts as created once the store admitted its create, which the answer shows by</span>
+<span class="sd">    naming the box's transport: so a spawn whose origin then cannot be notified is recorded as</span>
+<span class="sd">    spawned, while its answer says why it failed and a warning says that the origin was not</span>
+<span class="sd">    told.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">operation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">refused_record</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+    <span class="c1"># A spawn whose create the store admitted names its box, its origin and its destination.</span>
+    <span class="k">return</span> <span class="n">spawned_record</span><span class="p">(</span>
+        <span class="n">resource</span><span class="p">,</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">box</span><span class="p">)),</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">origin</span><span class="p">)),</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">destination</span><span class="p">)),</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="n">EVERY_ORIGIN_BUSY</span> <span class="o">=</span> <span class="s2">"every origin has a spawn under way"</span>
+<span class="sd">"""Why a spawn does not start while as many spawns are under way as there are origins."""</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_SpawnsUnderWay</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How many spawns are under way, of the spawn workflow and of the spawn timer alike, and the</span>
+<span class="sd">    cap on them: as many as the modules that may be an origin, as the latest read of the modules</span>
+<span class="sd">    that a spawn made found them. It reads nothing of its own, so before the first read there is</span>
+<span class="sd">    no cap."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cap</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Count one more spawn under way, or answer False, and count none, at the cap."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cap</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cap</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="kc">True</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">end</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""A spawn under way has ended."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">-=</span> <span class="mi">1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">cap_at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origins</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Cap the spawns under way at `origins`: the modules that may be an origin, as a spawn's</span>
+<span class="sd">        read of the modules found them."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_cap</span> <span class="o">=</span> <span class="n">origins</span>
+
+
+<div class="viewcode-block" id="WarehouseManagementSystem">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WarehouseManagementSystem">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">WarehouseManagementSystem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The WarehouseManagementSystem `resource`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        resource: The WarehouseManagementSystem.</span>
+<span class="sd">        graph: The graph's answers.</span>
+<span class="sd">        records: Its writes of a box and its transport.</span>
+<span class="sd">        call: A blocking call to a module's workflow: the origin's Reserve.</span>
+<span class="sd">        notify: The middleware's notification of a resource.</span>
+<span class="sd">        choose: Picks a module out of several.</span>
+<span class="sd">        events: Its handover event stream, where a create the store refused is emitted.</span>
+<span class="sd">        stopping: Whether the stop of its process has begun.</span>
+<span class="sd">        strategy: The WMS strategy that picks the origin and the destination of a spawn among</span>
+<span class="sd">            its candidates, `real` unless a run chooses another (`strategies`).</span>
+<span class="sd">        strategy_name: Its name, which the refusal of a pair it chose outside the candidates</span>
+<span class="sd">            names.</span>
+<span class="sd">        new_box: Names each box it spawns: a new UUID, unless a test names them otherwise.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">graph</span><span class="p">:</span> <span class="n">WmsReads</span><span class="p">,</span>
+        <span class="n">records</span><span class="p">:</span> <span class="n">WmsWrites</span><span class="p">,</span>
+        <span class="n">call</span><span class="p">:</span> <span class="n">Call</span><span class="p">,</span>
+        <span class="n">notify</span><span class="p">:</span> <span class="n">Notify</span><span class="p">,</span>
+        <span class="n">choose</span><span class="p">:</span> <span class="n">Choose</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">,</span>
+        <span class="n">events</span><span class="p">:</span> <span class="n">HandoverEvents</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stopping</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">strategy</span><span class="p">:</span> <span class="n">WmsStrategy</span> <span class="o">=</span> <span class="n">REAL_WMS_STRATEGY</span><span class="p">,</span>
+        <span class="n">strategy_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">REAL</span><span class="p">,</span>
+        <span class="n">new_box</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_box_iri</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resource</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">records</span> <span class="o">=</span> <span class="n">records</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">strategy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strategy_name</span> <span class="o">=</span> <span class="n">strategy_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">call</span> <span class="o">=</span> <span class="n">call</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">notify</span> <span class="o">=</span> <span class="n">notify</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_capabilities</span> <span class="o">=</span> <span class="n">BoxTransportCapabilities</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">events</span> <span class="o">=</span> <span class="n">events</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">choose</span> <span class="o">=</span> <span class="n">choose</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stopping</span> <span class="o">=</span> <span class="n">stopping</span>
+        <span class="c1"># What it knows of its own work, which it keeps as it works.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="n">WmsMemory</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_new_box</span> <span class="o">=</span> <span class="n">new_box</span>
+        <span class="c1"># The spawns under way, and the cap on them.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_under_way</span> <span class="o">=</span> <span class="n">_SpawnsUnderWay</span><span class="p">()</span>
+        <span class="c1"># The picking lock, which covers only the slot bookkeeping: `_in_flight`, the origin of</span>
+        <span class="c1"># each spawn in flight, by its box, and `_left_flight`, how many spawns have left the</span>
+        <span class="c1"># flight. A spawn chooses its modules under it, in memory, and enters itself in flight;</span>
+        <span class="c1"># it never reads the store under it. The origin of a spawn in flight is not free for</span>
+        <span class="c1"># another spawn's pick.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_picking</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_in_flight</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_left_flight</span> <span class="o">=</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="WarehouseManagementSystem.spawn">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WarehouseManagementSystem.spawn">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Ask the origin's Reserve for a new box; once the origin has accepted, create the box</span>
+<span class="sd">        on it with its transport, and notify it.</span>
+
+<span class="sd">        The answer is kept in its memory. So is a spawn that raised, as refused with the error as</span>
+<span class="sd">        its reason, before the error goes on. Each answer is logged as one record at INFO</span>
+<span class="sd">        (`spawn_record`): the box spawned, or the spawn refused with why, so that no spawn asked</span>
+<span class="sd">        for, of the spawn workflow or of the spawn timer, is lost silently.</span>
+
+<span class="sd">        **Spawns under way at once.** At most as many spawns are under way at once as the</span>
+<span class="sd">        topology has modules that may be an origin, of the spawn workflow and of the spawn timer</span>
+<span class="sd">        alike. A spawn asked for at that cap does not start, and is refused with "every origin</span>
+<span class="sd">        has a spawn under way". The WMS spawns as fast as the hardware allows, with no wait of its</span>
+<span class="sd">        own.</span>
+<span class="sd">        """</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spawn</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_answered</span><span class="p">(</span>
+                <span class="n">SpawnBoxResult</span><span class="p">(</span>
+                    <span class="n">accepted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">reason</span><span class="o">=</span><span class="sa">f</span><span class="s2">"the spawn failed: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                    <span class="n">origin</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span>
+                    <span class="n">destination</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">raise</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_answered</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">answer</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_answered</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">answer</span><span class="p">:</span> <span class="n">SpawnBoxResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Keep the `answer` to a spawn in memory, and log its one record."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">answered</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">spawn_record</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">answer</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+        <span class="c1"># First, so that the stop is the reason, whatever else stands in the way.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stopping</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">_refused</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">STOPPING</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_under_way</span><span class="o">.</span><span class="n">start</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">_refused</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">EVERY_ORIGIN_BUSY</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pick_and_spawn</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_under_way</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_pick_and_spawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+        <span class="n">picked</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pick</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">picked</span><span class="p">,</span> <span class="n">SpawnBoxResult</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">picked</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span> <span class="n">picked</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># A store read the first time for each origin, outside the picking lock.</span>
+            <span class="n">capability</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capabilities</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">capability</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">SpawnBoxResult</span><span class="p">(</span>
+                    <span class="n">accepted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                    <span class="n">reason</span><span class="o">=</span><span class="n">no_box_transport_capability</span><span class="p">(</span><span class="n">origin</span><span class="p">),</span>
+                    <span class="n">origin</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">origin</span><span class="p">),</span>
+                    <span class="n">destination</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">destination</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_onto_origin</span><span class="p">(</span>
+                <span class="n">_PlannedSpawn</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">capability</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="c1"># Before the spawn counts as ended, so that a spawn under the cap finds its origin</span>
+            <span class="c1"># free again.</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_picking</span><span class="p">:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_in_flight</span><span class="p">[</span><span class="n">box</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_left_flight</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_pick</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span> <span class="o">|</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The box, the origin and the destination of a spawn of `request`, entered in flight;</span>
+<span class="sd">        or the answer that refuses the spawn.</span>
+
+<span class="sd">        It reads the graph outside the picking lock, then chooses under it, in memory, from what</span>
+<span class="sd">        it read and from the spawns in flight. When another spawn left the flight after its reads</span>
+<span class="sd">        began, its origin may hold that spawn's box by now: so it reads once more, and only</span>
+<span class="sd">        once, before it chooses.</span>
+<span class="sd">        """</span>
+        <span class="n">read_again</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_picking</span><span class="p">:</span>
+                <span class="n">began</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left_flight</span>
+                <span class="n">in_flight</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_in_flight</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="n">read</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">in_flight</span><span class="p">)</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_picking</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">read_again</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left_flight</span> <span class="o">!=</span> <span class="n">began</span><span class="p">:</span>
+                    <span class="n">read_again</span> <span class="o">=</span> <span class="kc">False</span>
+                    <span class="k">continue</span>
+                <span class="c1"># Again: the stop may have begun while the spawn read the graph.</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stopping</span><span class="p">():</span>
+                    <span class="k">return</span> <span class="n">_refused</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">STOPPING</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_origin_and_destination</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">read</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">_NothingToSpawn</span> <span class="k">as</span> <span class="n">nothing</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">_refused</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">nothing</span><span class="p">))</span>
+                <span class="n">box</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_box</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_in_flight</span><span class="p">[</span><span class="n">box</span><span class="p">]</span> <span class="o">=</span> <span class="n">origin</span>
+                <span class="k">return</span> <span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_onto_origin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spawn</span><span class="p">:</span> <span class="n">_PlannedSpawn</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Ask the origin's Reserve for the box of `spawn`, create the box on the origin with its</span>
+<span class="sd">        transport, and notify the origin. Nothing is written before the origin has accepted.</span>
+
+<span class="sd">        The Reserve names the box's destination, so the origin looks ahead: it accepts only once</span>
+<span class="sd">        its own next module has reserved itself for the box, and this spawn's Reserve waits</span>
+<span class="sd">        behind every box that waits for the origin.</span>
+
+<span class="sd">        A refusal of Reserve refuses the spawn with the origin's reason; an origin that cannot be</span>
+<span class="sd">        reached, or whose answer is lost, refuses it with why, and a reservation the origin made</span>
+<span class="sd">        lapses at its bound. Any other error of the call is raised.</span>
+<span class="sd">        """</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span> <span class="n">spawn</span><span class="o">.</span><span class="n">box</span><span class="p">,</span> <span class="n">spawn</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">spawn</span><span class="o">.</span><span class="n">destination</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">reserved</span> <span class="o">=</span> <span class="n">ask</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">,</span>
+                <span class="n">origin</span><span class="p">,</span>
+                <span class="n">FC</span><span class="o">.</span><span class="n">ReserveWorkflow</span><span class="p">,</span>
+                <span class="n">ReserveRequest</span><span class="p">(</span>
+                    <span class="n">box</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">),</span>
+                    <span class="n">source_module</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">),</span>
+                    <span class="n">destination</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">destination</span><span class="p">),</span>
+                <span class="p">),</span>
+                <span class="n">ReserveResult</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">PeerUnreachable</span> <span class="k">as</span> <span class="n">lost</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">spawn</span><span class="o">.</span><span class="n">refused</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">lost</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">reserved</span><span class="o">.</span><span class="n">accepted</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">spawn</span><span class="o">.</span><span class="n">refused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">origin</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> refused to reserve: </span><span class="si">{</span><span class="n">reserved</span><span class="o">.</span><span class="n">reason</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="n">reserved</span><span class="o">.</span><span class="n">report</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">reserved_record</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">box</span><span class="p">))</span>
+        <span class="c1"># Again, as late as it can be asked: the reads and the origin's Reserve take a while on a</span>
+        <span class="c1"># shared store, and the next step creates the box.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stopping</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">spawn</span><span class="o">.</span><span class="n">refused</span><span class="p">(</span><span class="n">STOPPING</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">operation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+                <span class="n">box</span><span class="p">,</span>
+                <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
+                <span class="n">destination</span><span class="o">=</span><span class="n">destination</span><span class="p">,</span>
+                <span class="n">capability</span><span class="o">=</span><span class="n">spawn</span><span class="o">.</span><span class="n">capability</span><span class="p">,</span>
+                <span class="n">possessor</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">ShaclValidationError</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_refused</span><span class="p">(</span><span class="n">spawn</span><span class="p">,</span> <span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">status_record</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">QUEUED</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">opened</span><span class="p">(</span>
+            <span class="n">Transport</span><span class="p">(</span>
+                <span class="n">operation</span><span class="p">,</span>
+                <span class="n">box</span><span class="p">,</span>
+                <span class="n">origin</span><span class="p">,</span>
+                <span class="n">destination</span><span class="p">,</span>
+                <span class="n">OperationStatus</span><span class="o">.</span><span class="n">QUEUED</span><span class="p">,</span>
+                <span class="n">assigned</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">made</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"box"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">),</span> <span class="s2">"operation"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">operation</span><span class="p">)}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">NotificationUndelivered</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="c1"># Nothing else would start the origin's BoxTransportWorkflow. Once the stop of this</span>
+            <span class="c1"># process has begun, the stop is why: every process of the run stops at once, and</span>
+            <span class="c1"># the origin's server takes no new connection.</span>
+            <span class="n">why</span> <span class="o">=</span> <span class="n">not_reachable</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stopping</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_origin_lost</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">STOPPING</span><span class="p">,</span> <span class="n">also</span><span class="o">=</span><span class="n">why</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">spawn</span><span class="o">.</span><span class="n">refused</span><span class="p">(</span><span class="n">STOPPING</span><span class="p">,</span> <span class="o">**</span><span class="n">made</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_origin_lost</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="n">origin</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">why</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">spawn</span><span class="o">.</span><span class="n">refused</span><span class="p">(</span><span class="n">why</span><span class="p">,</span> <span class="o">**</span><span class="n">made</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SpawnBoxResult</span><span class="p">(</span>
+            <span class="n">accepted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">origin</span><span class="p">),</span> <span class="n">destination</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">destination</span><span class="p">),</span> <span class="o">**</span><span class="n">made</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_create_refused</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spawn</span><span class="p">:</span> <span class="n">_PlannedSpawn</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The store refused the create of the box of `spawn` on its origin, with `report`, and</span>
+<span class="sd">        wrote nothing. Log the refusal with its report, emit it, and refuse the spawn with both."""</span>
+        <span class="n">reason</span> <span class="o">=</span> <span class="n">create_refused</span><span class="p">(</span><span class="n">spawn</span><span class="o">.</span><span class="n">box</span><span class="p">,</span> <span class="n">spawn</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s%s</span><span class="s2">; the spawn is refused:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">reason</span><span class="p">,</span>
+            <span class="n">rules_clause</span><span class="p">(</span><span class="n">report</span><span class="p">),</span>
+            <span class="n">report</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">commit_refused</span><span class="p">(</span>
+                <span class="n">box</span><span class="o">=</span><span class="n">spawn</span><span class="o">.</span><span class="n">box</span><span class="p">,</span>
+                <span class="n">peer</span><span class="o">=</span><span class="n">spawn</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span>
+                <span class="n">transport</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+                <span class="n">report</span><span class="o">=</span><span class="n">report</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">spawn</span><span class="o">.</span><span class="n">refused</span><span class="p">(</span><span class="n">reason</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_origin_lost</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">also</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""End `operation` failed with `reason`: this party created it and `box` on `origin`, and</span>
+<span class="sd">        then could not notify `origin`, so nothing would carry the box on. One warning says it,</span>
+<span class="sd">        and `also`, why the notification failed, when the reason is another."""</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> is on </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s%s</span><span class="s2">"</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">origin</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">reason</span><span class="p">,</span>
+            <span class="s2">""</span> <span class="k">if</span> <span class="n">also</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"; </span><span class="si">{</span><span class="n">also</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_fail</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">reason</span><span class="p">)</span>
+
+<div class="viewcode-block" id="WarehouseManagementSystem.transport_ended">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WarehouseManagementSystem.transport_ended">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transport_ended</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transport</span><span class="p">:</span> <span class="n">Transport</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The notification that `transport` has ended: accept a box it holds whose transport is</span>
+<span class="sd">        done, and log a transport that failed.</span>
+
+<span class="sd">        Only a transport that is done, or in a status no notification should bring, makes the</span>
+<span class="sd">        WarehouseManagementSystem ask the store whether it holds the transport's box, in one</span>
+<span class="sd">        `ASK` about that one box: a failed one costs nothing beyond the middleware's read of the</span>
+<span class="sd">        transport.</span>
+<span class="sd">        """</span>
+        <span class="n">operation</span> <span class="o">=</span> <span class="n">transport</span><span class="o">.</span><span class="n">operation</span>
+        <span class="k">if</span> <span class="n">transport</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">:</span>
+            <span class="c1"># A transport fails on the station with its box on a module.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">ended</span><span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">held</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">transport</span><span class="o">.</span><span class="n">result</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">held</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">holds</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">transport</span><span class="o">.</span><span class="n">box</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">ended</span><span class="p">(</span><span class="n">transport</span><span class="p">,</span> <span class="n">held</span><span class="o">=</span><span class="n">held</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">transport</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span> <span class="ow">and</span> <span class="n">held</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">taken_back_record</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">transport</span><span class="o">.</span><span class="n">box</span><span class="p">,</span> <span class="n">operation</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">: notified of </span><span class="si">%s</span><span class="s2">, which is </span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">transport</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+            <span class="s2">"and it holds"</span> <span class="k">if</span> <span class="n">held</span> <span class="k">else</span> <span class="s2">"and it does not hold"</span><span class="p">,</span>
+            <span class="n">transport</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WarehouseManagementSystem.origins_and_destinations">
+<a class="viewcode-back" href="../../../reference/uc2/wms.html#jms_kapps.uc2.wms.WarehouseManagementSystem.origins_and_destinations">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">origins_and_destinations</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">"""The modules a spawn may name as its origin, and those it may name as its destination,</span>
+<span class="sd">        read from the graph: the entry modules and the exit modules where the topology names</span>
+<span class="sd">        them, and every module for a role it does not name. What the dashboard's form offers.</span>
+<span class="sd">        Roles are optional."""</span>
+        <span class="k">return</span> <span class="n">entries_and_exits</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">modules_and_connections</span><span class="p">()</span><span class="o">.</span><span class="n">types</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">,</span> <span class="n">in_flight</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="n">IRI</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">_StationRead</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""What a spawn of `request` reads of the graph before it chooses, outside the picking</span>
+<span class="sd">        lock: the modules with the connections, in one read, and, where it picks the origin, what</span>
+<span class="sd">        each module that may be its origin holds, but for those in `in_flight`, the origins of</span>
+<span class="sd">        the spawns in flight when the read began. Its answers do not grow with the boxes in the</span>
+<span class="sd">        graph. They are the reads of `_origin_and_destination`, made outside the picking lock."""</span>
+        <span class="n">station</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">modules_and_connections</span><span class="p">()</span>
+        <span class="n">origins</span><span class="p">,</span> <span class="n">destinations</span> <span class="o">=</span> <span class="n">choices</span><span class="p">(</span><span class="n">station</span><span class="o">.</span><span class="n">types</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_under_way</span><span class="o">.</span><span class="n">cap_at</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">origins</span><span class="o">.</span><span class="n">modules</span><span class="p">))</span>
+        <span class="n">empty</span><span class="p">:</span> <span class="nb">frozenset</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">empty</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+                <span class="n">module</span>
+                <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">origins</span><span class="o">.</span><span class="n">modules</span>
+                <span class="k">if</span> <span class="n">module</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">in_flight</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">boxes_held_by</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">_StationRead</span><span class="p">(</span><span class="n">station</span><span class="p">,</span> <span class="n">origins</span><span class="p">,</span> <span class="n">destinations</span><span class="p">,</span> <span class="n">empty</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_origin_and_destination</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">,</span> <span class="n">read</span><span class="p">:</span> <span class="n">_StationRead</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The modules the request names, or those picked for it, from what the spawn `read`, in</span>
+<span class="sd">        memory: called under the picking lock. A picked origin is one it read as holding no box,</span>
+<span class="sd">        and not the origin of a spawn in flight now. It reads nothing itself.</span>
+
+<span class="sd">        **Roles are optional** (`topology.choices`). Where the topology names entry modules, a</span>
+<span class="sd">        named origin must be one, and a picked one is a free one; where it names none, the origin</span>
+<span class="sd">        is any module, and a picked one any free module. Where it names exit modules, a named</span>
+<span class="sd">        destination must be one, and a picked one is one; where it names none, the destination</span>
+<span class="sd">        is any module. A picked destination is never the origin, and a named one may not be. One</span>
+<span class="sd">        module may have both roles. Roles are optional, as the first iteration's</span>
+<span class="sd">        WarehouseManagementSystem had them.</span>
+
+<span class="sd">        **Only a reachable destination** (`spawn_candidates`). A picked destination is one the</span>
+<span class="sd">        origin reaches over the connections, and a picked origin one that reaches the named</span>
+<span class="sd">        destination, or else some destination; a named destination that the named origin does not</span>
+<span class="sd">        reach is refused, for every topology.</span>
+
+<span class="sd">        **A strategy picks** (`strategies`). Where the request leaves an end to pick, the</span>
+<span class="sd">        WarehouseManagementSystem's strategy picks one pair among the candidates, given the</span>
+<span class="sd">        connections as this read found them and the chooser; `real` lets the chooser pick the</span>
+<span class="sd">        origin, then the destination, as before. A pair that is not a candidate refuses the</span>
+<span class="sd">        spawn: "the strategy &lt;name&gt; chose Module1 to Module7, which is not a candidate". A</span>
+<span class="sd">        request that names both ends is checked as before, and no strategy is asked.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            _NothingToSpawn: If there are none, or the request names one that may not take the</span>
+<span class="sd">                place it is named for, saying why.</span>
+<span class="sd">        """</span>
+        <span class="n">station</span><span class="p">,</span> <span class="n">origins</span><span class="p">,</span> <span class="n">destinations</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">station</span><span class="p">,</span> <span class="n">read</span><span class="o">.</span><span class="n">origins</span><span class="p">,</span> <span class="n">read</span><span class="o">.</span><span class="n">destinations</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">origin</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">origin</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">origins</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span><span class="si">}</span><span class="s2"> is not </span><span class="si">{</span><span class="n">origins</span><span class="o">.</span><span class="n">with_article</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+            <span class="n">free</span> <span class="o">=</span> <span class="p">[</span><span class="n">origin</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">in_flight</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_in_flight</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="n">free</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">module</span>
+                <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">origins</span><span class="o">.</span><span class="n">modules</span>
+                <span class="k">if</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">read</span><span class="o">.</span><span class="n">empty</span> <span class="ow">and</span> <span class="n">module</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">in_flight</span>
+            <span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">free</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span><span class="sa">f</span><span class="s2">"no </span><span class="si">{</span><span class="n">origins</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> is free"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">destination</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">destination</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">destination</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">destinations</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span><span class="si">}</span><span class="s2"> is not </span><span class="si">{</span><span class="n">destinations</span><span class="o">.</span><span class="n">with_article</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span> <span class="o">==</span> <span class="n">destination</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span><span class="s2">"a box's origin and destination must differ"</span><span class="p">)</span>
+            <span class="n">allowed</span> <span class="o">=</span> <span class="p">[</span><span class="n">destination</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">allowed</span> <span class="o">=</span> <span class="n">destinations</span><span class="o">.</span><span class="n">modules</span>
+            <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">allowed</span> <span class="o">==</span> <span class="p">[</span><span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">)]:</span>
+                <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"the knowledge graph has no </span><span class="si">{</span><span class="n">destinations</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> other than "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+                <span class="p">)</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">spawn_candidates</span><span class="p">(</span><span class="n">station</span><span class="o">.</span><span class="n">connections</span><span class="p">,</span> <span class="n">free</span><span class="p">,</span> <span class="n">allowed</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span><span class="n">_unreachable</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">origins</span><span class="p">,</span> <span class="n">destinations</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">origin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">destination</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">),</span> <span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">)</span>
+        <span class="n">origin</span><span class="p">,</span> <span class="n">destination</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy</span><span class="o">.</span><span class="n">origin_and_destination</span><span class="p">(</span>
+            <span class="n">candidates</span><span class="p">,</span> <span class="n">station</span><span class="o">.</span><span class="n">directed</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chooser</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">destination</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">candidates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">origin</span><span class="p">),</span> <span class="p">()):</span>
+            <span class="k">raise</span> <span class="n">_NothingToSpawn</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the strategy </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">strategy_name</span><span class="si">}</span><span class="s2"> chose </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">origin</span><span class="p">)</span><span class="si">}</span><span class="s2"> to "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span><span class="si">}</span><span class="s2">, which is not a candidate"</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="n">origin</span><span class="p">),</span> <span class="n">IRI</span><span class="p">(</span><span class="n">destination</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_chooser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Choose</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The chooser the strategy picks with for a spawn of `request`: this party's, except</span>
+<span class="sd">        that a module the request names is no pick. Given it alone, it answers it, and this</span>
+<span class="sd">        party's chooser is not asked."""</span>
+        <span class="n">named</span> <span class="o">=</span> <span class="p">{</span><span class="n">IRI</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">origin</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">destination</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">choose</span><span class="p">(</span><span class="n">options</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">options</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">named</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">choose</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">choose</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fail</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Record `operation` failed. A refusal by the store is logged with its report: the</span>
+<span class="sd">        transport stays as it is, and the answer of the spawn says why it did not start."""</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">records</span><span class="o">.</span><span class="n">fail</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">reason</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ShaclValidationError</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">: the triple store refused recording </span><span class="si">%s</span><span class="s2"> failed</span><span class="si">%s</span><span class="s2">:</span><span class="se">\n</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">rules_clause</span><span class="p">(</span><span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">),</span>
+                <span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">failed</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">reason</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">status_record</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

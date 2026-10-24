@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.trace_box &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=e3a6060d"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/trace_box';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.2';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.trace_box</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.trace_box</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""`jms-uc2 trace-box`: every change of a box's possession, read back from the triple store's</span>
+<span class="sd">history.</span>
+
+<span class="sd">A handover overwrites the box's link to its possessor's possession state, so the knowledge graph</span>
+<span class="sd">holds only the present possessor. The triple store's history holds every change, each with its</span>
+<span class="sd">transaction and its time (`history`). This command shows one box's way through the station from</span>
+<span class="sd">there. On a disposable dataset of the configured store it:</span>
+
+<span class="sd">1. seeds the topology `line`, four modules one after another, and turns the dataset's history</span>
+<span class="sd">   collection on;</span>
+<span class="sd">2. starts the four modules and the WarehouseManagementSystem through the run core, without the</span>
+<span class="sd">   Launcher, and waits until each is ready;</span>
+<span class="sd">3. spawns one box through the WarehouseManagementSystem's spawn workflow, from the line's entry</span>
+<span class="sd">   module to its exit module, with the normal transit time;</span>
+<span class="sd">4. waits until the box's transport is done and the WarehouseManagementSystem has logged the box</span>
+<span class="sd">   back, then stops every participant;</span>
+<span class="sd">5. reads the change list of the box's possession link, of the transport's status and of its</span>
+<span class="sd">   assignment (`cfc:executedOn`), and groups the changes by transaction: one row each.</span>
+
+<span class="sd">It prints the rows as one table, with each time in UTC and in the server's local time, and writes</span>
+<span class="sd">them as JSON (`--out`, `trace-&lt;box&gt;.json` in the current folder by default), with a cross-check:</span>
+<span class="sd">the possessors in the order of their transactions, against the handovers the participants</span>
+<span class="sd">logged: the WarehouseManagementSystem's spawn onto the origin, each module's convey to the next,</span>
+<span class="sd">and the WarehouseManagementSystem's take-back. It exits 0 when the two agree, and 1 otherwise,</span>
+<span class="sd">or when the store cannot be reached, the run does not start, or the transport does not end.</span>
+
+<span class="sd">The history collection stays on (`history`), so the command takes only a name that starts with</span>
+<span class="sd">`ogm-disposable-`. It works on a dataset whose collection is on already, and again on the same</span>
+<span class="sd">dataset: the box's own name keeps the runs apart.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">TextIO</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span><span class="p">,</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">TripleStoreInterfaceError</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.services</span><span class="w"> </span><span class="kn">import</span> <span class="n">reader</span><span class="p">,</span> <span class="n">reader_of_one</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.supervision</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">LaunchFailed</span><span class="p">,</span>
+    <span class="n">LiveInstanceError</span><span class="p">,</span>
+    <span class="n">NotReady</span><span class="p">,</span>
+    <span class="n">Supervisor</span><span class="p">,</span>
+    <span class="n">refuse_if_live</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">bindings</span><span class="p">,</span> <span class="n">connect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="n">workflow_endpoint</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handshake</span><span class="w"> </span><span class="kn">import</span> <span class="n">CONVEYED</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.history</span><span class="w"> </span><span class="kn">import</span> <span class="n">Change</span><span class="p">,</span> <span class="n">changes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">module_command</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.reachable_destination</span><span class="w"> </span><span class="kn">import</span> <span class="n">DISPOSABLE_PREFIX</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.run_core</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Participant</span><span class="p">,</span>
+    <span class="n">RunGraph</span><span class="p">,</span>
+    <span class="n">TripleStoreGraph</span><span class="p">,</span>
+    <span class="n">participants_of</span><span class="p">,</span>
+    <span class="n">start_run</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.seed</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topology</span><span class="p">,</span> <span class="n">shipped_topology</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.transport</span><span class="w"> </span><span class="kn">import</span> <span class="n">operation_status</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">WMS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms</span><span class="w"> </span><span class="kn">import</span> <span class="n">SPAWNED</span><span class="p">,</span> <span class="n">TAKEN_BACK</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms_process</span><span class="w"> </span><span class="kn">import</span> <span class="n">wms_command</span>
+
+<span class="n">PROGRAM</span> <span class="o">=</span> <span class="s2">"jms-uc2 trace-box"</span>
+
+<span class="c1"># The shipped topology the command runs on.</span>
+<span class="n">TOPOLOGY</span> <span class="o">=</span> <span class="s2">"line"</span>
+
+<span class="c1"># How long the transport of the box may take, in seconds: four modules at a few seconds each,</span>
+<span class="c1"># with room for a slow store.</span>
+<span class="n">TRANSPORT_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">120.0</span>
+
+<span class="c1"># How long the WarehouseManagementSystem may take to log the box back once its transport is done:</span>
+<span class="c1"># the notification comes after the commit.</span>
+<span class="n">TAKE_BACK_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">30.0</span>
+
+<span class="c1"># The transport's statuses after which it changes no more.</span>
+<span class="n">ENDED</span> <span class="o">=</span> <span class="p">(</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="p">,</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Transaction">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.Transaction">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Transaction</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One transaction of the history that changed the box's possession, or its transport's status</span>
+<span class="sd">    or assignment: its time in UTC and in the server's local time, the box, and what it set. A</span>
+<span class="sd">    member is None where the transaction did not set it."""</span>
+
+    <span class="n">transaction</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">utc</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">server_time</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">possessor</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">assigned</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="CrossCheck">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.CrossCheck">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CrossCheck</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The possessors of the box in the order of their transactions, and in the order of the</span>
+<span class="sd">    handovers the participants logged, by their fragments, and whether the two agree."""</span>
+
+    <span class="n">from_history</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">from_logs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">agree</span><span class="p">:</span> <span class="nb">bool</span></div>
+
+
+
+<div class="viewcode-block" id="Record">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.Record">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Record</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What `--out` holds: the box, its transport, the dataset, the rows and the cross-check."""</span>
+
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">transactions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Transaction</span><span class="p">]</span>
+    <span class="n">cross_check</span><span class="p">:</span> <span class="n">CrossCheck</span></div>
+
+
+
+<div class="viewcode-block" id="transactions">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.transactions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">transactions</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Change</span><span class="p">],</span> <span class="n">possessors</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Transaction</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The rows of the changes `found` of `box`'s possession and of its transport's status and</span>
+<span class="sd">    assignment: one for each transaction, in the order of their time. `possessors` names the</span>
+<span class="sd">    possessor of each possession state."""</span>
+    <span class="n">grouped</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Change</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">change</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="n">found</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">timestamp</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">),</span> <span class="n">c</span><span class="o">.</span><span class="n">transaction</span><span class="p">)</span>
+    <span class="p">):</span>
+        <span class="n">grouped</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">change</span><span class="o">.</span><span class="n">transaction</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">transaction</span><span class="p">,</span> <span class="n">made</span> <span class="ow">in</span> <span class="n">grouped</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">set_to</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">predicate</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">made</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">inserted</span><span class="p">}</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">set_to</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="p">)</span>
+        <span class="n">assigned</span> <span class="o">=</span> <span class="n">set_to</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">)</span>
+        <span class="n">stamp</span> <span class="o">=</span> <span class="n">made</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">timestamp</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">Transaction</span><span class="p">(</span>
+                <span class="n">transaction</span><span class="p">,</span>
+                <span class="n">stamp</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">),</span>
+                <span class="n">stamp</span><span class="p">,</span>
+                <span class="n">box</span><span class="p">,</span>
+                <span class="kc">None</span> <span class="k">if</span> <span class="n">state</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">possessors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">IRI</span><span class="p">(</span><span class="n">state</span><span class="p">)),</span>
+                <span class="n">set_to</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">),</span>
+                <span class="kc">None</span> <span class="k">if</span> <span class="n">assigned</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">IRI</span><span class="p">(</span><span class="n">assigned</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="possessors_of">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.possessors_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">possessors_of</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">states</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The possessor of each of the possession states `states`. A resource's link to its own</span>
+<span class="sd">    possession state never changes, so the live data answers it."""</span>
+    <span class="n">wanted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">states</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">wanted</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{}</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">&gt;"</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">wanted</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"SELECT ?possessor ?state WHERE </span><span class="se">{{</span><span class="s2"> VALUES ?state </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2"> "</span>
+        <span class="sa">f</span><span class="s2">"?possessor &lt;</span><span class="si">{</span><span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessor</span><span class="si">}</span><span class="s2">&gt; ?state </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">convert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">row</span><span class="p">[</span><span class="s2">"state"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">]:</span> <span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"possessor"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="logged_possessors">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.logged_possessors">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">logged_possessors</span><span class="p">(</span><span class="n">lines</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The possessors of `box` in the order of the handovers the participants logged, by their</span>
+<span class="sd">    fragments: the origin of its spawn, the receiver of each convey, from the possessor of the</span>
+<span class="sd">    moment on, then the WarehouseManagementSystem that took it back. `lines` are the lines of</span>
+<span class="sd">    every participant, each participant's in the order it wrote them."""</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">conveyed</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">taken_back</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">found</span> <span class="o">:=</span> <span class="n">SPAWNED</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">found</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]</span> <span class="o">==</span> <span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span>
+                <span class="n">origin</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="s2">"origin"</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">found</span> <span class="o">:=</span> <span class="n">CONVEYED</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">found</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]</span> <span class="o">==</span> <span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span>
+                <span class="n">conveyed</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="s2">"resource"</span><span class="p">],</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="s2">"receiver"</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">found</span> <span class="o">:=</span> <span class="n">TAKEN_BACK</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">line</span><span class="p">))</span> <span class="ow">and</span> <span class="n">found</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]</span> <span class="o">==</span> <span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">:</span>
+            <span class="n">taken_back</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="s2">"resource"</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">origin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">way</span> <span class="o">=</span> <span class="p">[</span><span class="n">origin</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">conveyed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">way</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">way</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">conveyed</span><span class="p">[</span><span class="n">way</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">taken_back</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">way</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">taken_back</span><span class="p">)</span>
+    <span class="c1"># A logged convey the way did not reach is a handover the history must show too.</span>
+    <span class="k">for</span> <span class="n">receivers</span> <span class="ow">in</span> <span class="n">conveyed</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">way</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="sa">f</span><span class="s2">"(unreached) </span><span class="si">{</span><span class="n">receiver</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">receiver</span> <span class="ow">in</span> <span class="n">receivers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">way</span></div>
+
+
+
+<div class="viewcode-block" id="cross_check">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.cross_check">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cross_check</span><span class="p">(</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Transaction</span><span class="p">],</span> <span class="n">lines</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CrossCheck</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The possessors of the rows `rows`, in their order, against those of the handovers the</span>
+<span class="sd">    participants logged in `lines`."""</span>
+    <span class="n">from_history</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="o">.</span><span class="n">possessor</span><span class="o">.</span><span class="n">fragment</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span> <span class="k">if</span> <span class="n">row</span><span class="o">.</span><span class="n">possessor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="n">from_logs</span> <span class="o">=</span> <span class="n">logged_possessors</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">CrossCheck</span><span class="p">(</span><span class="n">from_history</span><span class="p">,</span> <span class="n">from_logs</span><span class="p">,</span> <span class="n">from_history</span> <span class="o">==</span> <span class="n">from_logs</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_utc</span><span class="p">(</span><span class="n">moment</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">moment</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S.</span><span class="si">%f</span><span class="s2">"</span><span class="p">)[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_server</span><span class="p">(</span><span class="n">moment</span><span class="p">:</span> <span class="n">datetime</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">moment</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s2">" "</span><span class="p">,</span> <span class="n">timespec</span><span class="o">=</span><span class="s2">"milliseconds"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_name</span><span class="p">(</span><span class="n">iri</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">"-"</span> <span class="k">if</span> <span class="n">iri</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">iri</span><span class="o">.</span><span class="n">fragment</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_transaction_id</span><span class="p">(</span><span class="n">transaction</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">transaction</span><span class="p">)</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"/"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="n">COLUMNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"time (UTC)"</span><span class="p">,</span>
+    <span class="s2">"time (server)"</span><span class="p">,</span>
+    <span class="s2">"box"</span><span class="p">,</span>
+    <span class="s2">"possessor"</span><span class="p">,</span>
+    <span class="s2">"status"</span><span class="p">,</span>
+    <span class="s2">"assigned module"</span><span class="p">,</span>
+    <span class="s2">"transaction"</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="table">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table</span><span class="p">(</span><span class="n">rows</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Transaction</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The rows as a table: a header, a rule, and one line for each transaction."""</span>
+    <span class="n">cells</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="n">_utc</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">utc</span><span class="p">),</span>
+            <span class="n">_server</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">server_time</span><span class="p">),</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">_name</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">possessor</span><span class="p">),</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">status</span> <span class="ow">or</span> <span class="s2">"-"</span><span class="p">,</span>
+            <span class="n">_name</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">assigned</span><span class="p">),</span>
+            <span class="n">_transaction_id</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">transaction</span><span class="p">),</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+    <span class="p">]</span>
+    <span class="n">widths</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">column</span><span class="p">),</span> <span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">))</span> <span class="k">if</span> <span class="n">cells</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">line</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"  "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">v</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">widths</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">line</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">),</span> <span class="n">line</span><span class="p">([</span><span class="s2">"-"</span> <span class="o">*</span> <span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">widths</span><span class="p">]),</span> <span class="o">*</span><span class="p">(</span><span class="n">line</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cells</span><span class="p">)]</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="record">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Transaction</span><span class="p">],</span>
+    <span class="n">check</span><span class="p">:</span> <span class="n">CrossCheck</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""What `--out` holds, as JSON: `parse_record` reads it back."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">iri</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"box"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">),</span>
+        <span class="s2">"transport"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">transport</span><span class="p">),</span>
+        <span class="s2">"dataset"</span><span class="p">:</span> <span class="n">dataset</span><span class="p">,</span>
+        <span class="s2">"topology"</span><span class="p">:</span> <span class="n">TOPOLOGY</span><span class="p">,</span>
+        <span class="s2">"transactions"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">"transaction"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">transaction</span><span class="p">),</span>
+                <span class="s2">"utc"</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">utc</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                <span class="s2">"server_time"</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">server_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                <span class="s2">"box"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">box</span><span class="p">),</span>
+                <span class="s2">"possessor"</span><span class="p">:</span> <span class="n">iri</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">possessor</span><span class="p">),</span>
+                <span class="s2">"status"</span><span class="p">:</span> <span class="n">row</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+                <span class="s2">"assigned"</span><span class="p">:</span> <span class="n">iri</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">assigned</span><span class="p">),</span>
+            <span class="p">}</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+        <span class="p">],</span>
+        <span class="s2">"cross_check"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"from_history"</span><span class="p">:</span> <span class="n">check</span><span class="o">.</span><span class="n">from_history</span><span class="p">,</span>
+            <span class="s2">"from_logs"</span><span class="p">:</span> <span class="n">check</span><span class="o">.</span><span class="n">from_logs</span><span class="p">,</span>
+            <span class="s2">"agree"</span><span class="p">:</span> <span class="n">check</span><span class="o">.</span><span class="n">agree</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="parse_record">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.parse_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_record</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The record `data`, as `record` wrote it.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If it lacks a member or a time carries no offset from UTC.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">iri</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">IRI</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">"transactions"</span><span class="p">]:</span>
+            <span class="n">utc</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"utc"</span><span class="p">])</span>
+            <span class="n">server_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"server_time"</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">utc</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">server_time</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"a time of </span><span class="si">{</span><span class="n">row</span><span class="p">[</span><span class="s1">'transaction'</span><span class="p">]</span><span class="si">}</span><span class="s2"> carries no offset"</span><span class="p">)</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">Transaction</span><span class="p">(</span>
+                    <span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"transaction"</span><span class="p">]),</span>
+                    <span class="n">utc</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">),</span>
+                    <span class="n">server_time</span><span class="p">,</span>
+                    <span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]),</span>
+                    <span class="n">iri</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"possessor"</span><span class="p">]),</span>
+                    <span class="n">row</span><span class="p">[</span><span class="s2">"status"</span><span class="p">],</span>
+                    <span class="n">iri</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"assigned"</span><span class="p">]),</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">check</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">"cross_check"</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Record</span><span class="p">(</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]),</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">"transport"</span><span class="p">]),</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">"dataset"</span><span class="p">],</span>
+            <span class="n">rows</span><span class="p">,</span>
+            <span class="n">CrossCheck</span><span class="p">(</span>
+                <span class="nb">list</span><span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="s2">"from_history"</span><span class="p">]),</span>
+                <span class="nb">list</span><span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="s2">"from_logs"</span><span class="p">]),</span>
+                <span class="nb">bool</span><span class="p">(</span><span class="n">check</span><span class="p">[</span><span class="s2">"agree"</span><span class="p">]),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the record lacks </span><span class="si">{</span><span class="n">missing</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">missing</span></div>
+
+
+
+<div class="viewcode-block" id="default_out">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.default_out">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">default_out</span><span class="p">(</span><span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where `--out` writes when it is not given: `trace-&lt;box&gt;.json` in the current folder."""</span>
+    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">"trace-</span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">.json"</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_lines</span><span class="p">(</span><span class="n">supervisor</span><span class="p">:</span> <span class="n">Supervisor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Every line the participants wrote so far, each participant's in its order."""</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">supervisor</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">child</span><span class="o">.</span><span class="n">output</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_taken_back</span><span class="p">(</span><span class="n">lines</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether the WarehouseManagementSystem has logged `box` back in `lines`."""</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">found</span> <span class="o">:=</span> <span class="n">TAKEN_BACK</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">line</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">found</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]</span> <span class="o">==</span> <span class="n">box</span><span class="o">.</span><span class="n">fragment</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_wait</span><span class="p">(</span><span class="n">until</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="nb">bool</span><span class="p">],</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">interval</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `until` came true within `timeout` seconds, asked every `interval`."""</span>
+    <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="n">timeout</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">until</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">deadline</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="TraceFailed">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.TraceFailed">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TraceFailed</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The run did not give a box to trace: why."""</span></div>
+
+
+
+<div class="viewcode-block" id="trace">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.trace">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">trace</span><span class="p">(</span>
+    <span class="n">topology</span><span class="p">:</span> <span class="n">Topology</span><span class="p">,</span>
+    <span class="n">graph</span><span class="p">:</span> <span class="n">RunGraph</span><span class="p">,</span>
+    <span class="n">supervisor</span><span class="p">:</span> <span class="n">Supervisor</span><span class="p">,</span>
+    <span class="n">participants</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Participant</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">history</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span>
+    <span class="n">spawn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]],</span>
+    <span class="n">status</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">],</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">out_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">TextIO</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">transport_timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">TRANSPORT_TIMEOUT_SECONDS</span><span class="p">,</span>
+    <span class="n">take_back_timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">TAKE_BACK_TIMEOUT_SECONDS</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Run one box over `topology` and print its trace from the history to `out` (the current</span>
+<span class="sd">    `sys.stdout` where None), and write it to</span>
+<span class="sd">    `out_path`, `default_out` where None. Returns 0 when the history agrees with the logs, and 1</span>
+<span class="sd">    otherwise.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph: The run's graph, which the seed clears.</span>
+<span class="sd">        supervisor: The supervisor of `participants`, the modules of `topology` and the WMS.</span>
+<span class="sd">        history: Where the history is read: the run's dataset.</span>
+<span class="sd">        spawn: Spawns one box from an origin to a destination, through the</span>
+<span class="sd">            WarehouseManagementSystem; returns the box and its transport.</span>
+<span class="sd">        status: The status of a transport, as the graph holds it now.</span>
+<span class="sd">        dataset: The name of the run's dataset, for the record.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        LaunchFailed: If the run did not start.</span>
+<span class="sd">        NotReady: If a participant did not get ready.</span>
+<span class="sd">        TraceFailed: If the spawn was refused.</span>
+<span class="sd">    """</span>
+    <span class="c1"># Read at the call, not at the import: a default of `sys.stdout` binds the stream the module</span>
+    <span class="c1"># saw first, past any later redirect such as pytest's capture.</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">out</span>
+    <span class="n">entry</span><span class="p">,</span> <span class="n">exit_</span> <span class="o">=</span> <span class="n">topology</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">topology</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">resource</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"1. Seed the topology </span><span class="si">{</span><span class="n">TOPOLOGY</span><span class="si">}</span><span class="s2"> with the history collection on, and start "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">participants</span><span class="p">)</span><span class="si">}</span><span class="s2"> participants"</span><span class="p">,</span>
+        <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">start_run</span><span class="p">(</span>
+        <span class="n">graph</span><span class="p">,</span>
+        <span class="n">supervisor</span><span class="p">,</span>
+        <span class="n">topology</span><span class="p">,</span>
+        <span class="n">participants</span><span class="p">,</span>
+        <span class="n">transit_seconds</span><span class="o">=</span><span class="n">transit_seconds</span><span class="p">,</span>
+        <span class="n">collect_history</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">supervisor</span><span class="o">.</span><span class="n">wait_until_ready</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"2. Spawn one box from </span><span class="si">{</span><span class="n">entry</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">exit_</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">box</span><span class="p">,</span> <span class="n">transport</span> <span class="o">=</span> <span class="n">spawn</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="n">exit_</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   </span><span class="si">{</span><span class="n">box</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">; wait until its transport ends"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">ended</span> <span class="o">=</span> <span class="n">_wait</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">status</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ENDED</span><span class="p">,</span> <span class="n">transport_timeout</span><span class="p">,</span> <span class="n">interval</span><span class="p">)</span>
+        <span class="n">ending</span> <span class="o">=</span> <span class="n">status</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ended</span> <span class="ow">and</span> <span class="n">ending</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="p">:</span>
+            <span class="n">_wait</span><span class="p">(</span>
+                <span class="k">lambda</span><span class="p">:</span> <span class="n">_taken_back</span><span class="p">(</span><span class="n">_lines</span><span class="p">(</span><span class="n">supervisor</span><span class="p">),</span> <span class="n">box</span><span class="p">),</span>
+                <span class="n">take_back_timeout</span><span class="p">,</span>
+                <span class="n">interval</span><span class="p">,</span>
+            <span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"3. Stop every participant"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">supervisor</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">_lines</span><span class="p">(</span><span class="n">supervisor</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">"4. Read the change list of the box from the triple store's history"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span>
+    <span class="p">)</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">*</span><span class="n">changes</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">box</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span><span class="p">),</span>
+        <span class="o">*</span><span class="n">changes</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">transport</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">),</span>
+        <span class="o">*</span><span class="n">changes</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">transport</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">executedOn</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">value</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">found</span>
+        <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">predicate</span> <span class="o">==</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasPossessedWorkpiece</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">inserted</span>
+    <span class="p">]</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">transactions</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">possessors_of</span><span class="p">(</span><span class="n">history</span><span class="p">,</span> <span class="n">states</span><span class="p">),</span> <span class="n">box</span><span class="p">)</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="n">cross_check</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">out_path</span> <span class="k">if</span> <span class="n">out_path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">default_out</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+    <span class="n">target</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span>
+            <span class="n">record</span><span class="p">(</span>
+                <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="n">check</span>
+            <span class="p">),</span>
+            <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"possessors from the history: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">check</span><span class="o">.</span><span class="n">from_history</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"possessors from the logs:    </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">check</span><span class="o">.</span><span class="n">from_logs</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="n">failed</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ended</span><span class="p">:</span>
+        <span class="n">failed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the transport did not end within </span><span class="si">{</span><span class="n">transport_timeout</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ending</span> <span class="o">!=</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="p">:</span>
+        <span class="n">failed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the transport is </span><span class="si">{</span><span class="n">ending</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">"the history and the logs "</span>
+        <span class="o">+</span> <span class="p">(</span><span class="s2">"agree"</span> <span class="k">if</span> <span class="n">check</span><span class="o">.</span><span class="n">agree</span> <span class="k">else</span> <span class="s2">"disagree"</span><span class="p">)</span>
+        <span class="o">+</span> <span class="sa">f</span><span class="s2">"; the trace is in </span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">why</span> <span class="ow">in</span> <span class="n">failed</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">why</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">check</span><span class="o">.</span><span class="n">agree</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">failed</span> <span class="k">else</span> <span class="mi">1</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_spawn_through</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""A spawn through the WarehouseManagementSystem's spawn workflow on `db`."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">spawn</span><span class="p">(</span><span class="n">origin</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]:</span>
+        <span class="n">endpoint</span> <span class="o">=</span> <span class="n">workflow_endpoint</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">WMS</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">SpawnBoxWorkflow</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">endpoint</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TraceFailed</span><span class="p">(</span>
+                <span class="s2">"the WarehouseManagementSystem's spawn workflow is not live"</span>
+            <span class="p">)</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">endpoint</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">"origin"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">origin</span><span class="p">),</span> <span class="s2">"destination"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">destination</span><span class="p">)},</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">answer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"accepted"</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">TraceFailed</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the spawn was refused: </span><span class="si">{</span><span class="n">answer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'reason'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="n">answer</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]),</span> <span class="n">IRI</span><span class="p">(</span><span class="n">answer</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">spawn</span>
+
+
+<div class="viewcode-block" id="run">
+<a class="viewcode-back" href="../../../reference/uc2/trace_box.html#jms_kapps.uc2.trace_box.run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span>
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out_path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Trace one box on `dataset` of the configured store. Returns the exit code of `trace`, or 1</span>
+<span class="sd">    with the reason on stderr when the name is not a disposable one, the store cannot be reached,</span>
+<span class="sd">    another run is live there, or the run does not give a box."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">DISPOSABLE_PREFIX</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: turns the dataset's history collection on for good, so it takes only a "</span>
+            <span class="sa">f</span><span class="s2">"name that starts with </span><span class="si">{</span><span class="n">DISPOSABLE_PREFIX</span><span class="si">}</span><span class="s2">, not </span><span class="si">{</span><span class="n">dataset</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">refuse_if_live</span><span class="p">(</span><span class="n">reader</span><span class="p">(</span><span class="n">db</span><span class="p">),</span> <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">topology</span> <span class="o">=</span> <span class="n">shipped_topology</span><span class="p">(</span><span class="n">TOPOLOGY</span><span class="p">)</span>
+        <span class="n">supervisor</span> <span class="o">=</span> <span class="n">Supervisor</span><span class="p">(</span>
+            <span class="n">reader</span><span class="p">(</span><span class="n">db</span><span class="p">),</span> <span class="n">service_of</span><span class="o">=</span><span class="n">reader_of_one</span><span class="p">(</span><span class="n">db</span><span class="p">),</span> <span class="n">echo</span><span class="o">=</span><span class="k">lambda</span> <span class="n">_</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">trace</span><span class="p">(</span>
+            <span class="n">topology</span><span class="p">,</span>
+            <span class="n">TripleStoreGraph</span><span class="p">(</span><span class="n">db</span><span class="p">),</span>
+            <span class="n">supervisor</span><span class="p">,</span>
+            <span class="n">participants_of</span><span class="p">(</span>
+                <span class="n">topology</span><span class="p">,</span>
+                <span class="n">module_command</span><span class="o">=</span><span class="k">lambda</span> <span class="n">resource</span><span class="p">:</span> <span class="n">module_command</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span> <span class="n">dataset</span><span class="p">),</span>
+                <span class="n">wms_command</span><span class="o">=</span><span class="n">wms_command</span><span class="p">(</span><span class="n">dataset</span><span class="p">),</span>
+            <span class="p">),</span>
+            <span class="n">history</span><span class="o">=</span><span class="n">db</span><span class="p">,</span>
+            <span class="n">spawn</span><span class="o">=</span><span class="n">_spawn_through</span><span class="p">(</span><span class="n">db</span><span class="p">),</span>
+            <span class="n">status</span><span class="o">=</span><span class="k">lambda</span> <span class="n">transport</span><span class="p">:</span> <span class="n">operation_status</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">transport</span><span class="p">),</span>
+            <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
+            <span class="n">out_path</span><span class="o">=</span><span class="n">out_path</span><span class="p">,</span>
+            <span class="n">transit_seconds</span><span class="o">=</span><span class="n">transit_seconds</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span>
+        <span class="ne">ValueError</span><span class="p">,</span>
+        <span class="ne">OSError</span><span class="p">,</span>
+        <span class="n">httpx</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">,</span>
+        <span class="n">TripleStoreInterfaceError</span><span class="p">,</span>
+        <span class="n">LiveInstanceError</span><span class="p">,</span>
+        <span class="n">LaunchFailed</span><span class="p">,</span>
+        <span class="n">NotReady</span><span class="p">,</span>
+        <span class="n">TraceFailed</span><span class="p">,</span>
+    <span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
