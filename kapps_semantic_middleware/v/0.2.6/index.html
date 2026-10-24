@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>kapps_semantic_middleware &#8212; kapps-semantic-middleware</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=eee30dbd" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=fc7d8818"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_semantic_middleware/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.6';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Concepts" href="concepts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.2" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-semantic-middleware</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="errors.html">
+    When a call fails: the error map
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="concepts.html">
+    Concepts
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/index.html">
+    Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="scenarios/index.html">
+    Scenarios
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="errors.html">
+    When a call fails: the error map
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_semantic_middleware" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-semantic-middleware/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="kapps-semantic-middleware">
+<h1>kapps_semantic_middleware<a class="headerlink" href="#kapps-semantic-middleware" title="Link to this heading">#</a></h1>
+<p>Let a piece of Python running on or beside a shopfloor resource expose what it can do through an
+RDF knowledge graph — and let other instances discover and invoke that capability <strong>through the
+graph</strong>, rather than through hardcoded network addresses.</p>
+<p>A resource’s state is described in the graph as a protocol-interface <strong>parameter</strong>. The middleware
+wires that description to the real device: it discovers peers, serves them over REST, and keeps the
+graph and the device in step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>kapps-semantic-middleware
+</pre></div>
+</div>
+<p>Python 3.12 or newer. Nothing else is required to use the library.</p>
+<section id="run-the-examples">
+<h2>Run the examples<a class="headerlink" href="#run-the-examples" title="Link to this heading">#</a></h2>
+<p>The scenarios and the factory demo need a few more packages and a running triple store. One extra
+covers the packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"kapps-semantic-middleware[examples]"</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">kapps-examples</span></code> to copy the runnable files out of the installed package into a directory you
+own — a notebook inside <code class="docutils literal notranslate"><span class="pre">site-packages</span></code> cannot be opened, edited or re-run. The path is relative to
+your current working directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kapps-examples<span class="w"> </span>./kapps-examples
+<span class="nb">cd</span><span class="w"> </span>kapps-examples
+</pre></div>
+</div>
+<p>You now have scenario 1 and scenario 2 (each as a <code class="docutils literal notranslate"><span class="pre">.py</span></code> and a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), the seed data they load,
+and a <code class="docutils literal notranslate"><span class="pre">docker/</span></code> directory. Add the <code class="docutils literal notranslate"><span class="pre">[notebooks]</span></code> extra if you want to open the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files in
+Jupyter; the <code class="docutils literal notranslate"><span class="pre">.py</span></code> versions run with <code class="docutils literal notranslate"><span class="pre">[examples]</span></code> alone.</p>
+<p>A productive circular factory already holds the shared ontologies and shapes in its knowledge graph;
+the files shipped with the middleware seed the demonstrations and tests, and document the vocabulary. The examples
+seed them into the throwaway store below.</p>
+<!-- vendor-check: off -- the local Docker store -->
+<section id="start-a-graphdb">
+<h3>Start a GraphDB<a class="headerlink" href="#start-a-graphdb" title="Link to this heading">#</a></h3>
+<p>Docker is needed for the examples and the demo, <strong>never for the library itself</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>docker
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>GraphDB comes up on <a class="reference external" href="http://localhost:7200">http://localhost:7200</a> and the <code class="docutils literal notranslate"><span class="pre">kapps-demo</span></code> repository is created for you.
+This works the same on Linux, macOS and Windows.</p>
+<!-- vendor-check: on -->
+<p>Then point the library at it:</p>
+<p>Linux and macOS:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">TRIPLESTORE_URL</span><span class="o">=</span>http://localhost:7200
+<span class="nb">export</span><span class="w"> </span><span class="nv">TRIPLESTORE_USERNAME</span><span class="o">=</span>admin
+<span class="nb">export</span><span class="w"> </span><span class="nv">TRIPLESTORE_PASSWORD</span><span class="o">=</span>root
+</pre></div>
+</div>
+<p>PowerShell (current session only):</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nv">$env:TRIPLESTORE_URL</span> <span class="p">=</span> <span class="s2">"http://localhost:7200"</span>
+<span class="nv">$env:TRIPLESTORE_USERNAME</span> <span class="p">=</span> <span class="s2">"admin"</span>
+<span class="nv">$env:TRIPLESTORE_PASSWORD</span> <span class="p">=</span> <span class="s2">"root"</span>
+</pre></div>
+</div>
+<p>cmd.exe (current session only):</p>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span><span class="k">set</span> <span class="nv">TRIPLESTORE_URL</span><span class="p">=</span>http://localhost:7200
+<span class="k">set</span> <span class="nv">TRIPLESTORE_USERNAME</span><span class="p">=</span>admin
+<span class="k">set</span> <span class="nv">TRIPLESTORE_PASSWORD</span><span class="p">=</span>root
+</pre></div>
+</div>
+<p>To persist across sessions on Windows, use <code class="docutils literal notranslate"><span class="pre">setx</span></code> instead of <code class="docutils literal notranslate"><span class="pre">set</span></code>. <strong><code class="docutils literal notranslate"><span class="pre">setx</span></code> does not affect the
+shell that runs it</strong> — open a new shell after running it.</p>
+<p>Three variables, not four. <code class="docutils literal notranslate"><span class="pre">TripleStoreEndpoint.from_env()</span></code> in <code class="docutils literal notranslate"><span class="pre">kapps_triplestore_interface</span></code> also
+reads <code class="docutils literal notranslate"><span class="pre">TRIPLESTORE_DATASET</span></code>, and your own code may well use it — but nothing here does. The examples
+and the demo name the dataset <code class="docutils literal notranslate"><span class="pre">kapps-demo</span></code> in code, and the test suite names its own. <strong>A
+<code class="docutils literal notranslate"><span class="pre">TRIPLESTORE_DATASET</span></code> you already have set is ignored rather than obeyed</strong>, because these are the
+parts that wipe and re-seed whatever they connect to.</p>
+<blockquote>
+<div><p><strong>Never point <code class="docutils literal notranslate"><span class="pre">TRIPLESTORE_URL</span></code> at a store you care about.</strong> The examples and the demo clear the
+dataset they use on every run. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">down</span> <span class="pre">-v</span></code> wipes the throwaway one; the next run
+re-seeds it.</p>
+</div></blockquote>
+<!-- vendor-check: off -- the deprecation note -->
+<blockquote>
+<div><p><strong>Deprecated.</strong> The variables <code class="docutils literal notranslate"><span class="pre">GRAPHDB_URL</span></code>, <code class="docutils literal notranslate"><span class="pre">GRAPHDB_USERNAME</span></code> and <code class="docutils literal notranslate"><span class="pre">GRAPHDB_PASSWORD</span></code> are still
+read, each as the fallback of its <code class="docutils literal notranslate"><span class="pre">TRIPLESTORE_*</span></code> variable, and each use warns. The old names of
+<code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.credentials</span></code> and <code class="docutils literal notranslate"><span class="pre">kapps_semantic_middleware.seeding</span></code> still work:
+<code class="docutils literal notranslate"><span class="pre">graphdb_for</span></code>, <code class="docutils literal notranslate"><span class="pre">graphdb_env_present</span></code>, <code class="docutils literal notranslate"><span class="pre">REQUIRED_GRAPHDB_ENV</span></code>, <code class="docutils literal notranslate"><span class="pre">credentials_for</span></code>,
+<code class="docutils literal notranslate"><span class="pre">clear_repository</span></code> and <code class="docutils literal notranslate"><span class="pre">DEMO_REPOSITORY</span></code>. Each use warns once and runs its successor:
+<code class="docutils literal notranslate"><span class="pre">triplestore_for</span></code>, <code class="docutils literal notranslate"><span class="pre">triplestore_env_present</span></code>, <code class="docutils literal notranslate"><span class="pre">REQUIRED_TRIPLESTORE_ENV</span></code>, <code class="docutils literal notranslate"><span class="pre">endpoint_for</span></code>,
+<code class="docutils literal notranslate"><span class="pre">clear_dataset</span></code> and <code class="docutils literal notranslate"><span class="pre">DEMO_DATASET</span></code>. A later release removes the old variables and names.</p>
+</div></blockquote>
+<!-- vendor-check: on -->
+</section>
+<section id="run-a-scenario">
+<h3>Run a scenario<a class="headerlink" href="#run-a-scenario" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scenario1_hello_world.py<span class="w">     </span><span class="c1"># operation coordination through the graph</span>
+python<span class="w"> </span>scenario2_door.py<span class="w">            </span><span class="c1"># direct state discovery and control</span>
+</pre></div>
+</div>
+</section>
+<section id="run-the-factory-demo">
+<h3>Run the factory demo<a class="headerlink" href="#run-the-factory-demo" title="Link to this heading">#</a></h3>
+<p>A small factory as six real processes — one per mock PLC, one per middleware instance, and a
+controller that discovers every unit <em>in the graph</em> and drives it over REST. You watch it from a
+browser.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kapps-transferunit-factory
+</pre></div>
+</div>
+<p>It serves a live status page on <a class="reference external" href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a>. <code class="docutils literal notranslate"><span class="pre">--units</span> <span class="pre">N</span></code> sets how many TransferUnits
+run (two by default); <code class="docutils literal notranslate"><span class="pre">--force</span></code> clears the graph even when a live factory still holds a fresh
+heartbeat. Ctrl+C stops every process.</p>
+</section>
+</section>
+<section id="where-to-read-what">
+<h2>Where to read what<a class="headerlink" href="#where-to-read-what" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/kapps_semantic_middleware/blob/v0.2.6/AGENTS.md"><code class="docutils literal notranslate"><span class="pre">AGENTS.md</span></code></a></p></td>
+<td><p><strong>Start here to build against this.</strong> The consumption rules — including the ones that fail <em>silently</em> — and which name to import from where.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/circularfactory/kapps_semantic_middleware/blob/v0.2.6/docs/mechanics/"><code class="docutils literal notranslate"><span class="pre">docs/mechanics/</span></code></a></p></td>
+<td><p>How each mechanism actually works, one page each, in construction order.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/circularfactory/kapps_semantic_middleware/blob/v0.2.6/CONTEXT-MAP.md"><code class="docutils literal notranslate"><span class="pre">CONTEXT-MAP.md</span></code></a></p></td>
+<td><p>The five contexts and how they relate.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">examples/</span></code></p></td>
+<td><p>Scenario 1 and scenario 2, self-contained.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">demo/transferunits/</span></code></p></td>
+<td><p>The factory demo.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you are writing code against this library, read <code class="docutils literal notranslate"><span class="pre">AGENTS.md</span></code> first. Several of its rules are
+constraints that <strong>do not appear in any type signature</strong> and fail by producing quietly wrong
+behaviour rather than an exception.</p>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<p><strong>Can I install it with uv?</strong> Yes. Run this <em>instead of</em> the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> at the top, not after
+it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span><span class="s2">"kapps-semantic-middleware[examples]"</span>
+</pre></div>
+</div>
+<p><strong><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> answers <code class="docutils literal notranslate"><span class="pre">externally-managed-environment</span></code>.</strong> Debian and Ubuntu mark their system
+Python as externally managed, so <code class="docutils literal notranslate"><span class="pre">pip</span></code> refuses to write into it. Use a virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+.<span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"kapps-semantic-middleware[examples]"</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">uv</span></code> needs no such step — it creates and manages the environment itself.</p>
+<p><strong>Is <code class="docutils literal notranslate"><span class="pre">[examples]</span></code> really needed for the factory?</strong> Yes, and leaving it out does not look like an
+error. <code class="docutils literal notranslate"><span class="pre">uvicorn</span></code> and <code class="docutils literal notranslate"><span class="pre">rdflib</span></code> reach you anyway, as dependencies of something else; <code class="docutils literal notranslate"><span class="pre">amqtt</span></code> — the
+in-process MQTT broker each unit brings up — does not. Without it the launcher seeds the graph, the
+first middleware starts and prints its address, and then the mock PLC repeats a line like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">broker</span> <span class="n">at</span> <span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">18831</span> <span class="ow">not</span> <span class="n">ready</span> <span class="n">yet</span> <span class="p">([</span><span class="n">Errno</span> <span class="mi">111</span><span class="p">]</span> <span class="n">Connection</span> <span class="n">refused</span><span class="p">),</span> <span class="n">retrying</span> <span class="ow">in</span> <span class="mf">5.0</span><span class="n">s</span>
+</pre></div>
+</div>
+<p>for as long as you let it run. No traceback appears, and neither does <code class="docutils literal notranslate"><span class="pre">Factory</span> <span class="pre">running</span></code>. If you see
+that line, the extra is what is missing.</p>
+</section>
+<section id="status">
+<h2>Status<a class="headerlink" href="#status" title="Link to this heading">#</a></h2>
+<p>Usable, and still on a <code class="docutils literal notranslate"><span class="pre">0.x</span></code> line: the scenarios and the factory demo run end to end, but the API
+may still move, and a minor bump may break you. <a class="reference external" href="https://github.com/circularfactory/kapps_semantic_middleware/blob/v0.2.6/CHANGELOG.md"><code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code></a> records what each
+release changed.</p>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
+<p>Development happens in a private repository and this one is the published half: it carries one
+commit per release and no ancestry, so there is nothing here to branch from.</p>
+<p>Bug reports and questions are welcome as issues on this repository. A patch is welcome too –
+say what it changes and why, and it will be applied on the development side and credited in
+<code class="docutils literal notranslate"><span class="pre">CHANGELOG.md</span></code> for the release that carries it.</p>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading">#</a></h2>
+<p>This package is developed as part of the INF subproject of the CRC 1574: Circular Factory for the
+Perpetual Product. This work is therefore supported by the Deutsche Forschungsgemeinschaft (DFG,
+German Research Foundation) [grant-number: SFB-1574-471687386].</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="concepts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Concepts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-examples">Run the examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-graphdb">Start a GraphDB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-a-scenario">Run a scenario</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-factory-demo">Run the factory demo</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-to-read-what">Where to read what</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#status">Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
