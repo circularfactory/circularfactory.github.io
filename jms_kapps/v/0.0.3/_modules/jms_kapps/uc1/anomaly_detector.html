@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc1.anomaly_detector &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc1/anomaly_detector';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc1.anomaly_detector</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc1.anomaly_detector</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The anomaly detector of use case 1: it classifies one recorded unscrewing attempt, and ends its</span>
+<span class="sd">operation.</span>
+
+<span class="sd">**It is called, not notified.** After each attempt, the screwing resource calls the detector's</span>
+<span class="sd">classify workflow with the IRI of the unscrewing operation (`classify_call.ClassifyRequest`),</span>
+<span class="sd">which is `running` and holds its time-series reference. The screwing resource finds the workflow</span>
+<span class="sd">in the graph by the detector's `:ClassifyCapability`, and acts on nothing of the answer: the</span>
+<span class="sd">detector ends the operation. The screwing resource keeps the answer for its dashboard.</span>
+
+<span class="sd">**One classification is one commit of the middleware**, `mw.commit()`:</span>
+
+<span class="sd">- **Body:** the effective values of the operation's Screw (`effective_values`), read afresh for</span>
+<span class="sd">  every attempt, so a value that the learner changed counts from the next attempt; the frame that</span>
+<span class="sd">  the operation's time-series reference names (`timeseries.FrameReader`); and the decision tree</span>
+<span class="sd">  (`decision_tree.classify`). Then the classification as a `prov:Activity`, with the detector's</span>
+<span class="sd">  resource as its agent (`prov:wasAssociatedWith`) and its end time (`prov:endedAtTime`), and the</span>
+<span class="sd">  parameter copy, a new instance of the ten values that names that activity</span>
+<span class="sd">  (`prov:wasGeneratedBy`), each with `mw.create()`, which joins the commit; and through `transition.update(...)` the operation's</span>
+<span class="sd">  outcome, its link to the parameter copy, and after a failure outcome the measured end position of its</span>
+<span class="sd">  approach.</span>
+<span class="sd">- **Clean exit:** all of that and how the operation ends, as one write. The outcome ScrewIntact</span>
+<span class="sd">  ends it `done`. Every other outcome is a failure outcome, and ends it `failed`, with a</span>
+<span class="sd">  `svc:hasExecutionResult` that names the outcome (it begins with `ANOMALY`), for example</span>
+<span class="sd">  `ANOMALY: MissingScrew`.</span>
+<span class="sd">- **Error in the body:** nothing of the body is written, and the operation is committed `failed`,</span>
+<span class="sd">  with why as its `svc:hasExecutionResult` (it begins with `NOT_CLASSIFIED`): a Screw without its</span>
+<span class="sd">  placement values, a frame that the store lacks or that cannot be read, or curves that the tree</span>
+<span class="sd">  refuses.</span>
+
+<span class="sd">**It ends an operation only while the operation is `running`.** From `running` on, the screwing</span>
+<span class="sd">resource that took the operation is responsible for it. It may end the operation `failed` itself,</span>
+<span class="sd">when the detector does not answer in time. An operation that is not `running` when the call comes</span>
+<span class="sd">is left as it is: nothing else is read, and nothing is written. When the detector ends an</span>
+<span class="sd">operation, at the clean exit or on an error, it reads the status again. An operation that is no</span>
+<span class="sd">longer `running` is left as it is too, and nothing of the classification is written. Each time,</span>
+<span class="sd">the detector logs one line, `left_as_it_is_record`.</span>
+
+<span class="sd">The store's check closes part of the gap between that read and the write: the write removes the</span>
+<span class="sd">status that the object-graph mapper read just before it, and the store refuses the write when</span>
+<span class="sd">that status is gone (`PreconditionFailedError`). The detector then reads the operation again, and</span>
+<span class="sd">leaves it as it is when it has ended. The mapper reads the status at the write itself, though, so</span>
+<span class="sd">a status that changed between the detector's read and the mapper's read is still overwritten. The</span>
+<span class="sd">libraries give a write no precondition on a value that the writer read earlier.</span>
+
+<span class="sd">**The detector sends no notification of its own.** The planner, which issued the operation,</span>
+<span class="sd">learns of the end from the middleware: after the store admits the commit that ends the operation</span>
+<span class="sd">`done` or `failed`, after a failure outcome as well, `mw.commit()` notifies the operation's</span>
+<span class="sd">issuer (`svc:issuedBy`), in the</span>
+<span class="sd">background. A commit that writes nothing, because the operation ended meanwhile, notifies nobody.</span>
+
+<span class="sd">The answer of the classify workflow, `classify_call.ClassifyAnswer`, says what the call did</span>
+<span class="sd">with the operation, for a person who calls the workflow. The detector refuses a call, with an error, in two cases</span>
+<span class="sd">only: it cannot read the operation, or its `failed` did not reach the store and the operation is</span>
+<span class="sd">still `running`. Then the screwing resource ends the operation `failed` itself.</span>
+
+<span class="sd">Its activity feed is on, and so is the middleware's state dashboard: the library's own boxes, and</span>
+<span class="sd">the boxes "Classifications" and "Screw type values" in the tab "Anomaly detector", which the</span>
+<span class="sd">dashboard opens on (`anomaly_detector_dashboard`). They show each classification with its outcome,</span>
+<span class="sd">the rule of its exit and the ten values, and what each Screw type held at the</span>
+<span class="sd">last read, from what the detector keeps in its memory as it classifies</span>
+<span class="sd">(`anomaly_detector_memory`): an open dashboard reads no store. A classification goes into the</span>
+<span class="sd">memory once its commit has reached the store.</span>
+
+<span class="sd">With the mode "Save measurements as uncertainty quantifications" on (interim name; off by</span>
+<span class="sd">default, on from the start with `--save-measurements-as-uq`), the same commit also writes a random</span>
+<span class="sd">variable beside each measured position: see `AnomalyDetector`. The detector serves the mode on</span>
+<span class="sd">one route of its own, `MODE_ROUTE` (interim name): a read gives it, a write sets it, and the next</span>
+<span class="sd">classification reads it. Use case 1's page reaches the route through its passthrough, for its</span>
+<span class="sd">switch.</span>
+
+<span class="sd">Run it as `python -m jms_kapps.uc1.anomaly_detector --dataset &lt;name&gt;`. It starts and serves as</span>
+<span class="sd">every participant's process does, through `common.process`, with the local InfluxDB unless</span>
+<span class="sd">`INFLUXDB_URL` names another. `jms-uc1` starts it (`run_core`).</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">AbstractContextManager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">ClassScope</span><span class="p">,</span> <span class="n">Node</span><span class="p">,</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mode</span><span class="p">,</span> <span class="n">SemanticMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_dashboard</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span><span class="p">,</span> <span class="n">SVC</span><span class="p">,</span> <span class="n">OperationStatus</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">StrictBool</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_parser</span><span class="p">,</span> <span class="n">run_process</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.anomaly_detector_dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">TAB</span> <span class="k">as</span> <span class="n">DASHBOARD_TAB</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.anomaly_detector_dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_boxes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.anomaly_detector_memory</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">APPROACH_END</span><span class="p">,</span>
+    <span class="n">SCREW_HEAD</span><span class="p">,</span>
+    <span class="n">DetectorMemory</span><span class="p">,</span>
+    <span class="n">MeasuredPosition</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.classify_call</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassifyAnswer</span><span class="p">,</span> <span class="n">ClassifyRequest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.decision_tree</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AttemptSignals</span><span class="p">,</span>
+    <span class="n">DetectionResult</span><span class="p">,</span>
+    <span class="n">PhaseSignals</span><span class="p">,</span>
+    <span class="n">classify</span><span class="p">,</span>
+    <span class="n">contact_position</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.effective_values</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">EffectiveValuesWithOrigin</span><span class="p">,</span>
+    <span class="n">UnresolvedValues</span><span class="p">,</span>
+    <span class="n">as_properties</span><span class="p">,</span>
+    <span class="n">read_effective_values_with_origin</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.frame</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AXIAL_FORCE</span><span class="p">,</span>
+    <span class="n">PHASES</span><span class="p">,</span>
+    <span class="n">ROBOT_POSITION</span><span class="p">,</span>
+    <span class="n">SIGNALS</span><span class="p">,</span>
+    <span class="n">UNSCREWING_TORQUE</span><span class="p">,</span>
+    <span class="n">Frame</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.scope_log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_scope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.timeseries</span><span class="w"> </span><span class="kn">import</span> <span class="n">FrameReader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.timeseries</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span> <span class="k">as</span> <span class="n">connect_influxdb</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.uncertainty</span><span class="w"> </span><span class="kn">import</span> <span class="n">measurement_literal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">JMS</span><span class="p">,</span> <span class="n">JMS_NS</span><span class="p">,</span> <span class="n">PROV</span><span class="p">,</span> <span class="n">UQ</span>
+
+<span class="c1"># Named, not `__name__`: the process runs this module as `python -m`, where `__name__` is</span>
+<span class="c1"># `__main__`. A logger of that name is not below `jms_kapps`, so its INFO lines would be</span>
+<span class="c1"># dropped at the root's WARNING (`common.process` lets `jms_kapps` log from INFO up).</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"jms_kapps.uc1.anomaly_detector"</span><span class="p">)</span>
+
+<span class="c1"># The anomaly detector of the demo, which `jms-uc1` starts.</span>
+<span class="n">RESOURCE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"AnomalyDetector1"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+
+<span class="n">Commit</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">AbstractContextManager</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+<span class="sd">"""The middleware's `commit`."""</span>
+
+<span class="n">Create</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">AbstractContextManager</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span>
+<span class="sd">"""The middleware's `create`."""</span>
+
+<span class="c1"># What the detector reads of an unscrewing operation: its status and its result, the Screw it</span>
+<span class="c1"># names, and where its curves are.</span>
+<span class="n">OPERATION_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">JMS</span><span class="o">.</span><span class="n">concernsScrew</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasTimeSeriesReference</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># What it reads of the operation with the mode "Save measurements as uncertainty</span>
+<span class="c1"># quantifications" on: also the resource whose capability the operation implements, whose robot</span>
+<span class="c1"># took the measurements, and the head-position variable that its Screw holds already. The resource</span>
+<span class="c1"># is reached through the capability's workflow and that workflow's service, the links the</span>
+<span class="c1"># middleware writes when the resource registers. The operation's `svc:executedByWorkflow` is no</span>
+<span class="c1"># way to it: only the middleware's `claim_next()` writes that link, and the screwing resource</span>
+<span class="c1"># commits its attempt with `mw.commit()`, so the store never holds it. One resource has the</span>
+<span class="c1"># capability (the capability shape), so every chain ends at that one resource.</span>
+<span class="n">UQ_OPERATION_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">JMS</span><span class="o">.</span><span class="n">concernsScrew</span><span class="p">],</span>
+        <span class="p">[</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasTimeSeriesReference</span><span class="p">],</span>
+        <span class="p">[</span>
+            <span class="n">CFC</span><span class="o">.</span><span class="n">implementsCapability</span><span class="p">,</span>
+            <span class="n">SVC</span><span class="o">.</span><span class="n">realizedByWorkflow</span><span class="p">,</span>
+            <span class="n">SVC</span><span class="o">.</span><span class="n">isWorkflowOf</span><span class="p">,</span>
+            <span class="n">SVC</span><span class="o">.</span><span class="n">isServiceOf</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="p">[</span><span class="n">JMS</span><span class="o">.</span><span class="n">concernsScrew</span><span class="p">,</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewHeadPositionVariable</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># What it reads of that resource, under the resource's own class: the standard deviation of its</span>
+<span class="c1"># robot's positions. The operation's read cannot reach it, because the mapper specifies the</span>
+<span class="c1"># nested resource by the range of `svc:isServiceOf`, `cfc:Resource`, which has no `:hasRobot`.</span>
+<span class="n">ROBOT_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[[</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasRobot</span><span class="p">,</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasPositionStandardDeviation</span><span class="p">]]</span>
+<span class="p">)</span>
+
+<span class="c1"># The option that turns the mode "Save measurements as uncertainty quantifications" on at the</span>
+<span class="c1"># start (interim name), on the detector's process and on `jms-uc1`, which passes it on. Off</span>
+<span class="c1"># without it.</span>
+<span class="n">SAVE_UQ_OPTION</span> <span class="o">=</span> <span class="s2">"--save-measurements-as-uq"</span>
+<span class="n">SAVE_UQ_ARGUMENT</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"action"</span><span class="p">:</span> <span class="s2">"store_true"</span><span class="p">,</span>
+    <span class="s2">"help"</span><span class="p">:</span> <span class="p">(</span>
+        <span class="s2">"Save measurements as uncertainty quantifications from the start: beside each measured "</span>
+        <span class="s2">"position, a random variable with its Gaussian-mixture literal (off by default)"</span>
+    <span class="p">),</span>
+<span class="p">}</span>
+
+<span class="c1"># The route on which the detector serves the mode "Save measurements as uncertainty</span>
+<span class="c1"># quantifications" (interim name): `GET` gives it, `PUT` sets it, as `SavesUq`.</span>
+<span class="n">MODE_ROUTE</span> <span class="o">=</span> <span class="s2">"/save-measurements-as-uq"</span>
+
+
+<div class="viewcode-block" id="SavesUq">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.SavesUq">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SavesUq</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The mode "Save measurements as uncertainty quantifications", as its route reads and sets</span>
+<span class="sd">    it: on or off."""</span>
+
+    <span class="n">on</span><span class="p">:</span> <span class="n">StrictBool</span></div>
+
+
+
+<div class="viewcode-block" id="mount_mode">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.mount_mode">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mount_mode</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">memory</span><span class="p">:</span> <span class="n">DetectorMemory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Serve the mode that `memory` holds on `app` at `MODE_ROUTE`: `GET` gives it, `PUT` sets</span>
+<span class="sd">    it and gives it as it now is. The next classification reads it."""</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">MODE_ROUTE</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">SavesUq</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">mode</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">SavesUq</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether the detector saves measurements as uncertainty quantifications."""</span>
+        <span class="k">return</span> <span class="n">SavesUq</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="n">memory</span><span class="o">.</span><span class="n">saves_uq</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">MODE_ROUTE</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">SavesUq</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_mode</span><span class="p">(</span><span class="n">wanted</span><span class="p">:</span> <span class="n">SavesUq</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SavesUq</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Turn the saving of measurements as uncertainty quantifications on or off, from the</span>
+<span class="sd">        next classification."""</span>
+        <span class="n">memory</span><span class="o">.</span><span class="n">set_saves_uq</span><span class="p">(</span><span class="n">wanted</span><span class="o">.</span><span class="n">on</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SavesUq</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="n">memory</span><span class="o">.</span><span class="n">saves_uq</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># The exit of the tree that is no failure: it ends the operation `done`. Every other outcome is</span>
+<span class="c1"># a failure outcome, and ends it `failed`.</span>
+<span class="n">NO_FAILURE</span><span class="p">:</span> <span class="n">DetectionResult</span> <span class="o">=</span> <span class="s2">"ScrewIntact"</span>
+
+<span class="c1"># How the reason of an operation that the detector could not classify begins, in its</span>
+<span class="c1"># `svc:hasExecutionResult`.</span>
+<span class="n">NOT_CLASSIFIED</span> <span class="o">=</span> <span class="s2">"the anomaly detector could not classify the attempt: "</span>
+
+<span class="c1"># How the reason of an operation that ended with a failure outcome begins, in its `svc:hasExecutionResult`,</span>
+<span class="c1"># followed by the outcome's local name. Interim text, so that it is told apart from an</span>
+<span class="c1"># attempt that was not classified, a detector that was not reached, and an attempt that failed.</span>
+<span class="n">ANOMALY</span> <span class="o">=</span> <span class="s2">"ANOMALY: "</span>
+
+
+<div class="viewcode-block" id="OperationToClassify">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.OperationToClassify">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">OperationToClassify</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One unscrewing operation, as the detector reads it: its status, its results, the Screws it</span>
+<span class="sd">    names, and its time-series references. Read under `UQ_OPERATION_SCOPE`, also the resources</span>
+<span class="sd">    whose capability it implements, each once, and the head-position variables its Screws hold;</span>
+<span class="sd">    else none."""</span>
+
+    <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">results</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">screws</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">references</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">resources</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">head_position_variables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="operation_to_classify_from">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.operation_to_classify_from">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">operation_to_classify_from</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperationToClassify</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The operation that a read under `OPERATION_SCOPE` or `UQ_OPERATION_SCOPE` gives, as the</span>
+<span class="sd">    detector takes it."""</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">data</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">statuses</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="n">screws</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">concernsScrew</span><span class="p">,</span> <span class="p">[])</span>
+    <span class="k">return</span> <span class="n">OperationToClassify</span><span class="p">(</span>
+        <span class="n">operation</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">id</span><span class="p">)),</span>
+        <span class="n">status</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">statuses</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">statuses</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">results</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">,</span> <span class="p">[])),</span>
+        <span class="n">screws</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">screw</span><span class="p">))</span> <span class="k">for</span> <span class="n">screw</span> <span class="ow">in</span> <span class="n">screws</span><span class="p">),</span>
+        <span class="n">references</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasTimeSeriesReference</span><span class="p">,</span> <span class="p">[])),</span>
+        <span class="c1"># A capability's workflow and service are written again at each registration, so a</span>
+        <span class="c1"># resource that registered more than once is reached by more than one chain.</span>
+        <span class="n">resources</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span>
+            <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span>
+                <span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">resource</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">capability</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CFC</span><span class="o">.</span><span class="n">implementsCapability</span><span class="p">,</span> <span class="p">[])</span>
+                <span class="k">for</span> <span class="n">workflow</span> <span class="ow">in</span> <span class="n">_linked</span><span class="p">(</span><span class="n">capability</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">realizedByWorkflow</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">_linked</span><span class="p">(</span><span class="n">workflow</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">isWorkflowOf</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">resource</span> <span class="ow">in</span> <span class="n">_linked</span><span class="p">(</span><span class="n">service</span><span class="p">,</span> <span class="n">SVC</span><span class="o">.</span><span class="n">isServiceOf</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">head_position_variables</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">variable</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">screw</span> <span class="ow">in</span> <span class="n">screws</span>
+            <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">_linked</span><span class="p">(</span><span class="n">screw</span><span class="p">,</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewHeadPositionVariable</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_linked</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">prop</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""What a nested node of a read holds of `prop`; nothing for a bare link."""</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">((</span><span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="p">[]))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_id</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The IRI of a linked value, which the mapper gives as a node with an `id`."""</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="NotClassified">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.NotClassified">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NotClassified</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The attempt of an operation cannot be classified. The message says why, for a person to</span>
+<span class="sd">    read: it becomes the operation's result."""</span></div>
+
+
+
+<div class="viewcode-block" id="EndedMeanwhile">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.EndedMeanwhile">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">EndedMeanwhile</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The operation is no longer `running` when the detector would end it."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="n">status</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the operation is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">, not running"</span><span class="p">)</span></div>
+
+
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_Ending</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How one classification ends: the outcome that it reached, and how its error path left the</span>
+<span class="sd">    operation."""</span>
+
+    <span class="n">outcome</span><span class="p">:</span> <span class="n">DetectionResult</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># Whether it was left as it is, because it was `status`, not `running`.</span>
+    <span class="n">left</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># Why it was committed `failed`.</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># What it read of the Screw's effective values, once it has read them.</span>
+    <span class="n">with_origin</span><span class="p">:</span> <span class="n">EffectiveValuesWithOrigin</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The mode it is made in, and the measured positions it writes with their random variables.</span>
+    <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">positions</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">MeasuredPosition</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">leave</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">status</span>
+
+
+<div class="viewcode-block" id="attempt_signals">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.attempt_signals">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">attempt_signals</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">Frame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AttemptSignals</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The signals of the decision tree, by phase, from a frame: each phase's samples, in time</span>
+<span class="sd">    order. A sample with no phase belongs to none.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        NotClassified: If the frame lacks a signal that the tree reads, or has no phase at all.</span>
+<span class="sd">    """</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">signal</span> <span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="n">SIGNALS</span> <span class="k">if</span> <span class="n">signal</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">signals</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span><span class="sa">f</span><span class="s2">"its frame has no </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">frame</span><span class="o">.</span><span class="n">phased</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span><span class="s2">"its frame was recorded without phases"</span><span class="p">)</span>
+    <span class="n">approach</span><span class="p">,</span> <span class="n">form_fit</span><span class="p">,</span> <span class="n">preparation</span><span class="p">,</span> <span class="n">disassembly</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">_phase_signals</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">phase</span><span class="p">)</span> <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">PHASES</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">AttemptSignals</span><span class="p">(</span><span class="n">approach</span><span class="p">,</span> <span class="n">form_fit</span><span class="p">,</span> <span class="n">preparation</span><span class="p">,</span> <span class="n">disassembly</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_phase_signals</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">Frame</span><span class="p">,</span> <span class="n">phase</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">PhaseSignals</span><span class="p">:</span>
+    <span class="n">samples</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample_phase</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">phases</span><span class="p">)</span> <span class="k">if</span> <span class="n">sample_phase</span> <span class="o">==</span> <span class="n">phase</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">PhaseSignals</span><span class="p">(</span>
+        <span class="n">axial_force</span><span class="o">=</span><span class="p">[</span><span class="n">frame</span><span class="o">.</span><span class="n">signals</span><span class="p">[</span><span class="n">AXIAL_FORCE</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">],</span>
+        <span class="n">position</span><span class="o">=</span><span class="p">[</span><span class="n">frame</span><span class="o">.</span><span class="n">signals</span><span class="p">[</span><span class="n">ROBOT_POSITION</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">],</span>
+        <span class="n">torque</span><span class="o">=</span><span class="p">[</span><span class="n">frame</span><span class="o">.</span><span class="n">signals</span><span class="p">[</span><span class="n">UNSCREWING_TORQUE</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">],</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="approach_end_position">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.approach_end_position">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">approach_end_position</span><span class="p">(</span><span class="n">signals</span><span class="p">:</span> <span class="n">AttemptSignals</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The measured position at which the approach ended: that of its last sample."""</span>
+    <span class="k">return</span> <span class="n">signals</span><span class="o">.</span><span class="n">approach</span><span class="o">.</span><span class="n">position</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+
+<span class="c1"># What the anomaly detector logs. The tests match each record whole, so it is built here.</span>
+
+
+<div class="viewcode-block" id="left_as_it_is_record">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.left_as_it_is_record">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">left_as_it_is_record</span><span class="p">(</span><span class="n">detector</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What `detector` logs when it leaves `operation` as it is, because it is `status`, not</span>
+<span class="sd">    `running`."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">detector</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">, not running, so it is left as "</span>
+        <span class="s2">"it is"</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AnomalyDetector">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.AnomalyDetector">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AnomalyDetector</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The anomaly detector, given the middleware's commit and create, its reads, and its</span>
+<span class="sd">    memory.</span>
+
+<span class="sd">    With the mode "Save measurements as uncertainty quantifications" on (`memory.saves_uq`, read</span>
+<span class="sd">    at each classification), the classification's commit also writes beside each measured</span>
+<span class="sd">    position a random variable (`uq:RandomVariable`) whose Gaussian-mixture literal holds that one</span>
+<span class="sd">    measurement: the measured value as the mean, the squared standard deviation of the robot's</span>
+<span class="sd">    positions as the variance. After a failure outcome, that is the end position of the approach,</span>
+<span class="sd">    linked from the operation (`:hasApproachEndPositionVariable`). After every outcome that reached</span>
+<span class="sd">    contact (all but MissingScrew), it is the position at contact, the Screw's</span>
+<span class="sd">    `:hasMeasuredScrewHeadPosition`, linked from the Screw (`:hasScrewHeadPositionVariable`). A</span>
+<span class="sd">    Screw that holds a head-position variable keeps it, and the new measurement replaces its</span>
+<span class="sd">    literal and the best estimate. Nothing is fused, and no held literal is read. With the mode on,</span>
+<span class="sd">    a robot without its standard deviation is an error of the body. With the mode off, it</span>
+<span class="sd">    reads only under `OPERATION_SCOPE`, and writes no random variable and no head position.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        detector: The anomaly detector's resource.</span>
+<span class="sd">        commit: The middleware's `commit`.</span>
+<span class="sd">        create: The middleware's `create`.</span>
+<span class="sd">        read: Reads an unscrewing operation from the graph, under `OPERATION_SCOPE`; with</span>
+<span class="sd">            `saves_uq=True`, under `UQ_OPERATION_SCOPE`.</span>
+<span class="sd">        values: Reads the effective values of a Screw from the graph, afresh.</span>
+<span class="sd">        frame: Reads the frame that a time-series reference names.</span>
+<span class="sd">        clock: The time at which a classification ends, its `prov:endedAtTime`. Timezone-aware;</span>
+<span class="sd">            UTC unless a test gives another.</span>
+<span class="sd">        memory: Where it keeps what its dashboard shows: each classification once its commit</span>
+<span class="sd">            has reached the store, and what each Screw type held at its last read; and its mode.</span>
+<span class="sd">        standard_deviations: Reads the position standard deviations that the robot of a resource</span>
+<span class="sd">            holds, with the mode on.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">detector</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">commit</span><span class="p">:</span> <span class="n">Commit</span><span class="p">,</span>
+        <span class="n">create</span><span class="p">:</span> <span class="n">Create</span><span class="p">,</span>
+        <span class="n">read</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">OperationToClassify</span><span class="p">],</span>
+        <span class="n">values</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">],</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">],</span>
+        <span class="n">frame</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Frame</span><span class="p">],</span>
+        <span class="n">clock</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">),</span>
+        <span class="n">memory</span><span class="p">:</span> <span class="n">DetectorMemory</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">standard_deviations</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">],</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]]</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">resource</span><span class="p">:</span> <span class="p">(),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">commit</span> <span class="o">=</span> <span class="n">commit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create</span> <span class="o">=</span> <span class="n">create</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read</span> <span class="o">=</span> <span class="n">read</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">frame</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clock</span> <span class="o">=</span> <span class="n">clock</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="n">memory</span> <span class="k">if</span> <span class="n">memory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">DetectorMemory</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">standard_deviations</span> <span class="o">=</span> <span class="n">standard_deviations</span>
+
+<div class="viewcode-block" id="AnomalyDetector.classify">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.AnomalyDetector.classify">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClassifyAnswer</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The classify workflow: classify the attempt of `operation`, and end it, while it is</span>
+<span class="sd">        `running`.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            Exception: Only when the operation cannot be read, or when the detector's `failed`</span>
+<span class="sd">                did not reach the store and the operation is still `running`. Then the caller is</span>
+<span class="sd">                told that the call failed.</span>
+<span class="sd">        """</span>
+        <span class="n">saves_uq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">saves_uq</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">saves_uq</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">if</span> <span class="n">saves_uq</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">found</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left_as_it_is</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">found</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="n">ending</span> <span class="o">=</span> <span class="n">_Ending</span><span class="p">(</span><span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+                <span class="n">exit</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ended_while_running</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">ending</span><span class="p">),</span>
+                <span class="n">error</span><span class="o">=</span><span class="k">lambda</span> <span class="n">error</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_failed_while_running</span><span class="p">(</span>
+                    <span class="n">operation</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">ending</span>
+                <span class="p">),</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">transition</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">ending</span><span class="o">.</span><span class="n">outcome</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classify</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">ending</span><span class="p">)</span>
+                <span class="n">deviation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_standard_deviation</span><span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="k">if</span> <span class="n">saves_uq</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="n">log_scope</span><span class="p">(</span>
+                    <span class="n">logger</span><span class="p">,</span>
+                    <span class="s2">"Anomaly detector"</span><span class="p">,</span>
+                    <span class="s2">"writes"</span><span class="p">,</span>
+                    <span class="n">operation</span><span class="p">,</span>
+                    <span class="s2">"an empty ClassScope"</span><span class="p">,</span>
+                    <span class="n">ClassScope</span><span class="p">(),</span>
+                    <span class="s2">"it creates a new Activity and a new ParameterCopy, and reads nothing "</span>
+                    <span class="s2">"of them"</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="c1"># The classification, the PROV witness on the decision. Its IRI</span>
+                <span class="c1"># is given, because the middleware mints `&lt;class&gt;_&lt;hex&gt;`, which for a class of</span>
+                <span class="c1"># PROV-O would be an IRI in the W3C's namespace.</span>
+                <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">PROV</span><span class="o">.</span><span class="n">Activity</span><span class="p">),</span>
+                    <span class="n">ClassScope</span><span class="p">(),</span>
+                    <span class="n">instance_iri</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">_classification_iri</span><span class="p">()),</span>
+                <span class="p">)</span> <span class="k">as</span> <span class="n">classification</span><span class="p">:</span>
+                    <span class="n">classification</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">PROV</span><span class="o">.</span><span class="n">wasAssociatedWith</span><span class="p">):</span> <span class="p">[</span><span class="n">_link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">)],</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">PROV</span><span class="o">.</span><span class="n">endedAtTime</span><span class="p">):</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">clock</span><span class="p">()],</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
+                <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">ParameterCopy</span><span class="p">),</span> <span class="n">ClassScope</span><span class="p">())</span> <span class="k">as</span> <span class="n">snapshot</span><span class="p">:</span>
+                    <span class="n">snapshot</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+                            <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">as_properties</span><span class="p">(</span><span class="n">values</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                        <span class="p">}</span>
+                        <span class="o">|</span> <span class="p">{</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">PROV</span><span class="o">.</span><span class="n">wasGeneratedBy</span><span class="p">):</span> <span class="p">[</span>
+                                <span class="n">_link</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">classification</span><span class="o">.</span><span class="n">iri</span><span class="p">)))</span>
+                            <span class="p">]</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
+                <span class="n">classified</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasDetectionResult</span><span class="p">):</span> <span class="p">[</span><span class="n">_link</span><span class="p">(</span><span class="n">outcome_iri</span><span class="p">(</span><span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">))],</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">classifiedWith</span><span class="p">):</span> <span class="p">[</span><span class="n">_link</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">snapshot</span><span class="o">.</span><span class="n">iri</span><span class="p">)))],</span>
+                <span class="p">}</span>
+                <span class="n">positions</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">MeasuredPosition</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">if</span> <span class="n">anomaly_of</span><span class="p">(</span><span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">end</span> <span class="o">=</span> <span class="n">approach_end_position</span><span class="p">(</span><span class="n">signals</span><span class="p">)</span>
+                    <span class="n">classified</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasMeasuredApproachEndPosition</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">end</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">deviation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">classified</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasApproachEndPositionVariable</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span>
+                            <span class="n">_link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_new_variable</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">deviation</span><span class="p">))</span>
+                        <span class="p">]</span>
+                        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">MeasuredPosition</span><span class="p">(</span><span class="n">APPROACH_END</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">deviation</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">deviation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">at_contact</span> <span class="o">=</span> <span class="n">contact_position</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">values</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">at_contact</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_head_position</span><span class="p">(</span><span class="n">transition</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">at_contact</span><span class="p">,</span> <span class="n">deviation</span><span class="p">)</span>
+                        <span class="n">positions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="n">MeasuredPosition</span><span class="p">(</span><span class="n">SCREW_HEAD</span><span class="p">,</span> <span class="n">at_contact</span><span class="p">,</span> <span class="n">deviation</span><span class="p">)</span>
+                        <span class="p">)</span>
+                <span class="n">ending</span><span class="o">.</span><span class="n">positions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+                <span class="n">transition</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">classified</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ending</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left_as_it_is</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">ending</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ending</span><span class="o">.</span><span class="n">why</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_after_failed</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">ending</span><span class="o">.</span><span class="n">why</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">ended</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">not_classified</span><span class="p">(</span>
+                    <span class="n">operation</span><span class="p">,</span>
+                    <span class="n">found</span><span class="o">.</span><span class="n">screws</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">screws</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">ending</span><span class="o">.</span><span class="n">with_origin</span><span class="p">,</span>
+                    <span class="n">ending</span><span class="o">.</span><span class="n">why</span><span class="p">,</span>
+                    <span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">return</span> <span class="n">answer</span>
+        <span class="k">assert</span> <span class="n">ending</span><span class="o">.</span><span class="n">outcome</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly_of</span><span class="p">(</span><span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">classified</span><span class="p">(</span>
+            <span class="n">operation</span><span class="p">,</span>
+            <span class="n">values</span><span class="p">,</span>
+            <span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">,</span>
+            <span class="n">anomaly</span><span class="p">,</span>
+            <span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">,</span>
+            <span class="n">positions</span><span class="o">=</span><span class="n">ending</span><span class="o">.</span><span class="n">positions</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">anomaly</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> is done, with the outcome </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> is failed, with the outcome </span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+                <span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">,</span>
+                <span class="n">anomaly</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ClassifyAnswer</span><span class="p">(</span>
+            <span class="n">operation</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">operation</span><span class="p">),</span>
+            <span class="n">ended</span><span class="o">=</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span> <span class="k">if</span> <span class="n">anomaly</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span>
+            <span class="n">outcome</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">outcome_iri</span><span class="p">(</span><span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">)),</span>
+            <span class="n">why</span><span class="o">=</span><span class="n">anomaly</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_standard_deviation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="n">OperationToClassify</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The standard deviation of the positions of the robot that measured the attempt: the</span>
+<span class="sd">        robot of the one resource whose capability the operation implements.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotClassified: If the operation names no such resource, or more than one, or its robot</span>
+<span class="sd">                holds no standard deviation, more than one, or one that is not a finite number.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">resources</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">found</span><span class="o">.</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> names </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">resources</span><span class="p">)</span><span class="si">}</span><span class="s2"> resources whose "</span>
+                <span class="s2">"capability it implements; saving measurements as uncertainty quantifications "</span>
+                <span class="s2">"needs the one whose robot measured it"</span>
+            <span class="p">)</span>
+        <span class="p">(</span><span class="n">resource</span><span class="p">,)</span> <span class="o">=</span> <span class="n">found</span><span class="o">.</span><span class="n">resources</span>
+        <span class="n">held</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">standard_deviations</span><span class="p">(</span><span class="n">resource</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">held</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">_is_finite_number</span><span class="p">(</span><span class="n">held</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the robot of </span><span class="si">{</span><span class="n">resource</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> holds </span><span class="si">{</span><span class="n">held</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s1">'no'</span><span class="si">}</span><span class="s2"> position standard "</span>
+                <span class="s2">"deviation; saving measurements as uncertainty quantifications needs one, a "</span>
+                <span class="s2">"finite number"</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">held</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore[arg-type]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_new_variable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">deviation</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Create, in the commit, the random variable of one measured `value`."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">UQ</span><span class="o">.</span><span class="n">RandomVariable</span><span class="p">),</span> <span class="n">ClassScope</span><span class="p">())</span> <span class="k">as</span> <span class="n">variable</span><span class="p">:</span>
+            <span class="n">variable</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">UQ</span><span class="o">.</span><span class="n">hasDistribution</span><span class="p">):</span> <span class="p">[</span><span class="n">measurement_literal</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">deviation</span><span class="p">)],</span>
+                    <span class="nb">str</span><span class="p">(</span><span class="n">UQ</span><span class="o">.</span><span class="n">hasDomain</span><span class="p">):</span> <span class="p">[</span><span class="n">_link</span><span class="p">(</span><span class="n">UQ</span><span class="o">.</span><span class="n">double</span><span class="p">)],</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">variable</span><span class="o">.</span><span class="n">iri</span><span class="p">))</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_head_position</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">transition</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">found</span><span class="p">:</span> <span class="n">OperationToClassify</span><span class="p">,</span>
+        <span class="n">at_contact</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">deviation</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Write, in the commit, the measured head position of the operation's Screw and its</span>
+<span class="sd">        random variable: a new one, or the one the Screw holds, with its literal replaced.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotClassified: If the Screw holds more than one head-position variable.</span>
+<span class="sd">        """</span>
+        <span class="p">(</span><span class="n">screw</span><span class="p">,)</span> <span class="o">=</span> <span class="n">found</span><span class="o">.</span><span class="n">screws</span>
+        <span class="n">held</span> <span class="o">=</span> <span class="n">found</span><span class="o">.</span><span class="n">head_position_variables</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">held</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">screw</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> holds </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">held</span><span class="p">)</span><span class="si">}</span><span class="s2"> head-position variables, not one"</span>
+            <span class="p">)</span>
+        <span class="n">estimate</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasMeasuredScrewHeadPosition</span><span class="p">):</span> <span class="p">[</span><span class="n">at_contact</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">held</span><span class="p">:</span>
+            <span class="n">transition</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                <span class="n">held</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">UQ</span><span class="o">.</span><span class="n">hasDistribution</span><span class="p">):</span> <span class="p">[</span><span class="n">measurement_literal</span><span class="p">(</span><span class="n">at_contact</span><span class="p">,</span> <span class="n">deviation</span><span class="p">)]},</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">estimate</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewHeadPositionVariable</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">_link</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_new_variable</span><span class="p">(</span><span class="n">at_contact</span><span class="p">,</span> <span class="n">deviation</span><span class="p">))</span>
+            <span class="p">]</span>
+        <span class="n">transition</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">screw</span><span class="p">,</span> <span class="n">estimate</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_after_failed</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="ne">Exception</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClassifyAnswer</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The answer after the error path asked for `failed` with `why`.</span>
+
+<span class="sd">        When the error transition is not committed, the middleware logs that and raises the</span>
+<span class="sd">        error that ended the commit, with a note. So the error alone does not say whether</span>
+<span class="sd">        `failed` reached the store, and the detector reads the operation once more. It holds the</span>
+<span class="sd">        `failed` with `why`; or it has ended otherwise, and is left as it is; or it is still</span>
+<span class="sd">        `running`.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            Exception: `error` again, if the operation is still `running`. The call is then</span>
+<span class="sd">                refused, and the screwing resource ends the operation `failed` itself.</span>
+<span class="sd">        """</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">found</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span> <span class="ow">and</span> <span class="n">why</span> <span class="ow">in</span> <span class="n">found</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> is failed: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span> <span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span> <span class="n">why</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">ClassifyAnswer</span><span class="p">(</span>
+                <span class="n">operation</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">operation</span><span class="p">),</span> <span class="n">ended</span><span class="o">=</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="n">why</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">found</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_left_as_it_is</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">found</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">error</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ended_while_running</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">ending</span><span class="p">:</span> <span class="n">_Ending</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Update</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The exit transition, if the operation is still `running`: `done` after the outcome</span>
+<span class="sd">        ScrewIntact, and `failed`, naming it, after any other outcome that `ending` holds.</span>
+
+<span class="sd">        That reason is not kept in `ending.why`, which says that the error path asked for</span>
+<span class="sd">        `failed`: the `failed` of a failure outcome is the clean exit.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            EndedMeanwhile: If it is no longer `running`. Then nothing of the body is written.</span>
+<span class="sd">        """</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span><span class="o">.</span><span class="n">status</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">EndedMeanwhile</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="n">ending</span><span class="o">.</span><span class="n">outcome</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="n">anomaly</span> <span class="o">=</span> <span class="n">anomaly_of</span><span class="p">(</span><span class="n">ending</span><span class="o">.</span><span class="n">outcome</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">anomaly</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">_status</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">DONE</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">_failed</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">anomaly</span><span class="p">)]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_failed_while_running</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">error</span><span class="p">:</span> <span class="ne">BaseException</span><span class="p">,</span> <span class="n">ending</span><span class="p">:</span> <span class="n">_Ending</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Update</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The error transition: `failed` with why, if the operation is still `running`, and</span>
+<span class="sd">        nothing otherwise. `ending` keeps which of the two it was."""</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">EndedMeanwhile</span><span class="p">):</span>
+            <span class="n">ending</span><span class="o">.</span><span class="n">leave</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span><span class="o">.</span><span class="n">status</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">!=</span> <span class="n">OperationStatus</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
+            <span class="n">ending</span><span class="o">.</span><span class="n">leave</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">ending</span><span class="o">.</span><span class="n">why</span> <span class="o">=</span> <span class="n">NOT_CLASSIFIED</span> <span class="o">+</span> <span class="n">_text_of</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">_failed</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">ending</span><span class="o">.</span><span class="n">why</span><span class="p">)]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_left_as_it_is</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClassifyAnswer</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Log that `operation`, which is `status`, is left as it is, and answer so."""</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">left_as_it_is_record</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">status</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">ClassifyAnswer</span><span class="p">(</span>
+            <span class="n">operation</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">operation</span><span class="p">),</span> <span class="n">why</span><span class="o">=</span><span class="sa">f</span><span class="s2">"it is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">, not running"</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_classify</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="n">OperationToClassify</span><span class="p">,</span> <span class="n">ending</span><span class="p">:</span> <span class="n">_Ending</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">EffectiveValuesWithOrigin</span><span class="p">,</span> <span class="n">AttemptSignals</span><span class="p">,</span> <span class="n">DetectionResult</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The effective values of the operation's Screw, the signals of its frame, and the exit</span>
+<span class="sd">        of the tree they reach. Nothing is written to the store. The values go into `ending`</span>
+<span class="sd">        and, with what the Screw type holds, into the memory, as soon as they are read.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotClassified: With why, when the attempt cannot be classified.</span>
+<span class="sd">        """</span>
+        <span class="n">screw</span> <span class="o">=</span> <span class="n">_the_one</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">screws</span><span class="p">,</span> <span class="n">found</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span> <span class="s2">"Screws"</span><span class="p">)</span>
+        <span class="n">reference</span> <span class="o">=</span> <span class="n">_the_one</span><span class="p">(</span>
+            <span class="n">found</span><span class="o">.</span><span class="n">references</span><span class="p">,</span> <span class="n">found</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span> <span class="s2">"time-series references"</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="n">screw</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">UnresolvedValues</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the effective values of </span><span class="si">{</span><span class="n">screw</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> could not be read: </span><span class="si">{</span><span class="n">_text_of</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+        <span class="n">ending</span><span class="o">.</span><span class="n">with_origin</span> <span class="o">=</span> <span class="n">values</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"its frame could not be read from </span><span class="si">{</span><span class="n">reference</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">_text_of</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+        <span class="n">signals</span> <span class="o">=</span> <span class="n">attempt_signals</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">values</span><span class="p">,</span> <span class="n">signals</span><span class="p">,</span> <span class="n">classify</span><span class="p">(</span><span class="n">signals</span><span class="p">,</span> <span class="n">values</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the decision tree refused its curves: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span></div>
+
+
+
+<div class="viewcode-block" id="read_operation">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.read_operation">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_operation</span><span class="p">(</span>
+    <span class="n">middleware</span><span class="p">:</span> <span class="n">SemanticMiddleware</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperationToClassify</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Read the operation from the graph under `OPERATION_SCOPE`, or with `saves_uq` under</span>
+<span class="sd">    `UQ_OPERATION_SCOPE`, logging what the detector wants. The detector's own read."""</span>
+    <span class="n">wants</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"it wants the status (hasOperationStatus), the reason of a failure "</span>
+        <span class="s2">"(hasExecutionResult), the Screw (concernsScrew) and where its curves are "</span>
+        <span class="s2">"(hasTimeSeriesReference)"</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">saves_uq</span><span class="p">:</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">scope</span> <span class="o">=</span> <span class="s2">"UQ_OPERATION_SCOPE"</span><span class="p">,</span> <span class="n">UQ_OPERATION_SCOPE</span>
+        <span class="n">wants</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="s2">", and to save measurements as uncertainty quantifications the resource "</span>
+            <span class="s2">"whose capability it implements (implementsCapability, realizedByWorkflow, "</span>
+            <span class="s2">"isWorkflowOf, isServiceOf) and the Screw's head-position variable "</span>
+            <span class="s2">"(hasScrewHeadPositionVariable)"</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">scope</span> <span class="o">=</span> <span class="s2">"OPERATION_SCOPE"</span><span class="p">,</span> <span class="n">OPERATION_SCOPE</span>
+    <span class="n">log_scope</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="s2">"Anomaly detector"</span><span class="p">,</span> <span class="s2">"reads"</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">scope</span><span class="p">,</span> <span class="n">wants</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">operation_to_classify_from</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">scope</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="build">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.build">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span>
+    <span class="n">resource_iri</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span>
+    <span class="n">host</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">reader</span><span class="p">:</span> <span class="n">FrameReader</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SemanticMiddleware</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The middleware instance of the anomaly detector `resource_iri`, served at `host:port`,</span>
+<span class="sd">    with its classify workflow, its notification handler and its dashboard: the middleware's</span>
+<span class="sd">    boxes, and its own two in the tab "Anomaly detector", which it opens on; and its mode route</span>
+<span class="sd">    (`MODE_ROUTE`).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        reader: Where the frames are read from. Defaults to the InfluxDB that `INFLUXDB_URL`</span>
+<span class="sd">            names.</span>
+<span class="sd">        saves_uq: The start value of the mode "Save measurements as uncertainty</span>
+<span class="sd">            quantifications". The mode route changes it while the detector runs.</span>
+<span class="sd">    """</span>
+    <span class="n">middleware</span> <span class="o">=</span> <span class="n">SemanticMiddleware</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">RESOURCE</span><span class="p">,</span>
+        <span class="n">resource_iri</span><span class="o">=</span><span class="n">resource_iri</span><span class="p">,</span>
+        <span class="n">service_class</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">AnomalyDetectorService</span><span class="p">),</span>
+        <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+        <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
+        <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span>
+        <span class="n">activity_feed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># The middleware's state dashboard at `/dashboard`: the library's boxes, and the detector's</span>
+    <span class="c1"># own, which render its memory.</span>
+    <span class="n">memory</span> <span class="o">=</span> <span class="n">DetectorMemory</span><span class="p">(</span><span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">)</span>
+    <span class="n">register_boxes</span><span class="p">(</span><span class="n">enable_dashboard</span><span class="p">(</span><span class="n">middleware</span><span class="p">,</span> <span class="n">first_tab</span><span class="o">=</span><span class="n">DASHBOARD_TAB</span><span class="p">),</span> <span class="n">memory</span><span class="p">)</span>
+    <span class="n">frames</span> <span class="o">=</span> <span class="n">reader</span> <span class="k">if</span> <span class="n">reader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">FrameReader</span><span class="p">(</span><span class="n">connect_influxdb</span><span class="p">())</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OperationToClassify</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">read_operation</span><span class="p">(</span><span class="n">middleware</span><span class="p">,</span> <span class="n">operation</span><span class="p">,</span> <span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">standard_deviations</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">object</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Read the position standard deviations of the robot of `resource`."""</span>
+        <span class="n">log_scope</span><span class="p">(</span>
+            <span class="n">logger</span><span class="p">,</span>
+            <span class="s2">"Anomaly detector"</span><span class="p">,</span>
+            <span class="s2">"reads"</span><span class="p">,</span>
+            <span class="n">resource</span><span class="p">,</span>
+            <span class="s2">"ROBOT_SCOPE"</span><span class="p">,</span>
+            <span class="n">ROBOT_SCOPE</span><span class="p">,</span>
+            <span class="s2">"it wants the standard deviation of the robot's positions (hasRobot, "</span>
+            <span class="s2">"hasPositionStandardDeviation), to save measurements as uncertainty "</span>
+            <span class="s2">"quantifications"</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">middleware</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">ROBOT_SCOPE</span><span class="p">)</span><span class="o">.</span><span class="n">data</span> <span class="ow">or</span> <span class="p">{}</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="n">value</span>
+            <span class="k">for</span> <span class="n">robot</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasRobot</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">_linked</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasPositionStandardDeviation</span><span class="p">)</span>
+        <span class="p">]</span>
+
+    <span class="n">detector</span> <span class="o">=</span> <span class="n">AnomalyDetector</span><span class="p">(</span>
+        <span class="n">IRI</span><span class="p">(</span><span class="n">resource_iri</span><span class="p">),</span>
+        <span class="n">commit</span><span class="o">=</span><span class="n">middleware</span><span class="o">.</span><span class="n">commit</span><span class="p">,</span>
+        <span class="n">create</span><span class="o">=</span><span class="n">middleware</span><span class="o">.</span><span class="n">create</span><span class="p">,</span>
+        <span class="n">read</span><span class="o">=</span><span class="n">read</span><span class="p">,</span>
+        <span class="n">standard_deviations</span><span class="o">=</span><span class="n">standard_deviations</span><span class="p">,</span>
+        <span class="n">values</span><span class="o">=</span><span class="k">lambda</span> <span class="n">screw</span><span class="p">:</span> <span class="n">read_effective_values_with_origin</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">screw</span><span class="p">),</span>
+        <span class="n">frame</span><span class="o">=</span><span class="n">frames</span><span class="o">.</span><span class="n">read</span><span class="p">,</span>
+        <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="nd">@middleware</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span>
+        <span class="n">capability_class</span><span class="o">=</span><span class="n">JMS</span><span class="o">.</span><span class="n">ClassifyCapability</span><span class="p">,</span>
+        <span class="n">workflow_class</span><span class="o">=</span><span class="n">JMS</span><span class="o">.</span><span class="n">ClassifyWorkflow</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">classify</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">ClassifyRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ClassifyAnswer</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Classify the recorded attempt of one running unscrewing operation, and end the</span>
+<span class="sd">        operation with its outcome and its parameter copy: `done` for an intact screw, or</span>
+<span class="sd">        `failed` naming its failure outcome; or `failed` with why it could not be classified. An</span>
+<span class="sd">        operation that is not running is left as it is."""</span>
+        <span class="k">return</span> <span class="n">detector</span><span class="o">.</span><span class="n">classify</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">operation</span><span class="p">))</span>
+
+    <span class="c1"># A notification that reaches the detector all the same: it takes no Operation from a</span>
+    <span class="c1"># notification, only from a call. The handler also keeps the middleware from warning at each</span>
+    <span class="c1"># start that the instance has neither a notification handler nor a callback.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">not_taken</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">: notified of </span><span class="si">%s</span><span class="s2">; the detector takes an operation only from a call of its "</span>
+            <span class="s2">"classify workflow, so nothing is done"</span><span class="p">,</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">resource_iri</span><span class="p">)</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">operation</span><span class="o">.</span><span class="n">id</span><span class="p">))</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">middleware</span><span class="o">.</span><span class="n">on_notification</span><span class="p">(</span><span class="n">not_taken</span><span class="p">)</span>
+    <span class="n">mount_mode</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">app</span><span class="p">,</span> <span class="n">memory</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">middleware</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_finite_number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `value` is an int, a float or a Decimal, and finite. A bool is not a number here."""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Decimal</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_the_one</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">what</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The one item that the operation names.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        NotClassified: If it names none, or more than one.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">NotClassified</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">operation</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> names </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s2">; an unscrewing operation names one"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="anomaly_of">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.anomaly_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">anomaly_of</span><span class="p">(</span><span class="n">outcome</span><span class="p">:</span> <span class="n">DetectionResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The reason that names the failure outcome `outcome`, for example</span>
+<span class="sd">    `ANOMALY: MissingScrew`, or None for the outcome ScrewIntact, which is no failure."""</span>
+    <span class="k">if</span> <span class="n">outcome</span> <span class="o">==</span> <span class="n">NO_FAILURE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">ANOMALY</span> <span class="o">+</span> <span class="n">outcome</span></div>
+
+
+
+<div class="viewcode-block" id="outcome_iri">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.outcome_iri">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">outcome_iri</span><span class="p">(</span><span class="n">outcome</span><span class="p">:</span> <span class="n">DetectionResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The individual of the use case's ontology that names the tree's exit `outcome`."""</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="n">outcome</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_classification_iri</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A new IRI for one classification, in use case 1's namespace."""</span>
+    <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Classification_</span><span class="si">{</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">[:</span><span class="mi">12</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_link</span><span class="p">(</span><span class="n">iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""A link to `iri`, as the object-graph mapper takes it."""</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">iri</span><span class="p">)}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_status</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">status</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Update</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">status</span><span class="p">]})</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_failed</span><span class="p">(</span><span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Update</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The operation `failed`, with why as its result."""</span>
+    <span class="k">return</span> <span class="n">Update</span><span class="p">(</span>
+        <span class="n">instance_iri</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">):</span> <span class="p">[</span><span class="n">OperationStatus</span><span class="o">.</span><span class="n">FAILED</span><span class="p">],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasExecutionResult</span><span class="p">):</span> <span class="p">[</span><span class="n">why</span><span class="p">],</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_text_of</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="ne">BaseException</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What `error` says, or its type when it says nothing."""</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">repr</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="parse_args">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.parse_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">Namespace</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The options of the detector's process."""</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">process_parser</span><span class="p">(</span><span class="s2">"The anomaly detector of use case 1"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--resource"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">RESOURCE</span><span class="p">),</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The IRI of the anomaly detector this process serves"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="n">SAVE_UQ_OPTION</span><span class="p">,</span> <span class="o">**</span><span class="n">SAVE_UQ_ARGUMENT</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector.html#jms_kapps.uc1.anomaly_detector.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">connect_influxdb</span><span class="p">()</span> <span class="k">as</span> <span class="n">influxdb</span><span class="p">:</span>
+        <span class="n">run_process</span><span class="p">(</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">host</span><span class="p">,</span>
+            <span class="k">lambda</span> <span class="n">port</span><span class="p">:</span> <span class="n">build</span><span class="p">(</span>
+                <span class="n">args</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span>
+                <span class="n">OGM</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">connect</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">dataset</span><span class="p">)),</span>
+                <span class="n">args</span><span class="o">.</span><span class="n">host</span><span class="p">,</span>
+                <span class="n">port</span><span class="p">,</span>
+                <span class="n">reader</span><span class="o">=</span><span class="n">FrameReader</span><span class="p">(</span><span class="n">influxdb</span><span class="p">),</span>
+                <span class="n">saves_uq</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">save_measurements_as_uq</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="k">lambda</span> <span class="n">address</span><span class="p">:</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"The anomaly detector runs on </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">. Its dashboard: </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">dashboard"</span>
+            <span class="p">),</span>
+        <span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

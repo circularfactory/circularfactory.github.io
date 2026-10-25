@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc1.anomaly_detector_memory &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc1/anomaly_detector_memory';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc1.anomaly_detector_memory</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc1.anomaly_detector_memory</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What the anomaly detector knows of its own classifications, kept in its memory.</span>
+
+<span class="sd">Its dashboard boxes render this memory and nothing else, so an open dashboard causes no load: no</span>
+<span class="sd">read of the graph and no read of the time-series store. The detector writes it as it classifies,</span>
+<span class="sd">from what each classification reads anyway: a classification once its commit has reached the</span>
+<span class="sd">store, and the values of a Screw type at each read of a Screw's effective values.</span>
+
+<span class="sd">It also holds the detector's mode, "Save measurements as uncertainty quantifications", on or off</span>
+<span class="sd">(interim name), which the detector reads at each classification and which can be set while it</span>
+<span class="sd">runs.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.decision_tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">ASKED</span><span class="p">,</span> <span class="n">DetectionResult</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.effective_values</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">PROPERTY_OF_FIELD</span><span class="p">,</span>
+    <span class="n">EffectiveValuesWithOrigin</span><span class="p">,</span>
+    <span class="n">as_properties</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># How many classifications it keeps: the newest.</span>
+<span class="n">KEPT_CLASSIFICATIONS</span> <span class="o">=</span> <span class="mi">20</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_now</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">datetime</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The time of day here, with its time zone."""</span>
+    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">astimezone</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="UsedValue">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.UsedValue">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">UsedValue</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One of the ten values that a classification used: the property that holds it, the value,</span>
+<span class="sd">    and whether the decision tree asked it on its way to the exit."""</span>
+
+    <span class="n">prop</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">asked</span><span class="p">:</span> <span class="nb">bool</span></div>
+
+
+
+<div class="viewcode-block" id="MeasuredPosition">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.MeasuredPosition">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MeasuredPosition</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A measured position that a classification wrote with its random variable: which position</span>
+<span class="sd">    (`APPROACH_END` or `SCREW_HEAD`), the measured value, and the standard deviation of its</span>
+<span class="sd">    literal."""</span>
+
+    <span class="n">position</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">standard_deviation</span><span class="p">:</span> <span class="nb">float</span></div>
+
+
+
+<span class="n">APPROACH_END</span> <span class="o">=</span> <span class="s2">"approach end"</span>
+<span class="n">SCREW_HEAD</span> <span class="o">=</span> <span class="s2">"screw head"</span>
+
+
+<div class="viewcode-block" id="Classification">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.Classification">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Classification</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One attempt that the detector classified, or could not classify, and when it ended.</span>
+
+<span class="sd">    A classified attempt has its `outcome` and the ten `values` it was decided with. Its operation</span>
+<span class="sd">    ended `done` for the outcome ScrewIntact; any other outcome is a failure outcome, which ended</span>
+<span class="sd">    it `failed`, and `why` names it. An attempt that could not be classified has no outcome,</span>
+<span class="sd">    and `why`; it has its values when they were read before the classification failed.</span>
+
+<span class="sd">    `saves_uq` is the mode it was made in, and `positions` the measured positions it wrote with</span>
+<span class="sd">    their random variables: none with the mode off.</span>
+<span class="sd">    """</span>
+
+    <span class="n">at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">outcome</span><span class="p">:</span> <span class="n">DetectionResult</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">values</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">UsedValue</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">positions</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">MeasuredPosition</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="TypeValues">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.TypeValues">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">TypeValues</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The values that one Screw type held itself at the detector's last read of it, and when it</span>
+<span class="sd">    read them."""</span>
+
+    <span class="n">at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="DetectorState">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorState">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DetectorState</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the detector knows of its classifications at one moment, as its boxes show it."""</span>
+
+    <span class="c1"># The newest first.</span>
+    <span class="n">classifications</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Classification</span><span class="p">]</span>
+    <span class="n">classification_count</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="c1"># One for each Screw type it has read, by the type's IRI.</span>
+    <span class="n">type_values</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">TypeValues</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="used_values">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.used_values">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">used_values</span><span class="p">(</span>
+    <span class="n">with_origin</span><span class="p">:</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">,</span> <span class="n">outcome</span><span class="p">:</span> <span class="n">DetectionResult</span> <span class="o">|</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">UsedValue</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The ten values of `with_origin`, each with whether the tree asked it on its</span>
+<span class="sd">    way to `outcome`: none, without an outcome."""</span>
+    <span class="n">asked</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">{</span><span class="n">PROPERTY_OF_FIELD</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ASKED</span><span class="p">[</span><span class="n">outcome</span><span class="p">]}</span>
+        <span class="k">if</span> <span class="n">outcome</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
+        <span class="n">UsedValue</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">asked</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">as_properties</span><span class="p">(</span><span class="n">with_origin</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="DetectorMemory">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorMemory">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DetectorMemory</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the anomaly detector knows of its classifications: each one, newest first, and what</span>
+<span class="sd">    each Screw type held at its last read.</span>
+
+<span class="sd">    It keeps the newest `KEPT_CLASSIFICATIONS` classifications, and counts every one.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        clock: The time of day, by which it stamps what it is told.</span>
+<span class="sd">        saves_uq: The detector's mode at its start, "Save measurements as uncertainty</span>
+<span class="sd">            quantifications": off unless given.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">clock</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">_now</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clock</span> <span class="o">=</span> <span class="n">clock</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_saves_uq</span> <span class="o">=</span> <span class="n">saves_uq</span>
+        <span class="c1"># A classification writes on the thread of its call, and a render reads on one of its own.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_classifications</span><span class="p">:</span> <span class="n">deque</span><span class="p">[</span><span class="n">Classification</span><span class="p">]</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span>
+            <span class="n">maxlen</span><span class="o">=</span><span class="n">KEPT_CLASSIFICATIONS</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_type_values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">TypeValues</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">saves_uq</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether the detector saves measurements as uncertainty quantifications, now."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saves_uq</span>
+
+<div class="viewcode-block" id="DetectorMemory.set_saves_uq">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorMemory.set_saves_uq">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_saves_uq</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">on</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Turn the mode on or off, from the next classification on."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_saves_uq</span> <span class="o">=</span> <span class="n">on</span></div>
+
+
+<div class="viewcode-block" id="DetectorMemory.read">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorMemory.read">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">with_origin</span><span class="p">:</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The detector read `with_origin` now, and with it what the Screw's type holds."""</span>
+        <span class="k">if</span> <span class="n">with_origin</span><span class="o">.</span><span class="n">screw_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">TypeValues</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_clock</span><span class="p">(),</span> <span class="n">with_origin</span><span class="o">.</span><span class="n">screw_type</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">with_origin</span><span class="o">.</span><span class="n">type_values</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_type_values</span><span class="p">[</span><span class="n">with_origin</span><span class="o">.</span><span class="n">screw_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span></div>
+
+
+<div class="viewcode-block" id="DetectorMemory.classified">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorMemory.classified">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">classified</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">with_origin</span><span class="p">:</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">,</span>
+        <span class="n">outcome</span><span class="p">:</span> <span class="n">DetectionResult</span><span class="p">,</span>
+        <span class="n">anomaly</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">positions</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">MeasuredPosition</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The detector ended `operation` now, with `outcome`, decided with `with_origin`: `done`,</span>
+<span class="sd">        or `failed` with `anomaly`, the reason that names an outcome other than ScrewIntact. It</span>
+<span class="sd">        was made with the mode `saves_uq`, and wrote `positions` with their random variables."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span>
+            <span class="n">Classification</span><span class="p">(</span>
+                <span class="n">at</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_clock</span><span class="p">(),</span>
+                <span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+                <span class="n">screw</span><span class="o">=</span><span class="n">with_origin</span><span class="o">.</span><span class="n">screw</span><span class="p">,</span>
+                <span class="n">screw_type</span><span class="o">=</span><span class="n">with_origin</span><span class="o">.</span><span class="n">screw_type</span><span class="p">,</span>
+                <span class="n">outcome</span><span class="o">=</span><span class="n">outcome</span><span class="p">,</span>
+                <span class="n">why</span><span class="o">=</span><span class="n">anomaly</span><span class="p">,</span>
+                <span class="n">values</span><span class="o">=</span><span class="n">used_values</span><span class="p">(</span><span class="n">with_origin</span><span class="p">,</span> <span class="n">outcome</span><span class="p">),</span>
+                <span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">,</span>
+                <span class="n">positions</span><span class="o">=</span><span class="n">positions</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DetectorMemory.not_classified">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorMemory.not_classified">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">not_classified</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">operation</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">with_origin</span><span class="p">:</span> <span class="n">EffectiveValuesWithOrigin</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">saves_uq</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The detector ended `operation` `failed` now, for `why`, in the mode `saves_uq`.</span>
+<span class="sd">        `with_origin` is what it read of `screw` before the classification failed, or None when</span>
+<span class="sd">        it read nothing."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add</span><span class="p">(</span>
+            <span class="n">Classification</span><span class="p">(</span>
+                <span class="n">at</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_clock</span><span class="p">(),</span>
+                <span class="n">operation</span><span class="o">=</span><span class="n">operation</span><span class="p">,</span>
+                <span class="n">screw</span><span class="o">=</span><span class="n">screw</span><span class="p">,</span>
+                <span class="n">screw_type</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">with_origin</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">with_origin</span><span class="o">.</span><span class="n">screw_type</span><span class="p">,</span>
+                <span class="n">outcome</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">why</span><span class="o">=</span><span class="n">why</span><span class="p">,</span>
+                <span class="n">values</span><span class="o">=</span><span class="p">()</span> <span class="k">if</span> <span class="n">with_origin</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">used_values</span><span class="p">(</span><span class="n">with_origin</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+                <span class="n">saves_uq</span><span class="o">=</span><span class="n">saves_uq</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classification</span><span class="p">:</span> <span class="n">Classification</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_classifications</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="n">classification</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<div class="viewcode-block" id="DetectorMemory.state">
+<a class="viewcode-back" href="../../../reference/uc1/anomaly_detector_memory.html#jms_kapps.uc1.anomaly_detector_memory.DetectorMemory.state">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DetectorState</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""What it knows now."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">DetectorState</span><span class="p">(</span>
+                <span class="n">classifications</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_classifications</span><span class="p">),</span>
+                <span class="n">classification_count</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_count</span><span class="p">,</span>
+                <span class="n">type_values</span><span class="o">=</span><span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_type_values</span><span class="p">[</span><span class="n">screw_type</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">screw_type</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_type_values</span><span class="p">)</span>
+                <span class="p">],</span>
+            <span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

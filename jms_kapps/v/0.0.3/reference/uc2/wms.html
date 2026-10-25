@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jms_kapps.uc2.wms &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/uc2/wms';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="jms_kapps.uc2.wms_dashboard" href="wms_dashboard.html" />
+    <link rel="prev" title="jms_kapps.uc2.waiting_order" href="waiting_order.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">The package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jms_kapps.html">jms_kapps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shared by both use cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/index.html">jms_kapps.common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/api_docs.html">jms_kapps.common.api_docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/passthrough.html">jms_kapps.common.passthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/prefixes.html">jms_kapps.common.prefixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/process.html">jms_kapps.common.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/services.html">jms_kapps.common.services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/supervision.html">jms_kapps.common.supervision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/triplestore.html">jms_kapps.common.triplestore</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/index.html">jms_kapps.common.platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/posix.html">jms_kapps.common.platforms.posix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/windows.html">jms_kapps.common.platforms.windows</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc1/index.html">jms_kapps.uc1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/__main__.html">jms_kapps.uc1.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector.html">jms_kapps.uc1.anomaly_detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_dashboard.html">jms_kapps.uc1.anomaly_detector_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_memory.html">jms_kapps.uc1.anomaly_detector_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/classify_call.html">jms_kapps.uc1.classify_call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/decision_tree.html">jms_kapps.uc1.decision_tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/effective_values.html">jms_kapps.uc1.effective_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/frame.html">jms_kapps.uc1.frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/infeasible_operation.html">jms_kapps.uc1.infeasible_operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner.html">jms_kapps.uc1.learner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_dashboard.html">jms_kapps.uc1.learner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_memory.html">jms_kapps.uc1.learner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_process.html">jms_kapps.uc1.learner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/mqtt_broker.html">jms_kapps.uc1.mqtt_broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page.html">jms_kapps.uc1.page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page_lists.html">jms_kapps.uc1.page_lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner.html">jms_kapps.uc1.planner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_dashboard.html">jms_kapps.uc1.planner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_memory.html">jms_kapps.uc1.planner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_process.html">jms_kapps.uc1.planner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_reads.html">jms_kapps.uc1.planner_reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/replay.html">jms_kapps.uc1.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_attempt.html">jms_kapps.uc1.robot_attempt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_binding.html">jms_kapps.uc1.robot_binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_controller.html">jms_kapps.uc1.robot_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/run_core.html">jms_kapps.uc1.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/scope_log.html">jms_kapps.uc1.scope_log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource.html">jms_kapps.uc1.screwing_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_dashboard.html">jms_kapps.uc1.screwing_resource_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_memory.html">jms_kapps.uc1.screwing_resource_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/seed.html">jms_kapps.uc1.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/sequence.html">jms_kapps.uc1.sequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/timeseries.html">jms_kapps.uc1.timeseries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/uncertainty.html">jms_kapps.uc1.uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/vocabulary.html">jms_kapps.uc1.vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">jms_kapps.uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="__main__.html">jms_kapps.uc2.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="capability_resource.html">jms_kapps.uc2.capability_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">jms_kapps.uc2.discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handover_events.html">jms_kapps.uc2.handover_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handshake.html">jms_kapps.uc2.handshake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">jms_kapps.uc2.history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">jms_kapps.uc2.module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_dashboard.html">jms_kapps.uc2.module_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_drawing.html">jms_kapps.uc2.module_drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_memory.html">jms_kapps.uc2.module_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">jms_kapps.uc2.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">jms_kapps.uc2.routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_core.html">jms_kapps.uc2.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seed.html">jms_kapps.uc2.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reachable_destination.html">jms_kapps.uc2.reachable_destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spawn_rate.html">jms_kapps.uc2.spawn_rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategies.html">jms_kapps.uc2.strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topology.html">jms_kapps.uc2.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trace_box.html">jms_kapps.uc2.trace_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">jms_kapps.uc2.transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation_report.html">jms_kapps.uc2.validation_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">jms_kapps.uc2.vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waiting_order.html">jms_kapps.uc2.waiting_order</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">jms_kapps.uc2.wms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_dashboard.html">jms_kapps.uc2.wms_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_memory.html">jms_kapps.uc2.wms_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_process.html">jms_kapps.uc2.wms_process</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the Launcher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="launcher/index.html">jms_kapps.uc2.launcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/api.html">jms_kapps.uc2.launcher.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/backend.html">jms_kapps.uc2.launcher.backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/boxes.html">jms_kapps.uc2.launcher.boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/runner.html">jms_kapps.uc2.launcher.runner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the monitor</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="monitor/index.html">jms_kapps.uc2.monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/api.html">jms_kapps.uc2.monitor.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/handovers.html">jms_kapps.uc2.monitor.handovers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/memory.html">jms_kapps.uc2.monitor.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/process.html">jms_kapps.uc2.monitor.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/reads.html">jms_kapps.uc2.monitor.reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/wires.html">jms_kapps.uc2.monitor.wires</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The measurement harness</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/index.html">jms_kapps.evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/approval.html">jms_kapps.evaluation.approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/baseline.html">jms_kapps.evaluation.baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/bench.html">jms_kapps.evaluation.bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/client_load.html">jms_kapps.evaluation.client_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/configuration.html">jms_kapps.evaluation.configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/grid.html">jms_kapps.evaluation.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/harness.html">jms_kapps.evaluation.harness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/heavy_parts.html">jms_kapps.evaluation.heavy_parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/instrumentation.html">jms_kapps.evaluation.instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/live_store.html">jms_kapps.evaluation.live_store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/matcher.html">jms_kapps.evaluation.matcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/observation.html">jms_kapps.evaluation.observation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/own_transports.html">jms_kapps.evaluation.own_transports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/precision.html">jms_kapps.evaluation.precision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/prefill.html">jms_kapps.evaluation.prefill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ramp.html">jms_kapps.evaluation.ramp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ramp_comparison.html">jms_kapps.evaluation.ramp_comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/record.html">jms_kapps.evaluation.record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/record_match.html">jms_kapps.evaluation.record_match</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/replay.html">jms_kapps.evaluation.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/replay_levels.html">jms_kapps.evaluation.replay_levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report.html">jms_kapps.evaluation.report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_charts.html">jms_kapps.evaluation.report_charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_points.html">jms_kapps.evaluation.report_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_steps.html">jms_kapps.evaluation.report_steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_summary.html">jms_kapps.evaluation.report_summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/rounds.html">jms_kapps.evaluation.rounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/run_limit.html">jms_kapps.evaluation.run_limit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/run_uc2.html">jms_kapps.evaluation.run_uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/seed.html">jms_kapps.evaluation.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/southward.html">jms_kapps.evaluation.southward</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/spec.html">jms_kapps.evaluation.spec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/stats.html">jms_kapps.evaluation.stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/store.html">jms_kapps.evaluation.store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/store_requests.html">jms_kapps.evaluation.store_requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/summary.html">jms_kapps.evaluation.summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/sweep.html">jms_kapps.evaluation.sweep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table.html">jms_kapps.evaluation.table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/watch.html">jms_kapps.evaluation.watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/wrapper.html">jms_kapps.evaluation.wrapper</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.wms</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-jms_kapps.uc2.wms">
+<span id="jms-kapps-uc2-wms"></span><h1>jms_kapps.uc2.wms<a class="headerlink" href="#module-jms_kapps.uc2.wms" title="Link to this heading">#</a></h1>
+<p>The WarehouseManagementSystem: where a box’s journey starts, and where it ends.</p>
+<p>It stands for the production system level around the FlexConveyor station. It is an active
+party, with control logic and no conveyor of its own: its own middleware instance with two
+workflows, <cite>:SpawnBoxWorkflow</cite> and <cite>:SetSpawnRateWorkflow</cite>, a handler for the notifications it
+gets, and a dashboard of its own. It owns the station’s entry.</p>
+<p><strong>Spawn.</strong> <strong>Roles are optional:</strong> entry and exit are roles of a module, which a topology may
+name, and one module may have both. Unless the request names them, the WarehouseManagementSystem
+picks a random free entry module, read from the graph, as the box’s origin, or a random free module
+where the topology names no entry module; and a random exit module as its destination, or a random
+module where it names no exit module. It never picks the origin as the destination. A named
+origin must be an entry module, and a named destination an exit module, only where the topology
+names that role; any two different modules otherwise. A spawn that names a module that may not
+take its place is refused with why, such as “Module4 is not an entry module” or, where the
+topology names no such role, “Module9 is not a module”. If no such module is free, it spawns
+nothing and answers why: “no entry module is free”, or “no module is free”. A box is named by a
+new UUID (<cite>vocabulary.new_box_iri</cite>), so that more than one middleware can create boxes without a
+shared number, and the spawn reads no box in the graph to name it.</p>
+<p><strong>Only a reachable destination.</strong> A destination is reachable from an origin where the connections
+in the graph lead from the origin to it, each one way, as listed; the WarehouseManagementSystem
+reads them with the modules, in the same read. Where it picks the destination, it picks only among
+the destinations the origin reaches, and refuses the spawn with “no exit module can be reached from
+Module1” where none is. Where it picks the origin, it picks only among the free origins that reach
+the named destination, or else some destination, and refuses with “no free entry module can reach
+Module4”, or “… can reach an exit module”, where free origins exist but none does. A named
+destination that the named origin cannot reach is refused with “Module4 cannot be reached from
+Module1”. The reasons name the roles as the others do: “module” where the topology names no such
+role. Where the origin has no other destination at all, the reason stays “the graph has no exit
+module other than Module1”.</p>
+<p><strong>A strategy picks.</strong> The picks above are those of <cite>real</cite>, the default WMS strategy
+(<cite>strategies</cite>): where the request leaves an end to pick, the WarehouseManagementSystem’s strategy
+picks one pair among the candidates, the free origins with the destinations each reaches, and a
+pair that is not a candidate refuses the spawn. The strategy is chosen at start in the Launcher,
+for the WMS and for the modules, and <cite>real</cite> is the default.</p>
+<p><strong>Spawns at once.</strong> Spawns run at once, each on the thread of its request or of the spawn timer,
+and the timer has no wait of its own (<cite>spawn_rate</cite>). At most as many spawns are under way at once,
+of the spawn workflow and of the timer alike, as the topology has modules that may be an origin,
+by the latest read of the modules that a spawn made; before the first read there is no cap. A
+spawn asked for at the cap does not start, and is refused with “every origin has a spawn under
+way”. Concurrent spawns pick apart: the origin of a spawn under way is not free for another
+spawn’s pick, as a module that holds a box is not. The WMS spawns as fast as the hardware allows,
+with no wait of its own.</p>
+<p><strong>The picking lock covers only the slot bookkeeping.</strong> A spawn reads the graph outside it: the
+modules with the connections, and what each origin it may pick holds. Under it, it chooses its
+origin and its destination in memory, from what it read and from the spawns in flight, and enters
+itself in flight; it takes the lock again only to leave the flight. So a spawn that has ended frees
+its slot without waiting for another spawn’s reads, and concurrent spawns still pick apart. A read
+can be stale: when another spawn left the flight after this spawn’s reads began, its origin may
+hold that spawn’s box by now, so this spawn reads once more before it chooses. A Reserve that the
+origin refuses still refuses the spawn with the origin’s reason.</p>
+<p><strong>Every spawn accounted for.</strong> Each spawn asked for ends in exactly one record at INFO: the record
+of the box spawned, or “spawn refused: &lt;reason&gt;”, with its origin and destination where they are
+known (<cite>spawn_record</cite>). A spawn counts at its answer, created once the store admitted its create:
+one whose origin then cannot be notified is recorded as spawned, beside its warning. A spawn that
+raises is recorded as refused with “the spawn failed: &lt;error&gt;”, and its traceback is logged where
+it was asked: by the spawn timer, or by the middleware for the workflow. Every answer, a refusal
+at the cap included, goes into its memory. No box is lost silently: each spawn asked for is
+either created or logged with its reason.</p>
+<p><strong>The box is spawned directly on the origin.</strong> The WarehouseManagementSystem asks the origin’s
+Reserve for the box, and writes nothing before the origin accepts. The Reserve names the box’s
+destination, and the origin accepts only once its own next module has accepted a plain Reserve for
+the box at once, so no origin fills with a box that cannot move on; a box that waits for the
+origin comes before the spawn. An origin
+that holds a box, or has reserved itself for another, refuses, and the spawn is refused with the
+origin’s reason, whether the request named the origin or the WarehouseManagementSystem picked it:
+no other module is tried, and the origin is not asked again. An origin that cannot be reached refuses the spawn
+too, with why (“Module1 is not reachable: …”). So a module that passes a box onto the origin at
+the same moment, and asks the origin’s Reserve too, is refused as reserved when the
+WarehouseManagementSystem asked first, and waits its turn. Once the origin has accepted, one
+<cite>mw.create()</cite> writes the box, its <cite>:BoxTransportOperation</cite> as <cite>queued</cite> and assigned to the origin,
+the links between the two, and the box’s first possession, by the origin. The store admits or
+refuses it as one: if it refuses, as it does when a neighbour with <cite>skip-reserve</cite> armed has filled
+the origin since its answer, nothing is written, the refusal is logged with its report and emitted
+on the WarehouseManagementSystem’s handover event stream, and the answer carries the report. Then
+it notifies the origin of the transport: the origin’s intake reads the transport and carries the
+box on, and the notification uses the origin’s reservation up. It logs its side, at INFO: the
+origin’s acceptance of its Reserve, the transport <cite>queued</cite>, and the spawn’s one record: every
+spawn ends in one record.</p>
+<p><strong>An origin that cannot be notified.</strong> The box is on the origin and the transport is assigned to
+it, but nothing would start its BoxTransportWorkflow: the WarehouseManagementSystem ends the
+transport <cite>failed</cite> with why (“Module1 is not reachable: …”), as a module does that cannot reach
+its next module, logs one warning, and the answer of the spawn says so. The origin leaves that
+transport alone. So the WarehouseManagementSystem writes a transport only in the create that opens
+it and when it cannot notify the origin.</p>
+<p><strong>A stop.</strong> Once the stop of its process has begun, it refuses every spawn, with the reason “the
+system is stopping”, and creates no box, neither for the spawn workflow nor for the spawn rate’s
+timer: it asks once more just before the create. A spawn already under way ends. If it cannot
+notify the origin then, since every process of the run stops at once and the origin’s server
+takes no new connection, it ends the transport <cite>failed</cite> with the stop as its reason, “the system
+is stopping”, and its warning says why the origin was not told; the origin, which waits for the
+notification at its own stop, writes nothing.</p>
+<p><strong>The notification back.</strong> The destination module notifies the WarehouseManagementSystem once it
+has given the box back, and a module that cannot go on notifies it once it has recorded the
+transport <cite>failed</cite>: the transport has ended. The WarehouseManagementSystem checks the transport it
+is handed: it accepts a box it holds whose transport is done, and logs the acceptance as its
+evidence. Whether it holds the box it asks the store in one <cite>ASK</cite> about that one box.</p>
+<p><strong>What it knows.</strong> It keeps in memory the answers to its newest spawns, the transports it opened
+with their last known status, and the boxes it holds, from the notifications back (<cite>wms_memory</cite>).
+Its dashboard renders that memory.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxRequest">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">SpawnBoxRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#SpawnBoxRequest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxRequest" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<p>Where a new box enters the FlexConveyor station, and the module it is carried to. A module
+left out, or left empty, is picked: a free entry module as the origin, an exit module as the
+destination, and, for a role the topology does not name, any free module as the origin and
+any module but the origin as the destination. Empty is how a form says it: a select whose
+choice is the WarehouseManagementSystem’s posts an empty value.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxRequest.origin">
+<span class="sig-name descname"><span class="pre">origin</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxRequest.origin" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxRequest.destination">
+<span class="sig-name descname"><span class="pre">destination</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxRequest.destination" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxRequest.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxRequest.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxResult">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">SpawnBoxResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">accepted</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#SpawnBoxResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="handshake.html#jms_kapps.uc2.handshake.StepResult" title="jms_kapps.uc2.handshake.StepResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">StepResult</span></code></a></p>
+<p>The answer to a spawn. <cite>origin</cite> and <cite>destination</cite> name the modules it was given or picked,
+once there are both, and the ones the request named before that. <cite>box</cite> and <cite>operation</cite> name
+the box and its transport, once made.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxResult.origin">
+<span class="sig-name descname"><span class="pre">origin</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxResult.origin" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxResult.destination">
+<span class="sig-name descname"><span class="pre">destination</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxResult.destination" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxResult.box">
+<span class="sig-name descname"><span class="pre">box</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxResult.box" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxResult.operation">
+<span class="sig-name descname"><span class="pre">operation</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxResult.operation" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SpawnBoxResult.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></span><a class="headerlink" href="#jms_kapps.uc2.wms.SpawnBoxResult.model_config" title="Link to this definition">#</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsReads">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">WmsReads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsReads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsReads" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a></p>
+<p>What the WarehouseManagementSystem reads. <cite>discovery.GraphView</cite> is the real one. None of it
+reads every box in the graph.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsReads.boxes_held_by">
+<span class="sig-name descname"><span class="pre">boxes_held_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsReads.boxes_held_by"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsReads.boxes_held_by" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsReads.holds">
+<span class="sig-name descname"><span class="pre">holds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsReads.holds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsReads.holds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsReads.modules_and_connections">
+<span class="sig-name descname"><span class="pre">modules_and_connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="discovery.html#jms_kapps.uc2.discovery.ModulesAndConnections" title="jms_kapps.uc2.discovery.ModulesAndConnections"><span class="pre">ModulesAndConnections</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsReads.modules_and_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsReads.modules_and_connections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsReads.capability">
+<span class="sig-name descname"><span class="pre">capability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capability_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsReads.capability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsReads.capability" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsReads.workflow_endpoint">
+<span class="sig-name descname"><span class="pre">workflow_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsReads.workflow_endpoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsReads.workflow_endpoint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsWrites">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">WmsWrites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsWrites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsWrites" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a></p>
+<p>What it writes. <cite>transport.TransportRecords</cite> is the real one.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsWrites.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possessor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IRI</span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsWrites.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsWrites.open" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WmsWrites.fail">
+<span class="sig-name descname"><span class="pre">fail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WmsWrites.fail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WmsWrites.fail" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.seeded_choice">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">seeded_choice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#seeded_choice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.seeded_choice" title="Link to this definition">#</a></dt>
+<dd><p>The chooser a WarehouseManagementSystem picks its modules with: <cite>random.choice</cite>’s shared
+generator where <cite>seed</cite> is None, else the choice of a generator of its own that <cite>seed</cite> seeds, so
+that the same seed and the same candidates give the same sequence of picks. The seed is set per
+repetition. Interim name. Every pick is made under the picking lock, one
+at a time; concurrent spawns that reach it in another order draw the same numbers in that
+other order.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.create_refused">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">create_refused</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#create_refused"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.create_refused" title="Link to this definition">#</a></dt>
+<dd><p>Why a spawn is refused when the store refused the create of <cite>box</cite> on <cite>origin</cite>: prose for a
+person, since a caller tells the store’s refusal by the step result’s report.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.spawn_candidates">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">spawn_candidates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connections</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.15)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destinations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#spawn_candidates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.spawn_candidates" title="Link to this definition">#</a></dt>
+<dd><p>The candidates of a spawn: each of <cite>origins</cite> from which a path over <cite>connections</cite> leads to
+one of <cite>destinations</cite> other than itself, with those destinations, both in their order. An
+origin that reaches none is no candidate.</p>
+<p>The WarehouseManagementSystem picks its origin among these, and its destination among those of
+the origin, so that it picks only an exit it can reach from the origin, for every topology.
+Its WMS strategy picks the pair, and <cite>real</cite> picks so.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.taken_back_record">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">taken_back_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#taken_back_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.taken_back_record" title="Link to this definition">#</a></dt>
+<dd><p>What the WarehouseManagementSystem <cite>resource</cite> logs when it takes <cite>box</cite> back: its evidence
+that the box is back in its possession and its transport <cite>operation</cite> is done.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.TAKEN_BACK">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">TAKEN_BACK</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('(?:^|[\\s:])(?P&lt;resource&gt;[^\\s:]+):</span> <span class="pre">accepted</span> <span class="pre">(?P&lt;box&gt;\\S+)</span> <span class="pre">back,</span> <span class="pre">and</span> <span class="pre">(?P&lt;operation&gt;\\S+)</span> <span class="pre">is</span> <span class="pre">done$')</span></span><a class="headerlink" href="#jms_kapps.uc2.wms.TAKEN_BACK" title="Link to this definition">#</a></dt>
+<dd><p>A line of a log that holds a <cite>taken_back_record</cite>, whatever the log’s format puts in front of it:
+the WarehouseManagementSystem, the box and its transport by their fragments.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.spawned_record">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">spawned_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#spawned_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.spawned_record" title="Link to this definition">#</a></dt>
+<dd><p>What the WarehouseManagementSystem <cite>resource</cite> logs once the store has admitted its create
+of <cite>box</cite> on <cite>origin</cite>, for <cite>destination</cite>: the record of the box spawned (<cite>spawn_record</cite>).
+A spawn counts at its answer: created when the store admitted its create, so the record does
+not wait for the notification.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.SPAWNED">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">SPAWNED</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('(?:^|[\\s:])(?P&lt;resource&gt;[^\\s:]+):</span> <span class="pre">spawned</span> <span class="pre">(?P&lt;box&gt;\\S+)</span> <span class="pre">onto</span> <span class="pre">(?P&lt;origin&gt;\\S+),</span> <span class="pre">for</span> <span class="pre">(?P&lt;destination&gt;\\S+)$')</span></span><a class="headerlink" href="#jms_kapps.uc2.wms.SPAWNED" title="Link to this definition">#</a></dt>
+<dd><p>A line of a log that holds a <cite>spawned_record</cite>, whatever the log’s format puts in front of it:
+the WarehouseManagementSystem, the box, its origin and its destination by their fragments.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.refused_record">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">refused_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refused</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.uc2.wms.SpawnBoxResult" title="jms_kapps.uc2.wms.SpawnBoxResult"><span class="pre">SpawnBoxResult</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#refused_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.refused_record" title="Link to this definition">#</a></dt>
+<dd><p>What the WarehouseManagementSystem <cite>resource</cite> logs when it answers a spawn with the refusal
+<cite>refused</cite>: why, and the spawn’s origin and destination where they are known.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.spawn_record">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">spawn_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.uc2.wms.SpawnBoxResult" title="jms_kapps.uc2.wms.SpawnBoxResult"><span class="pre">SpawnBoxResult</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#spawn_record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.spawn_record" title="Link to this definition">#</a></dt>
+<dd><p>The one record the WarehouseManagementSystem <cite>resource</cite> logs for each spawn, at its
+<cite>answer</cite>: the box spawned, or the spawn refused with why.</p>
+<p>A spawn counts as created once the store admitted its create, which the answer shows by
+naming the box’s transport: so a spawn whose origin then cannot be notified is recorded as
+spawned, while its answer says why it failed and a warning says that the origin was not
+told.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.EVERY_ORIGIN_BUSY">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">EVERY_ORIGIN_BUSY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'every</span> <span class="pre">origin</span> <span class="pre">has</span> <span class="pre">a</span> <span class="pre">spawn</span> <span class="pre">under</span> <span class="pre">way'</span></span><a class="headerlink" href="#jms_kapps.uc2.wms.EVERY_ORIGIN_BUSY" title="Link to this definition">#</a></dt>
+<dd><p>Why a spawn does not start while as many spawns are under way as there are origins.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WarehouseManagementSystem">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.wms.</span></span><span class="sig-name descname"><span class="pre">WarehouseManagementSystem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">resource:</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI,</span> <span class="pre">*,</span> <span class="pre">graph:</span> <span class="pre">~jms_kapps.uc2.wms.WmsReads,</span> <span class="pre">records:</span> <span class="pre">~jms_kapps.uc2.wms.WmsWrites,</span> <span class="pre">call:</span> <span class="pre">~collections.abc.Callable[[str,</span> <span class="pre">~pydantic.main.BaseModel],</span> <span class="pre">dict],</span> <span class="pre">notify:</span> <span class="pre">~collections.abc.Callable[[~kapps_triplestore_interface.utils.iri.IRI,</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI],</span> <span class="pre">None],</span> <span class="pre">choose:</span> <span class="pre">~collections.abc.Callable[[~collections.abc.Sequence[~kapps_triplestore_interface.utils.iri.IRI]],</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI]</span> <span class="pre">=</span> <span class="pre">&lt;bound</span> <span class="pre">method</span> <span class="pre">Random.choice</span> <span class="pre">of</span> <span class="pre">&lt;random.Random</span> <span class="pre">object&gt;&gt;,</span> <span class="pre">events:</span> <span class="pre">~jms_kapps.uc2.handover_events.HandoverEvents</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">stopping:</span> <span class="pre">~collections.abc.Callable[[],</span> <span class="pre">bool]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">WarehouseManagementSystem.&lt;lambda&gt;&gt;,</span> <span class="pre">strategy:</span> <span class="pre">~jms_kapps.uc2.strategies.WmsStrategy</span> <span class="pre">=</span> <span class="pre">&lt;jms_kapps.uc2.strategies.RealWmsStrategy</span> <span class="pre">object&gt;,</span> <span class="pre">strategy_name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'real',</span> <span class="pre">new_box:</span> <span class="pre">~collections.abc.Callable[[],</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">new_box_iri&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WarehouseManagementSystem"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WarehouseManagementSystem" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The WarehouseManagementSystem <cite>resource</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> – The WarehouseManagementSystem.</p></li>
+<li><p><strong>graph</strong> – The graph’s answers.</p></li>
+<li><p><strong>records</strong> – Its writes of a box and its transport.</p></li>
+<li><p><strong>call</strong> – A blocking call to a module’s workflow: the origin’s Reserve.</p></li>
+<li><p><strong>notify</strong> – The middleware’s notification of a resource.</p></li>
+<li><p><strong>choose</strong> – Picks a module out of several.</p></li>
+<li><p><strong>events</strong> – Its handover event stream, where a create the store refused is emitted.</p></li>
+<li><p><strong>stopping</strong> – Whether the stop of its process has begun.</p></li>
+<li><p><strong>strategy</strong> – The WMS strategy that picks the origin and the destination of a spawn among
+its candidates, <cite>real</cite> unless a run chooses another (<cite>strategies</cite>).</p></li>
+<li><p><strong>strategy_name</strong> – Its name, which the refusal of a pair it chose outside the candidates
+names.</p></li>
+<li><p><strong>new_box</strong> – Names each box it spawns: a new UUID, unless a test names them otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WarehouseManagementSystem.spawn">
+<span class="sig-name descname"><span class="pre">spawn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.uc2.wms.SpawnBoxRequest" title="jms_kapps.uc2.wms.SpawnBoxRequest"><span class="pre">SpawnBoxRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#jms_kapps.uc2.wms.SpawnBoxResult" title="jms_kapps.uc2.wms.SpawnBoxResult"><span class="pre">SpawnBoxResult</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WarehouseManagementSystem.spawn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WarehouseManagementSystem.spawn" title="Link to this definition">#</a></dt>
+<dd><p>Ask the origin’s Reserve for a new box; once the origin has accepted, create the box
+on it with its transport, and notify it.</p>
+<p>The answer is kept in its memory. So is a spawn that raised, as refused with the error as
+its reason, before the error goes on. Each answer is logged as one record at INFO
+(<cite>spawn_record</cite>): the box spawned, or the spawn refused with why, so that no spawn asked
+for, of the spawn workflow or of the spawn timer, is lost silently.</p>
+<p><strong>Spawns under way at once.</strong> At most as many spawns are under way at once as the
+topology has modules that may be an origin, of the spawn workflow and of the spawn timer
+alike. A spawn asked for at that cap does not start, and is refused with “every origin
+has a spawn under way”. The WMS spawns as fast as the hardware allows, with no wait of its
+own.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WarehouseManagementSystem.transport_ended">
+<span class="sig-name descname"><span class="pre">transport_ended</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WarehouseManagementSystem.transport_ended"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WarehouseManagementSystem.transport_ended" title="Link to this definition">#</a></dt>
+<dd><p>The notification that <cite>transport</cite> has ended: accept a box it holds whose transport is
+done, and log a transport that failed.</p>
+<p>Only a transport that is done, or in a status no notification should bring, makes the
+WarehouseManagementSystem ask the store whether it holds the transport’s box, in one
+<cite>ASK</cite> about that one box: a failed one costs nothing beyond the middleware’s read of the
+transport.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.wms.WarehouseManagementSystem.origins_and_destinations">
+<span class="sig-name descname"><span class="pre">origins_and_destinations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/wms.html#WarehouseManagementSystem.origins_and_destinations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.wms.WarehouseManagementSystem.origins_and_destinations" title="Link to this definition">#</a></dt>
+<dd><p>The modules a spawn may name as its origin, and those it may name as its destination,
+read from the graph: the entry modules and the exit modules where the topology names
+them, and every module for a role it does not name. What the dashboard’s form offers.
+Roles are optional.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="waiting_order.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jms_kapps.uc2.waiting_order</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="wms_dashboard.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jms_kapps.uc2.wms_dashboard</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxRequest"><code class="docutils literal notranslate"><span class="pre">SpawnBoxRequest</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxRequest.origin"><code class="docutils literal notranslate"><span class="pre">SpawnBoxRequest.origin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxRequest.destination"><code class="docutils literal notranslate"><span class="pre">SpawnBoxRequest.destination</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxRequest.model_config"><code class="docutils literal notranslate"><span class="pre">SpawnBoxRequest.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxResult"><code class="docutils literal notranslate"><span class="pre">SpawnBoxResult</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxResult.origin"><code class="docutils literal notranslate"><span class="pre">SpawnBoxResult.origin</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxResult.destination"><code class="docutils literal notranslate"><span class="pre">SpawnBoxResult.destination</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxResult.box"><code class="docutils literal notranslate"><span class="pre">SpawnBoxResult.box</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxResult.operation"><code class="docutils literal notranslate"><span class="pre">SpawnBoxResult.operation</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SpawnBoxResult.model_config"><code class="docutils literal notranslate"><span class="pre">SpawnBoxResult.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsReads"><code class="docutils literal notranslate"><span class="pre">WmsReads</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsReads.boxes_held_by"><code class="docutils literal notranslate"><span class="pre">WmsReads.boxes_held_by()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsReads.holds"><code class="docutils literal notranslate"><span class="pre">WmsReads.holds()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsReads.modules_and_connections"><code class="docutils literal notranslate"><span class="pre">WmsReads.modules_and_connections()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsReads.capability"><code class="docutils literal notranslate"><span class="pre">WmsReads.capability()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsReads.workflow_endpoint"><code class="docutils literal notranslate"><span class="pre">WmsReads.workflow_endpoint()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsWrites"><code class="docutils literal notranslate"><span class="pre">WmsWrites</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsWrites.open"><code class="docutils literal notranslate"><span class="pre">WmsWrites.open()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WmsWrites.fail"><code class="docutils literal notranslate"><span class="pre">WmsWrites.fail()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.seeded_choice"><code class="docutils literal notranslate"><span class="pre">seeded_choice()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.create_refused"><code class="docutils literal notranslate"><span class="pre">create_refused()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.spawn_candidates"><code class="docutils literal notranslate"><span class="pre">spawn_candidates()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.taken_back_record"><code class="docutils literal notranslate"><span class="pre">taken_back_record()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.TAKEN_BACK"><code class="docutils literal notranslate"><span class="pre">TAKEN_BACK</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.spawned_record"><code class="docutils literal notranslate"><span class="pre">spawned_record()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.SPAWNED"><code class="docutils literal notranslate"><span class="pre">SPAWNED</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.refused_record"><code class="docutils literal notranslate"><span class="pre">refused_record()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.spawn_record"><code class="docutils literal notranslate"><span class="pre">spawn_record()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.EVERY_ORIGIN_BUSY"><code class="docutils literal notranslate"><span class="pre">EVERY_ORIGIN_BUSY</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WarehouseManagementSystem"><code class="docutils literal notranslate"><span class="pre">WarehouseManagementSystem</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WarehouseManagementSystem.spawn"><code class="docutils literal notranslate"><span class="pre">WarehouseManagementSystem.spawn()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WarehouseManagementSystem.transport_ended"><code class="docutils literal notranslate"><span class="pre">WarehouseManagementSystem.transport_ended()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.wms.WarehouseManagementSystem.origins_and_destinations"><code class="docutils literal notranslate"><span class="pre">WarehouseManagementSystem.origins_and_destinations()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/uc2/wms.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

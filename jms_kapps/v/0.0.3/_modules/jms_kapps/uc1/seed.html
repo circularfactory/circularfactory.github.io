@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc1.seed &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc1/seed';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc1.seed</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc1.seed</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What use case 1 finds in the graph before any participant starts.</span>
+
+<span class="sd">Two recovered angle grinders, the Screw in each, the model the grinders are, the Screw type that</span>
+<span class="sd">model is built with, and how the screwing resource replays a recording for each Screw. The planner</span>
+<span class="sd">offers the Screws, the screwing resource makes the attempts, the detector classifies them against</span>
+<span class="sd">this Screw type's thresholds, and the learner refines them.</span>
+
+<span class="sd">Two grinders, because a demonstration should show more than one, and the few existing recordings</span>
+<span class="sd">are enough for each: the demo names two grinders with two Screws and replays its two recordings,</span>
+<span class="sd">one per Screw. So one run shows both exits of an attempt, `ScrewIntact` and `MissingScrew`.</span>
+
+<span class="sd">**Every value here is an example value, fitted to the two example recordings, and none of it is</span>
+<span class="sd">measured.** The thresholds are fitted to the two</span>
+<span class="sd">recordings the paper's artifact ships (`data/unscrewing_timeseries/`), which are the only</span>
+<span class="sd">unscrewing data use case 1 has: with them the recording `success` classifies as `ScrewIntact` and</span>
+<span class="sd">`missing_screw` as `MissingScrew`, which is what a demonstration must show. Thresholds that do not</span>
+<span class="sd">fit those recordings make the demo report `HeadOccluded` for a good screw and raise on the missing</span>
+<span class="sd">one, because the screw-head band then sits where the recording never touches and the preload is</span>
+<span class="sd">reached only at the last sample. `test_uc1_seed.py` holds both facts as tests. Milestone 2 replaces</span>
+<span class="sd">all of them with values measured on the real cell.</span>
+
+<span class="sd">The seed keeps `hasMinLooseningAxialForce` above `hasMinPreloadAxialForce`, so that a force held at</span>
+<span class="sd">the preload level is not read as a rise.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">ClassScope</span><span class="p">,</span> <span class="n">Create</span><span class="p">,</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CORE_NS</span><span class="p">,</span> <span class="n">INF</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">TripleStore</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_asset</span><span class="p">,</span> <span class="n">reset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.scope_log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_scope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">JMS</span><span class="p">,</span> <span class="n">JMS_NS</span><span class="p">,</span> <span class="n">READWRITE</span><span class="p">,</span> <span class="n">ROBOT_PARAMETERS</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># The demo's two grinders, their two Screws and the model they are. The paper names the grinder of</span>
+<span class="c1"># its traceability chain `ex:AngleGrinder_099`; this is that grinder.</span>
+<span class="n">GRINDER</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Grinder099"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">GRINDER_2</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Grinder100"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">SCREW</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Screw1"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">SCREW_2</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Screw2"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">PRODUCT_TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"AG1"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+
+<span class="c1"># The demo's grinders, which `jms-uc1` passes to the planner.</span>
+<span class="n">GRINDERS</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">GRINDER</span><span class="p">,</span> <span class="n">GRINDER_2</span><span class="p">)</span>
+
+<span class="c1"># What `jms-uc1 infeasible-operation` seeds besides the demo: a Screw type that holds none of the</span>
+<span class="c1"># seven values an attempt needs, a model that expects it, a Screw of that type and a grinder that</span>
+<span class="c1"># contains the Screw. The planner offers the Screw like any other, and the store refuses the</span>
+<span class="c1"># unscrewing operation the planner issues for it. A normal launch seeds none of it.</span>
+<span class="n">UNMEASURED_SCREW_TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"M3"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">UNMEASURED_PRODUCT_TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"AG2"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">UNMEASURED_SCREW</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Screw3"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">UNMEASURED_GRINDER</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Grinder101"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+
+<span class="n">_RDF_TYPE</span> <span class="o">=</span> <span class="s2">"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"</span>
+<span class="n">_RDFS_LABEL</span> <span class="o">=</span> <span class="s2">"http://www.w3.org/2000/01/rdf-schema#label"</span>
+
+<span class="c1"># Which example recording the screwing resource replays for each demo Screw, so that one run</span>
+<span class="c1"># shows both exits, ScrewIntact and MissingScrew. It lives here, not in the graph, because a</span>
+<span class="c1"># recording is the demo's stand-in for the robot, not a fact about the Screw.</span>
+<span class="n">RECORDING_OF</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">SCREW</span><span class="p">:</span> <span class="s2">"success"</span><span class="p">,</span> <span class="n">SCREW_2</span><span class="p">:</span> <span class="s2">"missing_screw"</span><span class="p">}</span>
+
+<span class="c1"># Core's three links the grinder carries, and the class of its model. The middleware's vocabulary</span>
+<span class="c1"># names only the Core terms its own code uses, and none of these is one of them, so each is built</span>
+<span class="c1"># from the namespace the middleware exports rather than spelled out here. The model is one</span>
+<span class="c1"># individual, AG1, that is both the product type and the assembly type of the grinders: the grinder</span>
+<span class="c1"># names it with `cfc:hasProductType` and with `cfc:hasAssemblyType`. AG1's only explicit class is</span>
+<span class="c1"># the assembly type, which carries the design. By Core's range of `cfc:hasProductType` it is also a</span>
+<span class="c1"># product type for a reasoner that applies `rdfs:range`; the demo store's ruleset</span>
+<span class="c1"># (rdfsplus-optimized) does not materialize range conclusions. The mapper takes an instance's class from its explicit types, so a later</span>
+<span class="c1"># update of AG1 still finds `:hasExpectedScrewType`.</span>
+<span class="n">CONTAINS_WORKPIECE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"containsWorkpiece"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">CORE_NS</span><span class="p">)</span>
+<span class="n">HAS_PRODUCT_TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"hasProductType"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">CORE_NS</span><span class="p">)</span>
+<span class="n">HAS_ASSEMBLY_TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"hasAssemblyType"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">CORE_NS</span><span class="p">)</span>
+<span class="n">CORE_ASSEMBLY_TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"AssemblyType"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">CORE_NS</span><span class="p">)</span>
+
+<span class="c1"># `:M4`'s thresholds. Example values, fitted to the two example recordings. The preload is reached at the</span>
+<span class="c1"># first preparation sample, so the turn after it holds the second, whose force meets the loosening</span>
+<span class="c1"># minimum: the `success` recording passes every node. A preload of 1.0 is reached only at the last</span>
+<span class="c1"># sample, leaving no turn to measure, and the attempt then exits at `LooseAnchor`.</span>
+<span class="n">M4_VALUES</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinApproachAxialForce</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinCounterTorque</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinPreloadAxialForce</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinLooseningAxialForce</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxLooseTorque</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxDynamicTorque</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasPreparationTurningAngle</span><span class="p">:</span> <span class="mf">30.0</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># The Screw's placement values, which belong to where this screw sits and not to its type. Example</span>
+<span class="c1"># values, fitted to the two example recordings. The approach of both ends at 0.0, so the screw-head band holds 0.0 and</span>
+<span class="c1"># the depth limit lies above it: the `success` recording touches the head inside the band, and the</span>
+<span class="c1"># approach of `missing_screw`, which touches nothing, crosses the limit and reads as a missing</span>
+<span class="c1"># screw instead of raising. The fitted placement fits both recordings, so both Screws share it.</span>
+<span class="n">PLACEMENT_VALUES</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinApproachPosition</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinScrewHeadPosition</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxScrewHeadPosition</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># The screwing resource, which `run_core` writes with its label, and its robot, which the seed</span>
+<span class="c1"># writes. The robot's controller speaks only MQTT; the robot controller stand-in</span>
+<span class="c1"># (`robot_controller`) takes its place, on the same broker and the same topics.</span>
+<span class="n">SCREWING_RESOURCE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"ScrewingResource1"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+<span class="n">ROBOT</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"Robot1"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">JMS_NS</span><span class="p">)</span>
+
+<span class="c1"># The standard deviation with which the robot takes its position readings, in mm along the y axis</span>
+<span class="c1"># of the robot frame. An example value and an assumption, as every value here: chosen against the</span>
+<span class="c1"># screw-head band of `PLACEMENT_VALUES` (-0.5 to 0.5 mm), which it puts five standard deviations</span>
+<span class="c1"># from 0.0 on each side. It is a description of the robot in the graph, not one of its MQTT</span>
+<span class="c1"># parameters.</span>
+<span class="n">POSITION_STANDARD_DEVIATION</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="c1"># The broker that carries every parameter of the robot. The screwing resource's middleware</span>
+<span class="c1"># instance brings it up at this address when it builds its connectors (`mqtt_broker`), and the</span>
+<span class="c1"># stand-in is started with it. The port is the use case's own: not 1883, and not a port of the</span>
+<span class="c1"># TransferUnit demo or of the middleware's test suite.</span>
+<span class="n">MQTT_BROKER_IP</span> <span class="o">=</span> <span class="s2">"127.0.0.1"</span>
+<span class="n">MQTT_BROKER_PORT</span> <span class="o">=</span> <span class="mi">18860</span>
+
+<span class="c1"># The key of a payload of the robot that holds the value. Each payload is a JSON object.</span>
+<span class="n">MQTT_VALUE_PATH</span> <span class="o">=</span> <span class="s2">"v"</span>
+
+
+<div class="viewcode-block" id="mqtt_topic">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.mqtt_topic">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mqtt_topic</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The topic on which the robot publishes `parameter`: `Robot1/&lt;its local name&gt;`."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">ROBOT</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+
+<div class="viewcode-block" id="mqtt_set_topic">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.mqtt_set_topic">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mqtt_set_topic</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The topic to which a client publishes a new value of `parameter`: its topic, then `/set`."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mqtt_topic</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span><span class="si">}</span><span class="s2">/set"</span></div>
+
+
+
+<div class="viewcode-block" id="robot_parameter_node">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.robot_parameter_node">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">robot_parameter_node</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The node of `parameter` in the graph: how it is reached, and whether a client may set it.</span>
+
+<span class="sd">    The node carries no value. The value is the robot's, and it reaches the screwing resource's</span>
+<span class="sd">    data model over MQTT, not through the graph.</span>
+<span class="sd">    """</span>
+    <span class="n">readwrite</span> <span class="o">=</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="n">READWRITE</span>
+    <span class="n">node</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">accessMode</span><span class="p">):</span> <span class="p">[</span><span class="s2">"readwrite"</span> <span class="k">if</span> <span class="n">readwrite</span> <span class="k">else</span> <span class="s2">"read"</span><span class="p">],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTTopic</span><span class="p">):</span> <span class="p">[</span><span class="n">mqtt_topic</span><span class="p">(</span><span class="n">parameter</span><span class="p">)],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTBrokerIP</span><span class="p">):</span> <span class="p">[</span><span class="n">MQTT_BROKER_IP</span><span class="p">],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTBrokerPort</span><span class="p">):</span> <span class="p">[</span><span class="n">MQTT_BROKER_PORT</span><span class="p">],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTValuePath</span><span class="p">):</span> <span class="p">[</span><span class="n">MQTT_VALUE_PATH</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">readwrite</span><span class="p">:</span>
+        <span class="n">node</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">INF</span><span class="o">.</span><span class="n">hasMQTTSetTopic</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">mqtt_set_topic</span><span class="p">(</span><span class="n">parameter</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">node</span></div>
+
+
+
+<div class="viewcode-block" id="unmeasured_screw_type_turtle">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.unmeasured_screw_type_turtle">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">unmeasured_screw_type_turtle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The Turtle of `UNMEASURED_SCREW_TYPE`: a `:ScrewType` with its label and none of the seven</span>
+<span class="sd">    values, declared as the ontology declares `:M4`.</span>
+
+<span class="sd">    Full IRIs and no prefixes, because the store keeps a prefix that an import declares.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">UNMEASURED_SCREW_TYPE</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">_RDF_TYPE</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">JMS</span><span class="o">.</span><span class="n">ScrewType</span><span class="si">}</span><span class="s2">&gt; ; "</span>
+        <span class="sa">f</span><span class="s1">'&lt;</span><span class="si">{</span><span class="n">_RDFS_LABEL</span><span class="si">}</span><span class="s1">&gt; "</span><span class="si">{</span><span class="n">UNMEASURED_SCREW_TYPE</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s1">"@en .</span><span class="se">\n</span><span class="s1">'</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="uc1_ontology">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.uc1_ontology">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">uc1_ontology</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Use case 1's ontology and its uncertainty module, as the one Turtle document a reset loads.</span>
+
+<span class="sd">    The module follows the ontology, which sets a base and the empty prefix; the module names its</span>
+<span class="sd">    terms by its own prefix and by absolute IRIs only, so the two join as text.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">read_asset</span><span class="p">(</span><span class="s2">"jms_kapps.uc1"</span><span class="p">,</span> <span class="s2">"ontology"</span><span class="p">,</span> <span class="s2">"integration_usecase.ttl"</span><span class="p">)</span>
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="o">+</span> <span class="n">read_asset</span><span class="p">(</span><span class="s2">"jms_kapps.uc1"</span><span class="p">,</span> <span class="s2">"ontology"</span><span class="p">,</span> <span class="s2">"uncertainty.ttl"</span><span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="reset_uc1">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.reset_uc1">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reset_uc1</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">individuals</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Empty the dataset and load use case 1's ontology with its uncertainty module</span>
+<span class="sd">    (`uc1_ontology`) and its shapes, then `individuals`.</span>
+
+<span class="sd">    The shapes are `shapes/integration_usecase_shapes.ttl`: the parameter-copy shape, the PROV</span>
+<span class="sd">    witness on the decision, which makes the store refuse a parameter copy that does not name</span>
+<span class="sd">    the classification that generated it; the capability shape, which makes the store refuse</span>
+<span class="sd">    a capability that does not belong to exactly one resource; and the unscrewing operation</span>
+<span class="sd">    shape, which makes the store refuse an unscrewing operation whose Screw's Screw type does</span>
+<span class="sd">    not hold each of the seven values an attempt needs. Then the shapes of a measured position:</span>
+<span class="sd">    a random variable has exactly one distribution, a Gaussian-mixture literal whose six fields</span>
+<span class="sd">    come in their order, and exactly one value domain; a Screw has at most one measured head</span>
+<span class="sd">    position and at most one variable of it; an unscrewing operation has at most one variable of</span>
+<span class="sd">    its approach end position. `reset` adds the middleware's operation-status shape to them.</span>
+<span class="sd">    """</span>
+    <span class="n">reset</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="n">ontology</span><span class="o">=</span><span class="n">uc1_ontology</span><span class="p">(),</span>
+        <span class="n">shapes</span><span class="o">=</span><span class="n">read_asset</span><span class="p">(</span><span class="s2">"jms_kapps.uc1"</span><span class="p">,</span> <span class="s2">"shapes"</span><span class="p">,</span> <span class="s2">"integration_usecase_shapes.ttl"</span><span class="p">),</span>
+        <span class="n">individuals</span><span class="o">=</span><span class="n">individuals</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">class_iri</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">instance</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Create `instance` with all of `data` in one validated write."""</span>
+    <span class="n">scope</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">([[</span><span class="n">IRI</span><span class="p">(</span><span class="n">prop</span><span class="p">)]</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+    <span class="n">log_scope</span><span class="p">(</span>
+        <span class="n">logger</span><span class="p">,</span>
+        <span class="s2">"Seed"</span><span class="p">,</span>
+        <span class="s2">"writes"</span><span class="p">,</span>
+        <span class="n">instance</span><span class="p">,</span>
+        <span class="s2">"its own scope"</span><span class="p">,</span>
+        <span class="n">scope</span><span class="p">,</span>
+        <span class="s2">"it writes exactly the properties it seeds"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ogm</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+        <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+        <span class="n">class_scope</span><span class="o">=</span><span class="n">scope</span><span class="p">,</span>
+        <span class="n">persist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="c1"># What the seed reads of a grinder to give its Screws their type: the Screws it contains, and the</span>
+<span class="c1"># Screw type that its model, its assembly type, expects.</span>
+<span class="n">DESIGN_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[[</span><span class="n">CONTAINS_WORKPIECE</span><span class="p">],</span> <span class="p">[</span><span class="n">HAS_ASSEMBLY_TYPE</span><span class="p">,</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasExpectedScrewType</span><span class="p">]]</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="seed_demo">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.seed_demo">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">seed_demo</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">unmeasured_screw_type</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write the demo's two grinders, their Screws, their model and the values of the Screw type</span>
+<span class="sd">    it is built with, then give each Screw the Screw type its grinder's model expects.</span>
+
+<span class="sd">    In that order, so that each link names something the graph already holds: the Screw type's</span>
+<span class="sd">    values, then the model that expects the type, then the Screws with their placement values,</span>
+<span class="sd">    then the grinders that contain the Screws and name the model.</span>
+
+<span class="sd">    **A Screw's own `:hasScrewType` is not seeded as a value.** It is the record of this screw,</span>
+<span class="sd">    taken from the design: the seed reads, for each grinder, the Screw type that its</span>
+<span class="sd">    assembly type expects (`:hasExpectedScrewType`), and writes it to each Screw the grinder contains</span>
+<span class="sd">    (`_record_from_the_design`). So the record follows the design in the graph, and a change of</span>
+<span class="sd">    the design changes the next seed's records.</span>
+
+<span class="sd">    Both Screws share `PLACEMENT_VALUES`, which fit both recordings, and both grinders share the</span>
+<span class="sd">    model. The recordings are not a fact about a Screw, but the demo's stand-in for the robot, so</span>
+<span class="sd">    which recording each Screw replays lives in `RECORDING_OF`, not in the graph.</span>
+
+<span class="sd">    `:M4` is **updated**, not created: the ontology declares it, with no values</span>
+<span class="sd">    (`test_uc1_ontology.py`), and the values are what a seed adds.</span>
+
+<span class="sd">    With `unmeasured_screw_type`, it also writes the model `UNMEASURED_PRODUCT_TYPE`, which</span>
+<span class="sd">    expects the Screw type `UNMEASURED_SCREW_TYPE`, the Screw `UNMEASURED_SCREW` with</span>
+<span class="sd">    `PLACEMENT_VALUES`, and the grinder `UNMEASURED_GRINDER` that contains it, and gives the Screw</span>
+<span class="sd">    its Screw type from the design. The Screw type itself holds no value: the caller declares it</span>
+<span class="sd">    in the reset's individuals (`unmeasured_screw_type_turtle`), as the ontology declares `:M4`.</span>
+<span class="sd">    The Screw has no recording, because the store refuses its operation before the screwing</span>
+<span class="sd">    resource is notified.</span>
+<span class="sd">    """</span>
+    <span class="n">ogm</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+        <span class="n">instance_iri</span><span class="o">=</span><span class="n">JMS</span><span class="o">.</span><span class="n">M4</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">M4_VALUES</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+    <span class="p">)</span>
+    <span class="n">_create</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span>
+        <span class="n">CORE_ASSEMBLY_TYPE</span><span class="p">,</span>
+        <span class="n">PRODUCT_TYPE</span><span class="p">,</span>
+        <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasExpectedScrewType</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">M4</span><span class="p">)}]},</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">screw</span> <span class="ow">in</span> <span class="p">(</span><span class="n">SCREW</span><span class="p">,</span> <span class="n">SCREW_2</span><span class="p">):</span>
+        <span class="n">_create</span><span class="p">(</span>
+            <span class="n">ogm</span><span class="p">,</span>
+            <span class="n">JMS</span><span class="o">.</span><span class="n">Screw</span><span class="p">,</span>
+            <span class="n">screw</span><span class="p">,</span>
+            <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">PLACEMENT_VALUES</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+        <span class="p">)</span>
+    <span class="k">for</span> <span class="n">grinder</span><span class="p">,</span> <span class="n">screw</span> <span class="ow">in</span> <span class="p">((</span><span class="n">GRINDER</span><span class="p">,</span> <span class="n">SCREW</span><span class="p">),</span> <span class="p">(</span><span class="n">GRINDER_2</span><span class="p">,</span> <span class="n">SCREW_2</span><span class="p">)):</span>
+        <span class="n">_create</span><span class="p">(</span>
+            <span class="n">ogm</span><span class="p">,</span>
+            <span class="n">JMS</span><span class="o">.</span><span class="n">AngleGrinder</span><span class="p">,</span>
+            <span class="n">grinder</span><span class="p">,</span>
+            <span class="p">{</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">CONTAINS_WORKPIECE</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">screw</span><span class="p">)}],</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">HAS_PRODUCT_TYPE</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">PRODUCT_TYPE</span><span class="p">)}],</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">HAS_ASSEMBLY_TYPE</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">PRODUCT_TYPE</span><span class="p">)}],</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+    <span class="k">for</span> <span class="n">grinder</span> <span class="ow">in</span> <span class="n">GRINDERS</span><span class="p">:</span>
+        <span class="n">_record_from_the_design</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">grinder</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">unmeasured_screw_type</span><span class="p">:</span>
+        <span class="n">_seed_unmeasured_screw_type</span><span class="p">(</span><span class="n">ogm</span><span class="p">)</span>
+    <span class="n">seed_robot</span><span class="p">(</span><span class="n">ogm</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_seed_unmeasured_screw_type</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write the model that expects `UNMEASURED_SCREW_TYPE`, its Screw and its grinder, in the</span>
+<span class="sd">    order of `seed_demo`, and give the Screw its Screw type from the design."""</span>
+    <span class="n">_create</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span>
+        <span class="n">CORE_ASSEMBLY_TYPE</span><span class="p">,</span>
+        <span class="n">UNMEASURED_PRODUCT_TYPE</span><span class="p">,</span>
+        <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasExpectedScrewType</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">UNMEASURED_SCREW_TYPE</span><span class="p">)}]},</span>
+    <span class="p">)</span>
+    <span class="n">_create</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span>
+        <span class="n">JMS</span><span class="o">.</span><span class="n">Screw</span><span class="p">,</span>
+        <span class="n">UNMEASURED_SCREW</span><span class="p">,</span>
+        <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="k">for</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">PLACEMENT_VALUES</span><span class="o">.</span><span class="n">items</span><span class="p">()},</span>
+    <span class="p">)</span>
+    <span class="n">_create</span><span class="p">(</span>
+        <span class="n">ogm</span><span class="p">,</span>
+        <span class="n">JMS</span><span class="o">.</span><span class="n">AngleGrinder</span><span class="p">,</span>
+        <span class="n">UNMEASURED_GRINDER</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">CONTAINS_WORKPIECE</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">UNMEASURED_SCREW</span><span class="p">)}],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">HAS_PRODUCT_TYPE</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">UNMEASURED_PRODUCT_TYPE</span><span class="p">)}],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">HAS_ASSEMBLY_TYPE</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">UNMEASURED_PRODUCT_TYPE</span><span class="p">)}],</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">_record_from_the_design</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">UNMEASURED_GRINDER</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="seed_robot">
+<a class="viewcode-back" href="../../../reference/uc1/seed.html#jms_kapps.uc1.seed.seed_robot">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">seed_robot</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write the robot of the screwing resource, with a node for each of its parameters and the</span>
+<span class="sd">    standard deviation of its position readings, and link the two in both directions.</span>
+
+<span class="sd">    The screwing resource must be in the graph already: `run_core` writes it, of the class</span>
+<span class="sd">    `:ScrewingResource`. Both links are written, and not left to the store's inference of the</span>
+<span class="sd">    inverse, because the middleware finds a resource's components and their parameters only in</span>
+<span class="sd">    the triples that are written.</span>
+
+<span class="sd">    Both links go in one commit: the update of the resource and the creation of the robot. The</span>
+<span class="sd">    mapper reads the resource before it writes, and its read includes inferred links. A separate</span>
+<span class="sd">    update after the robot's creation would read `:hasRobot` as the store already infers it from</span>
+<span class="sd">    `:isRobotOf`, find nothing to change, and write nothing. Then the link exists only by</span>
+<span class="sd">    inference, and the middleware finds no robot below the resource. In one commit, the read</span>
+<span class="sd">    comes before the robot exists, so the update writes the link.</span>
+<span class="sd">    """</span>
+    <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">isRobotOf</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">SCREWING_RESOURCE</span><span class="p">)}],</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasPositionStandardDeviation</span><span class="p">):</span> <span class="p">[</span><span class="n">POSITION_STANDARD_DEVIATION</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="n">ROBOT_PARAMETERS</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">parameter</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">robot_parameter_node</span><span class="p">(</span><span class="n">parameter</span><span class="p">)]</span>
+    <span class="n">scope</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">([[</span><span class="n">IRI</span><span class="p">(</span><span class="n">prop</span><span class="p">)]</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+    <span class="n">log_scope</span><span class="p">(</span>
+        <span class="n">logger</span><span class="p">,</span>
+        <span class="s2">"Seed"</span><span class="p">,</span>
+        <span class="s2">"writes"</span><span class="p">,</span>
+        <span class="n">ROBOT</span><span class="p">,</span>
+        <span class="s2">"its own scope"</span><span class="p">,</span>
+        <span class="n">scope</span><span class="p">,</span>
+        <span class="s2">"it writes exactly the properties it seeds"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ogm</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+        <span class="n">changes</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">Update</span><span class="p">(</span>
+                <span class="n">instance_iri</span><span class="o">=</span><span class="n">SCREWING_RESOURCE</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasRobot</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">ROBOT</span><span class="p">)}]},</span>
+            <span class="p">),</span>
+            <span class="n">Create</span><span class="p">(</span>
+                <span class="n">class_iri</span><span class="o">=</span><span class="n">JMS</span><span class="o">.</span><span class="n">Robot</span><span class="p">,</span>
+                <span class="n">instance_iri</span><span class="o">=</span><span class="n">ROBOT</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+                <span class="n">class_scope</span><span class="o">=</span><span class="n">scope</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_record_from_the_design</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">grinder</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Give each Screw that `grinder` contains the Screw type that the grinder's assembly type</span>
+<span class="sd">    expects, as the Screw's own `:hasScrewType`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If the grinder's assembly type expects no Screw type, or more than one.</span>
+<span class="sd">    """</span>
+    <span class="n">log_scope</span><span class="p">(</span>
+        <span class="n">logger</span><span class="p">,</span>
+        <span class="s2">"Seed"</span><span class="p">,</span>
+        <span class="s2">"reads"</span><span class="p">,</span>
+        <span class="n">grinder</span><span class="p">,</span>
+        <span class="s2">"DESIGN_SCOPE"</span><span class="p">,</span>
+        <span class="n">DESIGN_SCOPE</span><span class="p">,</span>
+        <span class="s2">"it wants the Screws the grinder contains (containsWorkpiece) and the Screw type its "</span>
+        <span class="s2">"assembly type expects (hasAssemblyType, then hasExpectedScrewType)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">grinder</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">DESIGN_SCOPE</span><span class="p">)</span><span class="o">.</span><span class="n">data</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">expected</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">_id</span><span class="p">(</span><span class="n">screw_type</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">assembly_type</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">HAS_ASSEMBLY_TYPE</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">for</span> <span class="n">screw_type</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">assembly_type</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">JMS</span><span class="o">.</span><span class="n">hasExpectedScrewType</span><span class="p">,</span> <span class="p">[]</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">grinder</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">'s assembly type expects </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">expected</span><span class="p">)</span><span class="si">}</span><span class="s2"> Screw types; the seed "</span>
+            <span class="s2">"gives a Screw the one it expects"</span>
+        <span class="p">)</span>
+    <span class="p">(</span><span class="n">screw_type</span><span class="p">,)</span> <span class="o">=</span> <span class="n">expected</span>
+    <span class="k">for</span> <span class="n">screw</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">CONTAINS_WORKPIECE</span><span class="p">,</span> <span class="p">[]):</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">"Seed: </span><span class="si">%s</span><span class="s2"> gets hasScrewType </span><span class="si">%s</span><span class="s2">, the Screw type that </span><span class="si">%s</span><span class="s2">'s assembly type expects"</span><span class="p">,</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">screw</span><span class="p">))</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">screw_type</span><span class="p">)</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">grinder</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">ogm</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span>
+            <span class="n">instance_iri</span><span class="o">=</span><span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">screw</span><span class="p">)),</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewType</span><span class="p">):</span> <span class="p">[{</span><span class="s2">"id"</span><span class="p">:</span> <span class="n">screw_type</span><span class="p">}]},</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_id</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The IRI of a linked value, which the mapper gives as a node with an `id`."""</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

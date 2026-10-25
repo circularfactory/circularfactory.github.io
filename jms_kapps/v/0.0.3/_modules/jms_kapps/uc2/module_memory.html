@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.module_memory &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/module_memory';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.module_memory</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.module_memory</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What one FlexConveyorModule knows of its own work, kept in its memory.</span>
+
+<span class="sd">Its dashboard renders this memory and the module's fault switches, and nothing else, so an open tab</span>
+<span class="sd">causes no load: no read of the graph and no call to a peer. The module writes it as it works, from</span>
+<span class="sd">what it reads and answers for its work anyway: its decisions, with the connections each one read</span>
+<span class="sd">and the Reserve refusals that followed, and the box it holds. Its process adds one read of its</span>
+<span class="sd">own when the module starts: the connections, so that the dashboard draws them before the first</span>
+<span class="sd">decision, and the boxes the module possesses, so that a restarted module shows the box it holds.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">replace</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectedConnection</span><span class="p">,</span> <span class="n">StartRead</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.handshake</span><span class="w"> </span><span class="kn">import</span> <span class="n">Refusal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.transport</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transport</span>
+
+<span class="c1"># How many decisions it keeps: the newest.</span>
+<span class="n">KEPT_DECISIONS</span> <span class="o">=</span> <span class="mi">20</span>
+
+
+<div class="viewcode-block" id="Decision">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.Decision">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Decision</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where the module decided to send a box, and when.</span>
+
+<span class="sd">    `next_module` is the module it chose, or None where it chose none: the box is on its</span>
+<span class="sd">    destination, or no path leads there. `ties` are the modules it could also have chosen, on a</span>
+<span class="sd">    shortest path as short, which lost to the lowest IRI, or to the module reserved ahead.</span>
+<span class="sd">    `refusals` are the Reserve refusals of the next module that followed, in order. `detour` is</span>
+<span class="sd">    the one other module it would try when the next module declines, `detour_refusals` that</span>
+<span class="sd">    module's refusals, and `detoured` whether the box went there. `retries` counts the times it</span>
+<span class="sd">    waited and asked again.</span>
+<span class="sd">    """</span>
+
+    <span class="n">at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">next_module</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">ties</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">refusals</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Refusal</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">detour</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">detour_refusals</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Refusal</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">detoured</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="ConnectionsRead">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ConnectionsRead">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ConnectionsRead</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The station's connections as the module read them, and when: for its decision on `box`, or</span>
+<span class="sd">    when it started if `box` is None."""</span>
+
+    <span class="n">at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">connections</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ModuleMemory">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ModuleMemory</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What a module knows of its own work: its newest decisions, the connections it read last,</span>
+<span class="sd">    and the box it holds.</span>
+
+<span class="sd">    It holds a box from the moment it knows it possesses the box: its start read finds the box in</span>
+<span class="sd">    its possession; its Receive confirms the box's arrival, after the giving module's handover</span>
+<span class="sd">    committed the change of possession; the bound of its reservation finds the box in its</span>
+<span class="sd">    possession, though no Receive came; or, at the origin, the store admits the box's transport</span>
+<span class="sd">    `running`, which it does only while a FlexConveyorModule possesses the box, and the</span>
+<span class="sd">    WarehouseManagementSystem created the box on the origin before it notified it. A transport</span>
+<span class="sd">    merely assigned to the module is no such knowledge. It holds the box until the move of the</span>
+<span class="sd">    box off it has ended, so during a move the box is still the giving module's here, where the</span>
+<span class="sd">    graph already names the receiving module its possessor.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># A decision is kept on the thread of the module's BoxTransportWorkflow, and a render reads</span>
+        <span class="c1"># on one of its own.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decisions</span><span class="p">:</span> <span class="n">deque</span><span class="p">[</span><span class="n">Decision</span><span class="p">]</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="n">KEPT_DECISIONS</span><span class="p">)</span>
+        <span class="c1"># How many decisions it made, the ones it no longer keeps included.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_decided</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span><span class="p">:</span> <span class="n">ConnectionsRead</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_held</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="ModuleMemory.decided">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.decided">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decided</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">transport</span><span class="p">:</span> <span class="n">Transport</span><span class="p">,</span>
+        <span class="n">choices</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span>
+        <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">detour</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Keep a decision on the box of `transport`, made now: `choices` are the modules first on</span>
+<span class="sd">        a shortest path to its destination, the one chosen first, `connections` what it read to</span>
+<span class="sd">        decide, if it read them, and `detour` the module it would try when the first declines."""</span>
+        <span class="n">at</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">astimezone</span><span class="p">()</span>
+        <span class="n">decision</span> <span class="o">=</span> <span class="n">Decision</span><span class="p">(</span>
+            <span class="n">at</span><span class="o">=</span><span class="n">at</span><span class="p">,</span>
+            <span class="n">box</span><span class="o">=</span><span class="n">transport</span><span class="o">.</span><span class="n">box</span><span class="p">,</span>
+            <span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="o">.</span><span class="n">operation</span><span class="p">,</span>
+            <span class="n">destination</span><span class="o">=</span><span class="n">transport</span><span class="o">.</span><span class="n">destination</span><span class="p">,</span>
+            <span class="n">next_module</span><span class="o">=</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">choices</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">ties</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">choices</span><span class="p">[</span><span class="mi">1</span><span class="p">:]),</span>
+            <span class="n">detour</span><span class="o">=</span><span class="n">detour</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_decisions</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="n">decision</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_decided</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">connections</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span> <span class="o">=</span> <span class="n">ConnectionsRead</span><span class="p">(</span>
+                    <span class="n">at</span><span class="p">,</span> <span class="n">transport</span><span class="o">.</span><span class="n">box</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">connections</span><span class="p">)</span>
+                <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.refused">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.refused">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">refused</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">refusal</span><span class="p">:</span> <span class="n">Refusal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Keep a refusal of the next module's Reserve for `box`, which the module answers by its</span>
+<span class="sd">        detour or by asking again, on its newest decision on `box`. A refusal with no decision on</span>
+<span class="sd">        `box` is not kept."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_change</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">replace</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">refusals</span><span class="o">=</span><span class="p">(</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">refusals</span><span class="p">,</span> <span class="n">refusal</span><span class="p">)))</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.detour_refused">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.detour_refused">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">detour_refused</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">refusal</span><span class="p">:</span> <span class="n">Refusal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Keep a refusal of the detour's Reserve for `box` on its newest decision on `box`."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_change</span><span class="p">(</span>
+            <span class="n">box</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">replace</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">detour_refusals</span><span class="o">=</span><span class="p">(</span><span class="o">*</span><span class="n">d</span><span class="o">.</span><span class="n">detour_refusals</span><span class="p">,</span> <span class="n">refusal</span><span class="p">))</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.detoured">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.detoured">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">detoured</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""`box` takes the detour of its newest decision."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_change</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">replace</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">detoured</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.waited">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.waited">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">waited</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The module waits the retry time, and then asks again for `box`."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_change</span><span class="p">(</span><span class="n">box</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">replace</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="n">d</span><span class="o">.</span><span class="n">retries</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">change</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Decision</span><span class="p">],</span> <span class="n">Decision</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Change the newest decision on `box` with `change`; nothing if there is none."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">decision</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_decisions</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">decision</span><span class="o">.</span><span class="n">box</span> <span class="o">==</span> <span class="n">box</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_decisions</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">change</span><span class="p">(</span><span class="n">decision</span><span class="p">)</span>
+                    <span class="k">return</span>
+
+<div class="viewcode-block" id="ModuleMemory.read_at_start">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.read_at_start">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">read_at_start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">read</span><span class="p">:</span> <span class="n">StartRead</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Keep what the module read when it started: the connections, until it reads them to</span>
+<span class="sd">        decide, and the box it possesses, if the graph names one. The connections are for its</span>
+<span class="sd">        dashboard alone: every decision reads them again."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span> <span class="o">=</span> <span class="n">ConnectionsRead</span><span class="p">(</span>
+                <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(),</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">read</span><span class="o">.</span><span class="n">connections</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">read</span><span class="o">.</span><span class="n">held</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_held</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">held</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.holding">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.holding">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">holding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""It holds `box`: the box is on it."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_held</span> <span class="o">=</span> <span class="n">box</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.gone">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.gone">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">gone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""`box` has moved off it."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_held</span> <span class="o">==</span> <span class="n">box</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_held</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.held">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.held">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">held</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The box it holds, if it holds one."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_held</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.decisions">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.decisions">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decisions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Decision</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The decisions it keeps, newest first."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_decisions</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.decision_count">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.decision_count">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">decision_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""How many decisions it made, the ones it no longer keeps included."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decided</span></div>
+
+
+<div class="viewcode-block" id="ModuleMemory.connections">
+<a class="viewcode-back" href="../../../reference/uc2/module_memory.html#jms_kapps.uc2.module_memory.ModuleMemory.connections">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">connections</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ConnectionsRead</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The connections it read last, or None if it has read none."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connections</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

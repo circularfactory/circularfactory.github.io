@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jms_kapps.evaluation.report &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/evaluation/report';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="jms_kapps.evaluation.report_charts" href="report_charts.html" />
+    <link rel="prev" title="jms_kapps.evaluation.replay_levels" href="replay_levels.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">The package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jms_kapps.html">jms_kapps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shared by both use cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/index.html">jms_kapps.common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/api_docs.html">jms_kapps.common.api_docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/passthrough.html">jms_kapps.common.passthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/prefixes.html">jms_kapps.common.prefixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/process.html">jms_kapps.common.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/services.html">jms_kapps.common.services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/supervision.html">jms_kapps.common.supervision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/triplestore.html">jms_kapps.common.triplestore</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/index.html">jms_kapps.common.platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/posix.html">jms_kapps.common.platforms.posix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/windows.html">jms_kapps.common.platforms.windows</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc1/index.html">jms_kapps.uc1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/__main__.html">jms_kapps.uc1.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector.html">jms_kapps.uc1.anomaly_detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_dashboard.html">jms_kapps.uc1.anomaly_detector_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_memory.html">jms_kapps.uc1.anomaly_detector_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/classify_call.html">jms_kapps.uc1.classify_call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/decision_tree.html">jms_kapps.uc1.decision_tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/effective_values.html">jms_kapps.uc1.effective_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/frame.html">jms_kapps.uc1.frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/infeasible_operation.html">jms_kapps.uc1.infeasible_operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner.html">jms_kapps.uc1.learner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_dashboard.html">jms_kapps.uc1.learner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_memory.html">jms_kapps.uc1.learner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_process.html">jms_kapps.uc1.learner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/mqtt_broker.html">jms_kapps.uc1.mqtt_broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page.html">jms_kapps.uc1.page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page_lists.html">jms_kapps.uc1.page_lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner.html">jms_kapps.uc1.planner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_dashboard.html">jms_kapps.uc1.planner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_memory.html">jms_kapps.uc1.planner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_process.html">jms_kapps.uc1.planner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_reads.html">jms_kapps.uc1.planner_reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/replay.html">jms_kapps.uc1.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_attempt.html">jms_kapps.uc1.robot_attempt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_binding.html">jms_kapps.uc1.robot_binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_controller.html">jms_kapps.uc1.robot_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/run_core.html">jms_kapps.uc1.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/scope_log.html">jms_kapps.uc1.scope_log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource.html">jms_kapps.uc1.screwing_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_dashboard.html">jms_kapps.uc1.screwing_resource_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_memory.html">jms_kapps.uc1.screwing_resource_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/seed.html">jms_kapps.uc1.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/sequence.html">jms_kapps.uc1.sequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/timeseries.html">jms_kapps.uc1.timeseries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/uncertainty.html">jms_kapps.uc1.uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/vocabulary.html">jms_kapps.uc1.vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/index.html">jms_kapps.uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/__main__.html">jms_kapps.uc2.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/capability_resource.html">jms_kapps.uc2.capability_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/discovery.html">jms_kapps.uc2.discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/handover_events.html">jms_kapps.uc2.handover_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/handshake.html">jms_kapps.uc2.handshake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/history.html">jms_kapps.uc2.history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module.html">jms_kapps.uc2.module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_dashboard.html">jms_kapps.uc2.module_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_drawing.html">jms_kapps.uc2.module_drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_memory.html">jms_kapps.uc2.module_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/process.html">jms_kapps.uc2.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/routing.html">jms_kapps.uc2.routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/run_core.html">jms_kapps.uc2.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/seed.html">jms_kapps.uc2.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/reachable_destination.html">jms_kapps.uc2.reachable_destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/spawn_rate.html">jms_kapps.uc2.spawn_rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/strategies.html">jms_kapps.uc2.strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/topology.html">jms_kapps.uc2.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/trace_box.html">jms_kapps.uc2.trace_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/transport.html">jms_kapps.uc2.transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/validation_report.html">jms_kapps.uc2.validation_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/vocabulary.html">jms_kapps.uc2.vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/waiting_order.html">jms_kapps.uc2.waiting_order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms.html">jms_kapps.uc2.wms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_dashboard.html">jms_kapps.uc2.wms_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_memory.html">jms_kapps.uc2.wms_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_process.html">jms_kapps.uc2.wms_process</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the Launcher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/index.html">jms_kapps.uc2.launcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/api.html">jms_kapps.uc2.launcher.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/backend.html">jms_kapps.uc2.launcher.backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/boxes.html">jms_kapps.uc2.launcher.boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/runner.html">jms_kapps.uc2.launcher.runner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the monitor</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/index.html">jms_kapps.uc2.monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/api.html">jms_kapps.uc2.monitor.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/handovers.html">jms_kapps.uc2.monitor.handovers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/memory.html">jms_kapps.uc2.monitor.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/process.html">jms_kapps.uc2.monitor.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/reads.html">jms_kapps.uc2.monitor.reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/wires.html">jms_kapps.uc2.monitor.wires</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The measurement harness</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">jms_kapps.evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approval.html">jms_kapps.evaluation.approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline.html">jms_kapps.evaluation.baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bench.html">jms_kapps.evaluation.bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_load.html">jms_kapps.evaluation.client_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">jms_kapps.evaluation.configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid.html">jms_kapps.evaluation.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="harness.html">jms_kapps.evaluation.harness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heavy_parts.html">jms_kapps.evaluation.heavy_parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instrumentation.html">jms_kapps.evaluation.instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live_store.html">jms_kapps.evaluation.live_store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matcher.html">jms_kapps.evaluation.matcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="observation.html">jms_kapps.evaluation.observation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="own_transports.html">jms_kapps.evaluation.own_transports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="precision.html">jms_kapps.evaluation.precision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prefill.html">jms_kapps.evaluation.prefill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramp.html">jms_kapps.evaluation.ramp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramp_comparison.html">jms_kapps.evaluation.ramp_comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record.html">jms_kapps.evaluation.record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record_match.html">jms_kapps.evaluation.record_match</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replay.html">jms_kapps.evaluation.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replay_levels.html">jms_kapps.evaluation.replay_levels</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">jms_kapps.evaluation.report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_charts.html">jms_kapps.evaluation.report_charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_points.html">jms_kapps.evaluation.report_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_steps.html">jms_kapps.evaluation.report_steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_summary.html">jms_kapps.evaluation.report_summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rounds.html">jms_kapps.evaluation.rounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_limit.html">jms_kapps.evaluation.run_limit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_uc2.html">jms_kapps.evaluation.run_uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seed.html">jms_kapps.evaluation.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="southward.html">jms_kapps.evaluation.southward</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">jms_kapps.evaluation.spec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">jms_kapps.evaluation.stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store.html">jms_kapps.evaluation.store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_requests.html">jms_kapps.evaluation.store_requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">jms_kapps.evaluation.summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sweep.html">jms_kapps.evaluation.sweep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table.html">jms_kapps.evaluation.table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watch.html">jms_kapps.evaluation.watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper.html">jms_kapps.evaluation.wrapper</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.report</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-jms_kapps.evaluation.report">
+<span id="jms-kapps-evaluation-report"></span><h1>jms_kapps.evaluation.report<a class="headerlink" href="#module-jms_kapps.evaluation.report" title="Link to this heading">#</a></h1>
+<p><cite>jms-eval-report</cite>: the report of the runs of a spec, tables and charts, beside their records.
+Iteration one of the measurement harness.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>jms-eval-report &lt;spec.toml&gt; [–runs &lt;folder&gt;] [–set KEY=VALUE …] [–seed N] [–resamples N]</dt><dd><p>[–live-checks &lt;log&gt;]</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>It reads the spec (<cite>spec</cite>), with each <cite>–set</cite> that the sweep was given, and the summary of every
+run below <cite>–runs</cite> (<cite>report_summary</cite>: a record is read once, and its summary kept beside it), and
+writes <cite>report/</cite> into that folder: <cite>report.md</cite>, the tables and the charts for a person to read,
+<cite>runs.csv</cite>, <cite>configurations.csv</cite>, <cite>steps.csv</cite>, <cite>unanswered.csv</cite> and one PNG for each chart. It needs no store and no network, and
+runs nothing. The sweep makes it again after each run, whatever the run’s end (<cite>update_report</cite>).</p>
+<p><strong>The series</strong> (interim names). <cite>report.md</cite>, the chart titles and the chart labels
+show each configuration number with the spec’s series (<cite>spec.Spec.series</cite>), such as “before 7”,
+and a label that joins the number and the run kind, “after 7 unwrapped”; each CSV file keeps the
+number and gains a column <cite>series</cite>. The file names stay by number.</p>
+<p><strong>The report points</strong> (<cite>report_points</cite>; interim names) come after the
+tables and change none of their values: <cite>marks.csv</cite> (the hour of each
+run, whether it overlaps a live check of the log <cite>–live-checks</cite> names or the server watch shows
+other activity, its deadlock alarms and its dead heartbeats), <cite>hours.csv</cite> and one <cite>hours-&lt;n&gt;.png</cite>
+for each configuration, <cite>page_cache.csv</cite>, <cite>deadlock_alarms.csv</cite> and <cite>dead_heartbeats.csv</cite>. A mark
+says <cite>no data</cite> where the log, the server watch or the spans are missing.</p>
+<p><strong>The runs table</strong> has one row for each run: its configuration and the setting (topology, prefill,
+SHACL, strategies, box rate, wrapper), its run kind, its status and the reason, the transports
+ended per minute, the commits and their p50, p95 and p99, the p50 and p95 of the reads and of the
+writes, apart, the requests the store refused, those that timed out and those whose connection
+dropped, inside the window and outside it, apart, the stuck boxes, and the client host’s load in the window
+(below). The status is <cite>completed</cite> (a valid run), <cite>invalid</cite> (a
+check found it so), <cite>failed</cite> or <cite>interrupted</cite>. A failed or an interrupted run has no values.</p>
+<p><strong>The latencies</strong> are those of the accepted store requests of the window, logins left out, as
+<cite>jms-eval-table</cite> reads them; the reads and the writes are told apart by the request’s kind. A
+request that got no answer is counted in the column of the timed-out requests where its client gave
+up because the time ran out, and in that of the dropped connections where its connection closed,
+reset or failed before an answer (<cite>store_requests.unanswered_outcome</cite>; a request that a record
+written before says “timed out” is classified by its error, and an error of neither class, or
+none at all, counts as connection dropped). It is not among the latencies: its record keeps its real wait, the time
+until the failure, which is listed beside it (below).</p>
+<p><strong>The unanswered store requests</strong> (<cite>unanswered.csv</cite>, and a section of <cite>report.md</cite>): one row for
+each store request that got no answer, in the window and outside it, with its run, the place
+(<cite>in the window</cite> or <cite>outside the window</cite>), its outcome (<cite>timed out</cite> or <cite>connection dropped</cite>),
+its time, its wait in seconds (the real one) and its reason, the error as the
+record keeps it. A baseline run’s are listed too.</p>
+<p><strong>The client load</strong> (columns <cite>client_load</cite>, <cite>client_cpu_median_percent</cite>, <cite>client_cpu_max_percent</cite>
+and <cite>client_memory_max_gib</cite> of <cite>runs.csv</cite>, and a section of <cite>report.md</cite>): the median and the highest
+CPU use of the client host, in percent of all its CPUs, and its highest memory use in GiB, from
+the record’s samples (<cite>client_load</cite>) in the measured window. <cite>client_load</cite> says <cite>measured</cite>, <cite>no
+data</cite> (a record of the “before” series holds no sample, or none lies in the window) or <cite>not
+available</cite> (the host had no <cite>/proc</cite>); the report shows those words in place of the numbers.</p>
+<p><strong>The configurations table</strong> is the table of <cite>jms-eval-table</cite> (<cite>table.make_table</cite>), made from the
+same summaries in the same order with the same seed and resamples, so that its numbers are that
+table’s: one row for each configuration at its box rate and each run kind, over the runs that
+count, with each statistic of the table as columns.</p>
+<p><strong>The charts</strong> show the throughput, the commit p95 and the read p95 and write p95 of each
+configuration, a dot for each run (filled if valid, a ring if invalid) and a tick at the median of
+the valid runs; and, for each family of configurations that differ only in the size of their
+prefill, the throughput and the commit p95 against that size, on a log scale. A failed or an
+interrupted run is listed in the runs table and not plotted.</p>
+<p><strong>The steps</strong> (<cite>report_steps</cite>): <cite>steps.csv</cite> has one row for each configuration, role
+(WMS or module) and step, with the steps per minute, the median and the p95 seconds and the median
+size of the store’s answer, pooled over the valid runs’ spans in the measured window; for each
+family of prefill sizes, a steps chart compares the configurations step by step on a log time
+scale. The steps are read from the spans once, and kept in the run’s summary.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.status_of">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">status_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="summary.html#jms_kapps.evaluation.summary.RunSummary" title="jms_kapps.evaluation.summary.RunSummary"><span class="pre">RunSummary</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#status_of"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.status_of" title="Link to this definition">#</a></dt>
+<dd><p>The status of a run: <cite>completed</cite> for a valid run, <cite>invalid</cite>, <cite>failed</cite> or <cite>interrupted</cite>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.prefill_size">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">prefill_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefill</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#prefill_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.prefill_size" title="Link to this definition">#</a></dt>
+<dd><p>The size of a prefill file in statements, as its name says it (<cite>grid-1M.ttl</cite> is 1 000 000);
+None for a name that gives none, as <cite>none</cite>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.runs_table">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">runs_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_summary.html#jms_kapps.evaluation.report_summary.RunFigures" title="jms_kapps.evaluation.report_summary.RunFigures"><span class="pre">RunFigures</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><span class="pre">pandas.DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#runs_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.runs_table" title="Link to this definition">#</a></dt>
+<dd><p>The runs table of the runs <cite>figures</cite> of the configurations <cite>found</cite>, and how many of the
+runs are of no configuration of <cite>found</cite> (left out of the table).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.steps_frame">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">steps_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_summary.html#jms_kapps.evaluation.report_summary.RunFigures" title="jms_kapps.evaluation.report_summary.RunFigures"><span class="pre">RunFigures</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#steps_frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.steps_frame" title="Link to this definition">#</a></dt>
+<dd><p>The steps table (<cite>report_steps.steps_table</cite>) of the valid runs of <cite>found</cite> that have steps.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.entries_of">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">entries_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_summary.html#jms_kapps.evaluation.report_summary.RunFigures" title="jms_kapps.evaluation.report_summary.RunFigures"><span class="pre">RunFigures</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_points.html#jms_kapps.evaluation.report_points.Entry" title="jms_kapps.evaluation.report_points.Entry"><span class="pre">Entry</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#entries_of"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.entries_of" title="Link to this definition">#</a></dt>
+<dd><p>The runs of <cite>figures</cite> for the tables of the report points (<cite>report_points</cite>), in the order
+of the runs table. A run of a configuration of <cite>found</cite> has that configuration’s number and
+prefill. A run that matches none (<cite>record_match</cite>) is not left out, as the runs
+table leaves it: a deadlock alarm and a dead heartbeat belong to the run, so it has the
+configuration number its own record gives, and no prefill.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.draw_hours">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">draw_hours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hours</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#draw_hours"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.draw_hours" title="Link to this definition">#</a></dt>
+<dd><p>Draw the by-hour chart of each configuration that has valid runs into <cite>folder</cite>; return
+each file with its title.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.unanswered_table">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">unanswered_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_summary.html#jms_kapps.evaluation.report_summary.RunFigures" title="jms_kapps.evaluation.report_summary.RunFigures"><span class="pre">RunFigures</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#unanswered_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.unanswered_table" title="Link to this definition">#</a></dt>
+<dd><p>The table of the store requests that got no answer, one row for each, of the runs of
+<cite>found</cite> (a failed or an interrupted run has none), in the order of the runs table and, within
+a run, of their times.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.configurations_table">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">configurations_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.Spec" title="jms_kapps.evaluation.spec.Spec"><span class="pre">Spec</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_summary.html#jms_kapps.evaluation.report_summary.RunFigures" title="jms_kapps.evaluation.report_summary.RunFigures"><span class="pre">RunFigures</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">runs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">resamples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.DataFrame</span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#configurations_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.configurations_table" title="Link to this definition">#</a></dt>
+<dd><p>The table of <cite>jms-eval-table</cite> as one row for each configuration and run kind, each
+statistic a column. It is <cite>table.make_table</cite> of the same summaries, flattened.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.families">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">families</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#families"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.families" title="Link to this definition">#</a></dt>
+<dd><p>The families of configurations that differ only in the size of their prefill, each with at
+least two sizes, in the order of their lowest configuration, and each family’s configurations
+in rising size.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.draw_charts">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">draw_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">runs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#draw_charts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.draw_charts" title="Link to this definition">#</a></dt>
+<dd><p>Draw the charts of the runs table into <cite>folder</cite>; return each file with its title.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.draw_steps">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">draw_steps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#draw_steps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.draw_steps" title="Link to this definition">#</a></dt>
+<dd><p>Draw the steps chart of each family of configurations (see <cite>families</cite>) that has steps into
+<cite>folder</cite>; return each file with its title.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.make_report">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">make_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.Spec" title="jms_kapps.evaluation.spec.Spec"><span class="pre">Spec</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_summary.html#jms_kapps.evaluation.report_summary.RunFigures" title="jms_kapps.evaluation.report_summary.RunFigures"><span class="pre">RunFigures</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">runs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resamples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">made_at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_checks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="report_points.html#jms_kapps.evaluation.report_points.LiveCheck" title="jms_kapps.evaluation.report_points.LiveCheck"><span class="pre">LiveCheck</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#make_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.make_report" title="Link to this definition">#</a></dt>
+<dd><p>Write the report of <cite>figures</cite> into <cite>folder</cite>, which is made if need be: its files from a
+report before are replaced, those of charts that this report does not draw are removed.
+Returns <cite>report.md</cite>’s path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>live_checks</strong> – The live checks of the orchestrator’s log (<cite>report_points</cite>), or None for no
+log: then the mark of the live checks says <cite>no data</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.update_report">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">update_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.Spec" title="jms_kapps.evaluation.spec.Spec"><span class="pre">Spec</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="spec.html#jms_kapps.evaluation.spec.SpecConfiguration" title="jms_kapps.evaluation.spec.SpecConfiguration"><span class="pre">SpecConfiguration</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">runs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">fresh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resamples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">live_checks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#update_report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.update_report" title="Link to this definition">#</a></dt>
+<dd><p>Make the report of the runs below <cite>runs</cite>, into <cite>runs/report</cite>, from the summaries of their
+records (a record without a current summary is read once and summarised). Returns
+<cite>report.md</cite>’s path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fresh</strong> – The record of a run that was just made, as the run returned it, so that its file is
+not read again.</p></li>
+<li><p><strong>live_checks</strong> – The path of the orchestrator’s live-check log (<cite>report_points</cite>), read each
+time; None for no log (every mark of the live checks says <cite>no data</cite>).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.report.main">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.report.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/report.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.report.main" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="replay_levels.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jms_kapps.evaluation.replay_levels</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="report_charts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jms_kapps.evaluation.report_charts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.status_of"><code class="docutils literal notranslate"><span class="pre">status_of()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.prefill_size"><code class="docutils literal notranslate"><span class="pre">prefill_size()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.runs_table"><code class="docutils literal notranslate"><span class="pre">runs_table()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.steps_frame"><code class="docutils literal notranslate"><span class="pre">steps_frame()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.entries_of"><code class="docutils literal notranslate"><span class="pre">entries_of()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.draw_hours"><code class="docutils literal notranslate"><span class="pre">draw_hours()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.unanswered_table"><code class="docutils literal notranslate"><span class="pre">unanswered_table()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.configurations_table"><code class="docutils literal notranslate"><span class="pre">configurations_table()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.families"><code class="docutils literal notranslate"><span class="pre">families()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.draw_charts"><code class="docutils literal notranslate"><span class="pre">draw_charts()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.draw_steps"><code class="docutils literal notranslate"><span class="pre">draw_steps()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.make_report"><code class="docutils literal notranslate"><span class="pre">make_report()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.update_report"><code class="docutils literal notranslate"><span class="pre">update_report()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.report.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/evaluation/report.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.capability_resource &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/capability_resource';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.capability_resource</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.capability_resource</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""`jms-uc2 capability-resource`: the store refuses a capability that does not belong to exactly one</span>
+<span class="sd">resource.</span>
+
+<span class="sd">A capability cannot exist without a resource, and a resource can have several. The shapes that</span>
+<span class="sd">every use case seeds hold that rule: exactly one resource links to each capability</span>
+<span class="sd">(`cfc:hasCapability`), checked at every commit. The domain code never breaks it, because the</span>
+<span class="sd">middleware registers each capability with its resource's link in one commit, so in a normal run the</span>
+<span class="sd">rule never fires. This command shows it firing. On a disposable dataset of the configured store it</span>
+<span class="sd">seeds use case 2's ontology and shapes, makes three writes, and prints for each what it wrote and</span>
+<span class="sd">what the store answered:</span>
+
+<span class="sd">1. a resource that registers two capabilities: admitted;</span>
+<span class="sd">2. a capability with no resource: refused;</span>
+<span class="sd">3. a capability that two resources claim: refused.</span>
+
+<span class="sd">Each write is plain triples in one SPARQL update, not a write of the middleware, so that it can</span>
+<span class="sd">break the rule. The command clears the dataset at its end, and takes only a name that starts with</span>
+<span class="sd">`ogm-disposable-`, since it clears the dataset at its start too. It exits 0 when the store answers</span>
+<span class="sd">each write as above, and 1 when it does not, or when the store cannot be reached.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TextIO</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">CFC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">ShaclValidationError</span><span class="p">,</span>
+    <span class="n">SPARQLQuery</span><span class="p">,</span>
+    <span class="n">TripleStore</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">TripleStoreInterfaceError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib.namespace</span><span class="w"> </span><span class="kn">import</span> <span class="n">RDF</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClearFailed</span><span class="p">,</span> <span class="n">bindings</span><span class="p">,</span> <span class="n">clear_dataset</span><span class="p">,</span> <span class="n">connect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.seed</span><span class="w"> </span><span class="kn">import</span> <span class="n">Triple</span><span class="p">,</span> <span class="n">reset_uc2</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="n">messages_clause</span><span class="p">,</span> <span class="n">rules_clause</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">FCI_NS</span>
+
+<span class="n">PROGRAM</span> <span class="o">=</span> <span class="s2">"jms-uc2 capability-resource"</span>
+
+<span class="c1"># The datasets the command clears: the store helper's disposable ones.</span>
+<span class="n">DISPOSABLE_PREFIX</span> <span class="o">=</span> <span class="s2">"ogm-disposable-"</span>
+
+<span class="n">RESOURCE_1</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"CapabilityDemoModule1"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FCI_NS</span><span class="p">)</span>
+<span class="n">RESOURCE_2</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"CapabilityDemoModule2"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FCI_NS</span><span class="p">)</span>
+<span class="n">TRANSPORT_1</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"CapabilityDemoModule1_capability_transport"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FCI_NS</span><span class="p">)</span>
+<span class="n">RESERVE_1</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"CapabilityDemoModule1_capability_reserve"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FCI_NS</span><span class="p">)</span>
+<span class="n">NO_RESOURCE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"CapabilityDemoCapability_of_no_resource"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FCI_NS</span><span class="p">)</span>
+<span class="n">TWO_RESOURCES</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="s2">"CapabilityDemoCapability_of_two_resources"</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">FCI_NS</span><span class="p">)</span>
+
+<span class="n">TYPE</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+
+
+<div class="viewcode-block" id="Write">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.Write">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Write</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One write of the demonstration: what it shows, its triples, and whether a store seeded with</span>
+<span class="sd">    the shapes admits it."""</span>
+
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">triples</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Triple</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">should_be_admitted</span><span class="p">:</span> <span class="nb">bool</span>
+
+<div class="viewcode-block" id="Write.update">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.Write.update">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The SPARQL update that makes the write, in one commit."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"INSERT DATA </span><span class="se">{{\n</span><span class="si">{</span><span class="n">_lines</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">triples</span><span class="p">)</span><span class="si">}</span><span class="se">\n}}</span><span class="s2">"</span></div>
+</div>
+
+
+
+<span class="n">WRITES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">Write</span><span class="p">(</span>
+        <span class="s2">"A resource that registers two capabilities"</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="p">(</span><span class="n">RESOURCE_1</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">FlexConveyorModule</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">TRANSPORT_1</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportCapability</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">RESERVE_1</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">ReserveCapability</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">RESOURCE_1</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasCapability</span><span class="p">,</span> <span class="n">TRANSPORT_1</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">RESOURCE_1</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasCapability</span><span class="p">,</span> <span class="n">RESERVE_1</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">should_be_admitted</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">Write</span><span class="p">(</span>
+        <span class="s2">"A capability with no resource"</span><span class="p">,</span>
+        <span class="p">((</span><span class="n">NO_RESOURCE</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportCapability</span><span class="p">),),</span>
+        <span class="n">should_be_admitted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">Write</span><span class="p">(</span>
+        <span class="s2">"A capability that two resources claim"</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="p">(</span><span class="n">RESOURCE_2</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">FlexConveyorModule</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">TWO_RESOURCES</span><span class="p">,</span> <span class="n">TYPE</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">BoxTransportCapability</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">RESOURCE_1</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasCapability</span><span class="p">,</span> <span class="n">TWO_RESOURCES</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">RESOURCE_2</span><span class="p">,</span> <span class="n">CFC</span><span class="o">.</span><span class="n">hasCapability</span><span class="p">,</span> <span class="n">TWO_RESOURCES</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">should_be_admitted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="Answer">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.Answer">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Answer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the store answered to a write: whether it admitted it, and the report of a refusal."""</span>
+
+    <span class="n">admitted</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">report</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span></div>
+
+
+
+<div class="viewcode-block" id="make">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.make">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">write</span><span class="p">:</span> <span class="n">Write</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Answer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Make `write` against `db`, and return what the store answered."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">update</span><span class="p">(),</span> <span class="n">update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">ShaclValidationError</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Answer</span><span class="p">(</span><span class="n">admitted</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">report</span><span class="o">=</span><span class="n">refused</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Answer</span><span class="p">(</span><span class="n">admitted</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="stored">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.stored">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stored</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">triples</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Triple</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Triple</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The ones of `triples` that `db` holds as explicit statements."""</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"(&lt;</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">o</span><span class="si">}</span><span class="s2">&gt;)"</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="n">SPARQLQuery</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+            <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s2">"?s"</span><span class="p">,</span> <span class="s2">"?p"</span><span class="p">,</span> <span class="s2">"?o"</span><span class="p">],</span>
+            <span class="n">where_clauses</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">"VALUES (?s ?p ?o) </span><span class="se">{{</span><span class="s2"> </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"?s ?p ?o"</span><span class="p">],</span>
+            <span class="n">include_implicit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">convert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"s"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">]),</span> <span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"p"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">]),</span> <span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"o"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">]))</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="demo">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.demo">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">demo</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="n">TextIO</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Seed use case 2's ontology and shapes into `db`, which it clears, make the three writes, and</span>
+<span class="sd">    print each with the store's answer to `out`. Returns 0 when the store answers each write as</span>
+<span class="sd">    `WRITES` says, and 1 when it does not."""</span>
+    <span class="n">reset_uc2</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">write</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">WRITES</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">write</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"   wrote:"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">_lines</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">triples</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">"     "</span><span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">make</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">write</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">admitted</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"   the store: admitted"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"   the store: refused</span><span class="si">{</span><span class="n">rules_clause</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">report</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">messages_clause</span><span class="p">(</span><span class="n">answer</span><span class="o">.</span><span class="n">report</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+                <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">answer</span><span class="o">.</span><span class="n">admitted</span> <span class="o">!=</span> <span class="n">write</span><span class="o">.</span><span class="n">should_be_admitted</span><span class="p">:</span>
+            <span class="n">expected</span> <span class="o">=</span> <span class="s2">"admit"</span> <span class="k">if</span> <span class="n">write</span><span class="o">.</span><span class="n">should_be_admitted</span> <span class="k">else</span> <span class="s2">"refuse"</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"   expected the store to </span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2"> it"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">code</span></div>
+
+
+
+<div class="viewcode-block" id="run">
+<a class="viewcode-back" href="../../../reference/uc2/capability_resource.html#jms_kapps.uc2.capability_resource.run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Play the demonstration on `dataset` of the configured store, then clear it. Returns the exit</span>
+<span class="sd">    code of `demo`, or 1 with the reason on stderr when the name is not a disposable one, or the</span>
+<span class="sd">    store cannot be reached, seeded or cleared."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">dataset</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">DISPOSABLE_PREFIX</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: clears the dataset it is given, so it takes only a name that starts with "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">DISPOSABLE_PREFIX</span><span class="si">}</span><span class="s2">, not </span><span class="si">{</span><span class="n">dataset</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">db</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">demo</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">clear_dataset</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">TripleStoreInterfaceError</span><span class="p">,</span> <span class="n">ClearFailed</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_lines</span><span class="p">(</span><span class="n">triples</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Triple</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"  "</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">indent</span><span class="si">}</span><span class="s2">&lt;</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&gt; &lt;</span><span class="si">{</span><span class="n">o</span><span class="si">}</span><span class="s2">&gt; ."</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

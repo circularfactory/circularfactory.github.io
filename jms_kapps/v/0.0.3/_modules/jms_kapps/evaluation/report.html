@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.report &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/report';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.report</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.report</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""`jms-eval-report`: the report of the runs of a spec, tables and charts, beside their records.</span>
+<span class="sd">Iteration one of the measurement harness.</span>
+
+<span class="sd">    jms-eval-report &lt;spec.toml&gt; [--runs &lt;folder&gt;] [--set KEY=VALUE ...] [--seed N] [--resamples N]</span>
+<span class="sd">                    [--live-checks &lt;log&gt;]</span>
+
+<span class="sd">It reads the spec (`spec`), with each `--set` that the sweep was given, and the summary of every</span>
+<span class="sd">run below `--runs` (`report_summary`: a record is read once, and its summary kept beside it), and</span>
+<span class="sd">writes `report/` into that folder: `report.md`, the tables and the charts for a person to read,</span>
+<span class="sd">`runs.csv`, `configurations.csv`, `steps.csv`, `unanswered.csv` and one PNG for each chart. It needs no store and no network, and</span>
+<span class="sd">runs nothing. The sweep makes it again after each run, whatever the run's end (`update_report`).</span>
+
+<span class="sd">**The series** (interim names). `report.md`, the chart titles and the chart labels</span>
+<span class="sd">show each configuration number with the spec's series (`spec.Spec.series`), such as "before 7",</span>
+<span class="sd">and a label that joins the number and the run kind, "after 7 unwrapped"; each CSV file keeps the</span>
+<span class="sd">number and gains a column `series`. The file names stay by number.</span>
+
+<span class="sd">**The report points** (`report_points`; interim names) come after the</span>
+<span class="sd">tables and change none of their values: `marks.csv` (the hour of each</span>
+<span class="sd">run, whether it overlaps a live check of the log `--live-checks` names or the server watch shows</span>
+<span class="sd">other activity, its deadlock alarms and its dead heartbeats), `hours.csv` and one `hours-&lt;n&gt;.png`</span>
+<span class="sd">for each configuration, `page_cache.csv`, `deadlock_alarms.csv` and `dead_heartbeats.csv`. A mark</span>
+<span class="sd">says `no data` where the log, the server watch or the spans are missing.</span>
+
+<span class="sd">**The runs table** has one row for each run: its configuration and the setting (topology, prefill,</span>
+<span class="sd">SHACL, strategies, box rate, wrapper), its run kind, its status and the reason, the transports</span>
+<span class="sd">ended per minute, the commits and their p50, p95 and p99, the p50 and p95 of the reads and of the</span>
+<span class="sd">writes, apart, the requests the store refused, those that timed out and those whose connection</span>
+<span class="sd">dropped, inside the window and outside it, apart, the stuck boxes, and the client host's load in the window</span>
+<span class="sd">(below). The status is `completed` (a valid run), `invalid` (a</span>
+<span class="sd">check found it so), `failed` or `interrupted`. A failed or an interrupted run has no values.</span>
+
+<span class="sd">**The latencies** are those of the accepted store requests of the window, logins left out, as</span>
+<span class="sd">`jms-eval-table` reads them; the reads and the writes are told apart by the request's kind. A</span>
+<span class="sd">request that got no answer is counted in the column of the timed-out requests where its client gave</span>
+<span class="sd">up because the time ran out, and in that of the dropped connections where its connection closed,</span>
+<span class="sd">reset or failed before an answer (`store_requests.unanswered_outcome`; a request that a record</span>
+<span class="sd">written before says "timed out" is classified by its error, and an error of neither class, or</span>
+<span class="sd">none at all, counts as connection dropped). It is not among the latencies: its record keeps its real wait, the time</span>
+<span class="sd">until the failure, which is listed beside it (below).</span>
+
+<span class="sd">**The unanswered store requests** (`unanswered.csv`, and a section of `report.md`): one row for</span>
+<span class="sd">each store request that got no answer, in the window and outside it, with its run, the place</span>
+<span class="sd">(`in the window` or `outside the window`), its outcome (`timed out` or `connection dropped`),</span>
+<span class="sd">its time, its wait in seconds (the real one) and its reason, the error as the</span>
+<span class="sd">record keeps it. A baseline run's are listed too.</span>
+
+<span class="sd">**The client load** (columns `client_load`, `client_cpu_median_percent`, `client_cpu_max_percent`</span>
+<span class="sd">and `client_memory_max_gib` of `runs.csv`, and a section of `report.md`): the median and the highest</span>
+<span class="sd">CPU use of the client host, in percent of all its CPUs, and its highest memory use in GiB, from</span>
+<span class="sd">the record's samples (`client_load`) in the measured window. `client_load` says `measured`, `no</span>
+<span class="sd">data` (a record of the "before" series holds no sample, or none lies in the window) or `not</span>
+<span class="sd">available` (the host had no `/proc`); the report shows those words in place of the numbers.</span>
+
+<span class="sd">**The configurations table** is the table of `jms-eval-table` (`table.make_table`), made from the</span>
+<span class="sd">same summaries in the same order with the same seed and resamples, so that its numbers are that</span>
+<span class="sd">table's: one row for each configuration at its box rate and each run kind, over the runs that</span>
+<span class="sd">count, with each statistic of the table as columns.</span>
+
+<span class="sd">**The charts** show the throughput, the commit p95 and the read p95 and write p95 of each</span>
+<span class="sd">configuration, a dot for each run (filled if valid, a ring if invalid) and a tick at the median of</span>
+<span class="sd">the valid runs; and, for each family of configurations that differ only in the size of their</span>
+<span class="sd">prefill, the throughput and the commit p95 against that size, on a log scale. A failed or an</span>
+<span class="sd">interrupted run is listed in the runs table and not plotted.</span>
+
+<span class="sd">**The steps** (`report_steps`): `steps.csv` has one row for each configuration, role</span>
+<span class="sd">(WMS or module) and step, with the steps per minute, the median and the p95 seconds and the median</span>
+<span class="sd">size of the store's answer, pooled over the valid runs' spans in the measured window; for each</span>
+<span class="sd">family of prefill sizes, a steps chart compares the configurations step by step on a log time</span>
+<span class="sd">scale. The steps are read from the spans once, and kept in the run's summary.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">report_charts</span><span class="p">,</span> <span class="n">report_points</span><span class="p">,</span> <span class="n">report_steps</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.baseline</span><span class="w"> </span><span class="kn">import</span> <span class="n">BASELINE_RUN_KIND</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.bench</span><span class="w"> </span><span class="kn">import</span> <span class="n">INTERRUPTED</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.record</span><span class="w"> </span><span class="kn">import</span> <span class="n">RUN_KIND</span><span class="p">,</span> <span class="n">UNWRAPPED_RUN_KIND</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.record_match</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfigurationIndex</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.report_points</span><span class="w"> </span><span class="kn">import</span> <span class="n">Entry</span><span class="p">,</span> <span class="n">LiveCheck</span><span class="p">,</span> <span class="n">read_live_checks</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.report_summary</span><span class="w"> </span><span class="kn">import</span> <span class="n">MEASURED</span><span class="p">,</span> <span class="n">NO_DATA</span><span class="p">,</span> <span class="n">RunFigures</span><span class="p">,</span> <span class="n">read_all</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.spec</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">SpecConfiguration</span><span class="p">,</span>
+    <span class="n">SpecRefused</span><span class="p">,</span>
+    <span class="n">configurations</span><span class="p">,</span>
+    <span class="n">read_spec</span><span class="p">,</span>
+    <span class="n">setting</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">quantile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.summary</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMPLETED</span><span class="p">,</span> <span class="n">RunSummary</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_RESAMPLES</span><span class="p">,</span> <span class="n">DEFAULT_SEED</span><span class="p">,</span> <span class="n">make_table</span>
+
+<span class="n">PROGRAM</span> <span class="o">=</span> <span class="s2">"jms-eval-report"</span>
+
+<span class="c1"># The folder of the report, in the runs' folder, and its files.</span>
+<span class="n">REPORT_FOLDER</span> <span class="o">=</span> <span class="s2">"report"</span>
+<span class="n">REPORT_MARKDOWN</span> <span class="o">=</span> <span class="s2">"report.md"</span>
+<span class="n">RUNS_CSV</span> <span class="o">=</span> <span class="s2">"runs.csv"</span>
+<span class="n">CONFIGURATIONS_CSV</span> <span class="o">=</span> <span class="s2">"configurations.csv"</span>
+<span class="n">STEPS_CSV</span> <span class="o">=</span> <span class="s2">"steps.csv"</span>
+<span class="n">UNANSWERED_CSV</span> <span class="o">=</span> <span class="s2">"unanswered.csv"</span>
+
+<span class="c1"># The status of a run: valid, found invalid by a check, failed, or ended by a stop signal.</span>
+<span class="n">VALID</span> <span class="o">=</span> <span class="n">report_charts</span><span class="o">.</span><span class="n">VALID</span>
+<span class="n">INVALID</span> <span class="o">=</span> <span class="n">report_charts</span><span class="o">.</span><span class="n">INVALID</span>
+<span class="n">FAILED</span> <span class="o">=</span> <span class="s2">"failed"</span>
+<span class="n">INTERRUPTED_STATUS</span> <span class="o">=</span> <span class="s2">"interrupted"</span>
+
+<span class="c1"># The settings of a configuration that the tables show.</span>
+<span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"topology"</span><span class="p">,</span>
+    <span class="s2">"prefill"</span><span class="p">,</span>
+    <span class="s2">"shacl"</span><span class="p">,</span>
+    <span class="s2">"module_strategy"</span><span class="p">,</span>
+    <span class="s2">"wms_strategy"</span><span class="p">,</span>
+    <span class="s2">"boxes_per_minute"</span><span class="p">,</span>
+    <span class="s2">"wrapper"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">_RUN_KIND_ORDER</span> <span class="o">=</span> <span class="p">(</span><span class="n">RUN_KIND</span><span class="p">,</span> <span class="n">UNWRAPPED_RUN_KIND</span><span class="p">,</span> <span class="n">BASELINE_RUN_KIND</span><span class="p">)</span>
+
+<span class="n">RUNS_COLUMNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"configuration"</span><span class="p">,</span>
+    <span class="s2">"series"</span><span class="p">,</span>
+    <span class="s2">"run_kind"</span><span class="p">,</span>
+    <span class="s2">"repetition"</span><span class="p">,</span>
+    <span class="s2">"run"</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">SETTINGS</span><span class="p">,</span>
+    <span class="s2">"status"</span><span class="p">,</span>
+    <span class="s2">"reason"</span><span class="p">,</span>
+    <span class="s2">"transports_ended_per_minute"</span><span class="p">,</span>
+    <span class="s2">"commits"</span><span class="p">,</span>
+    <span class="s2">"commit_p50"</span><span class="p">,</span>
+    <span class="s2">"commit_p95"</span><span class="p">,</span>
+    <span class="s2">"commit_p99"</span><span class="p">,</span>
+    <span class="s2">"read_p50"</span><span class="p">,</span>
+    <span class="s2">"read_p95"</span><span class="p">,</span>
+    <span class="s2">"write_p50"</span><span class="p">,</span>
+    <span class="s2">"write_p95"</span><span class="p">,</span>
+    <span class="s2">"refused_in_window"</span><span class="p">,</span>
+    <span class="s2">"timed_out_in_window"</span><span class="p">,</span>
+    <span class="s2">"connection_dropped_in_window"</span><span class="p">,</span>
+    <span class="s2">"refused_outside_window"</span><span class="p">,</span>
+    <span class="s2">"timed_out_outside_window"</span><span class="p">,</span>
+    <span class="s2">"connection_dropped_outside_window"</span><span class="p">,</span>
+    <span class="s2">"stuck_boxes"</span><span class="p">,</span>
+    <span class="s2">"client_load"</span><span class="p">,</span>
+    <span class="s2">"client_cpu_median_percent"</span><span class="p">,</span>
+    <span class="s2">"client_cpu_max_percent"</span><span class="p">,</span>
+    <span class="s2">"client_memory_max_gib"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># The columns of the unanswered requests' table.</span>
+<span class="n">UNANSWERED_COLUMNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"configuration"</span><span class="p">,</span>
+    <span class="s2">"series"</span><span class="p">,</span>
+    <span class="s2">"run_kind"</span><span class="p">,</span>
+    <span class="s2">"repetition"</span><span class="p">,</span>
+    <span class="s2">"run"</span><span class="p">,</span>
+    <span class="s2">"where"</span><span class="p">,</span>
+    <span class="s2">"outcome"</span><span class="p">,</span>
+    <span class="s2">"time"</span><span class="p">,</span>
+    <span class="s2">"wait_seconds"</span><span class="p">,</span>
+    <span class="s2">"reason"</span><span class="p">,</span>
+    <span class="s2">"kind"</span><span class="p">,</span>
+    <span class="s2">"participant"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># The columns of the runs table that the Markdown shows (the CSV has them all).</span>
+<span class="n">_RUNS_SHOWN</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"configuration"</span><span class="p">,</span>
+    <span class="s2">"run_kind"</span><span class="p">,</span>
+    <span class="s2">"repetition"</span><span class="p">,</span>
+    <span class="s2">"status"</span><span class="p">,</span>
+    <span class="s2">"reason"</span><span class="p">,</span>
+    <span class="s2">"transports_ended_per_minute"</span><span class="p">,</span>
+    <span class="s2">"commits"</span><span class="p">,</span>
+    <span class="s2">"commit_p50"</span><span class="p">,</span>
+    <span class="s2">"commit_p95"</span><span class="p">,</span>
+    <span class="s2">"commit_p99"</span><span class="p">,</span>
+    <span class="s2">"read_p50"</span><span class="p">,</span>
+    <span class="s2">"read_p95"</span><span class="p">,</span>
+    <span class="s2">"write_p50"</span><span class="p">,</span>
+    <span class="s2">"write_p95"</span><span class="p">,</span>
+    <span class="s2">"refused_in_window"</span><span class="p">,</span>
+    <span class="s2">"timed_out_in_window"</span><span class="p">,</span>
+    <span class="s2">"connection_dropped_in_window"</span><span class="p">,</span>
+    <span class="s2">"refused_outside_window"</span><span class="p">,</span>
+    <span class="s2">"timed_out_outside_window"</span><span class="p">,</span>
+    <span class="s2">"connection_dropped_outside_window"</span><span class="p">,</span>
+    <span class="s2">"stuck_boxes"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># The columns of the configurations table that the Markdown shows (the CSV has them all).</span>
+<span class="n">_CONFIGURATIONS_SHOWN</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"configurations"</span><span class="p">,</span>
+    <span class="s2">"run_kind"</span><span class="p">,</span>
+    <span class="s2">"topology"</span><span class="p">,</span>
+    <span class="s2">"prefill"</span><span class="p">,</span>
+    <span class="s2">"shacl"</span><span class="p">,</span>
+    <span class="s2">"runs"</span><span class="p">,</span>
+    <span class="s2">"transports_ended_per_minute_median"</span><span class="p">,</span>
+    <span class="s2">"transports_ended_per_minute_iqr"</span><span class="p">,</span>
+    <span class="s2">"commit_latency_seconds_p50_value"</span><span class="p">,</span>
+    <span class="s2">"commit_latency_seconds_p95_value"</span><span class="p">,</span>
+    <span class="s2">"commit_latency_seconds_p99_value"</span><span class="p">,</span>
+    <span class="s2">"store_request_latency_seconds_p95_value"</span><span class="p">,</span>
+    <span class="s2">"refused_or_unanswered_share"</span><span class="p">,</span>
+    <span class="s2">"stuck"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">_SIZE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"-(\d+(?:\.\d+)?)([kMG]?)\.[A-Za-z]+$"</span><span class="p">)</span>
+<span class="n">_UNITS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">""</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">"k"</span><span class="p">:</span> <span class="mf">1e3</span><span class="p">,</span> <span class="s2">"M"</span><span class="p">:</span> <span class="mf">1e6</span><span class="p">,</span> <span class="s2">"G"</span><span class="p">:</span> <span class="mf">1e9</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="status_of">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.status_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">status_of</span><span class="p">(</span><span class="n">summary</span><span class="p">:</span> <span class="n">RunSummary</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The status of a run: `completed` for a valid run, `invalid`, `failed` or `interrupted`."""</span>
+    <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">outcome</span> <span class="o">==</span> <span class="n">INTERRUPTED</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">INTERRUPTED_STATUS</span>
+    <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">outcome</span> <span class="o">!=</span> <span class="n">COMPLETED</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">FAILED</span>
+    <span class="k">return</span> <span class="n">INVALID</span> <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">valid</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">else</span> <span class="n">VALID</span></div>
+
+
+
+<div class="viewcode-block" id="prefill_size">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.prefill_size">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">prefill_size</span><span class="p">(</span><span class="n">prefill</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The size of a prefill file in statements, as its name says it (`grid-1M.ttl` is 1 000 000);</span>
+<span class="sd">    None for a name that gives none, as `none`."""</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="n">_SIZE</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prefill</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">found</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">float</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">_UNITS</span><span class="p">[</span><span class="n">found</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_label</span><span class="p">(</span><span class="n">series</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">number</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">run_kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The label of a configuration and a run kind in a chart: its number with the spec's series,</span>
+<span class="sd">    and the run kind unless `uc2`, such as `after 7 unwrapped`."""</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">series</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">series</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">name</span> <span class="k">if</span> <span class="n">run_kind</span> <span class="o">==</span> <span class="n">RUN_KIND</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">run_kind</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="s1">'uc2-'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_with_series</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">series</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`frame` with the spec's series in a column `series` after its configuration's number, so</span>
+<span class="sd">    that the CSV keeps the number and gains the series; unchanged where it has no</span>
+<span class="sd">    configuration column or a series already."""</span>
+    <span class="k">if</span> <span class="s2">"series"</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">frame</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"configuration"</span><span class="p">,</span> <span class="s2">"configurations"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">frame</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">frame</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">column</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"series"</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">frame</span>
+    <span class="k">return</span> <span class="n">frame</span>
+
+
+<div class="viewcode-block" id="runs_table">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.runs_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">runs_table</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The runs table of the runs `figures` of the configurations `found`, and how many of the</span>
+<span class="sd">    runs are of no configuration of `found` (left out of the table)."""</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">elsewhere</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">run</span><span class="p">,</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">_configurations_of</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">elsewhere</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_run_row</span><span class="p">(</span><span class="n">configuration</span><span class="p">,</span> <span class="n">run</span><span class="p">))</span>
+    <span class="n">rows</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">],</span>
+            <span class="n">_RUN_KIND_ORDER</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">"run_kind"</span><span class="p">]),</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"repetition"</span><span class="p">]</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">"repetition"</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"run"</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">RUNS_COLUMNS</span><span class="p">)),</span> <span class="n">elsewhere</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_configurations_of</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">,</span> <span class="n">SpecConfiguration</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Each run of `figures` with its configuration of `found`; a baseline run has the</span>
+<span class="sd">    configuration of the run it replays, and a run of no configuration of `found` has none."""</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">ConfigurationIndex</span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+    <span class="n">by_run</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">run_id</span><span class="p">:</span> <span class="n">f</span><span class="o">.</span><span class="n">summary</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">figures</span><span class="p">}</span>
+    <span class="n">pairs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">,</span> <span class="n">SpecConfiguration</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">figures</span><span class="p">:</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span>
+        <span class="n">source</span><span class="p">:</span> <span class="n">RunSummary</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">summary</span>
+        <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span> <span class="o">==</span> <span class="n">BASELINE_RUN_KIND</span><span class="p">:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">by_run</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">replays</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="n">configuration</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">source</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">index</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_RUN_KIND_ORDER</span><span class="p">:</span>
+            <span class="n">configuration</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">pairs</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">run</span><span class="p">,</span> <span class="n">configuration</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">pairs</span>
+
+
+<div class="viewcode-block" id="steps_frame">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.steps_frame">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">steps_frame</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The steps table (`report_steps.steps_table`) of the valid runs of `found` that have steps."""</span>
+    <span class="k">return</span> <span class="n">report_steps</span><span class="o">.</span><span class="n">steps_table</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="n">run</span><span class="o">.</span><span class="n">steps</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">run</span><span class="p">,</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">_configurations_of</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">steps</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">status_of</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span> <span class="o">==</span> <span class="n">VALID</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="entries_of">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.entries_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">entries_of</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Entry</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The runs of `figures` for the tables of the report points (`report_points`), in the order</span>
+<span class="sd">    of the runs table. A run of a configuration of `found` has that configuration's number and</span>
+<span class="sd">    prefill. A run that matches none (`record_match`) is not left out, as the runs</span>
+<span class="sd">    table leaves it: a deadlock alarm and a dead heartbeat belong to the run, so it has the</span>
+<span class="sd">    configuration number its own record gives, and no prefill."""</span>
+    <span class="n">entries</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Entry</span><span class="p">(</span>
+            <span class="n">configuration</span><span class="o">.</span><span class="n">number</span> <span class="k">if</span> <span class="n">configuration</span> <span class="k">else</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">configuration</span><span class="p">,</span>
+            <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"prefill"</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">]),</span>
+            <span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="p">,</span>
+            <span class="n">run</span><span class="o">.</span><span class="n">points</span><span class="p">,</span>
+            <span class="n">status_of</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">run</span><span class="p">,</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">_configurations_of</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span> <span class="ow">in</span> <span class="n">_RUN_KIND_ORDER</span>
+    <span class="p">]</span>
+    <span class="n">entries</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="p">(</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">configuration</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">configuration</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">_RUN_KIND_ORDER</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span><span class="p">),</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">repetition</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">repetition</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">e</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">entries</span></div>
+
+
+
+<div class="viewcode-block" id="draw_hours">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.draw_hours">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_hours</span><span class="p">(</span>
+    <span class="n">hours</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">series</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Draw the by-hour chart of each configuration that has valid runs into `folder`; return</span>
+<span class="sd">    each file with its title."""</span>
+    <span class="n">drawn</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">hours</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">])):</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">report_points</span><span class="o">.</span><span class="n">hours_png</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"By hour of day (UTC), configuration </span><span class="si">{</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">series</span><span class="si">}</span><span class="s1"> '</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">series</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">''</span><span class="si">}{</span><span class="n">number</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">report_charts</span><span class="o">.</span><span class="n">hours_chart</span><span class="p">(</span>
+            <span class="n">hours</span><span class="p">[</span><span class="n">hours</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">]</span> <span class="o">==</span> <span class="n">number</span><span class="p">],</span> <span class="n">title</span><span class="p">,</span> <span class="n">folder</span> <span class="o">/</span> <span class="n">name</span>
+        <span class="p">)</span>
+        <span class="n">drawn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">drawn</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_run_row</span><span class="p">(</span><span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">,</span> <span class="n">run</span><span class="p">:</span> <span class="n">RunFigures</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">status_of</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+    <span class="n">row</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"configuration"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+        <span class="s2">"series"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">series</span><span class="p">,</span>
+        <span class="s2">"run_kind"</span><span class="p">:</span> <span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span><span class="p">,</span>
+        <span class="s2">"repetition"</span><span class="p">:</span> <span class="n">summary</span><span class="o">.</span><span class="n">repetition</span><span class="p">,</span>
+        <span class="s2">"run"</span><span class="p">:</span> <span class="n">summary</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+        <span class="o">**</span><span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">SETTINGS</span><span class="p">},</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="n">status</span><span class="p">,</span>
+        <span class="s2">"reason"</span><span class="p">:</span> <span class="n">summary</span><span class="o">.</span><span class="n">why_left_out</span><span class="p">(),</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">(</span><span class="n">FAILED</span><span class="p">,</span> <span class="n">INTERRUPTED_STATUS</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">row</span>
+    <span class="n">commits</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">commit_latencies</span>
+    <span class="n">reads</span><span class="p">,</span> <span class="n">writes</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">read_latencies</span><span class="p">,</span> <span class="n">run</span><span class="o">.</span><span class="n">write_latencies</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">request_counts</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">row</span> <span class="o">|=</span> <span class="p">{</span>
+        <span class="s2">"transports_ended_per_minute"</span><span class="p">:</span> <span class="n">summary</span><span class="o">.</span><span class="n">transports_ended_per_minute</span><span class="p">,</span>
+        <span class="s2">"commits"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">commits</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="n">commits</span><span class="p">),</span>
+        <span class="o">**</span><span class="p">{</span>
+            <span class="sa">f</span><span class="s2">"commit_p</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">commits</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">quantile</span><span class="p">(</span><span class="n">commits</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">"50"</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="s2">"95"</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span> <span class="p">(</span><span class="s2">"99"</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">))</span>
+        <span class="p">},</span>
+        <span class="o">**</span><span class="p">{</span>
+            <span class="sa">f</span><span class="s2">"read_p</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">reads</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">quantile</span><span class="p">(</span><span class="n">reads</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">"50"</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="s2">"95"</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">))</span>
+        <span class="p">},</span>
+        <span class="o">**</span><span class="p">{</span>
+            <span class="sa">f</span><span class="s2">"write_p</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">writes</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">quantile</span><span class="p">(</span><span class="n">writes</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">((</span><span class="s2">"50"</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="s2">"95"</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">))</span>
+        <span class="p">},</span>
+        <span class="o">**</span><span class="p">{</span>
+            <span class="n">name</span><span class="p">:</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span>
+                <span class="s2">"refused_in_window"</span><span class="p">,</span>
+                <span class="s2">"timed_out_in_window"</span><span class="p">,</span>
+                <span class="s2">"connection_dropped_in_window"</span><span class="p">,</span>
+                <span class="s2">"refused_outside_window"</span><span class="p">,</span>
+                <span class="s2">"timed_out_outside_window"</span><span class="p">,</span>
+                <span class="s2">"connection_dropped_outside_window"</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">},</span>
+        <span class="s2">"stuck_boxes"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">stuck</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="o">.</span><span class="n">stuck</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">load</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">client_load</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">row</span> <span class="o">|=</span> <span class="p">{</span>
+        <span class="s2">"client_load"</span><span class="p">:</span> <span class="n">load</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">,</span> <span class="n">NO_DATA</span><span class="p">),</span>
+        <span class="s2">"client_cpu_median_percent"</span><span class="p">:</span> <span class="n">load</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cpu_median_percent"</span><span class="p">),</span>
+        <span class="s2">"client_cpu_max_percent"</span><span class="p">:</span> <span class="n">load</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cpu_max_percent"</span><span class="p">),</span>
+        <span class="s2">"client_memory_max_gib"</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">load</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"memory_max_bytes"</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="n">load</span><span class="p">[</span><span class="s2">"memory_max_bytes"</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">row</span>
+
+
+<div class="viewcode-block" id="unanswered_table">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.unanswered_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">unanswered_table</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The table of the store requests that got no answer, one row for each, of the runs of</span>
+<span class="sd">    `found` (a failed or an interrupted run has none), in the order of the runs table and, within</span>
+<span class="sd">    a run, of their times."""</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">run</span><span class="p">,</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">_configurations_of</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">status_of</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="n">FAILED</span><span class="p">,</span>
+            <span class="n">INTERRUPTED_STATUS</span><span class="p">,</span>
+        <span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">run</span><span class="o">.</span><span class="n">unanswered</span> <span class="ow">or</span> <span class="p">():</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">"configuration"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+                    <span class="s2">"series"</span><span class="p">:</span> <span class="n">configuration</span><span class="o">.</span><span class="n">series</span><span class="p">,</span>
+                    <span class="s2">"run_kind"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">run_kind</span><span class="p">,</span>
+                    <span class="s2">"repetition"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">repetition</span><span class="p">,</span>
+                    <span class="s2">"run"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+                    <span class="s2">"where"</span><span class="p">:</span> <span class="s2">"in the window"</span>
+                    <span class="k">if</span> <span class="n">request</span><span class="p">[</span><span class="s2">"window"</span><span class="p">]</span>
+                    <span class="k">else</span> <span class="s2">"outside the window"</span><span class="p">,</span>
+                    <span class="s2">"outcome"</span><span class="p">:</span> <span class="n">request</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">],</span>
+                    <span class="s2">"time"</span><span class="p">:</span> <span class="n">request</span><span class="p">[</span><span class="s2">"at"</span><span class="p">],</span>
+                    <span class="s2">"wait_seconds"</span><span class="p">:</span> <span class="n">request</span><span class="p">[</span><span class="s2">"seconds"</span><span class="p">],</span>
+                    <span class="s2">"reason"</span><span class="p">:</span> <span class="n">request</span><span class="p">[</span><span class="s2">"reason"</span><span class="p">],</span>
+                    <span class="s2">"kind"</span><span class="p">:</span> <span class="n">request</span><span class="p">[</span><span class="s2">"kind"</span><span class="p">],</span>
+                    <span class="s2">"participant"</span><span class="p">:</span> <span class="n">request</span><span class="p">[</span><span class="s2">"participant"</span><span class="p">],</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+    <span class="n">rows</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">],</span>
+            <span class="n">_RUN_KIND_ORDER</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">"run_kind"</span><span class="p">]),</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"repetition"</span><span class="p">]</span> <span class="k">if</span> <span class="n">r</span><span class="p">[</span><span class="s2">"repetition"</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="n">r</span><span class="p">[</span><span class="s2">"run"</span><span class="p">],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">"time"</span><span class="p">]),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">UNANSWERED_COLUMNS</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="configurations_table">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.configurations_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">configurations_table</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">resamples</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The table of `jms-eval-table` as one row for each configuration and run kind, each</span>
+<span class="sd">    statistic a column. It is `table.make_table` of the same summaries, flattened."""</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span>
+        <span class="n">spec</span><span class="p">,</span>
+        <span class="n">found</span><span class="p">,</span>
+        <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">summary</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">figures</span><span class="p">],</span>
+        <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+        <span class="n">resamples</span><span class="o">=</span><span class="n">resamples</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">rows</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="p">[</span><span class="s2">"rows"</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">kind</span> <span class="ow">in</span> <span class="n">_RUN_KIND_ORDER</span><span class="p">:</span>
+            <span class="n">cell</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"run_kinds"</span><span class="p">][</span><span class="n">kind</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">cell</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">flat</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">"configurations"</span><span class="p">:</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">"configurations"</span><span class="p">])),</span>
+                <span class="s2">"series"</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">"series"</span><span class="p">],</span>
+                <span class="s2">"run_kind"</span><span class="p">:</span> <span class="n">kind</span><span class="p">,</span>
+                <span class="o">**</span><span class="p">{</span>
+                    <span class="n">name</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s2">"values"</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">SETTINGS</span>
+                    <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">"wrapper"</span>
+                <span class="p">},</span>
+            <span class="p">}</span>
+            <span class="n">_flatten</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">flat</span><span class="p">)</span>
+            <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_flatten</span><span class="p">(</span><span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">out</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The numbers of a cell of the table as columns: a nested key is joined to its parents with</span>
+<span class="sd">    `_`; an interval is a `_low` and a `_high`; a list of runs or of findings is its length."""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">inner</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">key</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">prefix</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">"</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">"interval"</span> <span class="ow">and</span> <span class="n">inner</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">out</span><span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_interval_low"</span><span class="p">]</span> <span class="o">=</span> <span class="n">inner</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">out</span><span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">_interval_high"</span><span class="p">]</span> <span class="o">=</span> <span class="n">inner</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">"interval_seconds"</span><span class="p">:</span>
+                <span class="n">out</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">v</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">inner</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">_flatten</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">inner</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">prefix</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">prefix</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+
+<div class="viewcode-block" id="families">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.families">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">families</span><span class="p">(</span><span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The families of configurations that differ only in the size of their prefill, each with at</span>
+<span class="sd">    least two sizes, in the order of their lowest configuration, and each family's configurations</span>
+<span class="sd">    in rising size."""</span>
+    <span class="n">grouped</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">prefill_size</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"prefill"</span><span class="p">))</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">rest</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">"prefill"</span><span class="p">}</span>
+        <span class="n">grouped</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">rest</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">),</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">configuration</span>
+        <span class="p">)</span>
+    <span class="n">chosen</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">sorted</span><span class="p">(</span><span class="n">members</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">prefill_size</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">])</span> <span class="ow">or</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">members</span> <span class="ow">in</span> <span class="n">grouped</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">({</span><span class="n">prefill_size</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">members</span><span class="p">})</span> <span class="o">&gt;</span> <span class="mi">1</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">chosen</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">family</span><span class="p">:</span> <span class="nb">min</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">number</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">))</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_describe</span><span class="p">(</span><span class="n">family</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">family</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">numbers</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">number</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">)</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">family</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">series</span><span class="si">}</span><span class="s2"> "</span> <span class="k">if</span> <span class="n">family</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">series</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"configurations </span><span class="si">{</span><span class="n">series</span><span class="si">}{</span><span class="n">numbers</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">first</span><span class="p">[</span><span class="s1">'topology'</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
+        <span class="sa">f</span><span class="s2">"strategies </span><span class="si">{</span><span class="n">first</span><span class="p">[</span><span class="s1">'module_strategy'</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">first</span><span class="p">[</span><span class="s1">'wms_strategy'</span><span class="p">]</span><span class="si">}</span><span class="s2">, "</span>
+        <span class="sa">f</span><span class="s2">"SHACL </span><span class="si">{</span><span class="s1">'on'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">first</span><span class="p">[</span><span class="s1">'shacl'</span><span class="p">]</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'off'</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="draw_charts">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.draw_charts">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_charts</span><span class="p">(</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Draw the charts of the runs table into `folder`; return each file with its title."""</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">runs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">series</span> <span class="k">if</span> <span class="n">found</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="n">frame</span><span class="p">[</span><span class="s2">"label"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">_label</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">frame</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">],</span> <span class="n">frame</span><span class="p">[</span><span class="s2">"run_kind"</span><span class="p">],</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">drawn</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">one</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">report_charts</span><span class="o">.</span><span class="n">category_chart</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">unit</span><span class="p">,</span> <span class="n">folder</span> <span class="o">/</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">drawn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">))</span>
+
+    <span class="n">one</span><span class="p">(</span>
+        <span class="n">report_charts</span><span class="o">.</span><span class="n">THROUGHPUT_PNG</span><span class="p">,</span>
+        <span class="s2">"Throughput: transports ended per minute"</span><span class="p">,</span>
+        <span class="s2">"transports_ended_per_minute"</span><span class="p">,</span>
+        <span class="s2">"transports per minute"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">one</span><span class="p">(</span><span class="n">report_charts</span><span class="o">.</span><span class="n">COMMIT_P95_PNG</span><span class="p">,</span> <span class="s2">"Commit latency, p95"</span><span class="p">,</span> <span class="s2">"commit_p95"</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">)</span>
+    <span class="n">report_charts</span><span class="o">.</span><span class="n">pair_chart</span><span class="p">(</span>
+        <span class="n">frame</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="p">(</span><span class="s2">"read_p95"</span><span class="p">,</span> <span class="s2">"Read latency, p95"</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"write_p95"</span><span class="p">,</span> <span class="s2">"Write latency, p95"</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">folder</span> <span class="o">/</span> <span class="n">report_charts</span><span class="o">.</span><span class="n">READ_WRITE_P95_PNG</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">drawn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">report_charts</span><span class="o">.</span><span class="n">READ_WRITE_P95_PNG</span><span class="p">,</span> <span class="s2">"Read and write latency, p95"</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">family</span> <span class="ow">in</span> <span class="n">families</span><span class="p">(</span><span class="n">found</span><span class="p">):</span>
+        <span class="n">size_of</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">number</span><span class="p">:</span> <span class="n">prefill_size</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">}</span>
+        <span class="n">mine</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="n">frame</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">size_of</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">mine</span><span class="p">[</span><span class="s2">"prefill_size"</span><span class="p">]</span> <span class="o">=</span> <span class="n">mine</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">size_of</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">report_charts</span><span class="o">.</span><span class="n">family_png</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">number</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">))</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Against the prefill size, </span><span class="si">{</span><span class="n">_describe</span><span class="p">(</span><span class="n">family</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">report_charts</span><span class="o">.</span><span class="n">family_chart</span><span class="p">(</span>
+            <span class="n">mine</span><span class="p">,</span>
+            <span class="n">_describe</span><span class="p">(</span><span class="n">family</span><span class="p">),</span>
+            <span class="p">[</span>
+                <span class="p">(</span><span class="s2">"transports_ended_per_minute"</span><span class="p">,</span> <span class="s2">"Throughput"</span><span class="p">,</span> <span class="s2">"transports per minute"</span><span class="p">),</span>
+                <span class="p">(</span><span class="s2">"commit_p95"</span><span class="p">,</span> <span class="s2">"Commit latency, p95"</span><span class="p">,</span> <span class="s2">"seconds"</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">folder</span> <span class="o">/</span> <span class="n">name</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">drawn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">drawn</span></div>
+
+
+
+<div class="viewcode-block" id="draw_steps">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.draw_steps">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">draw_steps</span><span class="p">(</span>
+    <span class="n">steps</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Draw the steps chart of each family of configurations (see `families`) that has steps into</span>
+<span class="sd">    `folder`; return each file with its title."""</span>
+    <span class="n">drawn</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">family</span> <span class="ow">in</span> <span class="n">families</span><span class="p">(</span><span class="n">found</span><span class="p">):</span>
+        <span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">number</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">]</span>
+        <span class="n">mine</span> <span class="o">=</span> <span class="n">steps</span><span class="p">[</span><span class="n">steps</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">numbers</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">mine</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">number</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">}</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">report_charts</span><span class="o">.</span><span class="n">steps_png</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Where the time goes, step by step, </span><span class="si">{</span><span class="n">_describe</span><span class="p">(</span><span class="n">family</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">report_charts</span><span class="o">.</span><span class="n">steps_chart</span><span class="p">(</span>
+            <span class="n">mine</span><span class="p">,</span>
+            <span class="n">sizes</span><span class="p">,</span>
+            <span class="n">_describe</span><span class="p">(</span><span class="n">family</span><span class="p">),</span>
+            <span class="n">folder</span> <span class="o">/</span> <span class="n">name</span><span class="p">,</span>
+            <span class="n">names</span><span class="o">=</span><span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">number</span><span class="p">:</span> <span class="n">c</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">family</span><span class="p">},</span>
+        <span class="p">)</span>
+        <span class="n">drawn</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">drawn</span></div>
+
+
+
+<div class="viewcode-block" id="make_report">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.make_report">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_report</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">],</span>
+    <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_SEED</span><span class="p">,</span>
+    <span class="n">resamples</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_RESAMPLES</span><span class="p">,</span>
+    <span class="n">made_at</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">live_checks</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">LiveCheck</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write the report of `figures` into `folder`, which is made if need be: its files from a</span>
+<span class="sd">    report before are replaced, those of charts that this report does not draw are removed.</span>
+<span class="sd">    Returns `report.md`'s path.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        live_checks: The live checks of the orchestrator's log (`report_points`), or None for no</span>
+<span class="sd">            log: then the mark of the live checks says `no data`.</span>
+<span class="sd">    """</span>
+    <span class="n">folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">old</span> <span class="ow">in</span> <span class="p">(</span>
+        <span class="o">*</span><span class="n">folder</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">"*.png"</span><span class="p">),</span>
+        <span class="n">folder</span> <span class="o">/</span> <span class="n">RUNS_CSV</span><span class="p">,</span>
+        <span class="n">folder</span> <span class="o">/</span> <span class="n">CONFIGURATIONS_CSV</span><span class="p">,</span>
+        <span class="n">folder</span> <span class="o">/</span> <span class="n">STEPS_CSV</span><span class="p">,</span>
+        <span class="n">folder</span> <span class="o">/</span> <span class="n">UNANSWERED_CSV</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">(</span>
+            <span class="n">folder</span> <span class="o">/</span> <span class="n">name</span>
+            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span>
+                <span class="n">report_points</span><span class="o">.</span><span class="n">MARKS_CSV</span><span class="p">,</span>
+                <span class="n">report_points</span><span class="o">.</span><span class="n">HOURS_CSV</span><span class="p">,</span>
+                <span class="n">report_points</span><span class="o">.</span><span class="n">PAGE_CACHE_CSV</span><span class="p">,</span>
+                <span class="n">report_points</span><span class="o">.</span><span class="n">DEADLOCK_ALARMS_CSV</span><span class="p">,</span>
+                <span class="n">report_points</span><span class="o">.</span><span class="n">DEAD_HEARTBEATS_CSV</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">folder</span> <span class="o">/</span> <span class="n">REPORT_MARKDOWN</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">old</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">missing_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">runs_frame</span><span class="p">,</span> <span class="n">elsewhere</span> <span class="o">=</span> <span class="n">runs_table</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">)</span>
+    <span class="n">configurations_frame</span> <span class="o">=</span> <span class="n">configurations_table</span><span class="p">(</span>
+        <span class="n">spec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">,</span> <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span> <span class="n">resamples</span><span class="o">=</span><span class="n">resamples</span>
+    <span class="p">)</span>
+    <span class="c1"># Each CSV keeps the configuration's number and gains the spec's series.</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="n">_with_series</span><span class="p">(</span><span class="n">steps_frame</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">),</span> <span class="n">spec</span><span class="o">.</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">unanswered</span> <span class="o">=</span> <span class="n">unanswered_table</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">)</span>
+    <span class="n">runs_frame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="n">RUNS_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">unanswered</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="n">UNANSWERED_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">configurations_frame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="n">CONFIGURATIONS_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">steps</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="n">STEPS_CSV</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">made_at</span> <span class="ow">or</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">_Points</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">,</span> <span class="n">live_checks</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span><span class="o">.</span><span class="n">with_series</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">series</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">points</span><span class="o">.</span><span class="n">files</span><span class="p">():</span>
+        <span class="n">frame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">charts</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="o">*</span><span class="n">draw_charts</span><span class="p">(</span><span class="n">runs_frame</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">folder</span><span class="p">),</span>
+        <span class="o">*</span><span class="n">draw_steps</span><span class="p">(</span><span class="n">steps</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">folder</span><span class="p">),</span>
+        <span class="o">*</span><span class="n">draw_hours</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">hours</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">spec</span><span class="o">.</span><span class="n">series</span><span class="p">),</span>
+    <span class="p">]</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">/</span> <span class="n">REPORT_MARKDOWN</span>
+    <span class="n">path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
+        <span class="n">_markdown</span><span class="p">(</span>
+            <span class="n">spec</span><span class="p">,</span>
+            <span class="n">runs_frame</span><span class="p">,</span>
+            <span class="n">configurations_frame</span><span class="p">,</span>
+            <span class="n">unanswered</span><span class="p">,</span>
+            <span class="n">charts</span><span class="p">,</span>
+            <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">,</span>
+            <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+            <span class="n">resamples</span><span class="o">=</span><span class="n">resamples</span><span class="p">,</span>
+            <span class="n">elsewhere</span><span class="o">=</span><span class="n">elsewhere</span><span class="p">,</span>
+            <span class="n">made_at</span><span class="o">=</span><span class="n">now</span><span class="p">,</span>
+            <span class="n">points</span><span class="o">=</span><span class="n">points</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+
+<div class="viewcode-block" id="update_report">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.update_report">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">update_report</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">fresh</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_SEED</span><span class="p">,</span>
+    <span class="n">resamples</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">DEFAULT_RESAMPLES</span><span class="p">,</span>
+    <span class="n">live_checks</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Make the report of the runs below `runs`, into `runs/report`, from the summaries of their</span>
+<span class="sd">    records (a record without a current summary is read once and summarised). Returns</span>
+<span class="sd">    `report.md`'s path.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fresh: The record of a run that was just made, as the run returned it, so that its file is</span>
+<span class="sd">            not read again.</span>
+<span class="sd">        live_checks: The path of the orchestrator's live-check log (`report_points`), read each</span>
+<span class="sd">            time; None for no log (every mark of the live checks says `no data`).</span>
+<span class="sd">    """</span>
+    <span class="n">figures</span> <span class="o">=</span> <span class="n">read_all</span><span class="p">(</span><span class="n">runs</span><span class="p">,</span> <span class="n">fresh</span><span class="o">=</span><span class="n">fresh</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">make_report</span><span class="p">(</span>
+        <span class="n">spec</span><span class="p">,</span>
+        <span class="n">found</span><span class="p">,</span>
+        <span class="n">figures</span><span class="p">,</span>
+        <span class="n">runs</span> <span class="o">/</span> <span class="n">REPORT_FOLDER</span><span class="p">,</span>
+        <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">,</span>
+        <span class="n">resamples</span><span class="o">=</span><span class="n">resamples</span><span class="p">,</span>
+        <span class="n">live_checks</span><span class="o">=</span><span class="n">read_live_checks</span><span class="p">(</span><span class="n">live_checks</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_markdown</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">runs_frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">configurations_frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">unanswered</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">charts</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">resamples</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">elsewhere</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">made_at</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+    <span class="n">points</span><span class="p">:</span> <span class="n">_Points</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">statuses</span> <span class="o">=</span> <span class="n">runs_frame</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="n">counted</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">statuses</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="n">VALID</span><span class="p">,</span> <span class="n">INVALID</span><span class="p">,</span> <span class="n">FAILED</span><span class="p">,</span> <span class="n">INTERRUPTED_STATUS</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">left_out</span> <span class="o">=</span> <span class="n">runs_frame</span><span class="p">[</span><span class="n">runs_frame</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">VALID</span><span class="p">]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">"# Report of </span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"Made at </span><span class="si">{</span><span class="n">made_at</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2"> from the records below `</span><span class="si">{</span><span class="n">runs</span><span class="si">}</span><span class="s2">`: "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">runs_frame</span><span class="p">)</span><span class="si">}</span><span class="s2"> runs (</span><span class="si">{</span><span class="n">counted</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="o">+</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"; </span><span class="si">{</span><span class="n">elsewhere</span><span class="si">}</span><span class="s2"> records are of no configuration of the spec"</span>
+            <span class="k">if</span> <span class="n">elsewhere</span>
+            <span class="k">else</span> <span class="s2">""</span>
+        <span class="p">)</span>
+        <span class="o">+</span> <span class="sa">f</span><span class="s2">". The bootstrap of the configurations table: seed </span><span class="si">{</span><span class="n">seed</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">resamples</span><span class="si">}</span><span class="s2"> resamples."</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s2">"A valid run is a filled dot in the charts and an invalid run is a ring; a tick is "</span>
+            <span class="s2">"the median of the valid runs. A failed or an interrupted run has no values and is "</span>
+            <span class="s2">"not plotted. Every column is in `runs.csv` and `configurations.csv`; the steps of "</span>
+            <span class="s2">"the runs, where the time goes, are in `steps.csv` and the steps charts; the "</span>
+            <span class="s2">"unanswered store requests are in `unanswered.csv`; the marks of the runs (the live "</span>
+            <span class="s2">"checks, other activity, the deadlock alarms, the dead heartbeats) are in `marks.csv`, "</span>
+            <span class="s2">"and the sections after the unanswered store requests, with their files, say the rest."</span>
+        <span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"## Runs left out of the statistics"</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">left_out</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"None."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="n">_table</span><span class="p">(</span>
+                <span class="n">left_out</span><span class="p">,</span>
+                <span class="p">(</span><span class="s2">"configuration"</span><span class="p">,</span> <span class="s2">"run_kind"</span><span class="p">,</span> <span class="s2">"repetition"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">,</span> <span class="s2">"reason"</span><span class="p">),</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"## Charts"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">charts</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"![</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+        <span class="s2">"## Unanswered store requests"</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s2">"Each store request that got no answer, in the window and outside it, with its "</span>
+            <span class="s2">"outcome (`timed out`: its client gave up because the time ran out; `connection "</span>
+            <span class="s2">"dropped`: its connection closed, reset or failed before an answer, or its error "</span>
+            <span class="s2">"is of neither class or none), its real wait and its reason, the error; the same "</span>
+            <span class="s2">"rows are in `unanswered.csv`."</span>
+        <span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">unanswered</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"None."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="n">_table</span><span class="p">(</span>
+                <span class="n">unanswered</span><span class="p">,</span>
+                <span class="p">(</span><span class="s2">"configuration"</span><span class="p">,</span> <span class="s2">"run_kind"</span><span class="p">,</span> <span class="s2">"repetition"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"where"</span><span class="p">)</span>
+                <span class="o">+</span> <span class="p">(</span><span class="s2">"outcome"</span><span class="p">,</span> <span class="s2">"time"</span><span class="p">,</span> <span class="s2">"wait_seconds"</span><span class="p">,</span> <span class="s2">"reason"</span><span class="p">),</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="n">lines</span> <span class="o">+=</span> <span class="n">points</span><span class="o">.</span><span class="n">markdown</span><span class="p">()</span>
+    <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+        <span class="s2">"## Client load"</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s2">"The client host's CPU use (median and highest, in percent of all its CPUs) and "</span>
+            <span class="s2">"highest memory use (GiB) in the measured window. `no data`: the record has no "</span>
+            <span class="s2">"sample in the window (a run before the client load was recorded); `not "</span>
+            <span class="s2">"available`: the host had no `/proc`."</span>
+        <span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="n">_client_load_table</span><span class="p">(</span><span class="n">runs_frame</span><span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+        <span class="s2">"## Configurations"</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="p">(</span>
+            <span class="s2">"The statistics of `jms-eval-table`, over the valid runs, with the columns of "</span>
+            <span class="s2">"`configurations.csv` that matter most."</span>
+        <span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="n">_table</span><span class="p">(</span><span class="n">configurations_frame</span><span class="p">,</span> <span class="n">_CONFIGURATIONS_SHOWN</span><span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"## Runs"</span><span class="p">,</span>
+        <span class="s2">""</span><span class="p">,</span>
+        <span class="n">_table</span><span class="p">(</span><span class="n">runs_frame</span><span class="p">,</span> <span class="n">_RUNS_SHOWN</span><span class="p">),</span>
+        <span class="s2">""</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">_Points</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The tables of the report points of one report (`report_points`)."""</span>
+
+    <span class="n">marks</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">hours</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">page_cache</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">deadlocks</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">deadlock_counts</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+    <span class="n">dead_heartbeats</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">of</span><span class="p">(</span>
+        <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+        <span class="n">figures</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">],</span>
+        <span class="n">checks</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">LiveCheck</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">now</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_Points</span><span class="p">:</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">entries_of</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">figures</span><span class="p">)</span>
+        <span class="n">sizes</span> <span class="o">=</span> <span class="p">{</span><span class="n">e</span><span class="o">.</span><span class="n">prefill</span><span class="p">:</span> <span class="n">prefill_size</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">prefill</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">entries</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">prefill</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">_Points</span><span class="p">(</span>
+            <span class="n">report_points</span><span class="o">.</span><span class="n">marks_table</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">checks</span><span class="p">,</span> <span class="n">now</span><span class="p">),</span>
+            <span class="n">report_points</span><span class="o">.</span><span class="n">hours_table</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">_RUN_KIND_ORDER</span><span class="p">),</span>
+            <span class="n">report_points</span><span class="o">.</span><span class="n">page_cache_table</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="n">_RUN_KIND_ORDER</span><span class="p">,</span> <span class="n">sizes</span><span class="p">),</span>
+            <span class="n">report_points</span><span class="o">.</span><span class="n">deadlock_table</span><span class="p">(</span><span class="n">entries</span><span class="p">),</span>
+            <span class="n">report_points</span><span class="o">.</span><span class="n">deadlock_counts</span><span class="p">(</span><span class="n">entries</span><span class="p">),</span>
+            <span class="n">report_points</span><span class="o">.</span><span class="n">dead_heartbeats_table</span><span class="p">(</span><span class="n">entries</span><span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">with_series</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">series</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_Points</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The tables with the spec's series beside each configuration's number."""</span>
+        <span class="k">return</span> <span class="n">_Points</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">(</span>
+                <span class="n">_with_series</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">marks</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">page_cache</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">deadlocks</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">deadlock_counts</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">dead_heartbeats</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">files</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">]]:</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">report_points</span><span class="o">.</span><span class="n">MARKS_CSV</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marks</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">report_points</span><span class="o">.</span><span class="n">HOURS_CSV</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">report_points</span><span class="o">.</span><span class="n">PAGE_CACHE_CSV</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">page_cache</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">report_points</span><span class="o">.</span><span class="n">DEADLOCK_ALARMS_CSV</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">deadlocks</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">report_points</span><span class="o">.</span><span class="n">DEAD_HEARTBEATS_CSV</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dead_heartbeats</span><span class="p">),</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">markdown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The sections of the report points, as lines."""</span>
+        <span class="n">marks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">marks</span>
+        <span class="n">live</span> <span class="o">=</span> <span class="n">marks</span><span class="p">[</span><span class="s2">"live_check"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+        <span class="n">activity</span> <span class="o">=</span> <span class="n">marks</span><span class="p">[</span><span class="s2">"other_activity"</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+        <span class="n">marked</span> <span class="o">=</span> <span class="n">marks</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">marks</span><span class="p">[</span><span class="s2">"live_check"</span><span class="p">]</span> <span class="o">==</span> <span class="n">report_points</span><span class="o">.</span><span class="n">OVERLAP</span><span class="p">)</span>
+            <span class="o">|</span> <span class="p">(</span><span class="n">marks</span><span class="p">[</span><span class="s2">"other_activity"</span><span class="p">]</span> <span class="o">==</span> <span class="n">report_points</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">"## Runs marked"</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="s2">"A run is marked when its window overlaps a live check of the orchestrator's "</span>
+                <span class="s2">"log (`--live-checks`), or when the server watch shows other activity: another "</span>
+                <span class="s2">"repository's counters (`epoolReads`, `epoolWrites`) rose between the run's start "</span>
+                <span class="s2">"and the drain's end, or its gauges (`openConnections`, `activeTransactions`) "</span>
+                <span class="s2">"were above zero at either. `no data`: no log was given, or the record has no "</span>
+                <span class="s1">'server watch (a run of the "before" series). Every run is in `marks.csv`.'</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"Live checks: "</span>
+            <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">live</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span>
+                <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span>
+                    <span class="n">report_points</span><span class="o">.</span><span class="n">OVERLAP</span><span class="p">,</span>
+                    <span class="n">report_points</span><span class="o">.</span><span class="n">NO_OVERLAP</span><span class="p">,</span>
+                    <span class="n">NO_DATA</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="o">+</span> <span class="s2">". Other activity: "</span>
+            <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">activity</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">"</span>
+                <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">(</span><span class="n">report_points</span><span class="o">.</span><span class="n">ACTIVITY</span><span class="p">,</span> <span class="n">report_points</span><span class="o">.</span><span class="n">NONE</span><span class="p">,</span> <span class="n">NO_DATA</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="o">+</span> <span class="s2">"."</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">marked</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"No run is marked."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">_table</span><span class="p">(</span>
+                    <span class="n">marked</span><span class="p">,</span>
+                    <span class="p">(</span><span class="s2">"configuration"</span><span class="p">,</span> <span class="s2">"run_kind"</span><span class="p">,</span> <span class="s2">"repetition"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"live_check"</span><span class="p">)</span>
+                    <span class="o">+</span> <span class="p">(</span><span class="s2">"live_checks"</span><span class="p">,</span> <span class="s2">"other_activity"</span><span class="p">,</span> <span class="s2">"other_activity_why"</span><span class="p">),</span>
+                <span class="p">),</span>
+                <span class="s2">""</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="s2">"## By hour of day"</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="s2">"The valid runs of each configuration and run kind grouped by the hour of day "</span>
+                <span class="s2">"(UTC) of their window's start: the median of the transports ended per minute "</span>
+                <span class="s2">"and of the completed writes per minute, and the p95 of the pooled commit "</span>
+                <span class="s2">"latencies and of the pooled store-request latencies (seconds). The same rows "</span>
+                <span class="s2">"are in `hours.csv`."</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"None."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="n">_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="p">,</span> <span class="n">report_points</span><span class="o">.</span><span class="n">HOURS_COLUMNS</span><span class="p">),</span> <span class="s2">""</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="p">[</span><span class="s2">"configuration"</span><span class="p">])):</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">report_points</span><span class="o">.</span><span class="n">hours_png</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+                <span class="n">shown</span> <span class="o">=</span> <span class="n">_cell_of</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hours</span><span class="p">,</span> <span class="s2">"configuration"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+                <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"![By hour of day, configuration </span><span class="si">{</span><span class="n">shown</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="s2">"## Global page cache"</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="s2">"The hit share of the server's global page cache for each prefill, from the "</span>
+                <span class="s2">"window's start to the drain's end: the deltas of the hits and of the misses "</span>
+                <span class="s2">"between the server watch's two reads, summed over the valid runs of the "</span>
+                <span class="s2">"prefill. A run whose delta is negative (the counters reset when the server "</span>
+                <span class="s2">"restarted) or that has no read gives `no data` and is not summed "</span>
+                <span class="s2">"(`runs_without_data`). The same rows are in `page_cache.csv`."</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">page_cache</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"None."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="n">_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">page_cache</span><span class="p">,</span> <span class="n">report_points</span><span class="o">.</span><span class="n">PAGE_CACHE_COLUMNS</span><span class="p">),</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="s2">"## Deadlock alarms"</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="s2">"A run in which a module raised a deadlock alarm stays invalid. The runs are "</span>
+                <span class="s2">"listed apart here, so that they can be counted in later; the same rows are in "</span>
+                <span class="s2">"`deadlock_alarms.csv`."</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">deadlocks</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"None."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deadlock_counts</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">deadlock_counts</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span>
+                <span class="s2">""</span><span class="p">,</span>
+                <span class="n">_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deadlocks</span><span class="p">,</span> <span class="n">report_points</span><span class="o">.</span><span class="n">DEADLOCK_COLUMNS</span><span class="p">),</span>
+                <span class="s2">""</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="s2">"## Dead heartbeats"</span><span class="p">,</span>
+            <span class="s2">""</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="s2">"A participant's heartbeat is dead when its last heartbeat write lies more "</span>
+                <span class="s2">"than the live-heartbeat age (the run setting `live_heartbeat_age_seconds`, 90 s) "</span>
+                <span class="s2">"before the start of its last other span. A run without spans has `no data` "</span>
+                <span class="s2">"in `marks.csv`. The same rows are in `dead_heartbeats.csv`."</span>
+            <span class="p">),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dead_heartbeats</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">"None."</span><span class="p">,</span> <span class="s2">""</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span>
+                <span class="n">_table</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dead_heartbeats</span><span class="p">,</span> <span class="n">report_points</span><span class="o">.</span><span class="n">DEAD_HEARTBEAT_COLUMNS</span><span class="p">),</span>
+                <span class="s2">""</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="k">return</span> <span class="n">lines</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_client_load_table</span><span class="p">(</span><span class="n">runs_frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The client load of each run that has values, as a Markdown table: a run with no figure</span>
+<span class="sd">    shows its state (`no data` or `not available`) in place of the numbers. A configuration's</span>
+<span class="sd">    number shows with the spec's series, such as `before 7`, as in the other tables."""</span>
+    <span class="n">shown</span> <span class="o">=</span> <span class="n">runs_frame</span><span class="p">[</span><span class="o">~</span><span class="n">runs_frame</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">FAILED</span><span class="p">,</span> <span class="n">INTERRUPTED_STATUS</span><span class="p">])]</span>
+    <span class="k">if</span> <span class="n">shown</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">"None."</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"configuration"</span><span class="p">,</span>
+        <span class="s2">"run_kind"</span><span class="p">,</span>
+        <span class="s2">"repetition"</span><span class="p">,</span>
+        <span class="s2">"run"</span><span class="p">,</span>
+        <span class="s2">"client_cpu_median_percent"</span><span class="p">,</span>
+        <span class="s2">"client_cpu_max_percent"</span><span class="p">,</span>
+        <span class="s2">"client_memory_max_gib"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"| "</span> <span class="o">+</span> <span class="s2">" | "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">columns</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" |"</span><span class="p">,</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="s2">"---|"</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">shown</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">measured</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"client_load"</span><span class="p">]</span> <span class="o">==</span> <span class="n">MEASURED</span>
+        <span class="n">cells</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">_named_cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span> <span class="ow">or</span> <span class="n">measured</span>
+            <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"client_load"</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span>
+        <span class="p">]</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"| "</span> <span class="o">+</span> <span class="s2">" | "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" |"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_table</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`frame`'s `columns` as a Markdown table; a number with four significant digits. A</span>
+<span class="sd">    configuration's number shows with the spec's series where `frame` holds it, such as</span>
+<span class="sd">    `before 7`."""</span>
+    <span class="n">shown</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">"series"</span><span class="p">]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"| "</span> <span class="o">+</span> <span class="s2">" | "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">shown</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" |"</span><span class="p">,</span> <span class="s2">"|"</span> <span class="o">+</span> <span class="s2">"---|"</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">shown</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"| "</span> <span class="o">+</span> <span class="s2">" | "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_named_cell</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">shown</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" |"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_named_cell</span><span class="p">(</span><span class="n">row</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The cell of `column` in `row`: a configuration's number with the series of the row, where</span>
+<span class="sd">    it has one."""</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">_cell</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">column</span><span class="p">])</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">row</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"series"</span><span class="p">)</span> <span class="k">if</span> <span class="n">column</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"configuration"</span><span class="p">,</span> <span class="s2">"configurations"</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">series</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">series</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_cell_of</span><span class="p">(</span><span class="n">frame</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`value` of `column` as a cell of `frame` shows it, with the series of its rows."""</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="s2">"series"</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="s2">"series"</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">columns</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">series</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">series</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_cell</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">value</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"true"</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="s2">"false"</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.4g</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"|"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">|"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="s2">" "</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../reference/evaluation/report.html#jms_kapps.evaluation.report.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">prog</span><span class="o">=</span><span class="n">PROGRAM</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">"The report of the runs of a spec, tables and charts beside their records "</span>
+        <span class="s2">"(the measurement harness, iteration one). It needs no store and runs nothing."</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"spec"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">"The spec, TOML, whose runs the report holds"</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--runs"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"runs"</span><span class="p">),</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The folder of the runs' folders, as the sweep was given it; the report is "</span>
+        <span class="sa">f</span><span class="s2">"written into its folder </span><span class="si">{</span><span class="n">REPORT_FOLDER</span><span class="si">}</span><span class="s2">/ (default: runs)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--set"</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">"KEY=VALUE"</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">"append"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"A value of every configuration, over the spec's, as the sweep was given it. "</span>
+        <span class="s2">"May be given more than once"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--seed"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">DEFAULT_SEED</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s2">"The seed of the configurations table's bootstrap (default: </span><span class="si">{</span><span class="n">DEFAULT_SEED</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--resamples"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">DEFAULT_RESAMPLES</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"How many resamples each bootstrap interval draws "</span>
+        <span class="sa">f</span><span class="s2">"(default: </span><span class="si">{</span><span class="n">DEFAULT_RESAMPLES</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--live-checks"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">"LOG"</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The orchestrator's live-check log, JSON lines with event, at, check and "</span>
+        <span class="s2">"repository; a run that overlaps a live check is marked. Without it, the mark says "</span>
+        <span class="s2">"no data (default: none)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">resamples</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: --resamples is a whole number from 1"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">args</span><span class="o">.</span><span class="n">runs</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: there is no runs' folder </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">runs</span><span class="p">)</span><span class="si">!r}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">read_spec</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">spec</span><span class="p">)</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">configurations</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">overrides</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">setting</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">set</span><span class="p">)))</span>
+    <span class="k">except</span> <span class="n">SpecRefused</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">refused</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">update_report</span><span class="p">(</span>
+        <span class="n">spec</span><span class="p">,</span>
+        <span class="n">found</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">runs</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">seed</span><span class="p">,</span>
+        <span class="n">resamples</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">resamples</span><span class="p">,</span>
+        <span class="n">live_checks</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">live_checks</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the report is at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

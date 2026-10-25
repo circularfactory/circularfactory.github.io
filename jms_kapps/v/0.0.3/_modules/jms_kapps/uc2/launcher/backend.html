@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.launcher.backend &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/launcher/backend';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../../_static/searchtools.js"></script>
+    <script src="../../../../_static/language_data.js"></script>
+    <script src="../../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.launcher.backend</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.launcher.backend</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What the Launcher does, without a route or a page: launch a topology, stop processes, arm faults.</span>
+
+<span class="sd">The Launcher runs on the run core (`run_core`), which the bench launcher shares. A launch stops</span>
+<span class="sd">whatever runs, asks the one live-instance guard, clears the dataset, seeds the topology, and</span>
+<span class="sd">starts the participants of every run, one FlexConveyorModule process for each module and the</span>
+<span class="sd">WarehouseManagementSystem's, through a fresh `Supervisor`, and beside them the monitor. The monitor</span>
+<span class="sd">is the Launcher's own: a run of the run core without the Launcher starts none, so its resource is</span>
+<span class="sd">reserved here (`launchable`), and the Launcher's graph seeds it. `api.py` serves this over HTTP,</span>
+<span class="sd">and `static/` is the page that calls it.</span>
+
+<span class="sd">**A launch names the strategy of the modules and the strategy of the WarehouseManagementSystem**,</span>
+<span class="sd">or runs with the Launcher's own, `jms-uc2 --module-strategy` and `--wms-strategy`, `real` unless</span>
+<span class="sd">they name others (`strategies`). The Launcher finds the strategies of each kind once,</span>
+<span class="sd">when it is made, and refuses a launch that names one it did not find before it stops anything. The</span>
+<span class="sd">run core puts `--module-strategy &lt;name&gt;` on the command line of every module process and</span>
+<span class="sd">`--wms-strategy &lt;name&gt;` on the WarehouseManagementSystem's (`run_core.participants_of`), and each</span>
+<span class="sd">process loads its strategy by that name at its start.</span>
+
+<span class="sd">**A launch says whether it collects history**, the launch option `collect_history`, or runs with</span>
+<span class="sd">the Launcher's own, `jms-uc2 --collect-history`, off unless it is given. A launch with it has its</span>
+<span class="sd">reset turn on the store's history collection, so that past possessions can be read; one without it</span>
+<span class="sd">leaves the collection as it is, on where an earlier launch turned it on. The state says whether</span>
+<span class="sd">the launch that runs was launched with it.</span>
+
+<span class="sd">**A launch says whether its monitor collects the refusals**, the launch option</span>
+<span class="sd">`collect_refusals`, off unless it is given. The monitor then starts in "graph + streams", which</span>
+<span class="sd">follows each participant's handover event stream; without it the monitor starts in "graph only",</span>
+<span class="sd">which reads the knowledge graph and nothing else. The state says whether the launch that runs was</span>
+<span class="sd">launched with it, and the page's checkbox starts at that.</span>
+
+<span class="sd">**A launch names the deadlock alarm time of its modules**, or runs with the Launcher's own,</span>
+<span class="sd">`jms-uc2 --deadlock-alarm-seconds`, 300 s unless it is given: how long a box a module holds may</span>
+<span class="sd">wait for a Reserve before the module raises the deadlock alarm for it. The run core puts</span>
+<span class="sd">`--deadlock-alarm-seconds &lt;seconds&gt;` on the command line of every module process. The page's</span>
+<span class="sd">field "deadlock alarm (s)" starts at the Launcher's own; the API refuses a value that is not a</span>
+<span class="sd">positive number, before anything is stopped or cleared.</span>
+
+<span class="sd">**Clear stops every process, then empties the dataset, graph by graph**, and says how many</span>
+<span class="sd">statements the dataset holds then: 0 where it is empty. It asks the one live-instance guard as</span>
+<span class="sd">a launch does, after this Launcher's processes have stopped, so it clears nothing while another</span>
+<span class="sd">launcher's process, or a process run on its own, is live there. A clear of the whole dataset in</span>
+<span class="sd">one request is refused while the store collects history, so each graph is cleared on its own</span>
+<span class="sd">(`triplestore.clear_graph_by_graph`). From the clear on, no topology shows as seeded, and the next</span>
+<span class="sd">launch loads the ontologies, the shapes and a topology again.</span>
+
+<span class="sd">**Each refusal of the Launcher has a class of its own**: its own, `NoProcess` and</span>
+<span class="sd">`NotReachable`; the load check's, `TopologyRefused` (`launchable`); and those it passes on from</span>
+<span class="sd">the run core and the strategies, `LiveInstanceError`, `LaunchFailed`, `ClearFailed` and</span>
+<span class="sd">`UnknownStrategy`. Its routes catch only refusals, so any other error, as a bug's, goes through</span>
+<span class="sd">them as it is (`api.py`).</span>
+
+<span class="sd">The graph and the modules' fault switches are reached through two small ports, `LauncherGraph`, the</span>
+<span class="sd">run core's `RunGraph` with the clear beside it, and `FaultSwitches`, so that a test can replace</span>
+<span class="sd">both.</span>
+
+<span class="sd">**The Launcher holds each module's two faults.** It writes each switch, and it supervises the</span>
+<span class="sd">processes that reset a module to off, so it knows what it set and when the value is gone. The page</span>
+<span class="sd">therefore shows what the Launcher commanded, and no read of the page reaches out to a module. A</span>
+<span class="sd">switch goes to the address the supervisor read when the module turned live, not to one read from</span>
+<span class="sd">the graph now: a module run by hand on the same resource can win the graph's answer, and the switch</span>
+<span class="sd">then works while the graph is away. A write through a module's own `POST /faults/{name}` is not</span>
+<span class="sd">seen here.</span>
+
+<span class="sd">**Nor does a read of the page reach the graph.** The supervisor reads the services in its own</span>
+<span class="sd">watch, each with the address it keeps from the read that found its process live. `state()` renders</span>
+<span class="sd">what the supervisor last read. While the graph cannot be read, a state that rests on it is shown as</span>
+<span class="sd">unconfirmed, with how long ago it was last confirmed, and the page keeps answering. The list of the</span>
+<span class="sd">boxes on the station is read the same way, in the background, by its one SPARQL query</span>
+<span class="sd">(`boxes.StationBoxes`), and `state()` renders the last read with the query's text.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">contextlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Mapping</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">NamedTuple</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">get_type_hints</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlencode</span><span class="p">,</span> <span class="n">urljoin</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">TripleStore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BaseModel</span><span class="p">,</span>
+    <span class="n">SerializerFunctionWrapHandler</span><span class="p">,</span>
+    <span class="n">model_serializer</span><span class="p">,</span>
+    <span class="n">model_validator</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing_extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.passthrough</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_of</span><span class="p">,</span> <span class="n">process_path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.supervision</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">STOP_TIMEOUT_SECONDS</span><span class="p">,</span>
+    <span class="n">ChildSnapshot</span><span class="p">,</span>
+    <span class="n">LaunchFailed</span><span class="p">,</span>
+    <span class="n">Supervisor</span><span class="p">,</span>
+    <span class="n">refuse_if_live</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClearFailed</span><span class="p">,</span> <span class="n">clear_graph_by_graph</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_core</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.launcher.boxes</span><span class="w"> </span><span class="kn">import</span> <span class="n">BoxesOnStation</span><span class="p">,</span> <span class="n">StationBoxes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.module</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_DEADLOCK_ALARM_SECONDS</span><span class="p">,</span> <span class="n">Fault</span><span class="p">,</span> <span class="n">faults_off</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.monitor.memory</span><span class="w"> </span><span class="kn">import</span> <span class="n">GRAPH_AND_STREAMS</span><span class="p">,</span> <span class="n">GRAPH_ONLY</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_fault_switch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.run_core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Participant</span><span class="p">,</span> <span class="n">RunGraph</span><span class="p">,</span> <span class="n">participants_of</span><span class="p">,</span> <span class="n">start_run</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.seed</span><span class="w"> </span><span class="kn">import</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.strategies</span><span class="w"> </span><span class="kn">import</span> <span class="n">REAL</span><span class="p">,</span> <span class="n">ModuleStrategy</span><span class="p">,</span> <span class="n">WmsStrategy</span><span class="p">,</span> <span class="n">chosen</span><span class="p">,</span> <span class="n">found</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topology</span><span class="p">,</span> <span class="n">TopologyRefused</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FCI_NS</span><span class="p">,</span> <span class="n">MONITOR</span><span class="p">,</span> <span class="n">WMS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms_dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">TAB</span> <span class="k">as</span> <span class="n">WMS_TAB</span>
+
+<span class="c1"># What the page calls the monitor's process, and the label its resource is seeded with.</span>
+<span class="n">MONITOR_NAME</span> <span class="o">=</span> <span class="s2">"Monitor"</span>
+
+<span class="n">Kind</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"module"</span><span class="p">,</span> <span class="s2">"wms"</span><span class="p">,</span> <span class="s2">"monitor"</span><span class="p">]</span>
+
+<span class="c1"># The kind of the WarehouseManagementSystem's process and the monitor's, by their resources: every</span>
+<span class="c1"># other process the Launcher starts is a module's.</span>
+<span class="n">_KIND_BY_RESOURCE</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Kind</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">MONITOR</span><span class="p">:</span> <span class="s2">"monitor"</span><span class="p">,</span> <span class="n">WMS</span><span class="p">:</span> <span class="s2">"wms"</span><span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_kind_of</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Kind</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The kind of the Launcher's process for `resource`: every process it starts is a module's,</span>
+<span class="sd">    but the WarehouseManagementSystem's and the monitor's.</span>
+
+<span class="sd">    This is the one place that decides a kind. What a process of each kind offers the page is in</span>
+<span class="sd">    one table, `_OFFERS`, and the state and the page read the result: no other place compares a</span>
+<span class="sd">    kind with a kind's name.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">_KIND_BY_RESOURCE</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="s2">"module"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_echo_to_stdout</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Print `text` on stdout, as the supervisor's echo does by default: a terminal that has</span>
+<span class="sd">    closed takes no line, and the launch goes on."""</span>
+    <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">suppress</span><span class="p">(</span><span class="ne">OSError</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Link">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Link">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Link</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A page of a process, where the Launcher page may send a person.</span>
+
+<span class="sd">    `href` is relative to the Launcher page, and goes through the Launcher's own port: see</span>
+<span class="sd">    `process_path`.</span>
+<span class="sd">    """</span>
+
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">href</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="ProcessState">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.ProcessState">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProcessState</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One process, as the page shows it: the supervisor's snapshot of it, `child`, and what the</span>
+<span class="sd">    page needs besides.</span>
+
+<span class="sd">    The page reads one object for each process, the snapshot's fields beside the page's own: so the</span>
+<span class="sd">    snapshot's fields are written out flat, and read back from flat, as FastAPI reads back every</span>
+<span class="sd">    answer it sends. A snapshot's `stoppable` is whether the page may offer a stop: the process</span>
+<span class="sd">    still runs, and no stop has reached it. A process that crashed reads `failed` and has exited, so</span>
+<span class="sd">    the page may not stop it, whether or not a stop came after the crash; one that reads `failed`</span>
+<span class="sd">    because its service stopped being live may still run, and may be stopped.</span>
+
+<span class="sd">    `faults` holds each of a module's two faults, armed or not, as the Launcher commanded them,</span>
+<span class="sd">    and is None for the WarehouseManagementSystem and the monitor, which have none. `state_note`</span>
+<span class="sd">    is what the page says of the state to a person who asks: why a killed process was killed, and</span>
+<span class="sd">    why a failed one failed. It is None where the state says enough by itself. `fault_switchable`</span>
+<span class="sd">    is whether the page may offer the fault switches: the process is a module, and the supervisor</span>
+<span class="sd">    holds the address of its live service, which a switch is sent to.</span>
+<span class="sd">    """</span>
+
+    <span class="n">child</span><span class="p">:</span> <span class="n">ChildSnapshot</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="n">Kind</span>
+    <span class="n">links</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Link</span><span class="p">]</span>
+    <span class="n">faults</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Fault</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">state_note</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">fault_switchable</span><span class="p">:</span> <span class="nb">bool</span>
+
+    <span class="nd">@model_validator</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"before"</span><span class="p">)</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_snapshot_from_flat</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The snapshot's fields, read from beside the page's own into `child`."""</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">"child"</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="n">snapshot</span> <span class="o">=</span> <span class="p">{</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ChildSnapshot</span><span class="p">)}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">"child"</span><span class="p">:</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">snapshot</span><span class="p">}}</span> <span class="o">|</span> <span class="p">{</span>
+            <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">snapshot</span>
+        <span class="p">}</span>
+
+    <span class="nd">@model_serializer</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s2">"wrap"</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_flat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">handler</span><span class="p">:</span> <span class="n">SerializerFunctionWrapHandler</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ProcessStateJSON</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The snapshot's fields beside the page's own, in one object."""</span>
+        <span class="n">own</span> <span class="o">=</span> <span class="n">handler</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">own</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"child"</span><span class="p">)</span> <span class="o">|</span> <span class="n">own</span></div>
+
+
+
+<span class="c1"># The flat object the page reads for each process, as the Launcher's API docs show it: each field</span>
+<span class="c1"># of the snapshot, an IRI as the string it is sent as, beside each of the page's own. It is built</span>
+<span class="c1"># from the two classes, so that no field is written out twice. A link stands in it as the dict</span>
+<span class="c1"># it already is when the serializer returns: Pydantic checks that return against this type, and</span>
+<span class="c1"># the class `Link` would make it warn once for each link. The dict type carries the class's name</span>
+<span class="c1"># and fields, so the docs show the same link.</span>
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="n">ProcessStateJSON</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># The fields, not `get_type_hints(Link)`: that also evaluates the annotations BaseModel itself</span>
+    <span class="c1"># carries, and a Pydantic release that names them only for type checkers breaks the import.</span>
+    <span class="n">LinkJSON</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span>
+        <span class="s2">"Link"</span><span class="p">,</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">field</span><span class="o">.</span><span class="n">annotation</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">Link</span><span class="o">.</span><span class="n">model_fields</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="p">)</span>
+    <span class="n">LinkJSON</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">Link</span><span class="o">.</span><span class="vm">__doc__</span>
+    <span class="n">ProcessStateJSON</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span>
+        <span class="s2">"ProcessStateJSON"</span><span class="p">,</span>
+        <span class="p">{</span>
+            <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="k">if</span> <span class="n">hint</span> <span class="ow">is</span> <span class="n">IRI</span> <span class="k">else</span> <span class="n">hint</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">hint</span> <span class="ow">in</span> <span class="n">get_type_hints</span><span class="p">(</span><span class="n">ChildSnapshot</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="o">|</span> <span class="p">{</span>
+            <span class="n">name</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">LinkJSON</span><span class="p">]</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">"links"</span> <span class="k">else</span> <span class="n">field</span><span class="o">.</span><span class="n">annotation</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">ProcessState</span><span class="o">.</span><span class="n">model_fields</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="o">!=</span> <span class="s2">"child"</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">ProcessState</span><span class="o">.</span><span class="n">model_rebuild</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="LauncherState">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.LauncherState">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LauncherState</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Everything the Launcher page shows. `dataset` is the dataset the Launcher clears and seeds,</span>
+<span class="sd">    and `store_url` the URL of its store, which the environment names, or "" where it names none:</span>
+<span class="sd">    the page shows "dataset &lt;dataset&gt; on &lt;store_url&gt;". `default_transit_time` is the value of</span>
+<span class="sd">    the page's</span>
+<span class="sd">    transit time field before a person changes it: `jms-uc2 --transit-time`. `monitor` is the monitor's page, and `wms` the</span>
+<span class="sd">    WarehouseManagementSystem's dashboard, where a person spawns boxes, while each has one.</span>
+<span class="sd">    `module_strategy` and `wms_strategy` name the strategies in force: those the topology that</span>
+<span class="sd">    runs was launched with, or None while none was. `boxes` is the list of the boxes on the</span>
+<span class="sd">    station as its background read last found it, with the text of its query, or None for a</span>
+<span class="sd">    Launcher that lists none. `collect_history` is whether the topology that runs was launched</span>
+<span class="sd">    with the option `collect_history`, so that its reset turned on the store's history collection,</span>
+<span class="sd">    or None while none was. `default_deadlock_alarm_seconds` is the value of the page's field</span>
+<span class="sd">    "deadlock alarm (s)" before a person changes it: `jms-uc2 --deadlock-alarm-seconds`, 300 s by</span>
+<span class="sd">    default. `collect_refusals` is whether the topology that runs was launched with the option</span>
+<span class="sd">    `collect_refusals`, so that its monitor started in "graph + streams", or None while none was."""</span>
+
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">store_url</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">default_transit_time</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">default_deadlock_alarm_seconds</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">topology</span><span class="p">:</span> <span class="n">Topology</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">topology_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">module_strategy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">wms_strategy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">collect_history</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">collect_refusals</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">monitor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">wms</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">processes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ProcessState</span><span class="p">]</span>
+    <span class="n">heartbeat_error</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">boxes</span><span class="p">:</span> <span class="n">BoxesOnStation</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="StrategyChoice">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.StrategyChoice">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">StrategyChoice</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One strategy, as a picker offers it: by its `label`, choosing its `name`."""</span>
+
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="StrategyChoices">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.StrategyChoices">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">StrategyChoices</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The strategies a launch may name, by kind: `module` the module strategies, and `wms` the</span>
+<span class="sd">    WMS strategies, each in the order they were found."""</span>
+
+    <span class="n">module</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StrategyChoice</span><span class="p">]</span>
+    <span class="n">wms</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">StrategyChoice</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="Cleared">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Cleared">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Cleared</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a clear left: the `dataset` it emptied, and how many `statements` it holds then, 0</span>
+<span class="sd">    where it is empty, as the page says it: "&lt;dataset&gt; is empty: 0 statements"."""</span>
+
+    <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">statements</span><span class="p">:</span> <span class="nb">int</span></div>
+
+
+
+<div class="viewcode-block" id="NotReachable">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.NotReachable">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NotReachable</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The process has no live service to send a command to, or it does not take the command."""</span></div>
+
+
+
+<div class="viewcode-block" id="NoProcess">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.NoProcess">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NoProcess</span><span class="p">(</span><span class="ne">LookupError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A command names no process that it can act on: a stop, none of the current launch; a fault</span>
+<span class="sd">    switch, no module of the running topology. A refusal of the Launcher's own, so that its</span>
+<span class="sd">    routes can tell it from any other error, as a bug's `KeyError`."""</span></div>
+
+
+
+<div class="viewcode-block" id="LauncherGraph">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.LauncherGraph">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LauncherGraph</span><span class="p">(</span><span class="n">RunGraph</span><span class="p">,</span> <span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What the Launcher reads from and writes to the graph: a run's (`RunGraph`), and the clear</span>
+<span class="sd">    of its Clear. `TripleStoreGraph` is the real one."""</span>
+
+<div class="viewcode-block" id="LauncherGraph.clear">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.LauncherGraph.clear">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Clear every graph of the dataset, one by one, and return how many statements it</span>
+<span class="sd">        holds then (`triplestore.clear_graph_by_graph`).</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ClearFailed: If the store did not list or clear a graph, or did not say how many</span>
+<span class="sd">                statements are left, naming why.</span>
+<span class="sd">        """</span>
+        <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="TripleStoreGraph">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.TripleStoreGraph">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TripleStoreGraph</span><span class="p">(</span><span class="n">run_core</span><span class="o">.</span><span class="n">TripleStoreGraph</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The Launcher's graph: the run core's, whose seed writes the monitor's resource beside every</span>
+<span class="sd">    topology, because the Launcher starts the monitor beside every topology, and whose clear</span>
+<span class="sd">    empties the dataset graph by graph."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">db</span><span class="p">,</span> <span class="n">resources</span><span class="o">=</span><span class="p">{</span><span class="n">MONITOR</span><span class="p">:</span> <span class="n">MONITOR_NAME</span><span class="p">})</span>
+
+<div class="viewcode-block" id="TripleStoreGraph.clear">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.TripleStoreGraph.clear">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">clear_graph_by_graph</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FaultSwitches">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.FaultSwitches">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FaultSwitches</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Arms a fault of the module whose service is at an address. `HTTPFaultSwitches` is real.</span>
+
+<span class="sd">    Writing is the whole of the port. Reading a switch back is deliberately absent: the Launcher</span>
+<span class="sd">    is the only writer, so it already knows every value, and a read here would be a blocking call</span>
+<span class="sd">    made once per module on the page's poll.</span>
+<span class="sd">    """</span>
+
+<div class="viewcode-block" id="FaultSwitches.set">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.FaultSwitches.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Fault</span><span class="p">,</span> <span class="n">armed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Arm or disarm the fault `name`.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotReachable: If the module cannot be reached, or does not take the switch.</span>
+<span class="sd">        """</span>
+        <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="HTTPFaultSwitches">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.HTTPFaultSwitches">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HTTPFaultSwitches</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Each module's own `POST /faults/{name}` route."""</span>
+
+<div class="viewcode-block" id="HTTPFaultSwitches.set">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.HTTPFaultSwitches.set">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Fault</span><span class="p">,</span> <span class="n">armed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">set_fault_switch</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">armed</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">httpx</span><span class="o">.</span><span class="n">HTTPError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotReachable</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the module at </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2"> did not take the switch: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="launchable">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.launchable">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">launchable</span><span class="p">(</span><span class="n">topology</span><span class="p">:</span> <span class="n">Topology</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Topology</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`topology`, if the Launcher can launch it: no module takes the monitor's resource, which the</span>
+<span class="sd">    Launcher seeds and starts beside every topology. Every route of the Launcher that reads a</span>
+<span class="sd">    topology asks this after the load check, and so does every launch.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TopologyRefused: If a module takes the monitor's resource, naming the module.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">topology</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">module</span><span class="o">.</span><span class="n">resource</span> <span class="o">==</span> <span class="n">MONITOR</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">TopologyRefused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> is the monitor's resource, which the Launcher seeds and starts "</span>
+                <span class="s2">"beside every topology, so no module can take that id"</span>
+            <span class="p">)</span>
+    <span class="k">return</span> <span class="n">topology</span></div>
+
+
+
+<span class="c1"># Why a killed process is not a stopped one, for the page to show beside its state.</span>
+<span class="n">_KILLED</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"It did not stop within the stop timeout and was killed. A kill skips the deregistration, "</span>
+    <span class="s2">"so its service keeps its address in the knowledge graph and counts as live until its last "</span>
+    <span class="s2">"heartbeat is stale."</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_state_note</span><span class="p">(</span><span class="n">child</span><span class="p">:</span> <span class="n">ChildSnapshot</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the page says of the state of `child` to a person who asks: why a killed process is</span>
+<span class="sd">    not a stopped one, and why a failed one failed, as the line printed of its turn says. None</span>
+<span class="sd">    where the state says enough by itself."""</span>
+    <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"killed"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_KILLED</span>
+    <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">"failed"</span> <span class="ow">and</span> <span class="n">child</span><span class="o">.</span><span class="n">why_failed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">child</span><span class="o">.</span><span class="n">why_failed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">child</span><span class="o">.</span><span class="n">why_failed</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="s2">"."</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_Page</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A page of a process: the `label` the page links it by, and its `path` below the process's</span>
+<span class="sd">    own (`process_path`)."""</span>
+
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_Offers</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What a process of one kind offers the page once its service is live: its `pages`, in the</span>
+<span class="sd">    order the page lists them, and whether it has the `faults` a person arms."""</span>
+
+    <span class="n">pages</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">_Page</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">faults</span><span class="p">:</span> <span class="nb">bool</span>
+
+
+<span class="c1"># The tab of the dashboard that lists the process's newest log records, with a level filter. It</span>
+<span class="c1"># is the library's documented public tab name (`dashboard?tab=&lt;name&gt;`). The Launcher only names</span>
+<span class="c1"># it in its "logs" link and defines no tab of its own.</span>
+<span class="n">_LOGS_TAB</span> <span class="o">=</span> <span class="s2">"Logs"</span>
+
+<span class="c1"># The labels of the two pages the page's header opens as well: the monitor's own page, and the</span>
+<span class="c1"># WarehouseManagementSystem's dashboard (`LauncherState`).</span>
+<span class="n">_OPEN</span> <span class="o">=</span> <span class="s2">"open"</span>
+<span class="n">_DASHBOARD</span> <span class="o">=</span> <span class="s2">"dashboard"</span>
+
+<span class="c1"># A module's and the WarehouseManagementSystem's API docs list their workflows. Their middleware</span>
+<span class="c1"># serves its state dashboard at `/dashboard`: the page of what that instance holds, which the</span>
+<span class="c1"># middleware library renders, with the WMS's own boxes on the WMS's. "logs" opens that dashboard on</span>
+<span class="c1"># its Logs tab: the process's whole log.</span>
+<span class="n">_DOCS</span> <span class="o">=</span> <span class="n">_Page</span><span class="p">(</span><span class="s2">"docs"</span><span class="p">,</span> <span class="s2">"docs"</span><span class="p">)</span>
+<span class="n">_ACTIVITY</span> <span class="o">=</span> <span class="n">_Page</span><span class="p">(</span><span class="s2">"activity"</span><span class="p">,</span> <span class="s2">"activity"</span><span class="p">)</span>
+<span class="n">_LOGS</span> <span class="o">=</span> <span class="n">_Page</span><span class="p">(</span><span class="s2">"logs"</span><span class="p">,</span> <span class="s2">"dashboard?"</span> <span class="o">+</span> <span class="n">urlencode</span><span class="p">({</span><span class="s2">"tab"</span><span class="p">:</span> <span class="n">_LOGS_TAB</span><span class="p">}))</span>
+
+<span class="c1"># What a process of each kind offers the page: the one table of what a kind has (`_kind_of`).</span>
+<span class="n">_OFFERS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Kind</span><span class="p">,</span> <span class="n">_Offers</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"module"</span><span class="p">:</span> <span class="n">_Offers</span><span class="p">(</span>
+        <span class="n">pages</span><span class="o">=</span><span class="p">(</span><span class="n">_DOCS</span><span class="p">,</span> <span class="n">_ACTIVITY</span><span class="p">,</span> <span class="n">_Page</span><span class="p">(</span><span class="n">_DASHBOARD</span><span class="p">,</span> <span class="s2">"dashboard"</span><span class="p">),</span> <span class="n">_LOGS</span><span class="p">),</span> <span class="n">faults</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">),</span>
+    <span class="c1"># The WMS's dashboard opens on the WMS's own tab, where a person spawns boxes.</span>
+    <span class="s2">"wms"</span><span class="p">:</span> <span class="n">_Offers</span><span class="p">(</span>
+        <span class="n">pages</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">_DOCS</span><span class="p">,</span>
+            <span class="n">_ACTIVITY</span><span class="p">,</span>
+            <span class="n">_Page</span><span class="p">(</span><span class="n">_DASHBOARD</span><span class="p">,</span> <span class="s2">"dashboard?"</span> <span class="o">+</span> <span class="n">urlencode</span><span class="p">({</span><span class="s2">"tab"</span><span class="p">:</span> <span class="n">WMS_TAB</span><span class="p">})),</span>
+            <span class="n">_LOGS</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">faults</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="c1"># The monitor's page is its own, and its first link opens it. It serves no dashboard.</span>
+    <span class="s2">"monitor"</span><span class="p">:</span> <span class="n">_Offers</span><span class="p">(</span><span class="n">pages</span><span class="o">=</span><span class="p">(</span><span class="n">_Page</span><span class="p">(</span><span class="n">_OPEN</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span> <span class="n">_ACTIVITY</span><span class="p">),</span> <span class="n">faults</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_href</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span> <span class="n">_Page</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where the Launcher passes `page` of the process of `resource` through, relative to the</span>
+<span class="sd">    Launcher page: the one place that makes the page's links and the terminal's block."""</span>
+    <span class="k">return</span> <span class="n">process_path</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span> <span class="o">+</span> <span class="n">page</span><span class="o">.</span><span class="n">path</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_links</span><span class="p">(</span><span class="n">offers</span><span class="p">:</span> <span class="n">_Offers</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">live</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Link</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Where the page may send a person, for the process of `resource`: the pages it `offers`,</span>
+<span class="sd">    and nowhere unless its service is `live`."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">live</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Link</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">page</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="n">_href</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">page</span><span class="p">))</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">offers</span><span class="o">.</span><span class="n">pages</span><span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_process</span><span class="p">(</span><span class="n">child</span><span class="p">:</span> <span class="n">ChildSnapshot</span><span class="p">,</span> <span class="n">armed</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Fault</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">ProcessState</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How the page shows `child`, with the faults the Launcher armed."""</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="n">_kind_of</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">resource</span><span class="p">)</span>
+    <span class="n">offers</span> <span class="o">=</span> <span class="n">_OFFERS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ProcessState</span><span class="p">(</span>
+        <span class="n">child</span><span class="o">=</span><span class="n">child</span><span class="p">,</span>
+        <span class="n">kind</span><span class="o">=</span><span class="n">kind</span><span class="p">,</span>
+        <span class="n">links</span><span class="o">=</span><span class="n">_links</span><span class="p">(</span><span class="n">offers</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="n">live</span><span class="o">=</span><span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="n">faults</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">faults_off</span><span class="p">()</span> <span class="o">|</span> <span class="n">armed</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">resource</span><span class="p">,</span> <span class="p">{})</span> <span class="k">if</span> <span class="n">offers</span><span class="o">.</span><span class="n">faults</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">),</span>
+        <span class="n">state_note</span><span class="o">=</span><span class="n">_state_note</span><span class="p">(</span><span class="n">child</span><span class="p">),</span>
+        <span class="n">fault_switchable</span><span class="o">=</span><span class="n">offers</span><span class="o">.</span><span class="n">faults</span> <span class="ow">and</span> <span class="n">child</span><span class="o">.</span><span class="n">address</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_page</span><span class="p">(</span><span class="n">processes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ProcessState</span><span class="p">],</span> <span class="n">kind</span><span class="p">:</span> <span class="n">Kind</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The page that the row of the process of `kind` links by `label`, or None while it links</span>
+<span class="sd">    none, as before its service is live: the page's header opens what that row links, so the two</span>
+<span class="sd">    never differ. The page is found by its label, wherever the row lists it."""</span>
+    <span class="k">return</span> <span class="nb">next</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">link</span><span class="o">.</span><span class="n">href</span>
+            <span class="k">for</span> <span class="n">process</span> <span class="ow">in</span> <span class="n">processes</span>
+            <span class="k">if</span> <span class="n">process</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">kind</span>
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">process</span><span class="o">.</span><span class="n">links</span>
+            <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">label</span> <span class="o">==</span> <span class="n">label</span>
+        <span class="p">),</span>
+        <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="Launcher">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Launcher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The processes of one use case 2 runtime, and the topology they were launched from.</span>
+
+<span class="sd">    One launch, stop-all or clear runs at a time. The page's reads and single commands do not wait</span>
+<span class="sd">    for one: they act on whichever supervisor and topology are current when they start.</span>
+
+<span class="sd">    The armed faults are held here rather than read back from the modules, because this object is</span>
+<span class="sd">    the only thing that arms one. A launch starts fresh processes and a stop ends one, and both</span>
+<span class="sd">    forget what they were told.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        graph: The graph the Launcher seeds, reads and clears: its `TripleStoreGraph` seeds the</span>
+<span class="sd">            monitor's resource too.</span>
+<span class="sd">        dataset: The dataset's name, for the page and the guard's refusal.</span>
+<span class="sd">        module_command: The command line of the process for one module.</span>
+<span class="sd">        wms_command: The command line of the WarehouseManagementSystem's process.</span>
+<span class="sd">        monitor_command: The command line of the monitor's process.</span>
+<span class="sd">        transit_seconds: The transit time of a launch that names none: the default of the page's</span>
+<span class="sd">            field, `jms-uc2 --transit-time`.</span>
+<span class="sd">        faults: The modules' fault switches.</span>
+<span class="sd">        echo: Where command lines and the children's output go. The Launcher's stdout if None.</span>
+<span class="sd">        page_address: The address the Launcher page is served at. Given, each launch ends by</span>
+<span class="sd">            echoing `address_block`; left out, none does.</span>
+<span class="sd">        stop_timeout: How long a stop waits before it kills a process.</span>
+<span class="sd">        module_strategies: The module strategies a launch may name, by name: those registered</span>
+<span class="sd">            in their entry-point group if None (`strategies.found`).</span>
+<span class="sd">        wms_strategies: The WMS strategies a launch may name, by name: likewise.</span>
+<span class="sd">        module_strategy: The module strategy of a launch that names none: `jms-uc2</span>
+<span class="sd">            --module-strategy`.</span>
+<span class="sd">        wms_strategy: The WMS strategy of a launch that names none: `jms-uc2 --wms-strategy`.</span>
+<span class="sd">        collect_history: Whether a launch that names none collects history: `jms-uc2</span>
+<span class="sd">            --collect-history`.</span>
+<span class="sd">        deadlock_alarm_seconds: The deadlock alarm time of a launch that names none: `jms-uc2</span>
+<span class="sd">            --deadlock-alarm-seconds`, and the default of the page's field.</span>
+<span class="sd">        boxes: The list of the boxes on the station, which the Launcher's app reads in the</span>
+<span class="sd">            background while it serves (`api.create_app`). None lists no boxes: a test's Launcher.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">graph</span><span class="p">:</span> <span class="n">LauncherGraph</span><span class="p">,</span>
+        <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">module_command</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">IRI</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
+        <span class="n">wms_command</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">monitor_command</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+        <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_TRANSIT_SECONDS</span><span class="p">,</span>
+        <span class="n">faults</span><span class="p">:</span> <span class="n">FaultSwitches</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">page_address</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">stop_timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">STOP_TIMEOUT_SECONDS</span><span class="p">,</span>
+        <span class="n">module_strategies</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ModuleStrategy</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">wms_strategies</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">WmsStrategy</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">module_strategy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">REAL</span><span class="p">,</span>
+        <span class="n">wms_strategy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">REAL</span><span class="p">,</span>
+        <span class="n">collect_history</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">deadlock_alarm_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">DEFAULT_DEADLOCK_ALARM_SECONDS</span><span class="p">,</span>
+        <span class="n">boxes</span><span class="p">:</span> <span class="n">StationBoxes</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span> <span class="o">=</span> <span class="n">graph</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boxes</span> <span class="o">=</span> <span class="n">boxes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_deadlock_alarm_seconds</span> <span class="o">=</span> <span class="n">deadlock_alarm_seconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_default_strategies</span> <span class="o">=</span> <span class="p">(</span><span class="n">module_strategy</span><span class="p">,</span> <span class="n">wms_strategy</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_collect_history</span> <span class="o">=</span> <span class="n">collect_history</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_module_strategies</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">found</span><span class="p">(</span><span class="n">ModuleStrategy</span><span class="p">)</span> <span class="k">if</span> <span class="n">module_strategies</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">module_strategies</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wms_strategies</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">found</span><span class="p">(</span><span class="n">WmsStrategy</span><span class="p">)</span> <span class="k">if</span> <span class="n">wms_strategies</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">wms_strategies</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span> <span class="o">=</span> <span class="n">dataset</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_module_command</span> <span class="o">=</span> <span class="n">module_command</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wms_command</span> <span class="o">=</span> <span class="n">wms_command</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_monitor_command</span> <span class="o">=</span> <span class="n">monitor_command</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_transit_seconds</span> <span class="o">=</span> <span class="n">transit_seconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_faults</span> <span class="o">=</span> <span class="n">faults</span> <span class="k">if</span> <span class="n">faults</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">HTTPFaultSwitches</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_echo</span> <span class="o">=</span> <span class="n">echo</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_page_address</span> <span class="o">=</span> <span class="n">page_address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stop_timeout</span> <span class="o">=</span> <span class="n">stop_timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span><span class="p">:</span> <span class="n">Supervisor</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_topology</span><span class="p">:</span> <span class="n">Topology</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_topology_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># The strategies the topology that runs was launched with: (module, WMS).</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_in_force</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># Whether the topology that runs was launched with the option `collect_history`.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_collecting</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># Whether the topology that runs was launched with the option `collect_refusals`.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_refusals_collected</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># What each module was told, by fault; a fault never switched is off.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Fault</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># `_launching` serializes launches; `_current` guards the seven fields above.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_launching</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_current</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_now</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Supervisor</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Topology</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topology</span>
+
+<div class="viewcode-block" id="Launcher.launch">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.launch">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">launch</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">topology</span><span class="p">:</span> <span class="n">Topology</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">transit_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">module_strategy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">wms_strategy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">collect_history</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">deadlock_alarm_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">collect_refusals</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop what runs, clear the dataset, seed `topology`, and start its processes: the</span>
+<span class="sd">        run core's participants of `topology`, and the monitor.</span>
+
+<span class="sd">        A clear cannot be undone, so it clears only while no other process's service is live</span>
+<span class="sd">        there: the run core's live-instance guard asks the graph after this Launcher's own</span>
+<span class="sd">        processes have stopped. A process that stops when asked deregisters its service first. One</span>
+<span class="sd">        that was killed, or that had exited on its own, may have left its service live until its</span>
+<span class="sd">        last heartbeat is `MAX_HEARTBEAT_AGE_SECONDS` old. That is this Launcher's own dead</span>
+<span class="sd">        process, and the seed clears what it left, so the guard leaves it out. Any other live</span>
+<span class="sd">        service refuses the launch: another launcher's, or that of a module run on its own from its</span>
+<span class="sd">        printed command line, even on a resource this Launcher stopped cleanly.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            topology: The modules to seed and start.</span>
+<span class="sd">            name: What to call it on the page. The shipped topology's name, a path, or what the</span>
+<span class="sd">                page calls a topology edited on it.</span>
+<span class="sd">            force: Clear the dataset even while another process's service there is live.</span>
+<span class="sd">            transit_seconds: The transit time of every module that has none of its own in</span>
+<span class="sd">                `topology`. The Launcher's default if None. 0 is allowed.</span>
+<span class="sd">            module_strategy: The name of the module strategy every module process runs with,</span>
+<span class="sd">                `--module-strategy` on its command line. The Launcher's default if None.</span>
+<span class="sd">            wms_strategy: The name of the WMS strategy the WarehouseManagementSystem's process</span>
+<span class="sd">                runs with, `--wms-strategy` on its command line. The Launcher's default if None.</span>
+<span class="sd">            collect_history: Whether the reset turns on the store's history collection, after it</span>
+<span class="sd">                loaded the ontology; without it, the collection stays as it is. The Launcher's</span>
+<span class="sd">                default if None.</span>
+<span class="sd">            deadlock_alarm_seconds: How long a box a module holds may wait for a Reserve before</span>
+<span class="sd">                the module raises the deadlock alarm for it, `--deadlock-alarm-seconds` on every</span>
+<span class="sd">                module's command line: a positive number of seconds. The Launcher's default if</span>
+<span class="sd">                None.</span>
+<span class="sd">            collect_refusals: Whether the monitor starts in "graph + streams", so that it</span>
+<span class="sd">                collects the participants' refusals from their handover event streams, or in</span>
+<span class="sd">                "graph only", which reads the knowledge graph and nothing else. Off if left out.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TopologyRefused: If a module of `topology` takes the monitor's resource</span>
+<span class="sd">                (`launchable`). Nothing is stopped or cleared then.</span>
+<span class="sd">            UnknownStrategy: If this Launcher found no strategy of its kind by</span>
+<span class="sd">                `module_strategy` or `wms_strategy`, naming it and the strategies of its kind.</span>
+<span class="sd">                Nothing is stopped or cleared then.</span>
+<span class="sd">            LiveInstanceError: If another process's service is live and `force` is false, naming</span>
+<span class="sd">                each live resource. Nothing is cleared then, and this Launcher's processes stay</span>
+<span class="sd">                stopped.</span>
+<span class="sd">            LaunchFailed: If the graph cannot say which services are live, or seeding or starting</span>
+<span class="sd">                a process failed, naming why. Nothing runs then.</span>
+<span class="sd">        """</span>
+        <span class="n">launchable</span><span class="p">(</span><span class="n">topology</span><span class="p">)</span>
+        <span class="n">default_module</span><span class="p">,</span> <span class="n">default_wms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_default_strategies</span>
+        <span class="n">module_strategy</span> <span class="o">=</span> <span class="n">default_module</span> <span class="k">if</span> <span class="n">module_strategy</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">module_strategy</span>
+        <span class="n">wms_strategy</span> <span class="o">=</span> <span class="n">default_wms</span> <span class="k">if</span> <span class="n">wms_strategy</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">wms_strategy</span>
+        <span class="k">if</span> <span class="n">collect_history</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">collect_history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collect_history</span>
+        <span class="k">if</span> <span class="n">deadlock_alarm_seconds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">deadlock_alarm_seconds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deadlock_alarm_seconds</span>
+        <span class="n">chosen</span><span class="p">(</span><span class="n">ModuleStrategy</span><span class="p">,</span> <span class="n">module_strategy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_module_strategies</span><span class="p">)</span>
+        <span class="n">chosen</span><span class="p">(</span><span class="n">WmsStrategy</span><span class="p">,</span> <span class="n">wms_strategy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wms_strategies</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_launching</span><span class="p">:</span>
+            <span class="n">old</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stop_then_guard</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">)</span>
+            <span class="n">supervisor</span> <span class="o">=</span> <span class="n">Supervisor</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">services</span><span class="p">,</span>
+                <span class="n">service_of</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">service_of</span><span class="p">,</span>
+                <span class="n">echo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_echo</span><span class="p">,</span>
+                <span class="n">stop_timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_stop_timeout</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+                <span class="c1"># Current before the first spawn, so that a stop reaches every child it starts.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topology</span> <span class="o">=</span> <span class="n">supervisor</span><span class="p">,</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_topology_name</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_in_force</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_collecting</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_refusals_collected</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="c1"># New processes, each with its fault off, whatever the old ones were told.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">start_run</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="p">,</span>
+                    <span class="n">supervisor</span><span class="p">,</span>
+                    <span class="n">topology</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_participants</span><span class="p">(</span>
+                        <span class="n">topology</span><span class="p">,</span>
+                        <span class="n">module_strategy</span><span class="p">,</span>
+                        <span class="n">wms_strategy</span><span class="p">,</span>
+                        <span class="n">deadlock_alarm_seconds</span><span class="p">,</span>
+                        <span class="n">collect_refusals</span><span class="p">,</span>
+                    <span class="p">),</span>
+                    <span class="n">transit_seconds</span><span class="o">=</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_transit_seconds</span>
+                        <span class="k">if</span> <span class="n">transit_seconds</span> <span class="ow">is</span> <span class="kc">None</span>
+                        <span class="k">else</span> <span class="n">transit_seconds</span>
+                    <span class="p">),</span>
+                    <span class="n">collect_history</span><span class="o">=</span><span class="n">collect_history</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">except</span> <span class="n">LaunchFailed</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span> <span class="o">=</span> <span class="n">old</span>  <span class="c1"># its stopped children stay on the page</span>
+                <span class="k">raise</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_topology</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topology_name</span> <span class="o">=</span> <span class="n">topology</span><span class="p">,</span> <span class="n">name</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_in_force</span> <span class="o">=</span> <span class="p">(</span><span class="n">module_strategy</span><span class="p">,</span> <span class="n">wms_strategy</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_collecting</span> <span class="o">=</span> <span class="n">collect_history</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_refusals_collected</span> <span class="o">=</span> <span class="n">collect_refusals</span>
+        <span class="n">block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">address_block</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">block</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_echo</span> <span class="ow">or</span> <span class="n">_echo_to_stdout</span><span class="p">)(</span><span class="n">block</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Launcher.address_block">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.address_block">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">address_block</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The pages of the run at the addresses that stay valid, all through the Launcher's own</span>
+<span class="sd">        port, set apart from the processes' lines by a blank line before and after; None without</span>
+<span class="sd">        a `page_address`.</span>
+
+<span class="sd">        Each process takes a new port at each launch, so the direct address it prints stops</span>
+<span class="sd">        working at the next one; these do not. The paths come from the table of the page's links</span>
+<span class="sd">        (`_OFFERS`, `_href`), so that the block and the page never differ.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page_address</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_page_address</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">kind</span><span class="p">:</span> <span class="n">Kind</span><span class="p">,</span> <span class="n">label</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">_OFFERS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">label</span> <span class="o">==</span> <span class="n">label</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">_href</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="n">page</span><span class="p">))</span>
+
+        <span class="n">module_pages</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">path</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">_OFFERS</span><span class="p">[</span><span class="s2">"module"</span><span class="p">]</span><span class="o">.</span><span class="n">pages</span><span class="p">)</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="s2">"Launcher page"</span><span class="p">,</span> <span class="n">base</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"WMS dashboard"</span><span class="p">,</span> <span class="n">at</span><span class="p">(</span><span class="n">WMS</span><span class="p">,</span> <span class="s2">"wms"</span><span class="p">,</span> <span class="n">_DASHBOARD</span><span class="p">)),</span>
+            <span class="p">(</span><span class="s2">"Monitor"</span><span class="p">,</span> <span class="n">at</span><span class="p">(</span><span class="n">MONITOR</span><span class="p">,</span> <span class="s2">"monitor"</span><span class="p">,</span> <span class="n">_OPEN</span><span class="p">)),</span>
+            <span class="p">(</span>
+                <span class="s2">"A module's pages"</span><span class="p">,</span>
+                <span class="n">urljoin</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">process_path</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">FCI_NS</span> <span class="o">+</span> <span class="s2">"ID"</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"ID"</span><span class="p">,</span> <span class="s2">"&lt;id&gt;"</span><span class="p">))</span>
+                <span class="o">+</span> <span class="sa">f</span><span class="s2">"  then one of: </span><span class="si">{</span><span class="n">module_pages</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"  </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">width</span><span class="p">)</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+            <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">"Pages of the run, through the Launcher's port:"</span><span class="p">,</span> <span class="o">*</span><span class="n">lines</span><span class="p">])</span>
+            <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_stop_then_guard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Supervisor</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop this Launcher's processes, then ask the live-instance guard whether the</span>
+<span class="sd">        dataset may be cleared: what a launch and a clear both do first, under `_launching`.</span>
+<span class="sd">        Returns the supervisor of the processes it stopped, None where none was started.</span>
+
+<span class="sd">        The guard leaves out this Launcher's own processes that may not have deregistered, a</span>
+<span class="sd">        killed one or one that had exited on its own, since what they left is cleared.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            LiveInstanceError: If another process's service is live and `force` is false.</span>
+<span class="sd">            LaunchFailed: If the graph cannot say which services are live.</span>
+<span class="sd">        """</span>
+        <span class="n">old</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_now</span><span class="p">()</span>
+        <span class="n">left_behind</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">old</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+            <span class="n">left_behind</span> <span class="o">=</span> <span class="n">old</span><span class="o">.</span><span class="n">may_not_have_deregistered</span><span class="p">()</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+                <span class="c1"># Its processes are gone, and with them every fault they were told.</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">refuse_if_live</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">services</span><span class="p">,</span>
+            <span class="n">dataset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">,</span>
+            <span class="n">leave_out</span><span class="o">=</span><span class="n">left_behind</span><span class="p">,</span>
+            <span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">old</span>
+
+<div class="viewcode-block" id="Launcher.clear">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.clear">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Cleared</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop every process, then clear every graph of the dataset, one by one, and say how</span>
+<span class="sd">        many statements it holds then.</span>
+
+<span class="sd">        The stop and the guard are a launch's: this Launcher's processes stop first and deregister</span>
+<span class="sd">        as they go, and the clear goes on only while no other process's service is live in the</span>
+<span class="sd">        dataset. A clear cannot be undone, and the page has no way to force one. From the clear</span>
+<span class="sd">        on, no topology shows as seeded, nor the strategies and the history option it was</span>
+<span class="sd">        launched with, unless the store refused before it cleared any graph; the processes stay</span>
+<span class="sd">        on the page, stopped. The next launch seeds the ontologies, the shapes and its topology</span>
+<span class="sd">        again.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            LiveInstanceError: If another process's service is live, naming each live resource.</span>
+<span class="sd">                Nothing is cleared then, and this Launcher's processes stay stopped.</span>
+<span class="sd">            ClearFailed: If the graph cannot say which services are live, and nothing is cleared;</span>
+<span class="sd">                or if the store did not list or clear a graph, or did not say how many statements</span>
+<span class="sd">                are left, naming why.</span>
+<span class="sd">        """</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_launching</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_stop_then_guard</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">LaunchFailed</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ClearFailed</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">),</span> <span class="n">nothing_cleared</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+            <span class="n">cleared_any</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">statements</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_graph</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="k">except</span> <span class="n">ClearFailed</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+                <span class="n">cleared_any</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">error</span><span class="o">.</span><span class="n">nothing_cleared</span>
+                <span class="k">raise</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">cleared_any</span><span class="p">:</span>
+                    <span class="c1"># No topology is seeded whole any more: none shows on the page, nor the</span>
+                    <span class="c1"># strategies and the history option it was launched with.</span>
+                    <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_topology</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topology_name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_in_force</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_collecting</span> <span class="o">=</span> <span class="kc">None</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_refusals_collected</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">Cleared</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">,</span> <span class="n">statements</span><span class="o">=</span><span class="n">statements</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_participants</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">topology</span><span class="p">:</span> <span class="n">Topology</span><span class="p">,</span>
+        <span class="n">module_strategy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">wms_strategy</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">deadlock_alarm_seconds</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">collect_refusals</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Participant</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The processes of a launch of `topology`: the run core's participants, then the</span>
+<span class="sd">        monitor, which only the Launcher starts, in "graph + streams" with `collect_refusals`</span>
+<span class="sd">        and in "graph only" without it."""</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="o">*</span><span class="n">participants_of</span><span class="p">(</span>
+                <span class="n">topology</span><span class="p">,</span>
+                <span class="n">module_command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_module_command</span><span class="p">,</span>
+                <span class="n">wms_command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_wms_command</span><span class="p">,</span>
+                <span class="n">module_strategy</span><span class="o">=</span><span class="n">module_strategy</span><span class="p">,</span>
+                <span class="n">wms_strategy</span><span class="o">=</span><span class="n">wms_strategy</span><span class="p">,</span>
+                <span class="n">deadlock_alarm_seconds</span><span class="o">=</span><span class="n">deadlock_alarm_seconds</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">Participant</span><span class="p">(</span>
+                <span class="n">MONITOR</span><span class="p">,</span>
+                <span class="n">MONITOR_NAME</span><span class="p">,</span>
+                <span class="p">[</span>
+                    <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_monitor_command</span><span class="p">,</span>
+                    <span class="s2">"--mode"</span><span class="p">,</span>
+                    <span class="n">GRAPH_AND_STREAMS</span> <span class="k">if</span> <span class="n">collect_refusals</span> <span class="k">else</span> <span class="n">GRAPH_ONLY</span><span class="p">,</span>
+                <span class="p">],</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+
+<div class="viewcode-block" id="Launcher.stop">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.stop">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop one process, so that its service deregisters.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NoProcess: If no process of the current launch runs for `resource`.</span>
+<span class="sd">        """</span>
+        <span class="n">supervisor</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_now</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">supervisor</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">resource</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span>
+            <span class="n">child</span><span class="o">.</span><span class="n">resource</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">supervisor</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span>
+        <span class="p">}:</span>
+            <span class="k">raise</span> <span class="n">NoProcess</span><span class="p">(</span><span class="sa">f</span><span class="s2">"no process for </span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">supervisor</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Launcher.begin_stop">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.begin_stop">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">begin_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Mark the stop of every process as begun, the moment the first stop signal arrives and</span>
+<span class="sd">        before `stop_all` asks any: a process that exits with code 0 from then on has stopped, not</span>
+<span class="sd">        failed (`Supervisor.begin_stop`).</span>
+
+<span class="sd">        It takes no lock, so it is safe in a signal handler: the main thread may hold one when the</span>
+<span class="sd">        signal arrives. The current supervisor is read as one reference.</span>
+<span class="sd">        """</span>
+        <span class="n">supervisor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_supervisor</span>
+        <span class="k">if</span> <span class="n">supervisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">supervisor</span><span class="o">.</span><span class="n">begin_stop</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Launcher.stop_all">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.stop_all">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop every process, so that every service deregisters."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_launching</span><span class="p">:</span>
+            <span class="n">supervisor</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_now</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">supervisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">supervisor</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Launcher.set_fault">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.set_fault">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_fault</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Fault</span><span class="p">,</span> <span class="n">armed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Arm or disarm the fault `name` of one module, at the address the supervisor holds.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NoProcess: If `resource` is not a module of the running topology.</span>
+<span class="sd">            NotReachable: If the module has no live service, or does not take the switch. What</span>
+<span class="sd">                the Launcher held for it stays as it was.</span>
+<span class="sd">        """</span>
+        <span class="n">supervisor</span><span class="p">,</span> <span class="n">topology</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_now</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">supervisor</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="ow">or</span> <span class="n">topology</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="ow">or</span> <span class="n">resource</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="n">m</span><span class="o">.</span><span class="n">resource</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">topology</span><span class="o">.</span><span class="n">modules</span><span class="p">}</span>
+        <span class="p">):</span>
+            <span class="k">raise</span> <span class="n">NoProcess</span><span class="p">(</span><span class="sa">f</span><span class="s2">"no module </span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">address</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">address</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">supervisor</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">resource</span> <span class="o">==</span> <span class="n">resource</span><span class="p">),</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">address</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotReachable</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">resource</span><span class="si">}</span><span class="s2"> has no live service"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_faults</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">armed</span><span class="p">)</span>
+        <span class="c1"># Only after the module has taken it: a switch that was refused was never set.</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">resource</span><span class="p">,</span> <span class="p">{})[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">armed</span></div>
+
+
+<div class="viewcode-block" id="Launcher.strategies">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.strategies">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">strategies</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StrategyChoices</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The strategies a launch may name, of each kind, as this Launcher found them. Like</span>
+<span class="sd">        `state()`, it calls neither a process nor the graph."""</span>
+        <span class="k">return</span> <span class="n">StrategyChoices</span><span class="p">(</span>
+            <span class="n">module</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">StrategyChoice</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">strategy</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">strategy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_module_strategies</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">],</span>
+            <span class="n">wms</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">StrategyChoice</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">strategy</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">strategy</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wms_strategies</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">],</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Launcher.process">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.process">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ChildSnapshot</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The process whose id in the Launcher's paths is `id` (see `process_id`), as the</span>
+<span class="sd">        supervisor holds it now, or None where no process of the current launch has that id.</span>
+<span class="sd">        Like `state()`, it calls neither a process nor the graph.</span>
+<span class="sd">        """</span>
+        <span class="n">supervisor</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_now</span><span class="p">()</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="n">supervisor</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span> <span class="k">if</span> <span class="n">supervisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">process_of</span><span class="p">(</span><span class="n">children</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Launcher.state">
+<a class="viewcode-back" href="../../../../reference/uc2/launcher/backend.html#jms_kapps.uc2.launcher.backend.Launcher.state">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">LauncherState</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Everything the page shows.</span>
+
+<span class="sd">        It renders what this process already holds, and calls neither a module nor the graph, so</span>
+<span class="sd">        a poll answers at once whatever else is away. The addresses are the supervisor's, kept</span>
+<span class="sd">        for live processes only: a killed one can leave its address behind.</span>
+<span class="sd">        """</span>
+        <span class="n">supervisor</span><span class="p">,</span> <span class="n">topology</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_now</span><span class="p">()</span>
+        <span class="n">children</span> <span class="o">=</span> <span class="n">supervisor</span><span class="o">.</span><span class="n">snapshot</span><span class="p">()</span> <span class="k">if</span> <span class="n">supervisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_current</span><span class="p">:</span>
+            <span class="n">armed</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_armed</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_topology_name</span>
+            <span class="n">module_strategy</span><span class="p">,</span> <span class="n">wms_strategy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_in_force</span> <span class="ow">or</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">collect_history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_collecting</span>
+            <span class="n">collect_refusals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_refusals_collected</span>
+        <span class="n">processes</span> <span class="o">=</span> <span class="p">[</span><span class="n">_process</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">armed</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">LauncherState</span><span class="p">(</span>
+            <span class="n">dataset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset</span><span class="p">,</span>
+            <span class="n">store_url</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"TRIPLESTORE_URL"</span><span class="p">,</span> <span class="s2">""</span><span class="p">),</span>
+            <span class="n">default_transit_time</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_transit_seconds</span><span class="p">,</span>
+            <span class="n">default_deadlock_alarm_seconds</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_deadlock_alarm_seconds</span><span class="p">,</span>
+            <span class="n">topology</span><span class="o">=</span><span class="n">topology</span><span class="p">,</span>
+            <span class="n">topology_name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">module_strategy</span><span class="o">=</span><span class="n">module_strategy</span><span class="p">,</span>
+            <span class="n">wms_strategy</span><span class="o">=</span><span class="n">wms_strategy</span><span class="p">,</span>
+            <span class="n">collect_history</span><span class="o">=</span><span class="n">collect_history</span><span class="p">,</span>
+            <span class="n">collect_refusals</span><span class="o">=</span><span class="n">collect_refusals</span><span class="p">,</span>
+            <span class="n">monitor</span><span class="o">=</span><span class="n">_page</span><span class="p">(</span><span class="n">processes</span><span class="p">,</span> <span class="s2">"monitor"</span><span class="p">,</span> <span class="n">_OPEN</span><span class="p">),</span>
+            <span class="n">wms</span><span class="o">=</span><span class="n">_page</span><span class="p">(</span><span class="n">processes</span><span class="p">,</span> <span class="s2">"wms"</span><span class="p">,</span> <span class="n">_DASHBOARD</span><span class="p">),</span>
+            <span class="n">processes</span><span class="o">=</span><span class="n">processes</span><span class="p">,</span>
+            <span class="n">heartbeat_error</span><span class="o">=</span><span class="n">supervisor</span><span class="o">.</span><span class="n">heartbeat_error</span><span class="p">()</span> <span class="k">if</span> <span class="n">supervisor</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">boxes</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">last</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">boxes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

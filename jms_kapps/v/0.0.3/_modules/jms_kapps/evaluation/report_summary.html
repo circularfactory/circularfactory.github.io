@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.report_summary &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/report_summary';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.report_summary</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.report_summary</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What the report of a spec (`report`) keeps of one run: its summary, a small JSON file beside the</span>
+<span class="sd">run's record. A record is large (24 to 90 MB, mostly its store requests), so each is read once; the</span>
+<span class="sd">summary holds what the tables and the charts need, and a later report reads the summaries and not</span>
+<span class="sd">the records again.</span>
+
+<span class="sd">**The file** is `report-summary.json` in the run's folder, beside `record.json`. It holds its</span>
+<span class="sd">`format`, the size and the modification time of the record it was made from, the numbers the table</span>
+<span class="sd">of a spec reads of a record (`summary.RunSummary`), and what the report adds: the latencies of the</span>
+<span class="sd">accepted store requests of the window, logins left out, kept apart by their kind (a read, a write,</span>
+<span class="sd">or another), the requests the store refused, those that timed out and those whose connection</span>
+<span class="sd">dropped, inside the window and outside it, and, for a run that counts and has spans, its steps (`steps`: the minutes of the window</span>
+<span class="sd">and, for each role and step, the seconds of its spans in the window and the sizes of the store's</span>
+<span class="sd">answers, `report_steps`), so that the spans are read once and the runs can be pooled. Since</span>
+<span class="sd">format 3 it also holds each unanswered store request (`unanswered`: its time, its real wait, its</span>
+<span class="sd">reason, and whether it was in the window) and the client host's load in the window (`client_load`:</span>
+<span class="sd">the median and the highest CPU use and the highest memory use of the samples in the window, or why</span>
+<span class="sd">there are none). Since format 4 it also holds the report points of the run (`points`: the hour of</span>
+<span class="sd">its window, other activity on the server, the page cache's deltas, the deadlock alarms and the dead</span>
+<span class="sd">heartbeats, `report_points`). Since format 5 the requests that timed out and those whose connection</span>
+<span class="sd">dropped are two counts, and each unanswered request says its `outcome`: a request</span>
+<span class="sd">that a record written before says "timed out" is classified by its error</span>
+<span class="sd">(`store_requests.outcome_of`).</span>
+
+<span class="sd">**When it is made again.** A summary whose `format` is not `FORMAT` is made again from its record,</span>
+<span class="sd">and so is one whose record is not the size or the age it was made from. A summary that cannot be</span>
+<span class="sd">read is made again, too. A record that cannot be read has no summary.</span>
+
+<span class="sd">**The format** is a whole number, raised when the file's keys change: 2 added `steps`, and a</span>
+<span class="sd">summary of format 1 is made again from its record and its spans. Format 3 added `unanswered` and</span>
+<span class="sd">`client_load`, and a summary of format 2 is made again. Format 4 added `points`, and a summary of</span>
+<span class="sd">format 3 is made again. Format 5 counted the dropped connections apart, and a summary of format 4,</span>
+<span class="sd">which counted them as timed out, is made again (interim).</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">asdict</span><span class="p">,</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">client_load</span><span class="p">,</span> <span class="n">report_points</span><span class="p">,</span> <span class="n">store_requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.report_steps</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RunSteps</span><span class="p">,</span>
+    <span class="n">read_run_spans</span><span class="p">,</span>
+    <span class="n">steps_of</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.summary</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunSummary</span><span class="p">,</span> <span class="n">summary_of</span>
+
+<span class="c1"># The file of a run's summary, beside its record, and the format it is written in.</span>
+<span class="n">SUMMARY_FILE</span> <span class="o">=</span> <span class="s2">"report-summary.json"</span>
+<span class="n">RECORD_FILE</span> <span class="o">=</span> <span class="s2">"record.json"</span>
+<span class="n">FORMAT</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># What a run's client load figures say when they hold no figure: the record has no samples (a run</span>
+<span class="c1"># of the "before" series), none lies in the window, or the host had no `/proc`.</span>
+<span class="n">MEASURED</span> <span class="o">=</span> <span class="s2">"measured"</span>
+<span class="n">NO_DATA</span> <span class="o">=</span> <span class="s2">"no data"</span>
+<span class="n">NOT_AVAILABLE</span> <span class="o">=</span> <span class="n">client_load</span><span class="o">.</span><span class="n">NOT_AVAILABLE</span>
+
+
+<div class="viewcode-block" id="RunFigures">
+<a class="viewcode-back" href="../../../reference/evaluation/report_summary.html#jms_kapps.evaluation.report_summary.RunFigures">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RunFigures</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the report reads of one run.</span>
+
+<span class="sd">    `summary` is what the table of a spec reads (its `store_request_latencies` hold the reads, the</span>
+<span class="sd">    writes and the other requests together). `read_latencies` and `write_latencies` are the</span>
+<span class="sd">    latencies of the accepted store requests of the window that are reads and writes; None for a</span>
+<span class="sd">    run without store requests. `request_counts` holds the requests the store refused, those that</span>
+<span class="sd">    timed out and those whose connection dropped, inside the window and outside it, or None. `other_latencies` are those of the</span>
+<span class="sd">    accepted requests of the window that are neither (logins left out). `steps` are the steps of a</span>
+<span class="sd">    run that counts and has spans (`report_steps`), else None. `unanswered` lists each store</span>
+<span class="sd">    request that got no answer, in the window and outside it, in the order of their times, each</span>
+<span class="sd">    with its `outcome` (timed out or connection dropped), its `at`, its real wait</span>
+<span class="sd">    `seconds`, its `reason`, its `kind`, its `participant` and whether it was in the `window`;</span>
+<span class="sd">    None for a run without store</span>
+<span class="sd">    requests. `client_load` is the client host's load in the window (`client_load_of`). `points` is</span>
+<span class="sd">    what the report points need of the run (`report_points.points_of`: the hour of its window,</span>
+<span class="sd">    other activity on the server, the page cache, the deadlock alarms and the dead heartbeats).</span>
+<span class="sd">    """</span>
+
+    <span class="n">summary</span><span class="p">:</span> <span class="n">RunSummary</span>
+    <span class="n">read_latencies</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">write_latencies</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">other_latencies</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">request_counts</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">steps</span><span class="p">:</span> <span class="n">RunSteps</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">unanswered</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">client_load</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">points</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="client_load_of">
+<a class="viewcode-back" href="../../../reference/evaluation/report_summary.html#jms_kapps.evaluation.report_summary.client_load_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">client_load_of</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The client host's load in the window, from the samples of `record`: `status` (`measured`;</span>
+<span class="sd">    `no data` where the record holds no sample or none lies in the window, as a record of the</span>
+<span class="sd">    "before" series; `not available` where the host had no `/proc`), and, for a measured one,</span>
+<span class="sd">    the median and the highest CPU use in percent (None where no sample holds one), the highest</span>
+<span class="sd">    memory use in bytes, and how many samples lie in the window."""</span>
+    <span class="n">figures</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="n">NO_DATA</span><span class="p">,</span>
+        <span class="s2">"cpu_median_percent"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"cpu_max_percent"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"memory_max_bytes"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"samples_in_window"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">load</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"client_load"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">figures</span>
+    <span class="k">if</span> <span class="n">load</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">)</span> <span class="o">==</span> <span class="n">client_load</span><span class="o">.</span><span class="n">NOT_AVAILABLE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">figures</span> <span class="o">|</span> <span class="p">{</span><span class="s2">"status"</span><span class="p">:</span> <span class="n">NOT_AVAILABLE</span><span class="p">}</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"measures"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">window</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"start"</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">window</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">figures</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="s2">"start"</span><span class="p">])</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="s2">"end"</span><span class="p">])</span>
+    <span class="n">inside</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">sample</span>
+        <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">load</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"samples"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">start</span> <span class="o">&lt;=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">"at"</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">end</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">inside</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">figures</span>
+    <span class="n">cpu</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">"cpu_percent"</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">inside</span>
+        <span class="k">if</span> <span class="n">sample</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"cpu_percent"</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">]</span>
+    <span class="k">return</span> <span class="n">figures</span> <span class="o">|</span> <span class="p">{</span>
+        <span class="s2">"status"</span><span class="p">:</span> <span class="n">MEASURED</span><span class="p">,</span>
+        <span class="s2">"cpu_median_percent"</span><span class="p">:</span> <span class="n">statistics</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">cpu</span><span class="p">)</span> <span class="k">if</span> <span class="n">cpu</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"cpu_max_percent"</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="n">cpu</span><span class="p">)</span> <span class="k">if</span> <span class="n">cpu</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">"memory_max_bytes"</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="s2">"memory_used_bytes"</span><span class="p">])</span> <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">inside</span><span class="p">),</span>
+        <span class="s2">"samples_in_window"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">inside</span><span class="p">),</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="figures_of">
+<a class="viewcode-back" href="../../../reference/evaluation/report_summary.html#jms_kapps.evaluation.report_summary.figures_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">figures_of</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RunFigures</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The figures of `record`, a record as a run of the harness writes it. `folder` is the run's</span>
+<span class="sd">    folder, whose spans give the run's steps if the run counts."""</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">summary_of</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+    <span class="c1"># The spans are read once, for the steps and for the dead heartbeats.</span>
+    <span class="n">spans</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">folder</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">read_run_spans</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="n">steps_of</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">spans</span><span class="p">)</span> <span class="k">if</span> <span class="n">spans</span> <span class="ow">and</span> <span class="n">summary</span><span class="o">.</span><span class="n">counts</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">load</span> <span class="o">=</span> <span class="n">client_load_of</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">report_points</span><span class="o">.</span><span class="n">points_of</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">spans</span><span class="p">)</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"measures"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">requests</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">RunFigures</span><span class="p">(</span><span class="n">summary</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+    <span class="n">reads</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">writes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">others</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">unanswered</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2">"</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">where</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"in_window"</span><span class="p">,</span> <span class="s2">"outside_window"</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">what</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"refused"</span><span class="p">,</span> <span class="s2">"timed_out"</span><span class="p">,</span> <span class="s2">"connection_dropped"</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">named</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">store_requests</span><span class="o">.</span><span class="n">REFUSED</span><span class="p">:</span> <span class="s2">"refused"</span><span class="p">,</span>
+        <span class="n">store_requests</span><span class="o">.</span><span class="n">TIMED_OUT</span><span class="p">:</span> <span class="s2">"timed_out"</span><span class="p">,</span>
+        <span class="n">store_requests</span><span class="o">.</span><span class="n">CONNECTION_DROPPED</span><span class="p">:</span> <span class="s2">"connection_dropped"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="n">requests</span><span class="p">:</span>
+        <span class="c1"># A request that a record written before says "timed out" is classified by its error.</span>
+        <span class="n">outcome</span> <span class="o">=</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">outcome_of</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outcome</span> <span class="ow">in</span> <span class="n">named</span><span class="p">:</span>
+            <span class="n">where</span> <span class="o">=</span> <span class="s2">"in_window"</span> <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"outside_window"</span>
+            <span class="n">counts</span><span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">named</span><span class="p">[</span><span class="n">outcome</span><span class="p">]</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">outcome</span> <span class="ow">in</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">UNANSWERED</span><span class="p">:</span>
+                <span class="c1"># The request keeps its real wait in `seconds`; it is listed, and never among the</span>
+                <span class="c1"># latencies of the answered requests.</span>
+                <span class="n">unanswered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">"outcome"</span><span class="p">:</span> <span class="n">outcome</span><span class="p">,</span>
+                        <span class="s2">"at"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"at"</span><span class="p">),</span>
+                        <span class="s2">"seconds"</span><span class="p">:</span> <span class="nb">float</span><span class="p">(</span><span class="n">request</span><span class="p">[</span><span class="s2">"seconds"</span><span class="p">]),</span>
+                        <span class="s2">"reason"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"reason"</span><span class="p">),</span>
+                        <span class="s2">"kind"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">),</span>
+                        <span class="s2">"participant"</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"participant"</span><span class="p">),</span>
+                        <span class="s2">"window"</span><span class="p">:</span> <span class="nb">bool</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)),</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="n">outcome</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">ACCEPTED</span>
+            <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"window"</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">)</span> <span class="o">!=</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">LOGIN</span>
+        <span class="p">):</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"kind"</span><span class="p">)</span>
+            <span class="n">seconds</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">request</span><span class="p">[</span><span class="s2">"seconds"</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">READ</span><span class="p">:</span>
+                <span class="n">reads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">WRITE</span><span class="p">:</span>
+                <span class="n">writes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">others</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="n">unanswered</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">found</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="s2">"at"</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">RunFigures</span><span class="p">(</span>
+        <span class="n">summary</span><span class="p">,</span> <span class="n">reads</span><span class="p">,</span> <span class="n">writes</span><span class="p">,</span> <span class="n">others</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">steps</span><span class="p">,</span> <span class="n">unanswered</span><span class="p">,</span> <span class="n">load</span><span class="p">,</span> <span class="n">points</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_to_json</span><span class="p">(</span><span class="n">figures</span><span class="p">:</span> <span class="n">RunFigures</span><span class="p">,</span> <span class="n">record_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">asdict</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span>
+    <span class="c1"># The latencies are kept once, apart by kind, and put together again when they are read.</span>
+    <span class="k">del</span> <span class="n">summary</span><span class="p">[</span><span class="s2">"store_request_latencies"</span><span class="p">]</span>
+    <span class="n">stat</span> <span class="o">=</span> <span class="n">record_path</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="n">FORMAT</span><span class="p">,</span>
+        <span class="s2">"record"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"bytes"</span><span class="p">:</span> <span class="n">stat</span><span class="o">.</span><span class="n">st_size</span><span class="p">,</span> <span class="s2">"modified_ns"</span><span class="p">:</span> <span class="n">stat</span><span class="o">.</span><span class="n">st_mtime_ns</span><span class="p">},</span>
+        <span class="s2">"summary"</span><span class="p">:</span> <span class="n">summary</span><span class="p">,</span>
+        <span class="s2">"latencies"</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figures</span><span class="o">.</span><span class="n">read_latencies</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="s2">"read"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">read_latencies</span><span class="p">),</span>
+            <span class="s2">"write"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">write_latencies</span> <span class="ow">or</span> <span class="p">()),</span>
+            <span class="s2">"other"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">other_latencies</span> <span class="ow">or</span> <span class="p">()),</span>
+        <span class="p">},</span>
+        <span class="s2">"requests"</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figures</span><span class="o">.</span><span class="n">request_counts</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">request_counts</span><span class="p">),</span>
+        <span class="s2">"steps"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">figures</span><span class="o">.</span><span class="n">steps</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">figures</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">to_json</span><span class="p">(),</span>
+        <span class="s2">"unanswered"</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figures</span><span class="o">.</span><span class="n">unanswered</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="k">for</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">figures</span><span class="o">.</span><span class="n">unanswered</span><span class="p">],</span>
+        <span class="s2">"client_load"</span><span class="p">:</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">figures</span><span class="o">.</span><span class="n">client_load</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">client_load</span><span class="p">),</span>
+        <span class="s2">"points"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">figures</span><span class="o">.</span><span class="n">points</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">dict</span><span class="p">(</span><span class="n">figures</span><span class="o">.</span><span class="n">points</span><span class="p">),</span>
+    <span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_from_json</span><span class="p">(</span><span class="n">found</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">RunFigures</span><span class="p">:</span>
+    <span class="n">latencies</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="s2">"latencies"</span><span class="p">]</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="s2">"summary"</span><span class="p">])</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">found</span><span class="p">[</span><span class="s2">"steps"</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">RunSteps</span><span class="o">.</span><span class="n">from_json</span><span class="p">(</span><span class="n">found</span><span class="p">[</span><span class="s2">"steps"</span><span class="p">])</span>
+    <span class="n">unanswered</span><span class="p">,</span> <span class="n">load</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="s2">"unanswered"</span><span class="p">],</span> <span class="n">found</span><span class="p">[</span><span class="s2">"client_load"</span><span class="p">]</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">found</span><span class="p">[</span><span class="s2">"points"</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">latencies</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">RunFigures</span><span class="p">(</span>
+            <span class="n">RunSummary</span><span class="p">(</span><span class="o">**</span><span class="n">summary</span><span class="p">,</span> <span class="n">store_request_latencies</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="n">steps</span><span class="p">,</span>
+            <span class="n">unanswered</span><span class="p">,</span>
+            <span class="n">load</span><span class="p">,</span>
+            <span class="n">points</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">every</span> <span class="o">=</span> <span class="p">[</span><span class="o">*</span><span class="n">latencies</span><span class="p">[</span><span class="s2">"read"</span><span class="p">],</span> <span class="o">*</span><span class="n">latencies</span><span class="p">[</span><span class="s2">"write"</span><span class="p">],</span> <span class="o">*</span><span class="n">latencies</span><span class="p">[</span><span class="s2">"other"</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">RunFigures</span><span class="p">(</span>
+        <span class="n">RunSummary</span><span class="p">(</span><span class="o">**</span><span class="n">summary</span><span class="p">,</span> <span class="n">store_request_latencies</span><span class="o">=</span><span class="n">every</span><span class="p">),</span>
+        <span class="n">latencies</span><span class="p">[</span><span class="s2">"read"</span><span class="p">],</span>
+        <span class="n">latencies</span><span class="p">[</span><span class="s2">"write"</span><span class="p">],</span>
+        <span class="n">latencies</span><span class="p">[</span><span class="s2">"other"</span><span class="p">],</span>
+        <span class="n">found</span><span class="p">[</span><span class="s2">"requests"</span><span class="p">],</span>
+        <span class="n">steps</span><span class="p">,</span>
+        <span class="n">unanswered</span><span class="p">,</span>
+        <span class="n">load</span><span class="p">,</span>
+        <span class="n">points</span><span class="p">,</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="write_summary">
+<a class="viewcode-back" href="../../../reference/evaluation/report_summary.html#jms_kapps.evaluation.report_summary.write_summary">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_summary</span><span class="p">(</span><span class="n">folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">figures</span><span class="p">:</span> <span class="n">RunFigures</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Write the summary of the run whose record is in `folder`, beside it, and return its path."""</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">/</span> <span class="n">SUMMARY_FILE</span>
+    <span class="n">path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">_to_json</span><span class="p">(</span><span class="n">figures</span><span class="p">,</span> <span class="n">folder</span> <span class="o">/</span> <span class="n">RECORD_FILE</span><span class="p">),</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span></div>
+
+
+
+<div class="viewcode-block" id="read_figures">
+<a class="viewcode-back" href="../../../reference/evaluation/report_summary.html#jms_kapps.evaluation.report_summary.read_figures">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_figures</span><span class="p">(</span>
+    <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">fresh</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RunFigures</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The figures of the run in `folder`: from its summary where that is current, else from its</span>
+<span class="sd">    record, which is read once and then summarised beside it. None where the folder holds no</span>
+<span class="sd">    record that can be read.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fresh: The record of the run in `folder` as the run just returned it, so that it is not</span>
+<span class="sd">            read from the file again.</span>
+<span class="sd">    """</span>
+    <span class="n">record_path</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">/</span> <span class="n">RECORD_FILE</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stat</span> <span class="o">=</span> <span class="n">record_path</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">fresh</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">_current</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">st_size</span><span class="p">,</span> <span class="n">stat</span><span class="o">.</span><span class="n">st_mtime_ns</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">current</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">current</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">fresh</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">record_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">figures</span> <span class="o">=</span> <span class="n">figures_of</span><span class="p">(</span><span class="n">fresh</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">write_summary</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">figures</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="c1"># A folder that cannot be written to still gives its figures; the next report reads the</span>
+        <span class="c1"># record again.</span>
+        <span class="k">pass</span>
+    <span class="k">return</span> <span class="n">figures</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_current</span><span class="p">(</span><span class="n">folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">modified_ns</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RunFigures</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">((</span><span class="n">folder</span> <span class="o">/</span> <span class="n">SUMMARY_FILE</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">found</span><span class="p">[</span><span class="s2">"format"</span><span class="p">]</span> <span class="o">!=</span> <span class="n">FORMAT</span> <span class="ow">or</span> <span class="n">found</span><span class="p">[</span><span class="s2">"record"</span><span class="p">]</span> <span class="o">!=</span> <span class="p">{</span>
+            <span class="s2">"bytes"</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span>
+            <span class="s2">"modified_ns"</span><span class="p">:</span> <span class="n">modified_ns</span><span class="p">,</span>
+        <span class="p">}:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="n">_from_json</span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="read_all">
+<a class="viewcode-back" href="../../../reference/evaluation/report_summary.html#jms_kapps.evaluation.report_summary.read_all">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_all</span><span class="p">(</span><span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">fresh</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">RunFigures</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The figures of each run below `runs`, one folder each, in the order of their folders (the</span>
+<span class="sd">    order in which `summary.read_summaries` reads them, which the table's bootstrap depends on).</span>
+<span class="sd">    A folder with no record that can be read is none of them.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        fresh: The record of a run just made, as the run returned it (see `read_figures`).</span>
+<span class="sd">    """</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">runs</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s2">"*/</span><span class="si">{</span><span class="n">RECORD_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)):</span>
+        <span class="n">is_fresh</span> <span class="o">=</span> <span class="n">fresh</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">fresh</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_id"</span><span class="p">))</span>
+        <span class="n">figures</span> <span class="o">=</span> <span class="n">read_figures</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">fresh</span><span class="o">=</span><span class="n">fresh</span> <span class="k">if</span> <span class="n">is_fresh</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">figures</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">figures</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc1.effective_values &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=47de8214"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc1/effective_values';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc1.effective_values</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc1.effective_values</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The effective values of one Screw: the ten values that one decision of the detector uses.</span>
+
+<span class="sd">A Screw type holds the detection thresholds and the preparation turning angle, and only the Screw</span>
+<span class="sd">type: the resolution refuses a Screw that is given one, and the reader does not ask a Screw for</span>
+<span class="sd">them. The placement values (the approach depth limit and the screw-head band) depend on where the screw is, not on its type, so only the Screw holds them.</span>
+
+<span class="sd">The graph does not compute this, and the object-graph mapper does not either: it reads what one</span>
+<span class="sd">individual holds, with no inheritance from one individual to another. So the rule is here, where</span>
+<span class="sd">the detector and the learner can both use it.</span>
+
+<span class="sd">A decision needs all ten values. When a value is missing, when the individual it is read from</span>
+<span class="sd">holds it more than once, or when it is not a finite number, the resolution fails and names each</span>
+<span class="sd">problem. The decision tree never runs with a value missing. The resolution gives the decision</span>
+<span class="sd">tree's own `EffectiveValues`, so the detector passes it to `classify()` as it is.</span>
+
+<span class="sd">The ontology declares each of the ten functional, so an individual holds at most one value of it.</span>
+<span class="sd">The triple store does not refuse a second value, and a write that bypasses the object-graph mapper</span>
+<span class="sd">can store one. So the resolution still checks, and refuses two values instead of choosing one.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">ClassScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.decision_tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">EffectiveValues</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.scope_log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_scope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">JMS</span><span class="p">,</span> <span class="n">PLACEMENT</span><span class="p">,</span> <span class="n">TYPE_LEVEL</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># What one read of a Screw takes for its effective values: the three placement values the Screw</span>
+<span class="c1"># holds, and, through its Screw type, the seven values the type holds. The Screw is not asked for</span>
+<span class="c1"># a type-level value: the ontology's domain of those names the Screw type and the parameter</span>
+<span class="c1"># copy only, and the mapper refuses a scope with a property outside the class's domain. One</span>
+<span class="c1"># projection, so the detector writes no SPARQL: reads go through one projection. The walk through `:hasScrewType` works,</span>
+<span class="c1"># because the mapper specifies a nested individual by the property's range, here `:ScrewType`,</span>
+<span class="c1"># which declares the seven properties.</span>
+<span class="n">_CHAINS</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">IRI</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[[</span><span class="n">prop</span><span class="p">]</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">PLACEMENT</span><span class="p">]</span>
+<span class="n">_CHAINS</span> <span class="o">+=</span> <span class="p">[[</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewType</span><span class="p">,</span> <span class="n">prop</span><span class="p">]</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">TYPE_LEVEL</span><span class="p">]</span>
+<span class="n">EFFECTIVE_VALUES_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span><span class="n">_CHAINS</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="UnresolvedValues">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.UnresolvedValues">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">UnresolvedValues</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A Screw has no usable effective value for one or more of the ten properties."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">problems</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">screw</span> <span class="o">=</span> <span class="n">screw</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">problems</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">problems</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"The Screw &lt;</span><span class="si">{</span><span class="n">screw</span><span class="si">}</span><span class="s2">&gt; has no usable effective value: "</span> <span class="o">+</span> <span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">problems</span><span class="p">)</span>
+        <span class="p">)</span></div>
+
+
+
+<span class="n">PROPERTY_OF_FIELD</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"min_approach_axial_force"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinApproachAxialForce</span><span class="p">,</span>
+    <span class="s2">"min_counter_torque"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinCounterTorque</span><span class="p">,</span>
+    <span class="s2">"min_preload_axial_force"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinPreloadAxialForce</span><span class="p">,</span>
+    <span class="s2">"preparation_turning_angle"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasPreparationTurningAngle</span><span class="p">,</span>
+    <span class="s2">"max_loose_torque"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxLooseTorque</span><span class="p">,</span>
+    <span class="s2">"min_loosening_axial_force"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinLooseningAxialForce</span><span class="p">,</span>
+    <span class="s2">"max_dynamic_torque"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxDynamicTorque</span><span class="p">,</span>
+    <span class="s2">"min_approach_position"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinApproachPosition</span><span class="p">,</span>
+    <span class="s2">"min_screw_head_position"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMinScrewHeadPosition</span><span class="p">,</span>
+    <span class="s2">"max_screw_head_position"</span><span class="p">:</span> <span class="n">JMS</span><span class="o">.</span><span class="n">hasMaxScrewHeadPosition</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="as_properties">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.as_properties">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">as_properties</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="n">EffectiveValues</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The values by property, as a parameter copy records them."""</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">prop</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">PROPERTY_OF_FIELD</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<div class="viewcode-block" id="EffectiveValuesWithOrigin">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.EffectiveValuesWithOrigin">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">EffectiveValuesWithOrigin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The effective values of one Screw, with where each came from.</span>
+
+<span class="sd">    `origin` names, for each of the ten properties, the individual whose value counts: the Screw</span>
+<span class="sd">    for a placement value, its Screw type for a type-level one. `type_values` is what the Screw</span>
+<span class="sd">    type holds of the seven type-level values, each it holds once and as a finite number.</span>
+<span class="sd">    """</span>
+
+    <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span>
+    <span class="n">values</span><span class="p">:</span> <span class="n">EffectiveValues</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">type_values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="resolve">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.resolve">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resolve</span><span class="p">(</span>
+    <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">own</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">inherited</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EffectiveValues</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The effective values of `screw`: the placement values of the Screw, the type-level values</span>
+<span class="sd">    of its Screw type.</span>
+
+<span class="sd">    `resolve_with_origin` gives the same values with where each came from.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        UnresolvedValues: As `resolve_with_origin` does.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">resolve_with_origin</span><span class="p">(</span><span class="n">screw</span><span class="p">,</span> <span class="n">own</span><span class="p">,</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">inherited</span><span class="p">)</span><span class="o">.</span><span class="n">values</span></div>
+
+
+
+<div class="viewcode-block" id="resolve_with_origin">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.resolve_with_origin">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">resolve_with_origin</span><span class="p">(</span>
+    <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">own</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">inherited</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The effective values of `screw`: the placement values of the Screw, the type-level values</span>
+<span class="sd">    of its Screw type, with where each came from.</span>
+
+<span class="sd">    `own` holds the values of the Screw and `inherited` the values of its Screw type, each as a</span>
+<span class="sd">    list for each property, as the graph holds them. A placement value is read from `own` only,</span>
+<span class="sd">    a type-level value from `inherited` only. Each property is functional, so two values on one</span>
+<span class="sd">    holder break the graph's contract. A type-level value in `own` is a problem too: the Screw</span>
+<span class="sd">    type is the only holder of those, so the resolution refuses it and does not choose.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        UnresolvedValues: With one problem for each property that has no usable value.</span>
+<span class="sd">    """</span>
+    <span class="n">values</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">origin</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">problems</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">TYPE_LEVEL</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">own</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: the Screw holds a value, but only its Screw type can"</span>
+            <span class="p">)</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="p">(</span><span class="o">*</span><span class="n">TYPE_LEVEL</span><span class="p">,</span> <span class="o">*</span><span class="n">PLACEMENT</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">PLACEMENT</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">own</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span>
+                <span class="n">holder</span><span class="p">,</span> <span class="n">candidates</span> <span class="o">=</span> <span class="n">screw</span><span class="p">,</span> <span class="n">own</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: the Screw holds no value, and only a Screw can"</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">screw_type</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: the Screw names no Screw type"</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">elif</span> <span class="n">inherited</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">):</span>
+            <span class="n">holder</span><span class="p">,</span> <span class="n">candidates</span> <span class="o">=</span> <span class="n">screw_type</span><span class="p">,</span> <span class="n">inherited</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: its Screw type &lt;</span><span class="si">{</span><span class="n">screw_type</span><span class="si">}</span><span class="s2">&gt; holds no value"</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: &lt;</span><span class="si">{</span><span class="n">holder</span><span class="si">}</span><span class="s2">&gt; holds </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span><span class="si">}</span><span class="s2"> values "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span><span class="si">}</span><span class="s2">, but the property is functional and allows one"</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">_is_finite_number</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">: &lt;</span><span class="si">{</span><span class="n">holder</span><span class="si">}</span><span class="s2">&gt; holds </span><span class="si">{</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">!r}</span><span class="s2">, not a finite number"</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">values</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore[arg-type]</span>
+            <span class="n">origin</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="n">holder</span>
+
+    <span class="k">if</span> <span class="n">problems</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">UnresolvedValues</span><span class="p">(</span><span class="n">screw</span><span class="p">,</span> <span class="n">problems</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">(</span>
+        <span class="n">screw</span><span class="o">=</span><span class="n">screw</span><span class="p">,</span>
+        <span class="n">values</span><span class="o">=</span><span class="n">EffectiveValues</span><span class="p">(</span>
+            <span class="o">**</span><span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">values</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">PROPERTY_OF_FIELD</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        <span class="p">),</span>
+        <span class="n">origin</span><span class="o">=</span><span class="n">origin</span><span class="p">,</span>
+        <span class="n">screw_type</span><span class="o">=</span><span class="n">screw_type</span><span class="p">,</span>
+        <span class="n">type_values</span><span class="o">=</span><span class="p">{}</span> <span class="k">if</span> <span class="n">screw_type</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">usable_values</span><span class="p">(</span><span class="n">inherited</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="usable_values">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.usable_values">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">usable_values</span><span class="p">(</span><span class="n">held</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Each type-level value of `held` that is held once and is a finite number, in the order of</span>
+<span class="sd">    `TYPE_LEVEL`."""</span>
+    <span class="n">usable</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">TYPE_LEVEL</span><span class="p">:</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">held</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">_is_finite_number</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">usable</span><span class="p">[</span><span class="n">prop</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore[arg-type]</span>
+    <span class="k">return</span> <span class="n">usable</span></div>
+
+
+
+<div class="viewcode-block" id="type_value_problems">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.type_value_problems">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">type_value_problems</span><span class="p">(</span>
+    <span class="n">screw_type</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">held</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">object</span><span class="p">]]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""What keeps `held`, the values that `screw_type` holds, from giving each of the seven</span>
+<span class="sd">    type-level values once as a finite number: one readable problem for each value that it holds</span>
+<span class="sd">    zero times, more than once, or not as a finite number, in the order of `TYPE_LEVEL`. Empty</span>
+<span class="sd">    when all seven are usable."""</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">screw_type</span><span class="o">.</span><span class="n">fragment</span>
+    <span class="n">problems</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">TYPE_LEVEL</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">prop</span><span class="o">.</span><span class="n">fragment</span><span class="o">.</span><span class="n">removeprefix</span><span class="p">(</span><span class="s2">"has"</span><span class="p">)</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="n">held</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">candidates</span><span class="p">:</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the screw type </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> holds no value of </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the screw type </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> holds </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span><span class="si">}</span><span class="s2"> values of </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">, "</span>
+                <span class="s2">"but allows one"</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">_is_finite_number</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">problems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the screw type </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> holds </span><span class="si">{</span><span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">!r}</span><span class="s2"> as </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">, "</span>
+                <span class="s2">"not a finite number"</span>
+            <span class="p">)</span>
+    <span class="k">return</span> <span class="n">problems</span></div>
+
+
+
+<div class="viewcode-block" id="read_effective_values">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.read_effective_values">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_effective_values</span><span class="p">(</span><span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EffectiveValues</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Read the effective values of `screw` from the graph, as</span>
+<span class="sd">    `read_effective_values_with_origin` does, without where each came from.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        UnresolvedValues: As `read_effective_values_with_origin` does.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">read_effective_values_with_origin</span><span class="p">(</span><span class="n">ogm</span><span class="p">,</span> <span class="n">screw</span><span class="p">)</span><span class="o">.</span><span class="n">values</span></div>
+
+
+
+<div class="viewcode-block" id="read_effective_values_with_origin">
+<a class="viewcode-back" href="../../../reference/uc1/effective_values.html#jms_kapps.uc1.effective_values.read_effective_values_with_origin">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_effective_values_with_origin</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">screw</span><span class="p">:</span> <span class="n">IRI</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">EffectiveValuesWithOrigin</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Read the effective values of `screw` from the graph, with where each came from, in one</span>
+<span class="sd">    projection of the object-graph mapper (`EFFECTIVE_VALUES_SCOPE`).</span>
+
+<span class="sd">    It reads the graph on each call and keeps nothing, so a value that the learner has changed</span>
+<span class="sd">    counts from the next call. The mapper gives every value an individual holds, a second value of</span>
+<span class="sd">    a functional property too, so `resolve` still finds and refuses it (measured on 2026-10-15).</span>
+<span class="sd">    The read does not ask the Screw for a type-level value, so a Screw that holds one in the graph</span>
+<span class="sd">    is not seen here: the refusal covers what `resolve` is given.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        UnresolvedValues: As `resolve` does, and when the Screw names more than one Screw type.</span>
+<span class="sd">    """</span>
+    <span class="n">log_scope</span><span class="p">(</span>
+        <span class="n">logger</span><span class="p">,</span>
+        <span class="s2">"Anomaly detector"</span><span class="p">,</span>
+        <span class="s2">"reads"</span><span class="p">,</span>
+        <span class="n">screw</span><span class="p">,</span>
+        <span class="s2">"EFFECTIVE_VALUES_SCOPE"</span><span class="p">,</span>
+        <span class="n">EFFECTIVE_VALUES_SCOPE</span><span class="p">,</span>
+        <span class="s2">"it wants the placement values the Screw holds, and through its Screw type (hasScrewType) "</span>
+        <span class="s2">"the values of the type: the ten values that one decision uses"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">ogm</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">screw</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">EFFECTIVE_VALUES_SCOPE</span><span class="p">)</span><span class="o">.</span><span class="n">data</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="n">types</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasScrewType</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">named</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">screw_type</span><span class="p">))</span> <span class="k">for</span> <span class="n">screw_type</span> <span class="ow">in</span> <span class="n">types</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">UnresolvedValues</span><span class="p">(</span>
+            <span class="n">screw</span><span class="p">,</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"it names </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">types</span><span class="p">)</span><span class="si">}</span><span class="s2"> Screw types </span><span class="si">{</span><span class="n">named</span><span class="si">}</span><span class="s2">, not one"</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="n">own</span> <span class="o">=</span> <span class="n">_held</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">PLACEMENT</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">types</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">resolve_with_origin</span><span class="p">(</span><span class="n">screw</span><span class="p">,</span> <span class="n">own</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="p">(</span><span class="n">screw_type</span><span class="p">,)</span> <span class="o">=</span> <span class="n">types</span>
+    <span class="n">inherited</span> <span class="o">=</span> <span class="n">_held</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">screw_type</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{},</span> <span class="n">TYPE_LEVEL</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resolve_with_origin</span><span class="p">(</span><span class="n">screw</span><span class="p">,</span> <span class="n">own</span><span class="p">,</span> <span class="n">IRI</span><span class="p">(</span><span class="n">_id</span><span class="p">(</span><span class="n">screw_type</span><span class="p">)),</span> <span class="n">inherited</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_held</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">properties</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">object</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The values that a projection's `data` holds for each of `properties`, every value of each."""</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">prop</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">prop</span><span class="p">])</span> <span class="k">for</span> <span class="n">prop</span> <span class="ow">in</span> <span class="n">properties</span> <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">prop</span><span class="p">)}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_id</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The IRI of a linked value, which the mapper gives as a node with an `id`."""</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="s2">"id"</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_is_finite_number</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `value` is an int, a float or a Decimal, and finite. A bool is not a number here."""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Decimal</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
