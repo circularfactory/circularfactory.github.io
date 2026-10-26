@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.commit_table &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/commit_table';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.commit_table</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.commit_table</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The tidy per-commit table and the replayed-writes table of the measurement harness, read from</span>
+<span class="sd">recorded run folders (interim names). The §7 figure script (`evaluation/section_7/figure.py`)</span>
+<span class="sd">reads them; each figure is a function of the two tables.</span>
+
+<span class="sd">**The runs.** `read_runs` takes folders: an experiment's store folders</span>
+<span class="sd">(`&lt;store&gt;/heartbeats-&lt;level&gt;/runs/&lt;run id&gt;/`), a bare runs folder, or a single run folder, and finds</span>
+<span class="sd">every `record.json` below them. Each record gets its labels:</span>
+
+<span class="sd">- **the store**: the name of a folder between the input folder and the run folder that is one of</span>
+<span class="sd">  `STORE_FOLDERS` (`kit`, `local`), else the host of the record's server;</span>
+<span class="sd">- **the heartbeat level**: `off` where the record's run settings hold a heartbeat interval of null</span>
+<span class="sd">  or 0, `on` where they hold another; else the name of a folder `heartbeats-on` or</span>
+<span class="sd">  `heartbeats-off` above the run; else `on`, as every run before the heartbeat level was a</span>
+<span class="sd">  setting ran with heartbeats on. A writes-only replay takes the level of the run it replays;</span>
+<span class="sd">- **the arm**: a run of use case 2 is KAPPS with SHACL on or off, by its configuration's `shacl`;</span>
+<span class="sd">  a baseline whose replay mode is "writes only" is the writes-only arm.</span>
+
+<span class="sd">A run counts when it completed and is valid, as the harness's table counts it. Left out, each with</span>
+<span class="sd">why: a record that cannot be read, a run of another kind, an all-requests baseline, a run that does</span>
+<span class="sd">not count, a writes-only replay whose replayed run is no SHACL-on run among the inputs, and every</span>
+<span class="sd">valid writes-only replay of a run but the earliest by its start (its record's first action).</span>
+
+<span class="sd">**A commit** is one span of the object-graph mapper's commit (`wrapper.COMMIT_SPAN`). Its latency</span>
+<span class="sd">is the span's duration; it is admitted when the span ended without an error; it is in the window</span>
+<span class="sd">when it started in the run's measured window. Its store requests are the store-request spans below</span>
+<span class="sd">it, among the spans of its own participant, as the record's commit link is made: a commit inside</span>
+<span class="sd">another commit is not walked into, its requests are its own.</span>
+
+<span class="sd">**The phases.** Each store request inside a commit goes to exactly one phase, by the first rule</span>
+<span class="sd">that matches (`request_phase`): the checked write (an update that inserts a receipt) → `update`; a</span>
+<span class="sd">receipt query → `receipt_ask`; a receipt removal → `receipt_removal`; a read below the class-spec</span>
+<span class="sd">derivation, or a read of the schema/class category directly below the commit → `class_query`; a</span>
+<span class="sd">read below a fetch → `fetch_reads`; any other request → `other_requests`. A request's phase takes its</span>
+<span class="sd">whole duration. Every other span below the commit gives its own time, its duration minus that of</span>
+<span class="sd">its children, to one phase (`client_phase`): `class_derivation` where it or a span above it (below</span>
+<span class="sd">the commit) is the class-spec derivation, else `fetch_client` where one is a fetch, else `diff`</span>
+<span class="sd">where one is the diff, else `client_remainder`; the commit's own time is `client_remainder`. So a</span>
+<span class="sd">fetch inside a fetch counts once, under the outer one, and a class-spec derivation inside a fetch</span>
+<span class="sd">is class derivation, not fetch client. The ten parts are in whole microseconds, as the spans are,</span>
+<span class="sd">and sum to the commit's latency exactly; none is below 0 where no span's children overlap in time</span>
+<span class="sd">(interim choice: the own-time rule, in place of "the class-spec span minus its class-query reads",</span>
+<span class="sd">which counts a class spec inside a fetch twice).</span>
+
+<span class="sd">**The kind** of a commit, by its first checked write: `heartbeat` where the write names the</span>
+<span class="sd">heartbeat predicate in either spelling, else `status: ` and the statuses it sets, else</span>
+<span class="sd">`other update`; `no write` for a commit without a checked write. This is the rule the record's</span>
+<span class="sd">`kind` follows where the record has it.</span>
+
+<span class="sd">**The writes-only latency of a commit** is the latency of its replayed checked write: the replayed</span>
+<span class="sd">write whose `commit` is the commit's span id and that inserts a receipt (the receipt's removal</span>
+<span class="sd">carries the same commit and is not it; a heartbeat's checked write is categorised a heartbeat</span>
+<span class="sd">update, so the pairing reads the receipt, not the category). A replay record without `commit`</span>
+<span class="sd">pairs by the participant and the recorded send time, which both records copy from the same record.</span>
+<span class="sd">Where a commit has several checked writes, their latencies are summed and the first's send time</span>
+<span class="sd">is kept. The seconds since the window's start are on the KAPPS run's window and wall clock, for its</span>
+<span class="sd">commits and for the replayed writes alike.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlparse</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">store_requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.observation</span><span class="w"> </span><span class="kn">import</span> <span class="n">Span</span><span class="p">,</span> <span class="n">Window</span><span class="p">,</span> <span class="n">store_request_records</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.report_steps</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MODULE_ROLE</span><span class="p">,</span>
+    <span class="n">WMS_ROLE</span><span class="p">,</span>
+    <span class="n">category_of</span><span class="p">,</span>
+    <span class="n">read_run_spans</span><span class="p">,</span>
+    <span class="n">wms_of</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.summary</span><span class="w"> </span><span class="kn">import</span> <span class="n">repetition_of</span><span class="p">,</span> <span class="n">summary_of</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMMIT_SPAN</span><span class="p">,</span> <span class="n">span_name</span>
+
+<span class="c1"># The arms of the §7 figures.</span>
+<span class="n">KAPPS_SHACL_ON</span> <span class="o">=</span> <span class="s2">"kapps-shacl-on"</span>
+<span class="n">KAPPS_SHACL_OFF</span> <span class="o">=</span> <span class="s2">"kapps-shacl-off"</span>
+<span class="n">WRITES_ONLY</span> <span class="o">=</span> <span class="s2">"writes-only"</span>
+
+<span class="c1"># The names of the store folders of the experiment, and of its heartbeat folders.</span>
+<span class="n">STORE_FOLDERS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"kit"</span><span class="p">,</span> <span class="s2">"local"</span><span class="p">)</span>
+<span class="n">HEARTBEATS_ON</span> <span class="o">=</span> <span class="s2">"on"</span>
+<span class="n">HEARTBEATS_OFF</span> <span class="o">=</span> <span class="s2">"off"</span>
+<span class="n">HEARTBEAT_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"heartbeats-on"</span><span class="p">:</span> <span class="n">HEARTBEATS_ON</span><span class="p">,</span> <span class="s2">"heartbeats-off"</span><span class="p">:</span> <span class="n">HEARTBEATS_OFF</span><span class="p">}</span>
+
+<span class="c1"># The replay mode of a writes-only baseline, as its record's `replay.mode` says it.</span>
+<span class="n">WRITES_ONLY_MODE</span> <span class="o">=</span> <span class="s2">"writes only"</span>
+
+<span class="c1"># The mapper's spans below a commit that name a phase.</span>
+<span class="n">CLASS_SPEC_SPAN</span> <span class="o">=</span> <span class="n">span_name</span><span class="p">(</span><span class="s2">"OGM"</span><span class="p">,</span> <span class="s2">"get_class_spec"</span><span class="p">)</span>
+<span class="n">FETCH_SPAN</span> <span class="o">=</span> <span class="n">span_name</span><span class="p">(</span><span class="s2">"OGM"</span><span class="p">,</span> <span class="s2">"fetch"</span><span class="p">)</span>
+<span class="n">DIFF_SPAN</span> <span class="o">=</span> <span class="n">span_name</span><span class="p">(</span><span class="s2">"Node"</span><span class="p">,</span> <span class="s2">"diff"</span><span class="p">)</span>
+
+<span class="c1"># The categories of the steps (`report_steps.READ_CATEGORIES`, `WRITE_CATEGORIES`) that name a</span>
+<span class="c1"># phase.</span>
+<span class="n">RECEIPT_ASK_CATEGORY</span> <span class="o">=</span> <span class="s2">"receipt ASK"</span>
+<span class="n">RECEIPT_REMOVAL_CATEGORY</span> <span class="o">=</span> <span class="s2">"receipt removal"</span>
+<span class="n">SCHEMA_CATEGORY</span> <span class="o">=</span> <span class="s2">"OGM schema/class"</span>
+
+<span class="c1"># The two spellings of the heartbeat predicate in the records: the old and the current one. The</span>
+<span class="c1"># old is built from fragments, as the check for old property names bans it as a bare word.</span>
+<span class="n">HEARTBEAT_PREDICATES</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"last"</span> <span class="o">+</span> <span class="s2">"Heartbeat"</span><span class="p">,</span> <span class="s2">"hasLastHeartbeat"</span><span class="p">)</span>
+
+<span class="c1"># The kinds of a commit.</span>
+<span class="n">HEARTBEAT_KIND</span> <span class="o">=</span> <span class="s2">"heartbeat"</span>
+<span class="n">STATUS_KIND</span> <span class="o">=</span> <span class="s2">"status: "</span>
+<span class="n">OTHER_UPDATE_KIND</span> <span class="o">=</span> <span class="s2">"other update"</span>
+<span class="n">NO_WRITE_KIND</span> <span class="o">=</span> <span class="s2">"no write"</span>
+
+<span class="c1"># The phases of a commit, in the order of the table's columns: six of its store requests, four of</span>
+<span class="c1"># its client's own time.</span>
+<span class="n">UPDATE</span> <span class="o">=</span> <span class="s2">"update"</span>
+<span class="n">RECEIPT_ASK</span> <span class="o">=</span> <span class="s2">"receipt_ask"</span>
+<span class="n">RECEIPT_REMOVAL</span> <span class="o">=</span> <span class="s2">"receipt_removal"</span>
+<span class="n">CLASS_QUERY</span> <span class="o">=</span> <span class="s2">"class_query"</span>
+<span class="n">FETCH_READS</span> <span class="o">=</span> <span class="s2">"fetch_reads"</span>
+<span class="n">OTHER_REQUESTS</span> <span class="o">=</span> <span class="s2">"other_requests"</span>
+<span class="n">CLASS_DERIVATION</span> <span class="o">=</span> <span class="s2">"class_derivation"</span>
+<span class="n">FETCH_CLIENT</span> <span class="o">=</span> <span class="s2">"fetch_client"</span>
+<span class="n">DIFF</span> <span class="o">=</span> <span class="s2">"diff"</span>
+<span class="n">CLIENT_REMAINDER</span> <span class="o">=</span> <span class="s2">"client_remainder"</span>
+<span class="n">PHASES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">CLASS_QUERY</span><span class="p">,</span>
+    <span class="n">CLASS_DERIVATION</span><span class="p">,</span>
+    <span class="n">FETCH_READS</span><span class="p">,</span>
+    <span class="n">FETCH_CLIENT</span><span class="p">,</span>
+    <span class="n">DIFF</span><span class="p">,</span>
+    <span class="n">UPDATE</span><span class="p">,</span>
+    <span class="n">RECEIPT_ASK</span><span class="p">,</span>
+    <span class="n">RECEIPT_REMOVAL</span><span class="p">,</span>
+    <span class="n">OTHER_REQUESTS</span><span class="p">,</span>
+    <span class="n">CLIENT_REMAINDER</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="phase_column">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.phase_column">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">phase_column</span><span class="p">(</span><span class="n">phase</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The column of the per-commit table that holds the seconds of `phase`."""</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"phase_</span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s2">_seconds"</span></div>
+
+
+
+<span class="n">COMMIT_COLUMNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"store"</span><span class="p">,</span>
+    <span class="s2">"heartbeats"</span><span class="p">,</span>
+    <span class="s2">"arm"</span><span class="p">,</span>
+    <span class="s2">"run_id"</span><span class="p">,</span>
+    <span class="s2">"repetition"</span><span class="p">,</span>
+    <span class="s2">"pick_seed"</span><span class="p">,</span>
+    <span class="s2">"participant"</span><span class="p">,</span>
+    <span class="s2">"role"</span><span class="p">,</span>
+    <span class="s2">"commit_id"</span><span class="p">,</span>
+    <span class="s2">"at"</span><span class="p">,</span>
+    <span class="s2">"t"</span><span class="p">,</span>
+    <span class="s2">"seconds"</span><span class="p">,</span>
+    <span class="s2">"outcome"</span><span class="p">,</span>
+    <span class="s2">"admitted"</span><span class="p">,</span>
+    <span class="s2">"in_window"</span><span class="p">,</span>
+    <span class="s2">"kind"</span><span class="p">,</span>
+    <span class="s2">"update_at"</span><span class="p">,</span>
+    <span class="s2">"update_seconds"</span><span class="p">,</span>
+    <span class="s2">"update_outcome"</span><span class="p">,</span>
+    <span class="s2">"update_refusal"</span><span class="p">,</span>
+    <span class="s2">"update_applied"</span><span class="p">,</span>
+    <span class="s2">"checked_writes"</span><span class="p">,</span>
+    <span class="s2">"reads_in_commit"</span><span class="p">,</span>
+    <span class="s2">"replay_run_id"</span><span class="p">,</span>
+    <span class="s2">"replayed_update_seconds"</span><span class="p">,</span>
+    <span class="s2">"replayed_update_late_seconds"</span><span class="p">,</span>
+    <span class="s2">"replayed_outcome"</span><span class="p">,</span>
+    <span class="s2">"outcome_match"</span><span class="p">,</span>
+    <span class="s2">"difference_seconds"</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">phase_column</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">PHASES</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">REPLAYED_WRITE_COLUMNS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"store"</span><span class="p">,</span>
+    <span class="s2">"heartbeats"</span><span class="p">,</span>
+    <span class="s2">"repetition"</span><span class="p">,</span>
+    <span class="s2">"replay_run_id"</span><span class="p">,</span>
+    <span class="s2">"replayed_run_id"</span><span class="p">,</span>
+    <span class="s2">"participant"</span><span class="p">,</span>
+    <span class="s2">"commit"</span><span class="p">,</span>
+    <span class="s2">"category"</span><span class="p">,</span>
+    <span class="s2">"recorded_at"</span><span class="p">,</span>
+    <span class="s2">"t"</span><span class="p">,</span>
+    <span class="s2">"recorded_offset_seconds"</span><span class="p">,</span>
+    <span class="s2">"sent_offset_seconds"</span><span class="p">,</span>
+    <span class="s2">"late_seconds"</span><span class="p">,</span>
+    <span class="s2">"seconds"</span><span class="p">,</span>
+    <span class="s2">"status_code"</span><span class="p">,</span>
+    <span class="s2">"outcome"</span><span class="p">,</span>
+    <span class="s2">"refusal"</span><span class="p">,</span>
+    <span class="s2">"applied"</span><span class="p">,</span>
+    <span class="s2">"recorded_outcome"</span><span class="p">,</span>
+    <span class="s2">"recorded_applied"</span><span class="p">,</span>
+    <span class="s2">"outcome_match"</span><span class="p">,</span>
+    <span class="s2">"overtook_previous"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">_MICROSECOND</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">microseconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Run">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.Run">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Run</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One recorded run that counts, with its labels: a KAPPS run or a writes-only replay."""</span>
+
+    <span class="n">folder</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+    <span class="n">store</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">heartbeats</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">arm</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">pick_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run_id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s2">"run_id"</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="Runs">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.Runs">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Runs</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The runs of the input folders: the KAPPS runs that count, the writes-only replay that</span>
+<span class="sd">    counts for each SHACL-on run, by the run's id, and every record left out with why."""</span>
+
+    <span class="n">kapps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Run</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">replays</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Run</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+    <span class="n">left_out</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_runs">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.read_runs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_runs</span><span class="p">(</span><span class="n">folders</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Runs</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The runs below `folders`, labelled, with those left out and why (see the module)."""</span>
+    <span class="n">runs</span> <span class="o">=</span> <span class="n">Runs</span><span class="p">()</span>
+    <span class="n">replays</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Run</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">folder</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">"record.json"</span><span class="p">)):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+                <span class="n">run_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s2">"run_id"</span><span class="p">])</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">):</span>
+                <span class="n">runs</span><span class="o">.</span><span class="n">left_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="n">_left_out</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">"the record cannot be read"</span><span class="p">)</span>
+                <span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="n">arm</span><span class="p">,</span> <span class="n">why</span> <span class="o">=</span> <span class="n">arm_of</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">arm</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">runs</span><span class="o">.</span><span class="n">left_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_left_out</span><span class="p">(</span><span class="n">run_id</span><span class="p">,</span> <span class="n">why</span><span class="p">))</span>
+                <span class="k">continue</span>
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">summary_of</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">summary</span><span class="o">.</span><span class="n">counts</span><span class="p">:</span>
+                <span class="n">runs</span><span class="o">.</span><span class="n">left_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_left_out</span><span class="p">(</span><span class="n">run_id</span><span class="p">,</span> <span class="n">summary</span><span class="o">.</span><span class="n">why_left_out</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">))</span>
+                <span class="k">continue</span>
+            <span class="n">run</span> <span class="o">=</span> <span class="n">Run</span><span class="p">(</span>
+                <span class="n">folder</span><span class="o">=</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span>
+                <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span>
+                <span class="n">store</span><span class="o">=</span><span class="n">store_of</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">record</span><span class="p">),</span>
+                <span class="n">heartbeats</span><span class="o">=</span><span class="n">heartbeats_of</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">record</span><span class="p">),</span>
+                <span class="n">arm</span><span class="o">=</span><span class="n">arm</span><span class="p">,</span>
+                <span class="n">repetition</span><span class="o">=</span><span class="n">repetition_of</span><span class="p">(</span><span class="n">summary</span><span class="p">),</span>
+                <span class="n">pick_seed</span><span class="o">=</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_settings"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"wms_pick_seed"</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">arm</span> <span class="o">==</span> <span class="n">WRITES_ONLY</span><span class="p">:</span>
+                <span class="n">replays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">run</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">runs</span><span class="o">.</span><span class="n">kapps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">run</span><span class="p">)</span>
+    <span class="n">by_id</span> <span class="o">=</span> <span class="p">{</span><span class="n">run</span><span class="o">.</span><span class="n">run_id</span><span class="p">:</span> <span class="n">run</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span><span class="o">.</span><span class="n">kapps</span><span class="p">}</span>
+    <span class="c1"># The earliest replay first, by when it began.</span>
+    <span class="k">for</span> <span class="n">replay</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">replays</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">started</span><span class="p">):</span>
+        <span class="n">replayed</span> <span class="o">=</span> <span class="nb">str</span><span class="p">((</span><span class="n">replay</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"replayed_run"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_id"</span><span class="p">))</span>
+        <span class="n">replayed_run</span> <span class="o">=</span> <span class="n">by_id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">replayed</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">replayed_run</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">replayed_run</span><span class="o">.</span><span class="n">arm</span> <span class="o">!=</span> <span class="n">KAPPS_SHACL_ON</span><span class="p">:</span>
+            <span class="n">runs</span><span class="o">.</span><span class="n">left_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">_left_out</span><span class="p">(</span>
+                    <span class="n">replay</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">"its replayed run </span><span class="si">{</span><span class="n">replayed</span><span class="si">}</span><span class="s2"> is no SHACL-on run among the inputs"</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">replayed</span> <span class="ow">in</span> <span class="n">runs</span><span class="o">.</span><span class="n">replays</span><span class="p">:</span>
+            <span class="n">runs</span><span class="o">.</span><span class="n">left_out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">_left_out</span><span class="p">(</span>
+                    <span class="n">replay</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">"a later writes-only replay of </span><span class="si">{</span><span class="n">replayed</span><span class="si">}</span><span class="s2">: the earliest, "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">runs</span><span class="o">.</span><span class="n">replays</span><span class="p">[</span><span class="n">replayed</span><span class="p">]</span><span class="o">.</span><span class="n">run_id</span><span class="si">}</span><span class="s2">, counts"</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="c1"># A replay is of its run's heartbeat level and repetition.</span>
+        <span class="n">replay</span><span class="o">.</span><span class="n">heartbeats</span> <span class="o">=</span> <span class="n">replayed_run</span><span class="o">.</span><span class="n">heartbeats</span>
+        <span class="n">replay</span><span class="o">.</span><span class="n">repetition</span> <span class="o">=</span> <span class="n">replayed_run</span><span class="o">.</span><span class="n">repetition</span>
+        <span class="n">replay</span><span class="o">.</span><span class="n">pick_seed</span> <span class="o">=</span> <span class="n">replayed_run</span><span class="o">.</span><span class="n">pick_seed</span>
+        <span class="n">runs</span><span class="o">.</span><span class="n">replays</span><span class="p">[</span><span class="n">replayed</span><span class="p">]</span> <span class="o">=</span> <span class="n">replay</span>
+    <span class="k">return</span> <span class="n">runs</span></div>
+
+
+
+<div class="viewcode-block" id="started">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.started">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">started</span><span class="p">(</span><span class="n">run</span><span class="p">:</span> <span class="n">Run</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""When `run` began, as its record's first action says, else its run id, which begins with</span>
+<span class="sd">    its start time: both sort by time."""</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="n">run</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"actions"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">actions</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"at"</span><span class="p">])</span> <span class="k">if</span> <span class="n">actions</span> <span class="k">else</span> <span class="n">run</span><span class="o">.</span><span class="n">run_id</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_left_out</span><span class="p">(</span><span class="n">run_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">why</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"run_id"</span><span class="p">:</span> <span class="n">run_id</span><span class="p">,</span> <span class="s2">"why"</span><span class="p">:</span> <span class="n">why</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="arm_of">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.arm_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">arm_of</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The arm of `record`, or None with why it has none."""</span>
+    <span class="n">kind</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_kind"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"uc2"</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">shacl</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"configuration"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">))</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"shacl"</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">TOMLDecodeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"its configuration cannot be read"</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">KAPPS_SHACL_ON</span> <span class="k">if</span> <span class="n">shacl</span> <span class="k">else</span> <span class="n">KAPPS_SHACL_OFF</span><span class="p">),</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">"baseline"</span><span class="p">:</span>
+        <span class="n">mode</span> <span class="o">=</span> <span class="p">(</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"replay"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"mode"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">WRITES_ONLY_MODE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">WRITES_ONLY</span><span class="p">,</span> <span class="s2">""</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"an all-requests baseline, no writes-only replay"</span>
+    <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"a run of the kind </span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s2">, no arm of the figures"</span></div>
+
+
+
+<div class="viewcode-block" id="store_of">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.store_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">store_of</span><span class="p">(</span><span class="n">run_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">input_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The store of the run in `run_folder`, found below `input_folder` (see the module)."""</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_folder_names</span><span class="p">(</span><span class="n">run_folder</span><span class="p">,</span> <span class="n">input_folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">STORE_FOLDERS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">name</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="nb">str</span><span class="p">((</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"server"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"url"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">hostname</span> <span class="ow">or</span> <span class="s2">"unknown store"</span></div>
+
+
+
+<div class="viewcode-block" id="heartbeats_of">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.heartbeats_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">heartbeats_of</span><span class="p">(</span>
+    <span class="n">run_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">input_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The heartbeat level of the run in `run_folder`, found below `input_folder` (see the</span>
+<span class="sd">    module)."""</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"run_settings"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="s2">"heartbeat_interval_seconds"</span> <span class="ow">in</span> <span class="n">settings</span><span class="p">:</span>
+        <span class="n">interval</span> <span class="o">=</span> <span class="n">settings</span><span class="p">[</span><span class="s2">"heartbeat_interval_seconds"</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">HEARTBEATS_OFF</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">interval</span> <span class="k">else</span> <span class="n">HEARTBEATS_ON</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">_folder_names</span><span class="p">(</span><span class="n">run_folder</span><span class="p">,</span> <span class="n">input_folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">HEARTBEAT_FOLDERS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HEARTBEAT_FOLDERS</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">HEARTBEATS_ON</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_folder_names</span><span class="p">(</span><span class="n">run_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">input_folder</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The names of the folders from `input_folder` down to `run_folder`."""</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">input_folder</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">run_folder</span><span class="o">.</span><span class="n">relative_to</span><span class="p">(</span><span class="n">input_folder</span><span class="p">)</span><span class="o">.</span><span class="n">parts</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="commit_kind">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.commit_kind">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">commit_kind</span><span class="p">(</span><span class="n">checked_write</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The kind of a commit by its first checked write, a store request as the record holds it</span>
+<span class="sd">    (None for a commit without one, whose kind is `NO_WRITE_KIND`); see the module."""</span>
+    <span class="k">if</span> <span class="n">checked_write</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">NO_WRITE_KIND</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">checked_write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">predicate</span> <span class="ow">in</span> <span class="n">text</span> <span class="k">for</span> <span class="n">predicate</span> <span class="ow">in</span> <span class="n">HEARTBEAT_PREDICATES</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">HEARTBEAT_KIND</span>
+    <span class="n">statuses</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">w</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">checked_write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"writes"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status"</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="n">statuses</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">STATUS_KIND</span> <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">statuses</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">OTHER_UPDATE_KIND</span></div>
+
+
+
+<div class="viewcode-block" id="request_phase">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.request_phase">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">request_phase</span><span class="p">(</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">above</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">directly_below</span><span class="p">:</span> <span class="nb">bool</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The phase of a store request of `kind` with the query `text` inside a commit: `above` are</span>
+<span class="sd">    the names of the spans between the commit and the request, `directly_below` whether there is</span>
+<span class="sd">    none (see the module)."""</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">WRITE</span> <span class="ow">and</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">receipt_written</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">UPDATE</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">category_of</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="n">RECEIPT_ASK_CATEGORY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">RECEIPT_ASK</span>
+    <span class="k">if</span> <span class="n">category</span> <span class="o">==</span> <span class="n">RECEIPT_REMOVAL_CATEGORY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">RECEIPT_REMOVAL</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">READ</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">CLASS_SPEC_SPAN</span> <span class="ow">in</span> <span class="n">above</span> <span class="ow">or</span> <span class="p">(</span><span class="n">directly_below</span> <span class="ow">and</span> <span class="n">category</span> <span class="o">==</span> <span class="n">SCHEMA_CATEGORY</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">CLASS_QUERY</span>
+        <span class="k">if</span> <span class="n">FETCH_SPAN</span> <span class="ow">in</span> <span class="n">above</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">FETCH_READS</span>
+    <span class="k">return</span> <span class="n">OTHER_REQUESTS</span></div>
+
+
+
+<div class="viewcode-block" id="client_phase">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.client_phase">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">client_phase</span><span class="p">(</span><span class="n">names</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The phase of the own time of a span below a commit that is no store request: `names` are</span>
+<span class="sd">    the names of the spans from the one below the commit down to the span itself."""</span>
+    <span class="k">if</span> <span class="n">CLASS_SPEC_SPAN</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">CLASS_DERIVATION</span>
+    <span class="k">if</span> <span class="n">FETCH_SPAN</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">FETCH_CLIENT</span>
+    <span class="k">if</span> <span class="n">DIFF_SPAN</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">DIFF</span>
+    <span class="k">return</span> <span class="n">CLIENT_REMAINDER</span></div>
+
+
+
+<div class="viewcode-block" id="CommitParts">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.CommitParts">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CommitParts</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the walk below one commit finds: the microseconds of each phase, its checked writes</span>
+<span class="sd">    and the number of its reads."""</span>
+
+    <span class="n">microseconds</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span>
+        <span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">PHASES</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">checked_writes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Span</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">reads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+
+<div class="viewcode-block" id="commit_parts">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.commit_parts">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">commit_parts</span><span class="p">(</span>
+    <span class="n">commit</span><span class="p">:</span> <span class="n">Span</span><span class="p">,</span> <span class="n">children</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Span</span><span class="p">]]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CommitParts</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The phases, the checked writes and the reads of `commit`; `children` are the spans by</span>
+<span class="sd">    their participant and their parent's id."""</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">CommitParts</span><span class="p">()</span>
+    <span class="n">_walk</span><span class="p">(</span><span class="n">commit</span><span class="p">,</span> <span class="p">[],</span> <span class="n">children</span><span class="p">,</span> <span class="n">parts</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parts</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_walk</span><span class="p">(</span>
+    <span class="n">span</span><span class="p">:</span> <span class="n">Span</span><span class="p">,</span>
+    <span class="n">names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+    <span class="n">children</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Span</span><span class="p">]],</span>
+    <span class="n">parts</span><span class="p">:</span> <span class="n">CommitParts</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Give the time of `span`, below the commit along `names`, and of the spans below it to their</span>
+<span class="sd">    phases; `names` is empty for the commit itself."""</span>
+    <span class="n">below</span> <span class="o">=</span> <span class="n">children</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">span_id</span><span class="p">),</span> <span class="p">[])</span> <span class="k">if</span> <span class="n">span</span><span class="o">.</span><span class="n">span_id</span> <span class="k">else</span> <span class="p">[]</span>
+    <span class="n">own</span> <span class="o">=</span> <span class="n">_microseconds</span><span class="p">(</span><span class="n">span</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">_microseconds</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">below</span><span class="p">)</span>
+    <span class="n">parts</span><span class="o">.</span><span class="n">microseconds</span><span class="p">[</span><span class="n">client_phase</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="k">if</span> <span class="n">names</span> <span class="k">else</span> <span class="n">CLIENT_REMAINDER</span><span class="p">]</span> <span class="o">+=</span> <span class="n">own</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">below</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store.request"</span><span class="p">):</span>
+            <span class="n">kind</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store.kind"</span><span class="p">))</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store.text"</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+            <span class="n">phase</span> <span class="o">=</span> <span class="n">request_phase</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">directly_below</span><span class="o">=</span><span class="ow">not</span> <span class="n">names</span><span class="p">)</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">microseconds</span><span class="p">[</span><span class="n">phase</span><span class="p">]</span> <span class="o">+=</span> <span class="n">_microseconds</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">phase</span> <span class="o">==</span> <span class="n">UPDATE</span><span class="p">:</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">checked_writes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">READ</span><span class="p">:</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">reads</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">COMMIT_SPAN</span><span class="p">:</span>
+            <span class="c1"># A commit inside a commit is a commit of its own: its time is the outer's client</span>
+            <span class="c1"># remainder, its requests its own.</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">microseconds</span><span class="p">[</span><span class="n">CLIENT_REMAINDER</span><span class="p">]</span> <span class="o">+=</span> <span class="n">_microseconds</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_walk</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="p">[</span><span class="o">*</span><span class="n">names</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">],</span> <span class="n">children</span><span class="p">,</span> <span class="n">parts</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_microseconds</span><span class="p">(</span><span class="n">span</span><span class="p">:</span> <span class="n">Span</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">span</span><span class="o">.</span><span class="n">end</span> <span class="o">-</span> <span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">)</span> <span class="o">//</span> <span class="n">_MICROSECOND</span>
+
+
+<div class="viewcode-block" id="commit_rows">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.commit_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">commit_rows</span><span class="p">(</span><span class="n">run</span><span class="p">:</span> <span class="n">Run</span><span class="p">,</span> <span class="n">replay</span><span class="p">:</span> <span class="n">Run</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The rows of the per-commit table of `run`, one for each commit, joined with `replay`, its</span>
+<span class="sd">    writes-only replay, where there is one; None for a run without spans."""</span>
+    <span class="n">spans</span> <span class="o">=</span> <span class="n">read_run_spans</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">folder</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">spans</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span>
+        <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s2">"window"</span><span class="p">][</span><span class="s2">"start"</span><span class="p">]),</span>
+        <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s2">"window"</span><span class="p">][</span><span class="s2">"end"</span><span class="p">]),</span>
+    <span class="p">)</span>
+    <span class="c1"># The store requests as the record holds them, by the span each was made from.</span>
+    <span class="n">request_spans</span> <span class="o">=</span> <span class="p">[</span><span class="n">span</span> <span class="k">for</span> <span class="n">span</span> <span class="ow">in</span> <span class="n">spans</span> <span class="k">if</span> <span class="n">span</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store.request"</span><span class="p">)]</span>
+    <span class="n">requests</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">(</span><span class="n">span</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">span_id</span><span class="p">):</span> <span class="n">request</span>
+        <span class="k">for</span> <span class="n">span</span><span class="p">,</span> <span class="n">request</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+            <span class="n">request_spans</span><span class="p">,</span> <span class="n">store_request_records</span><span class="p">(</span><span class="n">spans</span><span class="p">,</span> <span class="n">window</span><span class="p">),</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">children</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Span</span><span class="p">]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">span</span> <span class="ow">in</span> <span class="n">spans</span><span class="p">:</span>
+        <span class="n">children</span><span class="p">[(</span><span class="n">span</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span> <span class="n">span</span><span class="o">.</span><span class="n">parent_id</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">span</span><span class="p">)</span>
+    <span class="n">wms</span> <span class="o">=</span> <span class="n">wms_of</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">record</span><span class="p">)</span>
+    <span class="n">wms_name</span> <span class="o">=</span> <span class="n">wms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">wms</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="n">by_commit</span><span class="p">,</span> <span class="n">by_send_time</span> <span class="o">=</span> <span class="n">replayed_updates</span><span class="p">(</span><span class="n">replay</span><span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">span</span> <span class="ow">in</span> <span class="n">spans</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">span</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">COMMIT_SPAN</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="n">commit_parts</span><span class="p">(</span><span class="n">span</span><span class="p">,</span> <span class="n">children</span><span class="p">)</span>
+        <span class="n">checked</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">requests</span><span class="p">[(</span><span class="n">write</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span> <span class="n">write</span><span class="o">.</span><span class="n">span_id</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">write</span> <span class="ow">in</span> <span class="n">parts</span><span class="o">.</span><span class="n">checked_writes</span>
+        <span class="p">]</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="n">checked</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">checked</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">replayed</span> <span class="o">=</span> <span class="n">by_commit</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">span</span><span class="o">.</span><span class="n">span_id</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="n">replayed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">checked</span><span class="p">:</span>
+            <span class="n">replayed</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">found</span>
+                <span class="k">for</span> <span class="n">write</span> <span class="ow">in</span> <span class="n">checked</span>
+                <span class="k">for</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">by_send_time</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">span</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">write</span><span class="p">[</span><span class="s2">"at"</span><span class="p">])),</span> <span class="p">[])</span>
+            <span class="p">]</span>
+        <span class="n">replayed_seconds</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">write</span><span class="p">[</span><span class="s2">"seconds"</span><span class="p">])</span> <span class="k">for</span> <span class="n">write</span> <span class="ow">in</span> <span class="n">replayed</span><span class="p">),</span> <span class="mi">6</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">replayed</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="n">seconds</span> <span class="o">=</span> <span class="n">_microseconds</span><span class="p">(</span><span class="n">span</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
+        <span class="n">admitted</span> <span class="o">=</span> <span class="n">span</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="s2">"ERROR"</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"store"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">store</span><span class="p">,</span>
+                <span class="s2">"heartbeats"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">heartbeats</span><span class="p">,</span>
+                <span class="s2">"arm"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">arm</span><span class="p">,</span>
+                <span class="s2">"run_id"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+                <span class="s2">"repetition"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">repetition</span><span class="p">,</span>
+                <span class="s2">"pick_seed"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">pick_seed</span><span class="p">,</span>
+                <span class="s2">"participant"</span><span class="p">:</span> <span class="n">span</span><span class="o">.</span><span class="n">participant</span><span class="p">,</span>
+                <span class="s2">"role"</span><span class="p">:</span> <span class="n">WMS_ROLE</span> <span class="k">if</span> <span class="n">span</span><span class="o">.</span><span class="n">participant</span> <span class="o">==</span> <span class="n">wms_name</span> <span class="k">else</span> <span class="n">MODULE_ROLE</span><span class="p">,</span>
+                <span class="s2">"commit_id"</span><span class="p">:</span> <span class="n">span</span><span class="o">.</span><span class="n">span_id</span><span class="p">,</span>
+                <span class="s2">"at"</span><span class="p">:</span> <span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+                <span class="s2">"t"</span><span class="p">:</span> <span class="p">(</span><span class="n">span</span><span class="o">.</span><span class="n">start</span> <span class="o">-</span> <span class="n">window</span><span class="o">.</span><span class="n">start</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">(),</span>
+                <span class="s2">"seconds"</span><span class="p">:</span> <span class="n">seconds</span><span class="p">,</span>
+                <span class="s2">"outcome"</span><span class="p">:</span> <span class="s2">"accepted"</span>
+                <span class="k">if</span> <span class="n">admitted</span>
+                <span class="k">else</span> <span class="p">(</span><span class="n">span</span><span class="o">.</span><span class="n">error</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">"error"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s2">"admitted"</span><span class="p">:</span> <span class="n">admitted</span><span class="p">,</span>
+                <span class="s2">"in_window"</span><span class="p">:</span> <span class="n">window</span><span class="o">.</span><span class="n">holds</span><span class="p">(</span><span class="n">span</span><span class="o">.</span><span class="n">start</span><span class="p">),</span>
+                <span class="s2">"kind"</span><span class="p">:</span> <span class="n">commit_kind</span><span class="p">(</span><span class="n">first</span><span class="p">),</span>
+                <span class="s2">"update_at"</span><span class="p">:</span> <span class="n">first</span><span class="p">[</span><span class="s2">"at"</span><span class="p">]</span> <span class="k">if</span> <span class="n">first</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"update_seconds"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="s2">"seconds"</span><span class="p">])</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">checked</span><span class="p">),</span> <span class="mi">6</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">checked</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"update_outcome"</span><span class="p">:</span> <span class="n">first</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">]</span> <span class="k">if</span> <span class="n">first</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"update_refusal"</span><span class="p">:</span> <span class="n">first</span><span class="p">[</span><span class="s2">"refusal"</span><span class="p">]</span> <span class="k">if</span> <span class="n">first</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"update_applied"</span><span class="p">:</span> <span class="n">first</span><span class="p">[</span><span class="s2">"applied"</span><span class="p">]</span> <span class="k">if</span> <span class="n">first</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"checked_writes"</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">checked</span><span class="p">),</span>
+                <span class="s2">"reads_in_commit"</span><span class="p">:</span> <span class="n">parts</span><span class="o">.</span><span class="n">reads</span><span class="p">,</span>
+                <span class="s2">"replay_run_id"</span><span class="p">:</span> <span class="n">replay</span><span class="o">.</span><span class="n">run_id</span> <span class="k">if</span> <span class="n">replay</span> <span class="ow">and</span> <span class="n">replayed</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"replayed_update_seconds"</span><span class="p">:</span> <span class="n">replayed_seconds</span><span class="p">,</span>
+                <span class="s2">"replayed_update_late_seconds"</span><span class="p">:</span> <span class="n">replayed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"late_seconds"</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">replayed</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"replayed_outcome"</span><span class="p">:</span> <span class="n">replayed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">)</span> <span class="k">if</span> <span class="n">replayed</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"outcome_match"</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome_match"</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">replayed</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">replayed</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"difference_seconds"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">seconds</span> <span class="o">-</span> <span class="n">replayed_seconds</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">replayed_seconds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="o">**</span><span class="p">{</span>
+                    <span class="n">phase_column</span><span class="p">(</span><span class="n">phase</span><span class="p">):</span> <span class="n">parts</span><span class="o">.</span><span class="n">microseconds</span><span class="p">[</span><span class="n">phase</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e6</span>
+                    <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="n">PHASES</span>
+                <span class="p">},</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="replayed_updates">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.replayed_updates">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">replayed_updates</span><span class="p">(</span>
+    <span class="n">replay</span><span class="p">:</span> <span class="n">Run</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span>
+    <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]],</span>
+    <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]],</span>
+<span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The replayed checked writes of `replay`, the writes that insert a receipt: by their</span>
+<span class="sd">    participant and their commit's span id, and, for those without a commit, by their participant</span>
+<span class="sd">    and their recorded send time. Empty for no replay."""</span>
+    <span class="n">by_commit</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">by_send_time</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">replay</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">by_commit</span><span class="p">,</span> <span class="n">by_send_time</span>
+    <span class="k">for</span> <span class="n">write</span> <span class="ow">in</span> <span class="p">(</span><span class="n">replay</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"measures"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">store_requests</span><span class="o">.</span><span class="n">receipt_written</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)):</span>
+            <span class="k">continue</span>
+        <span class="n">participant</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"participant"</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"commit"</span><span class="p">):</span>
+            <span class="n">by_commit</span><span class="p">[(</span><span class="n">participant</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">write</span><span class="p">[</span><span class="s2">"commit"</span><span class="p">]))]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">by_send_time</span><span class="p">[(</span><span class="n">participant</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"recorded_at"</span><span class="p">)))]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">write</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">by_commit</span><span class="p">,</span> <span class="n">by_send_time</span></div>
+
+
+
+<div class="viewcode-block" id="replayed_write_rows">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.replayed_write_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">replayed_write_rows</span><span class="p">(</span><span class="n">replay</span><span class="p">:</span> <span class="n">Run</span><span class="p">,</span> <span class="n">run</span><span class="p">:</span> <span class="n">Run</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The rows of the replayed-writes table of `replay`, the writes-only replay of `run`, one</span>
+<span class="sd">    for each replayed write."""</span>
+    <span class="n">window_start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">record</span><span class="p">[</span><span class="s2">"window"</span><span class="p">][</span><span class="s2">"start"</span><span class="p">])</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">write</span> <span class="ow">in</span> <span class="p">(</span><span class="n">replay</span><span class="o">.</span><span class="n">record</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"measures"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"store_requests"</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]:</span>
+        <span class="n">recorded_at</span> <span class="o">=</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"recorded_at"</span><span class="p">)</span>
+        <span class="n">offset</span> <span class="o">=</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"offset_seconds"</span><span class="p">)</span>
+        <span class="n">late</span> <span class="o">=</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"late_seconds"</span><span class="p">)</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"store"</span><span class="p">:</span> <span class="n">replay</span><span class="o">.</span><span class="n">store</span><span class="p">,</span>
+                <span class="s2">"heartbeats"</span><span class="p">:</span> <span class="n">replay</span><span class="o">.</span><span class="n">heartbeats</span><span class="p">,</span>
+                <span class="s2">"repetition"</span><span class="p">:</span> <span class="n">replay</span><span class="o">.</span><span class="n">repetition</span><span class="p">,</span>
+                <span class="s2">"replay_run_id"</span><span class="p">:</span> <span class="n">replay</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+                <span class="s2">"replayed_run_id"</span><span class="p">:</span> <span class="n">run</span><span class="o">.</span><span class="n">run_id</span><span class="p">,</span>
+                <span class="s2">"participant"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"participant"</span><span class="p">),</span>
+                <span class="s2">"commit"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"commit"</span><span class="p">),</span>
+                <span class="s2">"category"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"category"</span><span class="p">),</span>
+                <span class="s2">"recorded_at"</span><span class="p">:</span> <span class="n">recorded_at</span><span class="p">,</span>
+                <span class="s2">"t"</span><span class="p">:</span> <span class="p">(</span>
+                    <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">recorded_at</span><span class="p">)</span> <span class="o">-</span> <span class="n">window_start</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">recorded_at</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"recorded_offset_seconds"</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span>
+                <span class="s2">"sent_offset_seconds"</span><span class="p">:</span> <span class="n">offset</span> <span class="o">+</span> <span class="n">late</span>
+                <span class="k">if</span> <span class="n">offset</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">late</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">"late_seconds"</span><span class="p">:</span> <span class="n">late</span><span class="p">,</span>
+                <span class="s2">"seconds"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"seconds"</span><span class="p">),</span>
+                <span class="s2">"status_code"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"status_code"</span><span class="p">),</span>
+                <span class="s2">"outcome"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">),</span>
+                <span class="s2">"refusal"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"refusal"</span><span class="p">),</span>
+                <span class="s2">"applied"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"applied"</span><span class="p">),</span>
+                <span class="s2">"recorded_outcome"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"recorded_outcome"</span><span class="p">),</span>
+                <span class="s2">"recorded_applied"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"recorded_applied"</span><span class="p">),</span>
+                <span class="s2">"outcome_match"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome_match"</span><span class="p">),</span>
+                <span class="s2">"overtook_previous"</span><span class="p">:</span> <span class="n">write</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"overtook_previous"</span><span class="p">),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">rows</span></div>
+
+
+
+<div class="viewcode-block" id="table">
+<a class="viewcode-back" href="../../../reference/evaluation/commit_table.html#jms_kapps.evaluation.commit_table.table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table</span><span class="p">(</span><span class="n">rows</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]],</span> <span class="n">columns</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The rows as a table with `columns`, in their order; an empty table has the columns too."""</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">columns</span><span class="p">))</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.handover_events &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/handover_events';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.handover_events</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.handover_events</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""A participant's handover event stream: what happened in its handovers, served as SSE.</span>
+
+<span class="sd">Every module and the WarehouseManagementSystem keeps its own stream. The graph holds only where</span>
+<span class="sd">the stream lives (`fc:hasHandoverEventStream`, which each participant commits at startup), never</span>
+<span class="sd">its events: a monitor finds the stream through the graph and reads the events from the participant.</span>
+
+<span class="sd">**Two kinds for now.**</span>
+
+<span class="sd">- **`commit_refused`.** A participant emits it when the store refuses the entry of one of its</span>
+<span class="sd">  handovers, with the store's validation report verbatim, and the WarehouseManagementSystem when</span>
+<span class="sd">  the store refuses the create that puts a box on its origin, its handover onto the station.</span>
+<span class="sd">- **`deadlock_alarm`.** A module emits it once for a box it holds that has waited past the</span>
+<span class="sd">  deadlock alarm time, counted from its first ask of a Reserve, with the modules it asks</span>
+<span class="sd">  (`asked`). The box keeps waiting.</span>
+
+<span class="sd">The other kinds of the full stream (a Reserve answered, a reservation dropped, an admitted commit,</span>
+<span class="sd">an arrival) belong to the monitor on the middleware's dashboard, which comes later.</span>
+
+<span class="sd">**The event** is JSON: its `id`, its `time` (UTC, ISO 8601), the `resource` that emitted it, its</span>
+<span class="sd">`kind`, the `box`, the `peer` and the `transport` it is about, a `reason`, for a refusal the</span>
+<span class="sd">`refusal`: its `results`, one `{shape, focus_node, path}` for every rule the report names (a</span>
+<span class="sd">report can name several, and names none when it is no RDF), and the `report` itself, and for an</span>
+<span class="sd">alarm (`DeadlockAlarm`) the modules `asked`, which no other kind has. Every IRI is full; a local</span>
+<span class="sd">name is made only where a person reads it.</span>
+
+<span class="sd">**The route** `GET /handover-events` keeps the last 500 events. An event's id is</span>
+<span class="sd">`&lt;stream token&gt;:&lt;sequence&gt;`, and the token is new at every start of the process, so a reader that</span>
+<span class="sd">resumes with `Last-Event-ID` after a restart gets every event kept instead of none. Each connection</span>
+<span class="sd">delivers what is pending, waits at most 2 s for more, delivering what comes, and ends; the reader</span>
+<span class="sd">connects again. So an open stream never holds a stopping participant for longer than that.</span>
+<span class="sd">`read_sse` reads one such connection, as a reader of the stream does.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncIterator</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Request</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi.responses</span><span class="w"> </span><span class="kn">import</span> <span class="n">StreamingResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">Update</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="n">validation_results</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib</span><span class="w"> </span><span class="kn">import</span> <span class="n">XSD</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rdflib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span> <span class="k">as</span> <span class="n">RDFLiteral</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span>
+
+<span class="n">STREAM_ROUTE</span> <span class="o">=</span> <span class="s2">"/handover-events"</span>
+
+<span class="c1"># How many events a participant keeps for its readers.</span>
+<span class="n">KEPT_EVENTS</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="c1"># How long one connection waits for more before it ends.</span>
+<span class="n">WAIT_SECONDS</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+<span class="c1"># How often a waiting connection looks for a new event.</span>
+<span class="n">_POLL_SECONDS</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="n">EventKind</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"commit_refused"</span><span class="p">,</span> <span class="s2">"deadlock_alarm"</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="BrokenRule">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.BrokenRule">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BrokenRule</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One result of a validation report: the source shape, the focus node, and the path, which</span>
+<span class="sd">    is None for a result without one, such as that of a shape that is an `sh:or`."""</span>
+
+    <span class="n">shape</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">focus_node</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="StoreRefusal">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.StoreRefusal">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">StoreRefusal</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What the store refused a commit with: every rule its report names, in order, and the</span>
+<span class="sd">    report itself. `results` is empty when the report names no rule."""</span>
+
+    <span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">BrokenRule</span><span class="p">]</span>
+    <span class="n">report</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="HandoverEvent">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.HandoverEvent">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HandoverEvent</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">time</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">resource</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="n">EventKind</span>
+    <span class="n">box</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">peer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">transport</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">refusal</span><span class="p">:</span> <span class="n">StoreRefusal</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="DeadlockAlarm">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.DeadlockAlarm">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DeadlockAlarm</span><span class="p">(</span><span class="n">HandoverEvent</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""An event of the kind `deadlock_alarm`: the module `resource` holds `box`, which has</span>
+<span class="sd">    waited past the deadlock alarm time for a Reserve of the modules `asked`, each by its full</span>
+<span class="sd">    IRI."""</span>
+
+    <span class="n">asked</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="event_from_json">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.event_from_json">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">event_from_json</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HandoverEvent</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The event that `data`, one event of a stream, holds: a `DeadlockAlarm` where its kind is</span>
+<span class="sd">    `deadlock_alarm`, so that the modules it asks are kept."""</span>
+    <span class="n">event</span> <span class="o">=</span> <span class="n">HandoverEvent</span><span class="o">.</span><span class="n">model_validate_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"deadlock_alarm"</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">DeadlockAlarm</span><span class="o">.</span><span class="n">model_validate_json</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">event</span></div>
+
+
+
+<div class="viewcode-block" id="refusal_of">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.refusal_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">refusal_of</span><span class="p">(</span><span class="n">report</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StoreRefusal</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The refusal that `report` describes, read with the middleware's reader of a validation</span>
+<span class="sd">    report."""</span>
+    <span class="k">return</span> <span class="n">StoreRefusal</span><span class="p">(</span>
+        <span class="n">results</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">BrokenRule</span><span class="p">(</span>
+                <span class="n">shape</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">focus_node</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">focus</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">path</span> <span class="ow">or</span> <span class="kc">None</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">validation_results</span><span class="p">(</span><span class="n">report</span><span class="p">))</span>
+        <span class="p">],</span>
+        <span class="n">report</span><span class="o">=</span><span class="n">report</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="HandoverEvents">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.HandoverEvents">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HandoverEvents</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The handover event stream of the participant `resource`: the last events, in memory.</span>
+
+<span class="sd">    Thread-safe: a participant emits from its workflows' threads while the route reads.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        token: The stream token. A new one is drawn unless a test fixes it.</span>
+<span class="sd">        kept: How many events are kept.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">kept</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">KEPT_EVENTS</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">resource</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="n">token</span> <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_events</span><span class="p">:</span> <span class="n">deque</span><span class="p">[</span><span class="n">HandoverEvent</span><span class="p">]</span> <span class="o">=</span> <span class="n">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="n">kept</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sequence</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+
+<div class="viewcode-block" id="HandoverEvents.commit_refused">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.HandoverEvents.commit_refused">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">commit_refused</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">report</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HandoverEvent</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Emit that the store refused a commit of this participant about `box`, with `report`."""</span>
+        <span class="c1"># Read before the lock: a reader of the route waits for the lock on the event loop.</span>
+        <span class="n">refusal</span> <span class="o">=</span> <span class="n">refusal_of</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">event</span> <span class="o">=</span> <span class="n">HandoverEvent</span><span class="p">(</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_next</span><span class="p">(</span><span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">peer</span><span class="o">=</span><span class="n">peer</span><span class="p">,</span> <span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">),</span>
+                <span class="n">kind</span><span class="o">=</span><span class="s2">"commit_refused"</span><span class="p">,</span>
+                <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+                <span class="n">refusal</span><span class="o">=</span><span class="n">refusal</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">event</span></div>
+
+
+<div class="viewcode-block" id="HandoverEvents.deadlock_alarm">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.HandoverEvents.deadlock_alarm">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deadlock_alarm</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">asked</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">],</span>
+        <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DeadlockAlarm</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Emit that `box`, which this participant holds, has waited past the deadlock alarm time</span>
+<span class="sd">        for a Reserve of the modules `asked`, as `reason` says for a person."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">event</span> <span class="o">=</span> <span class="n">DeadlockAlarm</span><span class="p">(</span>
+                <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_next</span><span class="p">(</span><span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">peer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">),</span>
+                <span class="n">kind</span><span class="o">=</span><span class="s2">"deadlock_alarm"</span><span class="p">,</span>
+                <span class="n">reason</span><span class="o">=</span><span class="n">reason</span><span class="p">,</span>
+                <span class="n">refusal</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">asked</span><span class="o">=</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">asked</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_events</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">event</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_next</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">peer</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">transport</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The fields every event has, numbered after the last: called under the lock."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_sequence</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"id"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">token</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_sequence</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"time"</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+            <span class="s2">"resource"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">resource</span><span class="p">),</span>
+            <span class="s2">"box"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">box</span><span class="p">),</span>
+            <span class="s2">"peer"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">peer</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">peer</span><span class="p">),</span>
+            <span class="s2">"transport"</span><span class="p">:</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">transport</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">transport</span><span class="p">),</span>
+        <span class="p">}</span>
+
+<div class="viewcode-block" id="HandoverEvents.after">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.HandoverEvents.after">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">after</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">last_event_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">HandoverEvent</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The kept events after `last_event_id`. All of them, when it is None or comes from</span>
+<span class="sd">        another start of the process: what the reader read before is gone then."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="n">events</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_events</span><span class="p">)</span>
+        <span class="n">token</span><span class="p">,</span> <span class="n">sequence</span> <span class="o">=</span> <span class="n">_parts</span><span class="p">(</span><span class="n">last_event_id</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="ow">or</span> <span class="n">sequence</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">events</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">event</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span> <span class="k">if</span> <span class="p">(</span><span class="n">_parts</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">id</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">sequence</span><span class="p">]</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_parts</span><span class="p">(</span><span class="n">event_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The stream token and the sequence number of an event id, `&lt;token&gt;:&lt;sequence&gt;`. The</span>
+<span class="sd">    sequence is None when the id has none."""</span>
+    <span class="n">token</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">sequence</span> <span class="o">=</span> <span class="n">event_id</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s2">":"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">token</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="k">if</span> <span class="n">sequence</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_sse</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">HandoverEvent</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"id: </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="se">\n</span><span class="s2">data: </span><span class="si">{</span><span class="n">event</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">()</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">"</span>
+
+
+<div class="viewcode-block" id="mount_handover_events">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.mount_handover_events">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mount_handover_events</span><span class="p">(</span>
+    <span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">events</span><span class="p">:</span> <span class="n">HandoverEvents</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">wait_seconds</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">WAIT_SECONDS</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Serve `events` on `app` at `GET /handover-events`, as server-sent events."""</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stream</span><span class="p">(</span><span class="n">last_event_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">AsyncIterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="n">deadline</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">+</span> <span class="n">wait_seconds</span>
+        <span class="n">last</span> <span class="o">=</span> <span class="n">last_event_id</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">events</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="n">last</span><span class="p">):</span>
+                <span class="n">last</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">id</span>
+                <span class="k">yield</span> <span class="n">_sse</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">deadline</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">_POLL_SECONDS</span><span class="p">)</span>
+
+    <span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">STREAM_ROUTE</span><span class="p">,</span> <span class="n">include_in_schema</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handover_events</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StreamingResponse</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">StreamingResponse</span><span class="p">(</span>
+            <span class="n">stream</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"last-event-id"</span><span class="p">)),</span>
+            <span class="n">media_type</span><span class="o">=</span><span class="s2">"text/event-stream"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">"Cache-Control"</span><span class="p">:</span> <span class="s2">"no-cache"</span><span class="p">},</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_sse">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.read_sse">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_sse</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">last_event_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The events of one connection to the SSE stream at `url`, after `last_event_id`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        httpx.HTTPError: If the stream cannot be read.</span>
+<span class="sd">    """</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Last-Event-ID"</span><span class="p">:</span> <span class="n">last_event_id</span><span class="p">}</span> <span class="k">if</span> <span class="n">last_event_id</span> <span class="k">else</span> <span class="p">{}</span>
+    <span class="n">timeout</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Timeout</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">connect</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">event_id</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]()</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_lines</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">yield</span> <span class="n">event_id</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="n">event_id</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span> <span class="p">[]</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"id:"</span><span class="p">):</span>
+                <span class="n">event_id</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"data:"</span><span class="p">):</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
+
+
+
+<div class="viewcode-block" id="stream_locator">
+<a class="viewcode-back" href="../../../reference/uc2/handover_events.html#jms_kapps.uc2.handover_events.stream_locator">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">stream_locator</span><span class="p">(</span><span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Update</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The change that says where `resource`'s handover event stream lives, the participant</span>
+<span class="sd">    serving at `address`: for the one `mw.commit()` it makes at startup. It replaces the</span>
+<span class="sd">    locator an earlier start of the participant left.</span>
+
+<span class="sd">    The locator is an `xsd:anyURI` literal, the range that the ontology declares for</span>
+<span class="sd">    `fc:hasHandoverEventStream`. A plain `str` would be stored as `xsd:string`, and an `IRI` as</span>
+<span class="sd">    a node."""</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">RDFLiteral</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">address</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}{</span><span class="n">STREAM_ROUTE</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">datatype</span><span class="o">=</span><span class="n">XSD</span><span class="o">.</span><span class="n">anyURI</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Update</span><span class="p">(</span><span class="n">instance_iri</span><span class="o">=</span><span class="n">resource</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasHandoverEventStream</span><span class="p">):</span> <span class="p">[</span><span class="n">url</span><span class="p">]})]</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

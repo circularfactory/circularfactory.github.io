@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jms_kapps.evaluation.observation &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/evaluation/observation';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="jms_kapps.evaluation.own_transports" href="own_transports.html" />
+    <link rel="prev" title="jms_kapps.evaluation.matcher" href="matcher.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">The package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jms_kapps.html">jms_kapps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shared by both use cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/index.html">jms_kapps.common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/api_docs.html">jms_kapps.common.api_docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/passthrough.html">jms_kapps.common.passthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/prefixes.html">jms_kapps.common.prefixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/process.html">jms_kapps.common.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/services.html">jms_kapps.common.services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/supervision.html">jms_kapps.common.supervision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/triplestore.html">jms_kapps.common.triplestore</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/index.html">jms_kapps.common.platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/posix.html">jms_kapps.common.platforms.posix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/windows.html">jms_kapps.common.platforms.windows</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc1/index.html">jms_kapps.uc1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/__main__.html">jms_kapps.uc1.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector.html">jms_kapps.uc1.anomaly_detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_dashboard.html">jms_kapps.uc1.anomaly_detector_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_memory.html">jms_kapps.uc1.anomaly_detector_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/classify_call.html">jms_kapps.uc1.classify_call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/decision_tree.html">jms_kapps.uc1.decision_tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/effective_values.html">jms_kapps.uc1.effective_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/frame.html">jms_kapps.uc1.frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/infeasible_operation.html">jms_kapps.uc1.infeasible_operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner.html">jms_kapps.uc1.learner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_dashboard.html">jms_kapps.uc1.learner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_memory.html">jms_kapps.uc1.learner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_process.html">jms_kapps.uc1.learner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/mqtt_broker.html">jms_kapps.uc1.mqtt_broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page.html">jms_kapps.uc1.page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page_lists.html">jms_kapps.uc1.page_lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner.html">jms_kapps.uc1.planner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_dashboard.html">jms_kapps.uc1.planner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_memory.html">jms_kapps.uc1.planner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_process.html">jms_kapps.uc1.planner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_reads.html">jms_kapps.uc1.planner_reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/replay.html">jms_kapps.uc1.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_attempt.html">jms_kapps.uc1.robot_attempt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_binding.html">jms_kapps.uc1.robot_binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_controller.html">jms_kapps.uc1.robot_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/run_core.html">jms_kapps.uc1.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/scope_log.html">jms_kapps.uc1.scope_log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource.html">jms_kapps.uc1.screwing_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_dashboard.html">jms_kapps.uc1.screwing_resource_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_memory.html">jms_kapps.uc1.screwing_resource_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/seed.html">jms_kapps.uc1.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/sequence.html">jms_kapps.uc1.sequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/timeseries.html">jms_kapps.uc1.timeseries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/uncertainty.html">jms_kapps.uc1.uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/vocabulary.html">jms_kapps.uc1.vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/index.html">jms_kapps.uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/__main__.html">jms_kapps.uc2.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/capability_resource.html">jms_kapps.uc2.capability_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/discovery.html">jms_kapps.uc2.discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/handover_events.html">jms_kapps.uc2.handover_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/handshake.html">jms_kapps.uc2.handshake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/history.html">jms_kapps.uc2.history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module.html">jms_kapps.uc2.module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_dashboard.html">jms_kapps.uc2.module_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_drawing.html">jms_kapps.uc2.module_drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/module_memory.html">jms_kapps.uc2.module_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/process.html">jms_kapps.uc2.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/routing.html">jms_kapps.uc2.routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/run_core.html">jms_kapps.uc2.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/seed.html">jms_kapps.uc2.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/reachable_destination.html">jms_kapps.uc2.reachable_destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/spawn_rate.html">jms_kapps.uc2.spawn_rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/strategies.html">jms_kapps.uc2.strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/topology.html">jms_kapps.uc2.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/trace_box.html">jms_kapps.uc2.trace_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/transport.html">jms_kapps.uc2.transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/validation_report.html">jms_kapps.uc2.validation_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/vocabulary.html">jms_kapps.uc2.vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/waiting_order.html">jms_kapps.uc2.waiting_order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms.html">jms_kapps.uc2.wms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_dashboard.html">jms_kapps.uc2.wms_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_memory.html">jms_kapps.uc2.wms_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/wms_process.html">jms_kapps.uc2.wms_process</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the Launcher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/index.html">jms_kapps.uc2.launcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/api.html">jms_kapps.uc2.launcher.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/backend.html">jms_kapps.uc2.launcher.backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/boxes.html">jms_kapps.uc2.launcher.boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/launcher/runner.html">jms_kapps.uc2.launcher.runner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the monitor</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/index.html">jms_kapps.uc2.monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/api.html">jms_kapps.uc2.monitor.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/handovers.html">jms_kapps.uc2.monitor.handovers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/memory.html">jms_kapps.uc2.monitor.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/process.html">jms_kapps.uc2.monitor.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/reads.html">jms_kapps.uc2.monitor.reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc2/monitor/wires.html">jms_kapps.uc2.monitor.wires</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The measurement harness</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">jms_kapps.evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approval.html">jms_kapps.evaluation.approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseline.html">jms_kapps.evaluation.baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bench.html">jms_kapps.evaluation.bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client_load.html">jms_kapps.evaluation.client_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commit_table.html">jms_kapps.evaluation.commit_table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">jms_kapps.evaluation.configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid.html">jms_kapps.evaluation.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="harness.html">jms_kapps.evaluation.harness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="heavy_parts.html">jms_kapps.evaluation.heavy_parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instrumentation.html">jms_kapps.evaluation.instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="live_store.html">jms_kapps.evaluation.live_store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matcher.html">jms_kapps.evaluation.matcher</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">jms_kapps.evaluation.observation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="own_transports.html">jms_kapps.evaluation.own_transports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="precision.html">jms_kapps.evaluation.precision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prefill.html">jms_kapps.evaluation.prefill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramp.html">jms_kapps.evaluation.ramp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ramp_comparison.html">jms_kapps.evaluation.ramp_comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record.html">jms_kapps.evaluation.record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="record_match.html">jms_kapps.evaluation.record_match</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replay.html">jms_kapps.evaluation.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replay_levels.html">jms_kapps.evaluation.replay_levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">jms_kapps.evaluation.report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_charts.html">jms_kapps.evaluation.report_charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_points.html">jms_kapps.evaluation.report_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_steps.html">jms_kapps.evaluation.report_steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="report_summary.html">jms_kapps.evaluation.report_summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rounds.html">jms_kapps.evaluation.rounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_limit.html">jms_kapps.evaluation.run_limit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_uc2.html">jms_kapps.evaluation.run_uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seed.html">jms_kapps.evaluation.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="southward.html">jms_kapps.evaluation.southward</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">jms_kapps.evaluation.spec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stats.html">jms_kapps.evaluation.stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store.html">jms_kapps.evaluation.store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store_requests.html">jms_kapps.evaluation.store_requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">jms_kapps.evaluation.summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sweep.html">jms_kapps.evaluation.sweep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table.html">jms_kapps.evaluation.table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watch.html">jms_kapps.evaluation.watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wrapper.html">jms_kapps.evaluation.wrapper</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.observation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-jms_kapps.evaluation.observation">
+<span id="jms-kapps-evaluation-observation"></span><h1>jms_kapps.evaluation.observation<a class="headerlink" href="#module-jms_kapps.evaluation.observation" title="Link to this heading">#</a></h1>
+<p>What the harness reads of a run once its participants have stopped: the measures of its record
+and the checks that make the run invalid. It reads the spans that the wrapper wrote for each
+participant (<cite>instrumentation</cite>), the completion matcher’s reads (<cite>matcher</cite>), the graph’s transports
+after the drain, and each participant’s output, each line stamped with the time it arrived.</p>
+<p><strong>The measures.</strong> Every store request of every participant, with its time, its latency, its size
+and its outcome: accepted; refused, with the store’s reason; timed out or connection dropped, with
+the error of its client (<cite>store_requests.unanswered_outcome</cite>). Each commit of the
+object-graph mapper, with its latency and its outcome. Then, over the measured window only, from
+the warm-up’s end to the window’s end: the latencies of the commits that the store admitted; the
+completed writes per minute, the writes the store applied, each checked write counted once, by its
+update and not by the removal of its receipt; the store requests that the store refused, that timed
+out and whose connection dropped, and the share of the three together (refused or unanswered); the
+refusals for want of heap; and the transports ended per minute, the ends
+the matcher saw in the window. The record keeps every store
+request with its time, those of the participants’ start and of the warm-up too, because the
+store-only baseline replays them; only the latencies, rates and shares count the window alone. A
+run without the wrapper has no spans: its measures are those that need none, the transports ended
+per minute, beside the matcher’s reads, the graph’s transports after the drain and the refused
+spawns that the record holds anyway.</p>
+<p><strong>The checks.</strong> A run that fails one is invalid, and its record names the check:</p>
+<ul class="simple">
+<li><p><cite>one accepted done or failed</cite>: each Operation that the graph shows ended after the drain has
+exactly one accepted write of <cite>done</cite> or <cite>failed</cite>;</p></li>
+<li><p><cite>at most one accepted running</cite>: and at most one of <cite>running</cite>;</p></li>
+<li><p><cite>no done before its running</cite>: and no accepted <cite>done</cite> before an accepted <cite>running</cite>. An Operation
+may have no accepted <cite>running</cite> at all, as “at most one” allows: a transport that the
+WarehouseManagementSystem ends <cite>failed</cite> while it is still <cite>queued</cite> has none, and a <cite>running</cite>
+whose answer timed out is not known to be accepted. Either is valid.</p></li>
+<li><p><cite>the matcher saw the graph’s ends</cite>: the transports that the matcher saw end are the transports
+that the graph shows ended after the drain. The matcher reads once more after the graph’s last
+read, at the drain’s end, so a transport that the graph read showed still open and that ended
+just after it is seen ended by the matcher alone, and is no failure.</p></li>
+<li><p><cite>deadlock alarm</cite>: a module raised a deadlock alarm between the load’s start and the drain’s
+end: a line of its output whose log message starts with “possible deadlock:”, after the level
+and the logger that the participants’ log format writes before it. The check names the module
+and the line as it was written, which names the modules asked; nothing after “possible
+deadlock:” is read. A line that arrived before the load’s start or after the drain’s end does
+not count.</p></li>
+</ul>
+<p>An accepted write is one that the store accepted and applied: a checked write whose receipt the
+store did not find wrote nothing (<cite>store_requests</cite>). A write that the store refused, and that its
+participant sent again, counts once, as the accepted one. The first three checks need the spans,
+so a run without the wrapper makes only the last two; the record lists the checks it made. An
+Operation still open after the drain counts as stuck, with its place, and that alone does not make
+a run invalid.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">Span</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">participant</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">span_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~typing.Any]</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">~typing.Any]]</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#Span"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.Span" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>One span that a participant’s wrapper wrote.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.participant">
+<span class="sig-name descname"><span class="pre">participant</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.participant" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.name">
+<span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.kind">
+<span class="sig-name descname"><span class="pre">kind</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.kind" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.span_id">
+<span class="sig-name descname"><span class="pre">span_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.span_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.parent_id">
+<span class="sig-name descname"><span class="pre">parent_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.parent_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.start" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.end" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.status">
+<span class="sig-name descname"><span class="pre">status</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.status" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.attributes">
+<span class="sig-name descname"><span class="pre">attributes</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.attributes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.events">
+<span class="sig-name descname"><span class="pre">events</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.events" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.seconds">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">seconds</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.seconds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Span.error">
+<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#Span.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.Span.error" title="Link to this definition">#</a></dt>
+<dd><p>The error the span ended with, as its type and message, or None.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.read_spans">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">read_spans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#jms_kapps.evaluation.observation.Span" title="jms_kapps.evaluation.observation.Span"><span class="pre">Span</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#read_spans"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.read_spans" title="Link to this definition">#</a></dt>
+<dd><p>Every span in the spans’ files of <cite>folder</cite>, one file for each participant, in the order
+they started. A line that is no span, as the last line of a participant that was killed while
+it wrote it, is left out.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.nanoseconds">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">nanoseconds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">since_epoch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.15)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#nanoseconds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.nanoseconds" title="Link to this definition">#</a></dt>
+<dd><p>The time of <cite>since_epoch</cite> nanoseconds since the epoch, in UTC, to the microsecond.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Window">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">Window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#Window"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.Window" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>The measured window of a run: from the warm-up’s end, or the load’s start without a
+warm-up, to the window’s end.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Window.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Window.start" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Window.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Window.end" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Window.minutes">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">minutes</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a></span><a class="headerlink" href="#jms_kapps.evaluation.observation.Window.minutes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Window.holds">
+<span class="sig-name descname"><span class="pre">holds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">at</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#Window.holds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.Window.holds" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.Window.record">
+<span class="sig-name descname"><span class="pre">record</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#Window.record"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.Window.record" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.store_request_records">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">store_request_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spans</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.15)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#jms_kapps.evaluation.observation.Span" title="jms_kapps.evaluation.observation.Span"><span class="pre">Span</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.evaluation.observation.Window" title="jms_kapps.evaluation.observation.Window"><span class="pre">Window</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#store_request_records"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.store_request_records" title="Link to this definition">#</a></dt>
+<dd><p>Every store request of <cite>spans</cite>, in the order they started, as the record holds them: who
+sent it, when, its latency in seconds, its method, path and kind, the size of its body and of
+the store’s answer, its outcome, the kind of a refusal and the store’s reason, the statuses
+it writes, whether the store applied it, its text, and whether it started in the window.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.commit_records">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">commit_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spans</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.15)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#jms_kapps.evaluation.observation.Span" title="jms_kapps.evaluation.observation.Span"><span class="pre">Span</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.evaluation.observation.Window" title="jms_kapps.evaluation.observation.Window"><span class="pre">Window</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#commit_records"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.commit_records" title="Link to this definition">#</a></dt>
+<dd><p>Each commit of the object-graph mapper in <cite>spans</cite>, in the order they started: who made
+it, when, its latency in seconds, its outcome (accepted, or the error it ended with), and
+whether it started in the window.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.measures">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">measures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.evaluation.observation.Window" title="jms_kapps.evaluation.observation.Window"><span class="pre">Window</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">matcher_ends</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">commits</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#measures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.measures" title="Link to this definition">#</a></dt>
+<dd><p>The measures of a run: those that need the wrapper only where <cite>requests</cite> and <cite>commits</cite>
+come from its spans, and not for a run without it (None).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.request_measures">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">request_measures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#jms_kapps.evaluation.observation.Window" title="jms_kapps.evaluation.observation.Window"><span class="pre">Window</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#request_measures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.request_measures" title="Link to this definition">#</a></dt>
+<dd><p>The measures of <cite>requests</cite>, store requests as the record holds them, over the window
+alone: how many there were, how many the store refused, how many timed out and how many
+lost their connection, and the share of the three, refused or unanswered; the completed
+writes, each checked write counted
+once, by its update and not
+by the removal of its receipt, and their number per minute of <cite>window</cite>; and the refusals for
+want of heap, each with whether it came in the window. A UC2 run’s measures hold them, and
+so do the store-only baseline’s (<cite>baseline</cite>).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.status_write_checks">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">status_write_checks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_ends</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#status_write_checks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.status_write_checks" title="Link to this definition">#</a></dt>
+<dd><p>The checks of the statuses written for each Operation that the graph shows ended after the
+drain, <cite>graph_ends</cite> as the record holds the run’s transports: each check that fails, with the
+Operation and its accepted writes of a status.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.matcher_check">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">matcher_check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matcher</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_ends</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#matcher_check"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.matcher_check" title="Link to this definition">#</a></dt>
+<dd><p>Whether the transports that the matcher saw end are those that the graph shows ended
+after the drain: none where they are, else one failed check that names those it saw alone
+and those the graph shows alone. A transport that the graph’s read showed open and that the
+matcher’s last read, which comes after it, saw ended, is no failure.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.deadlock_alarms">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">deadlock_alarms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#deadlock_alarms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.deadlock_alarms" title="Link to this definition">#</a></dt>
+<dd><p>Each deadlock alarm in <cite>outputs</cite>, each participant’s stamped output by its resource’s
+local name, that arrived from <cite>start</cite>, the load’s start, to <cite>end</cite>, the drain’s end: a failed
+check each, with the module, the line as it was written, and when it arrived.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.evaluation.observation.observe">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.evaluation.observation.</span></span><span class="sig-name descname"><span class="pre">observe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">spans</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.15)"><span class="pre">Path</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Mapping" title="(in Python v3.15)"><span class="pre">Mapping</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#tuple" title="(in Python v3.15)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.15)"><span class="pre">datetime</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.15)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/evaluation/observation.html#observe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.evaluation.observation.observe" title="Link to this definition">#</a></dt>
+<dd><p>What a completed run’s record gains from its observation: its measures, whether it is
+valid, the checks it failed and those it made, and its stuck Operations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> – The run’s record, with its warm-up, its window, its actions, its transports
+after the drain and its matcher.</p></li>
+<li><p><strong>spans</strong> – The folder of the participants’ spans, or None for a run without the wrapper.</p></li>
+<li><p><strong>outputs</strong> – Each participant’s stamped output, by its resource’s local name.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="matcher.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jms_kapps.evaluation.matcher</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="own_transports.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jms_kapps.evaluation.own_transports</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span"><code class="docutils literal notranslate"><span class="pre">Span</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.participant"><code class="docutils literal notranslate"><span class="pre">Span.participant</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.name"><code class="docutils literal notranslate"><span class="pre">Span.name</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.kind"><code class="docutils literal notranslate"><span class="pre">Span.kind</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.span_id"><code class="docutils literal notranslate"><span class="pre">Span.span_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.parent_id"><code class="docutils literal notranslate"><span class="pre">Span.parent_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.start"><code class="docutils literal notranslate"><span class="pre">Span.start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.end"><code class="docutils literal notranslate"><span class="pre">Span.end</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.status"><code class="docutils literal notranslate"><span class="pre">Span.status</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.attributes"><code class="docutils literal notranslate"><span class="pre">Span.attributes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.events"><code class="docutils literal notranslate"><span class="pre">Span.events</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.seconds"><code class="docutils literal notranslate"><span class="pre">Span.seconds</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Span.error"><code class="docutils literal notranslate"><span class="pre">Span.error()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.read_spans"><code class="docutils literal notranslate"><span class="pre">read_spans()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.nanoseconds"><code class="docutils literal notranslate"><span class="pre">nanoseconds()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Window"><code class="docutils literal notranslate"><span class="pre">Window</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Window.start"><code class="docutils literal notranslate"><span class="pre">Window.start</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Window.end"><code class="docutils literal notranslate"><span class="pre">Window.end</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Window.minutes"><code class="docutils literal notranslate"><span class="pre">Window.minutes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Window.holds"><code class="docutils literal notranslate"><span class="pre">Window.holds()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.Window.record"><code class="docutils literal notranslate"><span class="pre">Window.record()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.store_request_records"><code class="docutils literal notranslate"><span class="pre">store_request_records()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.commit_records"><code class="docutils literal notranslate"><span class="pre">commit_records()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.measures"><code class="docutils literal notranslate"><span class="pre">measures()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.request_measures"><code class="docutils literal notranslate"><span class="pre">request_measures()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.status_write_checks"><code class="docutils literal notranslate"><span class="pre">status_write_checks()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.matcher_check"><code class="docutils literal notranslate"><span class="pre">matcher_check()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.deadlock_alarms"><code class="docutils literal notranslate"><span class="pre">deadlock_alarms()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.evaluation.observation.observe"><code class="docutils literal notranslate"><span class="pre">observe()</span></code></a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/evaluation/observation.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

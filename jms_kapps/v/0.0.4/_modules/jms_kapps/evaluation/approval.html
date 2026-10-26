@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.approval &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/approval';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.approval</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.approval</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The approval of heavy runs.</span>
+
+<span class="sd">A sustained-load or breaking-point run on the configured GraphDB is never a unit test or a CI job:</span>
+<span class="sd">other people use that server, so such a run starts only under an approval that covers it. Any</span>
+<span class="sd">person may approve, in agreement with the server's admins.</span>
+
+<span class="sd">**An approval is a small file** (TOML), passed by the option `--heavy-run-approval`:</span>
+
+<span class="sd">    spec_key = "&lt;the SHA-256 of the spec file's content&gt;"</span>
+<span class="sd">    start = 2026-10-13T20:00:00Z</span>
+<span class="sd">    end = 2026-10-14T06:00:00Z</span>
+<span class="sd">    approver = "&lt;who approved&gt;"</span>
+<span class="sd">    text = "&lt;what was approved, and with whom: the server's admins&gt;"</span>
+
+<span class="sd">It covers **one spec for one period**. The spec key is the SHA-256 of the spec file's content</span>
+<span class="sd">(`spec_key`; `sha256sum &lt;spec&gt;` shows it), so the approval covers the spec as written: another</span>
+<span class="sd">spec, or the same file once it is changed, has another key. The period is `start` up to but not</span>
+<span class="sd">including `end`, in UTC: a time without a zone is refused. Inside the period it covers every heavy</span>
+<span class="sd">configuration of the spec, which is the spec's configurations (`spec.configurations`) by their</span>
+<span class="sd">keys, several ramps and sustained loads alike.</span>
+
+<span class="sd">**Refused, before anything reaches a store** (`HeavyRunRefused`, with the reason, and its short</span>
+<span class="sd">reason for the sweep's list of skipped runs): a heavy run without an approval;</span>
+<span class="sd">outside its period; of another spec or a changed spec file; with `--set` overrides, which the</span>
+<span class="sd">approval does not cover; of a bare configuration file, which has no spec; and a replay of a run</span>
+<span class="sd">whose record holds no configuration key. The sweep and `jms-eval` check each heavy run at its</span>
+<span class="sd">start, and skip and list one that is refused then. A run at normal load needs no approval.</span>
+<span class="sd">A replay of a recorded run compressed in time by a factor above 1 is a heavy run too (`replay_levels`): the baseline and the sweep's replay levels take a `Covered` for the replayed</span>
+<span class="sd">configuration, as they do for a heavy run, and a refusal names the factor (`why`).</span>
+<span class="sd">The record of each heavy run keeps the whole approval it ran under (`Approval.record`).</span>
+
+<span class="sd">**The run entry points take only a covered record.** `cover` checks all of the above and makes a</span>
+<span class="sd">`Covered`, which names the one configuration it covers (`fingerprint`: the key of the resolved</span>
+<span class="sd">configuration, computed as the spec computes keys, over its values with a path by its file name).</span>
+<span class="sd">`bench.run` and `baseline.run_baseline` take nothing else for a heavy run (`covered_run`): a raw</span>
+<span class="sd">`Approval`, or a `Covered` of another configuration or spec, is refused, and so is a period that</span>
+<span class="sd">does not hold at the run's start. Only `cover` makes a `Covered`. For a replay, `cover` is given the</span>
+<span class="sd">configuration in the replayed record's text and refuses it where it is not the configuration its</span>
+<span class="sd">stored key names in the approved spec.</span>
+
+<span class="sd">No test, CI job or example gives an approval that covers a real spec of the repository</span>
+<span class="sd">(`tests/test_evaluation_approval.py` checks that no file holds the key of a shipped spec).</span>
+
+<span class="sd">Interim names: the approval file and its keys, and this module's API.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tomllib</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">UTC</span><span class="p">,</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.spec</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">SpecRefused</span><span class="p">,</span>
+    <span class="n">configurations</span><span class="p">,</span>
+    <span class="n">fingerprint</span><span class="p">,</span>
+    <span class="n">lists</span><span class="p">,</span>
+    <span class="n">read_spec</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># What the approval file holds, for a person to read.</span>
+<span class="n">APPROVAL_FORM</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">"an approval file (TOML) with spec_key (the SHA-256 of the spec file, `sha256sum &lt;spec&gt;`), "</span>
+    <span class="s2">"start and end (UTC), approver and text"</span>
+<span class="p">)</span>
+
+<span class="c1"># The keys of an approval file.</span>
+<span class="n">KEYS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"spec_key"</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">,</span> <span class="s2">"approver"</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">)</span>
+
+<span class="n">OPTION</span> <span class="o">=</span> <span class="s2">"--heavy-run-approval"</span>
+
+<span class="c1"># Why an approval does not cover a heavy run, in short, as the sweep lists a heavy run it skipped</span>
+<span class="c1"># (interim names): no approval, another or a changed spec, a period that is not</span>
+<span class="c1"># now, `--set` overrides, or another reason (a bare configuration file, a record without a key).</span>
+<span class="n">NO_APPROVAL</span> <span class="o">=</span> <span class="s2">"no approval"</span>
+<span class="n">OTHER_SPEC</span> <span class="o">=</span> <span class="s2">"another or a changed spec"</span>
+<span class="n">NOT_NOW</span> <span class="o">=</span> <span class="s2">"a period that is not now"</span>
+<span class="n">OVERRIDDEN</span> <span class="o">=</span> <span class="s2">"--set overrides"</span>
+<span class="n">NOT_COVERED</span> <span class="o">=</span> <span class="s2">"not covered"</span>
+
+
+<div class="viewcode-block" id="HeavyRunRefused">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.HeavyRunRefused">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HeavyRunRefused</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A heavy run without an approval that covers it, or an approval that cannot be read.</span>
+<span class="sd">    `reason` says why in short (`NO_APPROVAL`, `OTHER_SPEC`, `NOT_NOW`, `OVERRIDDEN` or</span>
+<span class="sd">    `NOT_COVERED`; interim name); the message says it in full."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">NOT_COVERED</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="n">reason</span></div>
+
+
+
+<div class="viewcode-block" id="Approval">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.Approval">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Approval</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""An approval: any person's, for one spec and one period, in agreement with the server's</span>
+<span class="sd">    admins."""</span>
+
+    <span class="n">spec_key</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">start</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">end</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">approver</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="Approval.record">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.Approval.record">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The whole approval as a run's record keeps it: spec key, period, approver and text."""</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"spec_key"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec_key</span><span class="p">,</span>
+            <span class="s2">"start"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+            <span class="s2">"end"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(),</span>
+            <span class="s2">"approver"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">approver</span><span class="p">,</span>
+            <span class="s2">"text"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+        <span class="p">}</span></div>
+</div>
+
+
+
+<span class="n">_ISSUER</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="Covered">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.Covered">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Covered</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""An approval together with what it covers: the one heavy configuration of the one spec that</span>
+<span class="sd">    `cover` found it to cover. Only `cover` makes one; the run entry points (`bench.run`,</span>
+<span class="sd">    `baseline.run_baseline`) take nothing else for a heavy run, and check that it names the</span>
+<span class="sd">    configuration they run (`fingerprint`) and that the approval's period holds at the run's</span>
+<span class="sd">    start. (Interim names.)"""</span>
+
+    <span class="n">approval</span><span class="p">:</span> <span class="n">Approval</span>
+    <span class="n">spec_key</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">configuration_key</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">fingerprint</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">_issuer</span><span class="p">:</span> <span class="nb">object</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">repr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">compare</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_issuer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">_ISSUER</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+                <span class="s2">"a covered record is made by approval.cover only: no approval is covered by "</span>
+                <span class="s2">"being built"</span>
+            <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="spec_key">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.spec_key">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spec_key</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The key of the spec file at `path`: the SHA-256 of its content, in hex.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HeavyRunRefused: If the file cannot be read.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_bytes</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the spec </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> cannot be read: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="read_approval">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.read_approval">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_approval</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Approval</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The approval in the file at `path`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HeavyRunRefused: If the file cannot be read, is no TOML, misses a key, has a key an</span>
+<span class="sd">            approval does not know, a time without a zone, an end that is not after the start, or</span>
+<span class="sd">            an approver or text that is empty.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> cannot be read: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">. The option </span><span class="si">{</span><span class="n">OPTION</span><span class="si">}</span><span class="s2"> "</span>
+            <span class="sa">f</span><span class="s2">"takes </span><span class="si">{</span><span class="n">APPROVAL_FORM</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="k">except</span> <span class="n">tomllib</span><span class="o">.</span><span class="n">TOMLDecodeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> is no TOML: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">. The option </span><span class="si">{</span><span class="n">OPTION</span><span class="si">}</span><span class="s2"> takes "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">APPROVAL_FORM</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="n">unknown</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">KEYS</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">unknown</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> has keys an approval does not know: "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">unknown</span><span class="p">)</span><span class="si">}</span><span class="s2">. An approval has </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KEYS</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">KEYS</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> has no </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2">. An approval has "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">KEYS</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">_text</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">"spec_key"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">64</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">"0123456789abcdef"</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: spec_key is the 64 hex digits of the spec file's "</span>
+            <span class="s2">"SHA-256 (`sha256sum &lt;spec&gt;`)"</span>
+        <span class="p">)</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">_time</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">_time</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">end</span> <span class="o">&lt;=</span> <span class="n">start</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: its period ends (</span><span class="si">{</span><span class="n">end</span><span class="si">:</span><span class="s2">%Y-%m-%d %H:%M</span><span class="si">}</span><span class="s2"> UTC) at or "</span>
+            <span class="sa">f</span><span class="s2">"before it starts (</span><span class="si">{</span><span class="n">start</span><span class="si">:</span><span class="s2">%Y-%m-%d %H:%M</span><span class="si">}</span><span class="s2"> UTC)"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">Approval</span><span class="p">(</span>
+        <span class="n">spec_key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+        <span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span>
+        <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">,</span>
+        <span class="n">approver</span><span class="o">=</span><span class="n">_text</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">"approver"</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span>
+        <span class="n">text</span><span class="o">=</span><span class="n">_text</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s2">"text"</span><span class="p">,</span> <span class="n">path</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="load_approval">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.load_approval">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_approval</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Approval</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The approval in the file the option `--heavy-run-approval` names, or None where it is off.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HeavyRunRefused: As `read_approval`.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">read_approval</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="approved">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.approved">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">approved</span><span class="p">(</span>
+    <span class="n">heavy</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">approval</span><span class="p">:</span> <span class="n">Approval</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">now</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"heavy = true"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The approval of a run, as its record keeps it, or None for a run at normal load.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        heavy: Whether the run's load is heavy: a sustained-load or breaking-point run.</span>
+<span class="sd">        approval: The approval given with the option, or None where it is off.</span>
+<span class="sd">        now: The time the run starts: this machine's if None.</span>
+<span class="sd">        why: What makes the run heavy, for the refusal to name (a replay at a factor above 1,</span>
+<span class="sd">            interim).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HeavyRunRefused: If the run is heavy and there is no approval, or the time is outside the</span>
+<span class="sd">            approval's period.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">heavy</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">approval</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"this is a heavy run (</span><span class="si">{</span><span class="n">why</span><span class="si">}</span><span class="s2">). A sustained-load or breaking-point run runs "</span>
+            <span class="s2">"only under an approval that covers it: any person may approve, in agreement with "</span>
+            <span class="sa">f</span><span class="s2">"the admins of the server. Give the approval with </span><span class="si">{</span><span class="n">OPTION</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">APPROVAL_FORM</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">NO_APPROVAL</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">now</span> <span class="k">if</span> <span class="n">now</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">approval</span><span class="o">.</span><span class="n">start</span> <span class="o">&lt;=</span> <span class="n">now</span> <span class="o">&lt;</span> <span class="n">approval</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"it is </span><span class="si">{</span><span class="n">now</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="si">:</span><span class="s2">%Y-%m-%d %H:%M</span><span class="si">}</span><span class="s2"> UTC, outside the period of the "</span>
+            <span class="sa">f</span><span class="s2">"approval (</span><span class="si">{</span><span class="n">approval</span><span class="o">.</span><span class="n">start</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="si">:</span><span class="s2">%Y-%m-%d %H:%M</span><span class="si">}</span><span class="s2"> to "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">approval</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span><span class="si">:</span><span class="s2">%Y-%m-%d %H:%M</span><span class="si">}</span><span class="s2"> UTC, approved by </span><span class="si">{</span><span class="n">approval</span><span class="o">.</span><span class="n">approver</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span>
+            <span class="n">NOT_NOW</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">approval</span><span class="o">.</span><span class="n">record</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="covered_run">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.covered_run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">covered_run</span><span class="p">(</span>
+    <span class="n">heavy</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">covered</span><span class="p">:</span> <span class="n">Covered</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">now</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"heavy = true"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The approval of a run as its record keeps it, or None for a run at normal load: the check</span>
+<span class="sd">    of the run entry points. A heavy run needs a `Covered` (made by `cover`) that names this</span>
+<span class="sd">    configuration, in the approval's period.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HeavyRunRefused: If the run is heavy and `covered` is None, a raw `Approval` or any other</span>
+<span class="sd">            thing than a `Covered`; if it covers another configuration; or if the period does not</span>
+<span class="sd">            hold at `now`.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">heavy</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">covered</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">approved</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="n">why</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">covered</span><span class="p">,</span> <span class="n">Covered</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="s2">"this heavy run was given an approval that nothing has checked against its spec and "</span>
+            <span class="s2">"its configuration: a heavy run takes the covered record that approval.cover makes"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">covered</span><span class="o">.</span><span class="n">fingerprint</span> <span class="o">!=</span> <span class="n">fingerprint</span><span class="p">(</span><span class="n">configuration</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval covers the configuration with key </span><span class="si">{</span><span class="n">covered</span><span class="o">.</span><span class="n">configuration_key</span><span class="si">}</span><span class="s2">, and "</span>
+            <span class="s2">"this heavy run is of another configuration"</span>
+        <span class="p">)</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">approved</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">covered</span><span class="o">.</span><span class="n">approval</span><span class="p">,</span> <span class="n">now</span><span class="o">=</span><span class="n">now</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="n">why</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">record</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">record</span></div>
+
+
+
+<div class="viewcode-block" id="cover">
+<a class="viewcode-back" href="../../../reference/evaluation/approval.html#jms_kapps.evaluation.approval.cover">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cover</span><span class="p">(</span>
+    <span class="n">approval</span><span class="p">:</span> <span class="n">Approval</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="n">Configuration</span><span class="p">,</span>
+    <span class="n">overridden</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">now</span><span class="p">:</span> <span class="n">datetime</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"heavy = true"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Covered</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The covered record, once the approval covers the heavy run of `configuration`, which is the</span>
+<span class="sd">    configuration of `key` of `spec`, in its period.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        approval: The approval given with the option, or None where it is off.</span>
+<span class="sd">        spec: The spec file the run comes from, or None for a bare configuration file.</span>
+<span class="sd">        configuration: The configuration to run, resolved. For a replay, the configuration in</span>
+<span class="sd">            the replayed record's text: it must be the one its stored key names.</span>
+<span class="sd">        key: The configuration's key (`spec.SpecConfiguration.key`), or None where there is none:</span>
+<span class="sd">            a bare configuration file, or the record of a run that holds none.</span>
+<span class="sd">        overridden: Whether the run is made with `--set` overrides of the spec.</span>
+<span class="sd">        now: The time the run starts: this machine's if None.</span>
+<span class="sd">        why: What makes the run heavy, for a refusal to name (`approved`).</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HeavyRunRefused: If the approval is off or its period is not now; or the run has no spec,</span>
+<span class="sd">            overrides the spec, is of another spec or of a changed spec file, or has no</span>
+<span class="sd">            configuration key or one that the spec does not list, or `configuration` is not the</span>
+<span class="sd">            configuration that key names.</span>
+<span class="sd">    """</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">approved</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">approval</span><span class="p">,</span> <span class="n">now</span><span class="o">=</span><span class="n">now</span><span class="p">,</span> <span class="n">why</span><span class="o">=</span><span class="n">why</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">approval</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">record</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">overridden</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="s2">"a run with --set overrides is not covered by an approval: it is not the spec as "</span>
+            <span class="s2">"written. Write the values into a spec and have that spec approved"</span><span class="p">,</span>
+            <span class="n">OVERRIDDEN</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">spec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="s2">"a heavy run with no spec (a bare configuration file, or no --spec) is not covered "</span>
+            <span class="s2">"by an approval: an approval covers the configurations of one spec. Give the "</span>
+            <span class="s2">"approved spec: jms-eval-uc2 takes it with --spec and the configuration's number, "</span>
+            <span class="s2">"jms-eval-baseline with --spec"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">spec_key</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span> <span class="o">!=</span> <span class="n">approval</span><span class="o">.</span><span class="n">spec_key</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval is for the spec with key </span><span class="si">{</span><span class="n">approval</span><span class="o">.</span><span class="n">spec_key</span><span class="p">[:</span><span class="mi">12</span><span class="p">]</span><span class="si">}</span><span class="s2">…, and the spec "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> has key </span><span class="si">{</span><span class="n">spec_key</span><span class="p">(</span><span class="n">spec</span><span class="p">)[:</span><span class="mi">12</span><span class="p">]</span><span class="si">}</span><span class="s2">…: it is another spec, or the "</span>
+            <span class="s2">"approved one changed since it was approved. Have this spec approved"</span><span class="p">,</span>
+            <span class="n">OTHER_SPEC</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="s2">"this run's record holds no configuration key, so no approval can say that it "</span>
+            <span class="s2">"covers it: a run made from the approved spec records its key"</span>
+        <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">listed</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">key</span><span class="p">:</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">configurations</span><span class="p">(</span><span class="n">read_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">))}</span>
+    <span class="k">except</span> <span class="n">SpecRefused</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">refused</span><span class="p">))</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">listed</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the configuration with key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is no configuration of the approved spec "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lists</span><span class="p">(</span><span class="n">listed</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">configuration</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the configuration to run is not the configuration with key </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> that the "</span>
+            <span class="s2">"approved spec lists: a record whose configuration does not match its key, or a "</span>
+            <span class="s2">"configuration changed after the key was made"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">Covered</span><span class="p">(</span>
+        <span class="n">approval</span><span class="o">=</span><span class="n">approval</span><span class="p">,</span>
+        <span class="n">spec_key</span><span class="o">=</span><span class="n">approval</span><span class="o">.</span><span class="n">spec_key</span><span class="p">,</span>
+        <span class="n">configuration_key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+        <span class="n">fingerprint</span><span class="o">=</span><span class="n">fingerprint</span><span class="p">(</span><span class="n">configuration</span><span class="p">),</span>
+        <span class="n">_issuer</span><span class="o">=</span><span class="n">_ISSUER</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_text</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is a text that is not empty, not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_time</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">datetime</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span> <span class="ow">or</span> <span class="n">value</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HeavyRunRefused</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the approval </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2">: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is a time in UTC with its zone, such as "</span>
+            <span class="sa">f</span><span class="s2">"2026-10-13T20:00:00Z, not </span><span class="si">{</span><span class="n">value</span><span class="si">!r}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">UTC</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

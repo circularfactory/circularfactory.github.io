@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc1.robot_binding &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc1/robot_binding';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc1.robot_binding</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc1.robot_binding</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""How the screwing resource's middleware instance drives the robot over MQTT: the binding of the</span>
+<span class="sd">robot's parameters, built from the knowledge graph, and the sink that collects every sample.</span>
+
+<span class="sd">The knowledge graph describes the robot of the screwing resource (`:Robot1`, written by the seed)</span>
+<span class="sd">as twelve parameters that a client reaches over MQTT: three readings, the attempt's state, the</span>
+<span class="sd">start command and seven setpoints, each a parameter node one level below the robot, with its</span>
+<span class="sd">topic, its broker and its access mode (`seed.robot_parameter_node`). The middleware's connector</span>
+<span class="sd">wiring recognises such a node by its property, a subproperty of the middleware's MQTT interface</span>
+<span class="sd">property, and asks a **binding descriptor** for the connectors that realize it: one that reads</span>
+<span class="sd">the topic into the data model, and one that publishes the data model's value to the set topic for</span>
+<span class="sd">a parameter a client may set. The middleware ships that descriptor, `MQTTBinding`, and builds</span>
+<span class="sd">twenty connectors for the robot from it: twelve read, eight write.</span>
+
+<span class="sd">**Use case 1's own descriptor** (`robot_wiring`) delegates to the middleware's and changes one</span>
+<span class="sd">thing: the formatter of each connector. The middleware's formatter turns a payload into the value</span>
+<span class="sd">the data model holds, and the data model holds only the latest value; an attempt needs every</span>
+<span class="sd">sample. So the descriptor wraps the formatter (`TappedFormatter`): each payload the read connector</span>
+<span class="sd">takes goes to the attempt's `Sink` whole, with the parameter it arrived for, before the formatter</span>
+<span class="sd">takes its value out of it. The sink is thread-safe, because the connectors run on the middleware's</span>
+<span class="sd">event loop and the attempt on the workflow's worker thread, and gated: it keeps messages only</span>
+<span class="sd">while an attempt has it open, so a payload between attempts is dropped. The descriptor is</span>
+<span class="sd">registered in a connector registry of the screwing resource's own, so the process-wide default</span>
+<span class="sd">registry stays as the middleware ships it. The descriptor also records each parameter it bound</span>
+<span class="sd">(`BoundParameter`): the setpoint writer needs the field and the node type of a parameter.</span>
+
+<span class="sd">**A setpoint is a persistence write that names the parameter** (`Setpoints`, an interim helper:</span>
+<span class="sd">the middleware has no public verb for it yet). The write sets the parameter's field on the robot's</span>
+<span class="sd">model in the data model and tells the persistence connector which field changed, so that exactly</span>
+<span class="sd">the write connector of that parameter publishes the value to its set topic, and the data model</span>
+<span class="sd">shows the value. It runs on the middleware's event loop, from the worker thread, through the loop</span>
+<span class="sd">that an on-start-up callback captured.</span>
+
+<span class="sd">The screwing resource's code names no broker, port or topic: every connector comes from the graph</span>
+<span class="sd">description, and the broker comes up through the transport hook the build is given</span>
+<span class="sd">(`mqtt_broker.ensure_transport`).</span>
+
+<span class="sd">Every public name of this module is an interim name, marked so in the glossary.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">contextmanager</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">replace</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">ClassVar</span><span class="p">,</span> <span class="n">NamedTuple</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">SemanticMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.connectors.mqtt_binding</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">MQTTBinding</span><span class="p">,</span>
+    <span class="n">MQTTParameterFormatter</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.connectors.semantic</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ParameterBinding</span><span class="p">,</span>
+    <span class="n">Registration</span><span class="p">,</span>
+    <span class="n">SemanticConnectorRegistry</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.registries</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConnectionInfo</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.middleware.sync.synced_connector</span><span class="w"> </span><span class="kn">import</span> <span class="n">SyncDirection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transitional_sync_middleware.model.data_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataModel</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc1.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">JMS</span><span class="p">,</span> <span class="n">ROBOT_PARAMETERS</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"jms_kapps.uc1.robot_binding"</span><span class="p">)</span>
+
+<span class="c1"># What the screwing resource's middleware reads of its resource to build the robot's connectors:</span>
+<span class="c1"># each parameter of the robot, one level below the resource. The chains name the parameters, so a</span>
+<span class="c1"># parameter the graph holds but this list does not is not wired.</span>
+<span class="n">ROBOT_SCOPE</span> <span class="o">=</span> <span class="n">ClassScope</span><span class="o">.</span><span class="n">from_property_chains</span><span class="p">(</span>
+    <span class="p">[[</span><span class="n">JMS</span><span class="o">.</span><span class="n">hasRobot</span><span class="p">,</span> <span class="n">parameter</span><span class="p">]</span> <span class="k">for</span> <span class="n">parameter</span> <span class="ow">in</span> <span class="n">ROBOT_PARAMETERS</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># How long a setpoint write may take on the event loop before the worker thread gives up on it.</span>
+<span class="n">SETPOINT_TIMEOUT_SECONDS</span> <span class="o">=</span> <span class="mf">10.0</span>
+
+<span class="c1"># The name of the data model the middleware serves its resource as, and the connectors sync with.</span>
+<span class="n">RESOURCE_DATA_MODEL</span> <span class="o">=</span> <span class="s2">"resource"</span>
+
+<span class="n">Message</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>
+<span class="sd">"""One payload a read connector took: the parameter it arrived for, and the payload as the</span>
+<span class="sd">connector parsed it from JSON (a dict with the value at `v`, and whatever else the robot sent)."""</span>
+
+
+<div class="viewcode-block" id="NoMessage">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.NoMessage">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">NoMessage</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""No message arrived within the wait."""</span></div>
+
+
+
+<div class="viewcode-block" id="Messages">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Messages">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Messages</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The messages of one open attempt, in the order the connectors took them. Within one</span>
+<span class="sd">    parameter the order is the topic's; across parameters nothing is promised, since each connector</span>
+<span class="sd">    has a client of its own."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">[</span><span class="n">Message</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_messages</span> <span class="o">=</span> <span class="n">messages</span>
+
+<div class="viewcode-block" id="Messages.get">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Messages.get">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Message</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The next message, waiting at most `timeout` seconds.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NoMessage: If none arrived in time.</span>
+<span class="sd">        """</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_messages</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">timeout</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NoMessage</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Sink">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Sink">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Sink</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where every payload of the robot goes while an attempt collects: a thread-safe queue that</span>
+<span class="sd">    the connectors fill from the event loop and the attempt drains on its worker thread.</span>
+
+<span class="sd">    It is open only inside `open`. A payload that arrives while it is closed is dropped: between</span>
+<span class="sd">    attempts the robot still publishes its state, and a sample of an attempt that ended would</span>
+<span class="sd">    otherwise be taken for one of the next. Opening it drains what a race left behind.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_messages</span><span class="p">:</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">[</span><span class="n">Message</span><span class="p">]</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_open</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="o">.</span><span class="n">is_set</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Sink.put">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Sink.put">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">payload</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Keep `payload` of `parameter`, if an attempt is collecting. Never raises: it is called</span>
+<span class="sd">        inside a connector's receive loop, which a raise would end for good."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_messages</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="n">parameter</span><span class="p">,</span> <span class="n">payload</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Sink.open">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Sink.open">[docs]</a>
+    <span class="nd">@contextmanager</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Messages</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Collect while the block runs. Opened before the start command goes out, so no sample</span>
+<span class="sd">        is missed; closed once the attempt has its frame or gave up."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_drain</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">Messages</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_messages</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_drain</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_drain</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_messages</span><span class="o">.</span><span class="n">get_nowait</span><span class="p">()</span>
+            <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+                <span class="k">return</span></div>
+
+
+
+<div class="viewcode-block" id="TappedFormatter">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.TappedFormatter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TappedFormatter</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The middleware's formatter of one parameter, with every inbound payload copied to the sink.</span>
+
+<span class="sd">    `deserialize` runs in the read connector's receive loop, with the payload as the connector</span>
+<span class="sd">    parsed it from JSON, before the formatter takes the value at the value path out of it: so the</span>
+<span class="sd">    sink gets the whole envelope, the time and the phase of a reading, the counts and the source</span>
+<span class="sd">    of an end message. `serialize` is the formatter's own: a setpoint goes out as the middleware</span>
+<span class="sd">    encodes it. Both legs of a parameter share one instance, as they share the formatter they</span>
+<span class="sd">    wrap.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">inner</span><span class="p">:</span> <span class="n">MQTTParameterFormatter</span><span class="p">,</span> <span class="n">parameter</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">sink</span><span class="p">:</span> <span class="n">Sink</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inner</span> <span class="o">=</span> <span class="n">inner</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parameter</span> <span class="o">=</span> <span class="n">parameter</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sink</span> <span class="o">=</span> <span class="n">sink</span>
+
+<div class="viewcode-block" id="TappedFormatter.deserialize">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.TappedFormatter.deserialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">deserialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sink</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parameter</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">deserialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="TappedFormatter.serialize">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.TappedFormatter.serialize">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BoundParameter">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.BoundParameter">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">BoundParameter</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""One parameter of the robot as the middleware bound it: the binding recognition gave the</span>
+<span class="sd">    descriptor (the holder, the field on its model, the node's type and metadata), and the</span>
+<span class="sd">    middleware's formatter of it, which knows the node's shape for a setpoint."""</span>
+
+    <span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span>
+    <span class="n">formatter</span><span class="p">:</span> <span class="n">MQTTParameterFormatter</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">parameter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IRI</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="RobotWiring">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.RobotWiring">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RobotWiring</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the screwing resource's build is given to drive the robot: the sink its attempt</span>
+<span class="sd">    collects from, the registry that holds use case 1's descriptor, the transport hook that</span>
+<span class="sd">    brings up the broker, and, once the middleware has built its connectors, each parameter it</span>
+<span class="sd">    bound.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ensure_transport: The transport hook the middleware calls with the broker's address</span>
+<span class="sd">            before it builds the first connector for it; None brings up nothing.</span>
+<span class="sd">    """</span>
+
+    <span class="n">sink</span><span class="p">:</span> <span class="n">Sink</span>
+    <span class="n">registry</span><span class="p">:</span> <span class="n">SemanticConnectorRegistry</span>
+    <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">bound</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">BoundParameter</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RobotWiring.check">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.RobotWiring.check">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Raise unless every parameter of `ROBOT_PARAMETERS` was bound. A graph without the</span>
+<span class="sd">        seeded robot gives a middleware without connectors, and then every attempt would wait for</span>
+<span class="sd">        its timeout in silence."""</span>
+        <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">fragment</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ROBOT_PARAMETERS</span> <span class="k">if</span> <span class="n">p</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bound</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="s2">"the middleware built no connector for "</span>
+                <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span>
+                <span class="o">+</span> <span class="s2">": the graph does not describe the robot's parameters as the seed writes them"</span>
+            <span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="robot_wiring">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.robot_wiring">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">robot_wiring</span><span class="p">(</span>
+    <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RobotWiring</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Use case 1's binding descriptor, in a registry of its own, with the sink it fills.</span>
+
+<span class="sd">    The descriptor builds what the middleware's `MQTTBinding` builds, from the same metadata, and</span>
+<span class="sd">    wraps each registration's formatter in a `TappedFormatter` over the wiring's sink. It records</span>
+<span class="sd">    each parameter it bound.</span>
+<span class="sd">    """</span>
+    <span class="n">sink</span> <span class="o">=</span> <span class="n">Sink</span><span class="p">()</span>
+    <span class="n">bound</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">BoundParameter</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">RobotMQTTBinding</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""`MQTTBinding` with the formatter tapped: every payload reaches the attempt's sink."""</span>
+
+        <span class="n">connector_cls</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="n">MQTTBinding</span><span class="o">.</span><span class="n">connector_cls</span>
+        <span class="n">interface_property</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="n">MQTTBinding</span><span class="o">.</span><span class="n">interface_property</span>
+        <span class="n">connection_metadata</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="n">MQTTBinding</span><span class="o">.</span><span class="n">connection_metadata</span>
+
+        <span class="nd">@staticmethod</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span>
+            <span class="n">binding</span><span class="p">:</span> <span class="n">ParameterBinding</span><span class="p">,</span>
+            <span class="n">direction</span><span class="p">:</span> <span class="n">SyncDirection</span><span class="p">,</span>
+            <span class="o">*</span><span class="p">,</span>
+            <span class="n">ensure_transport</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Registration</span><span class="p">]:</span>
+            <span class="n">registrations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                <span class="n">MQTTBinding</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">binding</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">ensure_transport</span><span class="o">=</span><span class="n">ensure_transport</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">registrations</span><span class="p">:</span>
+                <span class="k">return</span>
+            <span class="n">inner</span> <span class="o">=</span> <span class="n">registrations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">formatter</span>
+            <span class="n">parameter</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">parameter_property</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inner</span><span class="p">,</span> <span class="n">MQTTParameterFormatter</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"the middleware's MQTT binding gave </span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> a "</span>
+                    <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">inner</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, not its formatter"</span>
+                <span class="p">)</span>
+            <span class="n">tapped</span> <span class="o">=</span> <span class="n">TappedFormatter</span><span class="p">(</span><span class="n">inner</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">sink</span><span class="p">)</span>
+            <span class="n">bound</span><span class="p">[</span><span class="n">parameter</span><span class="p">]</span> <span class="o">=</span> <span class="n">BoundParameter</span><span class="p">(</span><span class="n">binding</span><span class="p">,</span> <span class="n">inner</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">registration</span> <span class="ow">in</span> <span class="n">registrations</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">replace</span><span class="p">(</span><span class="n">registration</span><span class="p">,</span> <span class="n">formatter</span><span class="o">=</span><span class="n">tapped</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">RobotWiring</span><span class="p">(</span>
+        <span class="n">sink</span><span class="o">=</span><span class="n">sink</span><span class="p">,</span>
+        <span class="n">registry</span><span class="o">=</span><span class="n">SemanticConnectorRegistry</span><span class="p">([</span><span class="n">RobotMQTTBinding</span><span class="p">]),</span>
+        <span class="n">ensure_transport</span><span class="o">=</span><span class="n">ensure_transport</span><span class="p">,</span>
+        <span class="n">bound</span><span class="o">=</span><span class="n">bound</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Setpoints">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Setpoints">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Setpoints</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Writes a value of a parameter of the robot into the data model of the screwing resource's</span>
+<span class="sd">    middleware, so that the parameter's write connector publishes it to its set topic. Interim: the</span>
+<span class="sd">    middleware has no public verb for a write that names a parameter.</span>
+
+<span class="sd">    The write runs on the middleware's event loop, where the connectors run: it reads the</span>
+<span class="sd">    resource's model from the persistence connector, sets the parameter's field on the robot's</span>
+<span class="sd">    model to a node holding the value, and hands the model back with the field named as what</span>
+<span class="sd">    changed. The persistence connector then notifies the connectors of that field alone, and of</span>
+<span class="sd">    those only the write leg publishes; the data model shows the value from then on. The loop is</span>
+<span class="sd">    the one the middleware runs its start-up callbacks on, captured there; a write before the</span>
+<span class="sd">    middleware has started raises.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        middleware: The screwing resource's middleware instance.</span>
+<span class="sd">        resource: The screwing resource, the root of the data model.</span>
+<span class="sd">        wiring: The wiring that holds each bound parameter: its field and its node's shape.</span>
+<span class="sd">        timeout: How long the worker thread waits for the loop to finish one write.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">middleware</span><span class="p">:</span> <span class="n">SemanticMiddleware</span><span class="p">,</span>
+        <span class="n">resource</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">wiring</span><span class="p">:</span> <span class="n">RobotWiring</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">SETPOINT_TIMEOUT_SECONDS</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_middleware</span> <span class="o">=</span> <span class="n">middleware</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_resource</span> <span class="o">=</span> <span class="n">IRI</span><span class="p">(</span><span class="n">resource</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_wiring</span> <span class="o">=</span> <span class="n">wiring</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span> <span class="o">=</span> <span class="n">timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop</span><span class="p">:</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">AbstractEventLoop</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_started</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+        <span class="n">middleware</span><span class="o">.</span><span class="n">add_callback</span><span class="p">(</span><span class="s2">"on_start_up"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_capture_loop</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_capture_loop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_started</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Setpoints.write">
+<a class="viewcode-back" href="../../../reference/uc1/robot_binding.html#jms_kapps.uc1.robot_binding.Setpoints.write">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameter</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Write `value` as the value of `parameter` of the robot.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            RuntimeError: If the middleware has not started, if this is called on the event loop</span>
+<span class="sd">                itself (where waiting for the loop would never end), or if the write did not</span>
+<span class="sd">                finish within the timeout.</span>
+<span class="sd">            KeyError: If the middleware built no connector for `parameter`.</span>
+<span class="sd">        """</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_started</span><span class="o">.</span><span class="n">is_set</span><span class="p">()</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> cannot be set: the middleware has not started"</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_running_loop</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span><span class="p">:</span>
+            <span class="n">running</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">running</span> <span class="ow">is</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> cannot be set from the event loop that runs the "</span>
+                <span class="s2">"connectors: the attempt belongs on the workflow's worker thread"</span>
+            <span class="p">)</span>
+        <span class="n">bound</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wiring</span><span class="o">.</span><span class="n">bound</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">IRI</span><span class="p">(</span><span class="n">parameter</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">bound</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the middleware built no connector for </span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2">; it has "</span>
+                <span class="o">+</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">fragment</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wiring</span><span class="o">.</span><span class="n">bound</span><span class="p">))</span>
+            <span class="p">)</span>
+        <span class="n">future</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run_coroutine_threadsafe</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_write</span><span class="p">(</span><span class="n">bound</span><span class="p">,</span> <span class="n">_node</span><span class="p">(</span><span class="n">bound</span><span class="o">.</span><span class="n">formatter</span><span class="p">,</span> <span class="n">value</span><span class="p">)),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loop</span>
+        <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">TimeoutError</span><span class="p">:</span>
+            <span class="n">future</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the write of </span><span class="si">{</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="si">}</span><span class="s2"> did not finish within "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_timeout</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s"</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span></div>
+
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">_write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bound</span><span class="p">:</span> <span class="n">BoundParameter</span><span class="p">,</span> <span class="n">node</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">binding</span> <span class="o">=</span> <span class="n">bound</span><span class="o">.</span><span class="n">binding</span>
+        <span class="n">persistence</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_middleware</span><span class="o">.</span><span class="n">persistence_registry</span><span class="o">.</span><span class="n">get_connector_by_data_model_and_model_id</span><span class="p">(</span>
+            <span class="n">data_model_name</span><span class="o">=</span><span class="n">RESOURCE_DATA_MODEL</span><span class="p">,</span> <span class="n">model_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_resource</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="k">await</span> <span class="n">persistence</span><span class="o">.</span><span class="n">provide_persistence_value</span><span class="p">()</span>
+        <span class="n">robot</span> <span class="o">=</span> <span class="n">DataModel</span><span class="o">.</span><span class="n">from_models</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">))</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">robot</span><span class="p">,</span> <span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+        <span class="n">changed</span> <span class="o">=</span> <span class="n">ConnectionInfo</span><span class="p">(</span>
+            <span class="n">data_model_name</span><span class="o">=</span><span class="n">RESOURCE_DATA_MODEL</span><span class="p">,</span>
+            <span class="n">model_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_resource</span><span class="p">),</span>
+            <span class="n">contained_model_id</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="p">),</span>
+            <span class="n">field_id</span><span class="o">=</span><span class="n">binding</span><span class="o">.</span><span class="n">field_id</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+            <span class="s2">"</span><span class="si">%s</span><span class="s2">: </span><span class="si">%s</span><span class="s2"> is set on </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_resource</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">bound</span><span class="o">.</span><span class="n">parameter</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+            <span class="n">binding</span><span class="o">.</span><span class="n">resource_iri</span><span class="o">.</span><span class="n">fragment</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">await</span> <span class="n">persistence</span><span class="o">.</span><span class="n">consume</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">changed</span><span class="o">=</span><span class="n">changed</span><span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_node</span><span class="p">(</span><span class="n">formatter</span><span class="p">:</span> <span class="n">MQTTParameterFormatter</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The persistence value of a parameter holding `value`: a one-element list with the node, in</span>
+<span class="sd">    the shape the middleware's formatter writes for an inbound reading, with the same facets."""</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">formatter</span><span class="o">.</span><span class="n">northbound_facets</span><span class="p">)</span>
+    <span class="n">fields</span><span class="p">[</span><span class="n">formatter</span><span class="o">.</span><span class="n">value_field</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">formatter</span><span class="o">.</span><span class="n">model_type</span><span class="p">(</span><span class="o">**</span><span class="n">fields</span><span class="p">)]</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

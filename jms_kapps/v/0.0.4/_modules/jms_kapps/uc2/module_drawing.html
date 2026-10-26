@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.module_drawing &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/module_drawing';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.module_drawing</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.module_drawing</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The two drawings of a module's dashboard, as inline SVG: the module seen from above, and the</span>
+<span class="sd">adjacency matrix of the connections it read.</span>
+
+<span class="sd">It is drawn as a real module looks from above: a green frame; inside it, silver motor rollers that</span>
+<span class="sd">lie east–west side by side and carry a box north–south, and between them the dark strips of the</span>
+<span class="sd">belt conveyors, which carry a box east–west. The light barriers are left out. North is up. A box</span>
+<span class="sd">the module holds sits in the middle, with its name on it. Outside the frame, each side shows the</span>
+<span class="sd">connections on that side: an arrow out to each module this one hands boxes to in that direction,</span>
+<span class="sd">and an arrow in from each module that hands boxes to this one from there.</span>
+
+<span class="sd">The adjacency matrix is the classic one, drawn to the width it is given: a row and a column for</span>
+<span class="sd">each module, and in the cell of a row and a column the side by which the row's module hands boxes</span>
+<span class="sd">to the column's.</span>
+
+<span class="sd">Both drawings are static SVG, with no script: the dashboard asks for them again to show what</span>
+<span class="sd">changed.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">escape</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectedConnection</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">Direction</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">UUID_BOX_PREFIX</span><span class="p">,</span> <span class="n">local_name</span>
+
+<span class="n">Way</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"out"</span><span class="p">,</span> <span class="s2">"in"</span><span class="p">]</span>
+
+<span class="c1"># The side of a module that a connection in each direction leaves by, seen from the module it</span>
+<span class="c1"># leads to: a box that leaves by the South comes in from the North.</span>
+<span class="n">_FROM</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Direction</span><span class="p">,</span> <span class="n">Direction</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"North"</span><span class="p">:</span> <span class="s2">"South"</span><span class="p">,</span>
+    <span class="s2">"East"</span><span class="p">:</span> <span class="s2">"West"</span><span class="p">,</span>
+    <span class="s2">"South"</span><span class="p">:</span> <span class="s2">"North"</span><span class="p">,</span>
+    <span class="s2">"West"</span><span class="p">:</span> <span class="s2">"East"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># The canvas, and the frame of the module in its middle.</span>
+<span class="n">_WIDTH</span><span class="p">,</span> <span class="n">_HEIGHT</span> <span class="o">=</span> <span class="mi">360</span><span class="p">,</span> <span class="mi">300</span>
+<span class="n">_LEFT</span><span class="p">,</span> <span class="n">_TOP</span><span class="p">,</span> <span class="n">_SIZE</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">160</span>
+<span class="n">_RIGHT</span><span class="p">,</span> <span class="n">_BOTTOM</span> <span class="o">=</span> <span class="n">_LEFT</span> <span class="o">+</span> <span class="n">_SIZE</span><span class="p">,</span> <span class="n">_TOP</span> <span class="o">+</span> <span class="n">_SIZE</span>
+<span class="n">_MIDDLE_X</span><span class="p">,</span> <span class="n">_MIDDLE_Y</span> <span class="o">=</span> <span class="n">_LEFT</span> <span class="o">+</span> <span class="n">_SIZE</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">_TOP</span> <span class="o">+</span> <span class="n">_SIZE</span> <span class="o">//</span> <span class="mi">2</span>
+
+<span class="c1"># Five rollers, each 20 high, with the 9 between two of them for a belt conveyor.</span>
+<span class="n">_ROLLERS</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">_ROLLER_HEIGHT</span><span class="p">,</span> <span class="n">_ROLLER_STEP</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">29</span>
+<span class="n">_FIRST_ROLLER</span> <span class="o">=</span> <span class="n">_TOP</span> <span class="o">+</span> <span class="mi">12</span>
+
+<span class="c1"># The colours of the module, as the photograph shows it; the arrows take the dashboard's own.</span>
+<span class="n">_FRAME</span> <span class="o">=</span> <span class="s2">"#3fae49"</span>
+<span class="n">_INSIDE</span> <span class="o">=</span> <span class="s2">"#1d1d1d"</span>
+<span class="n">_ROLLER_END</span> <span class="o">=</span> <span class="s2">"#7b7b7b"</span>
+<span class="n">_BELT</span> <span class="o">=</span> <span class="s2">"#353535"</span>
+<span class="n">_BELT_PAD</span> <span class="o">=</span> <span class="s2">"#8f969b"</span>
+<span class="n">_BOX</span> <span class="o">=</span> <span class="s2">"#c9a265"</span>
+<span class="n">_BOX_EDGE</span> <span class="o">=</span> <span class="s2">"#7a5a2b"</span>
+<span class="n">_BOX_TAPE</span> <span class="o">=</span> <span class="s2">"#e0c48f"</span>
+<span class="n">_BOX_TEXT</span> <span class="o">=</span> <span class="s2">"#2b1d0b"</span>
+
+<span class="c1"># Where the arrow of each side and way runs, from its start to its head, and where its label is</span>
+<span class="c1"># anchored: (x1, y1, x2, y2, label x, label y, label anchor).</span>
+<span class="n">_ARROWS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">Direction</span><span class="p">,</span> <span class="n">Way</span><span class="p">],</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">(</span><span class="s2">"North"</span><span class="p">,</span> <span class="s2">"out"</span><span class="p">):</span> <span class="p">(</span><span class="mi">156</span><span class="p">,</span> <span class="n">_TOP</span> <span class="o">-</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"North"</span><span class="p">,</span> <span class="s2">"in"</span><span class="p">):</span> <span class="p">(</span><span class="mi">204</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="n">_TOP</span> <span class="o">-</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"South"</span><span class="p">,</span> <span class="s2">"out"</span><span class="p">):</span> <span class="p">(</span><span class="mi">156</span><span class="p">,</span> <span class="n">_BOTTOM</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">156</span><span class="p">,</span> <span class="n">_HEIGHT</span> <span class="o">-</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"South"</span><span class="p">,</span> <span class="s2">"in"</span><span class="p">):</span> <span class="p">(</span><span class="mi">204</span><span class="p">,</span> <span class="n">_HEIGHT</span> <span class="o">-</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="n">_BOTTOM</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">262</span><span class="p">,</span> <span class="s2">"start"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"East"</span><span class="p">,</span> <span class="s2">"out"</span><span class="p">):</span> <span class="p">(</span><span class="n">_RIGHT</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="n">_RIGHT</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="n">_RIGHT</span> <span class="o">+</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="s2">"middle"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"East"</span><span class="p">,</span> <span class="s2">"in"</span><span class="p">):</span> <span class="p">(</span><span class="n">_RIGHT</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="n">_RIGHT</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="n">_RIGHT</span> <span class="o">+</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="s2">"middle"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"West"</span><span class="p">,</span> <span class="s2">"out"</span><span class="p">):</span> <span class="p">(</span><span class="n">_LEFT</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="n">_LEFT</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="n">_LEFT</span> <span class="o">-</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="s2">"middle"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"West"</span><span class="p">,</span> <span class="s2">"in"</span><span class="p">):</span> <span class="p">(</span><span class="n">_LEFT</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="n">_LEFT</span> <span class="o">-</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="n">_LEFT</span> <span class="o">-</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">191</span><span class="p">,</span> <span class="s2">"middle"</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="c1"># What an arrow says when the pointer rests on it.</span>
+<span class="n">_TOOLTIP</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Way</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"out"</span><span class="p">:</span> <span class="s2">"</span><span class="si">{module}</span><span class="s2"> hands boxes </span><span class="si">{direction}</span><span class="s2"> to </span><span class="si">{others}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="s2">"in"</span><span class="p">:</span> <span class="s2">"</span><span class="si">{module}</span><span class="s2"> takes boxes from </span><span class="si">{others}</span><span class="s2">, to its </span><span class="si">{direction}</span><span class="s2">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">_ARROW_STYLE</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Way</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"out"</span><span class="p">:</span> <span class="s2">"stroke: var(--accent); fill: var(--accent)"</span><span class="p">,</span>
+    <span class="s2">"in"</span><span class="p">:</span> <span class="s2">"stroke: var(--fg); fill: var(--fg)"</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_sides</span><span class="p">(</span>
+    <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">Direction</span><span class="p">,</span> <span class="n">Way</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""The modules on each side of `module` and way: those it leads to by that side, and those</span>
+<span class="sd">    that lead to it from there. A connection without one of the four directions is left out."""</span>
+    <span class="n">sides</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">Direction</span><span class="p">,</span> <span class="n">Way</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]]</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">connection</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="n">module</span><span class="p">:</span>
+            <span class="n">sides</span><span class="p">[(</span><span class="n">connection</span><span class="o">.</span><span class="n">direction</span><span class="p">,</span> <span class="s2">"out"</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">connection</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">connection</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="n">module</span><span class="p">:</span>
+            <span class="n">sides</span><span class="p">[(</span><span class="n">_FROM</span><span class="p">[</span><span class="n">connection</span><span class="o">.</span><span class="n">direction</span><span class="p">],</span> <span class="s2">"in"</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">connection</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sides</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_arrow</span><span class="p">(</span><span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">direction</span><span class="p">:</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">way</span><span class="p">:</span> <span class="n">Way</span><span class="p">,</span> <span class="n">others</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The arrow of one side and way, with the names of `others` beside it."""</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label_x</span><span class="p">,</span> <span class="n">label_y</span><span class="p">,</span> <span class="n">anchor</span> <span class="o">=</span> <span class="n">_ARROWS</span><span class="p">[(</span><span class="n">direction</span><span class="p">,</span> <span class="n">way</span><span class="p">)]</span>
+    <span class="c1"># The head: a triangle at (x2, y2), pointing the way the arrow runs.</span>
+    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="p">(</span><span class="n">x2</span> <span class="o">&gt;</span> <span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x2</span> <span class="o">&lt;</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y2</span> <span class="o">&gt;</span> <span class="n">y1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">y2</span> <span class="o">&lt;</span> <span class="n">y1</span><span class="p">)</span>
+    <span class="n">back_x</span><span class="p">,</span> <span class="n">back_y</span> <span class="o">=</span> <span class="n">x2</span> <span class="o">-</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">dx</span><span class="p">,</span> <span class="n">y2</span> <span class="o">-</span> <span class="mi">9</span> <span class="o">*</span> <span class="n">dy</span>
+    <span class="n">head</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">y2</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">back_x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dy</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">back_y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">back_x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dy</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">back_y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dx</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">local_name</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">others</span><span class="p">)</span>
+    <span class="n">says</span> <span class="o">=</span> <span class="n">_TOOLTIP</span><span class="p">[</span><span class="n">way</span><span class="p">]</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">module</span><span class="o">=</span><span class="n">local_name</span><span class="p">(</span><span class="n">module</span><span class="p">),</span> <span class="n">direction</span><span class="o">=</span><span class="n">direction</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">others</span><span class="o">=</span><span class="n">names</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;g class="connection" data-direction="</span><span class="si">{</span><span class="n">direction</span><span class="si">}</span><span class="s1">" data-way="</span><span class="si">{</span><span class="n">way</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'style="</span><span class="si">{</span><span class="n">_ARROW_STYLE</span><span class="p">[</span><span class="n">way</span><span class="p">]</span><span class="si">}</span><span class="s1">"&gt;'</span>
+        <span class="sa">f</span><span class="s2">"&lt;title&gt;</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">says</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/title&gt;"</span>
+        <span class="sa">f</span><span class="s1">'&lt;line x1="</span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s1">" y1="</span><span class="si">{</span><span class="n">y1</span><span class="si">}</span><span class="s1">" x2="</span><span class="si">{</span><span class="n">back_x</span><span class="si">}</span><span class="s1">" y2="</span><span class="si">{</span><span class="n">back_y</span><span class="si">}</span><span class="s1">" stroke-width="3"/&gt;'</span>
+        <span class="sa">f</span><span class="s1">'&lt;polygon points="</span><span class="si">{</span><span class="n">head</span><span class="si">}</span><span class="s1">" stroke-width="1"/&gt;'</span>
+        <span class="sa">f</span><span class="s1">'&lt;text x="</span><span class="si">{</span><span class="n">label_x</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">label_y</span><span class="si">}</span><span class="s1">" text-anchor="</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'dominant-baseline="middle" style="stroke: none"&gt;</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/text&gt;'</span>
+        <span class="s2">"&lt;/g&gt;"</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_rollers_and_belts</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The rollers, silver cylinders lying east–west, and between each two the dark strip of a</span>
+<span class="sd">    belt conveyor with its light pads."""</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">_ROLLERS</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">_FIRST_ROLLER</span> <span class="o">+</span> <span class="n">row</span> <span class="o">*</span> <span class="n">_ROLLER_STEP</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_LEFT</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" width="</span><span class="si">{</span><span class="n">_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">20</span><span class="si">}</span><span class="s1">" height="</span><span class="si">{</span><span class="n">_ROLLER_HEIGHT</span><span class="si">}</span><span class="s1">" '</span>
+            <span class="s1">'rx="3" fill="url(#module-roller)"/&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_LEFT</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" width="7" height="</span><span class="si">{</span><span class="n">_ROLLER_HEIGHT</span><span class="si">}</span><span class="s1">" rx="2" '</span>
+            <span class="sa">f</span><span class="s1">'fill="</span><span class="si">{</span><span class="n">_ROLLER_END</span><span class="si">}</span><span class="s1">"/&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_RIGHT</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">17</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" width="7" height="</span><span class="si">{</span><span class="n">_ROLLER_HEIGHT</span><span class="si">}</span><span class="s1">" rx="2" '</span>
+            <span class="sa">f</span><span class="s1">'fill="</span><span class="si">{</span><span class="n">_ROLLER_END</span><span class="si">}</span><span class="s1">"/&gt;'</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="n">_ROLLERS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">belt_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">_ROLLER_HEIGHT</span> <span class="o">+</span> <span class="mi">2</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_LEFT</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">18</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">belt_y</span><span class="si">}</span><span class="s1">" width="</span><span class="si">{</span><span class="n">_SIZE</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">36</span><span class="si">}</span><span class="s1">" height="5" '</span>
+            <span class="sa">f</span><span class="s1">'fill="</span><span class="si">{</span><span class="n">_BELT</span><span class="si">}</span><span class="s1">"/&gt;'</span>
+        <span class="p">)</span>
+        <span class="c1"># The pads sit in turn further west and further east, as on the photograph.</span>
+        <span class="k">for</span> <span class="n">pad_x</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">92</span><span class="p">)</span> <span class="k">if</span> <span class="n">row</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">):</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_LEFT</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pad_x</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">belt_y</span><span class="si">}</span><span class="s1">" width="22" height="5" '</span>
+                <span class="sa">f</span><span class="s1">'fill="</span><span class="si">{</span><span class="n">_BELT_PAD</span><span class="si">}</span><span class="s1">"/&gt;'</span>
+            <span class="p">)</span>
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_frame</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The green frame, with a silver joint at each corner."""</span>
+    <span class="n">corners</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;circle cx="</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">" cy="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" r="5" fill="#bdbdbd"/&gt;'</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_LEFT</span><span class="p">,</span> <span class="n">_RIGHT</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_TOP</span><span class="p">,</span> <span class="n">_BOTTOM</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_LEFT</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">_TOP</span><span class="si">}</span><span class="s1">" width="</span><span class="si">{</span><span class="n">_SIZE</span><span class="si">}</span><span class="s1">" height="</span><span class="si">{</span><span class="n">_SIZE</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'fill="</span><span class="si">{</span><span class="n">_INSIDE</span><span class="si">}</span><span class="s1">" stroke="</span><span class="si">{</span><span class="n">_FRAME</span><span class="si">}</span><span class="s1">" stroke-width="6"/&gt;</span><span class="si">{</span><span class="n">corners</span><span class="si">}</span><span class="s1">'</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_box_label</span><span class="p">(</span><span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the cardboard box says: the box's name, or, for a box named by a UUID, `Box-` and</span>
+<span class="sd">    the first four characters of the UUID, as the monitor's disc shows those four: a box's whole</span>
+<span class="sd">    name, `Box-&lt;UUID&gt;`, does not fit on it. Interim name."""</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">local_name</span><span class="p">(</span><span class="n">box</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">UUID_BOX_PREFIX</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">name</span><span class="p">[:</span> <span class="nb">len</span><span class="p">(</span><span class="n">UUID_BOX_PREFIX</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">name</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_held_box</span><span class="p">(</span><span class="n">box</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A cardboard box in the middle of the module, with its name on it (`_box_label`), and its</span>
+<span class="sd">    whole IRI as its title."""</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="mi">84</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">_MIDDLE_X</span> <span class="o">-</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">_MIDDLE_Y</span> <span class="o">-</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;g class="held-box"&gt;&lt;title&gt;</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">box</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/title&gt;'</span>
+        <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" width="</span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s1">" height="</span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s1">" rx="2" fill="</span><span class="si">{</span><span class="n">_BOX</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'stroke="</span><span class="si">{</span><span class="n">_BOX_EDGE</span><span class="si">}</span><span class="s1">" stroke-width="2"/&gt;'</span>
+        <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">_MIDDLE_X</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">6</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">" width="12" height="</span><span class="si">{</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'fill="</span><span class="si">{</span><span class="n">_BOX_TAPE</span><span class="si">}</span><span class="s1">"/&gt;'</span>
+        <span class="sa">f</span><span class="s1">'&lt;text x="</span><span class="si">{</span><span class="n">_MIDDLE_X</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">_MIDDLE_Y</span><span class="si">}</span><span class="s1">" text-anchor="middle" '</span>
+        <span class="sa">f</span><span class="s1">'dominant-baseline="middle" font-weight="bold" fill="</span><span class="si">{</span><span class="n">_BOX_TEXT</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'stroke="</span><span class="si">{</span><span class="n">_BOX</span><span class="si">}</span><span class="s1">" stroke-width="4" paint-order="stroke"&gt;'</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">_box_label</span><span class="p">(</span><span class="n">box</span><span class="p">))</span><span class="si">}</span><span class="s2">&lt;/text&gt;&lt;/g&gt;"</span>
+    <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_north</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Which way is north."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="s1">'&lt;g style="fill: var(--muted); stroke: var(--muted)"&gt;'</span>
+        <span class="s1">'&lt;line x1="24" y1="44" x2="24" y2="22" stroke-width="2"/&gt;'</span>
+        <span class="s1">'&lt;polygon points="24,14 19,24 29,24" stroke-width="1"/&gt;'</span>
+        <span class="s1">'&lt;text x="24" y="58" text-anchor="middle" style="stroke: none"&gt;N&lt;/text&gt;&lt;/g&gt;'</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="top_view">
+<a class="viewcode-back" href="../../../reference/uc2/module_drawing.html#jms_kapps.uc2.module_drawing.top_view">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">top_view</span><span class="p">(</span>
+    <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">held</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`module` from above, holding `held` if it holds a box, with the connections of</span>
+<span class="sd">    `connections` that lead from or to it, as an inline SVG element."""</span>
+    <span class="n">sides</span> <span class="o">=</span> <span class="n">_sides</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">connections</span><span class="p">)</span>
+    <span class="n">arrows</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="n">_arrow</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">direction</span><span class="p">,</span> <span class="n">way</span><span class="p">,</span> <span class="n">sides</span><span class="p">[(</span><span class="n">direction</span><span class="p">,</span> <span class="n">way</span><span class="p">)])</span>
+        <span class="k">for</span> <span class="n">direction</span><span class="p">,</span> <span class="n">way</span> <span class="ow">in</span> <span class="n">_ARROWS</span>
+        <span class="k">if</span> <span class="n">sides</span><span class="o">.</span><span class="n">get</span><span class="p">((</span><span class="n">direction</span><span class="p">,</span> <span class="n">way</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">held_text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"holds </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">held</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">held</span> <span class="k">else</span> <span class="s2">"holds no box"</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">module</span><span class="p">)</span><span class="si">}</span><span class="s2"> from above; it </span><span class="si">{</span><span class="n">held_text</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 </span><span class="si">{</span><span class="n">_WIDTH</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">_HEIGHT</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'role="img" aria-label="</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">label</span><span class="p">)</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="s1">'style="display: block; width: 100%; max-width: 420px; height: auto; '</span>
+        <span class="s1">'margin: 0 auto; font-family: var(--sans); font-size: 12px"&gt;'</span>
+        <span class="s2">"&lt;defs&gt;"</span>
+        <span class="s1">'&lt;linearGradient id="module-roller" x1="0" y1="0" x2="0" y2="1"&gt;'</span>
+        <span class="s1">'&lt;stop offset="0" stop-color="#fbfbfb"/&gt;'</span>
+        <span class="s1">'&lt;stop offset="0.45" stop-color="#cfcfcf"/&gt;'</span>
+        <span class="s1">'&lt;stop offset="0.75" stop-color="#8a8a8a"/&gt;'</span>
+        <span class="s1">'&lt;stop offset="1" stop-color="#d6d6d6"/&gt;'</span>
+        <span class="s2">"&lt;/linearGradient&gt;"</span>
+        <span class="s2">"&lt;/defs&gt;"</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_north</span><span class="p">()</span><span class="si">}{</span><span class="n">_frame</span><span class="p">()</span><span class="si">}{</span><span class="n">_rollers_and_belts</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_held_box</span><span class="p">(</span><span class="n">held</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">held</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">''</span><span class="si">}{</span><span class="n">arrows</span><span class="si">}</span><span class="s2">"</span>
+        <span class="s2">"&lt;/svg&gt;"</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="c1"># -- The adjacency matrix ---------------------------------------------------------------------- #</span>
+
+<span class="c1"># The side of a cell, and the room a character of a module's name takes, in the drawing's units.</span>
+<span class="n">_CELL</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">_CHARACTER</span> <span class="o">=</span> <span class="mf">7.4</span>
+<span class="c1"># How far the matrix may grow beyond its own size: a small station's fits its box without</span>
+<span class="c1"># drawing its letters several times their size.</span>
+<span class="n">_MOST_SCALE</span> <span class="o">=</span> <span class="mf">2.5</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_in_number_order</span><span class="p">(</span><span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A sort key that puts Module2 before Module10: the local name, its numbers as numbers."""</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s2">"(\d+)"</span><span class="p">,</span> <span class="n">local_name</span><span class="p">(</span><span class="n">module</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="k">else</span> <span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">module</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_cell_text</span><span class="p">(</span><span class="n">direction</span><span class="p">:</span> <span class="n">Direction</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">both_ways</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The side a connection leaves by, as its first letter, or a dot if the graph names none;</span>
+<span class="sd">    with a double arrow where the two modules connect both ways."""</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">direction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">direction</span> <span class="k">else</span> <span class="s2">"•"</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"↔"</span> <span class="k">if</span> <span class="n">both_ways</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_matrix_cell</span><span class="p">(</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">target</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">leads</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="n">Direction</span> <span class="o">|</span> <span class="kc">None</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The cell of the row of `source` and the column of `target`: the side by which `source`</span>
+<span class="sd">    hands boxes to `target`, if it does, and empty otherwise."""</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;g class="cell" data-from="</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">local_name</span><span class="p">(</span><span class="n">source</span><span class="p">))</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'data-to="</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">local_name</span><span class="p">(</span><span class="n">target</span><span class="p">))</span><span class="si">}</span><span class="s1">"&gt;'</span>
+    <span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">fill</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" width="</span><span class="si">{</span><span class="n">_CELL</span><span class="si">}</span><span class="s1">" height="</span><span class="si">{</span><span class="n">_CELL</span><span class="si">}</span><span class="s1">" '</span>
+            <span class="sa">f</span><span class="s1">'style="stroke: var(--panel-border); fill: </span><span class="si">{</span><span class="n">fill</span><span class="si">}</span><span class="s1">"/&gt;'</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">leads</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">group</span><span class="si">}{</span><span class="n">square</span><span class="p">(</span><span class="s1">'none'</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/g&gt;"</span>
+    <span class="n">direction</span> <span class="o">=</span> <span class="n">leads</span><span class="p">[(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)]</span>
+    <span class="n">both_ways</span> <span class="o">=</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span> <span class="ow">in</span> <span class="n">leads</span>
+    <span class="n">says</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="si">}</span><span class="s2"> hands boxes"</span>
+    <span class="n">says</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="n">direction</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">direction</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="n">says</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">" to </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">says</span> <span class="o">+=</span> <span class="s2">"; the knowledge graph names no direction"</span> <span class="k">if</span> <span class="n">direction</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="n">says</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">", and </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="si">}</span><span class="s2"> hands boxes back"</span> <span class="k">if</span> <span class="n">both_ways</span> <span class="k">else</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">group</span><span class="si">}</span><span class="s2">&lt;title&gt;</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">says</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/title&gt;"</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">square</span><span class="p">(</span><span class="s1">'var(--accent); fill-opacity: 0.45'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="sa">f</span><span class="s1">'&lt;text x="</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_CELL</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_CELL</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">" text-anchor="middle" '</span>
+        <span class="s1">'dominant-baseline="middle" font-weight="bold" font-size="15" style="fill: var(--fg)"&gt;'</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">_cell_text</span><span class="p">(</span><span class="n">direction</span><span class="p">,</span><span class="w"> </span><span class="n">both_ways</span><span class="p">))</span><span class="si">}</span><span class="s2">&lt;/text&gt;&lt;/g&gt;"</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="adjacency_matrix">
+<a class="viewcode-back" href="../../../reference/uc2/module_drawing.html#jms_kapps.uc2.module_drawing.adjacency_matrix">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">adjacency_matrix</span><span class="p">(</span><span class="n">here</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span> <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The connections as a classic adjacency matrix, as inline SVG that scales to the width it</span>
+<span class="sd">    is given, up to two and a half times its own size: a row for each module and a column for</span>
+<span class="sd">    each, in the order of their numbers. A row</span>
+<span class="sd">    is the module a connection leaves, a column the module it leads to, and the cell says the</span>
+<span class="sd">    side it leaves by, with a double arrow where the two connect both ways. The row of `here` is</span>
+<span class="sd">    marked."""</span>
+    <span class="n">leads</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">],</span> <span class="n">Direction</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">connection</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
+        <span class="n">leads</span><span class="o">.</span><span class="n">setdefault</span><span class="p">((</span><span class="n">connection</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">connection</span><span class="o">.</span><span class="n">target</span><span class="p">),</span> <span class="n">connection</span><span class="o">.</span><span class="n">direction</span><span class="p">)</span>
+    <span class="n">modules</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="p">{</span><span class="n">here</span><span class="p">}</span> <span class="o">|</span> <span class="p">{</span><span class="n">module</span> <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">leads</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">pair</span><span class="p">},</span> <span class="n">key</span><span class="o">=</span><span class="n">_in_number_order</span>
+    <span class="p">)</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">local_name</span><span class="p">(</span><span class="n">module</span><span class="p">)</span> <span class="k">for</span> <span class="n">module</span> <span class="ow">in</span> <span class="n">modules</span><span class="p">]</span>
+    <span class="c1"># Room for the longest name, left of the rows and above the columns.</span>
+    <span class="n">margin</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">)</span> <span class="o">*</span> <span class="n">_CHARACTER</span><span class="p">)</span> <span class="o">+</span> <span class="mi">12</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">margin</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">modules</span><span class="p">)</span> <span class="o">*</span> <span class="n">_CELL</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;g class="column" data-module="</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s1">"&gt;'</span>
+        <span class="sa">f</span><span class="s1">'&lt;text transform="translate(</span><span class="si">{</span><span class="n">margin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">_CELL</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_CELL</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">margin</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">6</span><span class="si">}</span><span class="s1">) '</span>
+        <span class="sa">f</span><span class="s1">'rotate(-90)" dominant-baseline="middle" style="fill: var(--fg)"&gt;'</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/text&gt;&lt;/g&gt;"</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">modules</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">margin</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">_CELL</span>
+        <span class="n">is_here</span> <span class="o">=</span> <span class="n">source</span> <span class="o">==</span> <span class="n">here</span>
+        <span class="n">mark</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;rect x="0" y="</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">" width="</span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s1">" height="</span><span class="si">{</span><span class="n">_CELL</span><span class="si">}</span><span class="s1">" '</span>
+            <span class="s1">'style="fill: var(--accent); fill-opacity: 0.25"/&gt;'</span>
+            <span class="k">if</span> <span class="n">is_here</span>
+            <span class="k">else</span> <span class="s2">""</span>
+        <span class="p">)</span>
+        <span class="n">cells</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">_matrix_cell</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">margin</span> <span class="o">+</span> <span class="n">j</span> <span class="o">*</span> <span class="n">_CELL</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">leads</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">modules</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;g class="row</span><span class="si">{</span><span class="s2">" here"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_here</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">""</span><span class="si">}</span><span class="s1">" data-module="</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s1">"&gt;'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">mark</span><span class="si">}</span><span class="s1">&lt;text x="</span><span class="si">{</span><span class="n">margin</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">6</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">_CELL</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s1">" text-anchor="end" '</span>
+            <span class="sa">f</span><span class="s1">'dominant-baseline="middle"</span><span class="si">{</span><span class="s1">' font-weight="bold"'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_here</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s2">""</span><span class="si">}</span><span class="s1"> '</span>
+            <span class="sa">f</span><span class="s1">'style="fill: var(--fg)"&gt;</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/text&gt;</span><span class="si">{</span><span class="n">cells</span><span class="si">}</span><span class="s1">&lt;/g&gt;'</span>
+        <span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Adjacency matrix of the connections </span><span class="si">{</span><span class="n">local_name</span><span class="p">(</span><span class="n">here</span><span class="p">)</span><span class="si">}</span><span class="s2"> read"</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">'&lt;svg class="adjacency-matrix" xmlns="http://www.w3.org/2000/svg" '</span>
+        <span class="sa">f</span><span class="s1">'viewBox="0 0 </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">size</span><span class="si">}</span><span class="s1">" role="img" aria-label="</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="n">label</span><span class="p">)</span><span class="si">}</span><span class="s1">" '</span>
+        <span class="sa">f</span><span class="s1">'style="display: block; margin: 0 auto; width: 100%; '</span>
+        <span class="sa">f</span><span class="s2">"max-width: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">_MOST_SCALE</span><span class="p">)</span><span class="si">}</span><span class="s2">px; "</span>
+        <span class="s1">'height: auto; font-family: var(--sans); font-size: 13px"&gt;'</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">columns</span><span class="si">}{</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/svg&gt;"</span>
+    <span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

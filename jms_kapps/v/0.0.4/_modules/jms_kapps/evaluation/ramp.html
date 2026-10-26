@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.ramp &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/ramp';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.ramp</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.ramp</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The broken rule of the measurement harness, and how far a ramp went (iteration one).</span>
+
+<span class="sd">**A ramp** is a sweep block marked as a ramp (`ramp = true`), whose only axis is its rising box</span>
+<span class="sd">rates (`spec`). Each rate is one **load level**, made by one run. Its runs are heavy, so a ramp</span>
+<span class="sd">runs only under an approval that covers its spec for the period (`approval`; any person may</span>
+<span class="sd">approve). The sweep runs a ramp one</span>
+<span class="sd">rate per run, in rising order, judges each level with the broken rule after its run, and stops</span>
+<span class="sd">the ramp at the first level it ends at (`sweep`).</span>
+
+<span class="sd">**The broken rule.** A load level is broken at the first store-side signal, from its runs of use</span>
+<span class="sd">case 2 with the wrapper (`uc2`), each over its measured window but the first:</span>
+
+<span class="sd">- a refusal for want of heap (`heap refusal`), under the load: in the warm-up, the window and</span>
+<span class="sd">  the drain (`summary`);</span>
+<span class="sd">- more than 1 % of the store requests refused or unanswered, timed out or with their connection</span>
+<span class="sd">  dropped (`refused or unanswered`; a record written before the rename names it `refused or timed</span>
+<span class="sd">  out`, the same sum);</span>
+<span class="sd">- a p95 commit latency more than 10 times its value at the ramp's lowest rate, the lowest box</span>
+<span class="sd">  rate of the same configuration (`p95 commit latency`).</span>
+
+<span class="sd">A fourth signal, a plateau (`plateau`: the completed writes per minute rose by less than 5 % from</span>
+<span class="sd">the rate step before), is still found and shown in the record of the level, but it breaks no</span>
+<span class="sd">level and stops no ramp: a plateau alone cannot tell whether the store, KAPPS or UC2 is the limit.</span>
+
+<span class="sd">Stuck or failed boxes alone never break a level: they are counted for each level, beside it, and</span>
+<span class="sd">UC2's failures are no store-side signal. A level whose runs hold several repetitions pools them:</span>
+<span class="sd">the shares and the p95 over the requests and the commits of all of them, the writes per minute as</span>
+<span class="sd">their median.</span>
+
+<span class="sd">**UC2-limited.** A level is UC2-limited when fewer than 90 % of the spawns offered in its window</span>
+<span class="sd">are accepted (`ACCEPTED_SHARE`, a judgement setting outside the configuration's key). Offered</span>
+<span class="sd">spawns are the spawned and the refused ones, counted in the measured window from the</span>
+<span class="sd">WarehouseManagementSystem's time-stamped output lines (`record.spawns_in_window`); the accepted</span>
+<span class="sd">share is the accepted over the offered. A UC2-limited level breaks nothing: the ramp goes on.</span>
+
+<span class="sd">**The end of a ramp.** A ramp ends at its first broken level, and its **scale** is the level</span>
+<span class="sd">before it; none where the ramp broke at its lowest rate. A ramp also ends at a level that has a</span>
+<span class="sd">run but no run that counts (a run that failed, or one that a check found invalid): such a level</span>
+<span class="sd">cannot be judged, and the ramp sends no higher rate to the store. A level whose only run a stop</span>
+<span class="sd">signal ended has not run yet, and runs again. A ramp none of whose levels broke has no scale yet:</span>
+<span class="sd">it was not broken up to its highest rate. Each repetition of a ramp, a repetition on request in a</span>
+<span class="sd">spec with the precision rule (`heavy_parts`), is judged apart, from its own runs.</span>
+
+<span class="sd">**The judgement of a ramp** is one of three. *UC2-limited at level X* when the first UC2-limited</span>
+<span class="sd">level comes before the first broken level, or when no level broke. *Broken at level Y (signal)*</span>
+<span class="sd">when a level broke before any UC2-limited level. *Cannot tell* when neither happened (only a</span>
+<span class="sd">plateau, or the top level reached, or no spawn counts in the records), or both happened at the</span>
+<span class="sd">same level. The table compares a UC2-limited ramp with the replay of the same configuration</span>
+<span class="sd">(`ramp_comparison`).</span>
+
+<span class="sd">A plateau of the completed writes breaks no level and is only shown: a UC2-limited level usually</span>
+<span class="sd">plateaus, and its plateau says nothing about the store or KAPPS, so the judgement and the accepted</span>
+<span class="sd">share decide.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.bench</span><span class="w"> </span><span class="kn">import</span> <span class="n">INTERRUPTED</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.record</span><span class="w"> </span><span class="kn">import</span> <span class="n">RUN_KIND</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.spec</span><span class="w"> </span><span class="kn">import</span> <span class="n">SpecConfiguration</span><span class="p">,</span> <span class="n">ramps_of</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">quantile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.summary</span><span class="w"> </span><span class="kn">import</span> <span class="n">RunSummary</span><span class="p">,</span> <span class="n">repetition_of</span><span class="p">,</span> <span class="n">repetitions_made</span>
+
+<span class="c1"># The four store-side signals of the broken rule. `refused or unanswered` counts the requests that</span>
+<span class="c1"># the store refused, that timed out and whose connection dropped; a record written before the</span>
+<span class="c1"># rename names it `refused or timed out`, for the same sum (interim names).</span>
+<span class="n">HEAP_REFUSAL</span> <span class="o">=</span> <span class="s2">"heap refusal"</span>
+<span class="n">REFUSED_OR_UNANSWERED</span> <span class="o">=</span> <span class="s2">"refused or unanswered"</span>
+<span class="n">P95_COMMIT_LATENCY</span> <span class="o">=</span> <span class="s2">"p95 commit latency"</span>
+<span class="n">PLATEAU</span> <span class="o">=</span> <span class="s2">"plateau"</span>
+<span class="n">SIGNALS</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEAP_REFUSAL</span><span class="p">,</span> <span class="n">REFUSED_OR_UNANSWERED</span><span class="p">,</span> <span class="n">P95_COMMIT_LATENCY</span><span class="p">,</span> <span class="n">PLATEAU</span><span class="p">)</span>
+<span class="c1"># The signals that break a level: the plateau is found and shown, but breaks none.</span>
+<span class="n">BREAKING_SIGNALS</span> <span class="o">=</span> <span class="p">(</span><span class="n">HEAP_REFUSAL</span><span class="p">,</span> <span class="n">REFUSED_OR_UNANSWERED</span><span class="p">,</span> <span class="n">P95_COMMIT_LATENCY</span><span class="p">)</span>
+
+<span class="c1"># The names that a record written before keeps for a signal, each with its name now: a reader</span>
+<span class="c1"># shows the name now (`signal_name`), and no record file is changed.</span>
+<span class="n">EARLIER_SIGNAL_NAMES</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"refused or timed out"</span><span class="p">:</span> <span class="n">REFUSED_OR_UNANSWERED</span><span class="p">}</span>
+
+<span class="c1"># Their bounds: more than 1 % refused or unanswered; a p95 commit latency more than 10 times the</span>
+<span class="c1"># lowest rate's; less than 5 % more completed writes per minute than the step before.</span>
+<span class="n">REFUSED_OR_UNANSWERED_SHARE</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">P95_COMMIT_LATENCY_FACTOR</span> <span class="o">=</span> <span class="mf">10.0</span>
+<span class="n">PLATEAU_RISE</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="c1"># A level is UC2-limited when fewer than 90 % of its offered spawns are accepted (interim name): a judgement setting outside the configuration's key.</span>
+<span class="n">ACCEPTED_SHARE</span> <span class="o">=</span> <span class="mf">0.9</span>
+
+<span class="c1"># The three judgements of a ramp (interim names).</span>
+<span class="n">UC2_LIMITED</span> <span class="o">=</span> <span class="s2">"UC2-limited"</span>
+<span class="n">BROKEN</span> <span class="o">=</span> <span class="s2">"broken"</span>
+<span class="n">CANNOT_TELL</span> <span class="o">=</span> <span class="s2">"cannot tell"</span>
+
+
+<div class="viewcode-block" id="LevelNumbers">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.LevelNumbers">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">LevelNumbers</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""What the broken rule reads of one load level, over its runs that count."""</span>
+
+    <span class="n">heap_refusals</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">store_requests</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">refused_or_unanswered</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">p95_commit_latency</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">completed_writes_per_minute</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="c1"># The spawns of the window: None where no run of the level holds a count.</span>
+    <span class="n">spawns_offered</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">spawns_accepted</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1"># The store requests per minute of the window the runs pooled, or None.</span>
+    <span class="n">store_requests_per_minute</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">accepted_share</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">spawns_offered</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spawns_accepted</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">spawns_offered</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">uc2_limited</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether fewer than `ACCEPTED_SHARE` of the offered spawns were accepted; None where</span>
+<span class="sd">        no spawn was offered, or the runs hold no count."""</span>
+        <span class="n">share</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">accepted_share</span>
+        <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">share</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">share</span> <span class="o">&lt;</span> <span class="n">ACCEPTED_SHARE</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">refused_or_unanswered_share</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_requests</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">refused_or_unanswered</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_requests</span>
+
+<div class="viewcode-block" id="LevelNumbers.record">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.LevelNumbers.record">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"heap_refusals_under_load"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">heap_refusals</span><span class="p">,</span>
+            <span class="s2">"store_requests_in_window"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_requests</span><span class="p">,</span>
+            <span class="s2">"refused_or_unanswered_in_window"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">refused_or_unanswered</span><span class="p">,</span>
+            <span class="s2">"refused_or_unanswered_share"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">refused_or_unanswered_share</span><span class="p">,</span>
+            <span class="s2">"p95_commit_latency_seconds"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">p95_commit_latency</span><span class="p">,</span>
+            <span class="s2">"completed_writes_per_minute"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">completed_writes_per_minute</span><span class="p">,</span>
+            <span class="s2">"spawns_offered"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">spawns_offered</span><span class="p">,</span>
+            <span class="s2">"spawns_accepted"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">spawns_accepted</span><span class="p">,</span>
+            <span class="s2">"spawns_accepted_share"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">accepted_share</span><span class="p">,</span>
+            <span class="s2">"store_requests_per_minute"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">store_requests_per_minute</span><span class="p">,</span>
+        <span class="p">}</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="level_numbers">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.level_numbers">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">level_numbers</span><span class="p">(</span><span class="n">runs</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">LevelNumbers</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The numbers of a load level from `runs`, the runs of use case 2 with the wrapper that count</span>
+<span class="sd">    at that level: the counts summed, the commit latencies pooled, and the completed writes per</span>
+<span class="sd">    minute as the median of the runs."""</span>
+    <span class="n">latencies</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">commit_latencies</span> <span class="ow">or</span> <span class="p">[])]</span>
+    <span class="n">rates</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">run</span><span class="o">.</span><span class="n">completed_writes_per_minute</span>
+        <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span>
+        <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">completed_writes_per_minute</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">]</span>
+    <span class="n">counted</span> <span class="o">=</span> <span class="p">[</span><span class="n">run</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span> <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">spawns_offered_in_window</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="n">timed</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">run</span>
+        <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span>
+        <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">window_minutes</span> <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">store_requests_in_window</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">]</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">window_minutes</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">timed</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">LevelNumbers</span><span class="p">(</span>
+        <span class="n">spawns_offered</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">spawns_offered_in_window</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">counted</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">counted</span>
+        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">spawns_accepted</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">spawns_accepted_in_window</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">counted</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">counted</span>
+        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">store_requests_per_minute</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span>
+            <span class="n">run</span><span class="o">.</span><span class="n">store_requests_in_window</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">timed</span>
+        <span class="p">)</span>
+        <span class="o">/</span> <span class="n">minutes</span>
+        <span class="k">if</span> <span class="n">minutes</span>
+        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">heap_refusals</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">heap_refusals_under_load</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span><span class="p">),</span>
+        <span class="n">store_requests</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">store_requests_in_window</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span><span class="p">),</span>
+        <span class="n">refused_or_unanswered</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span>
+            <span class="n">run</span><span class="o">.</span><span class="n">refused_or_unanswered_in_window</span> <span class="ow">or</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs</span>
+        <span class="p">),</span>
+        <span class="n">p95_commit_latency</span><span class="o">=</span><span class="n">quantile</span><span class="p">(</span><span class="n">latencies</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">),</span>
+        <span class="n">completed_writes_per_minute</span><span class="o">=</span><span class="n">quantile</span><span class="p">(</span><span class="n">rates</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="signal_name">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.signal_name">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">signal_name</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The name now of a signal of the broken rule that a record names `name`: a record written</span>
+<span class="sd">    before the rename says `refused or timed out` (`EARLIER_SIGNAL_NAMES`)."""</span>
+    <span class="k">return</span> <span class="n">EARLIER_SIGNAL_NAMES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="not_judged">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.not_judged">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">not_judged</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">LevelNumbers</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">lowest</span><span class="p">:</span> <span class="n">LevelNumbers</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">before</span><span class="p">:</span> <span class="n">LevelNumbers</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The signals of the broken rule that `level` cannot show, for want of a number, each with</span>
+<span class="sd">    why: no store request in the window, or no commit or no completed write at this level, at the</span>
+<span class="sd">    ramp's lowest rate or at the step before. The lowest level is compared with none, so its p95</span>
+<span class="sd">    and its plateau are not judged at all, and are not named."""</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">level</span><span class="o">.</span><span class="n">refused_or_unanswered_share</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">REFUSED_OR_UNANSWERED</span><span class="si">}</span><span class="s2">: no store request in the window"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lowest</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span>
+        <span class="n">level</span><span class="o">.</span><span class="n">p95_commit_latency</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">lowest</span><span class="o">.</span><span class="n">p95_commit_latency</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">P95_COMMIT_LATENCY</span><span class="si">}</span><span class="s2">: no commit in the window"</span>
+            <span class="o">+</span> <span class="p">(</span><span class="s2">" at the lowest rate"</span> <span class="k">if</span> <span class="n">lowest</span><span class="o">.</span><span class="n">p95_commit_latency</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span>
+        <span class="n">level</span><span class="o">.</span><span class="n">completed_writes_per_minute</span> <span class="ow">is</span> <span class="kc">None</span>
+        <span class="ow">or</span> <span class="n">before</span><span class="o">.</span><span class="n">completed_writes_per_minute</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="p">):</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PLATEAU</span><span class="si">}</span><span class="s2">: no completed writes per minute to compare"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span></div>
+
+
+
+<div class="viewcode-block" id="signals">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.signals">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">signals</span><span class="p">(</span>
+    <span class="n">level</span><span class="p">:</span> <span class="n">LevelNumbers</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">lowest</span><span class="p">:</span> <span class="n">LevelNumbers</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">before</span><span class="p">:</span> <span class="n">LevelNumbers</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Each signal of the broken rule that `level` shows, with the numbers that show it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        level: The numbers of the level judged.</span>
+<span class="sd">        lowest: Those of the ramp's lowest rate, or None where `level` is it.</span>
+<span class="sd">        before: Those of the rate step before, or None where `level` is the lowest.</span>
+<span class="sd">    """</span>
+    <span class="n">found</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">level</span><span class="o">.</span><span class="n">heap_refusals</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"signal"</span><span class="p">:</span> <span class="n">HEAP_REFUSAL</span><span class="p">,</span> <span class="s2">"heap_refusals"</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">heap_refusals</span><span class="p">})</span>
+    <span class="n">share</span> <span class="o">=</span> <span class="n">level</span><span class="o">.</span><span class="n">refused_or_unanswered_share</span>
+    <span class="k">if</span> <span class="n">share</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">share</span> <span class="o">&gt;</span> <span class="n">REFUSED_OR_UNANSWERED_SHARE</span><span class="p">:</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">"signal"</span><span class="p">:</span> <span class="n">REFUSED_OR_UNANSWERED</span><span class="p">,</span> <span class="s2">"share"</span><span class="p">:</span> <span class="n">share</span><span class="p">})</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">lowest</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">level</span><span class="o">.</span><span class="n">p95_commit_latency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">lowest</span><span class="o">.</span><span class="n">p95_commit_latency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">level</span><span class="o">.</span><span class="n">p95_commit_latency</span>
+        <span class="o">&gt;</span> <span class="n">P95_COMMIT_LATENCY_FACTOR</span> <span class="o">*</span> <span class="n">lowest</span><span class="o">.</span><span class="n">p95_commit_latency</span>
+    <span class="p">):</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"signal"</span><span class="p">:</span> <span class="n">P95_COMMIT_LATENCY</span><span class="p">,</span>
+                <span class="s2">"p95_commit_latency_seconds"</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">p95_commit_latency</span><span class="p">,</span>
+                <span class="s2">"at_the_lowest_rate"</span><span class="p">:</span> <span class="n">lowest</span><span class="o">.</span><span class="n">p95_commit_latency</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">before</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">level</span><span class="o">.</span><span class="n">completed_writes_per_minute</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">before</span><span class="o">.</span><span class="n">completed_writes_per_minute</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="ow">and</span> <span class="n">level</span><span class="o">.</span><span class="n">completed_writes_per_minute</span>
+        <span class="o">&lt;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">PLATEAU_RISE</span><span class="p">)</span> <span class="o">*</span> <span class="n">before</span><span class="o">.</span><span class="n">completed_writes_per_minute</span>
+    <span class="p">):</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">"signal"</span><span class="p">:</span> <span class="n">PLATEAU</span><span class="p">,</span>
+                <span class="s2">"completed_writes_per_minute"</span><span class="p">:</span> <span class="n">level</span><span class="o">.</span><span class="n">completed_writes_per_minute</span><span class="p">,</span>
+                <span class="s2">"at_the_step_before"</span><span class="p">:</span> <span class="n">before</span><span class="o">.</span><span class="n">completed_writes_per_minute</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span></div>
+
+
+
+<div class="viewcode-block" id="Step">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.Step">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Step</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One load level of a ramp: its box rate, the number of its configuration in the spec, and</span>
+<span class="sd">    the summaries of its runs, of any run kind and outcome."""</span>
+
+    <span class="n">boxes_per_minute</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">configuration</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="breaks">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.breaks">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">breaks</span><span class="p">(</span><span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether the signals `found` (`signals`) break a level: any but the plateau."""</span>
+    <span class="k">return</span> <span class="nb">any</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="s2">"signal"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">BREAKING_SIGNALS</span> <span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="n">found</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="RampJudgement">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.RampJudgement">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">RampJudgement</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The judgement of a ramp (interim names): `UC2_LIMITED` at the box rate</span>
+<span class="sd">    `level`, `BROKEN` at `level` by `signals`, or `CANNOT_TELL`."""</span>
+
+    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">CANNOT_TELL</span>
+    <span class="n">level</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">signals</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">text</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">UC2_LIMITED</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">UC2_LIMITED</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">BROKEN</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">BROKEN</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">)</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="k">return</span> <span class="n">CANNOT_TELL</span>
+
+<div class="viewcode-block" id="RampJudgement.record">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.RampJudgement.record">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span>
+            <span class="s2">"level"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">,</span>
+            <span class="s2">"signals"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">signals</span><span class="p">),</span>
+            <span class="s2">"text"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">,</span>
+        <span class="p">}</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="judgement_of">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.judgement_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">judgement_of</span><span class="p">(</span>
+    <span class="n">uc2_limited_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">broken_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">broken_by</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">RampJudgement</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The judgement of a ramp from the box rate of its first UC2-limited level, that of its first</span>
+<span class="sd">    broken level and the signals that broke it, each None where no level was: UC2-limited when</span>
+<span class="sd">    the limited level comes before the broken one or none broke, broken when a level broke before</span>
+<span class="sd">    any limited one, and cannot tell when neither happened or both at the same level."""</span>
+    <span class="k">if</span> <span class="n">uc2_limited_at</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">broken_at</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">uc2_limited_at</span> <span class="o">&lt;</span> <span class="n">broken_at</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RampJudgement</span><span class="p">(</span><span class="n">UC2_LIMITED</span><span class="p">,</span> <span class="n">uc2_limited_at</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">broken_at</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">uc2_limited_at</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">broken_at</span> <span class="o">&lt;</span> <span class="n">uc2_limited_at</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RampJudgement</span><span class="p">(</span><span class="n">BROKEN</span><span class="p">,</span> <span class="n">broken_at</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">broken_by</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">RampJudgement</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="Judgement">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.Judgement">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Judgement</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How far a ramp went: each level judged, in rising order, with its numbers and the signals</span>
+<span class="sd">    it showed, and where the ramp ended, if it did. `uc2_limited_at` is the box rate of its</span>
+<span class="sd">    first UC2-limited level, and `judgement` the ramp's judgement (interim)."""</span>
+
+    <span class="n">levels</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+    <span class="n">ended</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">broken_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">scale</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">stopped_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">why</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">uc2_limited_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">judgement</span><span class="p">:</span> <span class="n">RampJudgement</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="n">RampJudgement</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Judgement.record">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.Judgement.record">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">record</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"levels"</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">levels</span><span class="p">),</span>
+            <span class="s2">"ended"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ended</span><span class="p">,</span>
+            <span class="s2">"broken_at"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">broken_at</span><span class="p">,</span>
+            <span class="s2">"scale"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">,</span>
+            <span class="s2">"stopped_at"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">stopped_at</span><span class="p">,</span>
+            <span class="s2">"why"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">why</span><span class="p">,</span>
+            <span class="s2">"uc2_limited_at"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uc2_limited_at</span><span class="p">,</span>
+            <span class="s2">"judgement"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">judgement</span><span class="o">.</span><span class="n">record</span><span class="p">(),</span>
+        <span class="p">}</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="judge">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.judge">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">judge</span><span class="p">(</span><span class="n">steps</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Step</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Judgement</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Judge the levels of a ramp, `steps` in rising order of their box rates, with the broken</span>
+<span class="sd">    rule, up to the first level the ramp ends at, or the first that has not run yet. A plateau</span>
+<span class="sd">    and a UC2-limited level break nothing and end nothing."""</span>
+    <span class="n">levels</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lowest</span><span class="p">:</span> <span class="n">LevelNumbers</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">before</span><span class="p">:</span> <span class="n">LevelNumbers</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">before_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">limited_at</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">:</span>
+        <span class="n">made</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">run</span>
+            <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">step</span><span class="o">.</span><span class="n">runs</span>
+            <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">run_kind</span> <span class="o">==</span> <span class="n">RUN_KIND</span> <span class="ow">and</span> <span class="n">run</span><span class="o">.</span><span class="n">outcome</span> <span class="o">!=</span> <span class="n">INTERRUPTED</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">made</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Judgement</span><span class="p">(</span>
+                <span class="n">levels</span><span class="p">,</span>
+                <span class="n">why</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">)</span><span class="si">}</span><span class="s2"> has not run yet"</span><span class="p">,</span>
+                <span class="n">uc2_limited_at</span><span class="o">=</span><span class="n">limited_at</span><span class="p">,</span>
+                <span class="n">judgement</span><span class="o">=</span><span class="n">judgement_of</span><span class="p">(</span><span class="n">limited_at</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">()),</span>
+            <span class="p">)</span>
+        <span class="n">counting</span> <span class="o">=</span> <span class="p">[</span><span class="n">run</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">made</span> <span class="k">if</span> <span class="n">run</span><span class="o">.</span><span class="n">counts</span><span class="p">]</span>
+        <span class="n">shown</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">"boxes_per_minute"</span><span class="p">:</span> <span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">,</span>
+            <span class="s2">"configuration"</span><span class="p">:</span> <span class="n">step</span><span class="o">.</span><span class="n">configuration</span><span class="p">,</span>
+            <span class="s2">"runs"</span><span class="p">:</span> <span class="p">[</span><span class="n">run</span><span class="o">.</span><span class="n">run_id</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">counting</span><span class="p">],</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">counting</span><span class="p">:</span>
+            <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">shown</span>
+                <span class="o">|</span> <span class="p">{</span>
+                    <span class="s2">"judged"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="s2">"broken"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">"uc2_limited"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">"why"</span><span class="p">:</span> <span class="s2">"no run that counts: "</span>
+                    <span class="o">+</span> <span class="s2">"; "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">run</span><span class="o">.</span><span class="n">why_left_out</span><span class="p">())</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">made</span><span class="p">),</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">Judgement</span><span class="p">(</span>
+                <span class="n">levels</span><span class="p">,</span>
+                <span class="n">ended</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">stopped_at</span><span class="o">=</span><span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">,</span>
+                <span class="n">why</span><span class="o">=</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"it stopped at </span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">)</span><span class="si">}</span><span class="s2">, which has no run that "</span>
+                    <span class="s2">"counts, so the level cannot be judged and no higher rate is sent"</span>
+                <span class="p">),</span>
+                <span class="n">uc2_limited_at</span><span class="o">=</span><span class="n">limited_at</span><span class="p">,</span>
+                <span class="n">judgement</span><span class="o">=</span><span class="n">judgement_of</span><span class="p">(</span><span class="n">limited_at</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">()),</span>
+            <span class="p">)</span>
+        <span class="n">numbers</span> <span class="o">=</span> <span class="n">level_numbers</span><span class="p">(</span><span class="n">counting</span><span class="p">)</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">signals</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">lowest</span><span class="o">=</span><span class="n">lowest</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">)</span>
+        <span class="n">broken</span> <span class="o">=</span> <span class="n">breaks</span><span class="p">(</span><span class="n">found</span><span class="p">)</span>
+        <span class="n">limited</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">uc2_limited</span>
+        <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">shown</span>
+            <span class="o">|</span> <span class="p">{</span>
+                <span class="s2">"judged"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">"broken"</span><span class="p">:</span> <span class="n">broken</span><span class="p">,</span>
+                <span class="s2">"uc2_limited"</span><span class="p">:</span> <span class="n">limited</span><span class="p">,</span>
+                <span class="s2">"signals"</span><span class="p">:</span> <span class="n">found</span><span class="p">,</span>
+                <span class="s2">"not_judged"</span><span class="p">:</span> <span class="n">not_judged</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">lowest</span><span class="o">=</span><span class="n">lowest</span><span class="p">,</span> <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">),</span>
+                <span class="s2">"numbers"</span><span class="p">:</span> <span class="n">numbers</span><span class="o">.</span><span class="n">record</span><span class="p">(),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">limited</span> <span class="ow">and</span> <span class="n">limited_at</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">limited_at</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span>
+        <span class="k">if</span> <span class="n">broken</span><span class="p">:</span>
+            <span class="n">breaking</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="nb">str</span><span class="p">(</span><span class="n">signal</span><span class="p">[</span><span class="s2">"signal"</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">signal</span> <span class="ow">in</span> <span class="n">found</span>
+                <span class="k">if</span> <span class="n">signal</span><span class="p">[</span><span class="s2">"signal"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">BREAKING_SIGNALS</span>
+            <span class="p">]</span>
+            <span class="k">return</span> <span class="n">Judgement</span><span class="p">(</span>
+                <span class="n">levels</span><span class="p">,</span>
+                <span class="n">ended</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">broken_at</span><span class="o">=</span><span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">,</span>
+                <span class="n">scale</span><span class="o">=</span><span class="n">before_rate</span><span class="p">,</span>
+                <span class="n">why</span><span class="o">=</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">"it broke at </span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">)</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">breaking</span><span class="p">)</span><span class="si">}</span><span class="s2">); "</span>
+                    <span class="o">+</span> <span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"its scale is </span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="n">before_rate</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+                        <span class="k">if</span> <span class="n">before_rate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                        <span class="k">else</span> <span class="s2">"that is its lowest rate, so it has no scale"</span>
+                    <span class="p">)</span>
+                <span class="p">),</span>
+                <span class="n">uc2_limited_at</span><span class="o">=</span><span class="n">limited_at</span><span class="p">,</span>
+                <span class="n">judgement</span><span class="o">=</span><span class="n">judgement_of</span><span class="p">(</span><span class="n">limited_at</span><span class="p">,</span> <span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">,</span> <span class="n">breaking</span><span class="p">),</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">lowest</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lowest</span> <span class="o">=</span> <span class="n">numbers</span>
+        <span class="n">before</span><span class="p">,</span> <span class="n">before_rate</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">step</span><span class="o">.</span><span class="n">boxes_per_minute</span>
+    <span class="k">return</span> <span class="n">Judgement</span><span class="p">(</span>
+        <span class="n">levels</span><span class="p">,</span>
+        <span class="n">why</span><span class="o">=</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"it was not broken up to </span><span class="si">{</span><span class="n">_rate</span><span class="p">(</span><span class="n">before_rate</span><span class="p">)</span><span class="si">}</span><span class="s2">, its highest rate"</span>
+            <span class="k">if</span> <span class="n">before_rate</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="s2">"it has no level"</span>
+        <span class="p">),</span>
+        <span class="n">uc2_limited_at</span><span class="o">=</span><span class="n">limited_at</span><span class="p">,</span>
+        <span class="n">judgement</span><span class="o">=</span><span class="n">judgement_of</span><span class="p">(</span><span class="n">limited_at</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="p">()),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="steps_of">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.steps_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">steps_of</span><span class="p">(</span>
+    <span class="n">levels</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Step</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The steps of a ramp, its `levels` in rising order, each with the summaries of its runs</span>
+<span class="sd">    among `summaries` that are of the ramp's repetition `repetition`: each repetition of a ramp is</span>
+<span class="sd">    judged apart (interim). A run whose record names no repetition is of the</span>
+<span class="sd">    first."""</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">Step</span><span class="p">(</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">level</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"boxes_per_minute"</span><span class="p">]),</span>
+            <span class="n">level</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="n">summary</span>
+                <span class="k">for</span> <span class="n">summary</span> <span class="ow">in</span> <span class="n">summaries</span>
+                <span class="k">if</span> <span class="n">summary</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">level</span><span class="o">.</span><span class="n">key</span> <span class="ow">and</span> <span class="n">repetition_of</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span> <span class="o">==</span> <span class="n">repetition</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="ramp_judgements">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.ramp_judgements">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ramp_judgements</span><span class="p">(</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">repetition</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Judgement</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""How far repetition `repetition` of each ramp among the configurations `found` went, by the</span>
+<span class="sd">    number of its block, from the runs `summaries`."""</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">block</span><span class="p">:</span> <span class="n">judge</span><span class="p">(</span><span class="n">steps_of</span><span class="p">(</span><span class="n">levels</span><span class="p">,</span> <span class="n">summaries</span><span class="p">,</span> <span class="n">repetition</span><span class="o">=</span><span class="n">repetition</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">block</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="n">ramps_of</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span></div>
+
+
+
+<div class="viewcode-block" id="ramp_repetitions">
+<a class="viewcode-back" href="../../../reference/evaluation/ramp.html#jms_kapps.evaluation.ramp.ramp_repetitions">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ramp_repetitions</span><span class="p">(</span>
+    <span class="n">levels</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">summaries</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">RunSummary</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The repetitions of the ramp of `levels` that have a run among `summaries`, in rising order:</span>
+<span class="sd">    1 alone where none has (interim). A run that a stop signal ended is none."""</span>
+    <span class="n">made</span> <span class="o">=</span> <span class="n">repetitions_made</span><span class="p">(</span>
+        <span class="n">summaries</span><span class="p">,</span> <span class="n">run_kind</span><span class="o">=</span><span class="n">RUN_KIND</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">{</span><span class="n">level</span><span class="o">.</span><span class="n">key</span> <span class="k">for</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">}</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">made</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_rate</span><span class="p">(</span><span class="n">boxes_per_minute</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">boxes_per_minute</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> boxes per minute"</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

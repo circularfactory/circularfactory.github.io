@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>jms_kapps.uc2.module &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/uc2/module';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="jms_kapps.uc2.module_dashboard" href="module_dashboard.html" />
+    <link rel="prev" title="jms_kapps.uc2.history" href="history.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">The package</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../jms_kapps.html">jms_kapps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Shared by both use cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/index.html">jms_kapps.common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/api_docs.html">jms_kapps.common.api_docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/passthrough.html">jms_kapps.common.passthrough</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/prefixes.html">jms_kapps.common.prefixes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/process.html">jms_kapps.common.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/services.html">jms_kapps.common.services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/supervision.html">jms_kapps.common.supervision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/triplestore.html">jms_kapps.common.triplestore</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/index.html">jms_kapps.common.platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/posix.html">jms_kapps.common.platforms.posix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../common/platforms/windows.html">jms_kapps.common.platforms.windows</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../uc1/index.html">jms_kapps.uc1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/__main__.html">jms_kapps.uc1.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector.html">jms_kapps.uc1.anomaly_detector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_dashboard.html">jms_kapps.uc1.anomaly_detector_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/anomaly_detector_memory.html">jms_kapps.uc1.anomaly_detector_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/classify_call.html">jms_kapps.uc1.classify_call</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/decision_tree.html">jms_kapps.uc1.decision_tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/effective_values.html">jms_kapps.uc1.effective_values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/frame.html">jms_kapps.uc1.frame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/infeasible_operation.html">jms_kapps.uc1.infeasible_operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner.html">jms_kapps.uc1.learner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_dashboard.html">jms_kapps.uc1.learner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_memory.html">jms_kapps.uc1.learner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/learner_process.html">jms_kapps.uc1.learner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/mqtt_broker.html">jms_kapps.uc1.mqtt_broker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page.html">jms_kapps.uc1.page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/page_lists.html">jms_kapps.uc1.page_lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner.html">jms_kapps.uc1.planner</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_dashboard.html">jms_kapps.uc1.planner_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_memory.html">jms_kapps.uc1.planner_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_process.html">jms_kapps.uc1.planner_process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/planner_reads.html">jms_kapps.uc1.planner_reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/replay.html">jms_kapps.uc1.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_attempt.html">jms_kapps.uc1.robot_attempt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_binding.html">jms_kapps.uc1.robot_binding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/robot_controller.html">jms_kapps.uc1.robot_controller</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/run_core.html">jms_kapps.uc1.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/scope_log.html">jms_kapps.uc1.scope_log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource.html">jms_kapps.uc1.screwing_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_dashboard.html">jms_kapps.uc1.screwing_resource_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/screwing_resource_memory.html">jms_kapps.uc1.screwing_resource_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/seed.html">jms_kapps.uc1.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/sequence.html">jms_kapps.uc1.sequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/timeseries.html">jms_kapps.uc1.timeseries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/uncertainty.html">jms_kapps.uc1.uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uc1/vocabulary.html">jms_kapps.uc1.vocabulary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">jms_kapps.uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="__main__.html">jms_kapps.uc2.<strong>main</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="capability_resource.html">jms_kapps.uc2.capability_resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">jms_kapps.uc2.discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handover_events.html">jms_kapps.uc2.handover_events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="handshake.html">jms_kapps.uc2.handshake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="history.html">jms_kapps.uc2.history</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">jms_kapps.uc2.module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_dashboard.html">jms_kapps.uc2.module_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_drawing.html">jms_kapps.uc2.module_drawing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_memory.html">jms_kapps.uc2.module_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process.html">jms_kapps.uc2.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="routing.html">jms_kapps.uc2.routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run_core.html">jms_kapps.uc2.run_core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seed.html">jms_kapps.uc2.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reachable_destination.html">jms_kapps.uc2.reachable_destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spawn_rate.html">jms_kapps.uc2.spawn_rate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strategies.html">jms_kapps.uc2.strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topology.html">jms_kapps.uc2.topology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trace_box.html">jms_kapps.uc2.trace_box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transport.html">jms_kapps.uc2.transport</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation_report.html">jms_kapps.uc2.validation_report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary.html">jms_kapps.uc2.vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="waiting_order.html">jms_kapps.uc2.waiting_order</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms.html">jms_kapps.uc2.wms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_dashboard.html">jms_kapps.uc2.wms_dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_memory.html">jms_kapps.uc2.wms_memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_process.html">jms_kapps.uc2.wms_process</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the Launcher</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="launcher/index.html">jms_kapps.uc2.launcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/api.html">jms_kapps.uc2.launcher.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/backend.html">jms_kapps.uc2.launcher.backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/boxes.html">jms_kapps.uc2.launcher.boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launcher/runner.html">jms_kapps.uc2.launcher.runner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use case 2: the monitor</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="monitor/index.html">jms_kapps.uc2.monitor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/api.html">jms_kapps.uc2.monitor.api</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/handovers.html">jms_kapps.uc2.monitor.handovers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/memory.html">jms_kapps.uc2.monitor.memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/process.html">jms_kapps.uc2.monitor.process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/reads.html">jms_kapps.uc2.monitor.reads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitor/wires.html">jms_kapps.uc2.monitor.wires</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The measurement harness</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/index.html">jms_kapps.evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/approval.html">jms_kapps.evaluation.approval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/baseline.html">jms_kapps.evaluation.baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/bench.html">jms_kapps.evaluation.bench</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/client_load.html">jms_kapps.evaluation.client_load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/commit_table.html">jms_kapps.evaluation.commit_table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/configuration.html">jms_kapps.evaluation.configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/grid.html">jms_kapps.evaluation.grid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/harness.html">jms_kapps.evaluation.harness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/heavy_parts.html">jms_kapps.evaluation.heavy_parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/instrumentation.html">jms_kapps.evaluation.instrumentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/live_store.html">jms_kapps.evaluation.live_store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/matcher.html">jms_kapps.evaluation.matcher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/observation.html">jms_kapps.evaluation.observation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/own_transports.html">jms_kapps.evaluation.own_transports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/precision.html">jms_kapps.evaluation.precision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/prefill.html">jms_kapps.evaluation.prefill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ramp.html">jms_kapps.evaluation.ramp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ramp_comparison.html">jms_kapps.evaluation.ramp_comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/record.html">jms_kapps.evaluation.record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/record_match.html">jms_kapps.evaluation.record_match</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/replay.html">jms_kapps.evaluation.replay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/replay_levels.html">jms_kapps.evaluation.replay_levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report.html">jms_kapps.evaluation.report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_charts.html">jms_kapps.evaluation.report_charts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_points.html">jms_kapps.evaluation.report_points</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_steps.html">jms_kapps.evaluation.report_steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/report_summary.html">jms_kapps.evaluation.report_summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/rounds.html">jms_kapps.evaluation.rounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/run_limit.html">jms_kapps.evaluation.run_limit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/run_uc2.html">jms_kapps.evaluation.run_uc2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/seed.html">jms_kapps.evaluation.seed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/southward.html">jms_kapps.evaluation.southward</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/spec.html">jms_kapps.evaluation.spec</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/stats.html">jms_kapps.evaluation.stats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/store.html">jms_kapps.evaluation.store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/store_requests.html">jms_kapps.evaluation.store_requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/summary.html">jms_kapps.evaluation.summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/sweep.html">jms_kapps.evaluation.sweep</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table.html">jms_kapps.evaluation.table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/watch.html">jms_kapps.evaluation.watch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/wrapper.html">jms_kapps.evaluation.wrapper</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.module</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-jms_kapps.uc2.module">
+<span id="jms-kapps-uc2-module"></span><h1>jms_kapps.uc2.module<a class="headerlink" href="#module-jms_kapps.uc2.module" title="Link to this heading">#</a></h1>
+<p>One FlexConveyorModule’s part in a box’s journey: what it answers, how it carries a box on, and
+how it gives the box back.</p>
+<p><strong>A transport is assigned to one module at a time</strong>, the one that carries the box on now, and
+the assigned module also possesses the box. The WarehouseManagementSystem creates the box on the
+origin with its transport, assigned to the origin, and notifies the origin. Every later module
+gets the box and the transport in the handover of the module before it, and goes on once that
+module calls its Receive: then it reads the box with its transport, through the box’s link to it
+(<cite>fc:hasTransport</cite>).</p>
+<p><strong>The BoxTransportWorkflow</strong> carries a transport on while the transport is assigned to the module.
+At the origin, the WarehouseManagementSystem’s notification of the transport starts it: the
+middleware’s intake hands the module the transport, read once. At every later module, the
+module’s Receive starts it, with the transport it read through the box. It reads the station’s
+connections at every decision, in one read, the WarehouseManagementSystem and the next module’s
+BoxTransportCapability once, and a peer’s workflow endpoint at every call. It acts only when its
+module is the assigned module, which also holds the box: the two move in one commit, and each
+handover checks the possession again before it commits. At the origin it commits the <cite>queued</cite>
+transport <cite>running</cite>; the store refuses that while the box is not on the module, and then the
+transport stays <cite>queued</cite> (the WarehouseManagementSystem creates the box on the origin before it
+notifies the origin, so this happens only to a box that is elsewhere). At a later module it goes
+on with the <cite>running</cite> one. A transport that
+is done or has failed is left alone: a failed transport stays failed. Where the module is the
+destination, it gives the box back to the WarehouseManagementSystem: one handover whose entry
+makes the WarehouseManagementSystem the possessor and the transport <cite>done</cite> in one commit, then
+the move, then a notification of the WarehouseManagementSystem. Otherwise it hops to the first
+neighbour that its module strategy names (<cite>strategies</cite>). With <cite>real</cite>, the default, that is the
+next module on a shortest path to the destination, by hop count over the connections, a tie going
+to the lowest IRI, and never straight back to the module the box came from,
+unless a crash has left a neighbour out for the box (below); a box goes on to the module that its
+module reserved ahead for it, while a connection still leads there. No module
+routes by a table of routes or of neighbours, and nothing routes centrally; the connections it
+read last it keeps for its dashboard only.</p>
+<p><strong>One hop works like the real FlexConveyor.</strong> The giving module asks the receiving module’s Reserve.
+A module reserves itself only while it holds nothing, has promised itself to no other box, and no
+box that has waited longer still asks for it, in its memory, and answers at once. Its read of what
+it holds and its reservation are one step, which a Receive waits for: otherwise a Reserve that read
+an empty module could be accepted just after the box it was reserved for arrived. The graph still
+refuses a second box on a module, whatever the modules believed. A module that refuses with a
+refusal that passes says so in its answer (<cite>occupied</cite>, <cite>reserved</cite>, <cite>behind</cite> or <cite>blocked</cite>), and the
+giving module asks its detour once, and then waits the retry time and asks again, with no bound,
+holding the box meanwhile. Any other refusal ends the transport, once the detour has refused too,
+but “no live route on”, the refusal of a module whose look-ahead found no live module left: the
+giving module leaves that module out, as one it cannot reach (below). Once the receiving module
+has accepted, the giving module opens the
+middleware’s handover: its entry commits the change of possession and assigns the transport to
+the receiving module, and the store admits or refuses both together, before anything moves. Only
+once the store has admitted it does the giving module convey the box: its own move, a function the module is given, and no workflow that a
+module exposes. Then it calls the receiving module’s Receive, the receiving module’s light barrier,
+which never refuses, because the possession has already changed. The receiving module answers, and
+then, as its own work, reads the box with its transport and carries the box on. So a hop is two
+calls between the modules, Reserve and Receive, and one commit, and no notification passes between
+them, and no module polls the graph for a box it is about to receive. The receiving module logs each
+step it accepts, so its own log shows that the step ran there. The giving module logs its side, at
+INFO too: the receiving module’s answer to its Reserve, and its convey once the box has gone. So
+each module’s activity page shows the hop from both ends.</p>
+<p><strong>Routing keeps boxes flowing:</strong></p>
+<ul class="simple">
+<li><p><strong>Look-ahead acceptance.</strong> A module accepts a Reserve only if it is free and either it is the
+box’s destination, or its own next module accepts a plain Reserve for the box at once; that
+inner ask looks no further ahead. Otherwise it refuses at once, as <cite>blocked</cite>, and keeps no
+reservation. The box then goes on to the module reserved ahead, whose reservation is bound by
+<cite>ARRIVAL_BOUND_SECONDS</cite> and two times T (<cite>ahead_bound</cite>), T the longest transit time of any
+module. So a box moves only onto a module from which it can move on at once, and no module fills
+with a box that cannot. <strong>It routes around a crash too:</strong> a next module it cannot reach it leaves
+out for the box, and it looks ahead to the next one its strategy names, the module that holds
+the box still excluded; where no live module is left, it refuses “no live route on”, which does
+not pass, and the asker leaves it out as one it cannot reach. Every look-ahead starts with no
+module left out, so it leaves such a module out at each Reserve of the box while it cannot be
+reached, but it warns about it once per box: again only once the box has left its waiting
+order, or that module has answered a look-ahead for the box since.</p></li>
+<li><p><strong>One detour before waiting.</strong> When the next module declines, the giving module asks one other
+neighbour, the second its module strategy names; with <cite>real</cite> (<cite>routing.detour</cite>), not the module
+the box came from, and one from which the destination is reached without coming back, so the
+module the next module ties with. Only if it declines too does the module wait and ask both
+again, or end the transport
+where the next module’s refusal does not pass. A detour that cannot be reached, or refuses “no
+live route on”, is left out for the box like a next module: the strategy is asked again, and
+where it names another detour, the module asks the first and then that detour at once, without
+waiting; where it names none, the module waits and asks again. Once a crash has left a
+neighbour out, the strategy is asked with no module the box came from, so the detour, or the
+first, may name the module the box came from. The module reserved ahead looks ahead again when
+the box asks it, and may refuse then, as <cite>blocked</cite>.</p></li>
+<li><p><strong>Longest-waiting first.</strong> A module that is free serves the box that has waited longest
+(<cite>WaitingOrder</cite>): any other box is refused as <cite>behind</cite>. A box keeps its place, the inner ask of a
+look-ahead included, and the WarehouseManagementSystem’s Reserve waits behind every box. A box
+leaves the order once it arrives, moves elsewhere or its transport ends, which the module reads
+in the graph when it would otherwise refuse a box; a box that has stopped asking for a while
+comes first no more, but keeps its place.</p></li>
+<li><p><strong>The stop.</strong> Once the stop of its process has begun, the module asks no Reserve, neither at
+its look-ahead nor of its detour, as the stop rules say.</p></li>
+<li><p><strong>`skip-reserve`</strong> makes the module skip the look-ahead and the detour for its own hop: it
+accepts a box from a module without looking ahead, and hands it on without asking, so on a busy
+station it meets an occupied module, and the store refuses it. The WarehouseManagementSystem’s
+Reserve is always looked ahead for.</p></li>
+</ul>
+<p><strong>A reservation lapses at its bound.</strong> A box the module reserved itself for that has not arrived
+within <cite>ARRIVAL_BOUND_SECONDS</cite> and T, the longest transit time of any module in the graph (read at
+the process’s start), or two T for a box reserved ahead, counted from the module’s answer to
+Reserve, makes the module read the graph, and the box leaves its waiting order. If the box
+is its own already and its transport has not ended, the giving module was lost after its commit
+and before its Receive: the module ends the transport <cite>failed</cite>, with a reason that names the
+giving module. Otherwise it frees its reservation. A transport that has ended is left alone. So
+after a commit the store refused, the giving module keeps the box and ends the transport <cite>failed</cite>
+with the store’s reason, and the receiving module’s reservation lapses at its bound. A box handed
+over with <cite>skip-reserve</cite> armed comes with no reservation, so no bound: if its giving module is
+lost after the commit, the transport stays <cite>running</cite>.</p>
+<p><strong>The box of a spawn is created on the origin.</strong> The WarehouseManagementSystem asks the origin’s
+Reserve, creates the box on the origin with its transport, and notifies the origin. The
+notification takes the place of a Receive: the middleware’s intake reads the transport, and the
+BoxTransportWorkflow carries the box on, which uses the reservation up. A reservation for the
+WarehouseManagementSystem’s box lapses <cite>ARRIVAL_BOUND_SECONDS</cite> after the answer to Reserve, with
+no transit time, since no move comes before the notification. At that bound the module frees the
+reservation and writes nothing: the WarehouseManagementSystem owns the station’s entry, and ends
+the transport itself when it cannot notify the origin. So the module leaves a transport that has
+ended alone, and one that has not to the WarehouseManagementSystem.</p>
+<p><strong>A module that cannot go on</strong> commits the transport <cite>failed</cite>, with the reason and the store’s
+report where there is one, and notifies the WarehouseManagementSystem. Only the assigned module
+writes its transport.</p>
+<p><strong>A next module that cannot be reached</strong> before the handover, because the graph names no live
+workflow of it, or the call of one is refused, fails or times out, is left out for the box: the
+module logs one warning that names it (“Module9: leaves Module15 out for Box1: Module15 is not
+reachable: …”), raises nothing, keeps the box, and asks its strategy again, with the
+connections to each module left out removed and with no module the box came from, which is then
+a valid choice. Then the hop goes on as any hop: the first, then the detour, and the wait while
+both refuse with a refusal that passes, with no time limit. A module left out stays out while the
+box is here. A detour that cannot be reached is left out the same way, and the strategy asked
+again for another detour, which the module asks at once after the first. A next module, or a
+detour, that refuses “no live route on” is left out the same way. Only where no neighbour is left
+to ask does the module end the transport the same way, with a reason that names the destination
+and each module left out (“no live route to Module9: Module3 and Module1 are not reachable”). With
+<cite>skip-reserve</cite> armed, a hop the store refused asks first, and leaves no module out:
+<cite>skip-reserve</cite> onto a crashed module stays as it was.
+After the handover, when the next module’s Receive cannot reach that
+module, the box is on it and the transport is assigned to it: the module that passed both on
+writes nothing, and says why in one warning. The receiving module ends the transport: at the
+bound of its reservation, or at its stop. A receiving module that crashed after the commit ends
+it at its next start, when the middleware’s crash recovery ends every <cite>running</cite> Operation
+assigned to it. A module finds the transport of a box it holds through the box, which links to it
+(<cite>fc:hasTransport</cite>): it reads the box with its transport in one fetch, and no rule names a
+transport after its box. Only the assigned module writes the transport.</p>
+<p><strong>The deadlock alarm.</strong> The module measures how long each box it holds waits for a Reserve,
+from its first ask of one. Past <cite>deadlock_alarm_seconds</cite>, the launch’s deadlock alarm time, 300 s
+unless a run sets another (<cite>–deadlock-alarm-seconds</cite>), it raises the alarm once for the box, before
+its next wait: one WARNING line that starts with “possible deadlock:” and names the module, the
+box, the time waited and the modules it asks, and one <cite>deadlock_alarm</cite> event on its handover event
+stream. The box keeps waiting, and nothing fails: the alarm is the visible backstop for boxes on a
+cycle of connections that wait for each other. It writes nothing to the graph.</p>
+<p><strong>A stop.</strong> From the stop signal on, the module waits at most the graceful-shutdown bound for the
+box it reserved itself for and for its own work: a move under way finishes, and the giving module
+calls Receive. Its server takes no new connection by then, so only a Receive already under way
+still comes. If no Receive came, and the box is its own with its transport not ended, its giving
+module committed the handover: the module ends the transport <cite>failed</cite>, “the system is stopping”.
+The origin of a spawn waits for the WarehouseManagementSystem’s notification instead, and leaves
+the transport of the WarehouseManagementSystem’s box to it, which owns the station’s entry. Once
+the stop has begun, the module also refuses
+every Reserve, asks none, and hands no box to another module: the module a box’s transport is
+assigned to keeps the box and ends the transport <cite>failed</cite>, “the system is stopping”. A destination
+still gives its box back to the WarehouseManagementSystem, with the transport <cite>done</cite>.</p>
+<p><strong>Two faults</strong>, §5.2’s faults of a module’s own logic, are armed at run time and off when the
+module starts. What stops either is the graph alone, and each refusal is logged with its report
+and emitted on the module’s handover event stream.</p>
+<ul class="simple">
+<li><p><cite>skip-reserve</cite> makes the giving module skip Reserve and commit the handover regardless. Onto a
+module that holds a box, the store refuses that, nothing moves, and the module adapts: it asks
+Reserve first, the proper way, and waits its turn while the receiving module is occupied or
+reserved, so the box still arrives. Onto a free module, it conveys the box and calls Receive,
+and the receiving module carries the box on.</p></li>
+<li><p><cite>complete-without-releasing</cite> makes the destination commit the transport <cite>done</cite> before it gives
+the box back. The store refuses that while the module holds the box, and the module then gives
+the box back properly, with the last handover.</p></li>
+</ul>
+<p>This is the adaptation the paper describes, hardcoded. A module that reads the report and decides
+for itself is future work.</p>
+<p>Only a <cite>ShaclValidationError</cite> is the graph’s refusal, and its report travels verbatim. Any other
+error of the store, such as a dataset that does not exist or a read that failed, is not caught.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.Fault">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">Fault</span></span><a class="headerlink" href="#jms_kapps.uc2.module.Fault" title="Link to this definition">#</a></dt>
+<dd><p>§5.2’s two faults of a module’s own logic.</p>
+<p><cite>skip-reserve</cite> hands a box on without asking the receiving module’s Reserve.
+<cite>complete-without-releasing</cite> makes the destination commit the transport <cite>done</cite> before it gives the
+box back. Both are off when a module starts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A fault an operator arms on a module at run time</p>
+</dd>
+</dl>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code></a>[‘skip-reserve’, ‘complete-without-releasing’]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.faults_off">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">faults_off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.15)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'skip-reserve'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'complete-without-releasing'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#faults_off"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.faults_off" title="Link to this definition">#</a></dt>
+<dd><p>Every fault, off: how a module starts.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">GraphReads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a></p>
+<p>What a module reads from the graph. <cite>discovery.GraphView</cite> is the real one.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads.boxes_held_by">
+<span class="sig-name descname"><span class="pre">boxes_held_by</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads.boxes_held_by"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads.boxes_held_by" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads.connections">
+<span class="sig-name descname"><span class="pre">connections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="discovery.html#jms_kapps.uc2.discovery.DirectedConnection" title="jms_kapps.uc2.discovery.DirectedConnection"><span class="pre">DirectedConnection</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads.connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads.connections" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads.workflow_endpoint">
+<span class="sig-name descname"><span class="pre">workflow_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workflow_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads.workflow_endpoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads.workflow_endpoint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads.capability">
+<span class="sig-name descname"><span class="pre">capability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resource</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capability_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads.capability"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads.capability" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads.wms">
+<span class="sig-name descname"><span class="pre">wms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads.wms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads.wms" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.GraphReads.transport_of">
+<span class="sig-name descname"><span class="pre">transport_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">box</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#GraphReads.transport_of"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.GraphReads.transport_of" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.TransportWrites">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">TransportWrites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#TransportWrites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.TransportWrites" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a></p>
+<p>What a module writes of a transport. <cite>transport.TransportRecords</cite> is the real one.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.TransportWrites.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#TransportWrites.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.TransportWrites.start" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.TransportWrites.complete">
+<span class="sig-name descname"><span class="pre">complete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#TransportWrites.complete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.TransportWrites.complete" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.TransportWrites.fail">
+<span class="sig-name descname"><span class="pre">fail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">operation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#TransportWrites.fail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.TransportWrites.fail" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.Start">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">Start</span></span><a class="headerlink" href="#jms_kapps.uc2.module.Start" title="Link to this definition">#</a></dt>
+<dd><p>Starts a piece of this module’s own work, and returns before it has run.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>[[<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>[[], <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>]], <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.Later">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">Later</span></span><a class="headerlink" href="#jms_kapps.uc2.module.Later" title="Link to this definition">#</a></dt>
+<dd><p>Runs a piece of this module’s own work once the seconds it is given have passed, and returns at
+once.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>[[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>[[], <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a>]], <a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.in_background">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">in_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">work</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><span class="pre">object</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#in_background"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.in_background" title="Link to this definition">#</a></dt>
+<dd><p>Run <cite>work</cite> on a thread of its own, and log what it raises.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.in_background_after">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">in_background_after</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">work</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><span class="pre">object</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#in_background_after"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.in_background_after" title="Link to this definition">#</a></dt>
+<dd><p>Run <cite>work</cite> on a thread of its own once <cite>seconds</cite> have passed, and log what it raises.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.ChooseAgain">
+<span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">ChooseAgain</span></span><a class="headerlink" href="#jms_kapps.uc2.module.ChooseAgain" title="Link to this definition">#</a></dt>
+<dd><p>The neighbours a module asks for a box once it has left out the modules it is given, in order:
+its strategy’s answer without the connections to them, and with no module the box came from.</p>
+<p>alias of <a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Callable</span></code></a>[[<a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IRI</span></code>]], <a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">IRI</span></code>]]</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">jms_kapps.uc2.module.</span></span><span class="sig-name descname"><span class="pre">FlexConveyorModule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">resource:</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI,</span> <span class="pre">*,</span> <span class="pre">graph:</span> <span class="pre">~jms_kapps.uc2.module.GraphReads,</span> <span class="pre">handover:</span> <span class="pre">~collections.abc.Callable[[...],</span> <span class="pre">~contextlib.AbstractContextManager],</span> <span class="pre">call:</span> <span class="pre">~collections.abc.Callable[[str,</span> <span class="pre">~pydantic.main.BaseModel],</span> <span class="pre">dict],</span> <span class="pre">records:</span> <span class="pre">~jms_kapps.uc2.module.TransportWrites,</span> <span class="pre">notify:</span> <span class="pre">~collections.abc.Callable[[~kapps_triplestore_interface.utils.iri.IRI,</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI],</span> <span class="pre">None],</span> <span class="pre">move:</span> <span class="pre">~collections.abc.Callable[[~kapps_triplestore_interface.utils.iri.IRI,</span> <span class="pre">~kapps_triplestore_interface.utils.iri.IRI],</span> <span class="pre">None],</span> <span class="pre">start:</span> <span class="pre">~collections.abc.Callable[[~collections.abc.Callable[[],</span> <span class="pre">object]],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">in_background&gt;,</span> <span class="pre">retry_seconds:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0,</span> <span class="pre">wait:</span> <span class="pre">~collections.abc.Callable[[float],</span> <span class="pre">object]</span> <span class="pre">=</span> <span class="pre">&lt;built-in</span> <span class="pre">function</span> <span class="pre">sleep&gt;,</span> <span class="pre">later:</span> <span class="pre">~collections.abc.Callable[[float,</span> <span class="pre">~collections.abc.Callable[[],</span> <span class="pre">object]],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">in_background_after&gt;,</span> <span class="pre">arrival_bound:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">30.0,</span> <span class="pre">ahead_bound:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">30.0,</span> <span class="pre">clock:</span> <span class="pre">~collections.abc.Callable[[],</span> <span class="pre">float]</span> <span class="pre">=</span> <span class="pre">&lt;built-in</span> <span class="pre">function</span> <span class="pre">monotonic&gt;,</span> <span class="pre">events:</span> <span class="pre">~jms_kapps.uc2.handover_events.HandoverEvents</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">memory:</span> <span class="pre">~jms_kapps.uc2.module_memory.ModuleMemory</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">stopping:</span> <span class="pre">~collections.abc.Callable[[],</span> <span class="pre">bool]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">FlexConveyorModule.&lt;lambda&gt;&gt;,</span> <span class="pre">strategy:</span> <span class="pre">~jms_kapps.uc2.strategies.ModuleStrategy</span> <span class="pre">=</span> <span class="pre">&lt;jms_kapps.uc2.strategies.RealModuleStrategy</span> <span class="pre">object&gt;,</span> <span class="pre">strategy_name:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'real',</span> <span class="pre">deadlock_alarm_seconds:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">300.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.15)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>One module, given what it reads from the graph, what it writes, and how it reaches peers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>resource</strong> – The module.</p></li>
+<li><p><strong>graph</strong> – The graph’s answers.</p></li>
+<li><p><strong>handover</strong> – The possession extension’s handover, bound to the middleware.</p></li>
+<li><p><strong>call</strong> – A blocking call to a peer’s workflow.</p></li>
+<li><p><strong>records</strong> – The module’s writes of a transport.</p></li>
+<li><p><strong>notify</strong> – The middleware’s notification of a resource.</p></li>
+<li><p><strong>move</strong> – The move of a box off this module onto a receiver: its convey.</p></li>
+<li><p><strong>start</strong> – Starts this module’s own work: carrying a box on after Receive has answered.</p></li>
+<li><p><strong>retry_seconds</strong> – How long the module waits before it asks again the Reserve of a module
+that refused to reserve itself, once its detour has refused too.</p></li>
+<li><p><strong>wait</strong> – Waits the seconds it is given.</p></li>
+<li><p><strong>later</strong> – Runs this module’s own work after some seconds: the bound of a reservation.</p></li>
+<li><p><strong>arrival_bound</strong> – How long a box the module reserved itself for may take to arrive, counted
+from its answer to Reserve: <cite>ARRIVAL_BOUND_SECONDS</cite> and T, the longest transit time of any module. The
+WarehouseManagementSystem’s notification of a box that the module, as the origin of a
+spawn, reserved itself for may take <cite>SPAWN_BOUND_SECONDS</cite>.</p></li>
+<li><p><strong>ahead_bound</strong> – How long a box the module reserved itself for ahead, at the plain Reserve of
+a look-ahead, may take to arrive: <cite>ARRIVAL_BOUND_SECONDS</cite> and two T,
+since the box first moves onto the module that asked.</p></li>
+<li><p><strong>clock</strong> – The time, in seconds, by which the waiting order counts how long a box waited.</p></li>
+<li><p><strong>events</strong> – The module’s handover event stream, where a refused handover is emitted.</p></li>
+<li><p><strong>memory</strong> – What the module keeps of its own work, for its dashboard.</p></li>
+<li><p><strong>stopping</strong> – Whether the stop of the module’s process has begun.</p></li>
+<li><p><strong>strategy</strong> – The module strategy that answers which neighbours the module asks for a box,
+<cite>real</cite> unless a run chooses another (<cite>strategies</cite>).</p></li>
+<li><p><strong>strategy_name</strong> – Its name, which a warning about one of its answers names.</p></li>
+<li><p><strong>deadlock_alarm_seconds</strong> – How long a box the module holds may wait for a Reserve, counted
+from its first ask of one, before the module raises the deadlock alarm for it, by
+the clock <cite>clock</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.faults">
+<span class="sig-name descname"><span class="pre">faults</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#dict" title="(in Python v3.15)"><span class="pre">dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.15)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'skip-reserve'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'complete-without-releasing'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.15)"><span class="pre">bool</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.faults" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.box_transport">
+<span class="sig-name descname"><span class="pre">box_transport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">came_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ahead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.box_transport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.box_transport" title="Link to this definition">#</a></dt>
+<dd><p>The BoxTransportWorkflow: carry the box of <cite>transport</cite> on, while the transport is
+assigned to this module.</p>
+<p><cite>came_from</cite> is the module the box came from, which it does not go straight back to, and
+<cite>ahead</cite> the next module that reserved itself for the box at this module’s look-ahead,
+where the box goes on to; a reservation this module made for the box names it too.</p>
+<p>It acts on the transport it is handed: at the origin, as the middleware’s intake read it
+for the WarehouseManagementSystem’s notification; at a later module, as its Receive read
+it through the box. Either way it carries the box on the same way. A transport that is
+done or has failed, or is assigned to another module, is logged and left alone. Once the
+module acts on a transport assigned to it, a reservation it made for the box is used up.
+The transport alone does not tell the module that it possesses the box, so its memory
+does not hold the box for it.</p>
+<p>At the origin, the queued transport is committed <cite>running</cite> first. The store refuses that
+while the box is not on the module: then the transport stays <cite>queued</cite>, and the module
+writes nothing more and notifies no one. The WarehouseManagementSystem creates the box on
+the origin before it notifies the origin, so that happens only to a box that is elsewhere.
+A <cite>running</cite> transport whose box is held elsewhere fails at the next handover,
+which checks the possession before it commits.</p>
+<p>It counts as the module’s own work, which a stop of its process waits for.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.carry_on">
+<span class="sig-name descname"><span class="pre">carry_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">came_from</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ahead</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.carry_on"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.carry_on" title="Link to this definition">#</a></dt>
+<dd><p>Carry the box of <cite>transport</cite> toward its destination: give it back there, or start the
+hop to the first neighbour that the module’s strategy names, with <cite>came_from</cite>, the module
+the box came from, and <cite>ahead</cite>, the module reserved ahead for it at this module’s
+look-ahead (<cite>strategies</cite>); the second it names is the detour, which the module tries when
+the first declines. A module that cannot go on says why in the transport.</p>
+<p><strong>A crash is routed around.</strong> A neighbour it asks that cannot be reached, or that refuses
+“no live route on”, it leaves out for the box, with one warning that names it, and it
+chooses again: its strategy is asked again with the connections to each module left out
+removed, and with no module the box came from, which is then a valid choice. A module left
+out stays out while the box is here. Only where no neighbour is left to ask does the
+transport end <cite>failed</cite>, with a reason that names the destination and each module left out.
+The choice again decides on the connections read for this decision, and reads none.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.hop">
+<span class="sig-name descname"><span class="pre">hop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detour_to</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IRI</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">choose_again</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable" title="(in Python v3.15)"><span class="pre">Callable</span></a><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Sequence" title="(in Python v3.15)"><span class="pre">Sequence</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.15)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><span class="pre">IRI</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.hop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.hop" title="Link to this definition">#</a></dt>
+<dd><p>The hop of the box of <cite>transport</cite> to <cite>receiver</cite>: ask its Reserve, and once it has
+accepted, commit the handover, convey the box and call its Receive. While <cite>receiver</cite>
+refuses, ask <cite>detour_to</cite> once, and take the hop there if it accepts; otherwise wait and ask
+both again, or, where the refusal of <cite>receiver</cite> does not pass, end the transport.</p>
+<p>With <cite>choose_again</cite>, a module asked that cannot be reached, or that refuses “no live
+route on”, is left out for the box, and <cite>choose_again</cite> names the neighbours to ask then.
+Without it, such a <cite>receiver</cite> ends the transport, and such a detour is asked no more.</p>
+<p>With <cite>skip-reserve</cite> armed, commit the handover onto <cite>receiver</cite> without asking, and so
+without a detour. If the store refuses that, ask first, as the hop should have, and wait
+its turn the same way, with no module left out: <cite>skip-reserve</cite> onto a crashed module
+stays as it was.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.give_back">
+<span class="sig-name descname"><span class="pre">give_back</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.give_back"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.give_back" title="Link to this definition">#</a></dt>
+<dd><p>Give the box of <cite>transport</cite> back to the WarehouseManagementSystem, and notify it.</p>
+<p>The handover’s entry makes the WarehouseManagementSystem the possessor and the transport
+<cite>done</cite> in one commit, so no moment has a box on a module with its transport done, or a
+box back in the WMS with its transport running.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.cannot_go_on">
+<span class="sig-name descname"><span class="pre">cannot_go_on</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="transport.html#jms_kapps.uc2.transport.Transport" title="jms_kapps.uc2.transport.Transport"><span class="pre">Transport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.15)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.cannot_go_on"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.cannot_go_on" title="Link to this definition">#</a></dt>
+<dd><p>End <cite>transport</cite> as failed with <cite>reason</cite>, and notify the WarehouseManagementSystem.</p>
+<p>This module is the one the transport is assigned to: it is handed the transport only
+then, and it keeps it until the box has gone. The box stays here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.reserve">
+<span class="sig-name descname"><span class="pre">reserve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="handshake.html#jms_kapps.uc2.handshake.ReserveRequest" title="jms_kapps.uc2.handshake.ReserveRequest"><span class="pre">ReserveRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="handshake.html#jms_kapps.uc2.handshake.ReserveResult" title="jms_kapps.uc2.handshake.ReserveResult"><span class="pre">ReserveResult</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.reserve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.reserve" title="Link to this definition">#</a></dt>
+<dd><p>Reserve this module for a box, in its memory, and set the reservation’s bound: for a
+box of the WarehouseManagementSystem, whose notification comes with no move before it,
+<cite>SPAWN_BOUND_SECONDS</cite>, for a box reserved ahead, at the plain Reserve of a look-ahead,
+<cite>ahead_bound</cite>, and for a box of a module <cite>arrival_bound</cite>.</p>
+<p><strong>Look-ahead acceptance.</strong> The module accepts only while it holds nothing, has promised
+itself to no other box, and no box that has waited longer still asks (<cite>WaitingOrder</cite>);
+and then only where it is the box’s destination, or its own next module, which it asks a
+plain Reserve for the box, accepts at once. Otherwise it refuses at once and keeps no
+reservation. A plain Reserve, and a Reserve that names no destination, looks no further
+ahead. Every box but the WarehouseManagementSystem’s takes its place in the waiting
+order at its first ask, whatever the answer. With <cite>skip-reserve</cite> armed, the module looks
+ahead for the WarehouseManagementSystem’s Reserve alone.</p>
+<p>Once the stop of the module’s process has begun, it refuses, with the reason “the system
+is stopping” and no refusal that passes, and sets no bound: a reservation then would
+outlast the module.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.receive">
+<span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="handshake.html#jms_kapps.uc2.handshake.ReceiveRequest" title="jms_kapps.uc2.handshake.ReceiveRequest"><span class="pre">ReceiveRequest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="handshake.html#jms_kapps.uc2.handshake.ReceiveResult" title="jms_kapps.uc2.handshake.ReceiveResult"><span class="pre">ReceiveResult</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.receive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.receive" title="Link to this definition">#</a></dt>
+<dd><p>The light barrier: a box has arrived. The possession has changed already, so it never
+refuses. Once it has answered, it reads the box with its transport and carries the box
+on, as its own work. The WarehouseManagementSystem calls no Receive.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jms_kapps.uc2.module.FlexConveyorModule.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">within</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.15)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.15)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../../_modules/jms_kapps/uc2/module.html#FlexConveyorModule.stop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jms_kapps.uc2.module.FlexConveyorModule.stop" title="Link to this definition">#</a></dt>
+<dd><p>This module’s part in the stop of its process, which has begun: wait at most
+<cite>within</cite> seconds for the box it reserved itself for and for its own work, then decide
+on what is left of its reservation. It returns when it has.</p>
+<ul class="simple">
+<li><p><strong>A box from a module</strong>: once the stop has begun, the module’s server takes no new
+connection, so only a Receive already under way still comes, and uses the reservation
+up. If none has come by then, the module reads the graph: if the box is its own, the
+giving module committed the handover, and the module, now the assigned module, ends
+the transport <cite>failed</cite>, “the system is stopping”, unless it has ended. A box that is
+not here it frees, and writes nothing.</p></li>
+<li><p><strong>The box of a spawn</strong>, at the origin: the WarehouseManagementSystem’s notification,
+not a Receive, uses the reservation up. If none has come, the module frees the
+reservation and writes nothing: the WarehouseManagementSystem owns the station’s
+entry, and ends the transport itself when it cannot notify the origin.</p></li>
+<li><p><strong>Its own work</strong>: a hop in its move finishes the move and calls Receive, and work that
+has not handed its box on yet ends its transport <cite>failed</cite>, “the system is stopping”, at
+its next step, since the module asks no Reserve and hands no box to another module once
+the stop has begun; a destination gives its box back.</p></li>
+</ul>
+<p>Inside the station only the assigned module writes the transport.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="history.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">jms_kapps.uc2.history</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="module_dashboard.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">jms_kapps.uc2.module_dashboard</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.Fault"><code class="docutils literal notranslate"><span class="pre">Fault</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.faults_off"><code class="docutils literal notranslate"><span class="pre">faults_off()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads"><code class="docutils literal notranslate"><span class="pre">GraphReads</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads.boxes_held_by"><code class="docutils literal notranslate"><span class="pre">GraphReads.boxes_held_by()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads.connections"><code class="docutils literal notranslate"><span class="pre">GraphReads.connections()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads.workflow_endpoint"><code class="docutils literal notranslate"><span class="pre">GraphReads.workflow_endpoint()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads.capability"><code class="docutils literal notranslate"><span class="pre">GraphReads.capability()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads.wms"><code class="docutils literal notranslate"><span class="pre">GraphReads.wms()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.GraphReads.transport_of"><code class="docutils literal notranslate"><span class="pre">GraphReads.transport_of()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.TransportWrites"><code class="docutils literal notranslate"><span class="pre">TransportWrites</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.TransportWrites.start"><code class="docutils literal notranslate"><span class="pre">TransportWrites.start()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.TransportWrites.complete"><code class="docutils literal notranslate"><span class="pre">TransportWrites.complete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.TransportWrites.fail"><code class="docutils literal notranslate"><span class="pre">TransportWrites.fail()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.Start"><code class="docutils literal notranslate"><span class="pre">Start</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.Later"><code class="docutils literal notranslate"><span class="pre">Later</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.in_background"><code class="docutils literal notranslate"><span class="pre">in_background()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.in_background_after"><code class="docutils literal notranslate"><span class="pre">in_background_after()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.ChooseAgain"><code class="docutils literal notranslate"><span class="pre">ChooseAgain</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.faults"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.faults</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.box_transport"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.box_transport()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.carry_on"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.carry_on()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.hop"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.hop()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.give_back"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.give_back()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.cannot_go_on"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.cannot_go_on()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.reserve"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.reserve()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.receive"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.receive()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jms_kapps.uc2.module.FlexConveyorModule.stop"><code class="docutils literal notranslate"><span class="pre">FlexConveyorModule.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/reference/uc2/module.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

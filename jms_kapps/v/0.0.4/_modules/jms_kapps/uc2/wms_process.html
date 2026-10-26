@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.wms_process &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/wms_process';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.wms_process</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.wms_process</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The WarehouseManagementSystem as its own process, behind its own middleware instance.</span>
+
+<span class="sd">The process registers `:WarehouseManagementSystemService` and its two workflows in the graph,</span>
+<span class="sd">serves them over REST, and takes every notification through the middleware's notification handler.</span>
+<span class="sd">A spawn creates the box directly on its origin and notifies the origin, so no module calls a</span>
+<span class="sd">workflow of the WarehouseManagementSystem, and it moves no box. A spawn is how a person, or a</span>
+<span class="sd">program, starts a box on its journey: a POST to `spawn_box`. The spawn rate is how many boxes a</span>
+<span class="sd">minute the WarehouseManagementSystem spawns on its own, one at each interval of the rate, also</span>
+<span class="sd">while earlier spawns are still on their way: a POST to `set_spawn_rate`, where 0 stops. At most as</span>
+<span class="sd">many spawns are under way at once as the topology has modules that may be an origin; one beyond</span>
+<span class="sd">that is refused with "every origin has a spawn under way". A person makes both posts from the</span>
+<span class="sd">forms of the WarehouseManagementSystem's own dashboard, at `/dashboard`, in the tab "WMS", which</span>
+<span class="sd">also shows its last spawns, the boxes it holds and the transports it opened, from its</span>
+<span class="sd">memory. A program posts the same JSON to the same two routes. A notification is how a module</span>
+<span class="sd">tells it that a transport has ended: the box is back, or the transport failed. It serves its</span>
+<span class="sd">handover event stream, as a module does. Uvicorn runs on the main thread, so that a signal</span>
+<span class="sd">reaches it and the middleware deregisters on the way out. From the stop signal on, the</span>
+<span class="sd">WarehouseManagementSystem refuses every spawn, and its shutdown waits for every spawn of the timer</span>
+<span class="sd">that is under way, so that no spawn is cut short between the create of its box and the</span>
+<span class="sd">notification of its origin.</span>
+
+<span class="sd">Run it as `python -m jms_kapps.uc2.wms_process`, the command line `wms_command` builds. The</span>
+<span class="sd">Launcher does.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_ogm</span><span class="w"> </span><span class="kn">import</span> <span class="n">OGM</span><span class="p">,</span> <span class="n">Node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mode</span><span class="p">,</span> <span class="n">SemanticMiddleware</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">enable_dashboard</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">GRACEFUL_SHUTDOWN_SECONDS</span><span class="p">,</span> <span class="n">stop_has_begun</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.triplestore</span><span class="w"> </span><span class="kn">import</span> <span class="n">connect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="n">GraphView</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.process</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">call_peer</span><span class="p">,</span>
+    <span class="n">notify_with</span><span class="p">,</span>
+    <span class="n">open_handover_event_stream</span><span class="p">,</span>
+    <span class="n">process_parser</span><span class="p">,</span>
+    <span class="n">run_process</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.spawn_rate</span><span class="w"> </span><span class="kn">import</span> <span class="n">SetSpawnRateRequest</span><span class="p">,</span> <span class="n">SpawnRate</span><span class="p">,</span> <span class="n">SpawnTimer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.strategies</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">REAL</span><span class="p">,</span>
+    <span class="n">REAL_WMS_STRATEGY</span><span class="p">,</span>
+    <span class="n">UnknownStrategy</span><span class="p">,</span>
+    <span class="n">WmsStrategy</span><span class="p">,</span>
+    <span class="n">chosen</span><span class="p">,</span>
+    <span class="n">found</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.transport</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ENDED_TRANSPORT_SCOPE</span><span class="p">,</span>
+    <span class="n">TransportRecords</span><span class="p">,</span>
+    <span class="n">transport_from</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span><span class="p">,</span> <span class="n">WMS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Choose</span><span class="p">,</span>
+    <span class="n">SpawnBoxRequest</span><span class="p">,</span>
+    <span class="n">SpawnBoxResult</span><span class="p">,</span>
+    <span class="n">WarehouseManagementSystem</span><span class="p">,</span>
+    <span class="n">seeded_choice</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms_dashboard</span><span class="w"> </span><span class="kn">import</span> <span class="n">TAB</span><span class="p">,</span> <span class="n">register_boxes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.wms_memory</span><span class="w"> </span><span class="kn">import</span> <span class="n">WmsMemory</span>
+
+<span class="c1"># The classes of the two workflows the WarehouseManagementSystem's process registers (`build`): it</span>
+<span class="c1"># takes an order, a spawn or a spawn rate, and the run core's readiness gate lets it through, only</span>
+<span class="c1"># once its service has both.</span>
+<span class="n">WMS_WORKFLOWS</span> <span class="o">=</span> <span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">SpawnBoxWorkflow</span><span class="p">,</span> <span class="n">FC</span><span class="o">.</span><span class="n">SetSpawnRateWorkflow</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="wms_command">
+<a class="viewcode-back" href="../../../reference/uc2/wms_process.html#jms_kapps.uc2.wms_process.wms_command">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wms_command</span><span class="p">(</span><span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">pick_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The command line that runs the WarehouseManagementSystem against `dataset`. It takes</span>
+<span class="sd">    no transit time: it moves no box. With</span>
+<span class="sd">    `pick_seed` it ends with `--pick-seed &lt;pick_seed&gt;`: the seed of the generator it picks its</span>
+<span class="sd">    modules with, unseeded where None. Interim name."""</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span>
+        <span class="s2">"-m"</span><span class="p">,</span>
+        <span class="s2">"jms_kapps.uc2.wms_process"</span><span class="p">,</span>
+        <span class="s2">"--dataset"</span><span class="p">,</span>
+        <span class="n">dataset</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">([]</span> <span class="k">if</span> <span class="n">pick_seed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="s2">"--pick-seed"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pick_seed</span><span class="p">)]),</span>
+    <span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="build">
+<a class="viewcode-back" href="../../../reference/uc2/wms_process.html#jms_kapps.uc2.wms_process.build">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span>
+    <span class="n">ogm</span><span class="p">:</span> <span class="n">OGM</span><span class="p">,</span>
+    <span class="n">host</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">port</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">choose</span><span class="p">:</span> <span class="n">Choose</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">,</span>
+    <span class="n">strategy</span><span class="p">:</span> <span class="n">WmsStrategy</span> <span class="o">=</span> <span class="n">REAL_WMS_STRATEGY</span><span class="p">,</span>
+    <span class="n">strategy_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">REAL</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SemanticMiddleware</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The WarehouseManagementSystem's middleware instance, with its two workflows, its</span>
+<span class="sd">    notification handler, its handover event stream and its dashboard. `choose` picks a module</span>
+<span class="sd">    out of several, at random unless a test says otherwise, so that a live test can cover every</span>
+<span class="sd">    ordered pair of modules in a few boxes. `strategy`, named `strategy_name`, picks the origin and</span>
+<span class="sd">    the destination of a spawn among its candidates, with `choose`."""</span>
+    <span class="n">middleware</span> <span class="o">=</span> <span class="n">SemanticMiddleware</span><span class="p">(</span>
+        <span class="n">mode</span><span class="o">=</span><span class="n">Mode</span><span class="o">.</span><span class="n">RESOURCE</span><span class="p">,</span>
+        <span class="n">resource_iri</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">WMS</span><span class="p">),</span>
+        <span class="n">service_class</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">WarehouseManagementSystemService</span><span class="p">),</span>
+        <span class="n">ogm</span><span class="o">=</span><span class="n">ogm</span><span class="p">,</span>
+        <span class="n">host</span><span class="o">=</span><span class="n">host</span><span class="p">,</span>
+        <span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span>
+        <span class="n">activity_feed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">GraphView</span><span class="p">(</span><span class="n">ogm</span><span class="o">.</span><span class="n">db</span><span class="p">,</span> <span class="n">fetch</span><span class="o">=</span><span class="n">middleware</span><span class="o">.</span><span class="n">fetch</span><span class="p">)</span>
+    <span class="n">wms</span> <span class="o">=</span> <span class="n">WarehouseManagementSystem</span><span class="p">(</span>
+        <span class="n">WMS</span><span class="p">,</span>
+        <span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span>
+        <span class="n">records</span><span class="o">=</span><span class="n">TransportRecords</span><span class="p">(</span><span class="n">middleware</span><span class="p">),</span>
+        <span class="c1"># The origin's Reserve answers from the graph at once: the step timeout bounds it.</span>
+        <span class="n">call</span><span class="o">=</span><span class="n">call_peer</span><span class="p">,</span>
+        <span class="n">notify</span><span class="o">=</span><span class="n">notify_with</span><span class="p">(</span><span class="n">middleware</span><span class="p">),</span>
+        <span class="n">events</span><span class="o">=</span><span class="n">open_handover_event_stream</span><span class="p">(</span><span class="n">middleware</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">),</span>
+        <span class="c1"># From the stop signal on, before uvicorn waits for the open connections.</span>
+        <span class="n">stopping</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">stop_has_begun</span><span class="p">(</span><span class="n">middleware</span><span class="o">.</span><span class="n">app</span><span class="p">),</span>
+        <span class="n">choose</span><span class="o">=</span><span class="n">choose</span><span class="p">,</span>
+        <span class="n">strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">,</span>
+        <span class="n">strategy_name</span><span class="o">=</span><span class="n">strategy_name</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># A notification of a transport that ended implements a module's capability, none of the</span>
+    <span class="c1"># WMS's, so the middleware's intake hands it to the handler, read once under this scope.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transport_ended</span><span class="p">(</span><span class="n">transport</span><span class="p">:</span> <span class="n">Node</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">wms</span><span class="o">.</span><span class="n">transport_ended</span><span class="p">(</span><span class="n">transport_from</span><span class="p">(</span><span class="n">transport</span><span class="p">))</span>
+
+    <span class="n">middleware</span><span class="o">.</span><span class="n">on_notification</span><span class="p">(</span><span class="n">transport_ended</span><span class="p">,</span> <span class="n">class_scope</span><span class="o">=</span><span class="n">ENDED_TRANSPORT_SCOPE</span><span class="p">)</span>
+    <span class="c1"># The seed wrote the station before any party started, and a run keeps it, so the dashboard's</span>
+    <span class="c1"># form offers the modules read once here: those a spawn may name, the entry and the exit</span>
+    <span class="c1"># modules where the topology names them, and every module where it names none.</span>
+    <span class="n">origins</span><span class="p">,</span> <span class="n">destinations</span> <span class="o">=</span> <span class="n">wms</span><span class="o">.</span><span class="n">origins_and_destinations</span><span class="p">()</span>
+    <span class="n">serve_spawning</span><span class="p">(</span>
+        <span class="n">middleware</span><span class="p">,</span>
+        <span class="n">wms</span><span class="o">.</span><span class="n">spawn</span><span class="p">,</span>
+        <span class="n">wms</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
+        <span class="n">origins</span><span class="o">=</span><span class="n">origins</span><span class="p">,</span>
+        <span class="n">destinations</span><span class="o">=</span><span class="n">destinations</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">middleware</span></div>
+
+
+
+<div class="viewcode-block" id="serve_spawning">
+<a class="viewcode-back" href="../../../reference/uc2/wms_process.html#jms_kapps.uc2.wms_process.serve_spawning">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">serve_spawning</span><span class="p">(</span>
+    <span class="n">middleware</span><span class="p">:</span> <span class="n">SemanticMiddleware</span><span class="p">,</span>
+    <span class="n">spawn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">SpawnBoxRequest</span><span class="p">],</span> <span class="n">SpawnBoxResult</span><span class="p">],</span>
+    <span class="n">memory</span><span class="p">:</span> <span class="n">WmsMemory</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">origins</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+    <span class="n">destinations</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnTimer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Serve on `middleware` what spawns boxes: the workflows `spawn_box` and `set_spawn_rate`,</span>
+<span class="sd">    the timer behind the second, and the dashboard with the WarehouseManagementSystem's boxes.</span>
+
+<span class="sd">    The dashboard is the middleware's own, with its boxes of the instance in the tab "System",</span>
+<span class="sd">    "Refused writes" among them, and opens on the tab of the WarehouseManagementSystem's boxes.</span>
+<span class="sd">    Its routes are the dashboard's; the two workflows are the only routes added here.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        middleware: The WarehouseManagementSystem's middleware, not started yet.</span>
+<span class="sd">        spawn: The WarehouseManagementSystem's spawn.</span>
+<span class="sd">        memory: What the WarehouseManagementSystem knows of its own work.</span>
+<span class="sd">        origins: The modules a spawn may name as its origin, which the dashboard's form offers:</span>
+<span class="sd">            the entry modules of the FlexConveyor station, or every module where it names none.</span>
+<span class="sd">        destinations: Those a spawn may name as its destination, which the form offers: its</span>
+<span class="sd">            exit modules, or every module where it names none.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The timer, stopped. It stops again when the middleware shuts down, once every spawn</span>
+<span class="sd">        under way has ended, or a bound has passed.</span>
+<span class="sd">    """</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="n">SpawnTimer</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">spawn</span><span class="p">(</span><span class="n">SpawnBoxRequest</span><span class="p">()))</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stop_the_timer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># The spawns under way started before the stop signal, so each ends within a create and</span>
+        <span class="c1"># a notification after it, usually while uvicorn still waits for the open connections.</span>
+        <span class="c1"># The bound keeps a spawn that hangs from holding the stop until the Launcher kills the</span>
+        <span class="c1"># process.</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">to_thread</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">stop</span><span class="p">,</span> <span class="n">GRACEFUL_SHUTDOWN_SECONDS</span><span class="p">)</span>
+
+    <span class="n">middleware</span><span class="o">.</span><span class="n">add_callback</span><span class="p">(</span><span class="s2">"on_shutdown"</span><span class="p">,</span> <span class="n">stop_the_timer</span><span class="p">)</span>
+
+    <span class="nd">@middleware</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span>
+        <span class="n">capability_class</span><span class="o">=</span><span class="n">FC</span><span class="o">.</span><span class="n">SpawnBoxCapability</span><span class="p">,</span> <span class="n">workflow_class</span><span class="o">=</span><span class="n">FC</span><span class="o">.</span><span class="n">SpawnBoxWorkflow</span>
+    <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">spawn_box</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">SpawnBoxRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnBoxResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Make a box, and send it from its origin module to its destination module and back.</span>
+
+<span class="sd">        Leave out the origin to have a free entry module picked, and the destination to have an</span>
+<span class="sd">        exit module picked; on a topology that names no such role, any free module, and any</span>
+<span class="sd">        module but the origin. A picked destination is one the origin reaches, and a picked</span>
+<span class="sd">        origin one that reaches a destination.</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="n">spawn</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+    <span class="nd">@middleware</span><span class="o">.</span><span class="n">workflow</span><span class="p">(</span>
+        <span class="n">capability_class</span><span class="o">=</span><span class="n">FC</span><span class="o">.</span><span class="n">SetSpawnRateCapability</span><span class="p">,</span>
+        <span class="n">workflow_class</span><span class="o">=</span><span class="n">FC</span><span class="o">.</span><span class="n">SetSpawnRateWorkflow</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_spawn_rate</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">SetSpawnRateRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SpawnRate</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Spawn boxes at a steady rate, each with its origin and its destination left to the</span>
+<span class="sd">        WarehouseManagementSystem; 0 stops. Answers the rate in force."""</span>
+        <span class="k">return</span> <span class="n">SpawnRate</span><span class="p">(</span><span class="n">boxes_per_minute</span><span class="o">=</span><span class="n">timer</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">boxes_per_minute</span><span class="p">))</span>
+
+    <span class="n">register_boxes</span><span class="p">(</span>
+        <span class="c1"># It opens on the WMS's own tab, where a person spawns boxes.</span>
+        <span class="n">enable_dashboard</span><span class="p">(</span><span class="n">middleware</span><span class="p">,</span> <span class="n">first_tab</span><span class="o">=</span><span class="n">TAB</span><span class="p">),</span>
+        <span class="n">memory</span><span class="p">,</span>
+        <span class="n">timer</span><span class="p">,</span>
+        <span class="n">origins</span><span class="o">=</span><span class="n">origins</span><span class="p">,</span>
+        <span class="n">destinations</span><span class="o">=</span><span class="n">destinations</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">timer</span></div>
+
+
+
+<div class="viewcode-block" id="wms_parser">
+<a class="viewcode-back" href="../../../reference/uc2/wms_process.html#jms_kapps.uc2.wms_process.wms_parser">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wms_parser</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The command line of the WarehouseManagementSystem's process, which `wms_command` builds."""</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">process_parser</span><span class="p">(</span><span class="s2">"The WarehouseManagementSystem of use case 2"</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--wms-strategy"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">REAL</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="sa">f</span><span class="s2">"The WMS strategy, by its name (default: </span><span class="si">{</span><span class="n">REAL</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--pick-seed"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Seed the generator that picks the modules of a spawn with this whole number, so "</span>
+        <span class="s2">"that the same seed gives the same sequence of picks (default: unseeded)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">parser</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../reference/uc2/wms_process.html#jms_kapps.uc2.wms_process.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">wms_parser</span><span class="p">()</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="c1"># Before the store is read: a WMS given a strategy it does not know does not start. Its</span>
+    <span class="c1"># process ends with the reason, which the Launcher page shows with the state `failed`.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">strategy</span> <span class="o">=</span> <span class="n">chosen</span><span class="p">(</span><span class="n">WmsStrategy</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">wms_strategy</span><span class="p">,</span> <span class="n">found</span><span class="p">(</span><span class="n">WmsStrategy</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">UnknownStrategy</span> <span class="k">as</span> <span class="n">unknown</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"jms-uc2 WMS: </span><span class="si">{</span><span class="n">unknown</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="n">run_process</span><span class="p">(</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">host</span><span class="p">,</span>
+        <span class="k">lambda</span> <span class="n">port</span><span class="p">:</span> <span class="n">build</span><span class="p">(</span>
+            <span class="n">OGM</span><span class="p">(</span><span class="n">db</span><span class="o">=</span><span class="n">connect</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">dataset</span><span class="p">)),</span>
+            <span class="n">args</span><span class="o">.</span><span class="n">host</span><span class="p">,</span>
+            <span class="n">port</span><span class="p">,</span>
+            <span class="n">choose</span><span class="o">=</span><span class="n">seeded_choice</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">pick_seed</span><span class="p">),</span>
+            <span class="n">strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">,</span>
+            <span class="n">strategy_name</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">wms_strategy</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="k">lambda</span> <span class="n">address</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">WMS</span><span class="si">}</span><span class="s2"> on </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

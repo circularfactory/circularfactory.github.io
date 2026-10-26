@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.common.triplestore &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/common/triplestore';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.common.triplestore</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.common.triplestore</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The triple store both use cases run against, and how an ontology or a shapes file gets into it.</span>
+
+<span class="sd">Every store is built by the triple-store interface's `connect()`, through the middleware's</span>
+<span class="sd">`triplestore_for`, and is typed by the interface's contract, `TripleStore`. The store's URL and</span>
+<span class="sd">the identity come from the environment, exactly as the middleware's own examples read them:</span>
+<span class="sd">`TRIPLESTORE_URL`, `TRIPLESTORE_USERNAME` and `TRIPLESTORE_PASSWORD`. The dataset never does. A</span>
+<span class="sd">seed clears the dataset it is pointed at, so the caller always names it, and the name defaults to</span>
+<span class="sd">the one dataset these use cases own. Every demo runs on the configured store. On it, create that</span>
+<span class="sd">dataset once from `graphdb/jms-kapps-repo-config.ttl`. The local store that the project's</span>
+<span class="sd">`compose.yaml` brings up, only the fallback for a machine on which no store is configured, has it</span>
+<span class="sd">already.</span>
+
+<span class="sd">The store is built by `connect()` and named in the interface's terms, the dataset and the</span>
+<span class="sd">`TRIPLESTORE_*` variables; the reset sets the shapes with the store's `shapes_set`.</span>
+
+<span class="sd">The reset seeds a demonstration or test dataset: a productive store already holds the</span>
+<span class="sd">ontologies and shapes, and no service calls the reset (services use this module only to connect</span>
+<span class="sd">and to read).</span>
+
+<span class="sd">A dataset is emptied whole by `clear_graph_by_graph`, the Launcher's Clear: every graph, one</span>
+<span class="sd">by one, and then the count of the statements it still holds.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">importlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">resources</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Protocol</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.credentials</span><span class="w"> </span><span class="kn">import</span> <span class="n">triplestore_for</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.seeding</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">CORE_GRAPH</span><span class="p">,</span>
+    <span class="n">MES_GRAPH</span><span class="p">,</span>
+    <span class="n">SERVICE_GRAPH</span><span class="p">,</span>
+    <span class="n">clear_dataset</span><span class="p">,</span>
+    <span class="n">load_shared_ontologies</span><span class="p">,</span>
+    <span class="n">read_service_shapes</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.validation_report</span><span class="w"> </span><span class="kn">import</span> <span class="n">rule_names</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">IRI</span><span class="p">,</span>
+    <span class="n">ShaclValidationError</span><span class="p">,</span>
+    <span class="n">SPARQLQuery</span><span class="p">,</span>
+    <span class="n">TripleStore</span><span class="p">,</span>
+    <span class="n">TripleStoreNotSupportedError</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.prefixes</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_prefixes</span>
+
+<span class="n">DEFAULT_DATASET</span> <span class="o">=</span> <span class="s2">"jms-kapps"</span>
+
+<span class="c1"># The media type of the shapes a reset sets: Turtle, as the use cases ship them.</span>
+<span class="n">SHAPES_CONTENT_TYPE</span> <span class="o">=</span> <span class="s2">"text/turtle"</span>
+
+<span class="c1"># The named graphs of the middleware's shared ontologies, Core, `svc:` and `mes:`, which every</span>
+<span class="c1"># reset loads again (`load_shared_ontologies`), in the order it loads them.</span>
+<span class="n">ONTOLOGY_GRAPHS</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">CORE_GRAPH</span><span class="p">,</span> <span class="n">SERVICE_GRAPH</span><span class="p">,</span> <span class="n">MES_GRAPH</span><span class="p">)</span>
+
+<span class="c1"># Every named graph of the dataset that holds a statement, in standard SPARQL.</span>
+<span class="n">_NAMED_GRAPHS</span> <span class="o">=</span> <span class="s2">"SELECT DISTINCT ?graph WHERE { GRAPH ?graph { ?s ?p ?o } }"</span>
+
+
+<div class="viewcode-block" id="connect">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.connect">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">DEFAULT_DATASET</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">TripleStore</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A store bound to `dataset`, from the interface's `connect()`, with the store's URL and the</span>
+<span class="sd">    identity read from the environment. It logs in and probes the dataset now.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If a connection variable is missing, naming the variable.</span>
+<span class="sd">        TripleStoreInterfaceError: The error of the interface's `connect()`, unchanged: the store</span>
+<span class="sd">            cannot be reached, refuses the identity, or does not have the dataset.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">triplestore_for</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Queryable">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.Queryable">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Queryable</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Anything that answers a SPARQL query, as a store does. What a reader takes."""</span>
+
+<div class="viewcode-block" id="Queryable.query">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.Queryable.query">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span> <span class="o">...</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="bindings">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.bindings">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">bindings</span><span class="p">(</span>
+    <span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">,</span> <span class="n">sparql</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">SPARQLQuery</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">convert</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The rows a SELECT answers, each a dict by variable name. `sparql` is the query's text, or</span>
+<span class="sd">    a query the interface's builder made, which is sent as its rendered text.</span>
+
+<span class="sd">    The values are converted to Python and rdflib types. With `convert=False` each value is the</span>
+<span class="sd">    term as SPARQL's JSON results write it, a dict with its `type` and its lexical `value`.</span>
+<span class="sd">    """</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">sparql</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sparql</span><span class="p">,</span> <span class="n">SPARQLQuery</span><span class="p">)</span> <span class="k">else</span> <span class="n">sparql</span>
+    <span class="k">return</span> <span class="n">result_rows</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">convert_bindings</span><span class="o">=</span><span class="n">convert</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="result_rows">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.result_rows">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">result_rows</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The rows of what a client's `query` answered: none where it answered no SELECT's</span>
+<span class="sd">    results."""</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"results"</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"bindings"</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+        <span class="k">else</span> <span class="p">[]</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="read_asset">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.read_asset">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">read_asset</span><span class="p">(</span><span class="n">package</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return a Turtle file shipped inside `package`."""</span>
+    <span class="k">return</span> <span class="n">resources</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="n">package</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="o">*</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="with_operation_status_shape">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.with_operation_status_shape">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">with_operation_status_shape</span><span class="p">(</span><span class="n">shapes</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`shapes` with the middleware's operation-status shape in front of it: every Operation has</span>
+<span class="sd">    exactly one status, one of four values. An empty `shapes` gives that shape alone.</span>
+
+<span class="sd">    The store's `shapes_set` replaces every shape, so the two go as one document. Each Turtle file</span>
+<span class="sd">    declares its own prefixes, which the joined document repeats.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">read_service_shapes</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">shapes</span></div>
+
+
+
+<div class="viewcode-block" id="reset">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.reset">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span>
+    <span class="n">store</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">ontology</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">shapes</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">individuals</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Empty the dataset, load one use case's ontology and shapes into it, then a seed's</span>
+<span class="sd">    `individuals`, and register jms_kapps' prefixes in it.</span>
+
+<span class="sd">    The order matters. The old data goes first, because a store validates the data it already</span>
+<span class="sd">    holds against its shapes the moment the shapes change. Then the shapes, which replace every</span>
+<span class="sd">    shape the dataset had, through the store's `shapes_set`; a dataset without SHACL validation</span>
+<span class="sd">    refuses them. The middleware's operation-status shape joins every shapes document the reset</span>
+<span class="sd">    sends, an empty one too (`with_operation_status_shape`): the demonstrations seed it, the same</span>
+<span class="sd">    way they load the middleware's service ontology, and a productive knowledge graph already</span>
+<span class="sd">    holds it. With `shapes` None, the reset sends no shapes at all, for a dataset without SHACL</span>
+<span class="sd">    validation that a caller seeds on purpose, as the measurement harness seeds its SHACL-off</span>
+<span class="sd">    twin. Then Core, `svc:` and `mes:`, then the use case's ontology into the default graph, which is where the</span>
+<span class="sd">    middleware looks for its alignment axioms, then the individuals, also as Turtle, into the</span>
+<span class="sd">    default graph. The prefixes come last, after every import, because an import adds back the</span>
+<span class="sd">    names nobody chose that `register_prefixes` deletes.</span>
+
+<span class="sd">    Core, `svc:` and `mes:` each live in a named graph of their own, which the clear leaves</span>
+<span class="sd">    standing, and each seed loads them again from the installed middleware. A dataset seeded</span>
+<span class="sd">    under an earlier release of the middleware would otherwise keep that release's `svc:`, and the</span>
+<span class="sd">    object-graph mapper refuses a write of a term that a newer release added, such as the issuer</span>
+<span class="sd">    that the middleware's `issue_operation()` writes.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TripleStoreNotSupportedError: If the dataset has no SHACL validation and `shapes` is not</span>
+<span class="sd">            None, so that the shapes would validate nothing. Only the old data is cleared then.</span>
+<span class="sd">    """</span>
+    <span class="n">clear_dataset</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">shapes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">shapes_set</span><span class="p">(</span><span class="n">with_operation_status_shape</span><span class="p">(</span><span class="n">shapes</span><span class="p">),</span> <span class="n">SHAPES_CONTENT_TYPE</span><span class="p">)</span>
+    <span class="n">load_shared_ontologies</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">reload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">store</span><span class="o">.</span><span class="n">graph_add</span><span class="p">(</span><span class="n">ontology</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s2">"application/x-turtle"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">individuals</span><span class="p">:</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">graph_add</span><span class="p">(</span><span class="n">individuals</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s2">"application/x-turtle"</span><span class="p">)</span>
+    <span class="n">register_prefixes</span><span class="p">(</span><span class="n">store</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="ClearFailed">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.ClearFailed">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ClearFailed</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A clear of a dataset stopped part-way: the store did not clear one of its graphs or its</span>
+<span class="sd">    shapes, did not list its graphs, or did not say how many statements are left. The message</span>
+<span class="sd">    says which and why, for a person to read. `nothing_cleared` is whether it stopped before any</span>
+<span class="sd">    graph was cleared, so that the dataset holds what it held."""</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">nothing_cleared</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nothing_cleared</span> <span class="o">=</span> <span class="n">nothing_cleared</span></div>
+
+
+
+<div class="viewcode-block" id="clear_graph_by_graph">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.clear_graph_by_graph">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">clear_graph_by_graph</span><span class="p">(</span><span class="n">store</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Clear every graph of the dataset, one by one, and its shapes, and return how many</span>
+<span class="sd">    statements it holds then: 0 where it is empty.</span>
+
+<span class="sd">    The store lists its named graphs first, by a standard SPARQL query, so that a store that</span>
+<span class="sd">    cannot list them has nothing cleared. Then the default graph is cleared, then the named graphs</span>
+<span class="sd">    of the shared ontologies, each whether it holds anything or not, then the shapes, through the</span>
+<span class="sd">    store's `shapes_set` with an empty document; then every other named graph the store listed,</span>
+<span class="sd">    such as one a person loaded or another program wrote, or the one in which the middleware keeps</span>
+<span class="sd">    the receipts of writes that a stopped process left, `urn:x-kapps:write-receipts`. That is the</span>
+<span class="sd">    order in which a reset clears the first three (`reset`), which a store that validates with</span>
+<span class="sd">    shapes takes: the data goes before the ontologies and the shapes it is checked against. A</span>
+<span class="sd">    dataset without SHACL validation has no shapes to remove, and its store refuses `shapes_set`</span>
+<span class="sd">    as not supported: the clear goes on. One request for each graph, through the interface's and</span>
+<span class="sd">    the middleware's own calls, and never one request for the whole dataset: the store refuses</span>
+<span class="sd">    that while it collects history, and clears each graph (measured on the KIT store on</span>
+<span class="sd">    2026-10-01). Nothing here turns the history collection off: a clear while it is off is not</span>
+<span class="sd">    recorded, and the cleared data would then disappear from every earlier point in time.</span>
+
+<span class="sd">    The interface takes every absolute IRI as the name of a graph, so the receipts graph is listed</span>
+<span class="sd">    and cleared as any other.</span>
+
+<span class="sd">    The count is `statement_count`, of the statements written, after the last clear.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ClearFailed: If the store did not list its named graphs, and nothing was cleared. If it</span>
+<span class="sd">            did not clear a graph or the shapes, naming which, the dataset and why; nothing later</span>
+<span class="sd">            is cleared then. Or if it did not say how many statements are left.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">listed</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">IRI</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">"graph"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">bindings</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">_NAMED_GRAPHS</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ClearFailed</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the triple store did not list the named graphs of </span><span class="si">{</span><span class="n">store</span><span class="o">.</span><span class="n">dataset</span><span class="si">}</span><span class="s2">, so nothing was "</span>
+            <span class="sa">f</span><span class="s2">"cleared: </span><span class="si">{</span><span class="n">_why</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">nothing_cleared</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+    <span class="c1"># The default graph first: a refusal of it leaves the dataset as it was.</span>
+    <span class="n">_clear</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">nothing_cleared</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">graph</span> <span class="ow">in</span> <span class="n">ONTOLOGY_GRAPHS</span><span class="p">:</span>
+        <span class="n">_clear</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">nothing_cleared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_clear_shapes</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">graph</span> <span class="ow">in</span> <span class="p">(</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">listed</span> <span class="k">if</span> <span class="n">g</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ONTOLOGY_GRAPHS</span><span class="p">):</span>
+        <span class="n">_clear</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">graph</span><span class="p">,</span> <span class="n">nothing_cleared</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">statement_count</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ClearFailed</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"every graph of </span><span class="si">{</span><span class="n">store</span><span class="o">.</span><span class="n">dataset</span><span class="si">}</span><span class="s2"> was cleared, but the triple store did not say how "</span>
+            <span class="sa">f</span><span class="s2">"many statements it holds: </span><span class="si">{</span><span class="n">_why</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span></div>
+
+
+
+<div class="viewcode-block" id="statement_count">
+<a class="viewcode-back" href="../../../reference/common/triplestore.html#jms_kapps.common.triplestore.statement_count">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">statement_count</span><span class="p">(</span><span class="n">db</span><span class="p">:</span> <span class="n">Queryable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""How many statements the dataset holds as written: in its default graph and in every named</span>
+<span class="sd">    graph, leaving out what its reasoner infers, since a dataset that holds none still infers the</span>
+<span class="sd">    axioms of its ruleset.</span>
+
+<span class="sd">    The scope of the written statements is stated through the interface's query builder</span>
+<span class="sd">    (`include_implicit=False`), which writes it in the form its store understands. On the KIT</span>
+<span class="sd">    store that scope is the written statements of the default graph alone, beside every named</span>
+<span class="sd">    graph of the dataset (the documentation of its query behaviour), so each named graph is</span>
+<span class="sd">    counted on its own. A statement of the default scope that a named graph holds too is counted</span>
+<span class="sd">    there only, so the count is the same where a store's default scope takes in its named graphs,</span>
+<span class="sd">    and a statement that the default graph and a named graph both hold is counted once.</span>
+<span class="sd">    """</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">bindings</span><span class="p">(</span>
+        <span class="n">db</span><span class="p">,</span>
+        <span class="n">SPARQLQuery</span><span class="o">.</span><span class="n">select</span><span class="p">(</span>
+            <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s2">"(COUNT(*) AS ?statements)"</span><span class="p">],</span>
+            <span class="n">where_clauses</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">"{ ?s ?p ?o FILTER NOT EXISTS { GRAPH ?in { ?s ?p ?o } } }"</span><span class="p">,</span>
+                <span class="s2">"UNION { GRAPH ?g { ?s ?p ?o } }"</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">include_implicit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">convert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"statements"</span><span class="p">][</span><span class="s2">"value"</span><span class="p">])</span> <span class="k">if</span> <span class="n">rows</span> <span class="k">else</span> <span class="mi">0</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_clear</span><span class="p">(</span><span class="n">store</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">,</span> <span class="n">graph</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">nothing_cleared</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Clear `graph` of the dataset, the default graph if None, as the interface names it:</span>
+<span class="sd">    the middleware's own clear of the default graph, which refuses to go on where the store did</span>
+<span class="sd">    not clear it, and the interface's of a named graph.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ClearFailed: If the store did not clear it, naming it and why, with `nothing_cleared`</span>
+<span class="sd">            as given: whether no graph was cleared before it.</span>
+<span class="sd">    """</span>
+    <span class="n">what</span> <span class="o">=</span> <span class="s2">"the default graph"</span> <span class="k">if</span> <span class="n">graph</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"the graph &lt;</span><span class="si">{</span><span class="n">graph</span><span class="si">}</span><span class="s2">&gt;"</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">graph</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">clear_dataset</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="n">cleared</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">graph_clear</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ClearFailed</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the triple store did not clear </span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">store</span><span class="o">.</span><span class="n">dataset</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">_why</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">nothing_cleared</span><span class="o">=</span><span class="n">nothing_cleared</span><span class="p">,</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">cleared</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ClearFailed</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the triple store did not clear </span><span class="si">{</span><span class="n">what</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="n">store</span><span class="o">.</span><span class="n">dataset</span><span class="si">}</span><span class="s2">: "</span>
+            <span class="s2">"it answered that it did not"</span><span class="p">,</span>
+            <span class="n">nothing_cleared</span><span class="o">=</span><span class="n">nothing_cleared</span><span class="p">,</span>
+        <span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_clear_shapes</span><span class="p">(</span><span class="n">store</span><span class="p">:</span> <span class="n">TripleStore</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Remove every shape of the dataset, through the store's `shapes_set` with an empty</span>
+<span class="sd">    document. A dataset without SHACL validation has none, and its store refuses the call as not</span>
+<span class="sd">    supported: nothing is removed then, and the clear goes on.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ClearFailed: If the store did not remove them, naming why. A graph was cleared before.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">store</span><span class="o">.</span><span class="n">shapes_set</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">SHAPES_CONTENT_TYPE</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">TripleStoreNotSupportedError</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ClearFailed</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the triple store did not remove the shapes of </span><span class="si">{</span><span class="n">store</span><span class="o">.</span><span class="n">dataset</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">_why</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
+            <span class="n">nothing_cleared</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_why</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="ne">Exception</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Why the store refused, for a person to read: the rules a validation report names, by</span>
+<span class="sd">    their shape at their focus node, rather than the report itself, or else the error's own</span>
+<span class="sd">    message."""</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">ShaclValidationError</span><span class="p">):</span>
+        <span class="n">rules</span> <span class="o">=</span> <span class="n">rule_names</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">report</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">"its shapes refused it"</span> <span class="o">+</span> <span class="p">(</span><span class="sa">f</span><span class="s2">", by </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rules</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">rules</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

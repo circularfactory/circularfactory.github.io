@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.harness &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/harness';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.harness</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.harness</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""`jms-eval`: one command takes a spec to the report and the table. Iteration one of the measurement</span>
+<span class="sd">harness (interim names: the command, its options, its output and this module's API).</span>
+
+<span class="sd">    jms-eval [spec.toml] [--output &lt;folder&gt;] [--prefills &lt;folder&gt;]</span>
+<span class="sd">             [--heavy-run-approval &lt;approval file&gt;] [--stop-at &lt;time&gt;] [--repeat block3:2]</span>
+<span class="sd">             [--dry-run]</span>
+
+<span class="sd">Repeating the evaluation should take about as much effort as running a use case. The command</span>
+<span class="sd">composes what the other commands do and does none of it twice:</span>
+
+<span class="sd">1. **The spec.** Without an argument it is the validation spec, `specs/validation.toml`, which</span>
+<span class="sd">   covers each claimed figure once with short windows. Every spec in `specs/` ships.</span>
+<span class="sd">2. **The store**, picked as `./run-uc2` picks it, with its messages: the store that</span>
+<span class="sd">   `TRIPLESTORE_URL` names; else the one `GRAPHDB_URL` names, with the deprecation message (the</span>
+<span class="sd">   run reads the deprecated variables as if the new ones were set); else the local GraphDB of</span>
+<span class="sd">   `compose.yaml`, which the command starts as `./run-uc2` does. A dry run starts and contacts</span>
+<span class="sd">   nothing.</span>
+<span class="sd">3. **The prefill files.** Each one the spec names that is missing in `--prefills` (default:</span>
+<span class="sd">   `prefills`) is made before the first run, by the prefill generator (`prefill.write_prefill`),</span>
+<span class="sd">   so the file is the one the generator makes alone: the topology of the configuration that names</span>
+<span class="sd">   it (a shipped name, or a file next to the spec), the size that the file's name gives</span>
+<span class="sd">   (`&lt;topology&gt;-1M.ttl` is 1M statements, and nothing else is read from the name), and the seed 1</span>
+<span class="sd">   unless the spec's defaults give `prefill_seed`. A file that is there is never made again.</span>
+<span class="sd">4. **The runs**, as `jms-eval-sweep` makes them (`sweep`): the runs and replay levels without a</span>
+<span class="sd">   record, one by one, each record below `--output`, the report made again after each run. A</span>
+<span class="sd">   spec with the precision rule runs in rounds, and the call goes on round after round until no</span>
+<span class="sd">   configuration is open (`sweep.sweep_rounds`).</span>
+<span class="sd">   It takes the sweep's stop time, `--stop-at`, and obeys its stop file, `STOP` in `--output`:</span>
+<span class="sd">   before each run it stops at the stop time or where the stop file is there, and removes the</span>
+<span class="sd">   stop file.</span>
+<span class="sd">5. **The report and the table** (`report`, `table`) at the end, whatever the end of the runs:</span>
+<span class="sd">   `--output`/`report/report.md`, `--output`/`table.md` and `table.json`.</span>
+
+<span class="sd">**The heavy parts are a safety part.** A heavy configuration, a ramp's level and a replay level</span>
+<span class="sd">above the factor 1 start only under an approval that covers the spec (`approval`). Without the</span>
+<span class="sd">option `--heavy-run-approval` the command runs everything that needs none, and at the end it lists</span>
+<span class="sd">the heavy parts it skipped, with how to give an approval. With an approval file the heavy parts run</span>
+<span class="sd">too, each through `approval.cover` at its start (`sweep.make_runs`): a heavy run that the approval</span>
+<span class="sd">does not cover then (another spec, a spec changed since, a period that is not now) is skipped, the</span>
+<span class="sd">normal runs are made, and at the end the call lists each heavy run it skipped with the reason. This command adds no way to run a heavy part. In a spec with the precision</span>
+<span class="sd">rule each heavy part runs one time, in round 1, and `--repeat` makes sure a target repetition of</span>
+<span class="sd">a part exists, as the sweep's option does (`sweep.repetitions_on_request`).</span>
+
+<span class="sd">**The dry run** (`--dry-run`) needs no store and makes nothing: it shows the sweep's listing</span>
+<span class="sd">(`sweep.listing`), the store it would pick, the prefill files it would make and the runs it would</span>
+<span class="sd">make, and the heavy parts it would skip or run.</span>
+
+<span class="sd">**Removed configurations:** the</span>
+<span class="sd">command has no selection, and it leaves out each configuration that `jms-eval-sweep --remove`</span>
+<span class="sd">removed in `--output` (`sweep.REMOVED_FILE`), until `jms-eval-sweep --put-back` puts it back.</span>
+
+<span class="sd">It exits with 0 once every run it made completed, its runs ended or stopped at the stop time or</span>
+<span class="sd">the stop file, and the report and the table were made; 1 when a run it made failed, it stopped at a</span>
+<span class="sd">run that a stop signal ended or at the third failed run in a row, a round had nothing to make, or</span>
+<span class="sd">the report or the table could not be made; and 2 when it refused to start: nothing reached a store</span>
+<span class="sd">then. A heavy part that it skipped changes no exit code.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Collection</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">prefill</span> <span class="k">as</span> <span class="n">prefill_generator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.approval</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">APPROVAL_FORM</span><span class="p">,</span>
+    <span class="n">OPTION</span><span class="p">,</span>
+    <span class="n">Approval</span><span class="p">,</span>
+    <span class="n">HeavyRunRefused</span><span class="p">,</span>
+    <span class="n">load_approval</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">NO_PREFILL</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.replay_levels</span><span class="w"> </span><span class="kn">import</span> <span class="n">level_key</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.run_uc2</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">missing_store_variables</span><span class="p">,</span>
+    <span class="n">run_on_the_configured_store</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.spec</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">SpecConfiguration</span><span class="p">,</span>
+    <span class="n">SpecRefused</span><span class="p">,</span>
+    <span class="n">configurations</span><span class="p">,</span>
+    <span class="n">read_spec</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.summary</span><span class="w"> </span><span class="kn">import</span> <span class="n">read_summaries</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.sweep</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Call</span><span class="p">,</span>
+    <span class="n">SweepRun</span><span class="p">,</span>
+    <span class="n">add_repeat_option</span><span class="p">,</span>
+    <span class="n">add_stop_time_option</span><span class="p">,</span>
+    <span class="n">choose_call</span><span class="p">,</span>
+    <span class="n">has_run</span><span class="p">,</span>
+    <span class="n">has_work</span><span class="p">,</span>
+    <span class="n">listing</span><span class="p">,</span>
+    <span class="n">now</span><span class="p">,</span>
+    <span class="n">plan_call</span><span class="p">,</span>
+    <span class="n">removed_line</span><span class="p">,</span>
+    <span class="n">repetitions_on_request</span><span class="p">,</span>
+    <span class="n">round_without_runs</span><span class="p">,</span>
+    <span class="n">run_replay_on_the_configured_store</span><span class="p">,</span>
+    <span class="n">stops_of</span><span class="p">,</span>
+    <span class="n">sweep_rounds</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation.table</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_table</span><span class="p">,</span> <span class="n">write_table</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.topology</span><span class="w"> </span><span class="kn">import</span> <span class="n">topology_names</span>
+
+<span class="n">PROGRAM</span> <span class="o">=</span> <span class="s2">"jms-eval"</span>
+
+<span class="c1"># The spec the command runs without an argument.</span>
+<span class="n">VALIDATION_SPEC</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">"specs"</span> <span class="o">/</span> <span class="s2">"validation.toml"</span>
+
+<span class="c1"># The seed of a prefill file whose spec gives none: the evaluation README's loop takes 1.</span>
+<span class="n">DEFAULT_PREFILL_SEED</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># The local fallback's store, of `compose.yaml`, with its login (`./run-uc2` sets the same).</span>
+<span class="n">LOCAL_STORE_URL</span> <span class="o">=</span> <span class="s2">"http://localhost:7200"</span>
+<span class="n">LOCAL_STORE_USERNAME</span> <span class="o">=</span> <span class="s2">"admin"</span>
+<span class="n">LOCAL_STORE_PASSWORD</span> <span class="o">=</span> <span class="s2">"root"</span>
+
+<span class="c1"># The size a prefill file's name gives: the last `-&lt;size&gt;` before the suffix, `-1M` in</span>
+<span class="c1"># `grid-60-1M.ttl`.</span>
+<span class="n">_SIZE_IN_NAME</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">"-([0-9]+[kM]?)\.[A-Za-z]+$"</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="HarnessRefused">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.HarnessRefused">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HarnessRefused</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The command cannot start: the message is why, for a person to read."""</span></div>
+
+
+
+<span class="c1"># --- The store -----------------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="StoreChoice">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.StoreChoice">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StoreChoice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Which store the run uses, as `./run-uc2` picks it: `configured` (`TRIPLESTORE_URL`),</span>
+<span class="sd">    `deprecated` (only `GRAPHDB_URL`) or `local` (the fallback), and its address."""</span>
+
+    <span class="n">kind</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">"configured"</span><span class="p">,</span> <span class="s2">"deprecated"</span><span class="p">,</span> <span class="s2">"local"</span><span class="p">]</span>
+    <span class="n">url</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">message</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The line that `./run-uc2` prints for this choice, with this command's name."""</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"configured"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the run uses the store that TRIPLESTORE_URL names, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"deprecated"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: GRAPHDB_URL is deprecated; set TRIPLESTORE_URL, which replaces "</span>
+                <span class="sa">f</span><span class="s2">"it. The run uses the store that GRAPHDB_URL names, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: TRIPLESTORE_URL is not set, so the run uses the local GraphDB of "</span>
+            <span class="sa">f</span><span class="s2">"compose.yaml, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="store_choice">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.store_choice">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">store_choice</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">StoreChoice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The store the environment names, as `./run-uc2` picks it: `TRIPLESTORE_URL`; else</span>
+<span class="sd">    `GRAPHDB_URL`; else the local fallback. Reads the environment and changes nothing."""</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"TRIPLESTORE_URL"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">StoreChoice</span><span class="p">(</span><span class="s2">"configured"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"TRIPLESTORE_URL"</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"GRAPHDB_URL"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">StoreChoice</span><span class="p">(</span><span class="s2">"deprecated"</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"GRAPHDB_URL"</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">StoreChoice</span><span class="p">(</span><span class="s2">"local"</span><span class="p">,</span> <span class="n">LOCAL_STORE_URL</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="use_deprecated_variables">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.use_deprecated_variables">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">use_deprecated_variables</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Set each connection variable that is not set from its deprecated predecessor, for this</span>
+<span class="sd">    process: a run reads only `TRIPLESTORE_*`, where `./run-uc2` leaves the deprecated variables to</span>
+<span class="sd">    `jms-uc2`."""</span>
+    <span class="k">for</span> <span class="n">new</span><span class="p">,</span> <span class="n">old</span> <span class="ow">in</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s2">"TRIPLESTORE_URL"</span><span class="p">,</span> <span class="s2">"GRAPHDB_URL"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"TRIPLESTORE_USERNAME"</span><span class="p">,</span> <span class="s2">"GRAPHDB_USERNAME"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"TRIPLESTORE_PASSWORD"</span><span class="p">,</span> <span class="s2">"GRAPHDB_PASSWORD"</span><span class="p">),</span>
+    <span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">new</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">old</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">new</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">old</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="start_local_store">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.start_local_store">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">start_local_store</span><span class="p">(</span><span class="n">root</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Start the local fallback, the services of `compose.yaml` in the checkout's root, as</span>
+<span class="sd">    `./run-uc2` does (`docker compose up -d --wait`, or `docker-compose`), and set the</span>
+<span class="sd">    connection variables for this process. Returns once the services answer.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HarnessRefused: If this is no checkout (no `compose.yaml`), Docker Compose is missing, or</span>
+<span class="sd">            the services do not start.</span>
+<span class="sd">    """</span>
+    <span class="n">folder</span> <span class="o">=</span> <span class="n">root</span> <span class="ow">or</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="s2">"compose.yaml"</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span>
+            <span class="s2">"no store is configured, and the local fallback needs a checkout of jms_kapps, "</span>
+            <span class="sa">f</span><span class="s2">"which has the compose.yaml; there is none at </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span><span class="si">!r}</span><span class="s2">. Set TRIPLESTORE_URL, "</span>
+            <span class="s2">"TRIPLESTORE_USERNAME and TRIPLESTORE_PASSWORD"</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">_compose_works</span><span class="p">([</span><span class="s2">"docker"</span><span class="p">,</span> <span class="s2">"compose"</span><span class="p">]):</span>
+        <span class="n">compose</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"docker"</span><span class="p">,</span> <span class="s2">"compose"</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">shutil</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="s2">"docker-compose"</span><span class="p">):</span>
+        <span class="n">compose</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"docker-compose"</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span>
+            <span class="s2">"needs Docker Compose to start the local GraphDB, and finds neither "</span>
+            <span class="s2">"`docker compose` nor `docker-compose`."</span>
+        <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="o">*</span><span class="n">compose</span><span class="p">,</span> <span class="s2">"up"</span><span class="p">,</span> <span class="s2">"-d"</span><span class="p">,</span> <span class="s2">"--wait"</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the local GraphDB did not start: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"TRIPLESTORE_URL"</span><span class="p">]</span> <span class="o">=</span> <span class="n">LOCAL_STORE_URL</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"TRIPLESTORE_USERNAME"</span><span class="p">]</span> <span class="o">=</span> <span class="n">LOCAL_STORE_USERNAME</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"TRIPLESTORE_PASSWORD"</span><span class="p">]</span> <span class="o">=</span> <span class="n">LOCAL_STORE_PASSWORD</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_compose_works</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">shutil</span><span class="o">.</span><span class="n">which</span><span class="p">(</span><span class="n">command</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+                <span class="p">[</span><span class="o">*</span><span class="n">command</span><span class="p">,</span> <span class="s2">"version"</span><span class="p">],</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">returncode</span>
+            <span class="o">==</span> <span class="mi">0</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="c1"># --- The prefill files -----------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="PrefillToMake">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.PrefillToMake">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PrefillToMake</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One prefill file the command makes: where, and the arguments of the generator."""</span>
+
+    <span class="n">path</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="n">topology</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span>
+
+<div class="viewcode-block" id="PrefillToMake.describe">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.PrefillToMake.describe">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The file with the arguments of the generator, for a person to read."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2"> (topology </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">topology</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> statements, seed </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seed</span><span class="si">}</span><span class="s2">)"</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="prefill_path">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.prefill_path">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">prefill_path</span><span class="p">(</span><span class="n">prefills</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The file a configuration's prefill `name` is read from: below `prefills`, as a spec</span>
+<span class="sd">    resolves it (`spec.resolved`); a name that is absolute is that file."""</span>
+    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">prefills</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span></div>
+
+
+
+<div class="viewcode-block" id="topology_for">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.topology_for">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">topology_for</span><span class="p">(</span><span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">configuration</span><span class="p">:</span> <span class="n">SpecConfiguration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The topology the generator is given for `configuration`: a shipped name as it is, else the</span>
+<span class="sd">    topology file, read from the spec's folder as a configuration reads it."""</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"topology"</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">topology_names</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">((</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">())</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span></div>
+
+
+
+<div class="viewcode-block" id="prefills_to_make">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.prefills_to_make">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">prefills_to_make</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span> <span class="n">wanted_by</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span> <span class="n">prefills</span><span class="p">:</span> <span class="n">Path</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PrefillToMake</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The prefill files that `wanted_by` configurations name and that are not there, each once,</span>
+<span class="sd">    in the order the configurations name them.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HarnessRefused: If a missing file's name gives no size.</span>
+<span class="sd">    """</span>
+    <span class="n">seed</span> <span class="o">=</span> <span class="n">DEFAULT_PREFILL_SEED</span> <span class="k">if</span> <span class="n">spec</span><span class="o">.</span><span class="n">prefill_seed</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">spec</span><span class="o">.</span><span class="n">prefill_seed</span>
+    <span class="n">found</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="n">PrefillToMake</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">configuration</span> <span class="ow">in</span> <span class="n">wanted_by</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s2">"prefill"</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="n">NO_PREFILL</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">prefill_path</span><span class="p">(</span><span class="n">prefills</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">found</span> <span class="ow">or</span> <span class="n">path</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">continue</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">_SIZE_IN_NAME</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"the prefill file </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="si">!r}</span><span class="s2"> of configuration </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> is "</span>
+                <span class="s2">"missing, and its name gives no size to make it with: name it "</span>
+                <span class="s2">"&lt;topology&gt;-&lt;size&gt;.ttl, such as grid-100k.ttl, or make it with "</span>
+                <span class="s2">"`python -m jms_kapps.evaluation.prefill`"</span>
+            <span class="p">)</span>
+        <span class="n">found</span><span class="p">[</span><span class="n">path</span><span class="p">]</span> <span class="o">=</span> <span class="n">PrefillToMake</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span>
+            <span class="n">topology_for</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">configuration</span><span class="p">),</span>
+            <span class="n">prefill_generator</span><span class="o">.</span><span class="n">size_of</span><span class="p">(</span><span class="n">size</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span>
+            <span class="n">seed</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">found</span><span class="o">.</span><span class="n">values</span><span class="p">())</span></div>
+
+
+
+<div class="viewcode-block" id="make_prefills">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.make_prefills">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_prefills</span><span class="p">(</span>
+    <span class="n">missing</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">PrefillToMake</span><span class="p">],</span> <span class="o">*</span><span class="p">,</span> <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="nb">print</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Make each file of `missing` with the prefill generator, in a folder made if need be.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        HarnessRefused: If the generator refuses what it was asked for, or the file cannot be</span>
+<span class="sd">            written.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: making the prefill file </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">prefill_generator</span><span class="o">.</span><span class="n">write_prefill</span><span class="p">(</span>
+                <span class="n">item</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">topology</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">topology</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="n">item</span><span class="o">.</span><span class="n">seed</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">prefill_generator</span><span class="o">.</span><span class="n">PrefillRefused</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"the prefill file </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">refused</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+        <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span><span class="sa">f</span><span class="s2">"cannot write </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span></div>
+
+
+
+<span class="c1"># --- What a call does, and what it leaves out -------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="configurations_to_make">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.configurations_to_make">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">configurations_to_make</span><span class="p">(</span><span class="n">call</span><span class="p">:</span> <span class="n">Call</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The configurations of the call that have a run or a replay level without a record, in the</span>
+<span class="sd">    spec's order, and the open configurations under the precision rule, which its later rounds</span>
+<span class="sd">    make: the ones whose prefill files the call needs."""</span>
+    <span class="n">needed</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">key</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">chosen</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">has_run</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">r</span><span class="p">)}</span>
+    <span class="n">needed</span> <span class="o">|=</span> <span class="p">{</span><span class="n">c</span><span class="o">.</span><span class="n">key</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">open</span><span class="p">}</span>
+    <span class="n">needed</span> <span class="o">|=</span> <span class="p">{</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">key</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">replays</span>
+        <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">replay_factors</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">has_run</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="n">level_key</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span> <span class="n">call</span><span class="o">.</span><span class="n">replay_repetition</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">found</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">key</span> <span class="ow">in</span> <span class="n">needed</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="heavy_lines">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.heavy_lines">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">heavy_lines</span><span class="p">(</span><span class="n">call</span><span class="p">:</span> <span class="n">Call</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The heavy parts a call withheld, one line each: a ramp, a heavy configuration, a replay."""</span>
+    <span class="n">lines</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ramps</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">configuration</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">withheld</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">levels</span> <span class="o">=</span> <span class="n">ramps</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="k">if</span> <span class="n">configuration</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">:</span>
+                <span class="n">levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">block</span><span class="p">,</span> <span class="n">levels</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ramps</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">rates</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">'boxes_per_minute'</span><span class="p">])</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">levels</span><span class="p">)</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the ramp of block </span><span class="si">{</span><span class="n">block</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">levels</span><span class="p">)</span><span class="si">}</span><span class="s2"> levels not run yet, at "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rates</span><span class="si">}</span><span class="s2"> boxes per minute (configurations "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">number</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">levels</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+        <span class="p">)</span>
+    <span class="n">heavy</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">configuration</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">withheld</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">configuration</span><span class="o">.</span><span class="n">ramp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">heavy</span><span class="p">[</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">]</span> <span class="o">=</span> <span class="n">heavy</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">runs</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">heavy</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"configuration </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> (heavy = true): </span><span class="si">{</span><span class="n">runs</span><span class="si">}</span><span class="s2"> runs"</span><span class="p">)</span>
+    <span class="n">levels_of</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">configuration</span><span class="p">,</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">withheld_levels</span><span class="p">:</span>
+        <span class="n">levels_of</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">configuration</span><span class="o">.</span><span class="n">number</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">number</span><span class="p">,</span> <span class="n">factors</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">levels_of</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"the replay of configuration </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> at the "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="s1">'factors'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'factor'</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">f</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1">'</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">factors</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">lines</span></div>
+
+
+
+<div class="viewcode-block" id="how_to_approve">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.how_to_approve">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">how_to_approve</span><span class="p">(</span><span class="n">spec_path</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""What a person does to let the heavy parts run."""</span>
+    <span class="n">why</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"A heavy part is a sustained load, a ramp or a replay compressed in time, and other "</span>
+        <span class="s2">"people use the server. Any person may approve it, in agreement with the server's "</span>
+        <span class="s2">"admins, for this spec and one period."</span>
+    <span class="p">)</span>
+    <span class="n">how</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"Write </span><span class="si">{</span><span class="n">APPROVAL_FORM</span><span class="si">}</span><span class="s2">, and run the command again with </span><span class="si">{</span><span class="n">OPTION</span><span class="si">}</span><span class="s2"> &lt;the approval "</span>
+        <span class="sa">f</span><span class="s2">"file&gt;: </span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">spec_path</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">OPTION</span><span class="si">}</span><span class="s2"> &lt;approval file&gt;. It runs the heavy parts and "</span>
+        <span class="s2">"skips what has a record."</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">why</span><span class="p">,</span> <span class="n">how</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="say_skipped">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.say_skipped">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">say_skipped</span><span class="p">(</span><span class="n">call</span><span class="p">:</span> <span class="n">Call</span><span class="p">,</span> <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="nb">print</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Tell the heavy parts the call skipped and how to give an approval; nothing where it</span>
+<span class="sd">    skipped none."""</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">heavy_lines</span><span class="p">(</span><span class="n">call</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">echo</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: skipped </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span><span class="si">}</span><span class="s2"> heavy parts, which need an approval that covers "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">:"</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">how_to_approve</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span></div>
+
+
+
+<span class="c1"># --- The dry run -------------------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="dry_run">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.dry_run">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">dry_run</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">call</span><span class="p">:</span> <span class="n">Call</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">prefills</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">approval</span><span class="p">:</span> <span class="n">Approval</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="nb">print</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Show what a call would make and run: the sweep's listing, the store, the prefill files, the</span>
+<span class="sd">    runs, and the heavy parts. Needs no store and makes nothing."""</span>
+    <span class="n">echo</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: dry run of </span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">: nothing is made and nothing reaches a store"</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">listing</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">found</span><span class="p">,</span> <span class="n">call</span><span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">call</span><span class="o">.</span><span class="n">summaries</span><span class="p">,</span> <span class="n">call</span><span class="o">.</span><span class="n">removed</span><span class="p">):</span>
+        <span class="n">echo</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">call</span><span class="o">.</span><span class="n">the_round</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">echo</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: precision rule: this call would start at round "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">the_round</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> and go on round after round"</span>
+        <span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="n">store_choice</span><span class="p">()</span>
+    <span class="n">echo</span><span class="p">(</span>
+        <span class="n">choice</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"the run uses"</span><span class="p">,</span> <span class="s2">"the run would use"</span><span class="p">)</span>
+        <span class="o">+</span> <span class="p">(</span><span class="s2">" (a dry run starts it not)"</span> <span class="k">if</span> <span class="n">choice</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"local"</span> <span class="k">else</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="n">prefills_to_make</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">configurations_to_make</span><span class="p">(</span><span class="n">call</span><span class="p">),</span> <span class="n">prefills</span><span class="p">)</span>
+    <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2"> prefill files to make in </span><span class="si">{</span><span class="n">prefills</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">missing</span><span class="p">:</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  - </span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">runs</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="ow">not</span> <span class="n">has_run</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">chosen</span><span class="p">)</span>
+    <span class="n">levels</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span>
+        <span class="ow">not</span> <span class="n">has_run</span><span class="p">(</span><span class="n">call</span><span class="o">.</span><span class="n">done</span><span class="p">,</span> <span class="n">level_key</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">factor</span><span class="p">),</span> <span class="n">call</span><span class="o">.</span><span class="n">replay_repetition</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">call</span><span class="o">.</span><span class="n">replays</span>
+        <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">replay_factors</span>
+    <span class="p">)</span>
+    <span class="n">echo</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">runs</span><span class="si">}</span><span class="s2"> runs and </span><span class="si">{</span><span class="n">levels</span><span class="si">}</span><span class="s2"> replay levels to make without an approval"</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">approval</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">say_skipped</span><span class="p">(</span><span class="n">call</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">echo</span><span class="o">=</span><span class="n">echo</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">echo</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the heavy parts would run under the approval of </span><span class="si">{</span><span class="n">approval</span><span class="o">.</span><span class="n">approver</span><span class="si">}</span><span class="s2">, "</span>
+            <span class="sa">f</span><span class="s2">"if it covers </span><span class="si">{</span><span class="n">spec</span><span class="o">.</span><span class="n">path</span><span class="si">}</span><span class="s2">: the run checks that at the start of each heavy run, and "</span>
+            <span class="s2">"skips and lists one that it does not cover then"</span>
+        <span class="p">)</span></div>
+
+
+
+<span class="c1"># --- The command -------------------------------------------------------------------------------</span>
+
+
+<div class="viewcode-block" id="make_report_and_table">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.make_report_and_table">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_report_and_table</span><span class="p">(</span>
+    <span class="n">spec</span><span class="p">:</span> <span class="n">Spec</span><span class="p">,</span>
+    <span class="n">found</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">SpecConfiguration</span><span class="p">],</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">echo</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="nb">print</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Make the report (`report.update_report`) and the table (`table.make_table`) of the runs</span>
+<span class="sd">    below `runs`. Returns whether both were made; an error of either is told with `echo`."""</span>
+    <span class="n">made</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Imported here: the report needs the optional extra `evaluation` (pandas, matplotlib).</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">report</span>
+
+        <span class="n">path</span> <span class="o">=</span> <span class="n">report</span><span class="o">.</span><span class="n">update_report</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the report is at </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 - told, and the table still follows</span>
+        <span class="n">made</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">echo</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the report could not be made: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">. "</span>
+            <span class="s2">"Is the extra `evaluation` installed (pandas, matplotlib)?"</span>
+        <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">table</span> <span class="o">=</span> <span class="n">make_table</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">read_summaries</span><span class="p">(</span><span class="n">runs</span><span class="p">),</span> <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">)</span>
+        <span class="n">as_json</span><span class="p">,</span> <span class="n">as_markdown</span> <span class="o">=</span> <span class="n">write_table</span><span class="p">(</span><span class="n">runs</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the table is at </span><span class="si">{</span><span class="n">as_markdown</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">as_json</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 - told</span>
+        <span class="n">made</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">echo</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: the table could not be made: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">made</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../reference/evaluation/harness.html#jms_kapps.evaluation.harness.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">clock</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="n">now</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Run the command as the module docstring says; returns its exit code.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        clock: The time now, which the stop time and the approval of each heavy run at its start</span>
+<span class="sd">            are checked against: this machine's by default.</span>
+<span class="sd">    """</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>
+        <span class="n">prog</span><span class="o">=</span><span class="n">PROGRAM</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">"One command from a spec to the report and the table (the measurement "</span>
+        <span class="s2">"harness, iteration one): it picks the store as ./run-uc2 does, makes the prefill files "</span>
+        <span class="s2">"that are missing, runs what has no record and makes the report and the table."</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"spec"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">nargs</span><span class="o">=</span><span class="s2">"?"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">VALIDATION_SPEC</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The spec, TOML (default: the validation spec, which covers each claimed figure "</span>
+        <span class="s2">"once with short windows)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--output"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The folder of the run: the runs' records, report/, table.md and table.json; a "</span>
+        <span class="s2">"call goes on from the records in it (default: eval-&lt;the spec's name&gt;)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--prefills"</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="s2">"prefills"</span><span class="p">),</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The folder of the prefill files; a missing one is made there (default: prefills)"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--heavy-run-approval"</span><span class="p">,</span>
+        <span class="n">metavar</span><span class="o">=</span><span class="s2">"FILE"</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">Path</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"The approval of the heavy parts of this spec, which any person may give, in "</span>
+        <span class="sa">f</span><span class="s2">"agreement with the server's admins, for one spec and one period: </span><span class="si">{</span><span class="n">APPROVAL_FORM</span><span class="si">}</span><span class="s2">. "</span>
+        <span class="s2">"Without it the heavy parts are skipped and listed"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">add_stop_time_option</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s2">"--output"</span><span class="p">)</span>
+    <span class="n">add_repeat_option</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">"--dry-run"</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">"Show what would be made and run, and make and run nothing; needs no store"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">runs</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">output</span> <span class="ow">or</span> <span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">"eval-</span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">stem</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">spec</span> <span class="o">=</span> <span class="n">read_spec</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">spec</span><span class="p">)</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">configurations</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+        <span class="n">approval</span> <span class="o">=</span> <span class="n">load_approval</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">heavy_run_approval</span><span class="p">)</span>
+        <span class="n">stops</span> <span class="o">=</span> <span class="n">stops_of</span><span class="p">(</span><span class="n">runs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">stop_at</span><span class="p">,</span> <span class="n">clock</span><span class="p">)</span>
+        <span class="n">requested</span><span class="p">,</span> <span class="n">on_request</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">({},</span> <span class="p">[])</span>
+            <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">repeat</span> <span class="ow">is</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="n">repetitions_on_request</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">runs</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">repeat</span><span class="p">)</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">choose</span><span class="p">(</span><span class="n">left_out</span><span class="p">:</span> <span class="n">Collection</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">())</span> <span class="o">-&gt;</span> <span class="n">Call</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">choose_call</span><span class="p">(</span>
+                <span class="n">spec</span><span class="p">,</span>
+                <span class="n">found</span><span class="p">,</span>
+                <span class="n">runs</span><span class="p">,</span>
+                <span class="n">withhold_heavy</span><span class="o">=</span><span class="n">approval</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">requested</span><span class="o">=</span><span class="n">requested</span><span class="p">,</span>
+                <span class="n">left_out</span><span class="o">=</span><span class="n">left_out</span><span class="p">,</span>
+            <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">plan</span><span class="p">(</span><span class="n">chosen</span><span class="p">:</span> <span class="n">Call</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">SweepRun</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">plan_call</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">chosen</span><span class="p">,</span> <span class="n">prefills</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">prefills</span><span class="p">,</span> <span class="n">approval</span><span class="o">=</span><span class="n">approval</span><span class="p">)</span>
+
+        <span class="n">call</span> <span class="o">=</span> <span class="n">choose</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">on_request</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"jms-eval-sweep"</span><span class="p">,</span> <span class="n">PROGRAM</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">dry_run</span><span class="p">:</span>
+            <span class="n">dry_run</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">call</span><span class="p">,</span> <span class="n">prefills</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">prefills</span><span class="p">,</span> <span class="n">approval</span><span class="o">=</span><span class="n">approval</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">has_work</span><span class="p">(</span><span class="n">call</span><span class="p">):</span>
+            <span class="n">choice</span> <span class="o">=</span> <span class="n">store_choice</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">choice</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"deprecated"</span><span class="p">:</span>
+                <span class="n">use_deprecated_variables</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">choice</span><span class="o">.</span><span class="n">kind</span> <span class="o">!=</span> <span class="s2">"local"</span><span class="p">:</span>
+                <span class="n">missing</span> <span class="o">=</span> <span class="n">missing_store_variables</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="n">HarnessRefused</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">"no GraphDB is configured: set </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+                    <span class="p">)</span>
+            <span class="n">make_prefills</span><span class="p">(</span>
+                <span class="n">prefills_to_make</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">configurations_to_make</span><span class="p">(</span><span class="n">call</span><span class="p">),</span> <span class="n">args</span><span class="o">.</span><span class="n">prefills</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">runs_to_make</span> <span class="o">=</span> <span class="n">plan</span><span class="p">(</span><span class="n">call</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">choice</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">"local"</span><span class="p">:</span>
+                <span class="n">start_local_store</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">runs_to_make</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">SpecRefused</span><span class="p">,</span> <span class="n">HeavyRunRefused</span><span class="p">,</span> <span class="n">HarnessRefused</span><span class="p">)</span> <span class="k">as</span> <span class="n">refused</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">refused</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="n">to_make</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="ow">not</span> <span class="n">run</span><span class="o">.</span><span class="n">skipped</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">runs_to_make</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">spec</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">found</span><span class="p">)</span><span class="si">}</span><span class="s2"> configurations; </span><span class="si">{</span><span class="n">to_make</span><span class="si">}</span><span class="s2"> runs and replay "</span>
+        <span class="sa">f</span><span class="s2">"levels to make, the output is </span><span class="si">{</span><span class="n">runs</span><span class="si">}</span><span class="s2">"</span>
+        <span class="o">+</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"; precision rule: this call starts at round </span><span class="si">{</span><span class="n">call</span><span class="o">.</span><span class="n">the_round</span><span class="o">.</span><span class="n">number</span><span class="si">}</span><span class="s2"> and goes "</span>
+            <span class="s2">"on round after round"</span>
+            <span class="k">if</span> <span class="n">call</span><span class="o">.</span><span class="n">the_round</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="s2">""</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">gone</span> <span class="o">=</span> <span class="n">removed_line</span><span class="p">(</span><span class="n">call</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">gone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">gone</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"jms-eval-sweep"</span><span class="p">,</span> <span class="n">PROGRAM</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">empty</span> <span class="o">=</span> <span class="n">round_without_runs</span><span class="p">(</span><span class="n">call</span><span class="p">,</span> <span class="n">runs_to_make</span><span class="p">,</span> <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">)</span>
+    <span class="n">completed</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">empty</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">empty</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"jms-eval-sweep"</span><span class="p">,</span> <span class="n">PROGRAM</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">completed</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">elif</span> <span class="n">to_make</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">completed</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">sweep_rounds</span><span class="p">(</span>
+                    <span class="n">spec</span><span class="p">,</span>
+                    <span class="n">call</span><span class="p">,</span>
+                    <span class="n">runs_to_make</span><span class="p">,</span>
+                    <span class="n">runs</span><span class="o">=</span><span class="n">runs</span><span class="p">,</span>
+                    <span class="n">run_one</span><span class="o">=</span><span class="n">run_on_the_configured_store</span><span class="p">,</span>
+                    <span class="n">plan</span><span class="o">=</span><span class="n">plan</span><span class="p">,</span>
+                    <span class="n">choose</span><span class="o">=</span><span class="n">choose</span><span class="p">,</span>
+                    <span class="n">run_replay</span><span class="o">=</span><span class="n">run_replay_on_the_configured_store</span><span class="p">,</span>
+                    <span class="n">stops</span><span class="o">=</span><span class="n">stops</span><span class="p">,</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">exit_code</span>
+                <span class="o">==</span> <span class="mi">0</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">PROGRAM</span><span class="si">}</span><span class="s2">: stopped between two runs"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">made</span> <span class="o">=</span> <span class="n">make_report_and_table</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">runs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">approval</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">say_skipped</span><span class="p">(</span><span class="n">call</span><span class="p">,</span> <span class="n">spec</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">completed</span> <span class="ow">and</span> <span class="n">made</span> <span class="k">else</span> <span class="mi">1</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

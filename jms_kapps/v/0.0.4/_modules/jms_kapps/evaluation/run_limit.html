@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.run_limit &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/run_limit';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.run_limit</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.run_limit</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""The run limit of the measurement harness: a run older than its limit ends as failed (over time),</span>
+<span class="sd">with the limit and the step at which the limit came: the series must run with no person present.</span>
+<span class="sd">Interim names.</span>
+
+<span class="sd">Each step of a run has a limit of its own: a participant's start, a workflow step, each store</span>
+<span class="sd">request of the harness, the warm-up and the window, the drain. The run limit is the limit of the</span>
+<span class="sd">whole run, so that a run that hangs between two steps does not stop a sweep until a person comes.</span>
+<span class="sd">A UC2 run of the bench launcher (`bench`), the store-only baseline and each replay level</span>
+<span class="sd">(`baseline`) have it, each with the same default, `RUN_LIMIT_SECONDS`.</span>
+
+<span class="sd">**What counts.** The time counts on the run's clock from the run's start, where it reads the facts</span>
+<span class="sd">before the run, the moment before it creates its repository, to the start of the run's end. The</span>
+<span class="sd">end itself, the stop of the participants, the deletion of the repository and the write of the</span>
+<span class="sd">record, is outside the limit: a UC2 run stops its limit before it stops its participants. So a run</span>
+<span class="sd">over its limit still cleans up and writes its record, and a run whose measurement is complete is</span>
+<span class="sd">never over time.</span>
+
+<span class="sd">**How it ends the run.** A thread of its own looks at the run's clock every `LOOK_SECONDS`. Once</span>
+<span class="sd">the run is older than its limit, it interrupts the main thread as a stop signal does</span>
+<span class="sd">(`Platform.interrupt_main_thread`): the run's handler of the stop signals (`run_and_end`, through</span>
+<span class="sd">`one_stop`) raises `OverTime` there, between two steps of whatever runs there, and on POSIX also in</span>
+<span class="sd">a call that waits there. The run then ends through the end that a stop signal takes, and its</span>
+<span class="sd">outcome begins with `OVER_TIME`, "failed (over time)", and names the limit and the step. A failed</span>
+<span class="sd">run is a result, so a sweep does not make it again. A stop signal that comes once the limit has</span>
+<span class="sd">come ends the run as over time too, and the limit does nothing once a stop signal has begun the</span>
+<span class="sd">run's end. The end is certain, wherever the interrupt comes (`run_and_end`). A run off the main</span>
+<span class="sd">thread, where Python sets no signal handler, has no limit.</span>
+
+<span class="sd">The limit is a run setting, outside the configuration's key: the record keeps it under</span>
+<span class="sd">`run_settings`, as it keeps the other limits.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Protocol</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.platforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">PLATFORM</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.common.process</span><span class="w"> </span><span class="kn">import</span> <span class="n">one_stop</span>
+
+<span class="c1"># The limit of a run, in seconds: 30 minutes. A run of the "after" series takes about 12 minutes.</span>
+<span class="n">RUN_LIMIT_SECONDS</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mf">60.0</span>
+
+<span class="c1"># The start of the outcome of a run that its limit ended. The rest of the outcome names the limit</span>
+<span class="c1"># and the step at which it came.</span>
+<span class="n">OVER_TIME</span> <span class="o">=</span> <span class="s2">"failed (over time)"</span>
+
+<span class="c1"># How often the limit looks at the run's clock, in seconds: the limit comes at most this late.</span>
+<span class="n">LOOK_SECONDS</span> <span class="o">=</span> <span class="mf">0.25</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">_Clock</span><span class="p">(</span><span class="n">Protocol</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">monotonic</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span> <span class="o">...</span>
+
+
+<div class="viewcode-block" id="OverTime">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.OverTime">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OverTime</span><span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""What the main thread of a run raises once the run is older than its limit. It is a</span>
+<span class="sd">    `KeyboardInterrupt`, as a stop signal raises, so that every step lets it through as it lets a</span>
+<span class="sd">    stop signal through, and nothing that catches an `Exception` keeps the run going. Its text is</span>
+<span class="sd">    the run's outcome."""</span></div>
+
+
+
+<div class="viewcode-block" id="RunLimit">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.RunLimit">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RunLimit</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The limit of one run, and the step the run is at.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        seconds: The limit, in seconds of the run's clock.</span>
+<span class="sd">        clock: The run's clock.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seconds</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">clock</span><span class="p">:</span> <span class="n">_Clock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seconds</span> <span class="o">=</span> <span class="n">seconds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_clock</span> <span class="o">=</span> <span class="n">clock</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_step</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_came_during</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_began</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_passed</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stopped</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+
+<div class="viewcode-block" id="RunLimit.start">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.RunLimit.start">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Start counting at the run's start, in its first step, `step`. Call it on the run's</span>
+<span class="sd">        thread, inside the run's handler of the stop signals: off the main thread the limit does</span>
+<span class="sd">        nothing."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_step</span> <span class="o">=</span> <span class="n">step</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_began</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clock</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">threading</span><span class="o">.</span><span class="n">current_thread</span><span class="p">()</span> <span class="ow">is</span> <span class="n">threading</span><span class="o">.</span><span class="n">main_thread</span><span class="p">():</span>
+            <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_look</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"run-limit"</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="RunLimit.at">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.RunLimit.at">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">at</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The run enters `step`."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_step</span> <span class="o">=</span> <span class="n">step</span></div>
+
+
+<div class="viewcode-block" id="RunLimit.stop">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.RunLimit.stop">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Stop counting, at the start of the run's end: the limit no longer comes."""</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_stopped</span><span class="o">.</span><span class="n">set</span><span class="p">()</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">passed</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Whether the limit came: the run grew older than it before its end began."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_passed</span><span class="o">.</span><span class="n">is_set</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">came_during</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The step the run was at when the limit came, or None while it has not come."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_came_during</span>
+
+<div class="viewcode-block" id="RunLimit.outcome">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.RunLimit.outcome">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">outcome</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""The outcome of the run that the limit ended: `OVER_TIME`, the limit and the step."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">OVER_TIME</span><span class="si">}</span><span class="s2">: the run limit of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">seconds</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> s came during </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_came_during</span><span class="si">}</span><span class="s2">"</span></div>
+
+
+<div class="viewcode-block" id="RunLimit.over_time">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.RunLimit.over_time">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">over_time</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OverTime</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""What the run's handler of the stop signals raises once the limit has come."""</span>
+        <span class="k">return</span> <span class="n">OverTime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outcome</span><span class="p">())</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_look</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Wait until the run is older than its limit, then interrupt the main thread; or end,</span>
+<span class="sd">        where the run's end begins first."""</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">_began</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_began</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">seconds</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clock</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">left</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stopped</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">LOOK_SECONDS</span><span class="p">)):</span>
+                <span class="k">return</span>
+        <span class="c1"># Under the lock, so that once `stop` has returned, no interrupt of the limit follows.</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stopped</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+                <span class="k">return</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_came_during</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_step</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_passed</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+            <span class="n">PLATFORM</span><span class="o">.</span><span class="n">interrupt_main_thread</span><span class="p">()</span></div>
+
+
+
+<span class="c1"># The action that a run's record holds once its limit has come, with the limit and the step.</span>
+<span class="n">RUN_LIMIT_REACHED</span> <span class="o">=</span> <span class="s2">"run limit reached"</span>
+
+
+<div class="viewcode-block" id="run_and_end">
+<a class="viewcode-back" href="../../../reference/evaluation/run_limit.html#jms_kapps.evaluation.run_limit.run_and_end">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_and_end</span><span class="p">(</span>
+    <span class="n">record</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+    <span class="n">limit</span><span class="p">:</span> <span class="n">RunLimit</span><span class="p">,</span>
+    <span class="n">steps</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="n">end</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="kc">None</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">first_step</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">interrupted</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">add_action</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">object</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Run a run's `steps` under its handler of the stop signals and under its `limit`, set the</span>
+<span class="sd">    run's outcome in `record`, and then run its `end` once, whatever comes when. A UC2 run of the</span>
+<span class="sd">    bench launcher and a baseline both end so.</span>
+
+<span class="sd">    The outcome is `completed` where the steps return; `OVER_TIME` with the limit and the step</span>
+<span class="sd">    (`RunLimit.outcome`) where the limit ended them, also where a cleanup of a step failed while</span>
+<span class="sd">    the limit's interrupt went through it, and then `add_action` adds `RUN_LIMIT_REACHED`;</span>
+<span class="sd">    `interrupted` where a stop signal ended them; and `failed:` with the error where a step</span>
+<span class="sd">    failed.</span>
+
+<span class="sd">    **The end is certain.** Python runs a signal's handler after any instruction of the main</span>
+<span class="sd">    thread, so a stop signal or the limit may raise its interrupt as the steps end, before the run</span>
+<span class="sd">    has begun its end. The handler raises at most once (`one_stop`), and not once the run's end</span>
+<span class="sd">    has begun. So the end begins, its flag set, as the last step of the steps and as the first</span>
+<span class="sd">    step after an error of theirs; an interrupt that comes before it is caught one level up, and</span>
+<span class="sd">    sets the outcome. The end itself runs in a `finally`, where no interrupt comes any more.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        record: The run's record: its `outcome` is set here, before `end` runs.</span>
+<span class="sd">        limit: The run's limit, which starts here, in `first_step`, inside the handler.</span>
+<span class="sd">        steps: The run's steps, from its start to the start of its end. They mark each step on</span>
+<span class="sd">            `limit` (`RunLimit.at`).</span>
+<span class="sd">        end: The run's end: the stop of whatever runs, the deletion of its repository and the</span>
+<span class="sd">            write of its record. A stop signal or the limit does not cut it short.</span>
+<span class="sd">        interrupted: The outcome of a run that a stop signal ended.</span>
+<span class="sd">        add_action: Adds an action to the run's record, by its name and its details.</span>
+<span class="sd">    """</span>
+    <span class="n">ending</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">interrupt</span><span class="p">(</span><span class="n">signum</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ending</span><span class="o">.</span><span class="n">is_set</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">limit</span><span class="o">.</span><span class="n">passed</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">limit</span><span class="o">.</span><span class="n">over_time</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="ne">KeyboardInterrupt</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">settle</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="ne">BaseException</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">_over_time</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+            <span class="n">record</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span><span class="o">.</span><span class="n">outcome</span><span class="p">()</span>
+            <span class="n">add_action</span><span class="p">(</span>
+                <span class="n">RUN_LIMIT_REACHED</span><span class="p">,</span> <span class="n">limit_seconds</span><span class="o">=</span><span class="n">limit</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">limit</span><span class="o">.</span><span class="n">came_during</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="ne">KeyboardInterrupt</span><span class="p">):</span>
+            <span class="n">record</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">]</span> <span class="o">=</span> <span class="n">interrupted</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">record</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"failed: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="k">with</span> <span class="n">one_stop</span><span class="p">(</span><span class="n">interrupt</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">limit</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">first_step</span><span class="p">)</span>
+                    <span class="n">steps</span><span class="p">()</span>
+                    <span class="n">record</span><span class="p">[</span><span class="s2">"outcome"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"completed"</span>
+                    <span class="n">ending</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+                <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">Exception</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 - every end of the steps is an outcome</span>
+                    <span class="n">ending</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+                    <span class="n">settle</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">KeyboardInterrupt</span> <span class="k">as</span> <span class="n">late</span><span class="p">:</span>
+                <span class="c1"># The handler's one interrupt, raised in the clause above before it set</span>
+                <span class="c1"># `ending`: the steps had failed just before.</span>
+                <span class="n">ending</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+                <span class="n">settle</span><span class="p">(</span><span class="n">late</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">ending</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+            <span class="n">limit</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+            <span class="n">end</span><span class="p">()</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_over_time</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="ne">BaseException</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether the limit ended the run: `error` is the limit's interrupt, or an error that a</span>
+<span class="sd">    cleanup raised while the interrupt went through it."""</span>
+    <span class="n">seen</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">found</span><span class="p">:</span> <span class="ne">BaseException</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">error</span>
+    <span class="k">while</span> <span class="n">found</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">id</span><span class="p">(</span><span class="n">found</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="n">OverTime</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">found</span><span class="p">))</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">found</span><span class="o">.</span><span class="n">__context__</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.uc2.strategies &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/uc2/strategies';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.uc2.strategies</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.uc2.strategies</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Who chooses where a box goes: the strategy of the modules and the strategy of the</span>
+<span class="sd">WarehouseManagementSystem, each chosen by its name when use case 2 starts.</span>
+
+<span class="sd">**Two kinds.** A strategy is an object with a `label`, a person's name for it. Its kind is its</span>
+<span class="sd">class and the entry-point group it is registered in; its name is its entry's name, the one that</span>
+<span class="sd">`jms-uc2 --module-strategy` and `--wms-strategy` take.</span>
+
+<span class="sd">- A **module strategy** (`ModuleStrategy`) answers `neighbours_to_ask`: given the module, the box's</span>
+<span class="sd">  destination, the module the box came from (or none), the module reserved ahead for the box (or</span>
+<span class="sd">  none), and the station's connections as the module read them, each with its source, its target</span>
+<span class="sd">  and its direction, it answers the neighbours the module asks, in order, at most two: the first,</span>
+<span class="sd">  and the detour if the first declines; none where the box cannot go on. A module asks it wherever</span>
+<span class="sd">  it chooses a neighbour: when it carries a box on, and at a look-ahead, where it asks the first.</span>
+<span class="sd">  **After a crash** it is asked again, with the same signature: when a neighbour it named cannot</span>
+<span class="sd">  be reached, or refuses "no live route on", the module leaves that neighbour out for the box and</span>
+<span class="sd">  asks again with the connections to each module left out removed and with no module the box</span>
+<span class="sd">  came from, which is then a valid choice; at a look-ahead, the module that holds the box stays</span>
+<span class="sd">  the module it came from. So `real` and every strategy that names only neighbours a connection</span>
+<span class="sd">  leads to need no change for it.</span>
+<span class="sd">- A **WMS strategy** (`WmsStrategy`) answers `origin_and_destination`: given the candidates of a</span>
+<span class="sd">  spawn (each free origin the spawn allows, with the destinations it allows that the origin</span>
+<span class="sd">  reaches, narrowed to what the request names), the station's connections as the WMS read them in</span>
+<span class="sd">  the same read, and the WMS's chooser, which picks one module out of several, it answers one</span>
+<span class="sd">  candidate pair. The WMS asks it only where it picks.</span>
+
+<span class="sd">A strategy only chooses: it never writes, never reads the store, and never waits. The module and</span>
+<span class="sd">the WMS read what they read anyway, and pass it in. Everything around the choice stays theirs:</span>
+<span class="sd">the look-ahead before a module accepts, the bound of a reservation, the waiting order, the stop</span>
+<span class="sd">rules, and what the store admits. So does what they make of an answer outside the contract: a</span>
+<span class="sd">module keeps the first two neighbours, and drops one to which no connection of it leads; the WMS</span>
+<span class="sd">refuses a spawn whose pair is not a candidate.</span>
+
+<span class="sd">**`real`**, labelled "Real behaviour", is one strategy of each kind, and is the demonstration's</span>
+<span class="sd">behaviour: a module asks the module reserved ahead first, while a connection leads there, and</span>
+<span class="sd">otherwise the first module on a shortest path, and then the detour, which avoids the first and the</span>
+<span class="sd">module the box came from (`routing`); the WMS's chooser picks the origin among the candidate</span>
+<span class="sd">origins, then the destination among that origin's destinations. A synthetic strategy, one that</span>
+<span class="sd">makes traffic a benchmark can repeat, says so: its label ends in "(synthetic)".</span>
+
+<span class="sd">**Finding strategies.** Each kind has a Python entry-point group, declared in the pyproject of the</span>
+<span class="sd">package that provides it: `jms_kapps.uc2.module_strategies` and `jms_kapps.uc2.wms_strategies`.</span>
+<span class="sd">Each entry loads one strategy object, and the entry's name is the strategy's name; jms_kapps</span>
+<span class="sd">registers `real` in both. An entry whose module cannot be imported, as when the `evaluation` folder</span>
+<span class="sd">that holds the benchmark strategies is not there, is skipped with one WARNING; so is an object of</span>
+<span class="sd">the other kind, or of none; and of two strategies of one kind with one name, the first found</span>
+<span class="sd">counts, and one WARNING names the other. No registry holds strategies beyond the entry points.</span>
+<span class="sd">Use case 2 imports nothing from the `evaluation` folder, so the demonstration runs without it.</span>
+
+<span class="sd">A strategy is chosen at start in the Launcher, for the WMS and for the modules; the default is</span>
+<span class="sd">the real behaviour.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">typing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Sequence</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">importlib.metadata</span><span class="w"> </span><span class="kn">import</span> <span class="n">EntryPoint</span><span class="p">,</span> <span class="n">entry_points</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.routing</span><span class="w"> </span><span class="kn">import</span> <span class="n">detour</span><span class="p">,</span> <span class="n">next_module_choices</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.discovery</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectedConnection</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="n">MODULE_STRATEGIES</span> <span class="o">=</span> <span class="s2">"jms_kapps.uc2.module_strategies"</span>
+<span class="sd">"""The entry-point group of the module strategies."""</span>
+
+<span class="n">WMS_STRATEGIES</span> <span class="o">=</span> <span class="s2">"jms_kapps.uc2.wms_strategies"</span>
+<span class="sd">"""The entry-point group of the WMS strategies."""</span>
+
+<span class="n">REAL</span> <span class="o">=</span> <span class="s2">"real"</span>
+<span class="sd">"""The name of the demonstration's strategy of each kind, the default of both."""</span>
+
+<span class="n">Choose</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">]],</span> <span class="n">IRI</span><span class="p">]</span>
+<span class="sd">"""Picks one module out of several. `random.choice` is the WarehouseManagementSystem's."""</span>
+
+
+<span class="c1"># The two kinds are plain classes, not abstract ones, so that each can be named as the kind it is</span>
+<span class="c1"># (`found(ModuleStrategy)`); a strategy of a kind is an object of a subclass that answers its one</span>
+<span class="c1"># question.</span>
+
+
+<div class="viewcode-block" id="ModuleStrategy">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.ModuleStrategy">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ModuleStrategy</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The strategy by which a module chooses the neighbours it asks for a box. A subclass answers</span>
+<span class="sd">    `neighbours_to_ask`."""</span>
+
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">"""A person's name for the strategy, as the Launcher's picker lists it."""</span>
+
+<div class="viewcode-block" id="ModuleStrategy.neighbours_to_ask">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.ModuleStrategy.neighbours_to_ask">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">neighbours_to_ask</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">came_from</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ahead</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""The neighbours `module` asks for a box bound for `destination`, in order, at most</span>
+<span class="sd">        two: the first, and the detour if the first declines; none where the box cannot go on.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            module: The module that asks.</span>
+<span class="sd">            destination: The box's destination, never `module`.</span>
+<span class="sd">            came_from: The module the box came from, or None at its origin, at a look-ahead for</span>
+<span class="sd">                the WarehouseManagementSystem's spawn, and when the module asks again after it</span>
+<span class="sd">                left out a neighbour that cannot be reached.</span>
+<span class="sd">            ahead: The module reserved ahead for the box at `module`'s look-ahead, or None.</span>
+<span class="sd">            connections: Every connection of the station, as `module` read them for this choice,</span>
+<span class="sd">                without those to a module it left out for the box.</span>
+<span class="sd">        """</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="WmsStrategy">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.WmsStrategy">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">WmsStrategy</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The strategy by which the WarehouseManagementSystem picks the origin and the destination of</span>
+<span class="sd">    a spawn. A subclass answers `origin_and_destination`."""</span>
+
+    <span class="n">label</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">"""A person's name for the strategy, as the Launcher's picker lists it."""</span>
+
+<div class="viewcode-block" id="WmsStrategy.origin_and_destination">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.WmsStrategy.origin_and_destination">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">origin_and_destination</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">candidates</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">]],</span>
+        <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">],</span>
+        <span class="n">choose</span><span class="p">:</span> <span class="n">Choose</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""One candidate pair: an origin among `candidates`, and a destination among its own.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            candidates: Each origin the spawn may start on, with the destinations it may end on</span>
+<span class="sd">                that the origin reaches, both in their order. A module the request names is the</span>
+<span class="sd">                only candidate for its end.</span>
+<span class="sd">            connections: Every connection of the station, as the WarehouseManagementSystem read</span>
+<span class="sd">                them with the modules.</span>
+<span class="sd">            choose: The WarehouseManagementSystem's chooser. A module the request names is no</span>
+<span class="sd">                pick: given it alone, the chooser answers it without picking.</span>
+<span class="sd">        """</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RealModuleStrategy">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.RealModuleStrategy">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RealModuleStrategy</span><span class="p">(</span><span class="n">ModuleStrategy</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The demonstration's module strategy: the module reserved ahead, while a connection leads</span>
+<span class="sd">    there, or else the first module on a shortest path, a tie going to the lowest IRI and no path</span>
+<span class="sd">    running straight back to the module the box came from; then the detour (`routing.detour`)."""</span>
+
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">"Real behaviour"</span>
+
+<div class="viewcode-block" id="RealModuleStrategy.neighbours_to_ask">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.RealModuleStrategy.neighbours_to_ask">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">neighbours_to_ask</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">module</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">destination</span><span class="p">:</span> <span class="n">IRI</span><span class="p">,</span>
+        <span class="n">came_from</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ahead</span><span class="p">:</span> <span class="n">IRI</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">],</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IRI</span><span class="p">]:</span>
+        <span class="n">links</span> <span class="o">=</span> <span class="p">[(</span><span class="n">c</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">target</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">]</span>
+        <span class="n">avoid</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">came_from</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="n">came_from</span><span class="p">]</span>
+        <span class="n">choices</span> <span class="o">=</span> <span class="n">next_module_choices</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">avoid</span><span class="o">=</span><span class="n">avoid</span><span class="p">)</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">ahead</span>
+            <span class="k">if</span> <span class="n">ahead</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">ahead</span><span class="p">)</span> <span class="ow">in</span> <span class="n">links</span>
+            <span class="k">else</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">choices</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">first</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">second</span> <span class="o">=</span> <span class="n">detour</span><span class="p">(</span><span class="n">links</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">avoid</span><span class="o">=</span><span class="p">[</span><span class="n">first</span><span class="p">,</span> <span class="o">*</span><span class="n">avoid</span><span class="p">])</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="k">if</span> <span class="n">second</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">]</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="RealWmsStrategy">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.RealWmsStrategy">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">RealWmsStrategy</span><span class="p">(</span><span class="n">WmsStrategy</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The demonstration's WMS strategy: the chooser picks the origin among the candidate</span>
+<span class="sd">    origins, then the destination among that origin's destinations."""</span>
+
+    <span class="n">label</span> <span class="o">=</span> <span class="s2">"Real behaviour"</span>
+
+<div class="viewcode-block" id="RealWmsStrategy.origin_and_destination">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.RealWmsStrategy.origin_and_destination">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">origin_and_destination</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">candidates</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">IRI</span><span class="p">]],</span>
+        <span class="n">connections</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">DirectedConnection</span><span class="p">],</span>
+        <span class="n">choose</span><span class="p">:</span> <span class="n">Choose</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">IRI</span><span class="p">,</span> <span class="n">IRI</span><span class="p">]:</span>
+        <span class="n">origin</span> <span class="o">=</span> <span class="n">choose</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">candidates</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">origin</span><span class="p">,</span> <span class="n">choose</span><span class="p">(</span><span class="n">candidates</span><span class="p">[</span><span class="n">origin</span><span class="p">])</span></div>
+</div>
+
+
+
+<span class="n">REAL_MODULE_STRATEGY</span> <span class="o">=</span> <span class="n">RealModuleStrategy</span><span class="p">()</span>
+<span class="sd">"""`real` of the module strategies, as jms_kapps registers it."""</span>
+
+<span class="n">REAL_WMS_STRATEGY</span> <span class="o">=</span> <span class="n">RealWmsStrategy</span><span class="p">()</span>
+<span class="sd">"""`real` of the WMS strategies, as jms_kapps registers it."""</span>
+
+
+<span class="c1"># Each kind: its entry-point group, and what a person calls one of it and several.</span>
+<span class="n">_KINDS</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">type</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">ModuleStrategy</span><span class="p">:</span> <span class="p">(</span><span class="n">MODULE_STRATEGIES</span><span class="p">,</span> <span class="s2">"module strategy"</span><span class="p">,</span> <span class="s2">"module strategies"</span><span class="p">),</span>
+    <span class="n">WmsStrategy</span><span class="p">:</span> <span class="p">(</span><span class="n">WMS_STRATEGIES</span><span class="p">,</span> <span class="s2">"WMS strategy"</span><span class="p">,</span> <span class="s2">"WMS strategies"</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="n">EntryPoints</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntryPoint</span><span class="p">]]</span>
+<span class="sd">"""The entries of an entry-point group, given its name."""</span>
+
+
+<div class="viewcode-block" id="installed">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.installed">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">installed</span><span class="p">(</span><span class="n">group</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">EntryPoint</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The entries of `group` that the installed packages register."""</span>
+    <span class="k">return</span> <span class="n">entry_points</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="UnknownStrategy">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.UnknownStrategy">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">UnknownStrategy</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""No strategy of the kind asked for has the name asked for. The message names it and the</span>
+<span class="sd">    strategies of its kind, for a person to read."""</span></div>
+
+
+
+<div class="viewcode-block" id="found">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.found">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">found</span><span class="p">[</span><span class="n">S</span><span class="p">:</span> <span class="p">(</span><span class="n">ModuleStrategy</span><span class="p">,</span> <span class="n">WmsStrategy</span><span class="p">)](</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">S</span><span class="p">],</span>  <span class="c1"># noqa: UP006 - the docs resolve `type` to two attributes</span>
+    <span class="n">entries</span><span class="p">:</span> <span class="n">EntryPoints</span> <span class="o">=</span> <span class="n">installed</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">S</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The strategies of `kind` registered in its entry-point group, by name, in the order they</span>
+<span class="sd">    were found. An entry is skipped, with one WARNING naming it, when its module cannot be</span>
+<span class="sd">    imported, when it loads an object that is no strategy of `kind`, or when a strategy of `kind`</span>
+<span class="sd">    with its name was found before it."""</span>
+    <span class="n">group</span><span class="p">,</span> <span class="n">called</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_KINDS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span>
+    <span class="n">strategies</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">S</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">entry_of</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">EntryPoint</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">(</span><span class="n">group</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">strategies</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"The </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">) is skipped: the </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">) was found first"</span><span class="p">,</span>
+                <span class="n">called</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                <span class="n">called</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">entry_of</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">strategy</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>  <span class="c1"># noqa: BLE001 - any import error skips the entry</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"The </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">) is skipped: it cannot be loaded: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="n">called</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                <span class="n">error</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">strategy</span><span class="p">,</span> <span class="n">kind</span><span class="p">):</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="s2">"The </span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">) is skipped: it is a </span><span class="si">%s</span><span class="s2">, not a </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span>
+                <span class="n">called</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">entry</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                <span class="nb">type</span><span class="p">(</span><span class="n">strategy</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+                <span class="n">kind</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="n">strategies</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">strategy</span>
+        <span class="n">entry_of</span><span class="p">[</span><span class="n">entry</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">entry</span>
+    <span class="k">return</span> <span class="n">strategies</span></div>
+
+
+
+<div class="viewcode-block" id="chosen">
+<a class="viewcode-back" href="../../../reference/uc2/strategies.html#jms_kapps.uc2.strategies.chosen">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">chosen</span><span class="p">[</span><span class="n">S</span><span class="p">:</span> <span class="p">(</span><span class="n">ModuleStrategy</span><span class="p">,</span> <span class="n">WmsStrategy</span><span class="p">)](</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="n">typing</span><span class="o">.</span><span class="n">Type</span><span class="p">[</span><span class="n">S</span><span class="p">],</span>  <span class="c1"># noqa: UP006 - the docs resolve `type` to two attributes</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">among</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">S</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The strategy of `kind` named `name` among the strategies of that kind `among`.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        UnknownStrategy: If none has that name, naming it and the strategies of `kind`.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">among</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">among</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">called</span><span class="p">,</span> <span class="n">several</span> <span class="o">=</span> <span class="n">_KINDS</span><span class="p">[</span><span class="n">kind</span><span class="p">]</span>
+    <span class="n">known</span> <span class="o">=</span> <span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">among</span><span class="p">)</span> <span class="k">if</span> <span class="n">among</span> <span class="k">else</span> <span class="s2">"none"</span>
+    <span class="k">raise</span> <span class="n">UnknownStrategy</span><span class="p">(</span><span class="sa">f</span><span class="s2">"no </span><span class="si">{</span><span class="n">called</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">; the </span><span class="si">{</span><span class="n">several</span><span class="si">}</span><span class="s2"> are </span><span class="si">{</span><span class="n">known</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

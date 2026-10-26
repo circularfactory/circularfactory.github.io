@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jms_kapps.evaluation.store_requests &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=8c5712d9"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/jms_kapps/evaluation/store_requests';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.0" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">jms_kapps.evaluation.store_requests</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for jms_kapps.evaluation.store_requests</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""What one store request of a participant says: its kind, the transports' statuses it writes, its</span>
+<span class="sd">receipt, and the store's answer to it. Read from the request's text and the store's answer only,</span>
+<span class="sd">by the wrapper's hooks inside each participant (`instrumentation`), by the harness after a run</span>
+<span class="sd">(`observation`) and by the store-only baseline, which sends the requests again (`baseline`), so</span>
+<span class="sd">that each reads a request the same way. Nothing here sends a request.</span>
+
+<span class="sd">**A store request** is an HTTP request of a participant to the store, the URL that</span>
+<span class="sd">`TRIPLESTORE_URL` names: its login, its queries, its updates.</span>
+
+<span class="sd">**Its kind:** a read (a SPARQL query, or a read of statements), a write (a SPARQL update, or a write</span>
+<span class="sd">of statements or of a graph), the login, or other.</span>
+
+<span class="sd">**The statuses it writes.** A write that inserts `svc:hasOperationStatus` for an Operation writes that</span>
+<span class="sd">status for it: the Operation is the subject, and the status the object, of that statement in the</span>
+<span class="sd">update's `INSERT` template. A statement that the update only deletes, or only reads in its</span>
+<span class="sd">`WHERE`, writes nothing. The box is the one the request names for the Operation, as the</span>
+<span class="sd">Operation's `fc:hasBox` or the box's `fc:hasTransport`; none where the request names none.</span>
+
+<span class="sd">**Its receipt.** The triple-store interface sends a checked write as one update that also inserts a</span>
+<span class="sd">receipt, then asks the store whether the receipt is there, then removes it: the store answers every</span>
+<span class="sd">update with success, and only the receipt says whether the update's precondition held and the</span>
+<span class="sd">store applied it. So a write that the store answered with success but whose receipt was not there</span>
+<span class="sd">wrote nothing.</span>
+
+<span class="sd">**The store's answer.** A success status is accepted. An error status is refused, with the store's</span>
+<span class="sd">reason, its answer as it gave it: a SHACL validation report, by the media type that GraphDB gives</span>
+<span class="sd">it (the interface tells a refusal by that media type too), a refusal for want of heap, by the</span>
+<span class="sd">words GraphDB answers it with, or another refusal. A request that got no answer is **timed out**</span>
+<span class="sd">where its client gave up because the time ran out, and **connection dropped** where its connection</span>
+<span class="sd">closed, reset or failed before an answer, a connection that the host refused too</span>
+<span class="sd">(`unanswered_outcome`, from the error its client raised: its type, the part before the first</span>
+<span class="sd">colon). An error of neither class counts as connection dropped, and so does a request without an</span>
+<span class="sd">answer whose record holds no error, in a new record and an earlier one alike. Both count toward the 1 % of the broken rule (`ramp`). A record written before keeps</span>
+<span class="sd">"timed out"; its readers classify such a request by its error, `outcome_of`, and change no</span>
+<span class="sd">record file.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections.abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">Mapping</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_semantic_middleware.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.graph_db</span><span class="w"> </span><span class="kn">import</span> <span class="n">SHACL_VALIDATION_REPORT_MEDIA_TYPE</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface.queries.checked_write</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">RECEIPT_GRAPH</span><span class="p">,</span>
+    <span class="n">RECEIPT_PREDICATE</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">jms_kapps.uc2.vocabulary</span><span class="w"> </span><span class="kn">import</span> <span class="n">FC</span>
+
+<span class="c1"># The kinds of a store request.</span>
+<span class="n">READ</span> <span class="o">=</span> <span class="s2">"read"</span>
+<span class="n">WRITE</span> <span class="o">=</span> <span class="s2">"write"</span>
+<span class="n">LOGIN</span> <span class="o">=</span> <span class="s2">"login"</span>
+<span class="n">OTHER</span> <span class="o">=</span> <span class="s2">"other"</span>
+
+<span class="c1"># The outcomes of a store request. A request without an answer is timed out or connection dropped</span>
+<span class="c1"># (interim name: `CONNECTION_DROPPED`, `UNANSWERED`).</span>
+<span class="n">ACCEPTED</span> <span class="o">=</span> <span class="s2">"accepted"</span>
+<span class="n">REFUSED</span> <span class="o">=</span> <span class="s2">"refused"</span>
+<span class="n">TIMED_OUT</span> <span class="o">=</span> <span class="s2">"timed out"</span>
+<span class="n">CONNECTION_DROPPED</span> <span class="o">=</span> <span class="s2">"connection dropped"</span>
+<span class="n">UNANSWERED</span> <span class="o">=</span> <span class="p">(</span><span class="n">TIMED_OUT</span><span class="p">,</span> <span class="n">CONNECTION_DROPPED</span><span class="p">)</span>
+
+<span class="c1"># The errors of a client that gave up because the time ran out, by their type's name: those of</span>
+<span class="c1"># requests (which the participants' triple-store interface uses), of httpx (the replay's client),</span>
+<span class="c1"># of urllib3 and of Python itself (interim name).</span>
+<span class="n">TIMEOUT_ERRORS</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"ReadTimeout"</span><span class="p">,</span>
+        <span class="s2">"ConnectTimeout"</span><span class="p">,</span>
+        <span class="s2">"WriteTimeout"</span><span class="p">,</span>
+        <span class="s2">"PoolTimeout"</span><span class="p">,</span>
+        <span class="s2">"Timeout"</span><span class="p">,</span>
+        <span class="s2">"TimeoutException"</span><span class="p">,</span>
+        <span class="s2">"ReadTimeoutError"</span><span class="p">,</span>
+        <span class="s2">"ConnectTimeoutError"</span><span class="p">,</span>
+        <span class="s2">"TimeoutError"</span><span class="p">,</span>
+        <span class="s2">"timeout"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># The errors of a connection that closed, reset or failed before an answer, a connection that the</span>
+<span class="c1"># host refused too, by their type's name (interim name). In a UC2 record a dropped</span>
+<span class="c1"># connection is requests' `ConnectionError`, whose message names `RemoteDisconnected`.</span>
+<span class="n">DROPPED_ERRORS</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">"ConnectionError"</span><span class="p">,</span>
+        <span class="s2">"ChunkedEncodingError"</span><span class="p">,</span>
+        <span class="s2">"RemoteProtocolError"</span><span class="p">,</span>
+        <span class="s2">"LocalProtocolError"</span><span class="p">,</span>
+        <span class="s2">"ProtocolError"</span><span class="p">,</span>
+        <span class="s2">"ReadError"</span><span class="p">,</span>
+        <span class="s2">"WriteError"</span><span class="p">,</span>
+        <span class="s2">"ConnectError"</span><span class="p">,</span>
+        <span class="s2">"NetworkError"</span><span class="p">,</span>
+        <span class="s2">"CloseError"</span><span class="p">,</span>
+        <span class="s2">"RemoteDisconnected"</span><span class="p">,</span>
+        <span class="s2">"IncompleteRead"</span><span class="p">,</span>
+        <span class="s2">"NewConnectionError"</span><span class="p">,</span>
+        <span class="s2">"ConnectionResetError"</span><span class="p">,</span>
+        <span class="s2">"ConnectionAbortedError"</span><span class="p">,</span>
+        <span class="s2">"ConnectionRefusedError"</span><span class="p">,</span>
+        <span class="s2">"BrokenPipeError"</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># The kinds of a refusal: by SHACL, for want of heap, or another one.</span>
+<span class="n">SHACL</span> <span class="o">=</span> <span class="s2">"shacl"</span>
+<span class="n">HEAP</span> <span class="o">=</span> <span class="s2">"heap"</span>
+<span class="n">OTHER_REFUSAL</span> <span class="o">=</span> <span class="s2">"other"</span>
+
+<span class="c1"># How GraphDB words its refusal of a query for want of heap, measured on 2026-10-02 on jms_kapps'</span>
+<span class="c1"># own stack (a refused startup query of a module of the 5-module cross): HTTP 500 with the text</span>
+<span class="c1"># "Insufficient free Heap Memory 249Mb for group by and distinct". GraphDB refuses a DISTINCT or a</span>
+<span class="c1"># GROUP BY while less free heap is left than its floor, 250 MB by default; the number in the text</span>
+<span class="c1"># is the heap left.</span>
+<span class="n">HEAP_REFUSAL</span> <span class="o">=</span> <span class="s2">"Insufficient free Heap Memory"</span>
+
+<span class="c1"># The media types of a SPARQL update and of a SPARQL query, as the interface sends them.</span>
+<span class="n">SPARQL_UPDATE</span> <span class="o">=</span> <span class="s2">"application/sparql-update"</span>
+<span class="n">SPARQL_QUERY</span> <span class="o">=</span> <span class="s2">"application/sparql-query"</span>
+
+<span class="n">_LOGIN_PATH</span> <span class="o">=</span> <span class="s2">"rest/login"</span>
+
+
+<div class="viewcode-block" id="StatusWrite">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.StatusWrite">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">StatusWrite</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""One status that a write sets: the Operation's IRI, the status, and the box's IRI where the</span>
+<span class="sd">    request names it."""</span>
+
+    <span class="n">operation</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">box</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="kind_of">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.kind_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">kind_of</span><span class="p">(</span><span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">content_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The kind of the store request `method` `path`, with the media type of its body: `READ`,</span>
+<span class="sd">    `WRITE`, `LOGIN` or `OTHER`. `path` is the part of the URL after the store's own, as</span>
+<span class="sd">    `repositories/&lt;dataset&gt;/statements`, without a query string."""</span>
+    <span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+    <span class="n">media</span> <span class="o">=</span> <span class="n">_media_type</span><span class="p">(</span><span class="n">content_type</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="o">==</span> <span class="n">_LOGIN_PATH</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">LOGIN</span>
+    <span class="n">parts</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">"repositories"</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">OTHER</span>
+    <span class="k">if</span> <span class="n">media</span> <span class="o">==</span> <span class="n">SPARQL_UPDATE</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">WRITE</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">READ</span> <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">)</span> <span class="k">else</span> <span class="n">OTHER</span>
+    <span class="k">if</span> <span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"statements"</span><span class="p">,</span> <span class="s2">"rdf-graphs"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">READ</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">"GET"</span> <span class="k">else</span> <span class="n">WRITE</span>
+    <span class="k">return</span> <span class="n">OTHER</span></div>
+
+
+
+<div class="viewcode-block" id="status_writes">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.status_writes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">status_writes</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">StatusWrite</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Each status that the update `text` inserts for an Operation, in the order the update names</span>
+<span class="sd">    them; none for a text that is no update."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">inserted</span> <span class="o">=</span> <span class="n">_insert_template</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">inserted</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span>
+        <span class="sa">rf</span><span class="s2">"&lt;(?P&lt;operation&gt;[^&lt;&gt;\s]+)&gt;\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">SVC</span><span class="o">.</span><span class="n">hasOperationStatus</span><span class="p">))</span><span class="si">}</span><span class="s2">&gt;\s+"</span>
+        <span class="sa">r</span><span class="s1">'"(?P&lt;status&gt;[^"</span><span class="se">\\</span><span class="s1">]*)"'</span><span class="p">,</span>
+        <span class="n">inserted</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">operation</span> <span class="o">=</span> <span class="n">match</span><span class="p">[</span><span class="s2">"operation"</span><span class="p">]</span>
+        <span class="n">found</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">StatusWrite</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">match</span><span class="p">[</span><span class="s2">"status"</span><span class="p">],</span> <span class="n">_box_of</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">operation</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">found</span></div>
+
+
+
+<div class="viewcode-block" id="receipt_written">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.receipt_written">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">receipt_written</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The receipt that the update `text` inserts, as a checked write does, or None."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="sa">rf</span><span class="s2">"&lt;(?P&lt;receipt&gt;[^&lt;&gt;\s]+)&gt;\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">RECEIPT_PREDICATE</span><span class="p">))</span><span class="si">}</span><span class="s2">&gt;"</span><span class="p">,</span>
+        <span class="n">_insert_template</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">match</span><span class="p">[</span><span class="s2">"receipt"</span><span class="p">]</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="receipt_asked">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.receipt_asked">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">receipt_asked</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The receipt whose presence the query `text` asks, as a checked write does after its update,</span>
+<span class="sd">    or None."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">text</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"ASK"</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="sa">rf</span><span class="s2">"GRAPH\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">RECEIPT_GRAPH</span><span class="p">))</span><span class="si">}</span><span class="s2">&gt;\s*\</span><span class="se">{{</span><span class="s2">\s*&lt;(?P&lt;receipt&gt;[^&lt;&gt;\s]+)&gt;"</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">match</span><span class="p">[</span><span class="s2">"receipt"</span><span class="p">]</span> <span class="k">if</span> <span class="n">match</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="receipt_found">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.receipt_found">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">receipt_found</span><span class="p">(</span><span class="n">answer</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether the store's `answer` to the query that asks for a checked write's receipt says</span>
+<span class="sd">    that the receipt is there: the `boolean` of SPARQL's JSON results, or None for an answer that</span>
+<span class="sd">    holds none."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"boolean"</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">found</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">found</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="applied">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.applied">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">applied</span><span class="p">(</span>
+    <span class="n">kind</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">outcome</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">receipt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">found</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether the store applied a store request of `kind` with `outcome`: not where it was not</span>
+<span class="sd">    accepted; for a checked write, whose update inserts `receipt`, whether the query for its</span>
+<span class="sd">    receipt found it (`found`), unknown (None) where nothing asked; for another accepted write,</span>
+<span class="sd">    yes. None for a request that writes nothing."""</span>
+    <span class="k">if</span> <span class="n">kind</span> <span class="o">!=</span> <span class="n">WRITE</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">receipt</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">outcome</span> <span class="o">!=</span> <span class="n">ACCEPTED</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">receipt</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">found</span>
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="removes_receipt">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.removes_receipt">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">removes_receipt</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether the update `text` only removes a checked write's receipt, as the interface does</span>
+<span class="sd">    once it found the receipt: a write of the store, but not one of the participant's."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span>
+        <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span>
+            <span class="sa">rf</span><span class="s2">"\s*DELETE\s+WHERE\s*\</span><span class="se">{{</span><span class="s2">\s*GRAPH\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">RECEIPT_GRAPH</span><span class="p">))</span><span class="si">}</span><span class="s2">&gt;.*"</span><span class="p">,</span>
+            <span class="n">text</span><span class="p">,</span>
+            <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="error_type">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.error_type">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">error_type</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The name of the type of `error`, an error as a record keeps it (`&lt;type&gt;: &lt;message&gt;`, or the</span>
+<span class="sd">    type alone, a dotted one too), or None for none."""</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">error</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">error</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">":"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="unanswered_outcome">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.unanswered_outcome">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">unanswered_outcome</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The outcome of a store request that got no answer, by the `error` its client raised, as a</span>
+<span class="sd">    record keeps it (interim name): `TIMED_OUT` where the time ran out</span>
+<span class="sd">    (`TIMEOUT_ERRORS`), else `CONNECTION_DROPPED`: a connection that closed, reset or failed</span>
+<span class="sd">    before an answer (`DROPPED_ERRORS`), an error of neither class, which `known_error` tells</span>
+<span class="sd">    apart, and no error at all (None)."""</span>
+    <span class="k">return</span> <span class="n">TIMED_OUT</span> <span class="k">if</span> <span class="n">error_type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="ow">in</span> <span class="n">TIMEOUT_ERRORS</span> <span class="k">else</span> <span class="n">CONNECTION_DROPPED</span></div>
+
+
+
+<div class="viewcode-block" id="known_error">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.known_error">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">known_error</span><span class="p">(</span><span class="n">error</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Whether `error` is of one of the two classes of `unanswered_outcome` (interim name)."""</span>
+    <span class="n">found</span> <span class="o">=</span> <span class="n">error_type</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">TIMEOUT_ERRORS</span> <span class="ow">or</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">DROPPED_ERRORS</span></div>
+
+
+
+<div class="viewcode-block" id="outcome_of">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.outcome_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">outcome_of</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The outcome of a store request as a record holds it (`outcome`, with its `reason`), where</span>
+<span class="sd">    a request "timed out" is classified by its error (`unanswered_outcome`): a record written</span>
+<span class="sd">    before the rename says "timed out" for each request without an answer, a dropped</span>
+<span class="sd">    connection too. One that holds no error is connection dropped, as a new record's request</span>
+<span class="sd">    without an answer and without an error is. A reader takes this, and no record file is changed (interim</span>
+<span class="sd">    name)."""</span>
+    <span class="n">outcome</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"outcome"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">outcome</span> <span class="o">==</span> <span class="n">TIMED_OUT</span><span class="p">:</span>
+        <span class="n">reason</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"reason"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">unanswered_outcome</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">reason</span><span class="p">)</span> <span class="k">if</span> <span class="n">reason</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">outcome</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">outcome</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="answer_of">
+<a class="viewcode-back" href="../../../reference/evaluation/store_requests.html#jms_kapps.evaluation.store_requests.answer_of">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">answer_of</span><span class="p">(</span>
+    <span class="n">status_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">content_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""The outcome of a store request that the store answered with `status_code`, the media type</span>
+<span class="sd">    `content_type` and `body`: `ACCEPTED`, or `REFUSED` with the kind of the refusal and the</span>
+<span class="sd">    store's reason, its answer as it gave it."""</span>
+    <span class="k">if</span> <span class="mi">200</span> <span class="o">&lt;=</span> <span class="n">status_code</span> <span class="o">&lt;</span> <span class="mi">300</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ACCEPTED</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="n">reason</span> <span class="o">=</span> <span class="n">body</span> <span class="k">if</span> <span class="n">body</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"HTTP </span><span class="si">{</span><span class="n">status_code</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">if</span> <span class="n">_media_type</span><span class="p">(</span><span class="n">content_type</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">SHACL_VALIDATION_REPORT_MEDIA_TYPE</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">REFUSED</span><span class="p">,</span> <span class="n">SHACL</span><span class="p">,</span> <span class="n">reason</span>
+    <span class="k">if</span> <span class="n">HEAP_REFUSAL</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">body</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">REFUSED</span><span class="p">,</span> <span class="n">HEAP</span><span class="p">,</span> <span class="n">reason</span>
+    <span class="k">return</span> <span class="n">REFUSED</span><span class="p">,</span> <span class="n">OTHER_REFUSAL</span><span class="p">,</span> <span class="n">reason</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_media_type</span><span class="p">(</span><span class="n">content_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">content_type</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">";"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_box_of</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">operation</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The box that `text` names for `operation`: its `fc:hasBox`, or the box whose</span>
+<span class="sd">    `fc:hasTransport` it is."""</span>
+    <span class="n">has_box</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="sa">rf</span><span class="s2">"&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span><span class="si">}</span><span class="s2">&gt;\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasBox</span><span class="p">))</span><span class="si">}</span><span class="s2">&gt;\s+&lt;(?P&lt;box&gt;[^&lt;&gt;\s]+)&gt;"</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">has_box</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">has_box</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]</span>
+    <span class="n">has_transport</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+        <span class="sa">rf</span><span class="s2">"&lt;(?P&lt;box&gt;[^&lt;&gt;\s]+)&gt;\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">FC</span><span class="o">.</span><span class="n">hasTransport</span><span class="p">))</span><span class="si">}</span><span class="s2">&gt;\s+&lt;</span><span class="si">{</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span><span class="si">}</span><span class="s2">&gt;"</span><span class="p">,</span>
+        <span class="n">text</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">has_transport</span><span class="p">[</span><span class="s2">"box"</span><span class="p">]</span> <span class="k">if</span> <span class="n">has_transport</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_insert_template</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The template of the `INSERT` or `INSERT DATA` of the update `text`, without its braces,</span>
+<span class="sd">    or "" where it has none. A brace inside an IRI or a literal does not count."""</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">"\bINSERT\s+(?:DATA\s+)?\{"</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">""</span>
+    <span class="n">depth</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">at</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">at</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="n">character</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">at</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">character</span> <span class="ow">in</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">'"</span><span class="p">:</span>
+            <span class="n">at</span> <span class="o">=</span> <span class="n">_after_literal</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">at</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">character</span> <span class="o">==</span> <span class="s2">"&lt;"</span><span class="p">:</span>
+            <span class="n">closing</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"&gt;"</span><span class="p">,</span> <span class="n">at</span><span class="p">)</span>
+            <span class="n">at</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">closing</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">closing</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">character</span> <span class="o">==</span> <span class="s2">"{"</span><span class="p">:</span>
+            <span class="n">depth</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">character</span> <span class="o">==</span> <span class="s2">"}"</span><span class="p">:</span>
+            <span class="n">depth</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">depth</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="o">.</span><span class="n">end</span><span class="p">()</span> <span class="p">:</span> <span class="n">at</span><span class="p">]</span>
+        <span class="n">at</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">text</span><span class="p">[</span><span class="n">start</span><span class="o">.</span><span class="n">end</span><span class="p">()</span> <span class="p">:]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_after_literal</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">at</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Where the literal that starts at `at` ends, a short or a long one, escapes skipped."""</span>
+    <span class="n">quote</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">at</span><span class="p">]</span>
+    <span class="n">delimiter</span> <span class="o">=</span> <span class="n">quote</span> <span class="o">*</span> <span class="mi">3</span> <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">quote</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">at</span><span class="p">)</span> <span class="k">else</span> <span class="n">quote</span>
+    <span class="n">at</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">delimiter</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">at</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="n">at</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">:</span>
+            <span class="n">at</span> <span class="o">+=</span> <span class="mi">2</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="n">at</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">at</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">delimiter</span><span class="p">)</span>
+        <span class="n">at</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">at</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
