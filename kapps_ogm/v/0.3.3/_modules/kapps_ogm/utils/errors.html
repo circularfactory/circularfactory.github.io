@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kapps_ogm.utils.errors &#8212; kapps-ogm</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=1c636c80" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../../../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../../../_static/documentation_options.js?v=d5a15cff"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/kapps_ogm/utils/errors';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/kapps_ogm/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.3.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.3" />
+  
+    
+    <script src="../../../_static/searchtools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="../../../_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">kapps-ogm</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/kapps_ogm" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/kapps-ogm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">kapps_ogm.utils.errors</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for kapps_ogm.utils.errors</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Exception types for the kapps_ogm package.</span>
+
+<span class="sd">The OGM's own failures have one base, ``OGMError``, and four categories. Each category names what</span>
+<span class="sd">the caller must do, and each one also subclasses the built-in that it replaces, so an</span>
+<span class="sd">``except ValueError`` or ``except TypeError`` keeps catching it:</span>
+
+<span class="sd">- ``OGMDataError``: the data breaks the class. Refused.</span>
+<span class="sd">- ``OGMOntologyError``: the ontology has a shape that the OGM cannot map. Repair.</span>
+<span class="sd">- ``OGMNotFoundError``: the instance or the node does not exist, or the OGM cannot resolve it.</span>
+<span class="sd">  Refresh.</span>
+<span class="sd">- ``OGMUsageError``, and ``OGMUsageTypeError`` for a wrong argument type or form: the API was</span>
+<span class="sd">  called incorrectly. Fix the call.</span>
+
+<span class="sd">The OGM raises them only where it detects the condition. An error of the triple store interface</span>
+<span class="sd">reaches the caller unchanged, as the same object. A message stays as the OGM wrote it, and the</span>
+<span class="sd">attributes give the raw context: they interpret nothing, and each is ``None`` where it does not</span>
+<span class="sd">apply.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">kapps_triplestore_interface</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRI</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_one_or_none</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""The item of a collection that holds exactly one, and otherwise None.</span>
+
+<span class="sd">    A message that names a set of properties gives ``property_iri`` only when the set holds one</span>
+<span class="sd">    property: the attribute names one property, and the OGM does not choose one of several.</span>
+<span class="sd">    """</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="OGMError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.OGMError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGMError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The base of the OGM's own errors. Catch a category to choose the action."""</span></div>
+
+
+
+<div class="viewcode-block" id="OGMDataError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.OGMDataError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGMDataError</span><span class="p">(</span><span class="n">OGMError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The data breaks the class. Action: Refused.</span>
+
+<span class="sd">    A required property is missing, a property is unknown, a count is wrong, or a value has the</span>
+<span class="sd">    wrong type. The OGM and the request are correct, but the class does not permit the data:</span>
+<span class="sd">    change the data, or ask a domain expert if the class is wrong.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        instance_iri: The instance whose data breaks the class.</span>
+<span class="sd">        property_iri: The property, when the condition names one.</span>
+<span class="sd">        class_iri: The class that the data breaks.</span>
+<span class="sd">        value: The value or values that break the class.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">property_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">class_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instance_iri</span> <span class="o">=</span> <span class="n">instance_iri</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">property_iri</span> <span class="o">=</span> <span class="n">property_iri</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">class_iri</span> <span class="o">=</span> <span class="n">class_iri</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span></div>
+
+
+
+<div class="viewcode-block" id="PropertyOutsideScopeError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.PropertyOutsideScopeError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PropertyOutsideScopeError</span><span class="p">(</span><span class="n">OGMDataError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The class declares the property, but the class scope leaves it out. Action: Refused.</span>
+
+<span class="sd">    A write is confined to its class scope, so it cannot write the property. Add the property to</span>
+<span class="sd">    the scope, or remove it from the data. A subclass of ``OGMDataError``: a handler of data</span>
+<span class="sd">    errors catches it. A property that the class does not declare at all raises plain</span>
+<span class="sd">    ``OGMDataError`` instead.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        instance_iri: The instance, or the nested node, whose data carries the property.</span>
+<span class="sd">        property_iri: The property that the class declares and the scope leaves out.</span>
+<span class="sd">        class_iri: The class of that instance.</span>
+<span class="sd">        value: The value or values of the property, when known.</span>
+<span class="sd">        scope: The properties that the scope names for the class, sorted.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">instance_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">property_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">class_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">value</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">scope</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">message</span><span class="p">,</span>
+            <span class="n">instance_iri</span><span class="o">=</span><span class="n">instance_iri</span><span class="p">,</span>
+            <span class="n">property_iri</span><span class="o">=</span><span class="n">property_iri</span><span class="p">,</span>
+            <span class="n">class_iri</span><span class="o">=</span><span class="n">class_iri</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scope</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">scope</span><span class="p">))</span></div>
+
+
+
+<div class="viewcode-block" id="OGMOntologyError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.OGMOntologyError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGMOntologyError</span><span class="p">(</span><span class="n">OGMError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The ontology has a shape that the OGM cannot map. Action: Repair.</span>
+
+<span class="sd">    A class or a property has no type, a property has no range, its ranges do not merge, or the</span>
+<span class="sd">    OGM does not support its range. The data and the call may be correct: the operator repairs</span>
+<span class="sd">    the ontology, or the KAPPS maintainers extend the OGM.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        class_iri: The class whose shape the OGM cannot map.</span>
+<span class="sd">        property_iri: The property whose shape the OGM cannot map.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">class_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">property_iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">class_iri</span> <span class="o">=</span> <span class="n">class_iri</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">property_iri</span> <span class="o">=</span> <span class="n">property_iri</span></div>
+
+
+
+<div class="viewcode-block" id="OGMNotFoundError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.OGMNotFoundError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGMNotFoundError</span><span class="p">(</span><span class="n">OGMError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The instance or the node does not exist, or the OGM cannot resolve it. Action: Refresh.</span>
+
+<span class="sd">    The caller's information is old: read the state again, then decide. The three node errors,</span>
+<span class="sd">    ``AnonymousNodeFetchError``, ``UnresolvableNodeAddressError`` and</span>
+<span class="sd">    ``AmbiguousNodeAlignmentError``, are subclasses.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        iri: The IRI that the OGM could not find or resolve, or the IRI of the instance under</span>
+<span class="sd">            which it could not resolve a node.</span>
+<span class="sd">    """</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">iri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IRI</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iri</span> <span class="o">=</span> <span class="n">iri</span></div>
+
+
+
+<div class="viewcode-block" id="OGMUsageError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.OGMUsageError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGMUsageError</span><span class="p">(</span><span class="n">OGMError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The API was called incorrectly. Action: Fix the call.</span>
+
+<span class="sd">    The OGM raises it where it raised a ``ValueError`` for a wrong call before: for example, two</span>
+<span class="sd">    changes of one ``commit`` that write one instance, or a ``ClassSpec`` without an IRI to</span>
+<span class="sd">    hydrate. The consumer's developer fixes the call; the same call fails again.</span>
+<span class="sd">    """</span></div>
+
+
+
+<div class="viewcode-block" id="OGMUsageTypeError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.OGMUsageTypeError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">OGMUsageTypeError</span><span class="p">(</span><span class="n">OGMUsageError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""The API was called with a wrong argument type or form. Action: Fix the call.</span>
+
+<span class="sd">    The OGM raises it where it raised a ``TypeError`` before: for example, ``commit()`` with</span>
+<span class="sd">    neither or both of its two forms, or a change that is not a ``Create`` or an ``Update``. It is</span>
+<span class="sd">    a ``TypeError`` and an ``OGMUsageError``, and so also a ``ValueError``.</span>
+<span class="sd">    """</span></div>
+
+
+
+<div class="viewcode-block" id="AnonymousNodeFetchError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.AnonymousNodeFetchError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AnonymousNodeFetchError</span><span class="p">(</span><span class="n">OGMNotFoundError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Raised when OGM.fetch is called on a Skolem IRI. An ``OGMNotFoundError``: Refresh.</span>
+
+<span class="sd">    Skolem IRIs identify anonymous nodes that have no rdf:type and can only be reached</span>
+<span class="sd">    through their parent node. Attempting to fetch them directly would bypass the structural</span>
+<span class="sd">    context required to interpret them correctly.</span>
+<span class="sd">    """</span>
+
+    <span class="k">pass</span></div>
+
+
+
+<div class="viewcode-block" id="AmbiguousNodeAlignmentError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.AmbiguousNodeAlignmentError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AmbiguousNodeAlignmentError</span><span class="p">(</span><span class="n">OGMNotFoundError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Raised when a fetched node's anonymous values cannot be aligned with the outgoing ones.</span>
+<span class="sd">    An ``OGMNotFoundError``: Refresh.</span>
+
+<span class="sd">    Anonymous nodes under one property are aligned positionally, since nothing else distinguishes</span>
+<span class="sd">    them. When the outgoing list is shorter than the stored one, there is no way to tell which</span>
+<span class="sd">    node was dropped, and guessing would shift a surviving node's address onto the wrong entry —</span>
+<span class="sd">    silently moving one parameter's properties onto another parameter's node. That is a worse</span>
+<span class="sd">    failure than losing an address, so it is refused.</span>
+<span class="sd">    """</span></div>
+
+
+
+<div class="viewcode-block" id="UnresolvableNodeAddressError">
+<a class="viewcode-back" href="../../../reference/utils/errors.html#kapps_ogm.utils.errors.UnresolvableNodeAddressError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">UnresolvableNodeAddressError</span><span class="p">(</span><span class="n">OGMNotFoundError</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Raised on the write path when the RDF address of an anonymous node cannot be resolved.</span>
+<span class="sd">    An ``OGMNotFoundError``: Refresh.</span>
+
+<span class="sd">    This exception exists so that an unresolvable target can never silently become a freshly</span>
+<span class="sd">    minted node, which would orphan every triple the ClassSpec does not declare. It protects</span>
+<span class="sd">    referential integrity during serialization and commit operations.</span>
+<span class="sd">    """</span>
+
+    <span class="k">pass</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Etienne Hoffmann.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
