@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Use Case 1: Anomaly detection and learning in robotic unscrewing &#8212; jms-kapps</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bb74ac76" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'use-case-1';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://circularfactory.github.io/jms_kapps/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            true;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Use Case 2: A Decentralized Conveyor Network Coordinated through a Constraint-Enforced Knowledge Graph" href="use-case-2.html" />
+    <link rel="prev" title="Setup and operation" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/sfb-logo.png" class="logo__image only-light" alt="SFB 1574 Circular Factory"/>
+    <img src="_static/sfb-logo.png" class="logo__image only-dark pst-js-only" alt="SFB 1574 Circular Factory"/>
+  
+  
+    <p class="title logo__title">jms-kapps</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="setup.html">
+    Setup and operation
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Use Case 1: Anomaly detection and learning in robotic unscrewing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="use-case-2.html">
+    Use Case 2: A Decentralized Conveyor Network Coordinated through a Constraint-Enforced Knowledge Graph
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="recorded-refusal.html">
+    A recorded refusal: a handover onto an occupied module
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="glossary.html">
+    Glossary
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="setup.html">
+    Setup and operation
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Use Case 1: Anomaly detection and learning in robotic unscrewing
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="use-case-2.html">
+    Use Case 2: A Decentralized Conveyor Network Coordinated through a Constraint-Enforced Knowledge Graph
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="recorded-refusal.html">
+    A recorded refusal: a handover onto an occupied module
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="glossary.html">
+    Glossary
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/circularfactory/jms_kapps" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Use Case 1: Anomaly detection and learning in robotic unscrewing</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="use-case-1-anomaly-detection-and-learning-in-robotic-unscrewing">
+<h1>Use Case 1: Anomaly detection and learning in robotic unscrewing<a class="headerlink" href="#use-case-1-anomaly-detection-and-learning-in-robotic-unscrewing" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>This use case is Section 5.1 of the paper. It shows these requirements of Table 3 of the paper:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Requirement</p></th>
+<th class="head"><p>Where to observe it</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>R1</p></td>
+<td><p>part 5 of <a class="reference internal" href="#requirement-demonstrations">Requirement demonstrations</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>R2</p></td>
+<td><p>query Q3</p></td>
+</tr>
+<tr class="row-even"><td><p>R3</p></td>
+<td><p><a class="reference internal" href="#position-uncertainty">Position uncertainty</a> and part 6</p></td>
+</tr>
+<tr class="row-odd"><td><p>R4</p></td>
+<td><p>the IRIs in the answer of query Q3, ended operations among them, and <code class="docutils literal notranslate"><span class="pre">tests/test_no_deletion_of_individuals.py</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>R5</p></td>
+<td><p>part 7</p></td>
+</tr>
+<tr class="row-odd"><td><p>R6</p></td>
+<td><p>part 2 and query Q3</p></td>
+</tr>
+<tr class="row-even"><td><p>R7</p></td>
+<td><p><a class="reference internal" href="#infeasible-operation-refusal">Infeasible operation refusal</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>R8</p></td>
+<td><p>part 1 and <a class="reference internal" href="#operation-log">Operation log</a></p></td>
+</tr>
+<tr class="row-even"><td><p>R11</p></td>
+<td><p><a class="reference internal" href="#robot-over-mqtt">Robot over MQTT</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>R12</p></td>
+<td><p>part 7 and query Q6</p></td>
+</tr>
+<tr class="row-even"><td><p>R13</p></td>
+<td><p>part 3 and query Q4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Four services work on the unscrewing of a screw from an angle grinder. Each service has its own
+middleware instance:</p>
+<ol class="arabic simple">
+<li><p>The planning service (the planner) commits one unscrewing operation for one screw, and waits for
+its end.</p></li>
+<li><p>The screwing resource makes the unscrewing attempt on its robot. It writes the time series of
+the attempt to the time-series database, InfluxDB, and calls the classification workflow of the
+anomaly detection service (the anomaly detector).</p></li>
+<li><p>The anomaly detection service classifies the attempt, and commits the detection result with its
+provenance. The same commit ends the operation: <em>done</em> when the screw is intact, and <em>failed</em>
+otherwise, with a reason that names the detection result.</p></li>
+<li><p>The learning service (the learner) refines the maximum dynamic torque of each screw type from
+the operations that ended with an intact screw.</p></li>
+</ol>
+<p>No service starts with the address of another service. The services find each other in the
+knowledge graph.</p>
+<p>The seed holds two angle grinders, <code class="docutils literal notranslate"><span class="pre">Grinder099</span></code> and <code class="docutils literal notranslate"><span class="pre">Grinder100</span></code>, with one screw each.</p>
+<p>A fifth process, the robot controller stand-in, takes the place of the robot and its controller.</p>
+<p>The knowledge graph describes the robot <code class="docutils literal notranslate"><span class="pre">Robot1</span></code> and each of its twelve MQTT parameters. For each
+parameter, it gives the broker, the port and the topic. The middleware instance of the screwing
+resource builds its connectors to the robot from that description. An attempt sets the seven
+values of the screw type on the robot, starts the robot, and collects the samples that the
+robot publishes. <a class="reference internal" href="#robot-over-mqtt">Robot over MQTT</a> shows where to read each step.</p>
+<section id="robot-cell-video">
+<h3>Robot cell video<a class="headerlink" href="#robot-cell-video" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://raw.githubusercontent.com/circularfactory/jms_kapps/v0.1.0/docs/videos/robot_unscrewing.mp4"><code class="docutils literal notranslate"><span class="pre">robot_unscrewing.mp4</span></code></a> is the video of Section 5.1 of the paper.
+It shows a robot of the Transformer Cell unscrewing a screw of an angle grinder.</p>
+</section>
+</section>
+<section id="run">
+<h2>Run<a class="headerlink" href="#run" title="Link to this heading">#</a></h2>
+<p>Do the <a class="reference internal" href="index.html#setup"><span class="std std-ref">setup</span></a> first. Then, in the root of the clone and in the same
+terminal:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>jms-uc1
+</pre></div>
+</div>
+<p>Stop use case 2 first if it runs on the same dataset.</p>
+</section>
+<section id="pages-and-logs">
+<h2>Pages and logs<a class="headerlink" href="#pages-and-logs" title="Link to this heading">#</a></h2>
+<section id="run-page">
+<h3>Run page<a class="headerlink" href="#run-page" title="Link to this heading">#</a></h3>
+<p>The page is <a class="reference external" href="http://127.0.0.1:8091/">http://127.0.0.1:8091/</a>. It names the deciding service of each operation. The deciding
+service is the agent of the classification that generated the values that the operation used. The
+links of its table <em>Processes</em> open the dashboard of each service.</p>
+<p><img alt="The page of a run of use case 1 after both presses: the two steps, a row for each of the five processes, the two operations, whose deciding service is the anomaly detector, and M4's learned value" src="https://raw.githubusercontent.com/circularfactory/jms_kapps/v0.1.0/docs/images/uc1-page.png" /></p>
+</section>
+<section id="planner-dashboard">
+<h3>Planner dashboard<a class="headerlink" href="#planner-dashboard" title="Link to this heading">#</a></h3>
+<p>The button <em>Open the planner’s dashboard</em> opens the dashboard of the planner.</p>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Screw1</span></code> in the drop-down of the button <em>Unscrew</em>, and push the button. A press commits one
+unscrewing operation for the screw, and <a class="reference internal" href="#operation-log">Operation log</a> follows it from the press
+to its end.
+The box <em>Planner</em> lists each pressed screw with the status and the detection result of its operation.</p>
+</section>
+<section id="screwing-resource-and-detector-dashboards">
+<h3>Screwing resource and detector dashboards<a class="headerlink" href="#screwing-resource-and-detector-dashboards" title="Link to this heading">#</a></h3>
+<p>The detection result for <code class="docutils literal notranslate"><span class="pre">Screw1</span></code> is <em>ScrewIntact</em>, and its operation ends <em>done</em>. For <code class="docutils literal notranslate"><span class="pre">Screw2</span></code>,
+the detection result is <em>MissingScrew</em>, and its operation ends <em>failed</em> with the reason
+<code class="docutils literal notranslate"><span class="pre">ANOMALY:</span> <span class="pre">MissingScrew</span></code>. The boxes of the two dashboards show each attempt with the seven values of
+the screw type that it got, and each classification with the ten values that the decision used.</p>
+</section>
+<section id="learner-dashboard">
+<h3>Learner dashboard<a class="headerlink" href="#learner-dashboard" title="Link to this heading">#</a></h3>
+<p>The learner runs every 10 s. Each run reads the time series of the new operations that ended <em>done</em>
+with the detection result <em>ScrewIntact</em>, and derives from them the maximum dynamic torque of their
+screw type. It commits a changed value to the screw type. After <code class="docutils literal notranslate"><span class="pre">Screw1</span></code>, the maximum dynamic torque
+of <code class="docutils literal notranslate"><span class="pre">M4</span></code> goes from 1.5 to 0.84. The box <em>Learner</em> shows each change with its time, its screw type,
+and the old and the new value. When it shows the change, push the button for <code class="docutils literal notranslate"><span class="pre">Screw2</span></code>: its attempt
+and its classification get 0.84.</p>
+</section>
+<section id="operation-log">
+<h3>Operation log<a class="headerlink" href="#operation-log" title="Link to this heading">#</a></h3>
+<p>The terminal shows the lines of each service after its name. Each time that a service fetches
+through the OGM, a line tells which service fetches, what it fetches, with which projection scope,
+and why. Press Unscrew on <code class="docutils literal notranslate"><span class="pre">Screw1</span></code>, and follow its operation from the press to the read of the
+detection result by the planner.</p>
+<p><code class="docutils literal notranslate"><span class="pre">UnscrewingOperation_&lt;hex&gt;</span></code> is the name of the operation, the same in each line from the second
+line on. <code class="docutils literal notranslate"><span class="pre">&lt;frame&gt;</span></code> is its frame in InfluxDB. <code class="docutils literal notranslate"><span class="pre">…</span></code> stands for text cut from a line.
+<code class="docutils literal notranslate"><span class="pre">OPERATION_SCOPE</span></code>, <code class="docutils literal notranslate"><span class="pre">EFFECTIVE_VALUES_SCOPE</span></code> and the other <code class="docutils literal notranslate"><span class="pre">…_SCOPE</span></code> names are the projection
+scopes that a read or a write uses.</p>
+<ol class="arabic simple">
+<li><p>The planner opens the operation:
+<code class="docutils literal notranslate"><span class="pre">Planner:</span> <span class="pre">a</span> <span class="pre">press</span> <span class="pre">of</span> <span class="pre">Unscrew</span> <span class="pre">opens</span> <span class="pre">the</span> <span class="pre">unscrewing</span> <span class="pre">of</span> <span class="pre">Screw1</span> <span class="pre">in</span> <span class="pre">Grinder099</span></code>.</p></li>
+<li><p>The screwing resource gets the operation, and reads it with the seven values of the screw type:
+<code class="docutils literal notranslate"><span class="pre">Screwing</span> <span class="pre">resource</span> <span class="pre">receives</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">with</span> <span class="pre">OPERATION_SCOPE</span> <span class="pre">=</span> <span class="pre">[[concernsScrew,</span> <span class="pre">hasScrewType,</span> <span class="pre">hasMinApproachAxialForce],</span> <span class="pre">…,</span> <span class="pre">[hasOperationStatus],</span> <span class="pre">[hasExecutionResult],</span> <span class="pre">[hasDetectionResult]]:</span> <span class="pre">…</span></code>.</p></li>
+<li><p>It starts the attempt, and sets the operation <code class="docutils literal notranslate"><span class="pre">running</span></code>:
+<code class="docutils literal notranslate"><span class="pre">ScrewingResource1:</span> <span class="pre">the</span> <span class="pre">attempt</span> <span class="pre">of</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">on</span> <span class="pre">Screw1</span> <span class="pre">is</span> <span class="pre">given</span> <span class="pre">the</span> <span class="pre">values</span> <span class="pre">of</span> <span class="pre">M4:</span> <span class="pre">MinApproachAxialForce</span> <span class="pre">0.5,</span> <span class="pre">…</span></code>.
+It sets the seven values on the robot, one line each, then the start command:
+<code class="docutils literal notranslate"><span class="pre">ScrewingResource1:</span> <span class="pre">hasRobotMinApproachAxialForce</span> <span class="pre">is</span> <span class="pre">set</span> <span class="pre">on</span> <span class="pre">Robot1</span></code>, …,
+<code class="docutils literal notranslate"><span class="pre">ScrewingResource1:</span> <span class="pre">hasAttemptCommand</span> <span class="pre">is</span> <span class="pre">set</span> <span class="pre">on</span> <span class="pre">Robot1</span></code>, and <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">robot</span> <span class="pre">is</span> <span class="pre">started</span> <span class="pre">on</span> <span class="pre">Screw1</span></code>.
+The lines of the stand-in come after its own name: <code class="docutils literal notranslate"><span class="pre">Setpoint</span> <span class="pre">hasRobotMinApproachAxialForce</span> <span class="pre">&lt;-</span> <span class="pre">{&quot;v&quot;:</span> <span class="pre">…}</span></code>
+for each of the seven, <code class="docutils literal notranslate"><span class="pre">Start:</span> <span class="pre">http://w3id.org/circularfactory/Unscrewing#Screw1</span> <span class="pre">replays</span> <span class="pre">success</span></code>, and at the end
+<code class="docutils literal notranslate"><span class="pre">Done:</span> <span class="pre">example-d320118/success,</span> <span class="pre">…</span> <span class="pre">samples</span></code>.
+When the samples are stored, <code class="docutils literal notranslate"><span class="pre">ScrewingResource1:</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">is</span> <span class="pre">running,</span> <span class="pre">with</span> <span class="pre">its</span> <span class="pre">curves</span> <span class="pre">at</span> <span class="pre">influxdb:///jms-kapps/unscrewing?frame=&lt;frame&gt;&amp;start=…&amp;stop=…</span></code>.</p></li>
+<li><p>The anomaly detector reads the operation, then the ten values of the screw for the decision:
+<code class="docutils literal notranslate"><span class="pre">Anomaly</span> <span class="pre">detector</span> <span class="pre">reads</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">with</span> <span class="pre">OPERATION_SCOPE</span> <span class="pre">=</span> <span class="pre">[[hasOperationStatus],</span> <span class="pre">[hasExecutionResult],</span> <span class="pre">[concernsScrew],</span> <span class="pre">[hasTimeSeriesReference]]:</span> <span class="pre">…</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Anomaly</span> <span class="pre">detector</span> <span class="pre">reads</span> <span class="pre">Screw1</span> <span class="pre">with</span> <span class="pre">EFFECTIVE_VALUES_SCOPE</span> <span class="pre">=</span> <span class="pre">[[hasMinApproachPosition],</span> <span class="pre">…]:</span> <span class="pre">…</span></code>.</p></li>
+<li><p>It commits the classification and the detection result:
+<code class="docutils literal notranslate"><span class="pre">Anomaly</span> <span class="pre">detector</span> <span class="pre">writes</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">with</span> <span class="pre">an</span> <span class="pre">empty</span> <span class="pre">ClassScope</span> <span class="pre">=</span> <span class="pre">[]:</span> <span class="pre">…</span></code>, then
+<code class="docutils literal notranslate"><span class="pre">AnomalyDetector1:</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">is</span> <span class="pre">done,</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">outcome</span> <span class="pre">ScrewIntact</span></code>. For <code class="docutils literal notranslate"><span class="pre">Screw2</span></code>,
+the line is <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">failed,</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">outcome</span> <span class="pre">MissingScrew:</span> <span class="pre">…</span></code>.</p></li>
+<li><p>The planner gets the notification of the end, and reads the detection result:
+<code class="docutils literal notranslate"><span class="pre">Planner</span> <span class="pre">reads</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span> <span class="pre">with</span> <span class="pre">OUTCOME_SCOPE</span> <span class="pre">=</span> <span class="pre">[[hasDetectionResult]]:</span> <span class="pre">it</span> <span class="pre">wants</span> <span class="pre">the</span> <span class="pre">outcome</span> <span class="pre">that</span> <span class="pre">the</span> <span class="pre">detector</span> <span class="pre">committed</span> <span class="pre">(hasDetectionResult)</span></code>.
+For a failed operation, it also reads the reason, with <code class="docutils literal notranslate"><span class="pre">FAILURE_SCOPE</span></code>.</p></li>
+</ol>
+<p>The screwing resource logs <code class="docutils literal notranslate"><span class="pre">ScrewingResource1:</span> <span class="pre">the</span> <span class="pre">anomaly</span> <span class="pre">detector</span> <span class="pre">took</span> <span class="pre">UnscrewingOperation_&lt;hex&gt;</span></code>
+when its call of the detector returns. This line can come before or after the read of the planner,
+because the two services are different processes.</p>
+</section>
+</section>
+<section id="demonstrations">
+<h2>Demonstrations<a class="headerlink" href="#demonstrations" title="Link to this heading">#</a></h2>
+<section id="robot-over-mqtt">
+<h3>Robot over MQTT<a class="headerlink" href="#robot-over-mqtt" title="Link to this heading">#</a></h3>
+<p>In the <a class="reference internal" href="setup.html#triple-store-workbench"><span class="std std-ref">workbench</span></a>, select the dataset of
+the run, <code class="docutils literal notranslate"><span class="pre">jms-kapps</span></code> for <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">jms-uc1</span></code>, and open <em>SPARQL</em>. In the queries, <code class="docutils literal notranslate"><span class="pre">uns:</span></code> is the use
+case’s namespace, written <code class="docutils literal notranslate"><span class="pre">:</span></code> elsewhere. This query reads the connection
+description of the axial force of the robot:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">inf</span><span class="p">:</span> <span class="nl">&lt;http://www.sfb1574.kit.edu/ontologies/CrcInterfaces#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?broker</span> <span class="nv">?port</span> <span class="nv">?topic</span> <span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nn">uns</span><span class="p">:</span><span class="nt">Robot1</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasAxialForce</span> <span class="nv">?force</span> <span class="p">.</span>
+  <span class="nv">?force</span> <span class="nn">inf</span><span class="p">:</span><span class="nt">hasMQTTBrokerIP</span> <span class="nv">?broker</span> <span class="p">;</span>
+         <span class="nn">inf</span><span class="p">:</span><span class="nt">hasMQTTBrokerPort</span> <span class="nv">?port</span> <span class="p">;</span>
+         <span class="nn">inf</span><span class="p">:</span><span class="nt">hasMQTTTopic</span> <span class="nv">?topic</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The answer is one row: the broker <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>, the port <code class="docutils literal notranslate"><span class="pre">18860</span></code> and the topic
+<code class="docutils literal notranslate"><span class="pre">Robot1/hasAxialForce</span></code>.</p>
+<p><strong>The connections.</strong> While a run is live, open the dashboard of the screwing resource from the
+page, tab <em>System</em>, box <em>Connectors</em>. It lists the connectors of the robot:</p>
+<ul class="simple">
+<li><p>Twelve connectors read a parameter: the three readings, the state of the attempt, the start
+command and the seven setpoints.</p></li>
+<li><p>Eight connectors write a parameter: the start command and the seven setpoints.</p></li>
+</ul>
+<p><strong>The setpoints and the samples of an attempt.</strong> Press Unscrew on <code class="docutils literal notranslate"><span class="pre">Screw1</span></code>, and read the terminal
+as <a class="reference internal" href="#operation-log">Operation log</a> tells.</p>
+</section>
+<section id="position-uncertainty">
+<h3>Position uncertainty<a class="headerlink" href="#position-uncertainty" title="Link to this heading">#</a></h3>
+<p>The anomaly detection service can save each position that it measures as a random variable, next
+to the plain best estimate. This mode is off by default, and a plain run of <code class="docutils literal notranslate"><span class="pre">jms-uc1</span></code> writes no
+variable. Start the run with <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">jms-uc1</span> <span class="pre">--save-measurements-as-uq</span></code>.</p>
+<p>With the mode on, the commit of each classification also writes the position that the detector
+measured:</p>
+<ul class="simple">
+<li><p>The position at contact, as the head position of the screw.</p></li>
+</ul>
+<p>Each position is a <code class="docutils literal notranslate"><span class="pre">uq:RandomVariable</span></code>. Its literal, of the datatype <code class="docutils literal notranslate"><span class="pre">uq:gmmLiteral</span></code>, holds that one
+measurement.</p>
+<p>Two queries for the workbench, on the dataset of the run. <strong>Q1</strong> reads the best estimate of the
+head position of a screw, in mm:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?screw</span> <span class="nv">?estimate</span> <span class="k">WHERE</span> <span class="p">{</span> <span class="nv">?screw</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasMeasuredScrewHeadPosition</span> <span class="nv">?estimate</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Q2</strong> reads the literal of that position with its datatype, which is <code class="docutils literal notranslate"><span class="pre">uq:gmmLiteral</span></code>:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">uq</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Uncertainty#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?screw</span> <span class="nv">?literal</span> <span class="p">(</span><span class="nf">DATATYPE</span><span class="p">(</span><span class="nv">?literal</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?datatype</span><span class="p">)</span> <span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?screw</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasScrewHeadPositionVariable</span> <span class="nv">?variable</span> <span class="p">.</span>
+  <span class="nv">?variable</span> <span class="nn">uq</span><span class="p">:</span><span class="nt">hasDistribution</span> <span class="nv">?literal</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Admission checks the literal. <code class="docutils literal notranslate"><span class="pre">:RandomVariableDistributionShape</span></code> in
+<code class="docutils literal notranslate"><span class="pre">src/jms_kapps/uc1/shapes/integration_usecase_shapes.ttl</span></code> refuses a random variable whose
+distribution is not one <code class="docutils literal notranslate"><span class="pre">uq:gmmLiteral</span></code> that names the six fields <code class="docutils literal notranslate"><span class="pre">n_components</span></code>, <code class="docutils literal notranslate"><span class="pre">dimensions</span></code>,
+<code class="docutils literal notranslate"><span class="pre">covariance_type</span></code>, <code class="docutils literal notranslate"><span class="pre">weights</span></code>, <code class="docutils literal notranslate"><span class="pre">means</span></code> and <code class="docutils literal notranslate"><span class="pre">covariances</span></code>.
+<code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">tests/test_uc1_uncertainty_live.py</span> <span class="pre">--dataset</span> <span class="pre">&lt;name&gt;</span></code> shows the triple store refuse it.</p>
+</section>
+<section id="requirement-demonstrations">
+<h3>Requirement demonstrations<a class="headerlink" href="#requirement-demonstrations" title="Link to this heading">#</a></h3>
+<p>Each part names the test that shows it. <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">&lt;test&gt;</span> <span class="pre">--dataset</span> <span class="pre">&lt;name&gt;</span></code> runs one test, and
+<a class="reference internal" href="index.html#tests"><span class="std std-ref">Tests</span></a> runs them all. The tests of <code class="docutils literal notranslate"><span class="pre">tests/test_uc1_claims_live.py</span></code> start
+<code class="docutils literal notranslate"><span class="pre">jms-uc1</span></code> themselves on the dataset that they get, clear it, and stop again. Thus stop all other
+runs of use case 1 first. Their time series go into the InfluxDB database <code class="docutils literal notranslate"><span class="pre">jms-kapps</span></code>, which the
+run creates if it is missing.</p>
+<ol class="arabic simple">
+<li><p><strong>The services coordinate through the knowledge graph.</strong> Each change of status and each
+detection result is committed to the knowledge graph. Each service starts with no address of
+another service: the operation of the planning service goes to the service whose workflow
+realizes the capability that the operation implements, and the screwing resource finds the
+anomaly detection service by its capability. <em>Run:</em> <code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">jms-uc1</span></code>, and press Unscrew for both
+screws. <em>See it:</em> query Q3 below lists each operation with its issuer, its status and its
+detection result. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_claims_live.py::test_the_participants_coordinate_through_the_graph</span></code>.</p></li>
+<li><p><strong>The anomaly detection service fetches the parameters of the screw type through the OGM at each
+attempt.</strong> <em>Run:</em> press Unscrew for <code class="docutils literal notranslate"><span class="pre">Screw1</span></code>. <em>See it:</em> one line of the terminal for each
+attempt, <code class="docutils literal notranslate"><span class="pre">Anomaly</span> <span class="pre">detector</span> <span class="pre">reads</span> <span class="pre">Screw1</span> <span class="pre">with</span> <span class="pre">EFFECTIVE_VALUES_SCOPE</span> <span class="pre">…</span></code>. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_claims_live.py::test_the_detector_reads_the_screw_types_thresholds_through_the_mapper_at_every_attempt</span></code>.</p></li>
+<li><p><strong>The learning service commits a refined maximum dynamic torque to the screw type, and the next
+attempt fetches it.</strong> <em>Run:</em> press Unscrew for <code class="docutils literal notranslate"><span class="pre">Screw1</span></code>, and wait until the box of the learner
+shows a change. Then press Unscrew for <code class="docutils literal notranslate"><span class="pre">Screw2</span></code>. <em>See it:</em> query Q4 below gives the maximum
+dynamic torque of <code class="docutils literal notranslate"><span class="pre">M4</span></code>; the dashboard of the anomaly detection service shows that the decision on
+<code class="docutils literal notranslate"><span class="pre">Screw2</span></code> used it. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_claims_live.py::test_the_learner_commits_a_value_from_completed_operations_and_the_detector_uses_it_next</span></code>.</p></li>
+<li><p><strong>No service writes past its middleware instance.</strong> Each write of a service is a commit of its
+middleware instance, and its SPARQL queries only read. <em>Run:</em>
+<code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">pytest</span> <span class="pre">tests/test_uc1_writes.py</span></code>. It reads the source of the four services, and needs no
+triple store. <em>See it:</em> in the code, as <a class="reference internal" href="#code">Code</a> tells. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_writes.py::test_no_service_of_use_case_1_writes_past_its_middleware</span></code>.</p></li>
+<li><p><strong>The time series of each attempt are kept in the time-series database and referenced from the
+operation.</strong> <em>Run:</em> press Unscrew. <em>See it:</em> the <code class="docutils literal notranslate"><span class="pre">hasTimeSeriesReference</span></code> of the operation in
+query Q3, and the dashboard of the screwing resource, which names the frame. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_claims_live.py::test_the_sensor_channels_are_a_replay_of_recorded_series</span></code>.</p></li>
+<li><p><strong>A measured position goes through the knowledge graph as a random variable.</strong> With the mode of
+<a class="reference internal" href="#position-uncertainty">Position uncertainty</a> on, the anomaly detection service commits each
+position that it measures as a random variable. The variable has a Gaussian-mixture literal, next
+to the best estimate. Each literal reads back cleanly: it has the datatype <code class="docutils literal notranslate"><span class="pre">uq:gmmLiteral</span></code>, it
+parses, and it holds the best estimate as its mean. <em>Run:</em>
+<code class="docutils literal notranslate"><span class="pre">uv</span> <span class="pre">run</span> <span class="pre">jms-uc1</span> <span class="pre">--save-measurements-as-uq</span></code>, and press Unscrew for both screws. <em>See it:</em> the
+queries Q1 and Q2 above. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_measured_positions_claim_live.py::test_each_measured_position_reads_back_as_a_gaussian_mixture_literal</span></code>.</p></li>
+<li><p><strong>Each classification is a PROV-O activity with its agent and its end time, and admission
+refuses a parameter copy that names no classification.</strong> The anomaly detector commits the
+classification with the parameter copy that it used. The shape <code class="docutils literal notranslate"><span class="pre">:ParameterCopyGeneratedByShape</span></code>
+requires each parameter copy to name the classification that generated it. <em>See it:</em> query Q6
+below. <em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_run_live.py::test_a_press_runs_the_loop_end_to_end_and_the_learner_closes_it</span></code>
+and <code class="docutils literal notranslate"><span class="pre">tests/test_uc1_prov_live.py::test_a_snapshot_without_its_classification_is_refused_by_the_store</span></code>.</p></li>
+</ol>
+<p>Four queries for the workbench, on the dataset of the run. <strong>Q3</strong> lists each operation with its
+screw, the screw type of that screw, the screw type that the design of its grinder expects, the
+service that issued it, its status, its detection result and the reference to its time series:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">svc</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Service#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">cfc</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Core#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?operation</span> <span class="nv">?screw</span> <span class="nv">?type</span> <span class="nv">?expected</span> <span class="nv">?issuer</span> <span class="nv">?status</span> <span class="nv">?detectionResult</span> <span class="nv">?timeSeries</span> <span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?operation</span> <span class="k">a</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">UnscrewingOperation</span> <span class="p">;</span>
+             <span class="nn">uns</span><span class="p">:</span><span class="nt">concernsScrew</span> <span class="nv">?screw</span> <span class="p">.</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?screw</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasScrewType</span> <span class="nv">?type</span> <span class="p">}</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?grinder</span> <span class="nn">cfc</span><span class="p">:</span><span class="nt">containsWorkpiece</span> <span class="nv">?screw</span> <span class="p">;</span>
+                      <span class="nn">cfc</span><span class="p">:</span><span class="nt">hasAssemblyType</span><span class="o">/</span><span class="nn">uns</span><span class="p">:</span><span class="nt">hasExpectedScrewType</span> <span class="nv">?expected</span> <span class="p">}</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?operation</span> <span class="nn">svc</span><span class="p">:</span><span class="nt">issuedBy</span> <span class="nv">?issuer</span> <span class="p">}</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?operation</span> <span class="nn">svc</span><span class="p">:</span><span class="nt">hasOperationStatus</span> <span class="nv">?status</span> <span class="p">}</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?operation</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasDetectionResult</span> <span class="nv">?detectionResult</span> <span class="p">}</span>
+  <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?operation</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasTimeSeriesReference</span> <span class="nv">?timeSeries</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?screw</span>
+</pre></div>
+</div>
+<p><strong>Q4</strong> gives the maximum dynamic torque that the screw type <code class="docutils literal notranslate"><span class="pre">M4</span></code> holds. After the first change of
+the learner, it is different from the seeded value:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?torque</span> <span class="k">WHERE</span> <span class="p">{</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">M4</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasMaxDynamicTorque</span> <span class="nv">?torque</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Q5</strong> gives, for each operation, the maximum dynamic torque of the parameter copy that its
+classification used. The copy of an earlier classification keeps its value after the learner
+changes the screw type:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?screw</span> <span class="nv">?torque</span> <span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?operation</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">concernsScrew</span> <span class="nv">?screw</span> <span class="p">;</span>
+             <span class="nn">uns</span><span class="p">:</span><span class="nt">classifiedWith</span> <span class="nv">?copy</span> <span class="p">.</span>
+  <span class="nv">?copy</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">hasMaxDynamicTorque</span> <span class="nv">?torque</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?screw</span>
+</pre></div>
+</div>
+<p><strong>Q6</strong> lists each classification with its agent, its end time, its parameter copy and the
+detection result of the operation that it decided:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">uns</span><span class="p">:</span> <span class="nl">&lt;http://w3id.org/circularfactory/Unscrewing#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">prov</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/ns/prov#&gt;</span>
+<span class="k">SELECT</span> <span class="nv">?classification</span> <span class="nv">?agent</span> <span class="nv">?endedAt</span> <span class="nv">?copy</span> <span class="nv">?operation</span> <span class="nv">?detectionResult</span> <span class="k">WHERE</span> <span class="p">{</span>
+  <span class="nv">?classification</span> <span class="k">a</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">Activity</span> <span class="p">;</span>
+                  <span class="nn">prov</span><span class="p">:</span><span class="nt">wasAssociatedWith</span> <span class="nv">?agent</span> <span class="p">;</span>
+                  <span class="nn">prov</span><span class="p">:</span><span class="nt">endedAtTime</span> <span class="nv">?endedAt</span> <span class="p">.</span>
+  <span class="nv">?copy</span> <span class="nn">prov</span><span class="p">:</span><span class="nt">wasGeneratedBy</span> <span class="nv">?classification</span> <span class="p">.</span>
+  <span class="nv">?operation</span> <span class="nn">uns</span><span class="p">:</span><span class="nt">classifiedWith</span> <span class="nv">?copy</span> <span class="p">;</span>
+             <span class="nn">uns</span><span class="p">:</span><span class="nt">hasDetectionResult</span> <span class="nv">?detectionResult</span> <span class="p">.</span>
+<span class="p">}</span>
+<span class="k">ORDER BY</span> <span class="nv">?endedAt</span>
+</pre></div>
+</div>
+</section>
+<section id="infeasible-operation-refusal">
+<h3>Infeasible operation refusal<a class="headerlink" href="#infeasible-operation-refusal" title="Link to this heading">#</a></h3>
+<p>One command shows it, on a dataset that it clears and seeds as <code class="docutils literal notranslate"><span class="pre">jms-uc1</span></code> does:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>jms-uc1<span class="w"> </span>infeasible-operation<span class="w"> </span>--dataset<span class="w"> </span>&lt;name&gt;<span class="w"> </span>--record<span class="w"> </span>refusal.nq
+</pre></div>
+</div>
+<p>For this demonstration, the seed also writes these items:</p>
+<ul class="simple">
+<li><p>The screw type <code class="docutils literal notranslate"><span class="pre">M3</span></code>, which holds none of the seven values that an attempt needs.</p></li>
+<li><p>The assembly type <code class="docutils literal notranslate"><span class="pre">AG2</span></code>, which expects <code class="docutils literal notranslate"><span class="pre">M3</span></code>.</p></li>
+<li><p>The screw <code class="docutils literal notranslate"><span class="pre">Screw3</span></code>, and the grinder <code class="docutils literal notranslate"><span class="pre">Grinder101</span></code> that contains it.</p></li>
+</ul>
+<p>The command starts the five processes of use case 1, waits until each is ready, and presses
+Unscrew two times on the planning service. Then the triple store admits or refuses the commit of
+the planner, against the shapes of use case 1.</p>
+<ol class="arabic simple">
+<li><p>Unscrew on <code class="docutils literal notranslate"><span class="pre">Screw1</span></code>, whose screw type <code class="docutils literal notranslate"><span class="pre">M4</span></code> holds the seven values. The store admits the
+operation, and it ends <code class="docutils literal notranslate"><span class="pre">done</span></code>.</p></li>
+<li><p>Unscrew on <code class="docutils literal notranslate"><span class="pre">Screw3</span></code>. The store refuses the commit by <code class="docutils literal notranslate"><span class="pre">UnscrewingOperationScrewShape</span></code>. The
+operation is not written, and no resource gets a notification.</p></li>
+</ol>
+<p>The command prints the answer of the store to each press, then stops the five processes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>1. Press Unscrew on Screw1, whose Screw type M4 holds the seven values the attempt needs
+   the store: admitted; UnscrewingOperation_&lt;hex&gt; ended done, outcome ScrewIntact
+2. Press Unscrew on Screw3, whose Screw type M3 holds none of the seven values
+   the store: refused, by UnscrewingOperationScrewShape at UnscrewingOperation_&lt;hex&gt;: An unscrewing operation concerns exactly one Screw, whose Screw type holds each of the seven values the attempt needs (the six detection thresholds and the preparation turning angle), once each.
+   the store's validation report:
+     …
+   the report is written to refusal.nq
+Stopping the five processes...
+</pre></div>
+</div>
+<p>It exits 0 when the first operation ended <code class="docutils literal notranslate"><span class="pre">done</span></code> and that shape refused the second. Else it exits
+1, and names the step that did not occur. <code class="docutils literal notranslate"><span class="pre">--record</span> <span class="pre">FILE</span></code> writes the validation report as the store
+sent it.</p>
+<p>The recorded report, <code class="docutils literal notranslate"><span class="pre">tests/reports/infeasible-operation.nq</span></code>, holds one validation result. Its
+focus node is the refused operation, its path <code class="docutils literal notranslate"><span class="pre">:concernsScrew</span></code>, its value <code class="docutils literal notranslate"><span class="pre">:Screw3</span></code>, its source
+shape <code class="docutils literal notranslate"><span class="pre">:UnscrewingOperationScrewShape</span></code>, and its message the message above. The shape is in the
+shapes file of use case 1, <code class="docutils literal notranslate"><span class="pre">src/jms_kapps/uc1/shapes/integration_usecase_shapes.ttl</span></code>.</p>
+<p><em>Test:</em>
+<code class="docutils literal notranslate"><span class="pre">tests/test_uc1_infeasible_operation_live.py::test_the_store_refuses_the_infeasible_operation_by_the_shape</span></code>.</p>
+</section>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
+<p>The package of use case 1 is in <code class="docutils literal notranslate"><span class="pre">src/jms_kapps/uc1/</span></code>. Each write of its four services is
+a commit of the middleware instance of the service. Its ontology is
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.1.0/src/jms_kapps/uc1/ontology/integration_usecase.ttl"><code class="docutils literal notranslate"><span class="pre">integration_usecase.ttl</span></code></a>, with
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.1.0/src/jms_kapps/uc1/ontology/uncertainty.ttl"><code class="docutils literal notranslate"><span class="pre">uncertainty.ttl</span></code></a> beside it, and its shapes are
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.1.0/src/jms_kapps/uc1/shapes/integration_usecase_shapes.ttl"><code class="docutils literal notranslate"><span class="pre">integration_usecase_shapes.ttl</span></code></a>.</p>
+<p>The two recordings that use case 1 replays in place of the robot are in
+<a class="reference external" href="https://github.com/circularfactory/jms_kapps/blob/v0.1.0/src/jms_kapps/uc1/data/unscrewing_timeseries/README.md"><code class="docutils literal notranslate"><span class="pre">src/jms_kapps/uc1/data/unscrewing_timeseries/</span></code></a>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="setup.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Setup and operation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="use-case-2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Use Case 2: A Decentralized Conveyor Network Coordinated through a Constraint-Enforced Knowledge Graph</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-cell-video">Robot cell video</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run">Run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pages-and-logs">Pages and logs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-page">Run page</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planner-dashboard">Planner dashboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#screwing-resource-and-detector-dashboards">Screwing resource and detector dashboards</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learner-dashboard">Learner dashboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operation-log">Operation log</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demonstrations">Demonstrations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robot-over-mqtt">Robot over MQTT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#position-uncertainty">Position uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirement-demonstrations">Requirement demonstrations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infeasible-operation-refusal">Infeasible operation refusal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/use-case-1.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Etienne Hoffmann and Sören Weindel.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.1.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
